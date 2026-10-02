@@ -1,0 +1,272 @@
+% Input-ready method fragment; no document class or package declarations.
+% The parent document needs standard AMS math support.
+% Citation keys are listed in docs/RELATED_WORK_V02.md.
+% No effectiveness results or automated API-synthesis claims are made here.
+
+\section{Evidence-Driven Representation and Rule Refinement}
+\label{sec:method}
+
+We study a family of static satellite--ground scheduling problems under
+different resource-constraint configurations. Each configuration is fixed
+during a scheduling run. Offline interventions provide evidence about how
+decisions should adapt across configurations; deployment uses one frozen
+program that reads the current conflict graph. Our central distinction is
+between a rule that misuses available information and a representation that
+cannot express the required rankings.
+
+\subsection{Scheduling Model and Fixed Execution Kernel}
+\label{sec:method:model}
+
+Let $V$ be a set of contact opportunities with nonnegative rewards $w_v$.
+A legal configuration $\theta$ induces a conflict graph
+$G_\theta=(V,E_\theta,w)$, where an edge denotes joint infeasibility of
+two contacts under the modelled resource constraints. Contact selection is
+the maximum-weight independent set problem
+\begin{equation}
+ \max_{I\subseteq V}\ w(I)=\sum_{v\in I}w_v
+ \quad\text{subject to } I\text{ independent in }G_\theta.
+ \label{eq:method:mwis}
+\end{equation}
+This reduction assumes that all hard constraints in the evaluated model
+are captured by the graph and any explicit boundary commitments.
+Constraints involving higher-order resource interactions require an
+extended model rather than an unsupported pairwise-feasibility claim.
+
+A boundary $B=(F,X)$ consists of fixed selected contacts $F$ and explicitly
+excluded contacts $X$. We require $F$ to be independent and $F\cap X$ to
+be empty. With $N_\theta(F)$ denoting the union of the neighbours of $F$,
+the residual candidates are
+\begin{equation}
+ R_\theta(B)=V\setminus\bigl(F\cup X\cup N_\theta(F)\bigr).
+\end{equation}
+A program $P=(\phi,h)$ computes features $\phi(G_\theta,R,v)$ and a finite
+score $h(\phi(G_\theta,R,v))$ for each $v\in R$. The kernel selects a
+highest-scoring contact, adds it to the schedule, and removes its closed
+neighbourhood from $R$. Ties use a fixed deterministic convention; a tie
+does not satisfy a strict ranking requirement. The final schedule is
+checked independently against the graph.
+
+\paragraph{Kernel invariant.}
+Starting from a feasible $F$, each selected contact belongs to the residual
+set and is therefore compatible with every previously selected contact.
+Induction preserves independence. At least the selected contact is removed
+at each step, so the finite process terminates. This establishes feasibility
+for the graph model, not optimality of the learned ordering.
+
+\subsection{Certified Relations from Aligned Interventions}
+\label{sec:method:evidence}
+
+An aligned intervention changes admissible resource parameters from
+$\theta_0$ to $\theta_1$, rebuilding conflict edges while preserving contact
+identities, rewards, objective units, and the intended boundary semantics.
+The competing actions $a$ and $b$ must be distinct, adjacent in both graphs,
+and individually feasible under $B$ in both configurations. In particular,
+we reject comparisons whose apparent preference change is caused by an
+action becoming infeasible.
+
+Let $\mathcal{I}_\theta$ be the independent sets of $G_\theta$.
+For $d\in\{a,b\}$, define the full conditional completion value
+\begin{equation}
+ \begin{split}
+ V_\theta(d\mid B)=\max\{w(I):\ &I\in\mathcal{I}_\theta,\\
+ &F\cup\{d\}\subseteq I,\ I\cap X=\varnothing\}.
+ \end{split}
+ \label{eq:method:conditional}
+\end{equation}
+The maximization includes all remaining contacts, not only a sampled local
+region. The certificate scope is conditional on $B$; changing a boundary
+changes the quantity being certified. A checked feasible completion for
+each action--configuration combination establishes that all four spaces
+are nonempty.
+
+A budgeted oracle returns sound intervals
+\begin{equation}
+ L_\theta(d\mid B)\leq V_\theta(d\mid B)
+ \leq U_\theta(d\mid B).
+ \label{eq:method:bounds}
+\end{equation}
+Lower bounds are values of independently checked full-graph schedules.
+Upper bounds must bound the entire conditional completion space, for
+example through a valid relaxation or the open frontier of branch and
+bound. For an oracle region $H$, let $A=R_\theta(B\cup\{d\})$, where
+$B\cup\{d\}$ means adding $d$ to $F$. If $U_H$ bounds the MWIS value of
+$G_\theta[A\cap H]$, one valid, possibly loose upper bound is
+\begin{equation}
+ U_\theta(d\mid B)=w(F\cup\{d\})+U_H
+       +\sum_{v\in A\setminus H}w_v.
+ \label{eq:method:localupper}
+\end{equation}
+It relaxes the conflicts involving the outside region. A local feasible
+solution must be completed and checked globally before its value is used
+as a lower bound. Expanding $H$ may tighten evidence, but budget exhaustion
+never turns an unresolved interval into a certified label. Integer or
+outward-rounded objective arithmetic is used to preserve bound validity.
+
+For an objective tolerance $\epsilon\geq0$, the inequalities
+\begin{equation}
+ \begin{split}
+ L_{\theta_0}(a\mid B)&>U_{\theta_0}(b\mid B)+\epsilon,\\
+ L_{\theta_1}(b\mid B)&>U_{\theta_1}(a\mid B)+\epsilon
+ \end{split}
+ \label{eq:method:reversal}
+\end{equation}
+certify a strict preference reversal. They imply the same strict ordering
+of the respective conditional optima by
+Equation~\ref{eq:method:bounds}. If the same action satisfies the strict
+inequality in both configurations, we certify preference preservation.
+Preservation concerns ordering, not equality of objective values. Overlapping
+intervals remain unresolved; a rollout average or an incumbent alone is
+insufficient to certify the opposite bound.
+
+Each certified comparison induces a relational specification
+$r=(x^+,x^-)$, where $x=(G_\theta,R_\theta(B),v)$ is a decision occurrence
+and $x^+$ is preferred. The requirement is
+\begin{equation}
+ h(\phi(x^+))>h(\phi(x^-)).
+ \label{eq:method:requirement}
+\end{equation}
+Implementation checks may impose a separate numerical score margin.
+That margin is not the oracle's objective tolerance $\epsilon$.
+The evidence certifies a comparison of optimal completions under a
+specified boundary. It does not guarantee that every heuristic completion
+following the preferred action dominates every completion following the
+other action, or that greedy use of all such relations is globally optimal.
+
+\subsection{Detecting Representation-Induced Contradictions}
+\label{sec:method:alias}
+
+Let $\mathcal{D}$ be the finite set of certified requirements and
+$\mathcal{Z}$ its decision occurrences. The representation includes every
+value observable by the scoring function. Define exact feature aliasing by
+\begin{equation}
+ x\sim_\phi y\quad\Longleftrightarrow\quad \phi(x)=\phi(y).
+\end{equation}
+The quotient requirement graph $Q_\phi$ has one vertex for each equivalence
+class in $\mathcal{Z}/\!\sim_\phi$ and an edge
+$[x^+]\rightarrow[x^-]$ for every requirement. Self-loops are retained.
+Equality uses exact canonical feature values; clustering or rounded
+similarity is not used as a proof of aliasing.
+
+\paragraph{Proposition (finite-sample representability).}
+There exists an unrestricted deterministic pointwise real-valued function
+on the observed feature vectors satisfying all strict requirements if and
+only if $Q_\phi$ is acyclic. Thus a cycle or self-loop proves that no rule
+over this representation can satisfy all requirements.
+
+\paragraph{Proof.}
+Because a pointwise function assigns the same score to identical feature
+vectors, every edge requires a strict decrease between its endpoint
+scores. A directed cycle would imply
+$s_1>s_2>\cdots>s_k>s_1$, a contradiction; a self-loop requires
+$s_1>s_1$. Conversely, in a finite acyclic graph assign to each vertex the
+length of its longest outgoing path. Every edge then has a larger score at
+its source than at its destination. These scores define a function on the
+observed vectors satisfying every requirement. They can be scaled to any
+fixed finite positive margin.\hfill$\square$
+
+The converse is an abstract existence statement: a lookup mapping on a
+finite set is not necessarily expressible by the permitted rule language,
+and gives no guarantee on unseen vectors. Therefore an acyclic quotient
+does not certify success of concrete DSL synthesis. Approximate aliases
+are useful diagnostics but cannot establish this impossibility result.
+The proposition applies to the current pointwise scoring interface, not
+to arbitrary policies allowed to inspect extra graph structure, action
+identifiers, or history. Instance and action identifiers are excluded from
+synthesized semantic features to prevent label lookup.
+
+A cycle returns its requirements and the underlying aliased graph
+occurrences as a structural witness. The refinement loop distinguishes
+this obstruction from a candidate rule merely failing an expressible
+requirement. It first audits intervention alignment and certificate
+validity, then requests distinguishing features. This makes representation
+expansion a response to identified missing distinctions rather than an
+unconditional increase in feature count.
+
+\subsection{Typed Structural Features and Offline Synthesis}
+\label{sec:method:typed}
+
+The feature language distinguishes individual nodes, node sets, edge sets,
+and numbers. Its operations expose the root contact, the available set,
+neighborhood queries, typed set algebra, induced edges, counts, and
+aggregates of contact weights. Edge aggregates include sums of endpoint
+minimum weights and endpoint weight products, with bounded numerical arithmetic.
+For example, if
+$C(v)=R\setminus(\{v\}\cup N_\theta(v))$, both
+\begin{equation}
+ f_1(v)=\sum_{u\in C(v)}w_u,\qquad
+ f_2(v)=\sum_{\{u,z\}\in E_\theta[C(v)]}\min(w_u,w_z)
+\end{equation}
+are deployable graph statistics. Equal $f_1$ values can hide different
+internal compatibility among surviving opportunities; $f_2$ can expose
+some such differences. These aggregates are features, not automatically
+valid completion bounds. In particular, shared edge endpoints can cause
+multiple penalties for the same contact.
+
+The offline synthesizer receives relational specifications, cycle or
+failure witnesses, the typed library, and computation limits. It proposes
+feature ASTs and a corresponding rule AST. Type checks, expression-size
+limits, finite-output checks, and a closed execution interface reject
+invalid proposals. Generated programs cannot invoke the oracle, external
+services, arbitrary imports, or saved labels at deployment.
+The LLM proposes distinctions and formulas; certificate checking and
+program evaluation determine acceptance.
+
+The budgeted loop retains earlier specifications, replays them after each
+revision, and records unresolved queries as well as successes. Optional
+acquisition can request comparisons on training instances where retained
+programs disagree. A disagreement is a query priority, not a certified
+preference; it enters $\mathcal{D}$ only after the bound checks succeed.
+Neither feature proposal nor budgeted search is claimed to converge to
+a consistent or optimal program.
+
+\subsection{Joint Selection, Deployment, and Scope}
+\label{sec:method:selection}
+
+Candidate selection jointly considers specification consistency,
+complete-schedule quality, and feature cost. Let $s(P)$ be the fraction of
+certified training requirements satisfied, $q(P)$ the normalized reward on
+a separate selection set, and $c(P)$ the mean deterministic feature work.
+The prototype uses the declared selection utility
+\begin{equation}
+ \begin{split}
+ J(P)&=q(P)-\lambda\bigl(c(P)/c_{\rm ref}-1\bigr),\\
+ \text{subject to }&s(P)\geq\tau\text{ and valid interfaces},
+ \end{split}
+ \label{eq:method:utility}
+\end{equation}
+where $c_{\rm ref}>0$ is the work of the weight-only baseline. Selection
+reward is normalized by the optimum on the small selection problems where
+that optimum is computed offline. The targeted variant additionally rejects
+an exact-alias quotient containing a cycle. Utility ties favour higher
+schedule quality, lower feature cost, and then earlier candidates.
+The pilot configuration uses $\tau=0.75$ and $\lambda=0.002$; these are
+declared experimental settings, not theoretical guarantees. All remaining
+violations are reported, so passing the gate is not described as full
+specification satisfaction. No selection score establishes unseen-instance
+consistency or schedule optimality.
+
+The deterministic work counter includes primitive dispatches, set and
+membership scans, weight reads, and arithmetic or aggregation work. It is
+a declared cost proxy, not an exact CPU-instruction count. Actual feature
+and scoring time and total deployment latency are also recorded.
+Feature caching is valid only for the graph and residual state on which
+the feature depends. Offline costs separately
+record LLM calls, candidate proposals, oracle work, and selection evaluations;
+zero online calls do not imply zero discovery cost.
+
+After selection, both $\phi$ and $h$ are frozen. Held-out evaluation separates
+contact instances and constraint configurations from synthesis and selection,
+including tests of their joint shift. The same program responds to each
+current graph within the fixed kernel; no online LLM or optimization-oracle
+query is allowed. Adaptation therefore means changes in the frozen program's
+ranking as its deployable structural inputs change.
+
+\paragraph{Prototype status and limitations.}
+The initial executable prototype uses assistant-proposed candidates and
+replayable offline artifacts. This is assisted synthesis, not evidence of
+an autonomous API evolution run. Large-graph certification can be expensive
+or inconclusive; pairwise graph modelling has a stated scope; the typed
+library may omit the required distinction; finite evidence can overfit;
+and feature costs can grow with graph density. A publishable evaluation
+must retain candidate provenance and measure these limitations rather than
+equating successful small examples with effective general adaptation.

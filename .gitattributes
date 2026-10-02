@@ -3,3 +3,6 @@
 # Preserve exact recorded bytes: receipts hash these artifacts as written.
 baselines/** -text whitespace=cr-at-eol
 manifest/** -text whitespace=cr-at-eol
+experiments/** -text whitespace=cr-at-eol
+paper/aamas.cls -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+paper/ACM-Reference-Format.bst -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

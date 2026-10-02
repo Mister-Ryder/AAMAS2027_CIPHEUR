@@ -1,0 +1,2073 @@
+{
+  "base_protocol": {
+    "version": "static_constraint_adaptation_data_v1",
+    "outcome_filtering": false,
+    "oracle_calls_during_generation": 0,
+    "online_constraint_changes": false,
+    "intervention_scope": "paired_static_problems_with_identical_contacts",
+    "counts_requested": {
+      "diagnostic": {
+        "train": 24,
+        "validation": 24,
+        "test": 24
+      },
+      "random_temporal": {
+        "train": 32,
+        "validation": 32,
+        "test": 32
+      },
+      "c3": {
+        "train": 16,
+        "validation": 16,
+        "test": 16
+      }
+    },
+    "diagnostic_scope": "designed_mechanism_probes_not_natural_population_statistics",
+    "synthetic_model": "synthetic_single_capacity_temporal",
+    "c3_model": "frozen_v51_legacy_conflict_predicates",
+    "c3_scope": "resource_time_window_subproblems_not_full_dataset_schedules",
+    "seed_bases": {
+      "diagnostic": {
+        "train": 100000,
+        "validation": 200000,
+        "test": 300000
+      },
+      "random_temporal": {
+        "train": 1000,
+        "validation": 2000,
+        "test": 3000
+      }
+    },
+    "c3_split_rule": "link_start_day_0_train_day_1_validation_day_2_test",
+    "configuration_split_rule": "disjoint_intervention_targets_shared_c3_reference_340_allowed"
+  },
+  "base_audit": {
+    "passed": true,
+    "unique_instance_fingerprints": 213,
+    "unique_graph_fingerprints": 426,
+    "unique_synthetic_seeds": 168,
+    "unique_c3_opportunities": 1012,
+    "splits": {
+      "train": {
+        "records": 71,
+        "families": {
+          "diagnostic": 24,
+          "random_temporal": 32,
+          "c3": 15
+        },
+        "seed_min": 1000,
+        "seed_max": 100023,
+        "target_configurations": [
+          {
+            "ground_trans_time": 500,
+            "model": "v51_legacy",
+            "satellite_change_time": 150,
+            "satellite_trans_time": 300
+          },
+          {
+            "model": "synthetic_single_capacity_temporal",
+            "satellite_gap": 0,
+            "station_gap": 0.5
+          },
+          {
+            "model": "synthetic_single_capacity_temporal",
+            "satellite_gap": 0,
+            "station_gap": 2.0
+          },
+          {
+            "model": "synthetic_single_capacity_temporal",
+            "satellite_gap": 0,
+            "station_gap": 4.0
+          }
+        ]
+      },
+      "validation": {
+        "records": 71,
+        "families": {
+          "diagnostic": 24,
+          "random_temporal": 32,
+          "c3": 15
+        },
+        "seed_min": 2000,
+        "seed_max": 200023,
+        "target_configurations": [
+          {
+            "ground_trans_time": 600,
+            "model": "v51_legacy",
+            "satellite_change_time": 150,
+            "satellite_trans_time": 300
+          },
+          {
+            "model": "synthetic_single_capacity_temporal",
+            "satellite_gap": 0,
+            "station_gap": 0.65
+          },
+          {
+            "model": "synthetic_single_capacity_temporal",
+            "satellite_gap": 0,
+            "station_gap": 3.0
+          },
+          {
+            "model": "synthetic_single_capacity_temporal",
+            "satellite_gap": 0,
+            "station_gap": 4.4
+          }
+        ]
+      },
+      "test": {
+        "records": 71,
+        "families": {
+          "diagnostic": 24,
+          "random_temporal": 32,
+          "c3": 15
+        },
+        "seed_min": 3000,
+        "seed_max": 300023,
+        "target_configurations": [
+          {
+            "ground_trans_time": 700,
+            "model": "v51_legacy",
+            "satellite_change_time": 150,
+            "satellite_trans_time": 300
+          },
+          {
+            "model": "synthetic_single_capacity_temporal",
+            "satellite_gap": 0,
+            "station_gap": 0.8
+          },
+          {
+            "model": "synthetic_single_capacity_temporal",
+            "satellite_gap": 0,
+            "station_gap": 5.0
+          }
+        ]
+      }
+    },
+    "target_configurations_disjoint": true,
+    "c3_shared_reference_configuration": {
+      "ground_trans_time": 340,
+      "satellite_change_time": 150,
+      "satellite_trans_time": 300
+    }
+  },
+  "generation_coverage": {
+    "c3": {
+      "status": "available",
+      "requested": {
+        "train": 16,
+        "validation": 16,
+        "test": 16
+      },
+      "source_project": "E:\\01-Joycecyq\\2026-ESWA\\DAI2026_SNSD_V51_STABLE",
+      "data": {
+        "path": "E:\\01-Joycecyq\\2026-ESWA\\DAI2026_SNSD_V51_STABLE\\SNSD_V51_FINAL\\data\\C3.csv",
+        "sha256": "ec95f50c11d800f051e218aa1e414df873ddd12e1f71ce911da3ba28adff647e",
+        "encoding": "gb18030",
+        "header": [
+          "地面站标识",
+          "卫星标识",
+          "开始建链时间",
+          "结束建链时间",
+          "开始跟踪时间",
+          "结束跟踪时间",
+          "是否馈电",
+          "最大仰角",
+          "任务执行日期",
+          "圈次",
+          "升降轨标识",
+          "优先级"
+        ],
+        "total_opportunities": 69923
+      },
+      "source_files": {
+        "data.py": {
+          "path": "E:\\01-Joycecyq\\2026-ESWA\\DAI2026_SNSD_V51_STABLE\\SNSD_V51_FINAL\\src\\snsd_core\\data.py",
+          "sha256": "e18ebe861c8c578bc82e7386977cacf71904239a4332c03680314ec8d9b480ef"
+        },
+        "graph.py": {
+          "path": "E:\\01-Joycecyq\\2026-ESWA\\DAI2026_SNSD_V51_STABLE\\SNSD_V51_FINAL\\src\\snsd_core\\graph.py",
+          "sha256": "030d6d0e26776c5817083ee95edb9c536da92ec30eb9afb727ce783e8232c5c4"
+        },
+        "verifier.py": {
+          "path": "E:\\01-Joycecyq\\2026-ESWA\\DAI2026_SNSD_V51_STABLE\\SNSD_V51_FINAL\\src\\snsd_core\\verifier.py",
+          "sha256": "7b9cdf331e5e427d412a2369e8c439153755e0d4dd2ef02042dd970c1890567b"
+        }
+      },
+      "scope": "resource_time_window_subproblems",
+      "full_c3_performance_claim": false,
+      "empty_windows": [
+        {
+          "split": "train",
+          "window_index": 13,
+          "start_interval": [
+            70200,
+            75600
+          ],
+          "ground_ids": [
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "satellite_ids": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55
+          ],
+          "eligible_before_cap": 0,
+          "retained": 0
+        },
+        {
+          "split": "validation",
+          "window_index": 13,
+          "start_interval": [
+            156600,
+            162000
+          ],
+          "ground_ids": [
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "satellite_ids": [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55
+          ],
+          "eligible_before_cap": 0,
+          "retained": 0
+        },
+        {
+          "split": "test",
+          "window_index": 14,
+          "start_interval": [
+            248400,
+            253800
+          ],
+          "ground_ids": [
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "satellite_ids": [
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "eligible_before_cap": 0,
+          "retained": 0
+        }
+      ],
+      "splits": {
+        "train": {
+          "day_index": 0,
+          "day_interval": [
+            0,
+            86400
+          ],
+          "day_opportunities": 23386,
+          "generated": 15,
+          "eligible_before_cap": 559,
+          "contacts_retained": 338,
+          "graph_changed_pairs": 8,
+          "candidate_pairs": 15,
+          "windows": [
+            {
+              "window_index": 0,
+              "start_interval": [
+                0,
+                5400
+              ],
+              "ground_ids": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "eligible_before_cap": 43,
+              "retained": 28
+            },
+            {
+              "window_index": 1,
+              "start_interval": [
+                5400,
+                10800
+              ],
+              "ground_ids": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "satellite_ids": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31
+              ],
+              "eligible_before_cap": 11,
+              "retained": 11
+            },
+            {
+              "window_index": 2,
+              "start_interval": [
+                10800,
+                16200
+              ],
+              "ground_ids": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "satellite_ids": [
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47
+              ],
+              "eligible_before_cap": 67,
+              "retained": 28
+            },
+            {
+              "window_index": 3,
+              "start_interval": [
+                16200,
+                21600
+              ],
+              "ground_ids": [
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "satellite_ids": [
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63
+              ],
+              "eligible_before_cap": 62,
+              "retained": 28
+            },
+            {
+              "window_index": 4,
+              "start_interval": [
+                21600,
+                27000
+              ],
+              "ground_ids": [
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "satellite_ids": [
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79
+              ],
+              "eligible_before_cap": 48,
+              "retained": 28
+            },
+            {
+              "window_index": 5,
+              "start_interval": [
+                27000,
+                32400
+              ],
+              "ground_ids": [
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 20,
+              "retained": 20
+            },
+            {
+              "window_index": 6,
+              "start_interval": [
+                32400,
+                37800
+              ],
+              "ground_ids": [
+                30,
+                31,
+                32,
+                33,
+                34
+              ],
+              "satellite_ids": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27
+              ],
+              "eligible_before_cap": 27,
+              "retained": 27
+            },
+            {
+              "window_index": 7,
+              "start_interval": [
+                37800,
+                43200
+              ],
+              "ground_ids": [
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "satellite_ids": [
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43
+              ],
+              "eligible_before_cap": 17,
+              "retained": 17
+            },
+            {
+              "window_index": 8,
+              "start_interval": [
+                43200,
+                48600
+              ],
+              "ground_ids": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "satellite_ids": [
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59
+              ],
+              "eligible_before_cap": 43,
+              "retained": 28
+            },
+            {
+              "window_index": 9,
+              "start_interval": [
+                48600,
+                54000
+              ],
+              "ground_ids": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "satellite_ids": [
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75
+              ],
+              "eligible_before_cap": 60,
+              "retained": 28
+            },
+            {
+              "window_index": 10,
+              "start_interval": [
+                54000,
+                59400
+              ],
+              "ground_ids": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 58,
+              "retained": 28
+            },
+            {
+              "window_index": 11,
+              "start_interval": [
+                59400,
+                64800
+              ],
+              "ground_ids": [
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "satellite_ids": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23
+              ],
+              "eligible_before_cap": 62,
+              "retained": 28
+            },
+            {
+              "window_index": 12,
+              "start_interval": [
+                64800,
+                70200
+              ],
+              "ground_ids": [
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "satellite_ids": [
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "eligible_before_cap": 30,
+              "retained": 28
+            },
+            {
+              "window_index": 13,
+              "start_interval": [
+                70200,
+                75600
+              ],
+              "ground_ids": [
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "satellite_ids": [
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55
+              ],
+              "eligible_before_cap": 0,
+              "retained": 0
+            },
+            {
+              "window_index": 14,
+              "start_interval": [
+                75600,
+                81000
+              ],
+              "ground_ids": [
+                30,
+                31,
+                32,
+                33,
+                34
+              ],
+              "satellite_ids": [
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71
+              ],
+              "eligible_before_cap": 6,
+              "retained": 6
+            },
+            {
+              "window_index": 15,
+              "start_interval": [
+                81000,
+                86400
+              ],
+              "ground_ids": [
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 5,
+              "retained": 5
+            }
+          ]
+        },
+        "validation": {
+          "day_index": 1,
+          "day_interval": [
+            86400,
+            172800
+          ],
+          "day_opportunities": 23284,
+          "generated": 15,
+          "eligible_before_cap": 554,
+          "contacts_retained": 339,
+          "graph_changed_pairs": 12,
+          "candidate_pairs": 14,
+          "windows": [
+            {
+              "window_index": 0,
+              "start_interval": [
+                86400,
+                91800
+              ],
+              "ground_ids": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "eligible_before_cap": 41,
+              "retained": 28
+            },
+            {
+              "window_index": 1,
+              "start_interval": [
+                91800,
+                97200
+              ],
+              "ground_ids": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "satellite_ids": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31
+              ],
+              "eligible_before_cap": 20,
+              "retained": 20
+            },
+            {
+              "window_index": 2,
+              "start_interval": [
+                97200,
+                102600
+              ],
+              "ground_ids": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "satellite_ids": [
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47
+              ],
+              "eligible_before_cap": 63,
+              "retained": 28
+            },
+            {
+              "window_index": 3,
+              "start_interval": [
+                102600,
+                108000
+              ],
+              "ground_ids": [
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "satellite_ids": [
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63
+              ],
+              "eligible_before_cap": 67,
+              "retained": 28
+            },
+            {
+              "window_index": 4,
+              "start_interval": [
+                108000,
+                113400
+              ],
+              "ground_ids": [
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "satellite_ids": [
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79
+              ],
+              "eligible_before_cap": 55,
+              "retained": 28
+            },
+            {
+              "window_index": 5,
+              "start_interval": [
+                113400,
+                118800
+              ],
+              "ground_ids": [
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 20,
+              "retained": 20
+            },
+            {
+              "window_index": 6,
+              "start_interval": [
+                118800,
+                124200
+              ],
+              "ground_ids": [
+                30,
+                31,
+                32,
+                33,
+                34
+              ],
+              "satellite_ids": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27
+              ],
+              "eligible_before_cap": 24,
+              "retained": 24
+            },
+            {
+              "window_index": 7,
+              "start_interval": [
+                124200,
+                129600
+              ],
+              "ground_ids": [
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "satellite_ids": [
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43
+              ],
+              "eligible_before_cap": 18,
+              "retained": 18
+            },
+            {
+              "window_index": 8,
+              "start_interval": [
+                129600,
+                135000
+              ],
+              "ground_ids": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "satellite_ids": [
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59
+              ],
+              "eligible_before_cap": 37,
+              "retained": 28
+            },
+            {
+              "window_index": 9,
+              "start_interval": [
+                135000,
+                140400
+              ],
+              "ground_ids": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "satellite_ids": [
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75
+              ],
+              "eligible_before_cap": 59,
+              "retained": 28
+            },
+            {
+              "window_index": 10,
+              "start_interval": [
+                140400,
+                145800
+              ],
+              "ground_ids": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 55,
+              "retained": 28
+            },
+            {
+              "window_index": 11,
+              "start_interval": [
+                145800,
+                151200
+              ],
+              "ground_ids": [
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "satellite_ids": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23
+              ],
+              "eligible_before_cap": 61,
+              "retained": 28
+            },
+            {
+              "window_index": 12,
+              "start_interval": [
+                151200,
+                156600
+              ],
+              "ground_ids": [
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "satellite_ids": [
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "eligible_before_cap": 29,
+              "retained": 28
+            },
+            {
+              "window_index": 13,
+              "start_interval": [
+                156600,
+                162000
+              ],
+              "ground_ids": [
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "satellite_ids": [
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55
+              ],
+              "eligible_before_cap": 0,
+              "retained": 0
+            },
+            {
+              "window_index": 14,
+              "start_interval": [
+                162000,
+                167400
+              ],
+              "ground_ids": [
+                30,
+                31,
+                32,
+                33,
+                34
+              ],
+              "satellite_ids": [
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71
+              ],
+              "eligible_before_cap": 2,
+              "retained": 2
+            },
+            {
+              "window_index": 15,
+              "start_interval": [
+                167400,
+                172800
+              ],
+              "ground_ids": [
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 3,
+              "retained": 3
+            }
+          ]
+        },
+        "test": {
+          "day_index": 2,
+          "day_interval": [
+            172800,
+            259200
+          ],
+          "day_opportunities": 23253,
+          "generated": 15,
+          "eligible_before_cap": 573,
+          "contacts_retained": 335,
+          "graph_changed_pairs": 14,
+          "candidate_pairs": 15,
+          "windows": [
+            {
+              "window_index": 0,
+              "start_interval": [
+                172800,
+                178200
+              ],
+              "ground_ids": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "eligible_before_cap": 44,
+              "retained": 28
+            },
+            {
+              "window_index": 1,
+              "start_interval": [
+                178200,
+                183600
+              ],
+              "ground_ids": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "satellite_ids": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31
+              ],
+              "eligible_before_cap": 18,
+              "retained": 18
+            },
+            {
+              "window_index": 2,
+              "start_interval": [
+                183600,
+                189000
+              ],
+              "ground_ids": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "satellite_ids": [
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47
+              ],
+              "eligible_before_cap": 61,
+              "retained": 28
+            },
+            {
+              "window_index": 3,
+              "start_interval": [
+                189000,
+                194400
+              ],
+              "ground_ids": [
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "satellite_ids": [
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63
+              ],
+              "eligible_before_cap": 70,
+              "retained": 28
+            },
+            {
+              "window_index": 4,
+              "start_interval": [
+                194400,
+                199800
+              ],
+              "ground_ids": [
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "satellite_ids": [
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79
+              ],
+              "eligible_before_cap": 51,
+              "retained": 28
+            },
+            {
+              "window_index": 5,
+              "start_interval": [
+                199800,
+                205200
+              ],
+              "ground_ids": [
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 13,
+              "retained": 13
+            },
+            {
+              "window_index": 6,
+              "start_interval": [
+                205200,
+                210600
+              ],
+              "ground_ids": [
+                30,
+                31,
+                32,
+                33,
+                34
+              ],
+              "satellite_ids": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27
+              ],
+              "eligible_before_cap": 22,
+              "retained": 22
+            },
+            {
+              "window_index": 7,
+              "start_interval": [
+                210600,
+                216000
+              ],
+              "ground_ids": [
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "satellite_ids": [
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43
+              ],
+              "eligible_before_cap": 20,
+              "retained": 20
+            },
+            {
+              "window_index": 8,
+              "start_interval": [
+                216000,
+                221400
+              ],
+              "ground_ids": [
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "satellite_ids": [
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59
+              ],
+              "eligible_before_cap": 41,
+              "retained": 28
+            },
+            {
+              "window_index": 9,
+              "start_interval": [
+                221400,
+                226800
+              ],
+              "ground_ids": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "satellite_ids": [
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75
+              ],
+              "eligible_before_cap": 70,
+              "retained": 28
+            },
+            {
+              "window_index": 10,
+              "start_interval": [
+                226800,
+                232200
+              ],
+              "ground_ids": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 58,
+              "retained": 28
+            },
+            {
+              "window_index": 11,
+              "start_interval": [
+                232200,
+                237600
+              ],
+              "ground_ids": [
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "satellite_ids": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23
+              ],
+              "eligible_before_cap": 57,
+              "retained": 28
+            },
+            {
+              "window_index": 12,
+              "start_interval": [
+                237600,
+                243000
+              ],
+              "ground_ids": [
+                20,
+                21,
+                22,
+                23,
+                24
+              ],
+              "satellite_ids": [
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "eligible_before_cap": 38,
+              "retained": 28
+            },
+            {
+              "window_index": 13,
+              "start_interval": [
+                243000,
+                248400
+              ],
+              "ground_ids": [
+                25,
+                26,
+                27,
+                28,
+                29
+              ],
+              "satellite_ids": [
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55
+              ],
+              "eligible_before_cap": 6,
+              "retained": 6
+            },
+            {
+              "window_index": 14,
+              "start_interval": [
+                248400,
+                253800
+              ],
+              "ground_ids": [
+                30,
+                31,
+                32,
+                33,
+                34
+              ],
+              "satellite_ids": [
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71
+              ],
+              "eligible_before_cap": 0,
+              "retained": 0
+            },
+            {
+              "window_index": 15,
+              "start_interval": [
+                253800,
+                259200
+              ],
+              "ground_ids": [
+                35,
+                36,
+                37,
+                38,
+                39
+              ],
+              "satellite_ids": [
+                0,
+                1,
+                2,
+                3,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83
+              ],
+              "eligible_before_cap": 4,
+              "retained": 4
+            }
+          ]
+        }
+      },
+      "generated": {
+        "train": 15,
+        "validation": 15,
+        "test": 15
+      },
+      "unique_original_opportunities_retained": 1012
+    }
+  },
+  "cross_run_audit": {
+    "passed": true,
+    "compared_against_prior_splits": [
+      "train",
+      "validation",
+      "test"
+    ],
+    "index_thresholds": {
+      "diagnostic": 12,
+      "random_temporal": 16,
+      "c3": 8
+    },
+    "prefix_pairs_excluded": {
+      "diagnostic": 12,
+      "random_temporal": 16,
+      "c3": 8
+    },
+    "identity_exclusions": [
+      {
+        "id": "c3_test_0008",
+        "prior_opportunities_removed": [],
+        "prior_opportunities_removed_count": 0,
+        "retained_opportunities": 28
+      },
+      {
+        "id": "c3_test_0009",
+        "prior_opportunities_removed": [],
+        "prior_opportunities_removed_count": 0,
+        "retained_opportunities": 28
+      },
+      {
+        "id": "c3_test_0010",
+        "prior_opportunities_removed": [],
+        "prior_opportunities_removed_count": 0,
+        "retained_opportunities": 28
+      },
+      {
+        "id": "c3_test_0011",
+        "prior_opportunities_removed": [],
+        "prior_opportunities_removed_count": 0,
+        "retained_opportunities": 28
+      },
+      {
+        "id": "c3_test_0012",
+        "prior_opportunities_removed": [],
+        "prior_opportunities_removed_count": 0,
+        "retained_opportunities": 28
+      },
+      {
+        "id": "c3_test_0013",
+        "prior_opportunities_removed": [],
+        "prior_opportunities_removed_count": 0,
+        "retained_opportunities": 6
+      },
+      {
+        "id": "c3_test_0015",
+        "prior_opportunities_removed": [],
+        "prior_opportunities_removed_count": 0,
+        "retained_opportunities": 4
+      }
+    ],
+    "prior_original_opportunities_removed": 0,
+    "retained_pairs": 35,
+    "families": {
+      "diagnostic": 12,
+      "random_temporal": 16,
+      "c3": 7
+    },
+    "prior_record_count": 108,
+    "prior_graph_count": 216,
+    "prior_original_opportunity_count": 672,
+    "fresh_instance_fingerprints": 35,
+    "fresh_graph_fingerprints": 70,
+    "fresh_original_opportunities": 150,
+    "fresh_synthetic_seeds": 28,
+    "oracle_or_performance_filtering": false
+  },
+  "followup_scope": "fresh_instances_under_same_previously_heldout_test_configurations",
+  "c3_window_partition_changed_with_expanded_count": true,
+  "c3_identity_exclusion_order": "declared_raw_generation_then_prior_ID_exclusion",
+  "oracle_or_performance_filtering": false
+}

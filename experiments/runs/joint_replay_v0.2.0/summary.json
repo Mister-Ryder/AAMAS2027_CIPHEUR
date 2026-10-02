@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "selected": "joint_neighbor_repair",
+  "selected_is_eligible": true,
+  "representation_repaired": true,
+  "stop_reason": "round_budget_complete",
+  "rounds_completed": 1,
+  "selection": {
+    "min_spec_fraction": 0.75,
+    "cost_penalty": 0.002,
+    "normalization_base_work": 7112.458333333333
+  },
+  "development_counts": {
+    "train": 36,
+    "validation": 36
+  },
+  "certified_training_specifications": 34,
+  "http_generation_attempts": 0,
+  "automated_llm_calls": 0,
+  "external_llm_commands": 0,
+  "replay_calls": 1,
+  "provider_failures": 0,
+  "candidate_rejections": 0,
+  "test_data_accessed": false,
+  "online_llm_or_oracle_calls_at_deployment": 0,
+  "effectiveness_validated": false,
+  "elapsed_seconds": 0.8527909999975236
+}

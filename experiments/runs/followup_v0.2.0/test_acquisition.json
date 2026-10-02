@@ -1,0 +1,1053 @@
+{
+  "attempts": [
+    {
+      "id": "diagnostic_test_0012",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 0,
+        "expanded_nodes": 0,
+        "elapsed_seconds": 0.0,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 4,
+        "expanded_nodes": 22,
+        "elapsed_seconds": 0.0002361999941058457,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0013",
+      "family": "diagnostic",
+      "relation": "preservation",
+      "before": {
+        "calls": 4,
+        "expanded_nodes": 22,
+        "elapsed_seconds": 0.0002361999941058457,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 8,
+        "expanded_nodes": 60,
+        "elapsed_seconds": 0.00048809999134391546,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0014",
+      "family": "diagnostic",
+      "relation": "unknown",
+      "before": {
+        "calls": 8,
+        "expanded_nodes": 60,
+        "elapsed_seconds": 0.00048809999134391546,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 12,
+        "expanded_nodes": 96,
+        "elapsed_seconds": 0.0007053999725030735,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "unresolved_bounds",
+        "history": [
+          {
+            "region": [
+              "n_0c3b5013",
+              "n_0d9390e6",
+              "n_153cd7a0",
+              "n_203231c6",
+              "n_2633c553",
+              "n_27590eee",
+              "n_286675b9",
+              "n_2e1cc34b",
+              "n_370b9cfa",
+              "n_3e02ef89",
+              "n_3f7e105f"
+            ],
+            "bounds": {
+              "left_a": {
+                "lower": 65.0,
+                "upper": 65.0,
+                "selected": [
+                  "n_0d9390e6",
+                  "n_153cd7a0",
+                  "n_203231c6",
+                  "n_2633c553",
+                  "n_370b9cfa",
+                  "n_3e02ef89"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "left_b": {
+                "lower": 65.0,
+                "upper": 65.0,
+                "selected": [
+                  "n_0c3b5013",
+                  "n_153cd7a0",
+                  "n_2633c553",
+                  "n_286675b9",
+                  "n_2e1cc34b",
+                  "n_370b9cfa"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "right_a": {
+                "lower": 60.0,
+                "upper": 60.0,
+                "selected": [
+                  "n_0d9390e6",
+                  "n_153cd7a0",
+                  "n_203231c6",
+                  "n_2633c553",
+                  "n_3e02ef89"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "right_b": {
+                "lower": 60.0,
+                "upper": 60.0,
+                "selected": [
+                  "n_0c3b5013",
+                  "n_153cd7a0",
+                  "n_2633c553",
+                  "n_286675b9",
+                  "n_2e1cc34b"
+                ],
+                "expanded": 9,
+                "exact": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "diagnostic_test_0015",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 12,
+        "expanded_nodes": 96,
+        "elapsed_seconds": 0.0007053999725030735,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 16,
+        "expanded_nodes": 118,
+        "elapsed_seconds": 0.0008447999571217224,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0016",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 16,
+        "expanded_nodes": 118,
+        "elapsed_seconds": 0.0008447999571217224,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 20,
+        "expanded_nodes": 140,
+        "elapsed_seconds": 0.0009919999429257587,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0017",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 20,
+        "expanded_nodes": 140,
+        "elapsed_seconds": 0.0009919999429257587,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 24,
+        "expanded_nodes": 162,
+        "elapsed_seconds": 0.0011293999414192513,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0018",
+      "family": "diagnostic",
+      "relation": "preservation",
+      "before": {
+        "calls": 24,
+        "expanded_nodes": 162,
+        "elapsed_seconds": 0.0011293999414192513,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 28,
+        "expanded_nodes": 200,
+        "elapsed_seconds": 0.0013331999361980706,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0019",
+      "family": "diagnostic",
+      "relation": "unknown",
+      "before": {
+        "calls": 28,
+        "expanded_nodes": 200,
+        "elapsed_seconds": 0.0013331999361980706,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 32,
+        "expanded_nodes": 236,
+        "elapsed_seconds": 0.0015524999325862154,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "unresolved_bounds",
+        "history": [
+          {
+            "region": [
+              "n_04a8721b",
+              "n_086045eb",
+              "n_0b1dabbb",
+              "n_0d21d720",
+              "n_17a6461c",
+              "n_1d01b347",
+              "n_1e91b055",
+              "n_1f060eda",
+              "n_200b08ba",
+              "n_25735619",
+              "n_2bfb5cdf"
+            ],
+            "bounds": {
+              "left_a": {
+                "lower": 32.5,
+                "upper": 32.5,
+                "selected": [
+                  "n_0b1dabbb",
+                  "n_17a6461c",
+                  "n_1d01b347",
+                  "n_1e91b055",
+                  "n_25735619",
+                  "n_2bfb5cdf"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "left_b": {
+                "lower": 32.5,
+                "upper": 32.5,
+                "selected": [
+                  "n_04a8721b",
+                  "n_086045eb",
+                  "n_17a6461c",
+                  "n_1d01b347",
+                  "n_200b08ba",
+                  "n_25735619"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "right_a": {
+                "lower": 30.0,
+                "upper": 30.0,
+                "selected": [
+                  "n_0b1dabbb",
+                  "n_17a6461c",
+                  "n_1e91b055",
+                  "n_25735619",
+                  "n_2bfb5cdf"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "right_b": {
+                "lower": 30.0,
+                "upper": 30.0,
+                "selected": [
+                  "n_04a8721b",
+                  "n_086045eb",
+                  "n_17a6461c",
+                  "n_200b08ba",
+                  "n_25735619"
+                ],
+                "expanded": 9,
+                "exact": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "diagnostic_test_0020",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 32,
+        "expanded_nodes": 236,
+        "elapsed_seconds": 0.0015524999325862154,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 36,
+        "expanded_nodes": 258,
+        "elapsed_seconds": 0.0017028999427566305,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0021",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 36,
+        "expanded_nodes": 258,
+        "elapsed_seconds": 0.0017028999427566305,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 40,
+        "expanded_nodes": 280,
+        "elapsed_seconds": 0.0018535999697633088,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0022",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 40,
+        "expanded_nodes": 280,
+        "elapsed_seconds": 0.0018535999697633088,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 44,
+        "expanded_nodes": 302,
+        "elapsed_seconds": 0.002008099967497401,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_test_0023",
+      "family": "diagnostic",
+      "relation": "preservation",
+      "before": {
+        "calls": 44,
+        "expanded_nodes": 302,
+        "elapsed_seconds": 0.002008099967497401,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 48,
+        "expanded_nodes": 340,
+        "elapsed_seconds": 0.0022473999561043456,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0016",
+      "family": "random_temporal",
+      "relation": "reversal",
+      "before": {
+        "calls": 48,
+        "expanded_nodes": 340,
+        "elapsed_seconds": 0.0022473999561043456,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 52,
+        "expanded_nodes": 536,
+        "elapsed_seconds": 0.0035388999531278387,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0017",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 52,
+        "expanded_nodes": 536,
+        "elapsed_seconds": 0.0035388999531278387,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 56,
+        "expanded_nodes": 1084,
+        "elapsed_seconds": 0.007316099960007705,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0018",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 56,
+        "expanded_nodes": 1084,
+        "elapsed_seconds": 0.007316099960007705,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 60,
+        "expanded_nodes": 1296,
+        "elapsed_seconds": 0.008784099962213077,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0019",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 60,
+        "expanded_nodes": 1296,
+        "elapsed_seconds": 0.008784099962213077,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 64,
+        "expanded_nodes": 2068,
+        "elapsed_seconds": 0.015045399952214211,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0020",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 64,
+        "expanded_nodes": 2068,
+        "elapsed_seconds": 0.015045399952214211,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 68,
+        "expanded_nodes": 2468,
+        "elapsed_seconds": 0.017349199959426187,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0021",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 68,
+        "expanded_nodes": 2468,
+        "elapsed_seconds": 0.017349199959426187,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 72,
+        "expanded_nodes": 2982,
+        "elapsed_seconds": 0.021961399965221062,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0022",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 72,
+        "expanded_nodes": 2982,
+        "elapsed_seconds": 0.021961399965221062,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 76,
+        "expanded_nodes": 3280,
+        "elapsed_seconds": 0.023940799976116978,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0023",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 76,
+        "expanded_nodes": 3280,
+        "elapsed_seconds": 0.023940799976116978,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 80,
+        "expanded_nodes": 4102,
+        "elapsed_seconds": 0.030674699970404617,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0024",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 80,
+        "expanded_nodes": 4102,
+        "elapsed_seconds": 0.030674699970404617,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 84,
+        "expanded_nodes": 4442,
+        "elapsed_seconds": 0.03282809996744618,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0025",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 84,
+        "expanded_nodes": 4442,
+        "elapsed_seconds": 0.03282809996744618,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 88,
+        "expanded_nodes": 5280,
+        "elapsed_seconds": 0.0398542999610072,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0026",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 88,
+        "expanded_nodes": 5280,
+        "elapsed_seconds": 0.0398542999610072,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 92,
+        "expanded_nodes": 5456,
+        "elapsed_seconds": 0.04127859996515326,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0027",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 92,
+        "expanded_nodes": 5456,
+        "elapsed_seconds": 0.04127859996515326,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 96,
+        "expanded_nodes": 6150,
+        "elapsed_seconds": 0.04724419997364748,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0028",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 96,
+        "expanded_nodes": 6150,
+        "elapsed_seconds": 0.04724419997364748,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 100,
+        "expanded_nodes": 6518,
+        "elapsed_seconds": 0.049808299969299696,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0029",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 100,
+        "expanded_nodes": 6518,
+        "elapsed_seconds": 0.049808299969299696,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 104,
+        "expanded_nodes": 7670,
+        "elapsed_seconds": 0.05839309995644726,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0030",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 104,
+        "expanded_nodes": 7670,
+        "elapsed_seconds": 0.05839309995644726,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 108,
+        "expanded_nodes": 7814,
+        "elapsed_seconds": 0.05967299995245412,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_test_0031",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 108,
+        "expanded_nodes": 7814,
+        "elapsed_seconds": 0.05967299995245412,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 112,
+        "expanded_nodes": 8642,
+        "elapsed_seconds": 0.06579849997069687,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_test_0008",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 112,
+        "expanded_nodes": 8642,
+        "elapsed_seconds": 0.06579849997069687,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 116,
+        "expanded_nodes": 13168,
+        "elapsed_seconds": 0.09425259997078683,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_test_0009",
+      "family": "c3",
+      "relation": "unknown",
+      "before": {
+        "calls": 116,
+        "expanded_nodes": 13168,
+        "elapsed_seconds": 0.09425259997078683,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 120,
+        "expanded_nodes": 16932,
+        "elapsed_seconds": 0.11228389997268096,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "unresolved_bounds",
+        "history": [
+          {
+            "region": [
+              "51564",
+              "51585",
+              "51608",
+              "51631",
+              "52414",
+              "52435",
+              "52456",
+              "52480",
+              "52504",
+              "53298",
+              "53319",
+              "53340",
+              "53364",
+              "53388",
+              "57745",
+              "58592",
+              "58612",
+              "58633",
+              "58656",
+              "58679",
+              "59458",
+              "59479",
+              "59500",
+              "59524",
+              "59548",
+              "60341",
+              "60407",
+              "60431"
+            ],
+            "bounds": {
+              "left_a": {
+                "lower": 7706.0,
+                "upper": 7706.0,
+                "selected": [
+                  "51564",
+                  "51585",
+                  "51631",
+                  "53364",
+                  "58592",
+                  "60341",
+                  "60431"
+                ],
+                "expanded": 897,
+                "exact": true
+              },
+              "left_b": {
+                "lower": 7706.0,
+                "upper": 7706.0,
+                "selected": [
+                  "51585",
+                  "51631",
+                  "52435",
+                  "53364",
+                  "58592",
+                  "60341",
+                  "60431"
+                ],
+                "expanded": 897,
+                "exact": true
+              },
+              "right_a": {
+                "lower": 7116.0,
+                "upper": 7116.0,
+                "selected": [
+                  "51564",
+                  "51585",
+                  "51631",
+                  "53298",
+                  "53364",
+                  "60431"
+                ],
+                "expanded": 985,
+                "exact": true
+              },
+              "right_b": {
+                "lower": 7116.0,
+                "upper": 7116.0,
+                "selected": [
+                  "51585",
+                  "51631",
+                  "52435",
+                  "53298",
+                  "53364",
+                  "60431"
+                ],
+                "expanded": 985,
+                "exact": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "c3_test_0010",
+      "family": "c3",
+      "relation": "reversal",
+      "before": {
+        "calls": 120,
+        "expanded_nodes": 16932,
+        "elapsed_seconds": 0.11228389997268096,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 124,
+        "expanded_nodes": 19384,
+        "elapsed_seconds": 0.12690309998288285,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_test_0011",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 124,
+        "expanded_nodes": 19384,
+        "elapsed_seconds": 0.12690309998288285,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 128,
+        "expanded_nodes": 22544,
+        "elapsed_seconds": 0.1481593999924371,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_test_0012",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 128,
+        "expanded_nodes": 22544,
+        "elapsed_seconds": 0.1481593999924371,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 132,
+        "expanded_nodes": 25092,
+        "elapsed_seconds": 0.16317879999405704,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_test_0013",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 132,
+        "expanded_nodes": 25092,
+        "elapsed_seconds": 0.16317879999405704,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 136,
+        "expanded_nodes": 25108,
+        "elapsed_seconds": 0.16330389998620376,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_test_0015",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 136,
+        "expanded_nodes": 25108,
+        "elapsed_seconds": 0.16330389998620376,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 140,
+        "expanded_nodes": 25112,
+        "elapsed_seconds": 0.16337909999128897,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    }
+  ],
+  "budget": {
+    "calls": 140,
+    "expanded_nodes": 25112,
+    "elapsed_seconds": 0.16337909999128897,
+    "max_calls": 1000,
+    "max_nodes": 2000000
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "targeted_joint": {
+    "name": "enum_discount_0.6_1.0",
+    "features": [
+      {
+        "name": "neighbor_redundancy",
+        "expression": {
+          "op": "edge_min_weight_sum",
+          "args": [
+            {
+              "op": "induced_edges",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "rule": "weight - 0.6 * conflict_weight + 1.0 * neighbor_redundancy / max(1, degree)",
+    "rationale": "Deterministic declared-grid control"
+  },
+  "free_joint": {
+    "name": "enum_discount_0.6_1.0",
+    "features": [
+      {
+        "name": "neighbor_redundancy",
+        "expression": {
+          "op": "edge_min_weight_sum",
+          "args": [
+            {
+              "op": "induced_edges",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "rule": "weight - 0.6 * conflict_weight + 1.0 * neighbor_redundancy / max(1, degree)",
+    "rationale": "Deterministic declared-grid control"
+  },
+  "quality_only_joint": {
+    "name": "enum_discount_0.6_1.0",
+    "features": [
+      {
+        "name": "neighbor_redundancy",
+        "expression": {
+          "op": "edge_min_weight_sum",
+          "args": [
+            {
+              "op": "induced_edges",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "rule": "weight - 0.6 * conflict_weight + 1.0 * neighbor_redundancy / max(1, degree)",
+    "rationale": "Deterministic declared-grid control"
+  },
+  "rule_only": {
+    "name": "base_degree_0.6",
+    "features": [],
+    "rule": "weight / (1 + 0.6 * degree)",
+    "rationale": "Deterministic declared-grid control"
+  },
+  "non_llm_enumeration": {
+    "name": "enum_discount_0.6_1.0",
+    "features": [
+      {
+        "name": "neighbor_redundancy",
+        "expression": {
+          "op": "edge_min_weight_sum",
+          "args": [
+            {
+              "op": "induced_edges",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "rule": "weight - 0.6 * conflict_weight + 1.0 * neighbor_redundancy / max(1, degree)",
+    "rationale": "Deterministic declared-grid control"
+  },
+  "weight": {
+    "name": "weight",
+    "features": [],
+    "rule": "weight",
+    "rationale": "Deterministic declared-grid control"
+  },
+  "weight_degree": {
+    "name": "weight_degree",
+    "features": [],
+    "rule": "weight / (1 + degree)",
+    "rationale": "Deterministic declared-grid control"
+  },
+  "weighted_conflict": {
+    "name": "weighted_conflict",
+    "features": [],
+    "rule": "weight / (1 + conflict_weight)",
+    "rationale": "Deterministic declared-grid control"
+  }
+}

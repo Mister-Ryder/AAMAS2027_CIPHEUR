@@ -1,0 +1,12 @@
+{
+  "name": "joint_neighbor_repair",
+  "features": [{
+    "name": "neighbor_min",
+    "expression": {
+      "op": "edge_min_weight_sum",
+      "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]
+    }
+  }],
+  "rule": "weight - 0.6 * conflict_weight + neighbor_min / max(1, degree)",
+  "rationale": "Current-assistant authored offline candidate: distinguish conflicts among each action's active neighbors. Replay does not count as an API LLM synthesis call."
+}

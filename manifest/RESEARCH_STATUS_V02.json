@@ -1,0 +1,61 @@
+{
+  "version": "0.2.0",
+  "title": "LLM-Guided Synthesis of Constraint-Adaptive Heuristics for Satellite–Ground Scheduling",
+  "submission": 1997,
+  "stage": "executable_framework_and_measured_pilot_with_basic_manuscript",
+  "core_mechanism": "Certified relational contradictions trigger exact representation diagnosis and typed feature/rule refinement",
+  "implemented": [
+    "reversal_and_strict_preservation_certificates",
+    "exact_feature_quotient_cycle_diagnosis",
+    "typed_graph_feature_library",
+    "joint_candidate_providers",
+    "repair_feedback_and_budget_controls",
+    "consistency_quality_cost_selection",
+    "frozen_feasible_deployment",
+    "held_out_instance_configuration_pilot",
+    "new_instance_followup",
+    "executed_analysis_notebook",
+    "aamas_template_manuscript"
+  ],
+  "automated_llm_api_calls": 0,
+  "synthesis_mode": "current_assistant_proposals_and_deterministic_enumeration_with_explicit_replay",
+  "primary_test": {
+    "pairs": 36,
+    "contexts": 72,
+    "methods": 8,
+    "all_feasible": true,
+    "all_references_exact": true,
+    "joint_mean_ratio": 0.9973391951443795,
+    "rule_only_mean_ratio": 0.9952217884603581,
+    "joint_strict_passed": 67,
+    "strict_total": 68
+  },
+  "fresh_followup": {
+    "pairs": 35,
+    "contexts": 70,
+    "methods": 8,
+    "all_feasible": true,
+    "all_references_exact": true,
+    "joint_mean_ratio": 0.9968036868144476,
+    "rule_only_mean_ratio": 0.9974446073418433,
+    "joint_strict_passed": 61,
+    "strict_total": 64
+  },
+  "llm_advantage_established": false,
+  "targeted_generation_advantage_established": false,
+  "universal_schedule_quality_advantage_established": false,
+  "superiority_to_dragon_established": false,
+  "full_c3_performance_measured": false,
+  "cloud_compute_used": false,
+  "next_research": [
+    "independent_matched_budget_llm_generation",
+    "preservation_and_label_quality_ablations",
+    "feature_cost_ablations",
+    "larger_c3_certification_and_latency_scaling"
+  ],
+  "paper_source": "paper/main.tex",
+  "paper_pdf": "paper/main.pdf",
+  "paper_anonymous": true,
+  "builtin_latex_compile": "environment_standard_directories_unavailable",
+  "fallback_compiler": "existing_TeX_Live_2022_pdflatex_and_bibtex"
+}

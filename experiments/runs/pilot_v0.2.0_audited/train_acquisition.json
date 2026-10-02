@@ -1,0 +1,983 @@
+{
+  "attempts": [
+    {
+      "id": "diagnostic_train_0000",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 0,
+        "expanded_nodes": 0,
+        "elapsed_seconds": 0.0,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 4,
+        "expanded_nodes": 22,
+        "elapsed_seconds": 0.0002592999953776598,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0001",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 4,
+        "expanded_nodes": 22,
+        "elapsed_seconds": 0.0002592999953776598,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 8,
+        "expanded_nodes": 44,
+        "elapsed_seconds": 0.00042529999336693436,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0002",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 8,
+        "expanded_nodes": 44,
+        "elapsed_seconds": 0.00042529999336693436,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 12,
+        "expanded_nodes": 66,
+        "elapsed_seconds": 0.0005832999595440924,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0003",
+      "family": "diagnostic",
+      "relation": "preservation",
+      "before": {
+        "calls": 12,
+        "expanded_nodes": 66,
+        "elapsed_seconds": 0.0005832999595440924,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 16,
+        "expanded_nodes": 104,
+        "elapsed_seconds": 0.0008321999630425125,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0004",
+      "family": "diagnostic",
+      "relation": "unknown",
+      "before": {
+        "calls": 16,
+        "expanded_nodes": 104,
+        "elapsed_seconds": 0.0008321999630425125,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 20,
+        "expanded_nodes": 140,
+        "elapsed_seconds": 0.001072299957741052,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "unresolved_bounds",
+        "history": [
+          {
+            "region": [
+              "n_00103b03",
+              "n_04445ec2",
+              "n_0e8ce9b6",
+              "n_1488b878",
+              "n_169048a2",
+              "n_1bc987c2",
+              "n_26154efc",
+              "n_2620a6a6",
+              "n_2ad2f945",
+              "n_323be887",
+              "n_364e1c23"
+            ],
+            "bounds": {
+              "left_a": {
+                "lower": 78.0,
+                "upper": 78.0,
+                "selected": [
+                  "n_04445ec2",
+                  "n_0e8ce9b6",
+                  "n_1488b878",
+                  "n_26154efc",
+                  "n_323be887",
+                  "n_364e1c23"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "left_b": {
+                "lower": 78.0,
+                "upper": 78.0,
+                "selected": [
+                  "n_00103b03",
+                  "n_1488b878",
+                  "n_169048a2",
+                  "n_2ad2f945",
+                  "n_323be887",
+                  "n_364e1c23"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "right_a": {
+                "lower": 72.0,
+                "upper": 72.0,
+                "selected": [
+                  "n_04445ec2",
+                  "n_0e8ce9b6",
+                  "n_1488b878",
+                  "n_26154efc",
+                  "n_364e1c23"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "right_b": {
+                "lower": 72.0,
+                "upper": 72.0,
+                "selected": [
+                  "n_00103b03",
+                  "n_1488b878",
+                  "n_169048a2",
+                  "n_2ad2f945",
+                  "n_364e1c23"
+                ],
+                "expanded": 9,
+                "exact": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "diagnostic_train_0005",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 20,
+        "expanded_nodes": 140,
+        "elapsed_seconds": 0.001072299957741052,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 24,
+        "expanded_nodes": 162,
+        "elapsed_seconds": 0.0012459999416023493,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0006",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 24,
+        "expanded_nodes": 162,
+        "elapsed_seconds": 0.0012459999416023493,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 28,
+        "expanded_nodes": 184,
+        "elapsed_seconds": 0.001423699941369705,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0007",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 28,
+        "expanded_nodes": 184,
+        "elapsed_seconds": 0.001423699941369705,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 32,
+        "expanded_nodes": 206,
+        "elapsed_seconds": 0.001584999932674691,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0008",
+      "family": "diagnostic",
+      "relation": "preservation",
+      "before": {
+        "calls": 32,
+        "expanded_nodes": 206,
+        "elapsed_seconds": 0.001584999932674691,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 36,
+        "expanded_nodes": 244,
+        "elapsed_seconds": 0.0018200999329565093,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0009",
+      "family": "diagnostic",
+      "relation": "unknown",
+      "before": {
+        "calls": 36,
+        "expanded_nodes": 244,
+        "elapsed_seconds": 0.0018200999329565093,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 40,
+        "expanded_nodes": 280,
+        "elapsed_seconds": 0.002104599916492589,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "unresolved_bounds",
+        "history": [
+          {
+            "region": [
+              "n_066712ca",
+              "n_09a43bd1",
+              "n_1554b4e4",
+              "n_1c9dd2b7",
+              "n_20ebf68d",
+              "n_27fcfabd",
+              "n_2e95b0cd",
+              "n_312b34ef",
+              "n_37c52b4d",
+              "n_386c5d2d",
+              "n_3d3084cb"
+            ],
+            "bounds": {
+              "left_a": {
+                "lower": 78.0,
+                "upper": 78.0,
+                "selected": [
+                  "n_09a43bd1",
+                  "n_1554b4e4",
+                  "n_1c9dd2b7",
+                  "n_20ebf68d",
+                  "n_2e95b0cd",
+                  "n_3d3084cb"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "left_b": {
+                "lower": 78.0,
+                "upper": 78.0,
+                "selected": [
+                  "n_066712ca",
+                  "n_09a43bd1",
+                  "n_20ebf68d",
+                  "n_27fcfabd",
+                  "n_312b34ef",
+                  "n_3d3084cb"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "right_a": {
+                "lower": 72.0,
+                "upper": 72.0,
+                "selected": [
+                  "n_09a43bd1",
+                  "n_1554b4e4",
+                  "n_1c9dd2b7",
+                  "n_20ebf68d",
+                  "n_2e95b0cd"
+                ],
+                "expanded": 9,
+                "exact": true
+              },
+              "right_b": {
+                "lower": 72.0,
+                "upper": 72.0,
+                "selected": [
+                  "n_066712ca",
+                  "n_09a43bd1",
+                  "n_20ebf68d",
+                  "n_27fcfabd",
+                  "n_312b34ef"
+                ],
+                "expanded": 9,
+                "exact": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "diagnostic_train_0010",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 40,
+        "expanded_nodes": 280,
+        "elapsed_seconds": 0.002104599916492589,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 44,
+        "expanded_nodes": 302,
+        "elapsed_seconds": 0.0022622999094892293,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "diagnostic_train_0011",
+      "family": "diagnostic",
+      "relation": "reversal",
+      "before": {
+        "calls": 44,
+        "expanded_nodes": 302,
+        "elapsed_seconds": 0.0022622999094892293,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 48,
+        "expanded_nodes": 324,
+        "elapsed_seconds": 0.0024216999008785933,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0000",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 48,
+        "expanded_nodes": 324,
+        "elapsed_seconds": 0.0024216999008785933,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 52,
+        "expanded_nodes": 424,
+        "elapsed_seconds": 0.003111999889370054,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0001",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 52,
+        "expanded_nodes": 424,
+        "elapsed_seconds": 0.003111999889370054,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 56,
+        "expanded_nodes": 764,
+        "elapsed_seconds": 0.005498599901329726,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0002",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 56,
+        "expanded_nodes": 764,
+        "elapsed_seconds": 0.005498599901329726,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 60,
+        "expanded_nodes": 840,
+        "elapsed_seconds": 0.006130799898528494,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0003",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 60,
+        "expanded_nodes": 840,
+        "elapsed_seconds": 0.006130799898528494,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 64,
+        "expanded_nodes": 1320,
+        "elapsed_seconds": 0.009855699900072068,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0004",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 64,
+        "expanded_nodes": 1320,
+        "elapsed_seconds": 0.009855699900072068,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 68,
+        "expanded_nodes": 1488,
+        "elapsed_seconds": 0.010879899899009615,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0005",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 68,
+        "expanded_nodes": 1488,
+        "elapsed_seconds": 0.010879899899009615,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 72,
+        "expanded_nodes": 1854,
+        "elapsed_seconds": 0.01313559987465851,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0006",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 72,
+        "expanded_nodes": 1854,
+        "elapsed_seconds": 0.01313559987465851,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 76,
+        "expanded_nodes": 2010,
+        "elapsed_seconds": 0.014090199867496267,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0007",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 76,
+        "expanded_nodes": 2010,
+        "elapsed_seconds": 0.014090199867496267,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 80,
+        "expanded_nodes": 2284,
+        "elapsed_seconds": 0.017199299865751527,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0008",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 80,
+        "expanded_nodes": 2284,
+        "elapsed_seconds": 0.017199299865751527,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 84,
+        "expanded_nodes": 2392,
+        "elapsed_seconds": 0.01830689985945355,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0009",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 84,
+        "expanded_nodes": 2392,
+        "elapsed_seconds": 0.01830689985945355,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 88,
+        "expanded_nodes": 2908,
+        "elapsed_seconds": 0.02324729986139573,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0010",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 88,
+        "expanded_nodes": 2908,
+        "elapsed_seconds": 0.02324729986139573,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 92,
+        "expanded_nodes": 2982,
+        "elapsed_seconds": 0.023842399852583185,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0011",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 92,
+        "expanded_nodes": 2982,
+        "elapsed_seconds": 0.023842399852583185,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 96,
+        "expanded_nodes": 3606,
+        "elapsed_seconds": 0.028242899861652404,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0012",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 96,
+        "expanded_nodes": 3606,
+        "elapsed_seconds": 0.028242899861652404,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 100,
+        "expanded_nodes": 3684,
+        "elapsed_seconds": 0.028774999838788062,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0013",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 100,
+        "expanded_nodes": 3684,
+        "elapsed_seconds": 0.028774999838788062,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 104,
+        "expanded_nodes": 4556,
+        "elapsed_seconds": 0.034950499844853766,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0014",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 104,
+        "expanded_nodes": 4556,
+        "elapsed_seconds": 0.034950499844853766,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 108,
+        "expanded_nodes": 4704,
+        "elapsed_seconds": 0.035852499859174713,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "random_temporal_train_0015",
+      "family": "random_temporal",
+      "relation": "preservation",
+      "before": {
+        "calls": 108,
+        "expanded_nodes": 4704,
+        "elapsed_seconds": 0.035852499859174713,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 112,
+        "expanded_nodes": 5236,
+        "elapsed_seconds": 0.03906989988172427,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_train_0000",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 112,
+        "expanded_nodes": 5236,
+        "elapsed_seconds": 0.03906989988172427,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 116,
+        "expanded_nodes": 6706,
+        "elapsed_seconds": 0.048894299878156744,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_train_0001",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 116,
+        "expanded_nodes": 6706,
+        "elapsed_seconds": 0.048894299878156744,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 120,
+        "expanded_nodes": 12134,
+        "elapsed_seconds": 0.08288339988212101,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_train_0002",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 120,
+        "expanded_nodes": 12134,
+        "elapsed_seconds": 0.08288339988212101,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 124,
+        "expanded_nodes": 17098,
+        "elapsed_seconds": 0.10528839986363892,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_train_0003",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 124,
+        "expanded_nodes": 17098,
+        "elapsed_seconds": 0.10528839986363892,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 128,
+        "expanded_nodes": 18760,
+        "elapsed_seconds": 0.11581279986421578,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_train_0004",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 128,
+        "expanded_nodes": 18760,
+        "elapsed_seconds": 0.11581279986421578,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 132,
+        "expanded_nodes": 21884,
+        "elapsed_seconds": 0.13509229986811988,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_train_0005",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 132,
+        "expanded_nodes": 21884,
+        "elapsed_seconds": 0.13509229986811988,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 136,
+        "expanded_nodes": 27550,
+        "elapsed_seconds": 0.17076619985164143,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_train_0006",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 136,
+        "expanded_nodes": 27550,
+        "elapsed_seconds": 0.17076619985164143,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 140,
+        "expanded_nodes": 29728,
+        "elapsed_seconds": 0.1819545998587273,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    },
+    {
+      "id": "c3_train_0007",
+      "family": "c3",
+      "relation": "preservation",
+      "before": {
+        "calls": 140,
+        "expanded_nodes": 29728,
+        "elapsed_seconds": 0.1819545998587273,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "after": {
+        "calls": 144,
+        "expanded_nodes": 31620,
+        "elapsed_seconds": 0.19440809986554086,
+        "max_calls": 1000,
+        "max_nodes": 2000000
+      },
+      "detail": {
+        "reason": "certified",
+        "expansions": 1
+      }
+    }
+  ],
+  "budget": {
+    "calls": 144,
+    "expanded_nodes": 31620,
+    "elapsed_seconds": 0.19440809986554086,
+    "max_calls": 1000,
+    "max_nodes": 2000000
+  }
+}

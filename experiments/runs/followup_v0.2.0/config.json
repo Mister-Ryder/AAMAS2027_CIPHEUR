@@ -1,0 +1,31 @@
+{
+  "study": "fresh_instance_frozen_program_followup_v0.2.0",
+  "stable_root": "E:/01-Joycecyq/2026-ESWA/DAI2026_SNSD_V51_STABLE",
+  "counts": {
+    "diagnostic": 24,
+    "random_temporal": 32,
+    "c3": 16
+  },
+  "c3_max_contacts": 28,
+  "oracle": {
+    "max_calls": 1000,
+    "max_nodes": 2000000,
+    "nodes_per_call": 20000
+  },
+  "reference_max_nodes": 100000,
+  "selection": {
+    "min_spec_fraction": 0.75,
+    "cost_penalty": 0.002
+  },
+  "bootstrap_seed": 7219,
+  "bootstrap_replicates": 2000,
+  "synthesis_provenance": {
+    "mode": "current_assistant_authored_candidate_bank",
+    "automated_llm_calls": 0,
+    "note": "Candidates proposed by the current coding assistant from training evidence. Replay is not an independent LLM trial."
+  },
+  "prior_run": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\runs\\pilot_v0.2.0",
+  "refit_or_candidate_selection": false,
+  "online_llm_calls": 0,
+  "online_oracle_calls": 0
+}

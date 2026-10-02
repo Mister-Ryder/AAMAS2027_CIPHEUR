@@ -1,0 +1,386 @@
+{
+  "run": "experiments\\runs\\pilot_v0.2.0_audited",
+  "quality": {
+    "targeted_joint": {
+      "all": {
+        "contexts": 72,
+        "pairs": 36,
+        "mean_ratio": 0.9973391951443795,
+        "mean_seconds": 0.004739388888992835,
+        "mean_feature_work": 12235.472222222223,
+        "exact_references": 72,
+        "feasible": 72
+      },
+      "c3": {
+        "contexts": 16,
+        "pairs": 8,
+        "mean_ratio": 0.9901786616152279,
+        "mean_seconds": 0.005993399999169924,
+        "mean_feature_work": 18132.1875,
+        "exact_references": 16,
+        "feasible": 16
+      },
+      "diagnostic": {
+        "contexts": 24,
+        "pairs": 12,
+        "mean_ratio": 1.0,
+        "mean_seconds": 0.0009953583339665784,
+        "mean_feature_work": 1505.3333333333333,
+        "exact_references": 24,
+        "feasible": 24
+      },
+      "random_temporal": {
+        "contexts": 32,
+        "pairs": 16,
+        "mean_ratio": 0.9989238582672397,
+        "mean_seconds": 0.006920406250173983,
+        "mean_feature_work": 17334.71875,
+        "exact_references": 32,
+        "feasible": 32
+      }
+    },
+    "free_joint": {
+      "all": {
+        "contexts": 72,
+        "pairs": 36,
+        "mean_ratio": 0.9973391951443795,
+        "mean_seconds": 0.004997787499734032,
+        "mean_feature_work": 12235.472222222223,
+        "exact_references": 72,
+        "feasible": 72
+      },
+      "c3": {
+        "contexts": 16,
+        "pairs": 8,
+        "mean_ratio": 0.9901786616152279,
+        "mean_seconds": 0.005254937497738865,
+        "mean_feature_work": 18132.1875,
+        "exact_references": 16,
+        "feasible": 16
+      },
+      "diagnostic": {
+        "contexts": 24,
+        "pairs": 12,
+        "mean_ratio": 1.0,
+        "mean_seconds": 0.0013098541676299646,
+        "mean_feature_work": 1505.3333333333333,
+        "exact_references": 24,
+        "feasible": 24
+      },
+      "random_temporal": {
+        "contexts": 32,
+        "pairs": 16,
+        "mean_ratio": 0.9989238582672397,
+        "mean_seconds": 0.007635162499809667,
+        "mean_feature_work": 17334.71875,
+        "exact_references": 32,
+        "feasible": 32
+      }
+    },
+    "quality_only_joint": {
+      "all": {
+        "contexts": 72,
+        "pairs": 36,
+        "mean_ratio": 0.9973391951443795,
+        "mean_seconds": 0.004674651388793589,
+        "mean_feature_work": 12235.472222222223,
+        "exact_references": 72,
+        "feasible": 72
+      },
+      "c3": {
+        "contexts": 16,
+        "pairs": 8,
+        "mean_ratio": 0.9901786616152279,
+        "mean_seconds": 0.005524025000340771,
+        "mean_feature_work": 18132.1875,
+        "exact_references": 16,
+        "feasible": 16
+      },
+      "diagnostic": {
+        "contexts": 24,
+        "pairs": 12,
+        "mean_ratio": 1.0,
+        "mean_seconds": 0.0009434083325080186,
+        "mean_feature_work": 1505.3333333333333,
+        "exact_references": 24,
+        "feasible": 24
+      },
+      "random_temporal": {
+        "contexts": 32,
+        "pairs": 16,
+        "mean_ratio": 0.9989238582672397,
+        "mean_seconds": 0.007048396875234175,
+        "mean_feature_work": 17334.71875,
+        "exact_references": 32,
+        "feasible": 32
+      }
+    },
+    "rule_only": {
+      "all": {
+        "contexts": 72,
+        "pairs": 36,
+        "mean_ratio": 0.9952217884603581,
+        "mean_seconds": 0.003790613888365139,
+        "mean_feature_work": 11139.486111111111,
+        "exact_references": 72,
+        "feasible": 72
+      },
+      "c3": {
+        "contexts": 16,
+        "pairs": 8,
+        "mean_ratio": 0.9832331392890418,
+        "mean_seconds": 0.0041700749989104224,
+        "mean_feature_work": 14156.5,
+        "exact_references": 16,
+        "feasible": 16
+      },
+      "diagnostic": {
+        "contexts": 24,
+        "pairs": 12,
+        "mean_ratio": 1.0,
+        "mean_seconds": 0.0007407291650451953,
+        "mean_feature_work": 1318.5,
+        "exact_references": 24,
+        "feasible": 24
+      },
+      "random_temporal": {
+        "contexts": 32,
+        "pairs": 16,
+        "mean_ratio": 0.9976324543912848,
+        "mean_seconds": 0.005888296875582455,
+        "mean_feature_work": 16996.71875,
+        "exact_references": 32,
+        "feasible": 32
+      }
+    },
+    "non_llm_enumeration": {
+      "all": {
+        "contexts": 72,
+        "pairs": 36,
+        "mean_ratio": 0.9973391951443795,
+        "mean_seconds": 0.004643790277946714,
+        "mean_feature_work": 12235.472222222223,
+        "exact_references": 72,
+        "feasible": 72
+      },
+      "c3": {
+        "contexts": 16,
+        "pairs": 8,
+        "mean_ratio": 0.9901786616152279,
+        "mean_seconds": 0.005563387500842509,
+        "mean_feature_work": 18132.1875,
+        "exact_references": 16,
+        "feasible": 16
+      },
+      "diagnostic": {
+        "contexts": 24,
+        "pairs": 12,
+        "mean_ratio": 1.0,
+        "mean_seconds": 0.000988737500544327,
+        "mean_feature_work": 1505.3333333333333,
+        "exact_references": 24,
+        "feasible": 24
+      },
+      "random_temporal": {
+        "contexts": 32,
+        "pairs": 16,
+        "mean_ratio": 0.9989238582672397,
+        "mean_seconds": 0.006925281249550608,
+        "mean_feature_work": 17334.71875,
+        "exact_references": 32,
+        "feasible": 32
+      }
+    },
+    "weight": {
+      "all": {
+        "contexts": 72,
+        "pairs": 36,
+        "mean_ratio": 0.912753082277824,
+        "mean_seconds": 0.003317611109701425,
+        "mean_feature_work": 8320.430555555555,
+        "exact_references": 72,
+        "feasible": 72
+      },
+      "c3": {
+        "contexts": 16,
+        "pairs": 8,
+        "mean_ratio": 0.9097547910775663,
+        "mean_seconds": 0.004211287498947058,
+        "mean_feature_work": 10717.4375,
+        "exact_references": 16,
+        "feasible": 16
+      },
+      "diagnostic": {
+        "contexts": 24,
+        "pairs": 12,
+        "mean_ratio": 0.8323546211413859,
+        "mean_seconds": 0.0005095416654512519,
+        "mean_feature_work": 781.4166666666666,
+        "exact_references": 24,
+        "feasible": 24
+      },
+      "random_temporal": {
+        "contexts": 32,
+        "pairs": 16,
+        "mean_ratio": 0.9745510737302814,
+        "mean_seconds": 0.004976824998266238,
+        "mean_feature_work": 12776.1875,
+        "exact_references": 32,
+        "feasible": 32
+      }
+    },
+    "weight_degree": {
+      "all": {
+        "contexts": 72,
+        "pairs": 36,
+        "mean_ratio": 0.9955929043832596,
+        "mean_seconds": 0.004465031944265421,
+        "mean_feature_work": 11529.861111111111,
+        "exact_references": 72,
+        "feasible": 72
+      },
+      "c3": {
+        "contexts": 16,
+        "pairs": 8,
+        "mean_ratio": 0.9836129556841802,
+        "mean_seconds": 0.005042643747401598,
+        "mean_feature_work": 14298.625,
+        "exact_references": 16,
+        "feasible": 16
+      },
+      "diagnostic": {
+        "contexts": 24,
+        "pairs": 12,
+        "mean_ratio": 1.0,
+        "mean_seconds": 0.0008727666681807023,
+        "mean_feature_work": 1318.5,
+        "exact_references": 24,
+        "feasible": 24
+      },
+      "random_temporal": {
+        "contexts": 32,
+        "pairs": 16,
+        "mean_ratio": 0.9982775570202445,
+        "mean_seconds": 0.006870424999760871,
+        "mean_feature_work": 17804.0,
+        "exact_references": 32,
+        "feasible": 32
+      }
+    },
+    "weighted_conflict": {
+      "all": {
+        "contexts": 72,
+        "pairs": 36,
+        "mean_ratio": 0.9958332486996692,
+        "mean_seconds": 0.00444494305621548,
+        "mean_feature_work": 11842.333333333334,
+        "exact_references": 72,
+        "feasible": 72
+      },
+      "c3": {
+        "contexts": 16,
+        "pairs": 8,
+        "mean_ratio": 0.9901642388623567,
+        "mean_seconds": 0.0045925687491035205,
+        "mean_feature_work": 14028.6875,
+        "exact_references": 16,
+        "feasible": 16
+      },
+      "diagnostic": {
+        "contexts": 24,
+        "pairs": 12,
+        "mean_ratio": 1.0,
+        "mean_seconds": 0.0009132333349649949,
+        "mean_feature_work": 1388.9166666666667,
+        "exact_references": 24,
+        "feasible": 24
+      },
+      "random_temporal": {
+        "contexts": 32,
+        "pairs": 16,
+        "mean_ratio": 0.9955426901430771,
+        "mean_seconds": 0.007019912500709324,
+        "mean_feature_work": 18589.21875,
+        "exact_references": 32,
+        "feasible": 32
+      }
+    }
+  },
+  "paired_differences": {
+    "diagnostic": {
+      "pairs": 12,
+      "mean_difference": 0.0,
+      "descriptive_95_percentile_interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "random_temporal": {
+      "pairs": 16,
+      "mean_difference": 0.0012914038759549301,
+      "descriptive_95_percentile_interval": [
+        -0.0003712871287128716,
+        0.003839216135648839
+      ]
+    },
+    "c3": {
+      "pairs": 8,
+      "mean_difference": 0.006945522326186185,
+      "descriptive_95_percentile_interval": [
+        -0.0015808943504911493,
+        0.017841319612441273
+      ]
+    }
+  },
+  "strict_requirements": {
+    "targeted_joint": {
+      "passed": 67,
+      "total": 68,
+      "fraction": 0.9852941176470589,
+      "all_passed": false
+    },
+    "free_joint": {
+      "passed": 67,
+      "total": 68,
+      "fraction": 0.9852941176470589,
+      "all_passed": false
+    },
+    "quality_only_joint": {
+      "passed": 67,
+      "total": 68,
+      "fraction": 0.9852941176470589,
+      "all_passed": false
+    },
+    "rule_only": {
+      "passed": 45,
+      "total": 68,
+      "fraction": 0.6617647058823529,
+      "all_passed": false
+    },
+    "non_llm_enumeration": {
+      "passed": 67,
+      "total": 68,
+      "fraction": 0.9852941176470589,
+      "all_passed": false
+    },
+    "weight": {
+      "passed": 44,
+      "total": 68,
+      "fraction": 0.6470588235294118,
+      "all_passed": false
+    },
+    "weight_degree": {
+      "passed": 46,
+      "total": 68,
+      "fraction": 0.6764705882352942,
+      "all_passed": false
+    },
+    "weighted_conflict": {
+      "passed": 45,
+      "total": 68,
+      "fraction": 0.6617647058823529,
+      "all_passed": false
+    }
+  },
+  "claim_scope": "Small prototype; no demonstrated advantage of targeted guidance or LLM over shared-bank enumeration"
+}
