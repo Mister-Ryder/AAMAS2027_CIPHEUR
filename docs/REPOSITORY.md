@@ -2,7 +2,7 @@
 
 GitHub：`https://github.com/Mister-Ryder/AAMAS2027_CIPHEUR`
 
-仓库用于 AAMAS 2027 第二篇的持续开发，首版为 CIP-Heur 可运行研究底座。投稿期间先采用私有可见性。
+仓库用于 AAMAS 2027 第二篇的持续开发，首版为 CIP-Heur 可运行研究底座。当前为公开仓库。
 
 ## 已纳入版本管理
 
