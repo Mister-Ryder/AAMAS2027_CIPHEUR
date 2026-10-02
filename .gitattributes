@@ -1,5 +1,5 @@
 * text=auto eol=lf
 
 # Preserve exact recorded bytes: receipts hash these artifacts as written.
-baselines/** -text
-manifest/** -text
+baselines/** -text whitespace=cr-at-eol
+manifest/** -text whitespace=cr-at-eol
