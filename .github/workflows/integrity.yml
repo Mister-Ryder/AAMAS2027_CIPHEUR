@@ -1,0 +1,33 @@
+name: Integrity checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.13"]
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run integrity tests
+        run: python -B -m unittest discover -s tests -q
+      - name: Check standalone smoke configuration
+        run: python -B -m cipheur preflight --config configs/smoke.json
+      - name: Run offline standalone smoke
+        run: python -B -m cipheur run --config configs/smoke.json --output output/ci_smoke
+      - name: Run the frozen scheduling program
+        run: python -B -m cipheur schedule --graph examples/deployment_graph.json --program examples/assistant_seed_program.json --output output/ci_deployment.json

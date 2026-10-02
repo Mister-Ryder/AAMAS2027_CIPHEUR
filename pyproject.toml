@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cipheur"
+version = "0.1.0"
+description = "Constraint-induced preference reversals for offline graph heuristic synthesis"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+v51 = ["numpy>=1.24"]
+
+[project.scripts]
+cipheur = "cipheur.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["cipheur*"]

@@ -1,0 +1,97 @@
+{
+  "status": "completed",
+  "purpose": "smoke_integration_only",
+  "effectiveness_validated": false,
+  "live_llm_calls": 0,
+  "external_command_calls": 0,
+  "witness_count": 3,
+  "selected_program": {
+    "name": "assistant_seed_opportunity_cost",
+    "expression": "weight - 1.2 * conflict_weight",
+    "rationale": "Authored by the current assistant as a transparent integration fixture. Penalizes the weight of currently blocked competing contacts; its paired behavior must be independently verified. This file is not the output of a live API synthesis experiment and carries no empirical quality claim."
+  },
+  "requirements": {
+    "checks": [
+      {
+        "witness": 0,
+        "side": "left",
+        "preferred": "a_2",
+        "scores": {
+          "a_2": 1.6000000000000005,
+          "b_2": -3.6799999999999997
+        },
+        "passed": true
+      },
+      {
+        "witness": 0,
+        "side": "right",
+        "preferred": "b_2",
+        "scores": {
+          "a_2": -4.16,
+          "b_2": -3.6799999999999997
+        },
+        "passed": true,
+        "pair_passed": true
+      },
+      {
+        "witness": 1,
+        "side": "left",
+        "preferred": "a_0",
+        "scores": {
+          "a_0": 2.0,
+          "b_0": -4.6
+        },
+        "passed": true
+      },
+      {
+        "witness": 1,
+        "side": "right",
+        "preferred": "b_0",
+        "scores": {
+          "a_0": -5.199999999999999,
+          "b_0": -4.6
+        },
+        "passed": true,
+        "pair_passed": true
+      },
+      {
+        "witness": 2,
+        "side": "left",
+        "preferred": "a_1",
+        "scores": {
+          "a_1": 2.5,
+          "b_1": -5.75
+        },
+        "passed": true
+      },
+      {
+        "witness": 2,
+        "side": "right",
+        "preferred": "b_1",
+        "scores": {
+          "a_1": -6.5,
+          "b_1": -5.75
+        },
+        "passed": true,
+        "pair_passed": true
+      }
+    ],
+    "passed": 6,
+    "total": 6,
+    "all_passed": true
+  },
+  "all_schedules_feasible": true,
+  "oracle": {
+    "calls": 12,
+    "expanded_nodes": 12,
+    "elapsed_seconds": 0.0003834000017377548,
+    "max_calls": 80,
+    "max_nodes": 100000
+  },
+  "elapsed_seconds": 0.03241809999963152,
+  "formal_test_split_used": false,
+  "paired_signal_available": true,
+  "selected_program_satisfies_certified_pairs": true,
+  "provider_attempts": 2,
+  "candidate_rejections": 0
+}

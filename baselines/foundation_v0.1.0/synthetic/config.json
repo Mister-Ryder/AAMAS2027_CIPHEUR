@@ -1,0 +1,24 @@
+{
+  "seed": 7,
+  "rounds": 2,
+  "data": {
+    "type": "synthetic"
+  },
+  "provider": {
+    "type": "replay",
+    "path": "../examples/assistant_seed_program.json"
+  },
+  "feedback": "paired",
+  "acquisition": {
+    "strategy": "disagreement",
+    "max_attempts": 6,
+    "max_witnesses": 3
+  },
+  "oracle": {
+    "max_calls": 80,
+    "max_nodes": 100000,
+    "nodes_per_call": 10000,
+    "max_region": 64
+  },
+  "_config_path": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\configs\\smoke.json"
+}

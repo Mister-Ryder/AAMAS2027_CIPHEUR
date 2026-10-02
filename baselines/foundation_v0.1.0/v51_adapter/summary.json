@@ -1,0 +1,33 @@
+{
+  "status": "completed",
+  "purpose": "smoke_integration_only",
+  "effectiveness_validated": false,
+  "live_llm_calls": 0,
+  "external_command_calls": 0,
+  "witness_count": 0,
+  "selected_program": {
+    "name": "assistant_seed_opportunity_cost",
+    "expression": "weight - 1.2 * conflict_weight",
+    "rationale": "Authored by the current assistant as a transparent integration fixture. Penalizes the weight of currently blocked competing contacts; its paired behavior must be independently verified. This file is not the output of a live API synthesis experiment and carries no empirical quality claim."
+  },
+  "requirements": {
+    "checks": [],
+    "passed": 0,
+    "total": 0,
+    "all_passed": true
+  },
+  "all_schedules_feasible": true,
+  "oracle": {
+    "calls": 0,
+    "expanded_nodes": 0,
+    "elapsed_seconds": 0.0,
+    "max_calls": 40,
+    "max_nodes": 50000
+  },
+  "elapsed_seconds": 0.8684783999997308,
+  "formal_test_split_used": false,
+  "paired_signal_available": false,
+  "selected_program_satisfies_certified_pairs": false,
+  "provider_attempts": 1,
+  "candidate_rejections": 0
+}

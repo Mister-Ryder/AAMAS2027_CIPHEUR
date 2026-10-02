@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-02",
+  "version": "0.1.0",
+  "title": "LLM-Guided Graph Heuristic Synthesis via Constraint-Induced Preference Reversals",
+  "milestone": "runnable_foundation",
+  "verification": {
+    "integrity_tests_passed": 39,
+    "synthetic_witnesses": 3,
+    "paired_requirements_passed": 6,
+    "paired_requirements_total": 6,
+    "all_schedules_feasible": true,
+    "v51_prefix_nodes": 32,
+    "v51_witnesses": 0,
+    "live_llm_calls": 0,
+    "effectiveness_experiments_performed": false
+  },
+  "sources": {
+    "reference_pdf": "C:\\Users\\JIA\\Downloads\\SBAY6258.pdf",
+    "reference_pdf_sha256": "3d03fc23a159a13c256d9c5de943e9ff2d82e6b6b2233140c592d65ac6a83a62",
+    "reference_paper": "DRAGON, AAMAS 2026, DOI 10.65109/SBAY6258",
+    "abstract_conversation_id": "6abeabab-f4f0-83e9-8e2c-48858c131bea",
+    "v51_stable_root": "E:/01-Joycecyq/2026-ESWA/DAI2026_SNSD_V51_STABLE"
+  },
+  "llm": {
+    "seed_author": "current_assistant",
+    "default_provider": "replay",
+    "optional_provider": "openai_responses",
+    "optional_model": "gpt-5.4-mini-2026-03-17",
+    "deepseek_harness_used": false
+  },
+  "not_yet_established": [
+    "real_LLM_automatic_synthesis",
+    "formal_performance_improvement",
+    "superior_novelty_or_quality_over_DRAGON",
+    "large_scale_evidence_efficiency",
+    "unseen_constraint_generalization"
+  ],
+  "runs": [
+    "output/foundation_smoke_v01",
+    "output/v51_adapter_smoke_v01"
+  ]
+}

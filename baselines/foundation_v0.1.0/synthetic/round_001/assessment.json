@@ -1,0 +1,381 @@
+{
+  "round": 1,
+  "program": {
+    "name": "assistant_seed_opportunity_cost",
+    "expression": "weight - 1.2 * conflict_weight",
+    "rationale": "Authored by the current assistant as a transparent integration fixture. Penalizes the weight of currently blocked competing contacts; its paired behavior must be independently verified. This file is not the output of a live API synthesis experiment and carries no empirical quality claim."
+  },
+  "report": {
+    "requirements": {
+      "checks": [
+        {
+          "witness": 0,
+          "side": "left",
+          "preferred": "a_2",
+          "scores": {
+            "a_2": 1.6000000000000005,
+            "b_2": -3.6799999999999997
+          },
+          "passed": true
+        },
+        {
+          "witness": 0,
+          "side": "right",
+          "preferred": "b_2",
+          "scores": {
+            "a_2": -4.16,
+            "b_2": -3.6799999999999997
+          },
+          "passed": true,
+          "pair_passed": true
+        },
+        {
+          "witness": 1,
+          "side": "left",
+          "preferred": "a_0",
+          "scores": {
+            "a_0": 2.0,
+            "b_0": -4.6
+          },
+          "passed": true
+        },
+        {
+          "witness": 1,
+          "side": "right",
+          "preferred": "b_0",
+          "scores": {
+            "a_0": -5.199999999999999,
+            "b_0": -4.6
+          },
+          "passed": true,
+          "pair_passed": true
+        },
+        {
+          "witness": 2,
+          "side": "left",
+          "preferred": "a_1",
+          "scores": {
+            "a_1": 2.5,
+            "b_1": -5.75
+          },
+          "passed": true
+        },
+        {
+          "witness": 2,
+          "side": "right",
+          "preferred": "b_1",
+          "scores": {
+            "a_1": -6.5,
+            "b_1": -5.75
+          },
+          "passed": true,
+          "pair_passed": true
+        }
+      ],
+      "passed": 6,
+      "total": 6,
+      "all_passed": true
+    },
+    "schedules": [
+      {
+        "split": "train",
+        "graph": "gap0_0",
+        "selected": [
+          "a_0",
+          "c_0",
+          "d_0"
+        ],
+        "value": 16.0,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "c_0",
+            "score": 6.0,
+            "remaining_count": 4
+          },
+          {
+            "selected": "a_0",
+            "score": 2.0,
+            "remaining_count": 3
+          },
+          {
+            "selected": "d_0",
+            "score": 2.0,
+            "remaining_count": 1
+          }
+        ]
+      },
+      {
+        "split": "train",
+        "graph": "gap1_0",
+        "selected": [
+          "b_0",
+          "c_0",
+          "d_0"
+        ],
+        "value": 13.0,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "d_0",
+            "score": 2.0,
+            "remaining_count": 4
+          },
+          {
+            "selected": "c_0",
+            "score": -3.5999999999999996,
+            "remaining_count": 3
+          },
+          {
+            "selected": "b_0",
+            "score": 5.0,
+            "remaining_count": 1
+          }
+        ]
+      },
+      {
+        "split": "train",
+        "graph": "gap0_1",
+        "selected": [
+          "a_1",
+          "c_1",
+          "d_1"
+        ],
+        "value": 20.0,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "c_1",
+            "score": 7.5,
+            "remaining_count": 4
+          },
+          {
+            "selected": "a_1",
+            "score": 2.5,
+            "remaining_count": 3
+          },
+          {
+            "selected": "d_1",
+            "score": 2.5,
+            "remaining_count": 1
+          }
+        ]
+      },
+      {
+        "split": "train",
+        "graph": "gap1_1",
+        "selected": [
+          "b_1",
+          "c_1",
+          "d_1"
+        ],
+        "value": 16.25,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "d_1",
+            "score": 2.5,
+            "remaining_count": 4
+          },
+          {
+            "selected": "c_1",
+            "score": -4.5,
+            "remaining_count": 3
+          },
+          {
+            "selected": "b_1",
+            "score": 6.25,
+            "remaining_count": 1
+          }
+        ]
+      },
+      {
+        "split": "train",
+        "graph": "gap0_2",
+        "selected": [
+          "a_2",
+          "c_2",
+          "d_2"
+        ],
+        "value": 12.8,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "c_2",
+            "score": 4.800000000000001,
+            "remaining_count": 4
+          },
+          {
+            "selected": "a_2",
+            "score": 1.6000000000000005,
+            "remaining_count": 3
+          },
+          {
+            "selected": "d_2",
+            "score": 1.6,
+            "remaining_count": 1
+          }
+        ]
+      },
+      {
+        "split": "train",
+        "graph": "gap1_2",
+        "selected": [
+          "b_2",
+          "c_2",
+          "d_2"
+        ],
+        "value": 10.4,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "d_2",
+            "score": 1.6,
+            "remaining_count": 4
+          },
+          {
+            "selected": "c_2",
+            "score": -2.879999999999999,
+            "remaining_count": 3
+          },
+          {
+            "selected": "b_2",
+            "score": 4.0,
+            "remaining_count": 1
+          }
+        ]
+      },
+      {
+        "split": "validation",
+        "graph": "synthetic_validation_0",
+        "selected": [
+          "v0_4",
+          "v0_5",
+          "v0_6",
+          "v0_9"
+        ],
+        "value": 35.0,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "v0_9",
+            "score": 3.0,
+            "remaining_count": 10
+          },
+          {
+            "selected": "v0_5",
+            "score": -3.3999999999999986,
+            "remaining_count": 9
+          },
+          {
+            "selected": "v0_4",
+            "score": -9.399999999999999,
+            "remaining_count": 7
+          },
+          {
+            "selected": "v0_6",
+            "score": -11.599999999999998,
+            "remaining_count": 4
+          }
+        ]
+      },
+      {
+        "split": "validation",
+        "graph": "synthetic_validation_1",
+        "selected": [
+          "v1_2",
+          "v1_4",
+          "v1_5",
+          "v1_8",
+          "v1_9"
+        ],
+        "value": 39.0,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "v1_2",
+            "score": 9.0,
+            "remaining_count": 10
+          },
+          {
+            "selected": "v1_9",
+            "score": 3.0,
+            "remaining_count": 9
+          },
+          {
+            "selected": "v1_8",
+            "score": -15.8,
+            "remaining_count": 8
+          },
+          {
+            "selected": "v1_5",
+            "score": -9.399999999999999,
+            "remaining_count": 4
+          },
+          {
+            "selected": "v1_4",
+            "score": 9.0,
+            "remaining_count": 1
+          }
+        ]
+      },
+      {
+        "split": "validation",
+        "graph": "synthetic_validation_2",
+        "selected": [
+          "v2_0",
+          "v2_1",
+          "v2_2",
+          "v2_4",
+          "v2_5",
+          "v2_7"
+        ],
+        "value": 42.0,
+        "feasible": true,
+        "trace": [
+          {
+            "selected": "v2_1",
+            "score": 5.6,
+            "remaining_count": 10
+          },
+          {
+            "selected": "v2_2",
+            "score": 7.0,
+            "remaining_count": 8
+          },
+          {
+            "selected": "v2_0",
+            "score": -3.5999999999999996,
+            "remaining_count": 7
+          },
+          {
+            "selected": "v2_4",
+            "score": 5.0,
+            "remaining_count": 5
+          },
+          {
+            "selected": "v2_5",
+            "score": 4.0,
+            "remaining_count": 4
+          },
+          {
+            "selected": "v2_7",
+            "score": -3.5999999999999996,
+            "remaining_count": 3
+          }
+        ]
+      }
+    ],
+    "validation_value": 116.0,
+    "train_value": 88.45
+  },
+  "valid_program": true,
+  "accepted": true,
+  "provider": {
+    "backend": "replay",
+    "live_llm": false,
+    "source_path": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\examples\\assistant_seed_program.json",
+    "source_sha256": "466e2e04a01b76ff8f6a9ed00f5df21cf0e3313169d83af3448434ab152fafde",
+    "elapsed_seconds": 0.000164
+  }
+}

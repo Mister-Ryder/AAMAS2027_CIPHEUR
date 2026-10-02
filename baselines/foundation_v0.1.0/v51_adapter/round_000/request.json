@@ -1,0 +1,24 @@
+{
+  "system": "You synthesize a compact state-dependent priority expression for a fixed greedy MWIS kernel. Return only a JSON object matching the supplied schema. Do not solve instances directly. Use numeric literals, arithmetic + - * /, comparisons, conditional expressions, min/max/abs. Only these feature names are allowed: weight, duration, degree, conflict_weight, max_conflict_weight, compatible_weight, station_gap, satellite_gap, remaining_count. No imports, attributes, loops, file/network access, action ids, or instance-name rules. Strict paired requirements must both hold; a feasible kernel is guaranteed separately. Avoid near-zero division and excessive program size.",
+  "user": "{\"incumbent\": {\"name\": \"weight\", \"expression\": \"weight\", \"rationale\": \"Static baseline; no LLM call\"}, \"feedback_mode\": \"paired\", \"evidence\": [], \"incumbent_validation_value\": 107.0, \"incumbent_training_value\": 59588.0, \"requirement_checks\": {\"checks\": [], \"passed\": 0, \"total\": 0, \"all_passed\": true}, \"previous_attempts\": [], \"scope\": \"development_only_no_test_data\"}",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "expression": {
+        "type": "string"
+      },
+      "rationale": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "expression",
+      "rationale"
+    ],
+    "additionalProperties": false
+  }
+}
