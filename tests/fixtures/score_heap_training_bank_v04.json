@@ -1,0 +1,3383 @@
+[
+  {
+    "id": "guided_v04:0",
+    "arm": "guided_v04",
+    "index": 0,
+    "program": {
+      "name": "v04_feasible_ratio_g12",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,ng)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "c8ffe7597046c47b10d9146ecee6ef4de53dea588958c76338fe1dd44c78d51d"
+  },
+  {
+    "id": "guided_v04:1",
+    "arm": "guided_v04",
+    "index": 1,
+    "program": {
+      "name": "v04_upper_ratio",
+      "features": [
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,nc)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "90079f0c7342f290c5858ff49b711f9b4cef96d028b260b8d1a2fdea13d463b6"
+  },
+  {
+    "id": "guided_v04:2",
+    "arm": "guided_v04",
+    "index": 2,
+    "program": {
+      "name": "v04_midpoint_ratio",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,(ng+nc)/2)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "e6a200f619ab939a4bf46e3dcb992e7ab4974ef8916230b3312352bfff0d2407"
+  },
+  {
+    "id": "guided_v04:3",
+    "arm": "guided_v04",
+    "index": 3,
+    "program": {
+      "name": "v04_ambiguity_discount",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,ng)-max(0,nc-ng)/max(0.000001,weight+nc)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "4930d7d8ff3a71f98faac4f8b2934d4b28903e092cbcad6ac50ad07051b6f269"
+  },
+  {
+    "id": "guided_v04:4",
+    "arm": "guided_v04",
+    "index": 4,
+    "program": {
+      "name": "v04_feasible_loss",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-ng",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "b818476702a590e185232d75c60f63c2711c2e616a67418bfef9daa7582f03d6"
+  },
+  {
+    "id": "guided_v04:5",
+    "arm": "guided_v04",
+    "index": 5,
+    "program": {
+      "name": "v04_upper_loss",
+      "features": [
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-nc",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "7bb956346602b0302d139b73b05c8ba1c83ce4972e530e07231b889ce7549800"
+  },
+  {
+    "id": "guided_v04:6",
+    "arm": "guided_v04",
+    "index": 6,
+    "program": {
+      "name": "v04_interval_normalized_ratio",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,(ng+nc)/2)/(1+max(0,nc-ng)/max(0.000001,nc))",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "f0b9e4960298b72eda88f3f5c9ed584710f5c7b7cfe3a5356ac4d0eeb2ea1763"
+  },
+  {
+    "id": "guided_v04:7",
+    "arm": "guided_v04",
+    "index": 7,
+    "program": {
+      "name": "v04_feasible_pair_hybrid",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "em",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,(ng+max(max_conflict_weight,conflict_weight-em))/2)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "41ba755b0c3060c06987d851cc29597b3f82da92b646438d79a004a2fced0061"
+  },
+  {
+    "id": "guided_v04:8",
+    "arm": "guided_v04",
+    "index": 8,
+    "program": {
+      "name": "v04_feasible_density_hybrid",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ec",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,ng)+2*ec/max(1,degree*(degree-1))*weight/max(0.000001,weight+conflict_weight)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "968ece9098f9bd602d0606d423fa919dd3af9057d34273eac5379f5d298246c9"
+  },
+  {
+    "id": "guided_v04:9",
+    "arm": "guided_v04",
+    "index": 9,
+    "program": {
+      "name": "v04_density_gap_ratio",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ec",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,ng+max(0,nc-ng)/(1+2*ec/max(1,degree*(degree-1))))",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "934edd7116b02a9b001245fb7d80c2440d34eed949b4c4bf8b70fc90297b1529"
+  },
+  {
+    "id": "guided_v04:10",
+    "arm": "guided_v04",
+    "index": 10,
+    "program": {
+      "name": "v04_retained_guard_64",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ec",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+(residual_cover+residual_greedy)/2 if remaining_count<=64 else weight*(1+2*ec/max(1,degree*(degree-1)))/(1+conflict_weight/max(0.000001,weight))",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "d6b24b8269fa79bd192ecf1a8f776cba738abe024e026c4688e8a84c5efaece7"
+  },
+  {
+    "id": "guided_v04:11",
+    "arm": "guided_v04",
+    "index": 11,
+    "program": {
+      "name": "v04_retained_guard_128",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ec",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+(residual_cover+residual_greedy)/2 if remaining_count<=128 else weight*(1+2*ec/max(1,degree*(degree-1)))/(1+conflict_weight/max(0.000001,weight))",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    "program_sha256": "9a3e082be4b0c5ab6768e571bd45feccadfac74bdb385a07a1b6aaf2a65d2613"
+  },
+  {
+    "id": "enumerated_v03:0",
+    "arm": "enumerated_v03",
+    "index": 0,
+    "program": {
+      "name": "enum_edge_count_0",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,f)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "b35d2dad104f61ed2af852b2bf8a527a799b24b7a687974fdcaec05cb4487f99"
+  },
+  {
+    "id": "enumerated_v03:1",
+    "arm": "enumerated_v03",
+    "index": 1,
+    "program": {
+      "name": "enum_edge_count_1",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.25*f",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "4baf738376c812ae7caa8e583b8151b74dde9bf1e4073750293143904bfb013c"
+  },
+  {
+    "id": "enumerated_v03:2",
+    "arm": "enumerated_v03",
+    "index": 2,
+    "program": {
+      "name": "enum_edge_count_2",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.6*conflict_weight+f/max(1,degree)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "8274e6b4d45b14cfe3cc2d4e53be14b550fa368312b591aba51b7aaa922b9cc5"
+  },
+  {
+    "id": "enumerated_v03:3",
+    "arm": "enumerated_v03",
+    "index": 3,
+    "program": {
+      "name": "enum_edge_count_3",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,degree-2*f/max(1,conflict_weight))",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "6640c4d4568454fac4803ce5877bf8370f5e65214e1d63f98838f83b99f515a0"
+  },
+  {
+    "id": "enumerated_v03:4",
+    "arm": "enumerated_v03",
+    "index": 4,
+    "program": {
+      "name": "enum_edge_count_4",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/(1+degree)+0.1*f/max(1,conflict_weight)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "6c4e8a2468bb5ab45267a6aeab6473e0cadd69b7bc0cc3b6b8f29ad301d36c88"
+  },
+  {
+    "id": "enumerated_v03:5",
+    "arm": "enumerated_v03",
+    "index": 5,
+    "program": {
+      "name": "enum_edge_count_5",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/(1+conflict_weight/max(1,weight))-0.1*f",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "b24fac93a109996b265140c0c072ea9be5a3414d24cb7e1195a54b711a0fd761"
+  },
+  {
+    "id": "enumerated_v03:6",
+    "arm": "enumerated_v03",
+    "index": 6,
+    "program": {
+      "name": "enum_edge_min_0",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,f)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "b61cf2cace710624e9b309f8c3ba03a54c681090633a19c1051928515ea00fef"
+  },
+  {
+    "id": "enumerated_v03:7",
+    "arm": "enumerated_v03",
+    "index": 7,
+    "program": {
+      "name": "enum_edge_min_1",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.25*f",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "d48bb7e7852a7df9ef551dc239feb9518f3a4cfcbb3a92054c0beae592adab05"
+  },
+  {
+    "id": "enumerated_v03:8",
+    "arm": "enumerated_v03",
+    "index": 8,
+    "program": {
+      "name": "enum_edge_min_2",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.6*conflict_weight+f/max(1,degree)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "187f31cced628f766a4ece56430e8062bdb70199ca7eae14b04044a22653c60b"
+  },
+  {
+    "id": "enumerated_v03:9",
+    "arm": "enumerated_v03",
+    "index": 9,
+    "program": {
+      "name": "enum_edge_min_3",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,degree-2*f/max(1,conflict_weight))",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "57b5670aad354739f4aba03da6c0c81a42a812da19d1fe2b906cad6a5c516739"
+  },
+  {
+    "id": "enumerated_v03:10",
+    "arm": "enumerated_v03",
+    "index": 10,
+    "program": {
+      "name": "enum_edge_min_4",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/(1+degree)+0.1*f/max(1,conflict_weight)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "4eb8f78394fd17513929547c04f8f1bebfa0d47bcd70f51c40fe9b5cd230f077"
+  },
+  {
+    "id": "enumerated_v03:11",
+    "arm": "enumerated_v03",
+    "index": 11,
+    "program": {
+      "name": "enum_edge_min_5",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/(1+conflict_weight/max(1,weight))-0.1*f",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "9c23aa6f926b2bd87594dc85d5082f31f778f3dd7fd63f32cd1997f7a3fb6d02"
+  },
+  {
+    "id": "enumerated_v03:12",
+    "arm": "enumerated_v03",
+    "index": 12,
+    "program": {
+      "name": "enum_cover_0",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,f)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "8b206adf74c5f1534c0dc8718e32bc00d23da81c85bba3c417fbe2cc9003a6c6"
+  },
+  {
+    "id": "enumerated_v03:13",
+    "arm": "enumerated_v03",
+    "index": 13,
+    "program": {
+      "name": "enum_cover_1",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.25*f",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "e6136a3952b89e5369d217c5c850c3be476ce6f0d852f3ae7206ba4e4430e463"
+  },
+  {
+    "id": "enumerated_v03:14",
+    "arm": "enumerated_v03",
+    "index": 14,
+    "program": {
+      "name": "enum_cover_2",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.6*conflict_weight+f/max(1,degree)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "ac2699b7820f5d177134681c5dc52c3397de04796f56d4cf673210ea6b9ff7d0"
+  },
+  {
+    "id": "enumerated_v03:15",
+    "arm": "enumerated_v03",
+    "index": 15,
+    "program": {
+      "name": "enum_cover_3",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,degree-2*f/max(1,conflict_weight))",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "4b13e2c3a6c925ca6e1f80890700693225d991ab5a39820559a6c59b368b9867"
+  },
+  {
+    "id": "enumerated_v03:16",
+    "arm": "enumerated_v03",
+    "index": 16,
+    "program": {
+      "name": "enum_cover_4",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/(1+degree)+0.1*f/max(1,conflict_weight)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "58091ad1a794f3abd6033175bc73830d834a42e9b920af5a2481184d40efc76f"
+  },
+  {
+    "id": "enumerated_v03:17",
+    "arm": "enumerated_v03",
+    "index": 17,
+    "program": {
+      "name": "enum_cover_5",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/(1+conflict_weight/max(1,weight))-0.1*f",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "56fd91b82c92f8be35e16bf0e64a13925a3abbf157a79464f31b10a6b7904f56"
+  },
+  {
+    "id": "enumerated_v03:18",
+    "arm": "enumerated_v03",
+    "index": 18,
+    "program": {
+      "name": "enum_greedy_0",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,f)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "cca13a2055d215b7e85619806a0c87a1232a96a7dc18ee8c68c3cfe7d91aed2d"
+  },
+  {
+    "id": "enumerated_v03:19",
+    "arm": "enumerated_v03",
+    "index": 19,
+    "program": {
+      "name": "enum_greedy_1",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.25*f",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "d4b6190358450e31cd382b7b2d9fc2f91b7925c675be1cd5ca7e0bb536b6cebd"
+  },
+  {
+    "id": "enumerated_v03:20",
+    "arm": "enumerated_v03",
+    "index": 20,
+    "program": {
+      "name": "enum_greedy_2",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.6*conflict_weight+f/max(1,degree)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "2af1e2e6e4dee35e0581bdb2ecee2705ab543a9a9c5c3e63b7b0a4add8fda97f"
+  },
+  {
+    "id": "enumerated_v03:21",
+    "arm": "enumerated_v03",
+    "index": 21,
+    "program": {
+      "name": "enum_greedy_3",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,degree-2*f/max(1,conflict_weight))",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "b8703aa77dfaf526167815b8be394535397bd4db9d52c5b728978f5edcd69762"
+  },
+  {
+    "id": "enumerated_v03:22",
+    "arm": "enumerated_v03",
+    "index": 22,
+    "program": {
+      "name": "enum_greedy_4",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/(1+degree)+0.1*f/max(1,conflict_weight)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "e3914e2c9c68e0a244c0ab6aa7d4cb6bfbbb8203947b0f047f0158877f29c438"
+  },
+  {
+    "id": "enumerated_v03:23",
+    "arm": "enumerated_v03",
+    "index": 23,
+    "program": {
+      "name": "enum_greedy_5",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/(1+conflict_weight/max(1,weight))-0.1*f",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "program_sha256": "fb8b464a9749e898170c39e3c2de1ace723dc5f48a0d9a18a1c6598ad1d1637e"
+  },
+  {
+    "id": "baseline:0",
+    "arm": "baseline",
+    "index": 0,
+    "program": {
+      "name": "weight",
+      "features": [],
+      "rule": "weight",
+      "rationale": ""
+    },
+    "program_sha256": "e02b383671517d014cab0c02e7a824a7643022d7f72d05c996af9f1a64609895"
+  },
+  {
+    "id": "baseline:1",
+    "arm": "baseline",
+    "index": 1,
+    "program": {
+      "name": "degree",
+      "features": [],
+      "rule": "weight/max(1,degree)",
+      "rationale": ""
+    },
+    "program_sha256": "39157d1794ca298d99f00ac3cbab2ab82a6849fb6c09b75a97bacba649852618"
+  },
+  {
+    "id": "baseline:2",
+    "arm": "baseline",
+    "index": 2,
+    "program": {
+      "name": "weighted_conflict",
+      "features": [],
+      "rule": "weight/max(1,conflict_weight)",
+      "rationale": ""
+    },
+    "program_sha256": "1a45e2670f6608a3b39a0c86df1d75557861c7b21b9a2e2cff0e28f295c57f97"
+  },
+  {
+    "id": "baseline:3",
+    "arm": "baseline",
+    "index": 3,
+    "program": {
+      "name": "v02_joint",
+      "features": [
+        {
+          "name": "redundancy",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.6*conflict_weight+redundancy/max(1,degree)",
+      "rationale": ""
+    },
+    "program_sha256": "24bdf36088745a936da44a6b47fa6a90630a47643d1f8af5f052ce95702f8fb2"
+  },
+  {
+    "id": "baseline:4",
+    "arm": "baseline",
+    "index": 4,
+    "program": {
+      "name": "structural_ratio",
+      "features": [
+        {
+          "name": "triangles",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,degree-2*triangles/max(1,degree))",
+      "rationale": ""
+    },
+    "program_sha256": "ad6e47c866c27c28607bf3916f9ac13b5c86b26f3c201ad546fe21f06fccfe74"
+  },
+  {
+    "id": "free_v03:0",
+    "arm": "free_v03",
+    "index": 0,
+    "program": {
+      "name": "free_01_neighbor_feasible_opportunity",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_pack",
+      "rationale": "Rank immediate utility against a feasible packing of the contacts it would delete. This estimates the value of mutually compatible alternatives rather than charging every conflict independently. It is a local one-feature strategy intended to retain schedule utility at modest feature cost; its packing is a fixed weight-ordered heuristic, so it is not an exact opportunity cost."
+    },
+    "program_sha256": "6e48c9154b846f473e5eb45cf361e06300d7b2aff126c39dc2cecd9ff4323b9b"
+  },
+  {
+    "id": "free_v03:1",
+    "arm": "free_v03",
+    "index": 1,
+    "program": {
+      "name": "free_02_neighbor_cover_opportunity",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover",
+      "rationale": "Use the weighted clique cover of the active neighborhood as a conservative estimate of forgone alternatives. Dense mutually conflicting neighbors share a cover term, whereas independent neighbors remain separate terms. This tests a pessimistic local deletion penalty with one structural feature; a loose cover can over-penalize the root."
+    },
+    "program_sha256": "fe4bb75a912a2177a0c62ca9824e9f942f9d6d0be27177e05b8b49a21f034761"
+  },
+  {
+    "id": "free_v03:2",
+    "arm": "free_v03",
+    "index": 2,
+    "program": {
+      "name": "free_03_local_capture_share",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1, weight + neighbor_pack)",
+      "rationale": "Favor the root that captures the largest share of its own weight plus a feasible neighboring packing. The bounded positive denominator keeps the score safe on isolated and zero-weight contacts. This changes the decision from absolute net gain to relative capture efficiency, limiting domination by large but costly contacts while using only a local packing feature."
+    },
+    "program_sha256": "2c3986b46df2906399cd518f593b2112534ab2879c9d4404aa3ac4a5e28e986b"
+  },
+  {
+    "id": "free_v03:3",
+    "arm": "free_v03",
+    "index": 3,
+    "program": {
+      "name": "free_04_pair_discounted_deletion",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_edge_min)",
+      "rationale": "Discount the sum of deleted neighbor weights by the minimum endpoint weight on each internal neighborhood edge. Such an edge prevents taking both endpoints together. Clamp the discounted estimate at the largest single conflicting contact because pair discounts can overcount in dense graphs. This is a compact local structural surrogate that avoids running a packing or cover primitive."
+    },
+    "program_sha256": "1abf13cdc6a84c7cc183b2e38dd582a13dc5404457b22b2b181926eb41d2d140"
+  },
+  {
+    "id": "free_v03:4",
+    "arm": "free_v03",
+    "index": 4,
+    "program": {
+      "name": "free_05_density_compressed_conflicts",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight / (1 + 2 * neighbor_edges / max(1, degree)))",
+      "rationale": "Compress conflict weight by one plus the mean internal neighborhood degree. The estimate treats greater cohesion among alternatives as reducing their simultaneous opportunity value, and the largest-neighbor floor preserves a basic lower scale. This cheap topological approximation offers a different response from either edge-weight subtraction or an explicit independent packing."
+    },
+    "program_sha256": "f0bc098c9d8d199320d09e8e7d1c0cd44691d040d9b14245c2c71660a2add9ac"
+  },
+  {
+    "id": "free_v03:5",
+    "arm": "free_v03",
+    "index": 5,
+    "program": {
+      "name": "free_06_weight_product_conflict_discount",
+      "features": [
+        {
+          "name": "neighbor_edge_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_edge_product / max(1, max_conflict_weight))",
+      "rationale": "Use products of endpoint weights to make overlap among valuable neighbors matter more than overlap among weak neighbors. Normalize by the largest conflict weight to return to utility units, then retain that largest weight as a floor against excessive discounting. The feature probes weighted cohesion with one bounded graph expression and no full residual-graph traversal."
+    },
+    "program_sha256": "696524cef376bb67f96bb024d2cd86c5e52c5969564ad68b62ba80e90300df08"
+  },
+  {
+    "id": "free_v03:6",
+    "arm": "free_v03",
+    "index": 6,
+    "program": {
+      "name": "free_07_local_interval_midpoint",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - (neighbor_pack + neighbor_cover) / 2",
+      "rationale": "Balance the feasible neighbor packing and its clique-cover upper estimate. The midpoint limits optimism from a poor packing without taking the whole penalty of a loose cover. Both expressions reuse the same active neighborhood. This candidate spends two local features to represent uncertainty in the alternative bundle instead of relying on a single estimate."
+    },
+    "program_sha256": "95428d0b6a0f1a85b9feed5c1709d15f22b3693a224bdfbf30b81c5108817f69"
+  },
+  {
+    "id": "free_v03:7",
+    "arm": "free_v03",
+    "index": 7,
+    "program": {
+      "name": "free_08_local_uncertainty_aversion",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover - (neighbor_cover - neighbor_pack)",
+      "rationale": "Subtract the conservative neighbor cover and an additional cover-to-packing gap. A large gap indicates that the local alternative bundle is difficult for the fixed approximation to summarize, so this rule avoids deleting it cheaply. It is deliberately risk-averse and may sacrifice immediate utility; the same two small feature expressions bound its representation cost."
+    },
+    "program_sha256": "ef23592dc207569033a54809dd7cf718d642d4d44439231416df11914e94fa41"
+  },
+  {
+    "id": "free_v03:8",
+    "arm": "free_v03",
+    "index": 8,
+    "program": {
+      "name": "free_09_positive_local_regret",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(0, neighbor_pack - weight)",
+      "rationale": "Apply a regret penalty only when a feasible neighbor packing exceeds the root weight. Contacts whose own utility dominates the estimated alternatives keep their immediate-weight priority; expensive deletions receive an additional deduction. This piecewise local strategy is designed to preserve attractive high-value contacts without ignoring jointly valuable alternatives."
+    },
+    "program_sha256": "43d53b93c96c95e5507e21d6d770a278e2ca35e6a79666ae5d7eb074e5b4975e"
+  },
+  {
+    "id": "free_v03:9",
+    "arm": "free_v03",
+    "index": 9,
+    "program": {
+      "name": "free_10_net_gain_per_removed_contact",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(weight - neighbor_pack) / (1 + degree)",
+      "rationale": "Normalize local net utility by the number of contacts removed including the root. This targets gain per affected decision rather than absolute gain or utility share and reduces extreme scores from high-degree contacts. It can reorder negative regrets, which is an intentional portfolio tradeoff; the structural information still comes from one local feasible packing."
+    },
+    "program_sha256": "10853283a0df17bba0e7f31561388badf256fe6164430483b9056de7b4ba81ff"
+  },
+  {
+    "id": "free_v03:10",
+    "arm": "free_v03",
+    "index": 10,
+    "program": {
+      "name": "free_11_forced_completion_feasible",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_pack",
+      "rationale": "Estimate a complete feasible continuation after selecting the root: add its weight to a fixed greedy packing of all active contacts outside its closed neighborhood. This makes the full schedule the ranking target and can capture alternatives beyond one hop. It is more expensive than a local penalty, but uses one feature and no search oracle or learned instance lookup."
+    },
+    "program_sha256": "1634c856731b9f50306e55b7717264d7b7b25895eb916847d4c8d788c8e98fd2"
+  },
+  {
+    "id": "free_v03:11",
+    "arm": "free_v03",
+    "index": 11,
+    "program": {
+      "name": "free_12_forced_completion_cover",
+      "features": [
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_cover",
+      "rationale": "Rank the root by its weight plus a clique-cover upper estimate of the remaining compatible schedule. This explores an optimistic full-continuation strategy that can see far beyond local conflict totals. The upper estimate is deterministic and polynomial; it may favor a loose residual cover, so its schedule benefit must justify its broader graph work."
+    },
+    "program_sha256": "6b22057972449e6f48f1bb21a11bde9d3daa452906b6461bc929a8dbd76af4ed"
+  },
+  {
+    "id": "free_v03:12",
+    "arm": "free_v03",
+    "index": 12,
+    "program": {
+      "name": "free_13_forced_completion_gap_penalty",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_pack - (compatible_cover - compatible_pack)",
+      "rationale": "Start with the feasible forced-continuation estimate and deduct the residual cover-to-packing gap. This prefers roots whose remaining schedule is both valuable and easier for the deterministic bounds to agree on. It is a conservative continuation policy with two shared-set features, intended to avoid optimistic selection driven by a loosely structured residual graph."
+    },
+    "program_sha256": "ba026428503e56dd4595a128fcaa6ece530280811823e36d8920f1b1e6cca938"
+  },
+  {
+    "id": "free_v03:13",
+    "arm": "free_v03",
+    "index": 13,
+    "program": {
+      "name": "free_14_forced_completion_midpoint",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + (compatible_pack + compatible_cover) / 2",
+      "rationale": "Use the midpoint of lower and upper continuation estimates after committing the root. Unlike a neighborhood opportunity penalty, this scores the whole compatible remainder directly. It occupies a balanced point between the feasible continuation and optimistic cover strategies; two residual traversals impose a meaningful feature-cost tradeoff."
+    },
+    "program_sha256": "d4b77c2d1f00845e1b27dcd6124bcbe9bfda67d97d3d7d5eec0f69f217b45f89"
+  },
+  {
+    "id": "free_v03:14",
+    "arm": "free_v03",
+    "index": 14,
+    "program": {
+      "name": "free_15_feasible_include_exclude_advantage",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_pack - without_pack",
+      "rationale": "Compare a feasible completion with the root included against a feasible packing when only the root is excluded. Subtracting an action-specific exclusion baseline approximates the marginal value of commitment and helps distinguish contacts whose compatible schedules are large for unrelated reasons. Both sides use the same fixed packing primitive; their difference is a heuristic advantage, not a certified bound."
+    },
+    "program_sha256": "87519a2bbff484ae669be2f3f774badd6dacb418186650ce49dedae6e9b7e1a9"
+  },
+  {
+    "id": "free_v03:15",
+    "arm": "free_v03",
+    "index": 15,
+    "program": {
+      "name": "free_16_cover_include_exclude_advantage",
+      "features": [
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_cover - without_cover",
+      "rationale": "Compare clique-cover estimates for including and excluding the root. Shared distant opportunities may cancel, leaving a broader structural approximation of commitment value than a local neighborhood loss. The difference of two upper estimates has no formal lower-bound guarantee; this candidate tests whether cancellation is useful enough to repay two residual cover computations."
+    },
+    "program_sha256": "a2ff2c7076a6f69a9354ac287a77eea61d366df7adb542f5c7d794a5c32af91d"
+  },
+  {
+    "id": "free_v03:16",
+    "arm": "free_v03",
+    "index": 16,
+    "program": {
+      "name": "free_17_conservative_commitment_margin",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_pack - without_cover",
+      "rationale": "Measure a conservative inclusion-versus-exclusion margin by pairing a feasible included completion with an upper estimate for excluding the root. A positive margin is strong approximate evidence for commitment, while negative margins still give a deterministic ranking. The rule emphasizes robust decisions across the whole active graph at the cost of two polynomial continuation features."
+    },
+    "program_sha256": "27d8fac9f5ca4e56cb2697fd7be29283cec7ab1c1c863b930b17043dd643c865"
+  },
+  {
+    "id": "free_v03:17",
+    "arm": "free_v03",
+    "index": 17,
+    "program": {
+      "name": "free_18_optimistic_commitment_margin",
+      "features": [
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_cover - without_pack",
+      "rationale": "Pair an upper included-continuation estimate with a feasible excluded packing. This optimistic commitment margin favors roots with promising compatible schedules even when the fixed greedy continuation misses combinations. It complements the conservative margin with a different bound orientation rather than a coefficient change; loose included covers remain a recognized approximation risk."
+    },
+    "program_sha256": "3889d95ed039ddf9807aa8ec82ff548d28709b2f7d2e5461320ff8b0983405d7"
+  },
+  {
+    "id": "free_v03:18",
+    "arm": "free_v03",
+    "index": 18,
+    "program": {
+      "name": "free_19_local_regret_with_contact_efficiency",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_pack + weight / (1 + duration + abs(station_gap) + abs(satellite_gap))",
+      "rationale": "Combine structural local net utility with a secondary reward for useful contacts that occupy less temporal capacity including configured transition gaps. The efficiency term can resolve close local opportunity decisions on satellite schedules without using station or satellite identities. The principal penalty remains the neighbor packing, and only one structural feature is added."
+    },
+    "program_sha256": "f5b7231327d9bf6cf69c5e38cd5dcc320e1330865d04d1a2cb6ad91cb90ea532"
+  },
+  {
+    "id": "free_v03:19",
+    "arm": "free_v03",
+    "index": 19,
+    "program": {
+      "name": "free_20_cover_cost_per_conflict",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + neighbor_cover / max(1, degree))",
+      "rationale": "Evaluate immediate utility against cover-estimated alternative utility per conflicting contact. This emphasizes replacement efficiency and spreads the opportunity charge over the conflict count, producing a distinct high-degree tradeoff from absolute cover subtraction. An isolated root has a safe denominator of one. The candidate adds a single local structural feature."
+    },
+    "program_sha256": "b24696b66298a8775dd31b9867cc524594311333284c4d501f04e5748723cea2"
+  },
+  {
+    "id": "free_v03:20",
+    "arm": "free_v03",
+    "index": 20,
+    "program": {
+      "name": "free_21_pair_discounted_completion",
+      "features": [
+        {
+          "name": "compatible_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_max",
+          "expression": {
+            "op": "max_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + max(compatible_max, compatible_weight - compatible_edge_min)",
+      "rationale": "Estimate the remaining schedule by subtracting minimum endpoint weight for each internal residual conflict from its weight sum. Clamp at the heaviest compatible contact because overlapping edge deductions can be excessive. This substitutes explicit residual edge aggregation for packing or cover primitives; it is structurally different but its quadratic edge scan must earn its feature cost."
+    },
+    "program_sha256": "e92b58e5ad6441c43713db31430b5f1aede040fb8e7baebb118db267cdca4e23"
+  },
+  {
+    "id": "free_v03:21",
+    "arm": "free_v03",
+    "index": 21,
+    "program": {
+      "name": "free_22_density_compressed_completion",
+      "features": [
+        {
+          "name": "compatible_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_weight / (1 + 2 * compatible_edges / max(1, remaining_count - degree - 1))",
+      "rationale": "Compress the compatible remainder by one plus its mean induced degree. The compatible contact count is derived from existing base features, so only one residual edge-count feature is needed. This is a coarse whole-schedule estimate that distinguishes concentrated conflicts from independent opportunity while avoiding weighted packing and clique-cover computations."
+    },
+    "program_sha256": "dd1c1deca816691361d38e7e5277d8bc467a2f25b4dfe8377a358c480a689c76"
+  },
+  {
+    "id": "free_v03:22",
+    "arm": "free_v03",
+    "index": 22,
+    "program": {
+      "name": "free_23_two_sided_cohesion_balance",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_weight / (1 + 2 * compatible_edges / max(1, remaining_count - degree - 1)) - conflict_weight / (1 + 2 * neighbor_edges / max(1, degree))",
+      "rationale": "Balance a density-compressed compatible continuation against density-compressed deleted alternatives. Measuring cohesion on both sides prevents treating all available weight or all neighbor weight as simultaneously attainable. This tests a two-sided graph-topology rule using two edge-count features, with a broader computation footprint than a purely local surrogate."
+    },
+    "program_sha256": "69368b0ec2805c97fbd0132b8dfd10d2ae5717a616892e674cbf75c99b90db93"
+  },
+  {
+    "id": "free_v03:23",
+    "arm": "free_v03",
+    "index": 23,
+    "program": {
+      "name": "free_24_closed_bundle_replacement",
+      "features": [
+        {
+          "name": "closed_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "union",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "closed_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "union",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "2 * weight - closed_cover - 0.25 * (closed_cover - closed_pack)",
+      "rationale": "Treat the root and its active neighbors as a closed replacement bundle. Compare twice the root utility with the cover-estimated value of that bundle and apply a small uncertainty penalty from the closed-bundle cover-to-packing gap. Including the root inside both primitives gives a different local view when it dominates its neighbors, while retaining a bounded two-feature representation."
+    },
+    "program_sha256": "1f3f83149643cc9f2f282a95c8a74843d14548507c80f522442b53bccba1af74"
+  },
+  {
+    "id": "rule_v03:0",
+    "arm": "rule_v03",
+    "index": 0,
+    "program": {
+      "name": "rule_only_reward_priority",
+      "features": [],
+      "rule": "weight",
+      "rationale": "Use immediate reward as an explicit simple reference strategy. A greedy selection receives its own weight regardless of later choices, so this rule expresses a policy that trusts the largest available payoff. It deliberately omits every opportunity-cost correction; retaining this strategy in the proposal batch makes the cost-sensitive alternatives interpretable without requiring fitted coefficients or access to an optimum during execution."
+    },
+    "program_sha256": "4d767bec36186b3c4b0d0e71e575457500c28f6768a571096c74864de3069b33"
+  },
+  {
+    "id": "rule_v03:1",
+    "arm": "rule_v03",
+    "index": 1,
+    "program": {
+      "name": "rule_only_degree_efficiency",
+      "features": [],
+      "rule": "weight / (1 + degree)",
+      "rationale": "Divide reward by the number of available contacts removed by choosing the candidate, including the candidate itself. This is a cardinality-efficiency strategy: reward must compensate for consuming more alternatives. Degree treats all blocked contacts equally, so it can favor a contact with many light conflicts less than a weight-aware policy would. The denominator remains positive for an isolated candidate."
+    },
+    "program_sha256": "60e9c553c05cb78a1bf35472e6599ea01668dfe2c0f0d268563812d7c17d2ac4"
+  },
+  {
+    "id": "rule_v03:2",
+    "arm": "rule_v03",
+    "index": 2,
+    "program": {
+      "name": "rule_only_conflict_mass_efficiency",
+      "features": [],
+      "rule": "weight / (1 + conflict_weight)",
+      "rationale": "Normalize immediate reward by the total reward of its current conflicts. This weighted opportunity-cost strategy replaces conflict counting with reward exposure and therefore distinguishes blocking many negligible contacts from blocking valuable contacts. Conflict mass is an aggregate proxy rather than the attainable reward of those contacts, since the supplied base features do not reveal whether the neighbors can coexist. The additive constant handles zero exposure."
+    },
+    "program_sha256": "96a8fb3285bd67c9ae3c5f306076d98ce31a3dad98acb0168fa7c6de752528d2"
+  },
+  {
+    "id": "rule_v03:3",
+    "arm": "rule_v03",
+    "index": 3,
+    "program": {
+      "name": "rule_only_strongest_rival_surplus",
+      "features": [],
+      "rule": "weight - max_conflict_weight",
+      "rationale": "Rank the surplus over the strongest directly blocked alternative. This models a conservative one-for-one exchange and avoids treating every neighbor as simultaneously attainable. It should express a different preference from aggregate conflict penalties when one large rival dominates a neighborhood. It remains only a local exchange proxy, because additional compatible alternatives and interactions between neighbors are unavailable to the rule."
+    },
+    "program_sha256": "f55933e0bf08152d9338b0e034e17f7b0ec3a2135fcc3946dd153dea03396c59"
+  },
+  {
+    "id": "rule_v03:4",
+    "arm": "rule_v03",
+    "index": 4,
+    "program": {
+      "name": "rule_only_total_exchange_surplus",
+      "features": [],
+      "rule": "weight - conflict_weight",
+      "rationale": "Subtract the entire exposed conflict reward from the selected reward. This is an aggressive additive loss strategy corresponding to the optimistic assumption that all blocked alternatives could otherwise contribute. It explores a pessimistic view of selecting a highly connected contact, which differs from ratios and a strongest-rival comparison. Negative scores are permitted because the fixed greedy kernel compares candidates rather than treating the score as objective reward."
+    },
+    "program_sha256": "b3e38e16904365520c63df3d405ec4099ac9beac40c7df84af6cd0eb9de19780"
+  },
+  {
+    "id": "rule_v03:5",
+    "arm": "rule_v03",
+    "index": 5,
+    "program": {
+      "name": "rule_only_average_conflict_surplus",
+      "features": [],
+      "rule": "weight - conflict_weight / (1 + degree)",
+      "rationale": "Charge an amortized conflict reward instead of the sum of all conflicts. Dividing by the closed-neighborhood size tempers the additive penalty when many alternatives share the exposure and avoids the assumption that all neighbor rewards can be collected. The extra one makes the expression defined at degree zero. This strategy balances direct reward against typical conflict size without introducing a graph traversal or any learned auxiliary feature."
+    },
+    "program_sha256": "c7a1bd86733d2e93fb8d0cde802f80c99d96b3f662ab3f5fda8ba4a688801c9c"
+  },
+  {
+    "id": "rule_v03:6",
+    "arm": "rule_v03",
+    "index": 6,
+    "program": {
+      "name": "rule_only_duration_efficiency",
+      "features": [],
+      "rule": "weight / (1 + duration)",
+      "rationale": "Prioritize reward per occupied time using a regularized duration denominator. Short contacts can leave room for more future contacts under temporal resource constraints, while regularization limits the score inflation from very short intervals. Duration alone does not identify actual conflict structure, so this rule intentionally explores a temporal-capacity heuristic distinct from degree- and conflict-reward strategies. No absolute start time or contact identity is used."
+    },
+    "program_sha256": "02bb355073c0bf3e74a76ca6ffec0b5c0731f7778bac148c4d57791f548783e7"
+  },
+  {
+    "id": "rule_v03:7",
+    "arm": "rule_v03",
+    "index": 7,
+    "program": {
+      "name": "rule_only_turnaround_efficiency",
+      "features": [],
+      "rule": "weight / (1 + duration + station_gap + satellite_gap)",
+      "rationale": "Treat contact duration and the two declared turnaround requirements as a combined time charge. This extends reward density to account for setup overhead: once gaps are large, tiny contact durations should not create an arbitrarily strong preference. The graph still enforces feasibility; this score merely orders available candidates using the current constraints. The gap values enter through arithmetic rather than an intervention label or side-specific condition."
+    },
+    "program_sha256": "3964ea733513c668236d30acaf9a91385682991c89fa83077afcb2e461cd660c"
+  },
+  {
+    "id": "rule_v03:8",
+    "arm": "rule_v03",
+    "index": 8,
+    "program": {
+      "name": "rule_only_joint_time_cardinality_efficiency",
+      "features": [],
+      "rule": "weight / ((1 + degree) * (1 + duration + max(station_gap, satellite_gap)))",
+      "rationale": "Apply simultaneous cardinality and temporal charges by multiplying their denominators. A candidate receives a high rank only when both its blocked-contact count and its occupied-time proxy are modest relative to reward. Using the larger turnaround requirement gives a bottleneck resource interpretation instead of summing both overheads. This is a conjunctive efficiency strategy, distinct from an additive ensemble or a single dominant cost."
+    },
+    "program_sha256": "d4f07923fecbca15ea27244cbab5190efae2b3c2fb522551ea57010222158544"
+  },
+  {
+    "id": "rule_v03:9",
+    "arm": "rule_v03",
+    "index": 9,
+    "program": {
+      "name": "rule_only_preserved_reward_bonus",
+      "features": [],
+      "rule": "weight + compatible_weight / (1 + remaining_count)",
+      "rationale": "Add a per-residual-contact share of reward that survives the current selection. Compatible weight measures immediate continuation potential outside the candidate's conflict neighborhood, while division by remaining count prevents the global reward pool from overwhelming the selected reward. This is an additive continuation strategy. It makes no claim that all compatible contacts can coexist with one another, and it reads only the existing aggregate feature."
+    },
+    "program_sha256": "46d9914bc719f50998261062a7fd914f239ee63e07b6079652fd019966e78811"
+  },
+  {
+    "id": "rule_v03:10",
+    "arm": "rule_v03",
+    "index": 10,
+    "program": {
+      "name": "rule_only_preservation_reward_product",
+      "features": [],
+      "rule": "weight * (1 + compatible_weight) / (1 + weight + conflict_weight + compatible_weight)",
+      "rationale": "Multiply immediate reward by the share of total active reward preserved after selecting the candidate. The normalization places preserved reward on the scale of the current residual graph and the additive constants keep the score defined in small or zero-reward states. This expresses a complementarity strategy: a valuable contact is attractive when it also preserves a large reward pool. It differs from adding a continuation bonus because the preserved share scales the candidate reward."
+    },
+    "program_sha256": "5d7725e2b3f6a03fb5518d2bb5fc76d04352d7a7525b64fadd5da544d03e9a8d"
+  },
+  {
+    "id": "rule_v03:11",
+    "arm": "rule_v03",
+    "index": 11,
+    "program": {
+      "name": "rule_only_rival_and_tail_surplus",
+      "features": [],
+      "rule": "weight - max_conflict_weight - (conflict_weight - max_conflict_weight) / (1 + degree)",
+      "rationale": "Split exposed reward into a strongest rival and the remaining tail. Charge the strongest rival fully as a plausible direct replacement, then amortize the tail to avoid assuming every additional conflict is independently attainable. This hybrid loss model differentiates concentrated and dispersed conflict reward using the available maximum and sum. It intentionally stays within aggregate information and does not infer edges between neighbors."
+    },
+    "program_sha256": "93a9da3387728ccebd5c831aa61affc89a634ff1103ed7e4155abd41df667b49"
+  },
+  {
+    "id": "rule_v03:12",
+    "arm": "rule_v03",
+    "index": 12,
+    "program": {
+      "name": "rule_only_tail_reward_efficiency",
+      "features": [],
+      "rule": "weight / (1 + max(0, conflict_weight - max_conflict_weight))",
+      "rationale": "Normalize reward by conflict mass beyond the single strongest rival. This explores a policy in which one unavoidable direct competitor is treated as a common exchange issue, while additional exposed reward is the main evidence that selecting the contact could suppress several useful alternatives. The nonnegative clamp protects the denominator against numerical inconsistencies between maximum and sum. This policy is deliberately different from charging the strongest rival fully."
+    },
+    "program_sha256": "f07cfa09c81dc1ddd295fc4ee0763f6aa4d58910db71e8dd701828e49e6c593f"
+  },
+  {
+    "id": "rule_v03:13",
+    "arm": "rule_v03",
+    "index": 13,
+    "program": {
+      "name": "rule_only_aggregate_dominance_switch",
+      "features": [],
+      "rule": "weight + compatible_weight / (1 + remaining_count) if weight >= conflict_weight else weight / (1 + degree)",
+      "rationale": "Use an optimistic continuation score when the candidate reward covers all directly exposed conflict reward, and otherwise use cardinality efficiency. The dominance condition identifies an easy local tradeoff using only aggregate rewards; the second regime handles candidates whose conflicts collectively look costly. This introduces a substantive policy switch rather than a coefficient perturbation. The condition is recomputed from current features after every kernel step."
+    },
+    "program_sha256": "20ebf26262f6b41c4bcce9ffb80d2009fc788353df33bb2f6c5819a1fac4a1c9"
+  },
+  {
+    "id": "rule_v03:14",
+    "arm": "rule_v03",
+    "index": 14,
+    "program": {
+      "name": "rule_only_stronger_rival_switch",
+      "features": [],
+      "rule": "weight / (1 + conflict_weight) if max_conflict_weight > weight else weight / (1 + degree)",
+      "rationale": "Apply a weighted exposure penalty when a directly conflicting contact has greater reward than the candidate. When no stronger individual rival is present, use the simpler count-based efficiency score. This explores asymmetry between having one clearly stronger alternative and having several individually weaker alternatives. It requires neither the identity of the strongest rival nor any conditional oracle, and its branch depends solely on two allowed numeric features."
+    },
+    "program_sha256": "f4817e698ebb5b493305ac62d352591c4b2debc7222e308d6d4d4f2ff6985525"
+  },
+  {
+    "id": "rule_v03:15",
+    "arm": "rule_v03",
+    "index": 15,
+    "program": {
+      "name": "rule_only_isolation_bonus",
+      "features": [],
+      "rule": "2 * weight + compatible_weight / (1 + remaining_count) if degree == 0 else weight / (1 + degree)",
+      "rationale": "Give currently isolated contacts a reward bonus because selecting them blocks no other active contact. Use degree efficiency for the remaining candidates, where order can alter the feasible continuation. The bonus does not alter the fixed kernel and does not guarantee an absolute lexicographic priority; it is a finite ranking preference for low-risk reward. Isolation is detected by degree rather than graph identities or additional feature code."
+    },
+    "program_sha256": "c189a4fe36fc706c5526174a7814f115918d4a229f9115518b820f5e7188ac20"
+  },
+  {
+    "id": "rule_v03:16",
+    "arm": "rule_v03",
+    "index": 16,
+    "program": {
+      "name": "rule_only_residual_density_switch",
+      "features": [],
+      "rule": "weight / (1 + degree) if 2 * degree >= remaining_count else weight / (1 + duration)",
+      "rationale": "Switch to cardinality efficiency when a candidate conflicts with at least roughly half the active contacts, and use time efficiency in the sparser regime. Relative degree separates globally consuming choices from contacts whose occupancy may be the more useful proxy. The threshold is a general density boundary proposed without score-based tuning. Using remaining count makes the policy adapt as the residual graph shrinks."
+    },
+    "program_sha256": "feb85ca37e7cc9db39f1a502fef2a569dbc625458ed72e1d9365d4af3571c342"
+  },
+  {
+    "id": "rule_v03:17",
+    "arm": "rule_v03",
+    "index": 17,
+    "program": {
+      "name": "rule_only_compact_residual_exchange_switch",
+      "features": [],
+      "rule": "weight - max_conflict_weight if remaining_count <= 8 else weight / (1 + degree)",
+      "rationale": "Use a strongest-rival exchange surplus once the residual graph is small, and a cardinality-efficiency policy while many choices remain. This explores whether a compact endgame benefits from prioritizing direct replacement value over broad conflict reduction. Eight is an untuned general policy threshold, not an instance identifier or a fitted boundary. The same frozen arithmetic rule executes across all graphs and residual states."
+    },
+    "program_sha256": "cb142f5e92a8b870ec2897495e42e0fe39a2f68824245043e80b142216a68f36"
+  },
+  {
+    "id": "rule_v03:18",
+    "arm": "rule_v03",
+    "index": 18,
+    "program": {
+      "name": "rule_only_load_weighted_turnaround_density",
+      "features": [],
+      "rule": "weight / (1 + duration + station_gap * degree / (1 + remaining_count) + satellite_gap * conflict_weight / (1 + weight + conflict_weight))",
+      "rationale": "Weight station turnaround by the fraction of active contacts exposed to the candidate and satellite turnaround by the fraction of local reward exposed. This produces a load-aware time charge: declared gaps matter more when the candidate encounters corresponding aggregate contention. The two fractions are bounded for nonnegative scheduling features, and the denominator is positive. The interpretation is a heuristic resource proxy; no resource-specific neighbor counts are created."
+    },
+    "program_sha256": "cfaf3effb06d61f62f0d918a33eb0994b381109707320706f4e1a1512b29d1cf"
+  },
+  {
+    "id": "rule_v03:19",
+    "arm": "rule_v03",
+    "index": 19,
+    "program": {
+      "name": "rule_only_capped_occupancy_density",
+      "features": [],
+      "rule": "weight / max(1, min(duration, 1 + station_gap + satellite_gap))",
+      "rationale": "Use a clipped occupied-time denominator with both a lower floor and a turnaround-dependent upper cap. The floor prevents tiny durations from overwhelming reward differences; the cap explores a policy that stops increasing the duration penalty once contact occupancy exceeds a setup-scale horizon. This is a robust saturation strategy rather than a linear time charge. Both clipping boundaries are constructed from constants and declared constraints, with no fitted instance lookup."
+    },
+    "program_sha256": "c7ddb53bc7b08cfa2ed03ecb8cf2447e7b3a28e5cb6bd78dab84e94395edee3b"
+  },
+  {
+    "id": "rule_v03:20",
+    "arm": "rule_v03",
+    "index": 20,
+    "program": {
+      "name": "rule_only_bottleneck_efficiency",
+      "features": [],
+      "rule": "min(weight / (1 + degree), weight / (1 + duration), weight / (1 + conflict_weight))",
+      "rationale": "Take the lowest of count efficiency, time efficiency, and exposed-reward efficiency. This is a pessimistic bottleneck strategy that requires a candidate to look acceptable under all three cheap perspectives. It can reduce a score sharply when any one cost is large, unlike an average of the same perspectives. The quantities remain heuristic rankings with their native scales; the batch includes this deliberate scale-sensitive conservative alternative."
+    },
+    "program_sha256": "0e2061e15040002116c6d1434981f5f5214b5564212a41a251dd5e258c3033ea"
+  },
+  {
+    "id": "rule_v03:21",
+    "arm": "rule_v03",
+    "index": 21,
+    "program": {
+      "name": "rule_only_efficiency_consensus",
+      "features": [],
+      "rule": "weight / (1 + degree) + weight / (1 + duration) + weight / (1 + conflict_weight)",
+      "rationale": "Sum three independently interpretable efficiency scores with equal coefficients. This is an additive consensus strategy: strong performance on one cheap perspective can compensate for weakness on another, unlike the bottleneck rule. The proposal uses cardinality, temporal occupancy, and weighted exposure without fitting their weights. Their differing native scales are part of this frozen heuristic rather than normalized through a new feature."
+    },
+    "program_sha256": "9e9460037d60d89c50536e2ff082872f425a497314891e02e93131802fcf7423"
+  },
+  {
+    "id": "rule_v03:22",
+    "arm": "rule_v03",
+    "index": 22,
+    "program": {
+      "name": "rule_only_density_amplified_rival_loss",
+      "features": [],
+      "rule": "weight - conflict_weight / (1 + degree) - max_conflict_weight * degree / (1 + remaining_count)",
+      "rationale": "Combine amortized conflict reward with an additional strongest-rival charge scaled by relative residual degree. The rival penalty grows when the candidate consumes a large share of remaining contacts, so direct competition matters most near global congestion. This gives a continuous alternative to the density switches in the batch. Every term comes from the existing base features, and the relative-degree denominator avoids division by an empty residual count."
+    },
+    "program_sha256": "c46680de12cfcc8329477ecb1c1484f6e8e91ff8875bf63fba1827f64759d5e1"
+  },
+  {
+    "id": "rule_v03:23",
+    "arm": "rule_v03",
+    "index": 23,
+    "program": {
+      "name": "rule_only_setup_dominated_switch",
+      "features": [],
+      "rule": "weight / (1 + duration + station_gap + satellite_gap) if (station_gap + satellite_gap > duration and degree > 1) else weight / (1 + degree + conflict_weight / (1 + max_conflict_weight))",
+      "rationale": "Use turnaround-adjusted time efficiency when setup overhead exceeds contact duration and the candidate has multiple conflicts. Otherwise combine degree with conflict mass normalized by the strongest rival, which acts as an effective count of valuable alternatives. This explores a resource-regime switch with a distinct normalized-conflict policy in its other branch. The Boolean condition uses only numeric scheduling features and carries no source, graph, or intervention-side label."
+    },
+    "program_sha256": "9dc59e264b940782d416313fef6d402e9940674f060244878da721ee8ef290e9"
+  },
+  {
+    "id": "prior_guided_controls:0",
+    "arm": "prior_guided_controls",
+    "index": 0,
+    "program": {
+      "name": "g03_density_adjusted_weight_pressure",
+      "features": [
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * (1 + 2 * neighbor_edge_count / max(1, degree * (degree - 1))) / (1 + conflict_weight / max(0.000001, weight))",
+      "rationale": "Combine a normalized neighbor density bonus with relative conflict weight. The witness preference changes with induced density rather than a changed base feature; normalization transfers to larger degrees and weight scales while retaining a simple ratio rule."
+    },
+    "program_sha256": "c3e40c5e97992fa3de47cd9292a168e55bf35653f2d06885b5b85614c220bb45"
+  },
+  {
+    "id": "prior_guided_controls:1",
+    "arm": "prior_guided_controls",
+    "index": 1,
+    "program": {
+      "name": "g05_diminishing_pair_discount",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - conflict_weight + min(conflict_weight, neighbor_pair_min / (1 + neighbor_edge_count / max(1, degree)))",
+      "rationale": "A triangle contributes three pair edges but only one collectible alternative. Apply diminishing returns to accumulated edge-minimum redundancy to reduce overcounting in dense neighborhoods; the edge versus clique witnesses still produce distinct scores. Two inexpensive features trade arithmetic simplicity against a softer loss estimate."
+    },
+    "program_sha256": "e8cec0b46fce5b728f0ebc54205b8709f16ac63ea15519ec982bfcf3fdbd07c1"
+  },
+  {
+    "id": "prior_guided_controls:2",
+    "arm": "prior_guided_controls",
+    "index": 2,
+    "program": {
+      "name": "g12_neighborhood_greedy_value_ratio",
+      "features": [
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(0.000001, weight, neighbor_greedy)",
+      "rationale": "Compare root weight with a deterministically constructed independent alternative within its neighborhood. This ratio is invariant to positive weight rescaling and reacts to the witnessed edge and clique compression. The primitive is polynomial and supplies a feasible lower estimate, with order-dependent looseness acknowledged."
+    },
+    "program_sha256": "f88623d2bc47f76e5920e4bebdf6334f05b96ed928754e1719e8c57fdcdb6cba"
+  },
+  {
+    "id": "prior_guided_controls:3",
+    "arm": "prior_guided_controls",
+    "index": 3,
+    "program": {
+      "name": "g18_retained_bracket_midpoint",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + (residual_cover + residual_greedy) / 2",
+      "rationale": "Use a midpoint of optimistic and feasible retained continuation estimates. The witness reversal arises because the retained structure changes; combining both estimates aims to temper optimistic cover scores and greedy underestimation on larger residual graphs, while exposing an explicit two-primitive cost tradeoff."
+    },
+    "program_sha256": "6414a5aa3da73d35b004aa64e52ea1600f8fb352d334b5396e41c6fe24d2f1ab"
+  }
+]

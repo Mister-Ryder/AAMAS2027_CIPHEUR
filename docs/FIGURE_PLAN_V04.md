@@ -1,0 +1,27 @@
+# v04 quantitative figure plan and final allocation
+
+**Final allocation, 3 October 2026.** The manuscript uses the 7 × 2.1 in TRAIN mechanism panel, a combined 7 × 3.95 in fresh/public comparison, and a 7 × 2.25 in fixed-AST heap panel. The individual population, coverage and pure-cancellation plots remain in the evidence gallery; they are not additional body figures. All principal archives are complete and audited. The plan below preserves the earlier design decisions; the implemented plot uses all-assigned mean elapsed time, explicitly recorded in `summary.json`, rather than the initially proposed median. Final layout and native editability are recorded in `FIGURE_DESIGN_V03.md`.
+
+Use actual completed advanced-study archives after the TRAIN freeze. The current available inputs are 456 fresh scheduling contexts and 96 public graph contexts; this document contains no predicted performance. All panels use embedded Arial at 9 pt or larger, verified blue `#176B9B`, synthesis purple `#71559C`, negative orange `#D36B32`, and comparator gray `#687782`. Vector PDF is the manuscript asset; 300-dpi PNG is for inspection.
+
+## Main quantitative allocation
+
+The preferred main result is `quality_cost_fresh_v04.pdf`, 7 × 2.9 inches: three panels for standard, dense-long and C3. Plot failure-zero per-context reward relative to the strongest archived independently verified feasible witness against all-assigned median elapsed wall time. Vertical intervals resample source seeds across resource regimes and both configurations, or C3 source blocks. Every published solver uses the arithmetic mean of seeds 1/2/3, including failed-run zeros. Legend states the native comparator names and the frozen guided program. The figure must identify distinct declared budgets; wall time is a measured outcome, not a matched-budget assertion. Retain raw reward and independently certified clique-upper ratios in the report because best-observed normalization is descriptive rather than an optimality proof.
+
+Coverage is required adjacent evidence: `coverage_fresh_v04.pdf`, a compact strip aligned with the same three populations, or a table in the caption-adjacent text. Show completed native runs / three requested runs per context and deterministic completed contexts separately in the report. A completed-seed conditional mean always appears with its coverage; absent witnesses do not silently remove an assigned context. The script records the number of contexts with a formal reference or a recorded runtime.
+
+The public companion `quality_cost_public_v04.pdf`, 7 × 2.9 inches, separates DIMACS unit (18), DIMACS hash-weighted (18), SATLIB unit (30), and SATLIB hash-weighted (30). This is zero-shot graph transfer, distinct from the physically generated fresh scheduling populations. It is suitable for the main text only if all four panels remain legible and the actual result is scientifically informative; otherwise use a small result table and retain the plot in the supplementary gallery. Never average public and private performance. The prespecified 30-second subset is a separate figure/table and never mixed with short-budget points.
+
+`cancellation_uncertainty_v04.pdf`, 7 × 2.6 inches, is available now from the 396 matched TRAIN comparisons. Its observed CDF and paired scatter demonstrate narrower intervals while stating strict certificates 33→33. All 396 intervals are nested and 199 are strictly narrower; median width 86.75→36. The whole-residual 10→component-strategy 33 comparison remains separate because it changes the bounding strategy. If main space is tight, use one CDF panel at column width and put the paired scatter in the gallery.
+
+Total preferred main quantitative height is 2.9 + 2.6 inches plus compact coverage text. The old v03 fixed-rule runtime figure is a gallery figure. Do not consume the main budget with three separate runtime figures.
+
+## Cost and mechanism evidence
+
+The score-sliced/full-interface comparison uses the identical program AST and assigned contexts. Show completion in both modes. Compare traces, schedules and exact values only when both complete, retaining the unassessable count. A matched successful runtime ratio is conditional and cannot be promoted to a population-wide speedup. Both modes charge static superset maintenance. If actual feature-work receipts are available, separate static maintenance from demanded score evaluation; do not infer a breakdown from an aggregate work counter.
+
+The TRAIN guided primary-only ablation selected the same program as the main guided arm. An identical execution is a parity control and cannot establish a positive selection effect. Actual-choice regret, score consistency and finite-catalogue representability remain different measurements. No post-test AST revision or solver-seed selection is permitted.
+
+## Reproduction and validation
+
+`scripts/build_result_figures_v04.py` reads archives without extracting or mutating them, checks completion counts, input/freeze hashes, seed identities and saved mean rewards, and regenerates JSON/report/plots. Until supplied completed archives, it generates only the true TRAIN cancellation figure and input inventory. Command options are `--fresh-archive PATH --public-archive PATH`; expected short counts are 456 and 96. Keep completed-case scope, zero-failure scope, budget phase and source-cluster unit in every numerical table. Reopen every exported PNG and inspect legends, clipping, markers, axes and the font size at the actual publication width.

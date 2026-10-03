@@ -1,0 +1,185 @@
+{
+  "archive_sha256": "71ebbc20f570bb866a165420a37b62730ee8d3749cfeef4ffdfcd1389875c0ba",
+  "frozen_source_zip_sha256": "d516c9819b847d6f7ae0e196234f436d8515e10f303cf634b3a0c07f9e413668",
+  "member_sha256": {
+    "config.json": "09f2cbefaca18cb27b6cd0d22b26af868a58c38cf22b971ed51faa81ab3a910b",
+    "data.json": "7afb9d7451ae71ff99833b15cd6ce53f46b9736870483086fe4508c15153ff41",
+    "frozen_programs.json": "2f4379e782413a2ba68222314ec674163f91a5ffcf75c7d74062388dc601987b",
+    "executed_programs.json": "58c9ef45016b82d76f8e3f3e544b9e69e2bc1aa6f53bf75a0a2226de3b1f13f8",
+    "execution.json": "6e5b25669d568f78ac8597ec95e587d7ce25a94cf9a240528b50dd39e17bff5f",
+    "complete.json": "d6cce0317f5ce030ae14654cc654ba2891ec137c30b5580db5585c98f639aa64"
+  },
+  "contexts": 8,
+  "runs": 96,
+  "method_counts": {
+    "degree/full_scan/failed": 24,
+    "degree/heap/completed": 24,
+    "primary/heap/completed": 12,
+    "primary/full_scan/failed": 24,
+    "primary/heap/failed": 12
+  },
+  "assessable_fullscan_heap_pairs": 0,
+  "cross_budget_same_ast_success_checks": {
+    "degree/heap/all_successful_cross_pairs": 54,
+    "degree/heap/same_repetition_both_complete": 18,
+    "primary/heap/all_successful_cross_pairs": 21,
+    "primary/heap/same_repetition_both_complete": 7
+  },
+  "max_observed_cpu_seconds": {
+    "degree/full_scan/failed": 30.000733065999995,
+    "degree/heap/completed": 7.989890357999997,
+    "primary/heap/completed": 5.1364561289999955,
+    "primary/full_scan/failed": 30.000940404999994,
+    "primary/heap/failed": 30.015110291000013
+  },
+  "failure_statuses": {
+    "CPU_budget_exceeded": 60
+  },
+  "cases": {
+    "SNAP_ca-GrQc_unit:graph": {
+      "family": "SNAP_sparse",
+      "source_cluster": "ca-GrQc",
+      "n": 5242,
+      "m": 14484,
+      "counts": {
+        "degree/full_scan/failed": 3,
+        "degree/heap/completed": 3,
+        "primary/heap/completed": 3,
+        "primary/full_scan/failed": 3
+      }
+    },
+    "SNAP_ca-GrQc_hash_weighted:graph": {
+      "family": "SNAP_sparse",
+      "source_cluster": "ca-GrQc",
+      "n": 5242,
+      "m": 14484,
+      "counts": {
+        "primary/full_scan/failed": 3,
+        "primary/heap/completed": 3,
+        "degree/heap/completed": 3,
+        "degree/full_scan/failed": 3
+      }
+    },
+    "SNAP_ca-HepTh_hash_weighted:graph": {
+      "family": "SNAP_sparse",
+      "source_cluster": "ca-HepTh",
+      "n": 9877,
+      "m": 25973,
+      "counts": {
+        "primary/full_scan/failed": 3,
+        "primary/heap/completed": 3,
+        "degree/heap/completed": 3,
+        "degree/full_scan/failed": 3
+      }
+    },
+    "SNAP_ca-HepTh_unit:graph": {
+      "family": "SNAP_sparse",
+      "source_cluster": "ca-HepTh",
+      "n": 9877,
+      "m": 25973,
+      "counts": {
+        "degree/full_scan/failed": 3,
+        "degree/heap/completed": 3,
+        "primary/heap/completed": 3,
+        "primary/full_scan/failed": 3
+      }
+    },
+    "SNAP_facebook_combined_hash_weighted:graph": {
+      "family": "SNAP_sparse",
+      "source_cluster": "facebook_combined",
+      "n": 4039,
+      "m": 88234,
+      "counts": {
+        "primary/full_scan/failed": 3,
+        "primary/heap/failed": 3,
+        "degree/heap/completed": 3,
+        "degree/full_scan/failed": 3
+      }
+    },
+    "SNAP_facebook_combined_unit:graph": {
+      "family": "SNAP_sparse",
+      "source_cluster": "facebook_combined",
+      "n": 4039,
+      "m": 88234,
+      "counts": {
+        "degree/full_scan/failed": 3,
+        "degree/heap/completed": 3,
+        "primary/heap/failed": 3,
+        "primary/full_scan/failed": 3
+      }
+    },
+    "SNAP_ca-HepPh_hash_weighted:graph": {
+      "family": "SNAP_sparse",
+      "source_cluster": "ca-HepPh",
+      "n": 12008,
+      "m": 118489,
+      "counts": {
+        "primary/full_scan/failed": 3,
+        "primary/heap/failed": 3,
+        "degree/heap/completed": 3,
+        "degree/full_scan/failed": 3
+      }
+    },
+    "SNAP_ca-HepPh_unit:graph": {
+      "family": "SNAP_sparse",
+      "source_cluster": "ca-HepPh",
+      "n": 12008,
+      "m": 118489,
+      "counts": {
+        "degree/full_scan/failed": 3,
+        "degree/heap/completed": 3,
+        "primary/heap/failed": 3,
+        "primary/full_scan/failed": 3
+      }
+    }
+  },
+  "checks": {
+    "sparse30_unique_context": 16,
+    "sparse30_separate_fixed_budget_scope": 1,
+    "sparse30_only_declared_budget_change": 1,
+    "sparse30_execution_byte_identity": 3,
+    "sparse30_original_input_freeze_unchanged": 1,
+    "sparse30_train_asts_unchanged": 1,
+    "sparse30_prefrozen_source_package_hash": 1,
+    "sparse30_exact_prefrozen_config": 1,
+    "sparse30_exact_frozen_executed_reviewed_source": 7,
+    "sparse30_unchanged_reviewed_backend_source": 6,
+    "sparse30_only_runner_protocol_guard_extension": 1,
+    "sparse30_original_graph_boundary_identity": 8,
+    "sparse30_complete_per_context_assignment": 8,
+    "sparse30_interleaved_order_balance": 96,
+    "sparse30_same_ast_no_timeout_fallback": 96,
+    "sparse30_all_assigned_cost_retained": 96,
+    "sparse30_failure_null_no_partial_quality": 60,
+    "selection_list": 36,
+    "selection_feasible": 36,
+    "selection_boundary": 36,
+    "selection_objective": 36,
+    "sparse30_exact_original_reward": 36,
+    "heap_trace_original_active_state": 122754,
+    "heap_trace_complete_original_selection": 36,
+    "heap_charged_work_reconciliation": 36,
+    "heap_prespecified_local_mode": 36,
+    "heap_exact_local_frontier_invalidation": 36,
+    "heap_frontier_and_deletion_charges": 36,
+    "heap_actual_priority_operation_receipts": 36,
+    "sparse30_all_cross_budget_success_trace_equivalence": 75,
+    "sparse30_unique_pair": 48,
+    "sparse30_unassessable_pairs_no_parity_or_speedup": 48,
+    "sparse30_complete_counts_hash_vacuous_parity": 1,
+    "sparse30_balanced_first_backend": 1
+  },
+  "issues": [],
+  "scope": [
+    "Separate30-process-CPU-second post-diagnostic execution extension; same8 source/weight inputs and same TRAIN-frozen ASTs.",
+    "Comparison with5-second successes is repeated execution of the same inputs, not additional independent quality instances.",
+    "Fullscan completes0/24 per AST, so exact paired sparse parity and speedup remain unassessable; vacuous all_completed_pairs_match=true is not confirmation.",
+    "Workers differ:8 here versus2 in5-second sparse timing; no causal wall-cost comparison across budgets is inferred.",
+    "All costs and null failures retained; no partial/fallback schedules, original confirmatory quality credit, or program selection changes."
+  ],
+  "runner_source_change": {
+    "old_sha256": "4ac48c2f9d161973b218456c92affa50d49c46595df588a42281bd74cfbe2983",
+    "new_sha256": "64e29c71376aa3f18a2ee5dc8d17b15a305aca304e7dafc7fbbada132786bfd5",
+    "only_change": "Config admission guard recognizes explicit (version,CPU target) pairs for5/30-second extensions; execution/scoring/timing/failure logic byte-identical."
+  }
+}

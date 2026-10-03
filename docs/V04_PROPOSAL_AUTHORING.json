@@ -1,0 +1,59 @@
+{
+  "version": "v04_proposal_authoring_session_001",
+  "authoring_sessions": 1,
+  "served_model_identifier": "gpt-6.1-sol",
+  "model_metadata_source": "trusted root turn metadata, verified in docs/AI_ASSISTANCE_V03.md",
+  "external_API_calls": 0,
+  "token_usage": null,
+  "final_new_guided_proposals": 12,
+  "final_bank_total": 93,
+  "source_artifact": "configs/relevance_v04_guided_bank.json",
+  "scope": "One continuing assistant agent turn with parent design feedback and revisions before any v04 TRAIN outcome. Prior qualitative v03 failures informed the motivation. Old test outcomes did not numerically rank or select the final v04 bank.",
+  "request_record_type": "Faithful summaries of parent task/follow-up requests; raw messages remain in the original task history. These are not fabricated external API prompts or reported LLM-server calls.",
+  "requests_in_order": [
+    {
+      "kind": "initial_method_request",
+      "summary": "Design a substantive TRAIN-only improvement addressing actual-action relevance, neighborhood completion envelopes and constraint/structural information; keep the sound representational refinement core. Do not select using old test outcomes. Avoid broad expensive exact search or an invented LLM API."
+    },
+    {
+      "kind": "implementation_scope",
+      "summary": "Implement exact cancellation of common conditioned residual components and actual-action regret selection. Keep ordinary FeatureRuleProgram, the typed feature library and schedule_compiled for source/kernel/AST parity. Author at most 12 predetermined guided proposals, including g12, clique/greedy width and structural hybrids, alongside all prior free/rule/enumerated controls. Use TRAIN schedule quality/cost as primary and actual regret as secondary, retain unknowns, and do not impose an uncertified regret-upper exclusion gate. Freeze before a fresh confirmation."
+    },
+    {
+      "kind": "compute_and_data_scope",
+      "summary": "Use four development workers and 32/64/128-contact natural standard, dense-long and TRAIN C3 contexts, with at most 96 contexts. Supply a fresh temporal namespace and C3 original-ID exclusion protocol covering all prior v03 input splits. Reusing TRAIN C3 for development is allowed; fresh test must use new source contacts."
+    },
+    {
+      "kind": "compiler_backend",
+      "summary": "Use score_slice=True uniformly for all v04 programmes. The optional compiler preserves default v03 semantics and meters static dependency maintenance, with branch-sensitive lazy feature evaluation for the actually taken scorer branch. Do not add a new constraint primitive; explicit configuration audit is sufficient for this iteration."
+    },
+    {
+      "kind": "final_bank_revision",
+      "summary": "Retain prior g18 as an explicit known control and replace two weaker templates with retained-continuation proposals guarded solely by remaining_count at 64 and 128. Use residual_cover, residual_greedy and an edge-density backup. Guard thresholds follow the declared compute regimes and are not optimized from old test quality. Final count is 12 new proposals and 93 total programmes."
+    },
+    {
+      "kind": "receipt_correction",
+      "summary": "Record the actual inherited model gpt-6.1-sol from trusted root metadata, one continuing authoring session with root feedback before TRAIN outcomes, zero external API calls and unavailable token usage. Do not call the authoring session an LLM-server call. Set test_accessed=false in the TRAIN freeze. Preserve prompt/request scope honestly."
+    }
+  ],
+  "final_proposal_families": [
+    "feasible_ratio_g12",
+    "upper_ratio",
+    "midpoint_ratio",
+    "ambiguity_discount",
+    "feasible_loss",
+    "upper_loss",
+    "interval_normalized_ratio",
+    "feasible_pair_hybrid",
+    "feasible_density_hybrid",
+    "density_gap_ratio",
+    "retained_guard_64",
+    "retained_guard_128"
+  ],
+  "limitations": [
+    "One assistant authoring session; no replicated generation variance estimate.",
+    "Twelve new proposals versus existing 24-proposal control banks; generation compute and candidate counts are not matched.",
+    "Typed scalar features are heuristic score inputs; exact Fraction/outward offline bounds alone support strict certified labels.",
+    "Known prior-study failure motivated the redesign; this study is not claimed blinded to that motivation."
+  ]
+}

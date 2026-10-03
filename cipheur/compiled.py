@@ -39,6 +39,13 @@ _LOWERED = {
     _shape(_BASE_EXPRESSIONS["compatible_weight"]): "compatible_weight",
 }
 
+class _LazyScoreLocals(dict):
+    """Validated numeric inputs materialize only when Python reads a name."""
+    def __init__(self, getter):
+        super().__init__({'min':min,'max':max,'abs':abs});self.getter=getter
+    def __missing__(self,key):
+        value=self.getter(key);self[key]=value;return value
+
 
 def _float_term(value) -> Fraction:
     """Exactly represent the conversion that math.fsum applies to one term."""
@@ -116,10 +123,12 @@ class CompiledEvaluator:
     """
 
     def __init__(self, graph: Graph, program: FeatureRuleProgram, active,
-                 meter: dict | None = None):
+                 meter: dict | None = None, score_slice: bool = False):
         if not isinstance(program, FeatureRuleProgram):
             raise TypeError("A typed FeatureRuleProgram is required")
         self.graph, self.program = graph, program
+        self.score_slice = score_slice
+        self.required_names = set(program.code.co_names) & set(program.feature_names)
         self.active = set(active)
         if not self.active <= graph.nodes.keys():
             raise ValueError("Active set contains unknown nodes")
@@ -148,18 +157,23 @@ class CompiledEvaluator:
                 found = canonical
             return found
 
-        for expression in _BASE_EXPRESSIONS.values():
-            intern(expression)
-        for _, expression in program._expressions:
-            intern(expression)
+        for name, expression in _BASE_EXPRESSIONS.items():
+            if not score_slice or name in self.required_names:intern(expression)
+        for name, expression in program._expressions:
+            if not score_slice or name in self.required_names:intern(expression)
         self.lowered = {expression: _LOWERED[_shape(expression)]
                         for expression in self.expressions
                         if _shape(expression) in _LOWERED}
         requested = set(self.lowered.values())
+        self._uses_sums = bool(requested & {'conflict_weight','compatible_weight','available_weight'}) or not score_slice
+        self._uses_max = 'max_conflict_weight' in requested or not score_slice
         self._edge_kinds = requested & {
             "neighbor_edge_count", "neighbor_edge_min", "neighbor_edge_product"}
         self.metadata = {
             "backend": "shared_dag_incremental_v03",
+            "score_slice": score_slice,
+            "branch_sensitive_inputs": score_slice,
+            "scorer_inputs": sorted(self.required_names),
             "tree_nodes": original_count,
             "dag_nodes": len(self.expressions),
             "shared_nodes_saved": original_count - len(self.expressions),
@@ -180,23 +194,26 @@ class CompiledEvaluator:
             self.edge_counts = {}
             self.edge_min_sums = {}
             self.edge_product_sums = {}
-            for v in sorted(self.active):
-                term = _float_term(graph.nodes[v].weight)
-                self.weight_terms[v] = term
-                self.total_weight += term
-                _charge(self.meter, "weight_read")
-                _charge(self.meter, "float_to_exact")
-                _charge(self.meter, "exact_arithmetic")
+            if self._uses_sums:
+                for v in sorted(self.active):
+                    term = _float_term(graph.nodes[v].weight)
+                    self.weight_terms[v] = term
+                    self.total_weight += term
+                    _charge(self.meter, "weight_read")
+                    _charge(self.meter, "float_to_exact")
+                    _charge(self.meter, "exact_arithmetic")
             for v in sorted(self.active):
                 _charge(self.meter, "neighbor_membership", len(graph.adj[v]))
                 neighbors = graph.adj[v] & self.active
                 self.neighbors[v] = neighbors
-                self.neighbor_sums[v] = sum((self.weight_terms[u] for u in neighbors), Fraction(0))
-                self.neighbor_maxima[v] = [(-graph.nodes[u].weight, u) for u in neighbors]
-                heapq.heapify(self.neighbor_maxima[v])
-                _charge(self.meter, "exact_arithmetic", len(neighbors))
-                _charge(self.meter, "weight_read", len(neighbors))
-                _charge(self.meter, "heap_initialize", len(neighbors))
+                if self._uses_sums:
+                    self.neighbor_sums[v] = sum((self.weight_terms[u] for u in neighbors), Fraction(0))
+                    _charge(self.meter, "exact_arithmetic", len(neighbors))
+                if self._uses_max:
+                    self.neighbor_maxima[v] = [(-graph.nodes[u].weight, u) for u in neighbors]
+                    heapq.heapify(self.neighbor_maxima[v])
+                    _charge(self.meter, "weight_read", len(neighbors))
+                    _charge(self.meter, "heap_initialize", len(neighbors))
                 if self._edge_kinds:
                     self.edge_counts[v] = 0
                     self.edge_min_sums[v] = Fraction(0)
@@ -239,15 +256,56 @@ class CompiledEvaluator:
         if node not in self.active:
             raise ValueError("Scored node must belong to the current active set")
         before = self.meter["feature_work"]
+        started = perf_counter()
         try:
             if self._snapshot is None:
                 _charge(self.meter, "snapshot_materialize", len(self.active))
                 self._snapshot = _CompiledSnapshot(self)
-            return self._snapshot.feature_values(self.program, node)
+            if not self.score_slice:return self._snapshot.feature_values(self.program, node)
+            values={name:self._snapshot.evaluate(expr,node) for name,expr in _BASE_EXPRESSIONS.items() if name in self.required_names}
+            for name,expr in self.program._expressions:
+                if name in self.required_names:values[name]=self._snapshot.evaluate(expr,node)
+            if 'station_gap' in self.required_names:
+                values['station_gap']=self.graph.constraints.get('station_gap',self.graph.constraints.get('ground_trans_time',0));_charge(self.meter,'constraint_read',2)
+            if 'satellite_gap' in self.required_names:
+                values['satellite_gap']=self.graph.constraints.get('satellite_gap',self.graph.constraints.get('satellite_change_time',0));_charge(self.meter,'constraint_read',2)
+            return values
         finally:
             self.meter["query_work"] += self.meter["feature_work"] - before
+            if self.score_slice:self.meter['feature_seconds'] += perf_counter()-started
 
     def score(self, node: str) -> float:
+        if self.score_slice:
+            if node not in self.active:raise ValueError('Scored node must be active')
+            if self._snapshot is None:
+                before=self.meter['feature_work']
+                _charge(self.meter,'snapshot_materialize',len(self.active));self._snapshot=_CompiledSnapshot(self)
+                self.meter['query_work']+=self.meter['feature_work']-before
+            expressions={**_BASE_EXPRESSIONS,**dict(self.program._expressions)}
+            feature_elapsed=[0.0]
+            def getter(name):
+                before=self.meter['feature_work'];started=perf_counter()
+                try:
+                    _charge(self.meter,'scorer_input_lookup')
+                    if name in expressions:return self._snapshot.evaluate(expressions[name],node)
+                    if name=='station_gap':
+                        _charge(self.meter,'constraint_read',2)
+                        return self.graph.constraints.get('station_gap',self.graph.constraints.get('ground_trans_time',0))
+                    if name=='satellite_gap':
+                        _charge(self.meter,'constraint_read',2)
+                        return self.graph.constraints.get('satellite_gap',self.graph.constraints.get('satellite_change_time',0))
+                    raise ValueError('Unexpected scorer input '+name)
+                finally:
+                    self.meter['query_work']+=self.meter['feature_work']-before
+                    elapsed=perf_counter()-started
+                    self.meter['feature_seconds']+=elapsed;feature_elapsed[0]+=elapsed
+            started=perf_counter()
+            try:result=float(eval(self.program.code,{'__builtins__':{}},_LazyScoreLocals(getter)))
+            except (ZeroDivisionError,TypeError,ValueError,OverflowError) as error:
+                raise ValueError(f'Invalid program score: {error}') from error
+            finally:self.meter['scoring_seconds']+=max(0.0,perf_counter()-started-feature_elapsed[0])
+            if not math.isfinite(result) or abs(result)>1e15:raise ValueError('Program score must be finite and bounded')
+            return result
         return self.program._rank(self.feature_values(node), self.meter)
 
     def remove(self, nodes) -> None:
@@ -280,13 +338,13 @@ class CompiledEvaluator:
                                 self.edge_product_sums[v] -= self._edge_term(x, y, "product")
                                 _charge(self.meter, "exact_arithmetic")
                     self.neighbors[v].remove(x)
-                    self.neighbor_sums[v] -= self.weight_terms[x]
+                    if self._uses_sums:self.neighbor_sums[v] -= self.weight_terms[x]
                     _charge(self.meter, "set_delete")
-                    _charge(self.meter, "exact_arithmetic")
+                    if self._uses_sums:_charge(self.meter, "exact_arithmetic")
                 self.active.remove(x)
-                self.total_weight -= self.weight_terms[x]
+                if self._uses_sums:self.total_weight -= self.weight_terms[x]
                 _charge(self.meter, "set_delete")
-                _charge(self.meter, "exact_arithmetic")
+                if self._uses_sums:_charge(self.meter, "exact_arithmetic")
                 self._snapshot = None
         finally:
             self.meter["update_work"] += self.meter["feature_work"] - before
@@ -296,11 +354,11 @@ class CompiledEvaluator:
 
 
 def schedule_compiled(graph: Graph, program: FeatureRuleProgram,
-                      fixed=(), excluded=()) -> dict:
+                      fixed=(), excluded=(), meter=None, score_slice=False) -> dict:
     """Apply the unchanged deterministic kernel using compiled graph features."""
     fixed, excluded = tuple(fixed), tuple(excluded)
     chosen = list(fixed)
-    evaluator = CompiledEvaluator(graph, program, graph.available(fixed, excluded))
+    evaluator = CompiledEvaluator(graph, program, graph.available(fixed, excluded),meter,score_slice)
     trace = []
     while evaluator.active:
         scores = {node: evaluator.score(node) for node in sorted(evaluator.active)}

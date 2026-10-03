@@ -1,0 +1,21 @@
+{
+  "sizes": [
+    32,
+    64,
+    128
+  ],
+  "regimes": [
+    "balanced",
+    "ground_scarce",
+    "satellite_scarce"
+  ],
+  "per_size": {
+    "train": 2,
+    "validation": 2,
+    "test": 4
+  },
+  "diagnostic_per_split": 4,
+  "backend": "compiled",
+  "local_search_seconds": 0.25,
+  "milp_seconds": 2
+}

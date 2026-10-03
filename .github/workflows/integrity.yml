@@ -2,7 +2,7 @@ name: Integrity checks
 
 on:
   push:
-    branches: [main]
+    branches: [main, "research/**"]
   pull_request:
   workflow_dispatch:
 
@@ -27,6 +27,8 @@ jobs:
         run: python -B -m unittest discover -s tests -q
       - name: Verify archived research records
         run: python -B scripts/verify_artifacts.py
+      - name: Verify the complete V04 source, paper and evidence release
+        run: python -B scripts/verify_release_v04.py
       - name: Check standalone smoke configuration
         run: python -B -m cipheur preflight --config configs/smoke.json
       - name: Run offline standalone smoke
@@ -37,3 +39,7 @@ jobs:
         run: python -B -m cipheur synthesize --prepared-run experiments/runs/pilot_v0.2.0_audited --config configs/joint_replay.json --output output/ci_joint
       - name: Deploy the frozen joint program
         run: python -B -m cipheur schedule --graph examples/deployment_graph.json --program output/ci_joint/selected_program.json --output output/ci_joint_deployment.json
+      - name: Deploy the TRAIN-frozen V04 programme with demand evaluation
+        run: python -B -m cipheur schedule --graph examples/deployment_graph.json --program examples/frozen_program_v04.json --backend demanded --output output/ci_v04_deployment.json
+      - name: Deploy the unchanged V04 programme with local score updates
+        run: python -B -m cipheur schedule --graph examples/deployment_graph.json --program examples/frozen_program_v04.json --backend heap --output output/ci_v04_heap_deployment.json

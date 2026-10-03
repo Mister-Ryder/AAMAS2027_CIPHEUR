@@ -1,0 +1,146 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{Populations and Frozen Protocol}
+\label{sec:experiments:protocol}
+TRAIN contains 33 pairs/66 contexts at 32--128 contacts. Fresh confirmation
+uses 456 test contexts (Table~\ref{tab:study-protocol}); 132 fresh validation
+contexts do not select programs. Pairs change one resource parameter while
+preserving contacts, weights and windows. Standard/dense profiles span three
+resource regimes. Test ground gaps $(0.5,6)$ shift from TRAIN $(0,2)$;
+dense horizons shorten $1.8n\to0.18n$ and maximum duration grows $12\to48$.
+
+\begin{table}[t]
+\centering
+\caption{Separate confirmation populations. Public weight variants share
+topology; scheduling configurations share their paired source.}
+\label{tab:study-protocol}
+\small
+\begin{tabular}{lrr}
+\toprule
+Population & Contacts & Contexts \\
+\midrule
+Fresh standard / dense-long & 64--256 & 216 / 216 \\
+Fresh C3 source blocks & 64--512 & 24 \\
+DIMACS / SATLIB transfer & 28--1,024 & 36 / 60 \\
+Separate SNAP sparse extension & 4,039--12,008 & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Seeds and C3 opportunities are split-disjoint and exclude inventoried prior
+inputs. Public transfer uses 18 DIMACS originals and 30 prespecified SATLIB
+instances, each with unit and declared hash weights. Independent decoders check
+clique complements and literal-conflict reductions. SNAP projects four sources
+to simple graphs, with two weight modes.
+
+Pinned CHILS, M$^2$WIS, Struction and weighted branch-and-reduce executables
+use verified output mappings and seeds 1/2/3. CHILS has four population states
+and a one-state ILS control. Native budgets are five seconds or 30 on a
+prespecified subset. Constructive policies retain a cooperative five-process-CPU-second
+target; HiGHS receives ten seconds and classical one-to-two exchange search
+two seconds after initialization. Total computation is unmatched.
+
+Failures return null schedules and receive zero in all-assigned reward;
+coverage accompanies conditional summaries. Native quality averages seeds
+within contexts. Competitive reward divides by the strongest independently
+verified saved feasible witness. It does not establish optimality. Exact
+clique-upper ratios remain separate from floating HiGHS endpoints. The
+2,000-replicate 95\% bootstrap keeps paired configurations and shared temporal
+seeds across regimes together and clusters C3 source blocks. Public families
+and weight modes remain separate. Wall points use context mean seed-wall time;
+complete local-search cost includes classical initialization.
+
+\subsection{Evidence, Necessity and Cancellation}
+\label{sec:experiments:evidence}
+Acquisition uses 62 training pairs: 20 probes and 42 temporal/C3 pairs.
+Equal attempt limits and oracle parameters compare ranked versus
+uniform challengers and clique versus weight-sum envelopes
+(Table~\ref{tab:evidence-yield}). Ranked clique yields more certificates with
+less search than ranked weight sums, but fewer certificates than uniform.
+Extra reversals mainly arise from probes. Repeated boundary certificates
+are clustered.
+
+\begin{table}[t]
+\centering
+\caption{Acquisition attempts, reversal/preservation certificates and expanded
+search nodes on the same 62 pairs.}
+\label{tab:evidence-yield}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Challenger / envelope & Attempts & R/P & Nodes \\
+\midrule
+Ranked / clique & 172 & 26/25 & 52,355 \\
+Uniform / clique & 170 & 14/44 & 52,377 \\
+Ranked / weight sum & 176 & 24/12 & 84,138 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All 64 original-bank strict self-loops originate from probes; 19 non-probe
+specifications form an acyclic quotient. All 200 broader alias queries remain
+unresolved. Catalogue repair removes observed contradictions without proving
+natural incidence or unrestricted minimality. Full-quotient checks detect
+cycles surviving coarse-witness repair.
+
+A pure TRAIN cancellation control holds unmatched-component bounds fixed on
+396 comparisons. All cancelled intervals remain nested; 199 become strictly
+narrower, with median width $86.75\to36$ reward units. Strict certificates remain
+$33\to33$: reduced uncertainty gives no strict-yield gain. The separate
+whole-residual/component comparison ($10\to33$) changes strategy and does not
+isolate cancellation.
+
+\subsection{TRAIN Selection and Fresh Quality}
+\label{sec:experiments:selection}
+The 93-program bank contains 12 new guided proposals, 24 each from existing
+free/rule-only/enumeration arms, five classical rules and four prior guided
+controls. One Codex session (\texttt{gpt-6.1-sol}, ultra reasoning) authors the
+new proposals without external API calls. Unequal counts and unavailable
+tokens preclude model-level or matched-compute guidance claims.
+
+TRAIN evaluates all $93\times66$ assignments; 5,996 complete and 142 remain
+failures. Frozen primary selection yields
+$w_v/\max(10^{-6},w_v,\mathrm{nc}_v)$, where $\mathrm{nc}$ is the deterministic
+weighted clique-cover envelope of active neighbors. TRAIN reached-state regret
+upper is 4.24 in weight-normalized units for the recorded finite action pool.
+Main and primary-only guided selections are identical; the secondary criterion
+has no observed selection effect for this arm.
+
+The primary completes all 456 fresh contexts. Competitive reward is
+99.46\% [99.36,99.55] on standard, 96.11\% [95.58,96.62] on dense/long, and
+97.56\% [96.57,98.48] on C3 (Figure~\ref{fig:quality-cost-fresh}). Its degree-rule
+advantages are 0.98 percentage points [0.79,1.17] and 1.64 [0.93,2.36] on
+the two temporal profiles; the C3 interval crosses zero. CHILS, its ILS setting,
+M$^2$WIS and Struction attain 100\% descriptive competitive reward throughout.
+The latter two and weighted branch-and-reduce also terminate faster than the
+current Python primary. No published-solver superiority follows.
+The older continuation control fails 211/456. All completed C3 selections pass
+the original physical verifier; only two fresh contexts attain the formal
+clique upper.
+
+Public transfer exposes limited coverage: the primary completes 34/36 DIMACS
+and 20/60 SATLIB contexts. Failure-zero unit/hash competitive reward is
+80.53/87.07\% and 32.93/31.05\%, respectively
+(Figure~\ref{fig:quality-cost-public}). CHILS/ILS/Struction complete 288/288
+short seed runs each; M$^2$WIS fails six and weighted branch-and-reduce eight.
+All four native methods complete 63/63 long-subset runs; primary completion
+is 18/21 at its unchanged CPU target. On eight SNAP projections, original
+primary completion is zero versus 24/24 seeds for CHILS/ILS/M$^2$WIS/Struction
+and 21/24 for weighted branch-and-reduce.
+
+\subsection{Compiled Execution Cost}
+\label{sec:experiments:deployment}
+The same primary AST has identical demanded/full-interface traces on all 456
+fresh contexts. A fixed structural rule earlier matched interpreter/compiler
+traces on 150 validation contexts with three repeats, yielding median timing
+ratios $1.10\times$ at 32 contacts and $2.44\times$ at 512.
+
+A separate post-diagnostic heap extension preserves the frozen ASTs and all
+2,736 assessable fresh trace pairs (Figure~\ref{fig:heap-execution}). Mean
+context-median full-scan/heap CPU ratios are $15.45\times$ [12.91,18.19],
+$1.19\times$ [1.15,1.23] and $4.61\times$ [4.09,5.19] on standard/dense/C3.
+Degree scoring slows on dense graphs ($0.87\times$). SNAP full scans complete
+0/24 repetitions per AST; heap completes 7/24 primary and 18/24 degree runs.
+Sparse parity/speedups are unassessable. No failed-run quality is credited;
+the original confirmation remains separate.

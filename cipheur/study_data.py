@@ -9,10 +9,10 @@ from .experiment_data import _record, diagnostic_pair
 
 SPLITS = ('train','validation','test')
 
-def temporal_pair(split, size, index, regime='balanced', profile='standard'):
+def temporal_pair(split, size, index, regime='balanced', profile='standard',seed_offset=0):
     if profile not in ('standard','dense_long'):
         raise ValueError('Unknown predeclared temporal profile')
-    seed = 9000000 + SPLITS.index(split)*1000000 + size*1000 + index + (100000000 if profile=='dense_long' else 0)
+    seed = 9000000 + SPLITS.index(split)*1000000 + size*1000 + index + (100000000 if profile=='dense_long' else 0)+seed_offset
     rng = random.Random(seed)
     resources = {'balanced':(8,6), 'ground_scarce':(12,3), 'satellite_scarce':(3,12)}[regime]
     satellites, grounds = resources
@@ -31,7 +31,7 @@ def temporal_pair(split, size, index, regime='balanced', profile='standard'):
     left = temporal_graph(name+'_left',contacts,station_gap=before,satellite_gap=0)
     right = temporal_graph(name+'_right',contacts,station_gap=after,satellite_gap=0)
     return _record(name,prefix+'_'+regime,left,right,{'split':split,'seed':seed,
-        'origin':'v03_temporal_generator','size':size,'regime':regime,
+        'origin':'v03_temporal_generator' if seed_offset==0 else 'v04_temporal_generator','seed_offset':seed_offset,'size':size,'regime':regime,
         'horizon':horizon,'population_claim':'specified_generator_only'})
 
 def build_study(config):
@@ -41,7 +41,7 @@ def build_study(config):
         for regime in config.get('regimes',['balanced','ground_scarce','satellite_scarce']):
             for size in config.get('sizes',[32,64,128,256]):
                 for index in range(per_split[split]):
-                    result[split].append(temporal_pair(split,size,index,regime,config.get('temporal_profile','standard')))
+                    result[split].append(temporal_pair(split,size,index,regime,config.get('temporal_profile','standard'),config.get('temporal_seed_offset',0)))
         # Keep designed probes separate from natural/source-derived quality.
         for index in range(60,60+config.get('diagnostic_per_split',20)):
             pair = diagnostic_pair(split,index)

@@ -1,0 +1,15 @@
+{
+  "version": "outcome_free_sparse_public_extension_v04_001",
+  "scope": "Separate exploratory extension to public sparse graphs beyond the frozen DIMACS/SATLIB challenge protocol; fixed before this author accessed any fresh/public quality outcome",
+  "self_loop_policy": "drop_loop_arcs",
+  "loop_semantics": "Retain every observed vertex, discard and report self-link arcs to form the declared simple network; do not claim preserving MWIS of an original looped graph",
+  "node_count_mismatch_policy": "unavailable",
+  "weight_modes": ["unit", "hash_weighted"],
+  "public_extension_may_not_select_programmes_or_thresholds": true,
+  "datasets": [
+    {"name": "ca-GrQc", "url": "https://snap.stanford.edu/data/ca-GrQc.txt.gz", "page": "https://snap.stanford.edu/data/ca-GrQc.html", "directed": false, "official_declared_nodes": 5242, "official_declared_edges": 14496},
+    {"name": "ca-HepTh", "url": "https://snap.stanford.edu/data/ca-HepTh.txt.gz", "page": "https://snap.stanford.edu/data/ca-HepTh.html", "directed": false, "official_declared_nodes": 9877, "official_declared_edges": 25998},
+    {"name": "facebook_combined", "url": "https://snap.stanford.edu/data/facebook_combined.txt.gz", "page": "https://snap.stanford.edu/data/ego-Facebook.html", "directed": false, "official_declared_nodes": 4039, "official_declared_edges": 88234},
+    {"name": "ca-HepPh", "url": "https://snap.stanford.edu/data/ca-HepPh.txt.gz", "page": "https://snap.stanford.edu/data/ca-HepPh.html", "directed": false, "official_declared_nodes": 12008, "official_declared_edges": 118521}
+  ]
+}

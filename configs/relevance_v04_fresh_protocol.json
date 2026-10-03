@@ -1,0 +1,20 @@
+{
+  "version": "fresh_v04_evaluation_no_reuse_of_v03_test_outcomes",
+  "seed_namespace": 40000000,
+  "profiles": ["standard", "dense_long"],
+  "regimes": ["balanced", "ground_scarce", "satellite_scarce"],
+  "sizes": [64, 128, 256],
+  "per_cell": {"validation": 3, "test": 12},
+  "primary_program_cpu_seconds": 5.0,
+  "score_slice": true,
+  "solver_reference_seconds": 10.0,
+  "local_search_seconds": 2.0,
+  "candidate_selection_uses_fresh_validation": false,
+  "freeze_before_any_fresh_test_outcome": true,
+  "c3_test_requires_excluding_all_v03_original_ids": true,
+  "c3_target_sizes": [64, 128, 256, 512],
+  "c3_pairs_per_size": 3,
+  "c3_unavailable_blocks_are_reported_without_replacement": true,
+  "independent_unit": "temporal paired configurations with shared seed clustered across regimes; whole C3 source block",
+  "timeouts": "no returned schedule; no fallback; report completion, completed-case reward and zero-normalized all-case utility separately"
+}

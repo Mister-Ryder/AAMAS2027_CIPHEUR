@@ -1,0 +1,1471 @@
+{
+  "fresh": {
+    "source": {
+      "path": "experiments/runs/v04/heap_fresh_v04_001.tar.gz",
+      "sha256": "7520295b0ac64db5ea3932f65c43b2139a6d916ee2159e9f2603c5922ef88be3"
+    },
+    "execution": {
+      "scope": "post-diagnostic execution extension; not original confirmatory quality evaluation",
+      "population": "test",
+      "contexts": 456,
+      "repetitions": 3,
+      "runs_per_context": 12,
+      "workers": 6,
+      "input_path": "/root/autodl-tmp/aamas2027_v03/runs/fresh_data_v04_002/data.json",
+      "input_sha256": "827d6182abc67e3d8da16de59a785059153eef8a73a55be670f9e2b90c943af1",
+      "config_sha256": "be8d2491d7ea0c6fff702d0d3a5f4782c344886ac8e74229444cd7473a715ab3",
+      "train_freeze_sha256": "2f4379e782413a2ba68222314ec674163f91a5ffcf75c7d74062388dc601987b",
+      "candidate_bank_sha256": "7189f3a2cf37853cea60937b5ceb26611ebc669bc659a1a4316f730bd428068f",
+      "source_sha256": {
+        "__init__.py": "9ad3e9022a2097f9b050a81f5330571945cd745bca7b17646df61b034aef3bdf",
+        "compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+        "graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+        "model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+        "programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+        "score_heap_v04.py": "e9af50647ee93ad8fb4944b5b41605a264bcd7648e9a7fdae5422148a08976b0",
+        "heap_study_v04.py": "4ac48c2f9d161973b218456c92affa50d49c46595df588a42281bd74cfbe2983"
+      },
+      "source_snapshot_sha256": "14b79fe7450d70eee621d0e01633e7cc9e2f9149cc73755577d62bbab62ab0cb",
+      "program_sha256": {
+        "primary": "90079f0c7342f290c5858ff49b711f9b4cef96d028b260b8d1a2fdea13d463b6",
+        "degree": "39157d1794ca298d99f00ac3cbab2ab82a6849fb6c09b75a97bacba649852618"
+      },
+      "selection_permitted": false,
+      "original_confirmatory_runner_modified": false,
+      "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+      "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.31",
+      "processor": "x86_64",
+      "budget_scope": "cooperative process-CPU target; checkpoint every 128 meter writes; primitive and cleanup overshoot retained",
+      "timing_scope": "AST parse, evaluator/compiler/heap initialization, scoring, updates, final graph verification",
+      "failure_policy": "null schedule, value and trace; no partial schedule, backend fallback or retry"
+    },
+    "complete": {
+      "complete": true,
+      "contexts": 456,
+      "runs": 5472,
+      "method_counts": {
+        "degree/full_scan/completed": 1368,
+        "degree/heap/completed": 1368,
+        "primary/heap/completed": 1368,
+        "primary/full_scan/completed": 1368
+      },
+      "parity_failures": 0,
+      "results_sha256": "3d5e46bc023908a0afd51576065c23ffebe80268482705320f8fca077aa109cb",
+      "all_completed_pairs_match": true,
+      "selection_permitted": false,
+      "scope": "post-diagnostic execution extension; not original confirmatory quality evaluation"
+    },
+    "coverage": {
+      "primary/full_scan/assigned": 1368,
+      "primary/full_scan/completed": 1368,
+      "primary/heap/assigned": 1368,
+      "primary/heap/completed": 1368,
+      "degree/full_scan/assigned": 1368,
+      "degree/full_scan/completed": 1368,
+      "degree/heap/assigned": 1368,
+      "degree/heap/completed": 1368
+    },
+    "groups": {
+      "c3/primary": {
+        "assigned_contexts": 24,
+        "assessable_pairs": 72,
+        "cpu_ratio_conditional": {
+          "estimate": 4.6110036591295,
+          "lower": 4.088678805062219,
+          "upper": 5.185344246045558,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 24,
+          "finite_contexts": 24,
+          "source_clusters": {
+            "c3": 12
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "work_ratio_conditional": {
+          "estimate": 4.636650904807592,
+          "lower": 4.072755402158864,
+          "upper": 5.239560829075099,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 24,
+          "finite_contexts": 24,
+          "source_clusters": {
+            "c3": 12
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "score_evaluations_saved_conditional": {
+          "estimate": 4919.041666666667,
+          "lower": 2486.3333333333335,
+          "upper": 7768.860416666663,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 24,
+          "finite_contexts": 24,
+          "source_clusters": {
+            "c3": 12
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        }
+      },
+      "c3/degree": {
+        "assigned_contexts": 24,
+        "assessable_pairs": 72,
+        "cpu_ratio_conditional": {
+          "estimate": 3.7953722976391853,
+          "lower": 3.4008367105331567,
+          "upper": 4.248044368192146,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 24,
+          "finite_contexts": 24,
+          "source_clusters": {
+            "c3": 12
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "work_ratio_conditional": {
+          "estimate": 2.626252596005694,
+          "lower": 2.3698298215758435,
+          "upper": 2.9447092909713177,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 24,
+          "finite_contexts": 24,
+          "source_clusters": {
+            "c3": 12
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "score_evaluations_saved_conditional": {
+          "estimate": 5616.458333333333,
+          "lower": 2723.2958333333336,
+          "upper": 9014.633333333331,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 24,
+          "finite_contexts": 24,
+          "source_clusters": {
+            "c3": 12
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        }
+      },
+      "dense_long/primary": {
+        "assigned_contexts": 216,
+        "assessable_pairs": 648,
+        "cpu_ratio_conditional": {
+          "estimate": 1.1870905015086919,
+          "lower": 1.1498618783458407,
+          "upper": 1.2291113825735123,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "dense_long": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "work_ratio_conditional": {
+          "estimate": 1.1881787326648625,
+          "lower": 1.1510130140368147,
+          "upper": 1.22987036966089,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "dense_long": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "score_evaluations_saved_conditional": {
+          "estimate": 239.46296296296296,
+          "lower": 161.23958333333331,
+          "upper": 327.29328703703703,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "dense_long": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        }
+      },
+      "dense_long/degree": {
+        "assigned_contexts": 216,
+        "assessable_pairs": 648,
+        "cpu_ratio_conditional": {
+          "estimate": 0.8714256677045001,
+          "lower": 0.855796507975187,
+          "upper": 0.8869709891380739,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "dense_long": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "work_ratio_conditional": {
+          "estimate": 0.7822042018164443,
+          "lower": 0.7710200206327471,
+          "upper": 0.7930069970330653,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "dense_long": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "score_evaluations_saved_conditional": {
+          "estimate": 234.62037037037038,
+          "lower": 157.51354166666664,
+          "upper": 321.2420138888889,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "dense_long": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        }
+      },
+      "standard/primary": {
+        "assigned_contexts": 216,
+        "assessable_pairs": 648,
+        "cpu_ratio_conditional": {
+          "estimate": 15.451124886452195,
+          "lower": 12.908140218265903,
+          "upper": 18.189569041527854,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "standard": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "work_ratio_conditional": {
+          "estimate": 13.341602709440167,
+          "lower": 11.52487817799262,
+          "upper": 15.318158706273085,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "standard": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "score_evaluations_saved_conditional": {
+          "estimate": 6297.435185185185,
+          "lower": 4398.8644675925925,
+          "upper": 8340.368518518519,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "standard": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        }
+      },
+      "standard/degree": {
+        "assigned_contexts": 216,
+        "assessable_pairs": 648,
+        "cpu_ratio_conditional": {
+          "estimate": 10.379187159514755,
+          "lower": 8.78103944934958,
+          "upper": 12.109185161887465,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "standard": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "work_ratio_conditional": {
+          "estimate": 5.980253994513945,
+          "lower": 5.33229363368537,
+          "upper": 6.679177493497035,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "standard": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        },
+        "score_evaluations_saved_conditional": {
+          "estimate": 6591.25,
+          "lower": 4622.712731481482,
+          "upper": 8712.188888888888,
+          "level": 0.95,
+          "replications": 2000,
+          "seed": 20261003,
+          "assigned_contexts": 216,
+          "finite_contexts": 216,
+          "source_clusters": {
+            "standard": 36
+          },
+          "method": "stratified_source_cluster_percentile_bootstrap"
+        }
+      }
+    },
+    "sparse_cases": [],
+    "scope": "identical frozen ASTs, 3 order-balanced pairs; conditional ratios require both executions complete; failures retain null schedules"
+  },
+  "sparse": {
+    "source": {
+      "path": "experiments/runs/v04/heap_sparse_v04_001.tar.gz",
+      "sha256": "9b2a7ba886eaac663cd4850c7b2a6827e75671a43d8efe64d32fa2e6f69c5d39"
+    },
+    "execution": {
+      "scope": "post-diagnostic execution extension; not original confirmatory quality evaluation",
+      "population": "public",
+      "contexts": 8,
+      "repetitions": 3,
+      "runs_per_context": 12,
+      "workers": 2,
+      "input_path": "/root/autodl-tmp/aamas2027_v03/runs/public_sparse_v04_001/data.json",
+      "input_sha256": "7afb9d7451ae71ff99833b15cd6ce53f46b9736870483086fe4508c15153ff41",
+      "config_sha256": "be8d2491d7ea0c6fff702d0d3a5f4782c344886ac8e74229444cd7473a715ab3",
+      "train_freeze_sha256": "2f4379e782413a2ba68222314ec674163f91a5ffcf75c7d74062388dc601987b",
+      "candidate_bank_sha256": "7189f3a2cf37853cea60937b5ceb26611ebc669bc659a1a4316f730bd428068f",
+      "source_sha256": {
+        "__init__.py": "9ad3e9022a2097f9b050a81f5330571945cd745bca7b17646df61b034aef3bdf",
+        "compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+        "graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+        "model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+        "programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+        "score_heap_v04.py": "e9af50647ee93ad8fb4944b5b41605a264bcd7648e9a7fdae5422148a08976b0",
+        "heap_study_v04.py": "4ac48c2f9d161973b218456c92affa50d49c46595df588a42281bd74cfbe2983"
+      },
+      "source_snapshot_sha256": "14b79fe7450d70eee621d0e01633e7cc9e2f9149cc73755577d62bbab62ab0cb",
+      "program_sha256": {
+        "primary": "90079f0c7342f290c5858ff49b711f9b4cef96d028b260b8d1a2fdea13d463b6",
+        "degree": "39157d1794ca298d99f00ac3cbab2ab82a6849fb6c09b75a97bacba649852618"
+      },
+      "selection_permitted": false,
+      "original_confirmatory_runner_modified": false,
+      "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+      "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.31",
+      "processor": "x86_64",
+      "budget_scope": "cooperative process-CPU target; checkpoint every 128 meter writes; primitive and cleanup overshoot retained",
+      "timing_scope": "AST parse, evaluator/compiler/heap initialization, scoring, updates, final graph verification",
+      "failure_policy": "null schedule, value and trace; no partial schedule, backend fallback or retry"
+    },
+    "complete": {
+      "complete": true,
+      "contexts": 8,
+      "runs": 96,
+      "method_counts": {
+        "degree/full_scan/failed": 24,
+        "degree/heap/completed": 18,
+        "primary/heap/completed": 7,
+        "primary/full_scan/failed": 24,
+        "primary/heap/failed": 17,
+        "degree/heap/failed": 6
+      },
+      "parity_failures": 0,
+      "results_sha256": "c7d14e7e2d202306a71f557602d3abf662662e634db1c08401d1741e22c795f6",
+      "all_completed_pairs_match": true,
+      "selection_permitted": false,
+      "scope": "post-diagnostic execution extension; not original confirmatory quality evaluation"
+    },
+    "coverage": {
+      "primary/full_scan/assigned": 24,
+      "primary/full_scan/completed": 0,
+      "primary/heap/assigned": 24,
+      "primary/heap/completed": 7,
+      "degree/full_scan/assigned": 24,
+      "degree/full_scan/completed": 0,
+      "degree/heap/assigned": 24,
+      "degree/heap/completed": 18
+    },
+    "groups": {
+      "ca-GrQc/primary": {
+        "assigned_contexts": 2,
+        "assessable_pairs": 0,
+        "cpu_ratio_conditional": null,
+        "work_ratio_conditional": null,
+        "score_evaluations_saved_conditional": null
+      },
+      "ca-GrQc/degree": {
+        "assigned_contexts": 2,
+        "assessable_pairs": 0,
+        "cpu_ratio_conditional": null,
+        "work_ratio_conditional": null,
+        "score_evaluations_saved_conditional": null
+      },
+      "ca-HepPh/primary": {
+        "assigned_contexts": 2,
+        "assessable_pairs": 0,
+        "cpu_ratio_conditional": null,
+        "work_ratio_conditional": null,
+        "score_evaluations_saved_conditional": null
+      },
+      "ca-HepPh/degree": {
+        "assigned_contexts": 2,
+        "assessable_pairs": 0,
+        "cpu_ratio_conditional": null,
+        "work_ratio_conditional": null,
+        "score_evaluations_saved_conditional": null
+      },
+      "ca-HepTh/primary": {
+        "assigned_contexts": 2,
+        "assessable_pairs": 0,
+        "cpu_ratio_conditional": null,
+        "work_ratio_conditional": null,
+        "score_evaluations_saved_conditional": null
+      },
+      "ca-HepTh/degree": {
+        "assigned_contexts": 2,
+        "assessable_pairs": 0,
+        "cpu_ratio_conditional": null,
+        "work_ratio_conditional": null,
+        "score_evaluations_saved_conditional": null
+      },
+      "facebook_combined/primary": {
+        "assigned_contexts": 2,
+        "assessable_pairs": 0,
+        "cpu_ratio_conditional": null,
+        "work_ratio_conditional": null,
+        "score_evaluations_saved_conditional": null
+      },
+      "facebook_combined/degree": {
+        "assigned_contexts": 2,
+        "assessable_pairs": 0,
+        "cpu_ratio_conditional": null,
+        "work_ratio_conditional": null,
+        "score_evaluations_saved_conditional": null
+      }
+    },
+    "sparse_cases": [
+      {
+        "id": "SNAP_ca-GrQc_unit:graph",
+        "stratum": "ca-GrQc",
+        "cluster": "ca-GrQc",
+        "n": 5242,
+        "arm": "primary",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": true,
+            "cpu_seconds": 2.263726493,
+            "seconds": 2.2637845687568188,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000398273,
+            "seconds": 5.000535614788532,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000375062000002,
+            "seconds": 5.000470217317343,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 2.230609029,
+            "seconds": 2.230665359646082,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": true,
+            "cpu_seconds": 2.2703451750000028,
+            "seconds": 2.270408634096384,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000367352999994,
+            "seconds": 5.000484604388475,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-GrQc_unit:graph",
+        "stratum": "ca-GrQc",
+        "cluster": "ca-GrQc",
+        "n": 5242,
+        "arm": "degree",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000294673,
+            "seconds": 5.000421058386564,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": true,
+            "cpu_seconds": 1.2518018709999996,
+            "seconds": 1.2518326491117477,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 1.1913223770000023,
+            "seconds": 1.1913520321249962,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000211671999999,
+            "seconds": 5.0003246031701565,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.0004594430000004,
+            "seconds": 5.0005640760064125,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": true,
+            "cpu_seconds": 1.1956915279999976,
+            "seconds": 1.1957218572497368,
+            "status": "checked_feasible_schedule"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-GrQc_hash_weighted:graph",
+        "stratum": "ca-GrQc",
+        "cluster": "ca-GrQc",
+        "n": 5242,
+        "arm": "primary",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000374162,
+            "seconds": 5.000512018799782,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": true,
+            "cpu_seconds": 2.4026034110000003,
+            "seconds": 2.4026624634861946,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 2.3908004849999998,
+            "seconds": 2.390854172408581,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000263953000001,
+            "seconds": 5.000364784151316,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000399002999998,
+            "seconds": 5.000531692057848,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": true,
+            "cpu_seconds": 2.343019376000001,
+            "seconds": 2.3430867195129395,
+            "status": "checked_feasible_schedule"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-GrQc_hash_weighted:graph",
+        "stratum": "ca-GrQc",
+        "cluster": "ca-GrQc",
+        "n": 5242,
+        "arm": "degree",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": true,
+            "cpu_seconds": 1.109350342,
+            "seconds": 1.1093772873282433,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000295663000001,
+            "seconds": 5.000387459993362,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000276391999998,
+            "seconds": 5.000374559313059,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 1.0961018370000026,
+            "seconds": 1.0961293168365955,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": true,
+            "cpu_seconds": 1.103045539,
+            "seconds": 1.1030713729560375,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000449123000003,
+            "seconds": 5.00060211494565,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-HepPh_hash_weighted:graph",
+        "stratum": "ca-HepPh",
+        "cluster": "ca-HepPh",
+        "n": 12008,
+        "arm": "primary",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000393082999999,
+            "seconds": 5.000527340918779,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.001755703000001,
+            "seconds": 5.001878719776869,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.001761682999998,
+            "seconds": 5.001907456666231,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000359672999991,
+            "seconds": 5.000468313694,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000295632000004,
+            "seconds": 5.000449299812317,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.001697254000007,
+            "seconds": 5.001839715987444,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-HepPh_hash_weighted:graph",
+        "stratum": "ca-HepPh",
+        "cluster": "ca-HepPh",
+        "n": 12008,
+        "arm": "degree",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.0283118740000035,
+            "seconds": 5.028432171791792,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.001022132999999,
+            "seconds": 5.001130923628807,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000640042999997,
+            "seconds": 5.00079083815217,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.022634902000007,
+            "seconds": 5.022768177092075,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.0219677909999945,
+            "seconds": 5.022114347666502,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.0008364330000035,
+            "seconds": 5.000943556427956,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-HepPh_unit:graph",
+        "stratum": "ca-HepPh",
+        "cluster": "ca-HepPh",
+        "n": 12008,
+        "arm": "primary",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.002021833000001,
+            "seconds": 5.002130080014467,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000277602999994,
+            "seconds": 5.000395491719246,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000366621999994,
+            "seconds": 5.0005118399858475,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.001616173000002,
+            "seconds": 5.001732736825943,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.002105544000003,
+            "seconds": 5.002189461141825,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000374641999997,
+            "seconds": 5.00047168508172,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-HepPh_unit:graph",
+        "stratum": "ca-HepPh",
+        "cluster": "ca-HepPh",
+        "n": 12008,
+        "arm": "degree",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.031589875999998,
+            "seconds": 5.031766451895237,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.020550690999997,
+            "seconds": 5.02068018913269,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.019213601000004,
+            "seconds": 5.0193179957568645,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000515961999994,
+            "seconds": 5.000620946288109,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.0609917379999985,
+            "seconds": 5.06107322499156,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.020859661000003,
+            "seconds": 5.0209609270095825,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-HepTh_hash_weighted:graph",
+        "stratum": "ca-HepTh",
+        "cluster": "ca-HepTh",
+        "n": 9877,
+        "arm": "primary",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000362572,
+            "seconds": 5.000456191599369,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.0062933149999935,
+            "seconds": 5.006389331072569,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.006487484999994,
+            "seconds": 5.0066042728722095,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000636421999985,
+            "seconds": 5.0007507018744946,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000719773000014,
+            "seconds": 5.000817742198706,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.006199454999972,
+            "seconds": 5.00630659237504,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-HepTh_hash_weighted:graph",
+        "stratum": "ca-HepTh",
+        "cluster": "ca-HepTh",
+        "n": 9877,
+        "arm": "degree",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": true,
+            "cpu_seconds": 3.015552006000007,
+            "seconds": 3.015597302466631,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000664342999997,
+            "seconds": 5.000738192349672,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000540043000001,
+            "seconds": 5.000621184706688,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 2.9964641880000045,
+            "seconds": 2.996524829417467,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": true,
+            "cpu_seconds": 3.0629347960000075,
+            "seconds": 3.063004083931446,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000524893000005,
+            "seconds": 5.000633150339127,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-HepTh_unit:graph",
+        "stratum": "ca-HepTh",
+        "cluster": "ca-HepTh",
+        "n": 9877,
+        "arm": "primary",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.006507525999993,
+            "seconds": 5.006609197705984,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000636431999993,
+            "seconds": 5.000725496560335,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.0005314029999965,
+            "seconds": 5.000609554350376,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 5.015388998999995,
+            "seconds": 5.015485942363739,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.006568465000015,
+            "seconds": 5.006667215377092,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.0006512230000055,
+            "seconds": 5.000788606703281,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_ca-HepTh_unit:graph",
+        "stratum": "ca-HepTh",
+        "cluster": "ca-HepTh",
+        "n": 9877,
+        "arm": "degree",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000430293000008,
+            "seconds": 5.00053258612752,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": true,
+            "cpu_seconds": 3.170161930000006,
+            "seconds": 3.170231282711029,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 3.1835506659999737,
+            "seconds": 3.183616917580366,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000604651999993,
+            "seconds": 5.000708732753992,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000640282999996,
+            "seconds": 5.000742178410292,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": true,
+            "cpu_seconds": 3.1810511650000137,
+            "seconds": 3.181127645075321,
+            "status": "checked_feasible_schedule"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_facebook_combined_hash_weighted:graph",
+        "stratum": "facebook_combined",
+        "cluster": "facebook_combined",
+        "n": 4039,
+        "arm": "primary",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000204553000003,
+            "seconds": 5.000296168029308,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.001190092999991,
+            "seconds": 5.001272030174732,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000967613,
+            "seconds": 5.001044977456331,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000263521999983,
+            "seconds": 5.0003334283828735,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000171822999988,
+            "seconds": 5.000313676893711,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000906783000005,
+            "seconds": 5.001007102429867,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_facebook_combined_hash_weighted:graph",
+        "stratum": "facebook_combined",
+        "cluster": "facebook_combined",
+        "n": 4039,
+        "arm": "degree",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": true,
+            "cpu_seconds": 2.4013173499999994,
+            "seconds": 2.4013685137033463,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.0002486420000025,
+            "seconds": 5.00040015950799,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000185592999998,
+            "seconds": 5.000256296247244,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 2.520766210000005,
+            "seconds": 2.520815819501877,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": true,
+            "cpu_seconds": 2.5749934220000057,
+            "seconds": 2.5750557892024517,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000304392999993,
+            "seconds": 5.00038081407547,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_facebook_combined_unit:graph",
+        "stratum": "facebook_combined",
+        "cluster": "facebook_combined",
+        "n": 4039,
+        "arm": "primary",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000999973000006,
+            "seconds": 5.0010973662137985,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.000152452000009,
+            "seconds": 5.000248279422522,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.0001719529999775,
+            "seconds": 5.0002923011779785,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.001001583000004,
+            "seconds": 5.001077339053154,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000823312999984,
+            "seconds": 5.000898241996765,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.000210062000008,
+            "seconds": 5.000279251486063,
+            "status": "CPU_budget_exceeded"
+          }
+        ]
+      },
+      {
+        "id": "SNAP_facebook_combined_unit:graph",
+        "stratum": "facebook_combined",
+        "cluster": "facebook_combined",
+        "n": 4039,
+        "arm": "degree",
+        "assessable_pairs": 0,
+        "assigned_pairs": 3,
+        "cpu_ratio": null,
+        "work_ratio": null,
+        "score_evaluations_saved": null,
+        "runs": [
+          {
+            "backend": "full_scan",
+            "repetition": 0,
+            "completed": false,
+            "cpu_seconds": 5.00032979300002,
+            "seconds": 5.000454094260931,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 0,
+            "completed": true,
+            "cpu_seconds": 2.7738392050000016,
+            "seconds": 2.7739274725317955,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "heap",
+            "repetition": 1,
+            "completed": true,
+            "cpu_seconds": 2.8434387140000013,
+            "seconds": 2.8434957526624203,
+            "status": "checked_feasible_schedule"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 1,
+            "completed": false,
+            "cpu_seconds": 5.000318112999992,
+            "seconds": 5.000388137996197,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "full_scan",
+            "repetition": 2,
+            "completed": false,
+            "cpu_seconds": 5.0003469719999885,
+            "seconds": 5.000422067940235,
+            "status": "CPU_budget_exceeded"
+          },
+          {
+            "backend": "heap",
+            "repetition": 2,
+            "completed": true,
+            "cpu_seconds": 2.7752014259999953,
+            "seconds": 2.7752408608794212,
+            "status": "checked_feasible_schedule"
+          }
+        ]
+      }
+    ],
+    "scope": "identical frozen ASTs, 3 order-balanced pairs; conditional ratios require both executions complete; failures retain null schedules"
+  }
+}

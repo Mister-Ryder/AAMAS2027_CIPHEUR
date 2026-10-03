@@ -1,0 +1,21 @@
+{
+  "version": "v04_train_only_actual_action_component_cancellation",
+  "training_subset": {"min_contacts": 32, "max_contacts": 128, "per_stratum": 2},
+  "dense_training": {"regimes": ["balanced", "ground_scarce", "satellite_scarce"], "sizes": [32, 64, 128], "per_cell": 1},
+  "fresh_seed_namespace": 40000000,
+  "max_contexts": 96,
+  "program_cpu_seconds": 5.0,
+  "max_rollout_steps": 2,
+  "max_states_per_context": 2,
+  "cancellation": {"nodes_per_component": 64, "max_search_component": 128, "max_nodes": 10000, "max_calls": 128},
+  "max_matched_full_comparisons": 3,
+  "epsilon": 1e-8,
+  "cost_penalty": 0.002,
+  "primary_tie_band": 0.002,
+  "timeout_relative_work": 100,
+  "joint_information_gate": true,
+  "use_prior_training_certificates": true,
+  "score_slice": true,
+  "selection_split": "train",
+  "workers": 4
+}

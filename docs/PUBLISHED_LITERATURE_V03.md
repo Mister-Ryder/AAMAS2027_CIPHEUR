@@ -1,8 +1,8 @@
 # Published literature and comparison audit for revision V03
 
-Verified on **3 October 2026**. This audit accompanies `paper/references_v03.bib` and `paper/sections/related_work.tex`. The bibliography contains 25 published references. Publisher records, official proceedings, and final published PDFs supply the metadata and technical comparisons. Author-hosted final publication PDFs were used only where publisher retrieval was restricted. No preprint-only item is promoted to a conference or journal publication.
+Verified on **3 October 2026**. This audit accompanies `paper/references_v03.bib` and `paper/sections/related_work.tex`. The final bibliography database contains 29 published references, including the four subsequently verified native-solver publications below; 24 are cited and printed in the manuscript. Publisher records, official proceedings, and final published PDFs supply the metadata and technical comparisons. Author-hosted final publication PDFs were used only where publisher retrieval was restricted. No preprint-only item is promoted to a conference or journal publication.
 
-The user-approved title and abstract remain in `paper/ABSTRACT_TARGET.md`; this literature work does not change them. Numerical superiority claims require the revision's own completed experiments and are deliberately absent from the comparison matrix below.
+The user-approved title and original abstract remain in `paper/ABSTRACT_TARGET.md`. The final manuscript makes one precision correction: “specification consistency” becomes “declared-interface acyclicity,” distinguishing finite representability from the selected scalar rule's actual fit. The original is preserved for inspection. Numerical superiority claims require the revision's own completed experiments and are deliberately absent from the comparison matrix below.
 
 ## Exact identity and organization of the supplied PDFs
 
@@ -20,7 +20,7 @@ Local extraction and visual inspection are in ignored `.research/VEXW9837.txt` a
 
 **DRAGON: LLM-Driven Decomposition and Reconstruction Agents for Large-Scale Combinatorial Optimization**, Shengkai Chen et al. AAMAS 2026, full research paper, pp. 2809–2817, DOI **10.65109/SBAY6258**. [Official published PDF](https://www.ifaamas.org/Proceedings/aamas2026/pdfs/SBAY6258.pdf). The detailed prior review remains in `docs/DRAGON_REVIEW.md`.
 
-The published system uses per-instance decomposition and reconstruction agents, boundary constraints, checker feedback, and retained experience. Its benchmarks include TSP, CVRP, bin packing, and multidimensional knapsack. Context awareness and feedback are already present. Its system diagram and component ablations motivate separately evaluating information, rule synthesis, and cost in the revision. A fair comparison charges discovery plus deployment and states the deployment count used for amortization.
+The published system uses per-instance decomposition and reconstruction agents, boundary constraints, checker feedback, and retained experience. Its benchmarks include TSP, CVRP, bin packing, and the **multiple knapsack problem** (MKP; the supplied PDF distinguishes it from multidimensional knapsack). Context awareness and feedback are already present. Its system diagram and component ablations motivate separately evaluating information, rule synthesis, and cost in the revision. A fair comparison charges discovery plus deployment and states the deployment count used for amortization.
 
 ## Primary publication register
 
@@ -98,3 +98,16 @@ LACE is the important recent exception: its official Nature Machine Intelligence
 The related-work fragment uses 20 distinct bibliography keys and approximately 500 words, arranged around satellite scheduling, learned representations, algorithm discovery, and abstraction/synthesis. Four additional references are available for the introduction or methods: `li2018gcn`, `gasse2019exact`, `giacomarra2025certified`, and `jha2010oracle`; `chvatal1979greedy` supports the feature-master approximation discussion. Avoid adding citations simply to maximize counts.
 
 The new files contain no preprint URL, `eprint`, `archivePrefix`, or miscellaneous preprint bibliography entry. Every citation in the fragment resolves to `references_v03.bib`; keys are unique. The root author should integrate the fragment and bibliography and perform the complete multi-file LaTeX build. No quantitative baseline advantage has been invented in this audit.
+
+## Published optimization comparators added for V04
+
+Publisher metadata and official implementation repositories were checked on 3 October 2026. The bibliography now contains29 entries; these additions support actual implementations in the new comparison runner, rather than renaming project ablations.
+
+| Method | Final publication | Primary metadata |
+|---|---|---|
+| Weighted branch-and-reduce | Lamm, Schulz, Strash, Williger and Zhang, ALENEX2019,144–158 | [SIAM](https://epubs.siam.org/doi/10.1137/1.9781611975499.12) |
+| Increasing transformations / Struction | Gellner, Lamm, Schulz, Strash and Zaválnij, ALENEX2021,128–142 | [SIAM](https://epubs.siam.org/doi/10.1137/1.9781611976472.10) |
+| M²WIS | Großmann, Lamm, Schulz and Strash, JGAA28(1),439–473,2024 | [JGAA](https://jgaa-v5.cs.brown.edu/index.php/jgaa/article/view/2997) |
+| CHILS | Großmann, Langedal and Schulz, SEA2025,338:22:1–22:18 | [Dagstuhl](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SEA.2025.22) |
+
+The unmodified native solvers were built from [KaMIS](https://github.com/KarlsruheMIS/KaMIS) and [CHILS](https://github.com/KarlsruheMIS/CHILS), with exact commits, compiler settings and executable hashes retained separately. CHILS's current repository recommends local-search-only operation for budgets below five minutes. Its fixed five-second concurrent configuration in this study therefore tests a declared short-budget implementation setting, not the paper's default long-run regime. Native return status and feasible incumbents do not themselves constitute independent optimum certificates.

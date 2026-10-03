@@ -23,6 +23,7 @@ def main():
     deploy.add_argument("--output", required=True)
     deploy.add_argument("--fixed", nargs="*", default=[])
     deploy.add_argument("--excluded", nargs="*", default=[])
+    deploy.add_argument("--backend", choices=("interpreted", "compiled", "demanded", "heap"), default="interpreted")
     synth = commands.add_parser("synthesize")
     synth.add_argument("--prepared-run", required=True)
     synth.add_argument("--config", default="configs/joint_replay.json")
@@ -34,7 +35,15 @@ def main():
             candidate = json.loads(Path(args.program).read_text(encoding="utf-8-sig"))
             if "features" in candidate:
                 program = FeatureRuleProgram.from_dict(candidate)
-                result = schedule_feature_program(graph, program, args.fixed, args.excluded)
+                if args.backend == "interpreted":
+                    result = schedule_feature_program(graph, program, args.fixed, args.excluded)
+                elif args.backend == "heap":
+                    from .score_heap_v04 import schedule_heap
+                    result = schedule_heap(graph, program, args.fixed, args.excluded)
+                else:
+                    from .compiled import schedule_compiled
+                    result = schedule_compiled(graph, program, args.fixed, args.excluded,
+                                               score_slice=args.backend == "demanded")
             else:
                 program = Program(**candidate)
                 result = schedule(graph, program, args.fixed, args.excluded)

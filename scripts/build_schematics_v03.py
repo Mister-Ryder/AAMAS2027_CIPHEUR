@@ -26,6 +26,8 @@ INK = "#243640"
 LIGHT = "#EAF3F8"
 PALE = "#FCF0E8"
 LINE = "#C8D2D9"
+PURPLE = "#71559C"
+LILAC = "#F2EDF8"
 
 
 class Figure:
@@ -110,10 +112,10 @@ class Figure:
 
 
 def motivation():
-    f = Figure("motivation", 680, 348)
+    f = Figure("motivation", 680, 270)
     f.text("(a) Ground gap = 0", 12, 5, 318, 26, bold=True)
     f.text("(b) Ground gap = 4", 352, 5, 318, 26, bold=True)
-    f.line(340, 6, 340, 224, color=LINE, sw=1)
+    f.line(340, 6, 340, 206, color=LINE, sw=1)
     for off, after in ((0, False), (340, True)):
         pos = {"a": (off+119, 107), "b": (off+220, 107),
                "X1": (off+45, 67), "X2": (off+20, 107), "X3": (off+45, 147),
@@ -134,28 +136,19 @@ def motivation():
                    fill=LIGHT if preferred else "#FFFFFF",
                    stroke=BLUE if preferred else GRAY, color=BLUE if preferred else INK,
                    sw=2 if preferred else 1.2)
-        f.text("Root rewards: 8; peripheral rewards: 6", off+21, 168, 300, 20,
+        f.text("Root rewards: 8; peripheral rewards: 6", off+21, 163, 300, 18,
                size=12, color=GRAY, align="center")
         pref = "a" if after else "b"
         vb = 14 if after else 26
-        f.rect(off+17, 193, 145, 31, fill=LIGHT if after else "#FFFFFF", stroke=BLUE if after else LINE,
+        f.rect(off+17, 184, 145, 27, fill=LIGHT if after else "#FFFFFF", stroke=BLUE if after else LINE,
                label="Commit a: <b>20</b>", color=BLUE if after else INK, sw=1.4 if after else 1)
-        f.rect(off+176, 193, 145, 31, fill=LIGHT if not after else "#FFFFFF", stroke=BLUE if not after else LINE,
+        f.rect(off+176, 184, 145, 27, fill=LIGHT if not after else "#FFFFFF", stroke=BLUE if not after else LINE,
                label=f"Commit b: <b>{vb}</b>", color=BLUE if not after else INK, sw=1.4 if not after else 1)
-        f.text(f"Certified preference: <b>{pref}</b>", off+17, 229, 304, 21,
-               color=BLUE, align="center")
-    f.text("Conditional increments V(d | B) − w(F); F contains independent z", 14, 254, 651,
-           18, size=12, color=GRAY, align="center")
-    f.line(12, 277, 668, 277, color=LINE, sw=1)
-    f.text("Nine base inputs alias", 12, 284, 219, 22, bold=True)
-    f.text("φ₀(a) = φ₀(b) on each side<br>Including resource-gap scalars", 12, 310, 221, 31,
-           size=12, color=ORANGE)
-    for x, label in ((265, "C₀"), (315, "C₁")):
-        f.line(x-9, 309, x+9, 309, color=ORANGE, sw=1.5, arrow=True,
-               via=((x-17, 293), (x+17, 293)))
-        f.node(label, x, 318, d=28, fill=PALE, stroke=ORANGE, color=ORANGE, size=12)
-    f.text("Missing statistic: edges inside N(v)", 354, 284, 310, 22, bold=True, color=BLUE)
-    f.text("Before: a = 0, b = 1  |  After: a = 3, b = 1", 354, 310, 310, 30, size=12)
+    f.line(12, 217, 668, 217, color=LINE, sw=1)
+    f.text("Base alias: φ₀(a) = φ₀(b)", 12, 220, 310, 23, bold=True, color=ORANGE)
+    f.text("Nine inputs, including resource-gap scalars", 12, 244, 318, 20, size=12, color=GRAY)
+    f.text("Missing statistic: edges inside N(v)", 354, 220, 310, 23, bold=True, color=BLUE)
+    f.text("Before: a = 0, b = 1  |  After: a = 3, b = 1", 354, 244, 310, 20, size=12)
     return f
 
 
@@ -249,19 +242,19 @@ def problem_setting():
     return f
 
 
-def method_overview():
-    f = Figure("method_overview", 680, 290)
+def method_overview_simple():
+    f = Figure("method_overview-simple", 680, 290)
     f.rect(8, 1, 664, 19, fill="#F2F5F7", stroke="none")
     f.text("OFFLINE SYNTHESIS  ·  training interventions + validation schedules", 18, 1, 644,
            19, bold=True)
     # Aligned interventions, certified intervals, accumulated requirements.
     f.rect(8, 25, 202, 73, stroke=LINE)
-    f.text("Aligned static problems", 18, 28, 182, 19, bold=True)
-    f.text("Contacts and rewards fixed<br>Same boundary B = (F, X)<br>Common feasible conflict: a, b",
+    f.text("Actual rollout actions", 18, 28, 182, 19, bold=True)
+    f.text("Contacts and rewards fixed<br>Reached boundary B = (F, X)<br>Chosen action + challengers",
            18, 49, 182, 46, size=12)
     f.rect(239, 25, 202, 73, fill=LIGHT, stroke=BLUE, sw=1.5)
-    f.text("Full-residual certificates", 249, 28, 182, 19, bold=True, color=BLUE)
-    f.text("θ₀: L(b) &gt; U(a) + ε<br>θ₁: L(a) &gt; U(b) + ε<br>Overlap / tie / budget: unknown",
+    f.text("Cancel, then certify", 249, 28, 182, 19, bold=True, color=BLUE)
+    f.text("Common components cancel<br>Full residual: Δ ∈ [LΔ, UΔ]<br>Strict sign / tie / unknown",
            249, 49, 182, 46, size=12)
     f.rect(470, 25, 202, 73, stroke=LINE)
     f.text("Strict requirements", 480, 28, 182, 19, bold=True)
@@ -293,25 +286,133 @@ def method_overview():
            via=((570, 201), (339, 201)))
     f.text("cycle: add cut; resolve master", 355, 203, 224, 17, size=12, color=ORANGE)
     f.rect(239, 223, 433, 39, stroke=LINE)
-    f.text("LLM rule proposals + joint selection", 249, 225, 413, 18, bold=True)
-    f.text("Replay s(P); assess schedule quality q(P) and compiled work c(P)",
+    f.text("LLM rules: actual-action audit + joint selection", 249, 225, 413, 18, bold=True)
+    f.text("Reach / escape / pool regret; consistency s(P), quality q(P), work c(P)",
            249, 245, 413, 16, size=12)
     f.line(640, 197, 640, 221, color=BLUE, sw=1.5, arrow=True)
     f.text("DAG", 585, 199, 47, 19, size=12, color=BLUE, align="right")
     f.rect(8, 223, 202, 39, fill=LIGHT, stroke=BLUE, sw=1.5)
     f.text("Freeze (φ, h, kernel)", 18, 225, 181, 18, bold=True, color=BLUE)
-    f.text("Eligible quality–work tradeoff", 18, 245, 181, 16, size=12)
+    f.text("Score-sliced shared DAG", 18, 245, 181, 16, size=12)
     f.line(237, 242, 212, 242, color=BLUE, sw=1.8, arrow=True)
     f.line(8, 267, 672, 267, color=GRAY, sw=1.4, dashed=True)
     f.text("ONLINE", 10, 271, 60, 17, bold=True, color=BLUE)
-    f.text("Current graph → compiled φ → frozen h → commit argmax → delete closed neighborhood",
+    f.text("Current graph → demanded inputs → frozen h → argmax → delete closed neighborhood",
            80, 270, 590, 19, size=12, color=BLUE)
     f.line(109, 263, 109, 269, color=BLUE, arrow=True, sw=1.4)
     return f
 
 
-def repair_cycle():
-    f = Figure("repair_cycle", 680, 260)
+def method_overview():
+    f = Figure("method_overview", 680, 310)
+    f.text("OFFLINE  ·  evidence-conditioned LLM synthesis with deterministic verification", 8, 2, 664, 22,
+           bold=True)
+    # The evidence card contains the actual diagnostic neighborhood motifs.
+    f.rect(8, 35, 185, 202, fill="#F6F8F9", stroke=LINE)
+    f.text("1  Certified prompt packet", 18, 40, 165, 21, bold=True)
+    f.text("N(a): 0 edges", 18, 65, 79, 19, size=12, color=GRAY)
+    f.text("N(b): 1 edge", 104, 65, 79, 19, size=12, color=GRAY)
+    f.line(117, 97, 145, 97, color=ORANGE, sw=1.8)
+    for off in (0, 86):
+        for x, y, w in ((31, 97, 6), (59, 97, 6), (83, 112, 6), (52, 121, 8)):
+            f.node(str(w), x+off, y, d=18, fill="#FFFFFF", stroke=GRAY, color=GRAY, size=12, sw=1)
+    f.text("φ₀(a) = φ₀(b); Vb &gt; Va", 18, 140, 165, 19, size=12, color=ORANGE)
+    f.text("b → a ≡φ b", 18, 162, 165, 23, bold=True, color=ORANGE)
+    f.text("Reached states + bounds<br>Cancel common components<br>Unknown stays unknown", 18, 187, 165, 45, size=12)
+    # A prominent session card describes the real assistant proposal provenance.
+    f.rect(224, 35, 208, 202, fill=LILAC, stroke=PURPLE, sw=1.6)
+    f.node("", 243, 53, d=21, fill="#FFFFFF", stroke=PURPLE, sw=1.5)
+    f.node("", 239, 51, d=2.5, fill=PURPLE, stroke=PURPLE, sw=1)
+    f.node("", 247, 51, d=2.5, fill=PURPLE, stroke=PURPLE, sw=1)
+    f.line(239, 57, 247, 57, color=PURPLE, sw=1)
+    f.text("2  Offline LLM session", 261, 41, 161, 23, bold=True, color=PURPLE)
+    f.text("gpt-6.1-sol · one session", 234, 69, 188, 18, size=12, color=PURPLE)
+    f.rect(234, 90, 188, 49, fill="#FFFFFF", stroke=PURPLE)
+    f.text("Prompt constraints", 242, 94, 172, 18, bold=True, color=PURPLE)
+    f.text("Use witness + typed ops.<br>Features + rule; no IDs/oracle.", 242, 112, 172, 26, size=12)
+    f.text("Frozen v04: feature + rule", 234, 141, 188, 19, bold=True, color=PURPLE)
+    f.rect(234, 166, 63, 18, stroke=PURPLE, label="root", color=PURPLE, size=12)
+    f.rect(315, 166, 107, 18, stroke=PURPLE, label="neighbors", color=PURPLE, size=12)
+    f.rect(234, 190, 188, 18, stroke=PURPLE, label="nc = clique_cover_weight", color=PURPLE, size=12)
+    f.line(297, 175, 313, 175, color=PURPLE, arrow=True)
+    f.line(369, 185, 328, 189, color=PURPLE, arrow=True, via=((369, 187), (328, 187)))
+    f.text("weight/max(0.000001,weight,nc)", 234, 213, 188, 20, size=12, color=PURPLE,
+           align="center")
+    # The verification card exposes the master / full-separation cycle and audit ledger.
+    f.rect(463, 35, 209, 202, fill=LIGHT, stroke=BLUE, sw=1.5)
+    f.text("3  Full quotient + audit", 473, 40, 189, 21, bold=True, color=BLUE)
+    f.text("Types · scores · feasibility", 473, 70, 189, 18, size=12)
+    f.rect(473, 97, 89, 52, fill="#FFFFFF", stroke=BLUE)
+    f.text("Cost master", 479, 101, 77, 19, bold=True, color=BLUE, align="center")
+    f.text("min Σ c<sub>f</sub> z<sub>f</sub>", 479, 123, 77, 19, size=12, align="center")
+    f.rect(582, 97, 80, 52, fill="#FFFFFF", stroke=BLUE)
+    f.text("Quotient", 585, 101, 74, 19, bold=True, color=BLUE, align="center")
+    f.text("DAG / cycle", 585, 123, 74, 19, size=12, align="center")
+    f.line(562, 123, 580, 123, color=BLUE, arrow=True, sw=1.5)
+    f.line(622, 150, 517, 150, color=ORANGE, sw=1.5, arrow=True,
+           via=((622, 158), (517, 158)))
+    f.text("New witness → cut", 532, 161, 126, 17, size=12, color=ORANGE)
+    f.text("TRAIN selection: AST + h", 473, 182, 189, 20, bold=True, color=BLUE)
+    f.text("DAG gate · utility J(P)<br>Reached actions / pool regret", 473, 206, 189, 29, size=12)
+    f.line(193, 142, 222, 142, color=PURPLE, arrow=True, sw=1.8)
+    f.line(432, 142, 461, 142, color=BLUE, arrow=True, sw=1.8)
+    f.text("Audit feedback → later offline batch", 346, 241, 302, 18, size=12, color=ORANGE)
+    f.line(568, 239, 328, 239, color=ORANGE, sw=1.6, arrow=True,
+           via=((568, 264), (328, 264)))
+    f.text("Freeze (φ, h, kernel)", 8, 248, 185, 22, bold=True, color=BLUE)
+    f.line(8, 274, 672, 274, color=GRAY, sw=1.2, dashed=True)
+    f.text("ONLINE", 8, 283, 70, 19, bold=True, color=BLUE)
+    f.rect(91, 280, 139, 25, fill=LIGHT, stroke=BLUE, label="Score-sliced DAG", color=BLUE, size=12)
+    f.rect(254, 280, 111, 25, stroke=BLUE, label="Frozen h(φ(v))", color=BLUE, size=12)
+    f.rect(389, 280, 111, 25, stroke=BLUE, label="Commit argmax", color=BLUE, size=12)
+    f.rect(524, 280, 148, 25, stroke=BLUE, label="Delete closed N(v)", color=BLUE, size=12)
+    for x1, x2 in ((230, 252), (365, 387), (500, 522)):
+        f.line(x1, 292, x2, 292, color=BLUE, arrow=True, sw=1.5)
+    return f
+
+
+def component_cancellation():
+    """A verified zero-search full-residual difference, with shared uncertainty."""
+    import math
+    f = Figure("component_cancellation", 330, 292)
+    f.text("Cancel identical residual components", 8, 4, 314, 22, bold=True)
+    f.text("(a) Commit a: reward 8", 8, 32, 148, 22, bold=True)
+    f.text("(b) Commit b: reward 6", 173, 32, 149, 22, bold=True)
+    f.line(165, 34, 165, 153, color=LINE, sw=1)
+    for off, singleton, weight in ((0, "A", 5), (165, "B", 2)):
+        center = (off+55, 91)
+        points = [(center[0]+29*math.cos(-math.pi/2+i*2*math.pi/5),
+                   center[1]+29*math.sin(-math.pi/2+i*2*math.pi/5)) for i in range(5)]
+        for i in range(5):
+            f.line(*points[i], *points[(i+1)%5], color=GRAY, sw=1.15)
+        for x, y in points:
+            f.node("", x, y, d=7, fill=GRAY, stroke=GRAY, sw=1)
+        f.text("K", off+43, 79, 24, 22, bold=True, color=GRAY, align="center")
+        f.node(singleton, off+125, 91, d=28, fill=LIGHT, stroke=BLUE, color=BLUE, sw=1.5)
+        f.text(f"reward {weight}", off+93, 111, 64, 18, size=12, color=BLUE, align="center")
+        action, forced = ("a", 8) if off == 0 else ("b", 6)
+        f.text(f"V({action}) = {forced} + K + {weight}", off+8, 135, 149, 22, size=13,
+               align="center")
+    f.text("Same vertex set K; MWIS(K) ∈ [20, 30]", 8, 160, 314, 20, size=12,
+           color=GRAY, align="center")
+    f.text("Separate intervals overlap", 8, 184, 314, 19, bold=True, color=ORANGE)
+    f.rect(200, 204, 55, 34, fill=PALE, stroke="none")
+    for label, lower, upper, y in (("V(a): [33, 43]", 200, 310, 211),
+                                  ("V(b): [28, 38]", 145, 255, 231)):
+        f.text(label, 8, y-10, 132, 20, size=12, color=ORANGE)
+        f.line(lower, y, upper, y, color=ORANGE, sw=1.5)
+        for x in (lower, upper):
+            f.line(x, y-5, x, y+5, color=ORANGE, sw=1.5)
+    f.rect(8, 246, 314, 39, fill=LIGHT, stroke=BLUE, sw=1.6)
+    f.text("Δ = (8 + 5) − (6 + 2) = 5  →  prefer a", 18, 249, 294, 18,
+           size=12, color=BLUE, bold=True, align="center")
+    f.text("Zero search nodes; common K never queried", 18, 267, 294, 16,
+           size=12, color=BLUE, align="center")
+    return f
+
+
+def repair_cycle_simple():
+    f = Figure("repair_cycle-simple", 680, 260)
     f.text("(a) Coarse quotient", 8, 4, 192, 26, bold=True)
     f.text("(b) Cheap feature: cost 1", 221, 4, 216, 26, bold=True, color=ORANGE)
     f.text("(c) Separating feature: cost 2", 454, 4, 218, 26, bold=True, color=BLUE)
@@ -362,6 +463,69 @@ def repair_cycle():
            17, size=12, color=ORANGE)
     f.text("Round 2: add W₂ → replace cheap with repair (cost 2); full quotient is a DAG", 10, 241, 660,
            17, size=12, color=BLUE)
+    return f
+
+
+def repair_cycle():
+    """Actual witness-conditioned g03/g18 hypotheses plus a distinct TRAIN audit."""
+    f = Figure("repair_cycle", 680, 292)
+    f.text("(a) Certified witness packet", 8, 3, 209, 23, bold=True)
+    f.text("(b) LLM proposal: g03", 239, 3, 202, 23, bold=True, color=PURPLE)
+    f.text("(c) LLM proposal: g18", 470, 3, 202, 23, bold=True, color=PURPLE)
+    f.line(224, 6, 224, 240, color=LINE, sw=1)
+    f.line(454, 6, 454, 240, color=LINE, sw=1)
+    f.text("Ground gap 4; satellite gap 0", 8, 31, 208, 20, size=12, color=GRAY)
+    p = {"a": (65, 87), "b": (149, 87), "X₁": (26, 61), "X₂": (18, 88), "X₃": (37, 115),
+         "Y₁": (191, 61), "Y₂": (205, 87), "Y₃": (191, 115)}
+    for u, v in [("a", "b")] + [("a", f"X{j}") for j in ("₁", "₂", "₃")] + [
+            ("b", f"Y{j}") for j in ("₁", "₂", "₃")] + [("Y₁", "Y₂")]:
+        f.line(*p[u], *p[v], sw=1.05)
+    for u, v in (("X₁", "X₂"), ("X₂", "X₃"), ("X₁", "X₃")):
+        f.line(*p[u], *p[v], color=ORANGE, sw=1.8)
+    for name, (x, y) in p.items():
+        f.node(name, x, y, d=24 if name in ("a", "b") else 20,
+               fill=LIGHT if name == "a" else "#FFFFFF", stroke=BLUE if name == "a" else GRAY,
+               color=BLUE if name == "a" else INK, size=12, sw=1.3)
+    f.text("Rewards: roots 8; peripheral 6", 8, 133, 209, 18, size=12, color=GRAY)
+    f.text("V(a) − w(F) = 20 &gt; 14 = V(b) − w(F)", 8, 151, 209, 29, size=12, color=BLUE,
+           bold=True)
+    f.text("φ₀(a) = φ₀(b)", 8, 194, 112, 22, bold=True, color=ORANGE)
+    f.node("C", 161, 207, d=30, fill=PALE, stroke=ORANGE, color=ORANGE)
+    f.line(152, 191, 170, 191, color=ORANGE, sw=1.6, arrow=True, via=((142, 182), (181, 182)))
+    f.text("Strict a → b ≡φ a is a self-loop", 8, 220, 209, 19, size=12, color=ORANGE)
+    # Real g03 AST, exact arithmetic rule, and its two witness orderings.
+    f.rect(239, 32, 202, 207, fill=LILAC, stroke=PURPLE, sw=1.3)
+    f.text("Structure hypothesis: density", 249, 38, 182, 20, bold=True, color=PURPLE)
+    f.rect(249, 70, 61, 22, stroke=PURPLE, label="root", color=PURPLE, size=12)
+    f.rect(331, 70, 100, 22, stroke=PURPLE, label="neighbors", color=PURPLE, size=12)
+    f.rect(249, 111, 108, 22, stroke=PURPLE, label="induced_edges", color=PURPLE, size=12)
+    f.rect(380, 111, 51, 22, stroke=PURPLE, label="count", color=PURPLE, size=12)
+    f.line(310, 81, 329, 81, color=PURPLE, arrow=True, sw=1.5)
+    f.line(381, 93, 303, 109, color=PURPLE, arrow=True, sw=1.5, via=((381, 101), (303, 101)))
+    f.line(357, 122, 378, 122, color=PURPLE, arrow=True, sw=1.5)
+    f.text("E = |E(N(v))|<br>ρ = 2E / max(1, d(d−1))", 249, 140, 182, 31, size=12, color=PURPLE)
+    f.text("h = w(1+ρ) /<br>(1+C / max(ε,w))", 249, 175, 182, 31, size=12, bold=True, color=PURPLE)
+    f.text("θ₀: 1.882 &lt; 2.196   → b<br>θ₁: 2.824 &gt; 2.196   → a", 249, 207, 182, 31, size=12, color=BLUE)
+    # Real g18 shared retained-set DAG. Bounds are features, its midpoint is a heuristic.
+    f.rect(470, 32, 202, 207, fill=LILAC, stroke=PURPLE, sw=1.3)
+    f.text("Structure hypothesis: continuation", 480, 38, 182, 30, bold=True, color=PURPLE)
+    f.rect(480, 74, 182, 29, stroke=PURPLE, label="Rᵥ = R \\ ({v} ∪ N(v))", color=PURPLE, size=12)
+    f.rect(480, 126, 81, 40, stroke=PURPLE, label="Clique cover<br>Uᵥ: Number", color=PURPLE, size=12)
+    f.rect(581, 126, 81, 40, stroke=PURPLE, label="Greedy set<br>Lᵥ: Number", color=PURPLE, size=12)
+    f.line(550, 104, 520, 124, color=PURPLE, arrow=True, sw=1.5, via=((550, 112), (520, 112)))
+    f.line(593, 104, 621, 124, color=PURPLE, arrow=True, sw=1.5, via=((593, 112), (621, 112)))
+    f.text("h(v) = w(v) + (Lᵥ + Uᵥ) / 2", 480, 178, 182, 27, size=12, bold=True, color=PURPLE)
+    f.text("Shared typed residual DAG<br>Midpoint ≠ action certificate", 480, 207, 182, 31, size=12, color=GRAY)
+    f.rect(8, 250, 664, 35, fill=LIGHT, stroke=BLUE, sw=1.5)
+    f.text("Separate C3 TRAIN action audit · exact conditional regret", 18, 252, 644, 17,
+           size=12, color=BLUE, bold=True)
+    f.text("g05: 35170", 18, 269, 85, 15, size=12, color=ORANGE)
+    f.rect(112, 273, 192, 7, fill=ORANGE, stroke="none")
+    f.text("192", 312, 269, 32, 15, size=12, color=ORANGE, bold=True)
+    f.text("g03 / g12 / g18: 28126", 364, 269, 145, 15, size=12, color=BLUE)
+    f.line(522, 271, 522, 282, color=BLUE, sw=2)
+    f.text("0", 534, 269, 20, 15, size=12, color=BLUE, bold=True)
+    f.text("Same state", 554, 269, 107, 15, size=12, color=GRAY)
     return f
 
 
@@ -480,6 +644,23 @@ def verify_semantics():
             n = g.adj[ids[role]]
             counts.append(sum(u in n and v in n for u, v in g.edges))
     assert counts == [0, 1, 3, 1], counts
+    import json
+    catalogue = json.loads((ROOT / "experiments/discovery/v03/guided_batch.json").read_text(encoding="utf-8"))
+    g03 = next(p for p in catalogue["candidates"] if p["name"] == "g03_density_adjusted_weight_pressure")
+    g18 = next(p for p in catalogue["candidates"] if p["name"] == "g18_retained_bracket_midpoint")
+    g03 = FeatureRuleProgram.from_dict(g03)
+    scores = [g03.score(g, ids[role], g.available(pair["fixed"], pair["excluded"])) / scale
+              for g in (pair["left"], pair["right"]) for role in ("a", "b")]
+    assert [round(s, 3) for s in scores] == [1.882, 2.196, 2.824, 2.196], scores
+    assert g18["rule"] == "weight + (residual_cover + residual_greedy) / 2"
+    assert [f["expression"]["op"] for f in g18["features"]] == ["clique_cover_weight", "greedy_independent_weight"]
+    analysis = json.loads((ROOT / "experiments/analysis/v03/summary.json").read_text(encoding="utf-8"))
+    case = analysis["program_diagnosis"]["audited_train_case"]["saved_actual_choices_and_regret"]
+    for arm, chosen, regret in (("guided", "35170", "192"), ("guided_minimum_interface", "28126", "0"),
+                                ("guided_natural_validation", "28126", "0"), ("guided_no_cost", "28126", "0")):
+        row = case[arm]
+        assert row["boundary_reachable"] and row["next_action"] == chosen
+        assert row["conditional_regret"]["lower_exact"] == row["conditional_regret"]["upper_exact"] == regret
     occurrences, requirements, features, costs = vector_cycle()
     assert diagnose_occurrences(occurrences, requirements, features, ("cheap",))["contradictory"]
     result = minimum_cost_vector_refinement(occurrences, requirements, features, costs)
@@ -505,7 +686,24 @@ def verify_semantics():
     g = temporal_graph("figure_problem", c, station_gap=1, satellite_gap=0)
     assert g.edges == frozenset({("a", "b"), ("b", "c"), ("c", "d")})
     assert g.feasible(("a", "d", "e")) and g.value(("a", "d", "e")) == 10
-    print("Scientific semantics verified: 4 conditional values, equal base interfaces, 3 added X edges, 4-cycle repair, sequential updates, schedule feasibility.")
+    # Separate conditional bounds overlap, but the identical untouched five-cycle
+    # cancels exactly. This is a constructed demonstration, not outcome data.
+    from cipheur.oracle import local_bound
+    from cipheur.relevance_synthesis_v04 import CancelledCompletionOracle
+    weights = {"a": 8, "b": 6, "A": 5, "B": 2, **{f"k{i}": 10 for i in range(5)}}
+    c = tuple(Contact(v, w, f"S{v}", f"G{v}", 0, 1) for v, w in weights.items())
+    edges = frozenset([("a", "b"), ("a", "B"), ("b", "A")]
+                      + [(f"k{i}", f"k{(i+1)%5}") for i in range(5)])
+    g = Graph("figure_cancel", c, edges)
+    bounds = [local_bound(g, g.nodes, action, max_nodes=0) for action in ("a", "b")]
+    assert [(r.lower_exact, r.upper_exact) for r in bounds] == [("33", "43"), ("28", "38")]
+    oracle = CancelledCompletionOracle(g, nodes_per_component=0)
+    result = oracle.difference("a", "b")
+    assert result["lower_exact"] == result["upper_exact"] == "5" and result["preferred"] == "a"
+    assert result["cancelled_components"] == [[f"k{i}" for i in range(5)]]
+    assert oracle.calls == 2 and oracle.expanded_nodes == 0
+    assert set(oracle.cache) == {("A",), ("B",)}
+    print("Scientific semantics verified: conditional values and aliasing, full-cycle repair, sequential updates, schedule feasibility, exact shared-component cancellation.")
 
 
 def psquote(value):
@@ -529,6 +727,8 @@ def export(source, fmt):
         raise RuntimeError(f"Export failed: {destination}")
     if fmt == "png":
         normalize_png_metadata(destination, source.read_text(encoding="utf-8"))
+    else:
+        normalize_pdf_metadata(destination, source.read_text(encoding="utf-8"))
     print(f"Exported {destination.name}: {destination.stat().st_size:,} bytes")
     return destination
 
@@ -569,6 +769,27 @@ def normalize_png_metadata(path, native_xml):
     path.write_bytes(result)
 
 
+def normalize_pdf_metadata(path, native_xml):
+    """Keep exact editable labels despite Desktop's PDF string escaping.
+
+    Only the Subject metadata is replaced. The decoded page content and text
+    must remain identical; this is not a second rendering of the diagram.
+    """
+    from io import BytesIO
+    from pypdf import PdfReader, PdfWriter
+    reader = PdfReader(path)
+    before = [(p.get_contents().get_data(), p.extract_text()) for p in reader.pages]
+    writer = PdfWriter(clone_from=reader)
+    writer.add_metadata({"/Subject": quote(native_xml, safe="")})
+    buffer = BytesIO()
+    writer.write(buffer)
+    normalized = buffer.getvalue()
+    check = PdfReader(BytesIO(normalized))
+    assert before == [(p.get_contents().get_data(), p.extract_text()) for p in check.pages]
+    assert unquote(check.metadata["/Subject"]) == native_xml
+    path.write_bytes(normalized)
+
+
 def verify_exports(paths):
     from PIL import Image
     from pypdf import PdfReader
@@ -581,7 +802,9 @@ def verify_exports(paths):
         with Image.open(png) as image:
             image.load()
             assert image.size[0] >= 950
-            assert ET.fromstring(unquote(image.info.get("mxGraphModel", ""))).tag == "mxfile", f"No editable XML in {png.name}"
+            png_xml = unquote(image.info.get("mxGraphModel", ""))
+            assert ET.fromstring(png_xml).tag == "mxfile", f"No editable XML in {png.name}"
+            assert native_xml == png_xml, f"Editable labels differ across {name} exports"
         page = reader.pages[0]
         print(f"Verified {name}: PDF {float(page.mediabox.width):.2f} × {float(page.mediabox.height):.2f} pt; editable XML in both exports")
 
@@ -594,8 +817,8 @@ def main():
     verify_semantics()
     if not DRAWIO.exists():
         raise FileNotFoundError(f"draw.io Desktop CLI not found: {DRAWIO}")
-    builders = [motivation, problem_setting, method_overview, repair_cycle, compiled_updates,
-                problem_setting_wide, compiled_updates_wide]
+    builders = [motivation, problem_setting, method_overview, component_cancellation, repair_cycle, compiled_updates,
+                method_overview_simple, repair_cycle_simple, problem_setting_wide, compiled_updates_wide]
     built = []
     for builder in builders:
         if args.only and builder.__name__ not in args.only:

@@ -1,0 +1,9 @@
+# Demand-driven score execution
+
+The v04 backend derives scorer dependencies from the validated rule AST/code names. It evaluates and maintains only expressions feeding these numeric inputs. The full feature interface remains available for contradiction diagnosis and source-level regression. The default v03 execution path is retained unchanged; v04 enables `score_slice=True` uniformly for all candidate arms and baselines. Cost selection is recomputed on development data with that backend rather than comparing new runtime against an old cost receipt.
+
+For programs whose eager feature expressions are defined and finite, dead-input elimination preserves every scorer input, score, deterministic tie, deletion, and complete schedule. It does not promise identical eager error behavior for an unused expression undefined on an unseen state. Such expressions remain syntax/type checked; development regression validates the complete declared interface before acceptance. The kernel and oracle access restrictions do not change.
+
+Tests compare complete traces on 30 randomly generated graphs across 11 numeric rules using shared edge, greedy-neighborhood and clique-neighborhood expressions (390 schedule comparisons), preserve existing incremental/numeric tests, and assert measured work reduction when a declared global cover is unused. These tests establish implementation parity on the checked cases; they are not performance evidence. All initialization, scoring, surviving updates and dispatch work are metered.
+
+A lazy, validated numeric locals mapping preserves Python conditional and short-circuit evaluation: a primitive in an untaken score branch is not computed. The static superset of possible lowered aggregates is still initialized and charged. Branch predicates are part of the frozen program, not an online model or oracle. Tests include conditional rules and an explicit untaken-cover primitive check.

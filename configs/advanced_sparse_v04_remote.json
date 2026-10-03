@@ -1,0 +1,314 @@
+{
+  "executables": {
+    "CHILS": {
+      "path": "/root/autodl-tmp/aamas2027_v03/baselines/CHILS/CHILS",
+      "sha256": "19610c03f334c6267f94543ad3053d792cba56e9ae211fceb6c36f21750c88a0"
+    },
+    "M2WIS": {
+      "path": "/root/autodl-tmp/aamas2027_v03/baselines/KaMIS_v32/mmwis/build/mmwis",
+      "sha256": "2238c64a6552fa4e21bd8c340e09475c187f26a49b43f41c4cda152b04316967"
+    },
+    "Struction": {
+      "path": "/root/autodl-tmp/aamas2027_v03/baselines/KaMIS_v32/mmwis/build/extern/struction/branch_reduce_convergence",
+      "sha256": "84ccdd9bfd1fac5ae3e5c83037a72898207c408a11251971b4bf3617a2d5b46f"
+    },
+    "WeightedBR": {
+      "path": "/root/autodl-tmp/aamas2027_v03/baselines/KaMIS_v32/build/wmis/branch_reduce",
+      "sha256": "8be531bea571585e0f582a13f9494ea68f24375c1c140309ab35c7a9afc0b73c"
+    }
+  },
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "official_seconds": 5,
+  "hard_wall_seconds": 30,
+  "program_cpu_seconds": 5,
+  "milp_seconds": 10,
+  "local_search_seconds": 2,
+  "score_slice": true,
+  "stochastic_primary": "mean3fixedseeds; no best-of-three",
+  "selection_permitted": false,
+  "short_budget_CHILS_scope": "concurrent4states singlethread; authors recommend local-search-only for budgets below5minutes; declared implementation setting",
+  "programme_freeze_sha256": "2f4379e782413a2ba68222314ec674163f91a5ffcf75c7d74062388dc601987b",
+  "chils_ils_short": true,
+  "full_interface_programme_ids": [
+    "guided_v04"
+  ],
+  "additional_programmes": [
+    {
+      "id": "legacy_guided_g05",
+      "program": {
+        "name": "g05_diminishing_pair_discount",
+        "features": [
+          {
+            "name": "neighbor_pair_min",
+            "expression": {
+              "op": "edge_min_weight_sum",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "neighbor_edge_count",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - conflict_weight + min(conflict_weight, neighbor_pair_min / (1 + neighbor_edge_count / max(1, degree)))",
+        "rationale": "A triangle contributes three pair edges but only one collectible alternative. Apply diminishing returns to accumulated edge-minimum redundancy to reduce overcounting in dense neighborhoods; the edge versus clique witnesses still produce distinct scores. Two inexpensive features trade arithmetic simplicity against a softer loss estimate."
+      },
+      "source_receipt": {
+        "path": "/root/autodl-tmp/aamas2027_v03/snapshots/advanced_v04_003/configs/../experiments/discovery/v03/frozen_joint_001.json",
+        "sha256": "4928a392d6068d5767c96bb4e27f2e5db4028c349b112105812e963415b965ea",
+        "role": "fixed prior-study primary control"
+      }
+    },
+    {
+      "id": "legacy_continuation_g18",
+      "program": {
+        "name": "g18_retained_bracket_midpoint",
+        "features": [
+          {
+            "name": "residual_cover",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "residual_greedy",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight + (residual_cover + residual_greedy) / 2",
+        "rationale": "Use a midpoint of optimistic and feasible retained continuation estimates. The witness reversal arises because the retained structure changes; combining both estimates aims to temper optimistic cover scores and greedy underestimation on larger residual graphs, while exposing an explicit two-primitive cost tradeoff."
+      },
+      "source_receipt": {
+        "path": "/root/autodl-tmp/aamas2027_v03/snapshots/advanced_v04_003/configs/../experiments/discovery/v03/frozen_joint_001.json",
+        "sha256": "4928a392d6068d5767c96bb4e27f2e5db4028c349b112105812e963415b965ea",
+        "role": "fixed unconditional retained-graph continuation control"
+      }
+    },
+    {
+      "id": "guarded_continuation_64",
+      "program": {
+        "name": "v04_retained_guard_64",
+        "features": [
+          {
+            "name": "residual_cover",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "residual_greedy",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ec",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight+(residual_cover+residual_greedy)/2 if remaining_count<=64 else weight*(1+2*ec/max(1,degree*(degree-1)))/(1+conflict_weight/max(0.000001,weight))",
+        "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+      },
+      "source_receipt": {
+        "path": "/root/autodl-tmp/aamas2027_v03/snapshots/advanced_v04_003/configs/relevance_v04_guided_bank.json",
+        "sha256": "4491d8afd4d9cf81d23cf087317fb1f4d0c0dee8648da127056b34c11c4a8650",
+        "role": "prespecified 64-node guarded continuation; TRAIN-bank index10, not test-selected"
+      }
+    }
+  ],
+  "extension_scope": "Separate exploratory SNAP simple-projection network extension; identical TRAIN-frozen programmes and native settings; all eight fixed inputs, no quality-based filtering.",
+  "startup_repair": "Initialattemptfailedbeforeoutputcreation:relativeadditional-proposalreceiptsresolvedagainstexternalconfigfolder;absoluteunchangedsourcebytepathsrepairlocationonly."
+}

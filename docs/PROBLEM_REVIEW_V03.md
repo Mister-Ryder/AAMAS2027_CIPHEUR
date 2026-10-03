@@ -53,4 +53,3 @@ The schematic should show satellite/station-labeled intervals, the corresponding
 The section has three matched equation environments, one matched figure environment, balanced inline math delimiters and braces, and no citation commands. The figure reference has a matching label inside the fragment. A full manuscript compilation and visual check remain integration tasks because this is an input fragment and the diagram is being built separately. The MWIS and conditional-value labels must be unique after method deduplication.
 
 No root manuscript, code, experiment, bibliography, Git state, or other section was modified by this writer.
-

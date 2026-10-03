@@ -1,14 +1,94 @@
 {
   "mode": "classic",
-  "status": "active",
+  "version": "0.4.0",
+  "status": "research_and_local_release_complete",
   "goal": "Certified information repair and frozen scheduling quality-cost evaluation",
   "metric": "multi-criterion scientific claims; no test-driven candidate selection",
-  "verify": "120 unit tests + exact master exhaustive comparisons + saved bounds/source feasibility + frozen heldout",
-  "current_iteration": 6,
-  "remaining": [
-    "complete immutable cloud evaluations",
-    "independent numerical and layout audit",
-    "8-body-page manuscript",
-    "public source/evidence release"
-  ]
+  "verify": "source/hash and exact witness audits; exhaustive tiny/reference crosschecks; full tests and final page/figure checks owned by root",
+  "current_iteration": 13,
+  "completed_evidence": {
+    "v03_cooperative_holdout_contexts": 840,
+    "v03_cooperative_dense_contexts": 216,
+    "v04_train_contexts": 66,
+    "v04_bank_programmes": 93,
+    "v04_train_strict_requirements": 824,
+    "v04_primary_strict_agreements": 631,
+    "v04_fresh_test_contexts": 456,
+    "v04_fresh_long_subset_contexts": 20,
+    "v04_public_contexts": 96,
+    "v04_public_long_subset_contexts": 21,
+    "v04_public_audit_checks_root_reported": 355759,
+    "v04_snap_separate_contexts": 8,
+    "v04_heap_5s_fresh_assessable_pairs": 2736,
+    "v04_heap_5s_sparse_assessable_pairs": 0,
+    "v04_frozen_action_contexts": 588,
+    "v04_frozen_action_completed_rollouts": 3526,
+    "v04_frozen_action_assigned_rollouts": 3528,
+    "v04_frozen_action_audit_checks": 330923,
+    "v04_frozen_action_scalar_replays": 1071174,
+    "v04_primary_test_sampled_states": 555,
+    "v04_primary_test_pool_regret_positive_zero_unknown": [
+      18,
+      191,
+      346
+    ],
+    "v04_heap_30s_audit_checks": 123726,
+    "v04_heap_30s_assigned_runs": 96,
+    "v04_heap_30s_primary_heap_completed": 12,
+    "v04_heap_30s_degree_heap_completed": 24,
+    "v04_heap_30s_assigned_per_ast_backend": 24,
+    "v04_heap_30s_fullscan_completed_per_ast": 0,
+    "v04_heap_30s_assessable_pairs": 0
+  },
+  "authoring": {
+    "served_model_root_verified": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "v04_authoring_sessions": 1,
+    "v04_new_guided_proposals": 12,
+    "existing_control_proposals_per_arm": 24,
+    "external_API_calls": 0,
+    "token_usage": null
+  },
+  "retained_negative_findings": [
+    "Original v03 guided transfer underperforms rule baseline; failure denominators retained.",
+    "All200 natural-alias certificate queries remain unresolved.",
+    "Acyclic primary interface still has193/824 TRAIN scalar violations.",
+    "Pure cancellation narrows uncertainty but strict yield remains33-to33.",
+    "Main and primary-only guided selections coincide; no secondary-selection effect demonstrated for this arm.",
+    "Published native solvers are stronger comparators; no SOTA dominance claimed.",
+    "Original5second sparse full-scan primary fails every assigned context; later heap results do not replace it.",
+    "Five-second sparse backend parity/speedup is unassessable; dense degree heap overhead is retained.",
+    "Thirty-second sparse full scans still all fail; no paired sparse speedup/backend parity despite increased heap completion.",
+    "Frozen primary test sampled-state finite-pool regrets remain positive or unresolved in364/555 states; no universal ranking guarantee."
+  ],
+  "completed_extensions": {
+    "frozen_action_588": "complete and independently audited; two free validation C3 rollout failures retained; all frozen ASTs unchanged",
+    "heap_sparse_30s": "complete and independently audited; distinct budget/source version; original five-second archives unchanged; zero assessable backend pairs"
+  },
+  "test_status": {
+    "root_reported_tests_passed": 181,
+    "root_reported_elapsed_seconds": 107.398,
+    "subsequent_runner_budget_guard_tests_passed": 7,
+    "subsequent_audit_portability_verification": "six read-only archive/input reruns; existing report bytes preserved"
+  },
+  "release_security_review": {
+    "scope": "nonignored release files plus decompressed top-level archive payloads; nested archives not recursively decoded; excludes Git history and ignored caches",
+    "files": 514,
+    "archives": 37,
+    "streams": 1187,
+    "findings": [],
+    "secret_values_printed": false
+  },
+  "remaining": [],
+  "paper_release": {
+    "body_pages": 8,
+    "reference_pages": 1,
+    "main_figures": 8,
+    "main_tables": 2,
+    "printed_references": 24,
+    "class_changed": false,
+    "all_pages_visually_inspected": true,
+    "latex_errors_or_overflow": 0
+  },
+  "publication_identity": "Reviewed release is published from the local Git commit; consult remote branch identity rather than embedding a self-referential commit hash."
 }

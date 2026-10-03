@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cipheur"
-version = "0.2.0"
+version = "0.4.0"
 description = "Certified evidence-guided joint graph-feature and ranking-rule synthesis"
 requires-python = ">=3.10"
 dependencies = []
@@ -12,6 +12,7 @@ dependencies = []
 [project.optional-dependencies]
 v51 = ["numpy>=1.24"]
 analysis = ["numpy>=1.24", "matplotlib>=3.7", "nbformat>=5.9", "nbclient>=0.9", "ipykernel>=6.0"]
+research = ["numpy>=1.24", "scipy>=1.11", "matplotlib>=3.7"]
 
 [project.scripts]
 cipheur = "cipheur.__main__:main"

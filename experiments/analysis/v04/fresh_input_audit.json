@@ -1,0 +1,169 @@
+{
+  "scope": "Fresh INPUT data only, TRAIN freeze and prior data.json members only, plus saved native tiny fixtures; no fresh outcome files read",
+  "fresh": {
+    "input_data_sha256": "827d6182abc67e3d8da16de59a785059153eef8a73a55be670f9e2b90c943af1",
+    "protocol_sha256": "a76347c80f144f9deab2be0bc2bbaadd0d76d0d89097aa00ad0491159dfaae87",
+    "prespecified_config_sha256": "f0b0ab294a1ab0482a08ded1f16f11c8235e262fb25a3d5336eec671c4bad13f",
+    "frozen_receipt_sha256": "2f4379e782413a2ba68222314ec674163f91a5ffcf75c7d74062388dc601987b",
+    "prior_containers": 12,
+    "excluded_prior_original_ids": 40886,
+    "unique_new_c3_ids": 5760,
+    "original_c3_graph_reconstructions": 48,
+    "pairs": {
+      "validation": 66,
+      "test": 228
+    },
+    "contexts": {
+      "validation": 132,
+      "test": 456
+    },
+    "families": {
+      "validation": {
+        "standard_balanced": 9,
+        "standard_ground_scarce": 9,
+        "standard_satellite_scarce": 9,
+        "dense_long_balanced": 9,
+        "dense_long_ground_scarce": 9,
+        "dense_long_satellite_scarce": 9,
+        "c3": 12
+      },
+      "test": {
+        "standard_balanced": 36,
+        "standard_ground_scarce": 36,
+        "standard_satellite_scarce": 36,
+        "dense_long_balanced": 36,
+        "dense_long_ground_scarce": 36,
+        "dense_long_satellite_scarce": 36,
+        "c3": 12
+      }
+    },
+    "generator_source_sha256": {
+      ".research/build_fresh_v04.py": "d1d3c69348e2b51b22e753104755ceee2843552ab0eabcc6bad6892f26c5f5c0",
+      "cipheur/study_data_v04.py": "b7948315bdd6e72d647a6afeee1b227d85b302217fcb0fa7f9486e58928174fb",
+      "cipheur/relevance_synthesis_v04.py": "3560b612286b92894bbbc48073212cb0b8f64390b4c1572e29c053a65eb2c10d",
+      "cipheur/experiment_data.py": "685238f0ba69f18a089f04456ca5a5c9d45d2134237dc23055d0e889fa55ff01",
+      "cipheur/study_data.py": "0a37342622ab2330447a86b3ffb0fe1c45696072652b15a25826423ae3688fb3",
+      "cipheur/v51_adapter.py": "68699aa08e21a6dea1108ba64878916efaf56e05f076e93aa6cda9b7c6dad28d"
+    },
+    "prior_inventory_scope": "All12 explicitly supplied prior input containers checked, including all assigned primary IDs in partial archives; completeness beyond supplied inventory is caller provenance."
+  },
+  "native": {
+    "receipt_sha256": "8973cbd2735503eebea14d8f63d449c5149e288982100d0d788a051f29cbd402",
+    "cases": 32,
+    "assigned_adapter_attempts": 128,
+    "actual_executable_invocations": 124,
+    "empty_residual_wrapper_shortcuts": 4,
+    "methods": {
+      "CHILS": {
+        "assigned": 32,
+        "completed": 32,
+        "tiny_optimum_attained": 32,
+        "empty_residual_wrapper_shortcut": 1
+      },
+      "M2WIS": {
+        "assigned": 32,
+        "failed": 4,
+        "completed": 28,
+        "tiny_optimum_attained": 28,
+        "empty_residual_wrapper_shortcut": 1
+      },
+      "Struction": {
+        "assigned": 32,
+        "completed": 32,
+        "tiny_optimum_attained": 32,
+        "empty_residual_wrapper_shortcut": 1
+      },
+      "WeightedBR": {
+        "assigned": 32,
+        "completed": 32,
+        "tiny_optimum_attained": 32,
+        "empty_residual_wrapper_shortcut": 1
+      }
+    },
+    "failures": [
+      {
+        "case": 0,
+        "method": "M2WIS",
+        "status": "Solver exit status -11"
+      },
+      {
+        "case": 12,
+        "method": "M2WIS",
+        "status": "Solver exit status -11"
+      },
+      {
+        "case": 24,
+        "method": "M2WIS",
+        "status": "Solver exit status -11"
+      },
+      {
+        "case": 30,
+        "method": "M2WIS",
+        "status": "Solver exit status -11"
+      }
+    ],
+    "commits": {
+      "KaMIS": "2e4b3861b8063f05e8520434b97ce59e21ca49e7",
+      "CHILS": "515952724cd3dcc6c4365a340ecf0f1da782119a"
+    },
+    "clean_tracked_worktrees_verified": true,
+    "binary_sha256": {
+      "CHILS": "19610c03f334c6267f94543ad3053d792cba56e9ae211fceb6c36f21750c88a0",
+      "M2WIS": "2238c64a6552fa4e21bd8c340e09475c187f26a49b43f41c4cda152b04316967",
+      "Struction": "84ccdd9bfd1fac5ae3e5c83037a72898207c408a11251971b4bf3617a2d5b46f",
+      "WeightedBR": "8be531bea571585e0f582a13f9494ea68f24375c1c140309ab35c7a9afc0b73c"
+    },
+    "build_file_sha256": {
+      "baselines/CHILS/Makefile": "b7ec987c59f9e87eaaf7918fcb78b4f13e478a6d516af248c68ead0408030fd0",
+      "baselines/KaMIS_v32/build/CMakeCache.txt": "31b6355713b4cec52ec871abd4b4cd99b7440a888897622dd8b3ac446502b6a2",
+      "baselines/KaMIS_v32/mmwis/build/CMakeCache.txt": "7f7e3fde9a0dc3db9ce060a538b3f47f1a681a741bd4f13468ebb1271d603511"
+    },
+    "compiler": "g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0",
+    "scope": "Source/build/clean tracked worktree receipts checked as saved provenance; native binaries are not present locally for independent byte rehash."
+  },
+  "checks": {
+    "fresh_protocol_prefrozen_train_source_bytes": 1,
+    "fresh_input_freeze_bytes": 1,
+    "fresh_input_no_outcome_construction": 1,
+    "fresh_prior_inventory_12": 1,
+    "fresh_prior_input_bytes": 12,
+    "fresh_prior_actual_contact_identity": 430,
+    "fresh_global_prior_id_union": 1,
+    "fresh_prior_manifest_hashes": 1,
+    "fresh_original_source_file_hash": 3,
+    "fresh_original_data_hash": 1,
+    "fresh_family_cells_prespecified": 2,
+    "fresh_declared_pair_counts": 2,
+    "fresh_pair_unique_split": 294,
+    "fresh_pair_contact_alignment": 294,
+    "fresh_instance_identity": 294,
+    "fresh_temporal_seed_not_prior": 270,
+    "fresh_graph_hash_nonreuse": 294,
+    "fresh_single_parameter_intervention": 294,
+    "fresh_temporal_predicate_reconstruction": 540,
+    "fresh_c3_global_source_nonreuse": 24,
+    "fresh_c3_original_contact_fields": 11520,
+    "fresh_c3_original_predicate_reconstruction": 48,
+    "fresh_validation_test_seed_disjoint": 1,
+    "fresh_c3_unique_5760": 1,
+    "native_fixture_exhaustive_optimum": 32,
+    "native_fixture_exact_metis_scaling": 128,
+    "native_fixture_pinned_binary": 128,
+    "selection_list": 124,
+    "selection_feasible": 124,
+    "selection_boundary": 124,
+    "selection_objective": 124,
+    "native_fixture_returned_below_optimum": 124,
+    "native_fixture_ids_valid": 31,
+    "native_fixture_output_original_mapping": 120,
+    "native_fixture_failure_null": 4,
+    "native_fixture_flags_valid": 89,
+    "native_fixture_empty_residual_shortcut": 4,
+    "native_fixture_population_complete": 1,
+    "native_pinned_commit_receipt": 2,
+    "native_submodule_initialized_receipt": 1,
+    "native_clean_tracked_worktree_receipt": 3,
+    "native_clean_all_sources_receipt": 1
+  },
+  "issues": []
+}

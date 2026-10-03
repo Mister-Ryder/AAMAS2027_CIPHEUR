@@ -1,0 +1,24 @@
+{
+  "version": "fixed_ast_heap_execution_extension_v04",
+  "scope": "post-diagnostic execution extension; not original confirmatory quality evaluation",
+  "program_arms": {"primary": "guided_v04", "degree": "baseline"},
+  "required_degree_name": "degree",
+  "backends": ["full_scan", "heap"],
+  "repetitions": 3,
+  "program_cpu_seconds": 5.0,
+  "score_slice": true,
+  "expected_contexts": {"public": 8, "test": 456},
+  "train_freeze_sha256": "2f4379e782413a2ba68222314ec674163f91a5ffcf75c7d74062388dc601987b",
+  "program_sha256": {
+    "primary": "90079f0c7342f290c5858ff49b711f9b4cef96d028b260b8d1a2fdea13d463b6",
+    "degree": "39157d1794ca298d99f00ac3cbab2ab82a6849fb6c09b75a97bacba649852618"
+  },
+  "input_sha256": {
+    "public": "7afb9d7451ae71ff99833b15cd6ce53f46b9736870483086fe4508c15153ff41",
+    "test": "827d6182abc67e3d8da16de59a785059153eef8a73a55be670f9e2b90c943af1"
+  },
+  "order": "alternate first backend by context index, repetition and program index; reverse program order on alternating repetitions",
+  "selection_permitted": false,
+  "failure_policy": "null schedule, value and trace; no partial schedule, backend fallback or retry",
+  "budget_scope": "cooperative process-CPU target; checkpoint every 128 meter writes; primitive and cleanup overshoot retained"
+}

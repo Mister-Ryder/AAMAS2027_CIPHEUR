@@ -1,0 +1,613 @@
+{
+  "version": "v04_guided_bank_001",
+  "candidates": [
+    {
+      "name": "v04_feasible_ratio_g12",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,ng)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_upper_ratio",
+      "features": [
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,nc)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_midpoint_ratio",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,(ng+nc)/2)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_ambiguity_discount",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,ng)-max(0,nc-ng)/max(0.000001,weight+nc)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_feasible_loss",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-ng",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_upper_loss",
+      "features": [
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-nc",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_interval_normalized_ratio",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,(ng+nc)/2)/(1+max(0,nc-ng)/max(0.000001,nc))",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_feasible_pair_hybrid",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "em",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,(ng+max(max_conflict_weight,conflict_weight-em))/2)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_feasible_density_hybrid",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ec",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,ng)+2*ec/max(1,degree*(degree-1))*weight/max(0.000001,weight+conflict_weight)",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_density_gap_ratio",
+      "features": [
+        {
+          "name": "ng",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "nc",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ec",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000001,weight,ng+max(0,nc-ng)/(1+2*ec/max(1,degree*(degree-1))))",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_retained_guard_64",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ec",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+(residual_cover+residual_greedy)/2 if remaining_count<=64 else weight*(1+2*ec/max(1,degree*(degree-1)))/(1+conflict_weight/max(0.000001,weight))",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    },
+    {
+      "name": "v04_retained_guard_128",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "ec",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+(residual_cover+residual_greedy)/2 if remaining_count<=128 else weight*(1+2*ec/max(1,degree*(degree-1)))/(1+conflict_weight/max(0.000001,weight))",
+      "rationale": "Predetermined assistant-authored TRAIN-only proposal; neighborhood packing/cover summaries are heuristic features, not a global ranking guarantee."
+    }
+  ],
+  "generation": {
+    "author": "current Codex assistant turn",
+    "external_API_calls": 0,
+    "new_proposals": 12,
+    "served_model_identifier": "gpt-6.1-sol",
+    "token_usage": null,
+    "scope": "predetermined templates before TRAIN evaluation; prior qualitative failure informs method motivation; old test outcomes do not rank candidates",
+    "guard_thresholds": [
+      64,
+      128
+    ],
+    "guard_basis": "declared compute regimes, not old test quality",
+    "model_metadata_source": "trusted root turn metadata, verified in docs/AI_ASSISTANCE_V03.md",
+    "authoring_sessions": 1,
+    "authoring": "one continuing assistant agent session with root feedback/revisions before any v04 TRAIN outcomes"
+  }
+}

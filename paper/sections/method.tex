@@ -1,226 +1,238 @@
-% Input fragment. Parent preamble: amsmath, algorithm, algorithmic.
+% Input fragment. Parent preamble supplies amsmath and the AAMAS class.
 \section{Certified Representation--Rule Refinement}
 \label{sec:method}
 
-Our offline synthesis loop separates three failures: an uninformative
-representation, an incorrect rule over an adequate representation, and a
-ranking improvement that does not improve the executed schedule. It uses
-certified residual-state comparisons to refine the first two, and complete
-schedule evaluation to assess the third. The resulting feature--rule program
-is frozen before evaluation on unseen scheduling problems.
+Offline refinement tests input expressivity, action relevance at reached
+states, and complete-schedule quality versus measured work
+(Figure~\ref{fig:method}). Banks remain fixed during evaluation; the selected
+feature--rule program is frozen before fresh confirmation and deployment.
 
-\subsection{Scheduling States and Aligned Interventions}
-\label{sec:method:model}
-An intervention changes one admissible resource parameter while preserving
-contacts, rewards, time windows, and boundary semantics. Configuration is
-static within each run. We acquire comparisons at incumbent rollout states:
-replay the same $B$ in both configurations, retain an action $a$ that is
-the actual next kernel choice on at least one side, and select a common
-feasible conflicting challenger $b$. Both must remain individually feasible
-and adjacent on both sides. Invalid replays are discarded. Uncertain scores,
-structural changes, and program disagreement prioritize queries; they do
-not establish preferences.
-
-\subsection{Full-Residual Reversal and Preservation Certificates}
+\subsection{Component-Cancelled Full-Residual Certificates}
 \label{sec:method:certificates}
-For the conditional completion value in Equation~\ref{eq:conditional-value}, The scope includes the full residual graph. A budgeted oracle supplies
-$L_\theta(d\mid B)\leq V_\theta(d\mid B)\leq U_\theta(d\mid B)$.
-Each lower bound has a checked complete feasible schedule containing the
-forced action and commitments. Thus all four conditional spaces have
-explicit feasibility witnesses.
-
-For scalable certification, let $A=R_\theta(F\cup\{d\},X)$, and search
-an interior region $H\subseteq A$. Let $U_H$ bound its induced MWIS
-value. Partition $A\setminus H$ into verified disjoint cliques $C_j$.
-Then a full-residual envelope is
+At an admissible boundary $B=(F,X)$, write $R=R_\theta(B)$ and
+$R_d=R\setminus(\{d\}\cup N_\theta(d))$. Let $\mathcal C_d$ be the
+connected components of $G_\theta[R_d]$, identified by exact vertex sets,
+and let $\alpha_w(C)$ denote the MWIS value of their induced graph.
+Additivity gives
 \begin{equation}
- U_\theta(d\mid B)=w(F\cup\{d\})+U_H+
-                 \sum_j\max_{v\in C_j}w_v.
- \label{eq:clique-envelope}
+ V_\theta(d\mid B)=w(F)+w_d+\sum_{C\in\mathcal C_d}\alpha_w(C).
+ \label{eq:component-completion}
 \end{equation}
-An independent set contains at most one vertex from each clique; relaxing
-cross-region conflicts only enlarges the completion space. Singleton cliques
-recover the outside-weight bound. Clique envelopes also bound unexpanded
-branch-and-bound states. An interior incumbent is greedily completed and
-checked globally to obtain $L$. Progressive region expansion retains the
-best valid lower and upper bounds. Exact arithmetic for saved weights and
-outward-rounded exported endpoints preserve the inequalities when search
-stops early.
-
-For objective tolerance $\epsilon\geq0$, a reversal is certified by
+For actions $a,b$ in one graph and boundary, define unmatched
+collections $\mathcal A=\mathcal C_a\setminus\mathcal C_b$ and
+$\mathcal B=\mathcal C_b\setminus\mathcal C_a$. Shared components have
+identical weighted induced graphs; their possibly unknown optima cancel:
 \begin{equation}
  \begin{split}
- L_{\theta_0}(a\mid B)&>U_{\theta_0}(b\mid B)+\epsilon,\\
- L_{\theta_1}(b\mid B)&>U_{\theta_1}(a\mid B)+\epsilon.
+ \Delta_{ab}&=V_\theta(a\mid B)-V_\theta(b\mid B)\\
+ &=w_a-w_b+\sum_{C\in\mathcal A}\alpha_w(C)
+             -\sum_{C\in\mathcal B}\alpha_w(C).
  \end{split}
+ \label{eq:cancelled-difference}
+\end{equation}
+Given sound component intervals $[L_C,U_C]$,
+\begin{equation}
+ \begin{split}
+ \underline\Delta_{ab}&=w_a-w_b+\sum_{\mathcal A}L_C-\sum_{\mathcal B}U_C,\\
+ \overline\Delta_{ab}&=w_a-w_b+\sum_{\mathcal A}U_C-\sum_{\mathcal B}L_C.
+ \end{split}
+ \label{eq:difference-envelope}
+\end{equation}
+\paragraph{Lemma (sound cancellation).}
+The endpoints enclose $\Delta_{ab}$.
+\emph{Proof.} Independent component optima have a feasible union. Shared
+terms cancel; bounding unmatched terms with their respective signs proves
+the enclosure.\hfill$\square$
+
+Conditioning can disconnect a graph. Matching uses exact vertex sets within
+one configuration (Figure~\ref{fig:cancellation}), not cross-intervention identity.
+
+Checked feasible packings supply lower bounds. For $H\subseteq C$, a sound
+$U_H$ and verified clique partition $\{K_j\}$ of $C\setminus H$ give
+\begin{equation}
+ U_C=U_H+\sum_j\max_{v\in K_j}w_v.
+ \label{eq:clique-envelope}
+\end{equation}
+Relaxing cross-region edges proves soundness. Greedy completion and
+branch-and-bound use exact supplied-weight arithmetic; exported endpoints
+round outward. Early stopping retains enclosures; large components use
+zero-search bounds and exhausted calls retain $[0,w(C)]$. Different clique
+partitions preclude universal interval dominance.
+
+For aligned interventions, replay $a,b$ feasibly at the same $B$ on both
+sides. With $\epsilon\geq0$, certify reversal when
+\begin{equation}
+ \underline\Delta^{\theta_0}_{ab}>\epsilon,
+ \qquad \overline\Delta^{\theta_1}_{ab}<-\epsilon,
  \label{eq:reversal-certificate}
 \end{equation}
-Sound intervals imply the corresponding strict inequalities between
-conditional optima. The same strict preference on both sides certifies
-\emph{preservation}. Overlapping intervals, exact ties, and exhausted budgets
-remain unknown. Preservation is therefore positive evidence for a stable
-ordering, rather than the absence of a reversal.
-
-Each side contributes a requirement $r=(x^+,x^-)$, where
-$x=(G_\theta,R_\theta(B),v)$ is a decision occurrence:
+or with roles exchanged. Equal strict signs certify preservation;
+unresolved intervals and ties remain unknown at budget exhaustion. Certified sides supply
+occurrences $x=(G_\theta,R,v)$ and requirements
 \begin{equation}
  h(\phi(x^+))>h(\phi(x^-)).
  \label{eq:strict-requirement}
 \end{equation}
-An implementation score margin is distinct from $\epsilon$. These
-requirements compare optimal completions with explicit commitments; they
-do not certify a heuristic completion or greedy global optimality. To
-detect avoidance of the comparison, we record whether a candidate reaches
-the saved boundary and, when started there, chooses outside $\{a,b\}$.
-Such an escape can be reasonable, but pair consistency then provides no
-direct evidence about the next executed choice.
+Objective tolerance $\epsilon$ differs from a scoring margin.
 
-\subsection{From Exact Contradictions to Minimum Feature Repair}
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/component_cancellation.drawio.pdf}
+\Description{Two conditioned residuals contain the same weighted five-cycle
+and different isolated contacts. Absolute value intervals overlap, but
+cancelling the common component proves a strict value difference of five.}
+\caption{Identical residual components cancel from the global conditional-value difference. In this constructed zero-search example, separate intervals $[33,43]$ and $[28,38]$ overlap, yet shared five-cycle $K$ cancels exactly, leaving $\Delta=5$ and a strict preference for $a$. The oracle never bounds $K$.}
+\label{fig:cancellation}
+\end{figure}
+
+\subsection{Exact Quotients and Finite-Catalogue Repair}
 \label{sec:method:repair}
-Let $\mathcal D$ contain the accumulated requirements and $\mathcal Z$
-their occurrences. Define $x\sim_\phi y$ exactly when
-$\phi(x)=\phi(y)$. The quotient graph $Q_\phi$ has equivalence classes
-as vertices and an arc $[x^+]\rightarrow[x^-]$ for every requirement,
-including self-loops. All scorer-observable semantic inputs belong to
-$\phi$; contact identifiers and saved labels are excluded.
+For finite evidence, $Q_\phi$ identifies occurrences exactly when
+$\phi(x)=\phi(y)$ and adds arcs $[x^+]\to[x^-]$, retaining self-loops.
+The nine base inputs are weight, duration, residual degree, neighbor-weight
+sum/maximum, compatible-weight sum, ground/satellite gaps and residual count.
+Diagnosis includes every declared field, even if ignored by the rule;
+IDs/split labels are excluded. A configuration audit adds omitted satellite
+transition time and presence before attributing aliases to graph structure.
 
 \paragraph{Proposition 1 (finite representability).}
-An unrestricted deterministic pointwise scalar function satisfies all
-observed strict requirements if and only if $Q_\phi$ is acyclic.
-\emph{Proof.} A cycle requires a strict decrease back to its starting score.
-Conversely, longest outgoing-path lengths on a finite DAG supply a
-satisfying score, scalable to any fixed positive margin.\hfill$\square$
+An unrestricted deterministic pointwise scalar score satisfies every
+observed strict requirement if and only if $Q_\phi$ is acyclic.
+\emph{Proof.} Cycles demand a strict decrease back to the same score.
+Longest outgoing-path lengths on a finite DAG satisfy every arc and scale
+to any positive margin.\hfill$\square$
 
-Acyclicity does not establish expressibility in the bounded rule language
-or behavior on unseen occurrences. Nevertheless, a cycle proves that
-rule-only repair cannot satisfy the current evidence. After auditing the
-certificates, we lift a cycle to concrete ranking arcs $p_i\to n_i$ and
-the equality joins $n_i\sim_\phi p_{i+1}$, with cyclic indices.
-This witness $W$ records the particular occurrences whose distinction
-was lost, rather than only quotient-class names.
-
-The LLM composes a finite catalogue $\mathcal F$ of typed structural
-features. Define $d_{Wf}=1$ when $f$ separates at least one equality
-join of $W$. With positive additive standalone work estimates $c_f$,
-the repair master selects features by
+A concrete cycle records ranking arcs $p_i\to n_i$ and equality joins
+$n_i\sim_\phi p_{i+1}$: distinctions that LLM features should recover.
+For finite typed catalogue $\mathcal F$, let $d_{Wf}=1$ when $f$ separates
+any join of witness $W$. With positive standalone costs $c_f$, solve
 \begin{equation}
  \begin{split}
- \min_{z_f\in\{0,1\}}\ &\sum_{f\in\mathcal F}c_fz_f,\\
- \text{subject to }&\sum_f d_{Wf}z_f\geq1
-                   \quad\text{for every retained }W,\\
+ \min_{z\in\{0,1\}^{|\mathcal F|}}\ &\sum_f c_fz_f,\\
+ \text{s.t. }&\sum_f d_{Wf}z_f\geq1\quad\text{for each retained }W,\\
  &\sum_f z_f\leq K.
  \end{split}
  \label{eq:repair-cover}
 \end{equation}
-Every valid refinement must break a join in every such witness.
-After each master, we append its selected features to the fixed base, replacing previous trial selections, and rebuild the \emph{full} quotient,
-and add a surviving cycle as another constraint. Covering the original
-simple quotient cycles alone is insufficient: a finer cycle can project
-to a closed walk revisiting a coarse class. If no proposed feature covers
-the new witness, synthesis expands the catalogue or reports an unresolved
-repair at its budget limit.
+Trials replace previous additions to the fixed base and rebuild the full
+quotient. Surviving cycles add necessary cuts: splitting a coarse cycle can
+leave refined cycles projecting to repeated-class closed walks.
 
 \paragraph{Proposition 2 (finite-catalogue repair).}
-If each master is solved globally and separation terminates with an
-acyclic quotient, the selected features minimize the stated additive cost
-over that catalogue, fixed evidence, and declared feature limit $K$.
-\emph{Proof.} Every retained witness constraint is necessary, making the
-master optimum a lower bound on the repair optimum. A final acyclic
-quotient supplies feasibility, hence the reverse inequality.\hfill$\square$
+Globally solved masters and a final acyclic full quotient minimize additive
+cost over fixed catalogue, evidence and $K$.
+\emph{Proof.} Necessary witness constraints make the master optimum a
+lower bound on valid repair cost. The final DAG attains that bound.
+\hfill$\square$
 
-With the feature limit part of the input, the generic explicit-catalogue problem is NP-hard by weighted set cover:
-give each universe element a separate base class with one strict
-self-loop pair, and let a candidate feature distinguish that pair exactly
-when its source subset contains the element. Distinct base classes prevent
-cross-element cycles. This reduction concerns the finite feature table;
-it is not a hardness claim for every restricted graph language or a fixed constant feature limit. With fixed $K$, enumerating $O(|\mathcal F|^K)$ subsets is polynomial in catalogue size.
-Without a cardinality constraint, weighted greedy gives an $H_m$
-approximation for covering a fixed family of $m$ witnesses with additive
-costs~\cite{chvatal1979greedy}; this guarantee does not apply to capped repair. A budgeted cover is accepted as a
-representation repair only after the full DAG check; it provides no
-future-consistency guarantee. With $N$ occurrences, $M$ requirements, and
-$k$ features, vector hashing costs expected $O(Nk)$ and quotient construction
-and cycle detection cost $O(N+M)$, excluding feature evaluation and
-exact-number bit costs. Deterministic sorted traversal adds comparison work; master selection is combinatorial when $K$ varies.
+With variable $K$, arbitrary finite tables encode weighted set cover:
+one self-loop pair per element, separated by covering-subset features.
+Hardness need not hold for every grammar; fixed $K$ permits
+$O(|\mathcal F|^K)$ trials. Exhaustion/uncovered witnesses remain unresolved.
+Acyclicity does not guarantee bounded-rule fit or transfer. Minimum-interface
+search remains an ablation.
 
-\subsection{Typed Features and Compiled Residual Evaluation}
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=\textwidth]{figures/repair_cycle.drawio.pdf}
+\Description{A diagnostic feature alias produces a strict self-loop. Actual
+LLM-authored density and retained-continuation expression graphs illustrate
+distinct ranking hypotheses. A separate reached TRAIN boundary shows exact
+regret 192 for g05 and zero for g03, g12 and g18.}
+\caption{A constructed diagnostic self-loop exposes missing neighborhood structure. The actual assistant-authored g03 density and g18 continuation programs use distinct typed ASTs and ranking hypotheses. g03 separates both probe preferences; the separate TRAIN action audit illustrates why witness separation must still be followed by full-quotient, action and cost checks.}
+\label{fig:repair}
+\end{figure*}
+
+\subsection{Auditing Actual Reached Actions}
+\label{sec:method:actions}
+Requirements can concern unchosen actions. Rollouts record the initial
+boundary and up to two commitments. Audits retain the initial and most-shared
+boundary, deterministic ties and unsampled-state counts.
+
+Replay each program's deterministic argmax at the same $B$, forming finite
+pool $\mathcal U_B$. Query all unordered pairs in fixed order under shared
+cache/budget. For chosen $d$, define
+\begin{equation}
+ \rho_{\mathcal U_B}(d)=
+ \max_{u\in\mathcal U_B}\bigl[V_\theta(u\mid B)-V_\theta(d\mid B)\bigr].
+ \label{eq:pool-regret}
+\end{equation}
+Since $d\in\mathcal U_B$, maxima of zero and difference endpoints enclose
+$\rho$. The upper endpoint bounds only finite-pool regret; the lower can
+prove loss to a particular feasible alternative. Neither guarantees
+complete-schedule loss. Counterfactual states remain auditable, but
+selection uses only boundaries in that program's recorded rollout.
+Coverage, failed choices and unknown comparisons accompany regret;
+strict differences augment quotient evidence.
+
+\subsection{Typed Features and Demand-Driven Execution}
 \label{sec:method:features}
-The language distinguishes nodes, node sets, edge sets, and numbers.
-Root and residual-neighborhood queries, set operations, induced edges,
-weight aggregates, and bounded arithmetic compose deployable features.
+The language types nodes, node/edge sets and numbers; proposals pass type,
+size and finite-output checks. Set operations, induced edges and bounded
+arithmetic compose packing/cover and edge statistics, including summaries of $R_v$.
 For example,
 \begin{equation}
  T_R(v)=\sum_{\{u,z\}\in E_\theta[N_R(v)]}\min(w_u,w_z)
  \label{eq:neighbor-structure}
 \end{equation}
-exposes conflicts among alternatives excluded by $v$, which degree and
-neighbor-weight sums omit. It is a structural statistic, not a completion
-bound: shared endpoints can appear in several terms.
+repeatedly counts shared endpoints, making it a statistic, not a completion
+bound. Rounded packing/cover scorer inputs are heuristic; the independent
+sound offline bound oracle uses exact arithmetic to certify labels (Figure~\ref{fig:repair}).
 
-Compilation shares identical typed subexpressions in a DAG and caches
-root-independent expressions within their valid residual state. Recognized
-degree, neighbor-weight, and neighborhood-edge aggregates use incremental
-updates. Deleting $x$ subtracts one and $w_x$ from the first two quantities
-for surviving neighbors $v$, and updates
+State-wide guards $|R|\leq64$ or $128$ choose
+$w_v+(L_v+U_v)/2$ using rounded packing/cover summaries of $R_v$,
+otherwise density/pressure scoring.
+Every action shares the branch; midpoints give no ranking guarantee.
+
+Shared DAGs and lazy conditional/short-circuit inputs avoid untaken generic
+primitives; static aggregate-superset initialization/maintenance stays charged.
+For defined finite eager features, scores, ties and complete traces are
+preserved. Diagnosis retains the full interface. Sequential deletion uses
 \begin{equation}
- T(v)\leftarrow T(v)-
- \sum_{y\in N_R(v)\cap N_R(x)}\min(w_x,w_y).
+ T(v)\leftarrow T(v)-\sum_{y\in N_R(v)\cap N_R(x)}\min(w_x,w_y).
  \label{eq:incremental-feature}
 \end{equation}
-Sequential deletion prevents double subtraction when both endpoints
-disappear. Unrecognized expressions use the snapshot interpreter.
-Initialization, intersections, updates, cache work, and scoring all enter
-the work counter; dense-graph updates are not assumed constant-time.
-Numerical semantics must preserve the feature interface used by
-certification checks. Shared DAG cost is nonadditive, so the set-cover
-approximation does not apply to actual deployment work.
+Updated neighborhoods prevent double subtraction; exact accumulators
+preserve rounded reference terms. Unsupported expressions use the snapshot
+interpreter. All compilation, cache, update and scoring work is charged;
+joint DAG cost is nonadditive, unlike $c_f$.
 
-\subsection{Joint Synthesis, Selection, and Frozen Deployment}
+A separate backend caches only reviewed root/neighborhood dependencies
+under immutable graph, weights, configuration and program. After deleting
+the whole batch $D$, it refreshes survivors in the pre-deletion frontier
+$\bigcup_{x\in D}N_R(x)$;
+outside this frontier, unchanged inputs preserve scores. Versioned heap
+entries preserve scalar-score/string-ID ordering. Global or unreviewed
+demanded inputs, even in untaken branches, trigger full rescoring.
+Initialization, frontier refreshes, comparisons and stale removal are
+charged. For valid queried inputs this preserves the score-sliced
+kernel's trace and frozen feature--rule pair.
+
+\subsection{TRAIN Selection and Frozen Deployment}
 \label{sec:method:selection}
-Algorithm~\ref{alg:joint-refinement} summarizes the loop. The LLM proposes
-distinguishing features and rules over repaired interfaces. Whole feature--rule pairs compete by validation utility; the cheapest additive interface is a restricted-pool ablation. Type,
-size, and finite-output checks enforce a closed execution language.
-Every revision replays earlier reversal \emph{and} preservation evidence.
-For consistency $s(P)$, complete-schedule validation quality $q(P)$,
-and measured compiled work $c(P)$, selection uses
+One offline assistant session authors proposals before TRAIN outcomes.
+Controls have unequal authoring counts/compute. Numerical selection uses
+TRAIN only, excluding fresh validation/test outcomes.
+
+For context $t$, $q_{Pt}$ divides reward by the best completed bank reward,
+a feasible empirical comparator; $c_{Pt}$ divides measured work by positive
+degree-baseline work. Incomplete runs receive $q_{Pt}=0,c_{Pt}=100$.
+Equal-family means define $q(P),c(P)$ and
 \begin{equation}
- J(P)=q(P)-\lambda\bigl(c(P)/c_{\rm ref}-1\bigr),
- \qquad s(P)\geq\tau,
+ J(P)=q(P)-0.002\,[c(P)-1].
  \label{eq:joint-utility}
 \end{equation}
-with declared $\lambda$, $\tau$, and baseline cost $c_{\rm ref}>0$.
-Candidates must also have an acyclic observed quotient and valid interfaces.
-Reversal and preservation violations are reported separately. A gate
-below complete consistency is not described as satisfying all evidence.
-If no valid candidate passes the gates, synthesis returns no eligible
-program.
+New guided, free and enumerated arms require acyclic interface quotients;
+other controls retain separate scope. Programs within 0.002 of each arm's
+highest utility rank by reached
+pool-regret upper endpoint,
+then lower endpoint, unknown count, utility and fixed order. Regret uses
+full-context normalization $\max(1,\operatorname{mean}_{v\in V}w_v)$ and
+equal-family means. Missing coverage sorts last; unknowns are not exclusion
+gates. Primary-only guided selection remains an ablation.
 
-\begin{algorithm}[t]
-\caption{Budgeted certified feature--rule synthesis}
-\label{alg:joint-refinement}
-\begin{algorithmic}[1]
-\REQUIRE Training interventions, validation set, typed library, budgets
-\STATE Initialize program archive and requirement set $\mathcal D$
-\WHILE{discovery budget remains}
-  \STATE Acquire anchored residual comparisons; append certified relations
-  \STATE Audit and construct exact quotient $Q_\phi$ on $\mathcal D$
-  \IF{$Q_\phi$ contains a cycle}
-    \STATE Obtain typed features for concrete equality-join witnesses
-    \STATE Solve cover; separate on full quotient until DAG or budget
-  \ENDIF
-  \STATE Propose and validate rules over repaired feature interfaces
-  \STATE Replay $\mathcal D$; evaluate complete schedules and compiled cost
-  \STATE Retain eligible feature--rule pairs by joint utility
-\ENDWHILE
-\STATE Freeze the selected representation, rule, and execution kernel
-\end{algorithmic}
-\end{algorithm}
-
-Candidate generation comparisons use independent proposal batches for
-witness-guided joint, free joint, and fixed-representation rule search,
-with matched request and proposal counts and source evidence. Reusing one bank tests selection
-gates, not guidance during generation. Discovery costs include proposals,
-rejections, oracle attempts, and validation. The frozen program reads the
-current graph on held-out instances and configurations, with no online LLM,
-oracle, or saved-evidence access. Feasibility remains the kernel's invariant;
-generalization and the quality--cost tradeoff are empirical questions.
+All programs use the common demanded backend and cooperative five
+process-CPU-second target;
+overshoot/completion are recorded. Failure returns no schedule or fallback.
+Bank, evidence, program, compiler and configuration freeze before
+confirmation. The kernel guarantees feasibility; quality/transfer remain empirical.

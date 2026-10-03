@@ -1,0 +1,15 @@
+{
+  "scope": "Retrospective fixed-pool mechanism extension; no tuning or selection from validation/test evidence",
+  "selection_permitted": false,
+  "data_sha256": "827d6182abc67e3d8da16de59a785059153eef8a73a55be670f9e2b90c943af1",
+  "frozen_sha256": "2f4379e782413a2ba68222314ec674163f91a5ffcf75c7d74062388dc601987b",
+  "splits": ["validation", "test"],
+  "contexts": 588,
+  "program_ids": ["guided_v04", "free_v03", "rule_v03", "enumerated_v03", "baseline", "prior_guided_controls"],
+  "program_cpu_seconds": 5,
+  "max_rollout_steps": 2,
+  "max_states_per_context": 2,
+  "cancellation": {"nodes_per_component": 64, "max_search_component": 128, "max_nodes": 10000, "max_calls": 128},
+  "max_matched_full_comparisons": 0,
+  "epsilon": 1e-8
+}

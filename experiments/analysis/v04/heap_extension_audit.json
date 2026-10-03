@@ -1,0 +1,418 @@
+{
+  "datasets": {
+    "fresh": {
+      "archive_sha256": "7520295b0ac64db5ea3932f65c43b2139a6d916ee2159e9f2603c5922ef88be3",
+      "input_sha256": "827d6182abc67e3d8da16de59a785059153eef8a73a55be670f9e2b90c943af1",
+      "contexts": 456,
+      "assigned_runs": 5472,
+      "method_counts": {
+        "degree/full_scan/completed": 1368,
+        "degree/heap/completed": 1368,
+        "primary/heap/completed": 1368,
+        "primary/full_scan/completed": 1368
+      },
+      "assessable_pairs": 2736,
+      "exact_trace_mismatches": 0,
+      "original_confirmatory_trace_checks": {
+        "degree": 2736,
+        "primary": 2736
+      },
+      "declared_cpu_target": 5,
+      "max_observed_cpu_seconds": {
+        "degree/full_scan/complete": 0.5773713900000246,
+        "degree/heap/complete": 0.17940974500000095,
+        "primary/heap/complete": 1.9650998980000054,
+        "primary/full_scan/complete": 3.3578160289999914
+      },
+      "failure_statuses": {},
+      "balanced_first_backend_counts": {
+        "degree/full_scan/first": 684,
+        "primary/heap/first": 684,
+        "primary/full_scan/first": 684,
+        "degree/heap/first": 684
+      },
+      "source_snapshot_sha256": "14b79fe7450d70eee621d0e01633e7cc9e2f9149cc73755577d62bbab62ab0cb",
+      "groups": {
+        "c3/primary": {
+          "assigned_contexts": 24,
+          "assessable_pairs": 72,
+          "cpu_ratio": {
+            "estimate": 4.6110036591295,
+            "lower": 4.088678805062219,
+            "upper": 5.185344246045558,
+            "source_clusters": {
+              "c3": 12
+            },
+            "assigned_contexts": 24,
+            "finite_contexts": 24,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "work_ratio": {
+            "estimate": 4.636650904807592,
+            "lower": 4.072755402158864,
+            "upper": 5.239560829075099,
+            "source_clusters": {
+              "c3": 12
+            },
+            "assigned_contexts": 24,
+            "finite_contexts": 24,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "score_evaluations_saved": {
+            "estimate": 4919.041666666667,
+            "lower": 2486.3333333333335,
+            "upper": 7768.860416666663,
+            "source_clusters": {
+              "c3": 12
+            },
+            "assigned_contexts": 24,
+            "finite_contexts": 24,
+            "replications": 2000,
+            "seed": 20261003
+          }
+        },
+        "c3/degree": {
+          "assigned_contexts": 24,
+          "assessable_pairs": 72,
+          "cpu_ratio": {
+            "estimate": 3.7953722976391853,
+            "lower": 3.4008367105331567,
+            "upper": 4.248044368192146,
+            "source_clusters": {
+              "c3": 12
+            },
+            "assigned_contexts": 24,
+            "finite_contexts": 24,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "work_ratio": {
+            "estimate": 2.626252596005694,
+            "lower": 2.3698298215758435,
+            "upper": 2.9447092909713177,
+            "source_clusters": {
+              "c3": 12
+            },
+            "assigned_contexts": 24,
+            "finite_contexts": 24,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "score_evaluations_saved": {
+            "estimate": 5616.458333333333,
+            "lower": 2723.2958333333336,
+            "upper": 9014.633333333331,
+            "source_clusters": {
+              "c3": 12
+            },
+            "assigned_contexts": 24,
+            "finite_contexts": 24,
+            "replications": 2000,
+            "seed": 20261003
+          }
+        },
+        "dense_long/primary": {
+          "assigned_contexts": 216,
+          "assessable_pairs": 648,
+          "cpu_ratio": {
+            "estimate": 1.1870905015086919,
+            "lower": 1.1498618783458407,
+            "upper": 1.2291113825735123,
+            "source_clusters": {
+              "dense_long": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "work_ratio": {
+            "estimate": 1.1881787326648625,
+            "lower": 1.1510130140368147,
+            "upper": 1.22987036966089,
+            "source_clusters": {
+              "dense_long": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "score_evaluations_saved": {
+            "estimate": 239.46296296296296,
+            "lower": 161.23958333333331,
+            "upper": 327.29328703703703,
+            "source_clusters": {
+              "dense_long": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          }
+        },
+        "dense_long/degree": {
+          "assigned_contexts": 216,
+          "assessable_pairs": 648,
+          "cpu_ratio": {
+            "estimate": 0.8714256677045001,
+            "lower": 0.855796507975187,
+            "upper": 0.8869709891380739,
+            "source_clusters": {
+              "dense_long": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "work_ratio": {
+            "estimate": 0.7822042018164443,
+            "lower": 0.7710200206327471,
+            "upper": 0.7930069970330653,
+            "source_clusters": {
+              "dense_long": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "score_evaluations_saved": {
+            "estimate": 234.62037037037038,
+            "lower": 157.51354166666664,
+            "upper": 321.2420138888889,
+            "source_clusters": {
+              "dense_long": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          }
+        },
+        "standard/primary": {
+          "assigned_contexts": 216,
+          "assessable_pairs": 648,
+          "cpu_ratio": {
+            "estimate": 15.451124886452195,
+            "lower": 12.908140218265903,
+            "upper": 18.189569041527854,
+            "source_clusters": {
+              "standard": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "work_ratio": {
+            "estimate": 13.341602709440167,
+            "lower": 11.52487817799262,
+            "upper": 15.318158706273085,
+            "source_clusters": {
+              "standard": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "score_evaluations_saved": {
+            "estimate": 6297.435185185185,
+            "lower": 4398.8644675925925,
+            "upper": 8340.368518518519,
+            "source_clusters": {
+              "standard": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          }
+        },
+        "standard/degree": {
+          "assigned_contexts": 216,
+          "assessable_pairs": 648,
+          "cpu_ratio": {
+            "estimate": 10.379187159514755,
+            "lower": 8.78103944934958,
+            "upper": 12.109185161887465,
+            "source_clusters": {
+              "standard": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "work_ratio": {
+            "estimate": 5.980253994513945,
+            "lower": 5.33229363368537,
+            "upper": 6.679177493497035,
+            "source_clusters": {
+              "standard": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          },
+          "score_evaluations_saved": {
+            "estimate": 6591.25,
+            "lower": 4622.712731481482,
+            "upper": 8712.188888888888,
+            "source_clusters": {
+              "standard": 36
+            },
+            "assigned_contexts": 216,
+            "finite_contexts": 216,
+            "replications": 2000,
+            "seed": 20261003
+          }
+        }
+      },
+      "scope": "Ratios conditional on both complete; context medians precede source-cluster bootstrap; sparse zero-assessable parity is unknown, not confirmed."
+    },
+    "sparse": {
+      "archive_sha256": "9b2a7ba886eaac663cd4850c7b2a6827e75671a43d8efe64d32fa2e6f69c5d39",
+      "input_sha256": "7afb9d7451ae71ff99833b15cd6ce53f46b9736870483086fe4508c15153ff41",
+      "contexts": 8,
+      "assigned_runs": 96,
+      "method_counts": {
+        "degree/full_scan/failed": 24,
+        "degree/heap/completed": 18,
+        "primary/heap/completed": 7,
+        "primary/full_scan/failed": 24,
+        "primary/heap/failed": 17,
+        "degree/heap/failed": 6
+      },
+      "assessable_pairs": 0,
+      "exact_trace_mismatches": 0,
+      "original_confirmatory_trace_checks": {},
+      "declared_cpu_target": 5,
+      "max_observed_cpu_seconds": {
+        "degree/full_scan/failed": 5.0609917379999985,
+        "degree/heap/complete": 3.1835506659999737,
+        "primary/heap/complete": 5.015388998999995,
+        "primary/full_scan/failed": 5.000719773000014,
+        "primary/heap/failed": 5.006568465000015,
+        "degree/heap/failed": 5.0283118740000035
+      },
+      "failure_statuses": {
+        "CPU_budget_exceeded": 71
+      },
+      "balanced_first_backend_counts": {
+        "degree/full_scan/first": 12,
+        "primary/heap/first": 12,
+        "primary/full_scan/first": 12,
+        "degree/heap/first": 12
+      },
+      "source_snapshot_sha256": "14b79fe7450d70eee621d0e01633e7cc9e2f9149cc73755577d62bbab62ab0cb",
+      "groups": {
+        "ca-GrQc/primary": {
+          "assigned_contexts": 2,
+          "assessable_pairs": 0,
+          "cpu_ratio": null,
+          "work_ratio": null,
+          "score_evaluations_saved": null
+        },
+        "ca-GrQc/degree": {
+          "assigned_contexts": 2,
+          "assessable_pairs": 0,
+          "cpu_ratio": null,
+          "work_ratio": null,
+          "score_evaluations_saved": null
+        },
+        "ca-HepPh/primary": {
+          "assigned_contexts": 2,
+          "assessable_pairs": 0,
+          "cpu_ratio": null,
+          "work_ratio": null,
+          "score_evaluations_saved": null
+        },
+        "ca-HepPh/degree": {
+          "assigned_contexts": 2,
+          "assessable_pairs": 0,
+          "cpu_ratio": null,
+          "work_ratio": null,
+          "score_evaluations_saved": null
+        },
+        "ca-HepTh/primary": {
+          "assigned_contexts": 2,
+          "assessable_pairs": 0,
+          "cpu_ratio": null,
+          "work_ratio": null,
+          "score_evaluations_saved": null
+        },
+        "ca-HepTh/degree": {
+          "assigned_contexts": 2,
+          "assessable_pairs": 0,
+          "cpu_ratio": null,
+          "work_ratio": null,
+          "score_evaluations_saved": null
+        },
+        "facebook_combined/primary": {
+          "assigned_contexts": 2,
+          "assessable_pairs": 0,
+          "cpu_ratio": null,
+          "work_ratio": null,
+          "score_evaluations_saved": null
+        },
+        "facebook_combined/degree": {
+          "assigned_contexts": 2,
+          "assessable_pairs": 0,
+          "cpu_ratio": null,
+          "work_ratio": null,
+          "score_evaluations_saved": null
+        }
+      },
+      "scope": "Ratios conditional on both complete; context medians precede source-cluster bootstrap; sparse zero-assessable parity is unknown, not confirmed."
+    }
+  },
+  "checks": {
+    "heap_assigned_population_complete": 2,
+    "heap_frozen_extension_protocol": 2,
+    "heap_pinned_input_config_freeze_bytes": 2,
+    "heap_same_train_frozen_asts": 2,
+    "heap_source_package_byte_hash": 2,
+    "heap_unique_source_zip_members": 2,
+    "heap_exact_source_manifest_and_reviewed_local_bytes": 14,
+    "heap_source_zip_prefrozen_receipts": 2,
+    "heap_original_input_identity": 464,
+    "heap_per_context_assigned_calls": 464,
+    "heap_interleaved_order_balance_receipt": 5568,
+    "heap_program_and_budget_identity": 5568,
+    "selection_list": 5497,
+    "selection_feasible": 5497,
+    "selection_boundary": 5497,
+    "selection_objective": 5497,
+    "heap_completed_exact_original_reward": 5497,
+    "heap_trace_original_active_state": 285108,
+    "heap_trace_complete_original_selection": 5497,
+    "heap_charged_work_reconciliation": 5497,
+    "heap_full_scan_score_count": 2736,
+    "heap_same_policy_as_original_confirmation": 5472,
+    "heap_prespecified_local_mode": 2761,
+    "heap_exact_local_frontier_invalidation": 2761,
+    "heap_frontier_and_deletion_charges": 2761,
+    "heap_actual_priority_operation_receipts": 2761,
+    "heap_unique_pair_receipt": 2784,
+    "heap_saved_pair_completion_and_parity": 2784,
+    "heap_completed_trace_and_compiler_equivalence": 2736,
+    "heap_saved_ratio_and_query_savings": 2736,
+    "heap_complete_counts_failure_hash": 2,
+    "heap_complete_parity_boolean_scope": 2,
+    "heap_first_backend_balanced": 2,
+    "heap_analysis_assigned_pair_counts": 14,
+    "heap_independent_context_median_cluster_ci": 42,
+    "heap_analysis_full_failure_coverage": 2,
+    "heap_preserved_source_package_same": 1,
+    "heap_failure_no_partial_or_quality": 71,
+    "heap_unassessable_ratio_null": 48
+  },
+  "issues": [],
+  "scope": "Read-only streaming archive verification; no timing/policy/solver rerun or selection. Exact frontiers and original-graph witnesses independently checked. Source matches reviewed backend; no online oracle/model/native call in extension."
+}

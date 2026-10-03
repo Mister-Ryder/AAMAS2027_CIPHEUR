@@ -1,50 +1,48 @@
 \section{Related Work}
 \label{sec:related}
 
-\paragraph{Satellite scheduling and learned graph decisions.}
-Constellation planning couples imaging, downlinks, and operational resources:
-mixed-integer decomposition~\cite{augenstein2016optimal}, integrated
+\paragraph{Scheduling and graph decisions.}
+Mixed-integer decomposition~\cite{augenstein2016optimal}, integrated
 collection/downlink planning~\cite{levinson2025optimal}, and ground-queue-aware
-traffic scheduling~\cite{tao2023transmitting} already establish the importance
-of resource context. Our pairwise-conflict model is narrower; it does not
-represent arbitrary cumulative resource constraints. Graph embeddings can
-condition optimization decisions on partial solutions~\cite{khalil2017learning},
-and learned deferral changes independent-set decision stages~\cite{ahn2020defer}.
-AAMAS methods combine factor-graph inference with routing~\cite{li2024factor}
-and enrich neural representations with local topology~\cite{bai2025local}.
-Structural inputs are therefore established design choices.
+traffic scheduling~\cite{tao2023transmitting} establish resource context's
+importance. Our pairwise model excludes arbitrary cumulative constraints.
+Graph embeddings condition optimization on partial
+solutions~\cite{khalil2017learning}; learned deferral changes independent-set
+decision stages~\cite{ahn2020defer}. AAMAS work combines factor-graph inference
+with routing~\cite{li2024factor} and local topology with neural
+representations~\cite{bai2025local}. Structural inputs are established choices.
+Published weighted branch-and-reduce~\cite{lamm2019weighted},
+Struction~\cite{gellner2021struction}, memetic
+kernelization~\cite{grossmann2024mmwis} and concurrent local
+search~\cite{grossmann2025chils} provide our specialized comparators.
 
-GNN expressiveness analyses identify indistinguishability under aggregation
-architectures~\cite{xu2019powerful,morris2019weisfeiler}. Our obstruction instead
-uses exact equality of the complete declared feature vector: a strict-ranking
-cycle proves inexpressibility for every pointwise scalar function on the
-observed occurrences. This is neither a graph-isomorphism test nor a lower
-bound on all graph policies. The supplied AAMAS graph-planning theory paper
-also uses structural witnesses~\cite{dhar2026universal}, but studies universal
-motion reachability rather than heuristic representation repair.
+GNN expressiveness analyses characterize aggregation
+indistinguishability~\cite{xu2019powerful,morris2019weisfeiler}. Our exact
+declared-feature quotient instead certifies an obstruction for every
+pointwise scalar scorer on observed occurrences; it is neither graph
+isomorphism nor a bound on all policies. Structural witnesses also appear
+in AAMAS universal motion-reachability theory~\cite{dhar2026universal},
+addressing a different guarantee.
 
 \paragraph{LLM algorithm discovery.}
-FunSearch searches priority functions inside fixed skeletons~\cite{romeraparedes2024funsearch};
-EoH evolves thoughts and code~\cite{liu2024eoh}, and ReEvo guides revisions by
+FunSearch searches priorities inside fixed skeletons~\cite{romeraparedes2024funsearch};
+EoH evolves thoughts/code~\cite{liu2024eoh}; ReEvo uses
 reflection~\cite{ye2024reevo}. EoH-S optimizes complementary heuristic
-sets~\cite{liu2026eohs}; LACE combines a verified problem interface, tool library,
-and runtime-constrained portfolio evolution~\cite{gong2026lace}.
-Offline discovery, diverse heuristics, and cost budgets are precedents.
-DRAGON uses per-instance decomposition and reconstruction agents, transmitting
-boundary constraints and checker feedback~\cite{chen2026dragon}.
-Our distinguishing mechanism diagnoses whether the scoring interface itself
-can express certified conditional rankings, then targets its missing
-structural distinctions. Zero online model calls alone establish no advantage.
+sets~\cite{liu2026eohs}; LACE combines verified interfaces, tools and
+runtime-constrained portfolio evolution~\cite{gong2026lace}. Offline discovery
+and cost budgets are precedents. DRAGON's per-instance agents transmit
+boundary constraints and checker feedback~\cite{chen2026dragon}. Our distinction
+is diagnosing whether an interface can express certified conditional
+rankings and targeting its missing structure. Zero online calls alone
+establish no advantage.
 
-\paragraph{Abstraction and program synthesis.}
-Counterexample-guided abstraction refinement uses failure witnesses to refine
-an abstraction~\cite{clarke2000cegar}. Generalized planning learns symbolic
-features and actions~\cite{bonet2019features}, including joint feature selection
-and good/bad-transition separation~\cite{frances2021policies}.
-DreamCoder learns reusable program components with synthesis guidance~\cite{ellis2021dreamcoder}.
-Our scheduling contract couples aligned resource interventions and feasible
-boundary replay to certified rankings, equality-join feature selection, and
-repeated full-quotient separation. It diagnoses an information obstruction
-rather than adding features solely after low reward. Acyclicity removes that
-observed obstruction; bounded-language realizability, shared computation cost,
-and complete-schedule quality remain separate requirements.
+\paragraph{Abstraction and synthesis.}
+Counterexample-guided refinement uses failure witnesses~\cite{clarke2000cegar}.
+Generalized planning learns symbolic features/actions~\cite{bonet2019features},
+including feature selection and transition
+separation~\cite{frances2021policies}; DreamCoder learns reusable components
+with synthesis guidance~\cite{ellis2021dreamcoder}. We couple aligned resource
+interventions and feasible boundary replay to sound rankings, equality-join
+feature selection and repeated full-quotient separation. Acyclicity removes
+observed information obstructions; bounded-rule fit, shared cost and
+schedule quality remain distinct requirements.

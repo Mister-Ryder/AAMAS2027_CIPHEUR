@@ -1,0 +1,11 @@
+{
+  "version": "public_algorithmic_transfer_v04_prespecified",
+  "dimacs": ["C125.9", "C250.9", "MANN_a9", "MANN_a27", "brock200_1", "brock200_2", "brock200_3", "brock200_4", "hamming6-2", "hamming8-4", "hamming10-2", "johnson8-2-4", "johnson16-2-4", "keller4", "p_hat300-1", "p_hat300-2", "p_hat300-3", "san200_0.7_1"],
+  "satlib": {"uf20-91": 10, "uf50-218": 10, "uf75-325": 10},
+  "weight_modes": ["unit", "hash_weighted"],
+  "programs_frozen_on_satellite_training_only": true,
+  "public_test_may_not_choose_programs_or_thresholds": true,
+  "stochastic_solver_seeds": [1, 2, 3],
+  "solver_budget_seconds": 5,
+  "scope": "Original public graph benchmarks plus explicitly labelled vertex-weight extensions"
+}

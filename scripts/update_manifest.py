@@ -8,9 +8,9 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-GROUPS = ("cipheur", "configs", "docs", "examples", "paper", "scripts", "tests", ".github")
+GROUPS = ("cipheur", "configs", "docs", "examples", "paper", "scripts", "tests", ".github", "autoresearch")
 EXCLUDED = {"aamas.cls", "ACM-Reference-Format.bst"}
-TEXT = {".py", ".json", ".md", ".tex", ".bib", ".toml", ".yml", ".ps1"}
+TEXT = {".py", ".json", ".md", ".tex", ".bib", ".toml", ".yml", ".ps1", ".tsv", ".drawio"}
 
 
 def main():

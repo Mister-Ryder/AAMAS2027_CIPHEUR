@@ -1,8 +1,19 @@
-\documentclass[sigconf,anonymous]{aamas}
+\documentclass[sigconf,anonymous,balance=false]{aamas}
+% AAMAS v2.19 omits its default editors argument and consumes a closing \fi.
+% Repair only that exact sentinel with one pending class-loader conditional.
+\makeatletter
+\def\CIP@missingeditors{\fi}
+\let\CIP@classrepair\@empty
+\edef\CIP@classloadlevel{\the\currentiflevel}
+\ifx\acmConference@editors\CIP@missingeditors
+  \ifnum\CIP@classloadlevel=1\relax
+    \let\CIP@classrepair\CIP@missingeditors
+    \gdef\acmConference@editors{}
+  \fi
+\fi
+\CIP@classrepair
+\makeatother
 \usepackage{balance}
-\usepackage{amsmath}
-\usepackage{algorithm}
-\usepackage{algorithmic}
 % Unmodified official AAMAS 2027 copyright block and class.
 \makeatletter
 \gdef\@copyrightpermission{
@@ -26,45 +37,61 @@ on Autonomous Agents and Multiagent Systems (AAMAS 2027)}{3--7 May 2027}{Hanoi, 
 \submissionType{Research Paper Track}
 \title{LLM-Guided Synthesis of Constraint-Adaptive Heuristics for Satellite--Ground Scheduling}
 \begin{abstract}
-Graph optimization heuristics can achieve strong aggregate performance while relying on decision rules that fail under changes in resource constraints. Effective adaptation requires identifying not only when action preferences should change, but also whether the input representation contains the information needed for that change. We propose an LLM-guided synthesis framework for con\-straint-\allowbreak{}adaptive satellite--ground scheduling that uses certified decision evidence to jointly refine graph representations and ranking rules. Its central mechanism detects ranking requirements that become contradictory under the current feature representation and directs synthesis toward the missing structural distinctions, rather than repeatedly adjusting an insufficient scoring interface. Two complementary mechanisms support this refinement. First, controlled offline interventions on resource-constraint configurations generate paired static scheduling problems in which the same competing actions remain individually feasible. Sound bounds on conditional completion values certify preference reversals or preservation under explicit boundary commitments, yielding relational specifications of when rankings should change or remain stable. Second, structural witnesses guide the LLM to compose distinguishing features from a typed graph-operation library and synthesize corresponding ranking rules. Feature--rule pairs are selected jointly for specification consistency, complete-schedule quality, and feature-computation cost, making representation expansion targeted and cost-aware. We formulate contact selection as maximum-weight independent set optimization and study adaptation using a frozen program on held-out scheduling instances and constraint configurations. The synthesized program responds to the current conflict graph within a fixed feasibility-enforcing kernel, without online LLM or oracle calls. By linking representation refinement to certified decision conflicts, the framework addresses information limitations beyond rule-only repair while explicitly accounting for the computational cost of constraint adaptation.
+Graph optimization heuristics can achieve strong aggregate performance while relying on decision rules that fail under changes in resource constraints. Effective adaptation requires identifying not only when action preferences should change, but also whether the input representation contains the information needed for that change. We propose an LLM-guided synthesis framework for con\-straint-\allowbreak{}adaptive satellite--ground scheduling that uses certified decision evidence to jointly refine graph representations and ranking rules. Its central mechanism detects ranking requirements that become contradictory under the current feature representation and directs synthesis toward the missing structural distinctions, rather than repeatedly adjusting an insufficient scoring interface. Two complementary mechanisms support this refinement. First, controlled offline interventions on resource-constraint configurations generate paired static scheduling problems in which the same competing actions remain individually feasible. Sound bounds on conditional completion values certify preference reversals or preservation under explicit boundary commitments, yielding relational specifications of when rankings should change or remain stable. Second, structural witnesses guide the LLM to compose distinguishing features from a typed graph-operation library and synthesize corresponding ranking rules. Feature--rule pairs are selected jointly for declared-interface acyclicity, complete-schedule quality, and feature-computation cost, making representation expansion targeted and cost-aware. We formulate contact selection as maximum-weight independent set optimization and study adaptation using a frozen program on held-out scheduling instances and constraint configurations. The synthesized program responds to the current conflict graph within a fixed feasibility-enforcing kernel, without online LLM or oracle calls. By linking representation refinement to certified decision conflicts, the framework addresses information limitations beyond rule-only repair while explicitly accounting for the computational cost of constraint adaptation.
 \end{abstract}
 \keywords{Satellite scheduling, maximum-weight independent set, heuristic synthesis, representation refinement, large language models}
 \ccsdesc[500]{Computing methodologies~Planning and scheduling}
 \ccsdesc[300]{Mathematics of computing~Combinatorial optimization}
 \begin{document}
 \maketitle
-\input{sections/introduction}
-\begin{figure*}[t]
+\begin{figure*}[tp]
 \centering
 \includegraphics[width=\textwidth]{figures/motivation.drawio.pdf}
+\Description{Aligned contact graphs exhibit equal base features for two actions while a ground-gap intervention reverses their certified completion preferences.}
 \caption{A ground-gap intervention reverses forced-completion preferences while preserving the nine-input base alias within each configuration. Neighborhood structure supplies the missing distinction. Values exclude the same fixed boundary reward.}
 \label{fig:motivation}
 \end{figure*}
+\input{sections/introduction}
 \input{sections/related_work}
-\input{sections/problem}
-\begin{figure*}[t]
+\begin{figure*}[tp]
 \centering
 \includegraphics[width=\textwidth]{figures/method_overview.drawio.pdf}
-\caption{Offline certificates expose exact feature-quotient contradictions. Concrete equality joins guide typed feature proposals; full separation checks repair before feature--rule quality/work selection. Deployment uses the frozen program in a feasible kernel.}
+\Description{Offline evidence, an LLM proposal session, full quotient and action audits, feedback, freezing, and online feasible greedy commitments.}
+\caption{Offline synthesis exposes the LLM's evidence packet, prompt constraints and joint feature--rule proposals. Deterministic checks repair the full quotient and audit reached actions, quality and compiled cost. Feedback informs later offline batches; the selected score-sliced program is frozen before online greedy commitment and residual updates.}
 \label{fig:method}
 \end{figure*}
+\input{sections/problem}
 \input{sections/method}
-\begin{figure*}[t]
+\begin{figure*}[t!]
 \centering
-\includegraphics[width=\textwidth]{figures/repair_cycle.drawio.pdf}
-\caption{Breaking the initial coarse cycle does not suffice. A refined four-cycle projects to a closed walk repeating coarse classes. Full-quotient separation rejects the cheaper incomplete repair and selects a sufficient feature under the declared catalogue.}
-\label{fig:repair}
+\includegraphics[width=\textwidth]{figures/train_mechanisms_v04.pdf}
+\Description{All 93 fixed TRAIN programs show quality versus feature work; selected rules show strict-requirement agreement and reached finite-pool regret intervals.}
+\caption{TRAIN evidence separates input representability, rule fit and computation. Acyclic interfaces need not fit every requirement: the frozen primary satisfies 631/824. Guard64 satisfies 701/824 but costs more. Rightmost intervals are sound finite-pool regret bounds, not confidence intervals.}
+\label{fig:train-mechanisms}
 \end{figure*}
-\begin{figure}[t]
+\begin{figure*}[t!]
 \centering
-\includegraphics[width=\columnwidth]{figures/compiled_updates.drawio.pdf}
-\caption{Shared typed expressions and sequential residual updates preserve neighborhood-edge aggregates. Simultaneous stale-neighborhood subtraction would count edge $\{0,1\}$ twice. Initialization and updates enter deployment cost.}
-\label{fig:compiler}
-\end{figure}
+\includegraphics[width=\textwidth]{figures/quality_cost_combined_v04.pdf}
+\Description{Fresh standard, dense and C3 scheduling and public DIMACS and SATLIB transfer compare frozen-program quality and elapsed time with published native solvers.}
+\caption{Complete-assignment quality and cost against published methods. Competitive reward uses the best saved verified feasible witness; failures receive zero. Native quality averages three seeds. Bootstrap intervals cluster source instances. The two rows use different ordinate ranges. Budgets differ; public failures and native superiority are retained.}
+\label{fig:quality-cost-fresh}
+\label{fig:quality-cost-public}
+\end{figure*}
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=\textwidth]{figures/heap_execution_v04.pdf}
+\Description{Paired fresh CPU ratios compare full scans with a local heap for identical frozen ASTs; all sparse assignments retain incomplete runs.}
+\caption{Execution adaptation preserves the frozen score rule. All 2,736 assessable fresh pairs have identical traces; ratios use context medians of three repeats with source-cluster intervals. Sparse full scans never complete within the five-second CPU target, so their speedups and trace parity remain unassessable.}
+\label{fig:heap-execution}
+\end{figure*}
 \input{sections/experiments}
 \input{sections/discussion}
 \input{sections/conclusion}
 \clearpage
+\balance
 \bibliographystyle{ACM-Reference-Format}
+\begingroup
+\interlinepenalty=10000
 \bibliography{references_v03}
+\endgroup
 \end{document}

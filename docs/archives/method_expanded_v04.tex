@@ -1,0 +1,244 @@
+% Input fragment. Parent preamble supplies amsmath and the AAMAS class.
+\section{Certified Representation--Rule Refinement}
+\label{sec:method}
+
+Offline refinement tests input expressivity, action relevance at reached
+states, and complete-schedule quality versus measured work
+(Figure~\ref{fig:method}). Banks remain fixed during evaluation; the selected
+feature--rule program is frozen before fresh confirmation and deployment.
+
+\subsection{Component-Cancelled Full-Residual Certificates}
+\label{sec:method:certificates}
+At an admissible boundary $B=(F,X)$, write $R=R_\theta(B)$ and
+$R_d=R\setminus(\{d\}\cup N_\theta(d))$. Let $\mathcal C_d$ be the
+connected components of $G_\theta[R_d]$, identified by exact vertex sets,
+and let $\alpha_w(C)$ denote the MWIS value of their induced graph.
+Additivity gives
+\begin{equation}
+ V_\theta(d\mid B)=w(F)+w_d+\sum_{C\in\mathcal C_d}\alpha_w(C).
+ \label{eq:component-completion}
+\end{equation}
+For actions $a,b$ in one graph and boundary, define unmatched
+collections $\mathcal A=\mathcal C_a\setminus\mathcal C_b$ and
+$\mathcal B=\mathcal C_b\setminus\mathcal C_a$. Shared components have
+identical weighted induced graphs; their possibly unknown optima cancel:
+\begin{equation}
+ \begin{split}
+ \Delta_{ab}&=V_\theta(a\mid B)-V_\theta(b\mid B)\\
+ &=w_a-w_b+\sum_{C\in\mathcal A}\alpha_w(C)
+             -\sum_{C\in\mathcal B}\alpha_w(C).
+ \end{split}
+ \label{eq:cancelled-difference}
+\end{equation}
+Given sound component intervals $[L_C,U_C]$,
+\begin{equation}
+ \begin{split}
+ \underline\Delta_{ab}&=w_a-w_b+\sum_{\mathcal A}L_C-\sum_{\mathcal B}U_C,\\
+ \overline\Delta_{ab}&=w_a-w_b+\sum_{\mathcal A}U_C-\sum_{\mathcal B}L_C.
+ \end{split}
+ \label{eq:difference-envelope}
+\end{equation}
+\paragraph{Lemma (sound cancellation).}
+The endpoints enclose the full conditional-value difference.
+\emph{Proof.} Independent component optima have a feasible union. Shared
+terms cancel; bounding unmatched terms with their respective signs proves
+the enclosure.\hfill$\square$
+Conditioning can disconnect a connected graph. Matching requires exact
+vertex sets within one configuration, not isomorphism or cross-intervention
+identity (Figure~\ref{fig:cancellation}).
+
+Checked feasible packings supply lower bounds. For $H\subseteq C$, a sound
+$U_H$ and verified clique partition $\{K_j\}$ of $C\setminus H$ give
+\begin{equation}
+ U_C=U_H+\sum_j\max_{v\in K_j}w_v.
+ \label{eq:clique-envelope}
+\end{equation}
+Relaxing cross-region edges proves soundness. Greedy completion and
+branch-and-bound use exact supplied-weight arithmetic; exported endpoints
+round outward. Early stopping retains enclosures, large components use
+zero-search bounds, and exhausted calls retain $[0,w(C)]$. Matched
+zero-search audits fix actions and boundary; differing heuristic clique
+partitions preclude a universal interval-dominance claim.
+
+For aligned interventions, replay $a,b$ feasibly at the same $B$ on both
+sides. With $\epsilon\geq0$, certify reversal when
+\begin{equation}
+ \underline\Delta^{\theta_0}_{ab}>\epsilon,
+ \qquad \overline\Delta^{\theta_1}_{ab}<-\epsilon,
+ \label{eq:reversal-certificate}
+\end{equation}
+or with roles exchanged. Equal strict signs certify preservation;
+unresolved intervals and ties remain unknown at budget exhaustion. Certified sides supply
+occurrences $x=(G_\theta,R,v)$ and requirements
+\begin{equation}
+ h(\phi(x^+))>h(\phi(x^-)).
+ \label{eq:strict-requirement}
+\end{equation}
+Objective tolerance $\epsilon$ differs from a scoring margin.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/component_cancellation.drawio.pdf}
+\Description{Two conditioned residuals contain the same weighted five-cycle
+and different isolated contacts. Absolute value intervals overlap, but
+cancelling the common component proves a strict value difference of five.}
+\caption{Identical residual components cancel from the global conditional-value difference. In this constructed zero-search example, separate intervals $[33,43]$ and $[28,38]$ overlap, yet shared five-cycle $K$ cancels exactly, leaving $\Delta=5$ and a strict preference for $a$. The oracle never bounds $K$.}
+\label{fig:cancellation}
+\end{figure}
+
+\subsection{Exact Quotients and Finite-Catalogue Repair}
+\label{sec:method:repair}
+For finite evidence, $Q_\phi$ identifies occurrences exactly when
+$\phi(x)=\phi(y)$ and adds arcs $[x^+]\to[x^-]$, retaining self-loops.
+The nine base inputs are weight, duration, residual degree, neighbor-weight
+sum/maximum, compatible-weight sum, ground/satellite gaps and residual count.
+Diagnosis includes every declared field, even if ignored by the rule;
+IDs/split labels are excluded. A configuration audit adds omitted satellite
+transition time and presence before attributing aliases to graph structure.
+
+\paragraph{Proposition 1 (finite representability).}
+An unrestricted deterministic pointwise scalar score satisfies every
+observed strict requirement if and only if $Q_\phi$ is acyclic.
+\emph{Proof.} Cycles demand a strict decrease back to the same score.
+Longest outgoing-path lengths on a finite DAG satisfy every arc and scale
+to any positive margin.\hfill$\square$
+
+A concrete cycle records ranking arcs $p_i\to n_i$ and equality joins
+$n_i\sim_\phi p_{i+1}$: distinctions that LLM features should recover.
+For finite typed catalogue $\mathcal F$, let $d_{Wf}=1$ when $f$ separates
+any join of witness $W$. With positive standalone costs $c_f$, solve
+\begin{equation}
+ \begin{split}
+ \min_{z\in\{0,1\}^{|\mathcal F|}}\ &\sum_f c_fz_f,\\
+ \text{s.t. }&\sum_f d_{Wf}z_f\geq1\quad\text{for each retained }W,\\
+ &\sum_f z_f\leq K.
+ \end{split}
+ \label{eq:repair-cover}
+\end{equation}
+Trials augment the fixed base, replacing previous trial features, and
+rebuild the full quotient. Surviving cycles add necessary cuts: splitting
+a coarse cycle can leave a refined cycle projecting to a repeated-class
+closed walk.
+
+\paragraph{Proposition 2 (finite-catalogue repair).}
+Globally solved masters followed by a final acyclic full quotient minimize
+the stated additive cost over the fixed catalogue, evidence and limit $K$.
+\emph{Proof.} Necessary witness constraints make the master optimum a
+lower bound on valid repair cost. The final DAG attains that bound.
+\hfill$\square$
+
+With variable $K$, arbitrary finite tables encode weighted set cover:
+one self-loop pair per element, separated by covering-subset features.
+This does not establish hardness for every graph grammar; fixed $K$
+permits $O(|\mathcal F|^K)$ trials. Exhaustion or uncovered witnesses yield
+unresolved repair. Acyclicity implies finite representability, not that a
+bounded rule fits or transfers. Minimum-interface search remains an ablation.
+
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=\textwidth]{figures/repair_cycle.drawio.pdf}
+\Description{A diagnostic feature alias produces a strict self-loop. Actual
+LLM-authored density and retained-continuation expression graphs illustrate
+distinct ranking hypotheses. A separate reached TRAIN boundary shows exact
+regret 192 for g05 and zero for g03, g12 and g18.}
+\caption{A constructed diagnostic self-loop exposes missing neighborhood structure. The actual assistant-authored g03 density and g18 continuation programs use distinct typed ASTs and ranking hypotheses. g03 separates both probe preferences; the separate TRAIN action audit illustrates why witness separation must still be followed by full-quotient, action and cost checks.}
+\label{fig:repair}
+\end{figure*}
+
+\subsection{Auditing Actual Reached Actions}
+\label{sec:method:actions}
+Requirements can concern unchosen actions. Complete rollouts record the
+initial boundary and up to two commitments. Prespecified audits retain
+the initial and most-shared boundary, with deterministic ties and
+unsampled-state counts.
+
+Replay each program's deterministic argmax at the same $B$, forming finite
+pool $\mathcal U_B$. Query all unordered pairs in fixed order under shared
+cache/budget. For chosen $d$, define
+\begin{equation}
+ \rho_{\mathcal U_B}(d)=
+ \max_{u\in\mathcal U_B}\bigl[V_\theta(u\mid B)-V_\theta(d\mid B)\bigr].
+ \label{eq:pool-regret}
+\end{equation}
+Since $d\in\mathcal U_B$, maxima of zero and difference endpoints enclose
+$\rho$. The upper endpoint bounds only finite-pool regret; the lower can
+prove loss to a particular feasible alternative. Neither guarantees
+complete-schedule loss. Counterfactual states remain auditable, but
+selection uses only boundaries in that program's recorded rollout.
+Coverage, failed choices and unknown comparisons accompany regret;
+strict differences augment quotient evidence.
+
+\subsection{Typed Features and Demand-Driven Execution}
+\label{sec:method:features}
+The typed language distinguishes nodes, node sets, edge sets and numbers;
+proposals pass type, size and finite-output checks. Neighborhood/set
+operations, induced edges and bounded arithmetic compose packing/cover, edge-count
+and edge-minimum features, including continuation summaries of $R_v$.
+For example,
+\begin{equation}
+ T_R(v)=\sum_{\{u,z\}\in E_\theta[N_R(v)]}\min(w_u,w_z)
+ \label{eq:neighbor-structure}
+\end{equation}
+repeatedly counts shared endpoints, making it a statistic, not a completion
+bound. Rounded packing/cover scorer inputs are heuristic; the independent
+sound offline bound oracle uses exact arithmetic to certify labels (Figure~\ref{fig:repair}).
+
+State-wide guards $|R|\leq64$ or $128$ choose
+$w_v+(L_v+U_v)/2$ using rounded packing/cover summaries of $R_v$,
+otherwise density/pressure scoring.
+Every action shares the branch; midpoints give no ranking guarantee.
+
+Shared DAGs and lazy conditional/short-circuit inputs avoid untaken generic
+primitives; static aggregate-superset initialization/maintenance stays charged.
+For defined finite eager features, scores, ties and complete traces are
+preserved. Diagnosis retains the full interface. Sequential deletion uses
+\begin{equation}
+ T(v)\leftarrow T(v)-\sum_{y\in N_R(v)\cap N_R(x)}\min(w_x,w_y).
+ \label{eq:incremental-feature}
+\end{equation}
+Updated neighborhoods prevent double subtraction; exact accumulators
+preserve rounded reference terms. Unsupported expressions use the snapshot
+interpreter. All compilation, cache, update and scoring work is charged;
+joint DAG cost is nonadditive, unlike $c_f$.
+
+A separate backend caches only reviewed root/neighborhood dependencies
+under immutable graph, weights, configuration and program. After deleting
+the whole batch $D$, it refreshes survivors in the pre-deletion frontier
+$\bigcup_{x\in D}N_R(x)$;
+outside this frontier, unchanged inputs preserve scores. Versioned heap
+entries preserve scalar-score/string-ID ordering. Global or unreviewed
+demanded inputs, even in untaken branches, trigger full rescoring.
+Initialization, frontier refreshes, comparisons and stale removal are
+charged. For valid queried inputs this preserves the score-sliced
+kernel's trace and frozen feature--rule pair.
+
+\subsection{TRAIN Selection and Frozen Deployment}
+\label{sec:method:selection}
+One offline assistant session authors proposals before TRAIN outcomes.
+Controls have unequal authoring counts/compute. Numerical selection uses
+TRAIN only, excluding fresh validation/test outcomes.
+
+For context $t$, $q_{Pt}$ divides reward by the best completed bank reward,
+a feasible empirical comparator; $c_{Pt}$ divides measured work by positive
+degree-baseline work. Incomplete runs receive $q_{Pt}=0,c_{Pt}=100$.
+Equal-family means define $q(P),c(P)$ and
+\begin{equation}
+ J(P)=q(P)-0.002\,[c(P)-1].
+ \label{eq:joint-utility}
+\end{equation}
+New guided/free/enumerated arms require acyclic declared-interface quotients;
+prior guided/rule-only/baseline controls retain separate scope. Within each
+arm, programs within 0.002 of its highest utility rank by reached
+pool-regret upper endpoint,
+then lower endpoint, unknown count, utility and fixed order. Regret uses
+full-context normalization $\max(1,\operatorname{mean}_{v\in V}w_v)$ and
+equal-family means. Missing coverage sorts last; unknowns are not exclusion
+gates. Primary-only guided selection remains an ablation.
+
+All programs use the common demanded backend and cooperative five
+process-CPU-second target;
+overshoot/completion are recorded. Failure returns no schedule or fallback.
+Bank, evidence, program and compiler/configuration hashes freeze before
+fresh confirmation. Online commitment deletes the highest-score action's
+closed neighborhood. The fixed kernel guarantees feasibility;
+quality/transfer remain empirical.
