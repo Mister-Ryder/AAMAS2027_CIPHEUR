@@ -74,22 +74,31 @@ class BoundTests(unittest.TestCase):
 
     def test_local_certificate_never_ignores_external_opportunity(self):
         left, right = reversal_fixture()
-        # A mutually conflicting exterior pair creates uncertainty in the sum bound.
+        # The exterior pair contributes 100, not the invalid optimistic sum 200.
         exterior = (Contact("x", 100, "sx", "gx", 0, 1), Contact("y", 100, "sy", "gy", 0, 1))
         for graph in (left, right):
             graph.contacts += exterior
             graph.edges |= {("x", "y")}
             graph.__post_init__()
         witness, details = certify_pair(left, right, "a", "b", Budget(), max_region=2)
-        self.assertIsNone(witness)
-        self.assertEqual(details["reason"], "unresolved_bounds")
+        self.assertIsNotNone(witness)
+        for label, bound in witness["bounds"].items():
+            graph = left if label.startswith("left") else right
+            self.assertTrue(graph.feasible(bound["selected"]))
+            self.assertGreaterEqual(bound["upper"], brute(graph, fixed=(label[-1],)))
+        self.assertEqual(witness["bounds"]["left_a"]["upper"], 116)
+        self.assertEqual(witness["bounds"]["right_b"]["lower"], 113)
 
     def test_oracle_exhaustion_is_not_certificate(self):
         with self.assertRaises(RuntimeError):
             certify_pair(*reversal_fixture(), "a", "b", Budget(max_calls=2))
         left, _ = reversal_fixture()
         bounded = solve(left, max_nodes=0)
-        self.assertFalse(bounded.exact)
+        # A zero-expansion solve can be exact when its independently valid
+        # clique envelope meets an already feasible completion witness.
+        self.assertEqual(bounded.expanded, 0)
+        if bounded.exact:
+            self.assertEqual(bounded.lower, brute(left))
         self.assertGreaterEqual(bounded.upper, brute(left))
 
     def test_disagreement_checks_direction_not_merely_switching(self):

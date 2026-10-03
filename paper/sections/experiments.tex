@@ -1,0 +1,150 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We evaluate representation necessity, certification efficiency, independent
+proposal generation, and complete-schedule quality, keeping finite-evidence
+guarantees separate from empirical generalization.
+
+\subsection{Workloads and Protocol}
+\label{sec:experiments:protocol}
+Table~\ref{tab:study-protocol} describes the disjoint split allocation.
+Each pair preserves contacts, rewards, intervals, and boundaries while
+changing one resource parameter. Temporal regimes use satellite/ground
+populations $(8,6)$, $(12,3)$, and $(3,12)$ for balanced, ground-scarce,
+and satellite-scarce resources. Ground-gap pairs change from $(0,2)$ in
+training to $(0.25,3.5)$ in validation and $(0.5,6)$ in test; satellite
+gap remains zero. Test therefore shifts both instances and configurations.
+
+\begin{table}[t]
+\centering
+\caption{Workload allocation in pairs, each providing two static contexts.
+Diagnostic probes are reported separately from scheduling workloads.}
+\label{tab:study-protocol}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Family & Contacts & Train & Valid. & Test \\
+\midrule
+Temporal, three regimes & 32--512 & 60 & 60 & 360 \\
+C3 source blocks & 64--1,024 & 15 & 15 & 40 \\
+Constructed diagnostic & 9 & 20 & 20 & 20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+C3 uses frozen source predicates, successive days for the three splits,
+and time-ordered blocks with disjoint original identities. The allocation
+contains 27,776 opportunities from a 69,923-opportunity source; conclusions
+concern these subproblems. Synthetic seeds and days are disjoint across
+splits. The primary test contains 840 contexts. A separately prespecified
+transfer set contains 216 contexts at 64--256 contacts across all three
+regimes, shortening the horizon from $1.8n$ to $0.18n$ and increasing
+maximum duration from 12 to 48. Additional stress tests reach 4,096 contacts.
+
+Programs and controls are frozen before test access. Quality is schedule
+reward divided by the available HiGHS floating MILP upper reference under
+the same boundary; solver gaps and statuses accompany this numerical
+comparison. These references are distinct from exact-rational decision
+certificates. Bootstrap confidence intervals keep both configurations together,
+cluster shared temporal seeds across regimes, and resample entire C3
+source blocks. Families remain separate.
+
+\subsection{Certification and Representation Necessity}
+\label{sec:experiments:evidence}
+The acquisition study runs three conditions on 62 training pairs of at
+most 128 contacts: 20 diagnostic and 42 temporal/C3. Ranked and uniform
+challengers are both anchored at actual weight-greedy rollout actions;
+uniform also permutes query order. Replayed boundaries must remain feasible,
+with both competing actions feasible and adjacent in both configurations.
+Budgets allow four attempts, two saved relations, 40 conditional calls,
+8,000 expanded nodes, and two rollout steps per pair; each call allows
+500 nodes and region size 128, with objective tolerance $10^{-8}$.
+
+\begin{table}[t]
+\centering
+\caption{Acquisition on the same 62 pairs. R/P denotes saved
+reversal/preservation specifications. Attempts include unsuccessful queries.}
+\label{tab:evidence-yield}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Challenger / upper envelope & Attempts & R/P & Nodes \\
+\midrule
+Ranked / clique & 172 & 26/25 & 52,355 \\
+Uniform / clique & 170 & 14/44 & 52,377 \\
+Ranked / weight sum & 176 & 24/12 & 84,138 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Clique envelopes increase ranked-query yield from 36 to 51 certificates
+while reducing expanded nodes (Table~\ref{tab:evidence-yield}). Ranked
+challengers find more reversals than uniform challengers, but fewer total
+certificates. Of the 51 ranked/clique specifications, 32 are diagnostic
+(24 reversals, 8 preservations); temporal/C3 contribute 2 reversals and
+17 preservations. Repeated boundary certificates are not independent samples.
+
+All 64 strict self-loop requirements arise from diagnostic probes. The
+combined temporal/C3 quotient has 60 classes, 30 arcs, and no cycle or
+self-loop: observed impossibility is confined to constructed aliases.
+Preference reversals alone do not establish representation necessity.
+Over four structural features, exact enumeration selects neighborhood-edge
+count alone, additive standalone work 6,181, and removes the observed
+cycles. This minimum concerns that catalogue and fixed evidence. The
+four-cycle fixture further shows that covering a coarse witness can leave
+a refined cycle; a second full-quotient master repairs it.
+% VERIFIED RESULT SLOT: decision relevance, reachability/escape and regret.
+
+\subsection{Independent Proposals and Joint Selection}
+\label{sec:experiments:discovery}
+Guided joint, free joint, and rule-only search each receive one independent
+request, 24 proposals, and the same 32 training pairs and 18 certified
+specifications; only guided search receives contradiction witnesses.
+Proposals are authored in Codex assistant turns using \texttt{gpt-6.1-sol}
+with ultra reasoning, without external API calls. A fourth arm deterministically
+enumerates 24 feature--rule combinations. Requests and candidates are
+matched across assistant arms; unavailable tokens and differing validity
+checks prevent a matched-compute claim. One batch per arm provides no
+across-run generation variance.
+
+We evaluate saved prefixes of 8, 16, and 24 proposals. Joint arms use the
+same acyclicity and consistency gate $s\geq0.75$ and maximize complete
+validation quality minus compiled-work penalty, $\lambda=0.002$.
+Rule-only search retains valid rules regardless of consistency. The
+minimum additive feature interface is a separate ablation; it does not
+restrict the principal joint selection. Frozen controls vary the penalty,
+feature limit, and inclusion of diagnostic validation workloads.
+
+The selected guided, free, and rule-only programs are unchanged across
+all three prefixes. Their training consistency is respectively 97.2\%,
+94.4\%, and 11.1\%, demonstrating that strong schedule quality can coexist
+with poor strict-requirement consistency. Deterministic enumeration attains
+the highest validation quality (99.44\%) and 97.2\% consistency; this
+comparison supplies no general LLM search advantage.
+% VERIFIED RESULT SLOT: final frozen held-out/transfer quality, paired
+% confidence intervals, failures, ablation conclusions and reference coverage.
+% QUANTITATIVE FIGURE SLOT: final two combined plot assets/labels from root.
+
+\subsection{Frozen Scheduling and Compiled Execution}
+\label{sec:experiments:deployment}
+Baselines include reward-first, reward/degree, reward/conflicting-weight,
+the earlier structural joint program, and structural ratio. Local search
+starts from their best schedule and applies improving exchanges including
+one-to-two replacements for two seconds; HiGHS receives ten seconds per
+context. On 102 acquired side requirements, the guided program reaches
+88 saved boundaries, but next actions started at those boundaries escape
+the pair in 98 cases. All four pair choices agree with the certificate.
+Thus score consistency does not establish execution of the saved preference.
+% VERIFIED RESULT SLOT: completed primary/transfer results and reconstructed
+% per-schedule C3 source-verifier check; no assertion until audit completes.
+
+For a fixed neighborhood-edge-sum rule, 150 non-diagnostic validation
+contexts compare interpreter and compiler with three interleaved repeats.
+Every action trace agrees. Median interpreter/compiled timing ratios rise
+from $1.10\times$ at 32 contacts to $2.44\times$ at 512; work ratios rise
+from $3.19\times$ to $39.93\times$. Six C3-only 1,024-contact contexts yield
+$4.45\times$ median timing speedup. Initialization, residual updates,
+intersections, and scoring are all charged. These measurements concern
+this rule; dense updates and unsupported expressions can retain substantial
+cost. Neither acyclic evidence nor compiled execution guarantees greedy
+optimality on unseen scheduling workloads.

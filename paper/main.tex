@@ -1,6 +1,8 @@
 \documentclass[sigconf,anonymous]{aamas}
 \usepackage{balance}
 \usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 % Unmodified official AAMAS 2027 copyright block and class.
 \makeatletter
 \gdef\@copyrightpermission{
@@ -31,228 +33,38 @@ Graph optimization heuristics can achieve strong aggregate performance while rel
 \ccsdesc[300]{Mathematics of computing~Combinatorial optimization}
 \begin{document}
 \maketitle
-
-\section{Introduction}
-Resource constraints change the opportunity cost of selecting a contact in
-satellite--ground scheduling. Selecting a long contact can exclude several
-short contacts; whether those alternatives can themselves coexist depends on
-the current resource-conflict graph. A priority rule that works well on average
-may make inappropriate decisions on a different constraint configuration.
-Merely reweighting its existing inputs can fail when those inputs omit a
-distinction necessary for the desired ordering.
-
-Large language models (LLMs) offer a flexible mechanism for proposing
-optimization programs. Existing systems evolve code using measured quality,
-reflection, or formal property feedback~\cite{liu2024eoh,ye2024reevo,
-romeraparedes2024funsearch,pereira2026property}. These precedents motivate a
-specific question: when certified decision evidence cannot be expressed by
-the current observable representation, can that failure guide a targeted
-expansion of the representation itself?
-
-We investigate paired static scheduling problems. An offline intervention
-changes one admissible resource parameter while preserving contact
-opportunities, rewards, and explicit boundary commitments. Conditional
-completion bounds establish which of two competing actions is preferable
-on each side. Opposite strict preferences specify a reversal; agreeing
-strict preferences specify preservation. An inconclusive comparison does
-not certify preservation.
-
-Our central mechanism projects strict requirements onto exact feature
-equivalence classes. A directed cycle in this quotient certifies that no
-deterministic pointwise scalar score of the current representation can satisfy
-all observed requirements. Structural witnesses expose the lost distinction
-and guide typed graph-feature proposals. Representation and rule are selected
-together using relational consistency, complete-schedule reward, and feature
-cost, then frozen inside a feasibility-enforcing kernel.
-
-\paragraph{Status of this draft.}
-We present an executable framework and a small assisted-synthesis pilot.
-The current coding assistant proposed part of a fixed candidate bank;
-there were zero automated LLM API calls. The selected program also occurs in
-a deterministic enumeration, and shared-bank free-joint selection chooses
-the same program. The pilot validates the implementation and exposes
-representation limitations, but does not establish an advantage of LLM
-generation or contradiction-targeted search. Those claims require independent
-matched-budget generation experiments.
-
-\section{Related Work}
-FunSearch combines generated code, a program database, and a fixed algorithmic
-skeleton~\cite{romeraparedes2024funsearch}; EoH evolves ideas alongside
-code~\cite{liu2024eoh}; ReEvo uses short- and long-term reflection to
-steer evolution~\cite{ye2024reevo}. Offline synthesis, a feasible skeleton,
-and reflective repair are therefore precedents, not our distinguishing claim.
-
-Property-Guided LLM Program Synthesis for Planning uses formal properties
-and concrete counterexamples to repair heuristic programs~\cite{pereira2026property}.
-It is a particularly close precedent. Our quotient diagnosis asks whether
-\emph{any} pointwise score over the current vectors can satisfy the observed
-strict requirements, whereas a candidate check asks whether a particular
-program satisfies them. HeurAgenix evolves strategies from contrasting
-trajectories and supports state-dependent selection~\cite{yang2025heuragenix}.
-Our labels require separating sound conditional completion intervals under
-aligned configurations.
-
-DRAGON uses LLM-driven decomposition and local reconstruction on the graph
-instance being solved~\cite{chen2026dragon}. We target offline synthesis
-and cross-configuration reuse, so discovery and per-instance deployment costs
-must be separated in a direct comparison. Refining abstractions with
-counterexamples is established~\cite{clarke2000cegar}; our finite quotient
-proposition is a diagnostic tool, not a new general abstraction-refinement
-theory. Our proposed focus is its connection to certified scheduling relations
-and cost-aware structural feature refinement.
-
-\input{METHOD_DRAFT}
-
-\section{Experimental Protocol}
-\label{sec:experiments}
-\subsection{Data and Split Discipline}
-The pilot contains 36 pairs in each of training, validation, and test:
-12 designed diagnostic pairs, 16 random temporal pairs, and 8 C3-derived
-local subproblems. Each pair preserves contacts and changes one resource
-parameter. Generation does not query an oracle or filter by heuristic quality.
-Contact instances and intervention targets are disjoint across splits;
-all seeds and graph fingerprints are audited. C3 has nonoverlapping original
-contact identifiers across three days and disjoint intervention targets, with
-a shared declared reference configuration. Its source contains 69,923
-opportunities; the pilot uses local subproblems capped at 28 contacts and
-does not measure full-source schedule quality.
-
-Designed probes have 9 or 11 contacts and deliberately produce exact aliases
-under all nine base features, including both resource-gap inputs. They test
-the diagnostic and are reported separately. Random temporal contacts use
-a single-capacity overlap model. C3 retains the original frozen conflict
-predicates, including legacy satellite overlap semantics, rather than
-substituting the synthetic model. Graph feasibility is only claimed under
-the respective model.
-
-Training yields 34 certified pairs: 8 diagnostic reversals, 2 diagnostic
-preservations, 16 random preservations, and 8 C3 preservations. Two diagnostic
-ties remain unknown. Comparisons use exact rational arithmetic for saved
-binary weights and outward-rounded interval endpoints. A 100,000-node
-branch-and-bound reference finishes exactly for all 72 test contexts.
-Small pilot certificates use the complete residual region. Progressive
-local bounds are implemented, but this pilot does not establish their
-large-instance certification efficiency.
-
-\subsection{Candidates and Controls}
-The bank contains 48 validated programs: 34 deterministic grid candidates
-and 14 current-assistant proposals based on saved training evidence.
-All programs share a kernel and nine base features: weight, duration,
-degree, conflict-weight sum, maximum conflict weight, compatible-weight sum,
-two resource gaps, and residual count. Expanded candidates compose the
-same typed library. Requests, candidates, bounds, selection evaluations,
-frozen programs, source snapshots, and byte hashes are archived.
-
-We retain weight-only, weight/degree, weighted-conflict normalization,
-fixed-representation rule search, and joint feature--rule selection.
-Free-joint selection uses the identical bank, evidence, validation evaluations,
-and utility, omitting only the contradiction gate. Ungated quality--cost selection
-and deterministic enumeration are additional controls. Enumeration uses
-its 34-candidate subpool; it is not equated to an autonomous LLM search budget.
-
-The specification threshold and cost penalty are 0.75 and 0.002.
-The base representation contains 20 self-loop requirements among 68 training
-inequalities, so its strict-consistency fraction is at most
-$48/68=0.7059$. This excludes base-only programs from the joint gate.
-Fixed-representation controls remain evaluated and their violations reported.
-Consequently this shared-bank ablation cannot establish an independent
-benefit of contradiction-guided candidate generation.
-
-\subsection{Metrics and Reproducibility}
-Metrics include reward divided by the exact residual optimum, strict
-consistency, feasibility, deterministic feature work, and measured
-feature/scoring/deployment time. Every C3 output is also checked using the
-original source verifier. One frozen program per method is applied to every
-test instance and configuration without online oracle or LLM calls.
-Reference computation is offline evaluation instrumentation.
-
-Descriptive intervals resample problem pairs, keeping their configurations
-together, using 2,000 bootstrap samples and a saved seed. These small
-heterogeneous samples limit population inference. Timing is a single local
-observation rather than a controlled hardware benchmark. The audited run
-re-executes an initial run after audit fixes using unchanged candidates
-and settings; it is not another independent test. A fully executed notebook
-verifies saved hashes and calculates the tables and figures.
-
-\section{Pilot Results and Further Experiments}
-\begin{table}[t]
-\centering
-\caption{Pilot reward divided by exact optimum. Strict counts cover 68
-certified inequalities. Designed probes do not estimate workload prevalence.}
-\label{tab:pilot}
-\input{results_table}
-\end{table}
+\input{sections/introduction}
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/pilot_quality.pdf}
-\Description{Three panels compare reward ratios for five frozen methods on diagnostic, random temporal, and C3 subproblems.}
-\caption{Reward ratios for 12 diagnostic, 16 random, and 8 C3 pairs.
-The horizontal axis is explicitly restricted. Strong simple rules already
-perform well; strict relational consistency is a separate metric.}
-\label{fig:quality}
+\includegraphics[width=\textwidth]{figures/motivation.drawio.pdf}
+\caption{A ground-gap intervention reverses forced-completion preferences while preserving the nine-input base alias within each configuration. Neighborhood structure supplies the missing distinction. Values exclude the same fixed boundary reward.}
+\label{fig:motivation}
 \end{figure*}
-
-The selected program adds
-$r(v)=\sum_{\{i,j\}\in E[N_R(v)]}\min(w_i,w_j)$ and ranks by
-\begin{equation}
-w_v-0.6\sum_{u\in N_R(v)}w_u+\frac{r(v)}{\max(1,|N_R(v)|)}.
-\end{equation}
-This captures redundancy among excluded alternatives, but is a heuristic
-feature rather than a certified MWIS bound. Overall test reward ratio is
-0.9973, compared with 0.9952 for rule-only and 0.9128 for weight-only.
-All outputs are feasible. C3 ratios are 0.9902 and 0.9832 for joint and
-rule-only selection. The paired mean difference over rule-only is 0.00129
-on random problems, with descriptive interval $[-0.00037,0.00384]$, and
-0.00695 on C3, with interval $[-0.00158,0.01784]$. Both include zero;
-we do not claim an established performance advantage.
-
-Joint selection satisfies 67 of 68 test inequalities, compared with 45
-for rule-only, and still violates one certified preference. Some base
-rules achieve optimal schedules on designed probes despite tied scores
-for the aliased actions: they can first select peripheral contacts and
-change the residual state, or use an incidental tie convention. The
-quotient result proves strict-ranking impossibility at the observed
-states, not unavoidable complete-schedule loss. Expansion removes observed
-representation contradictions without guaranteeing a fully consistent rule.
-
+\input{sections/related_work}
+\input{sections/problem}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/method_overview.drawio.pdf}
+\caption{Offline certificates expose exact feature-quotient contradictions. Concrete equality joins guide typed feature proposals; full separation checks repair before feature--rule quality/work selection. Deployment uses the frozen program in a feasible kernel.}
+\label{fig:method}
+\end{figure*}
+\input{sections/method}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/repair_cycle.drawio.pdf}
+\caption{Breaking the initial coarse cycle does not suffice. A refined four-cycle projects to a closed walk repeating coarse classes. Full-quotient separation rejects the cheaper incomplete repair and selects a sufficient feature under the declared catalogue.}
+\label{fig:repair}
+\end{figure*}
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{figures/pilot_consistency_cost.pdf}
-\Description{Training strict consistency against complete validation feature work, separating base and expanded representations, with threshold 0.75.}
-\caption{Training consistency versus validation feature work for all 48
-candidates. The dashed line is the 0.75 threshold. Work measures complete
-schedule evaluation and is a declared proxy.}
+\includegraphics[width=\columnwidth]{figures/compiled_updates.drawio.pdf}
+\caption{Shared typed expressions and sequential residual updates preserve neighborhood-edge aggregates. Simultaneous stale-neighborhood subtraction would count edge $\{0,1\}$ twice. Initialization and updates enter deployment cost.}
+\label{fig:compiler}
 \end{figure}
-Joint selection uses mean 12,235 feature-work units per test context,
-versus 8,320 for weight-only and 11,530 for weight/degree. Representation
-expansion therefore has a measurable cost. Targeted, free-joint,
-ungated quality--cost, and deterministic enumeration select the same program.
-The pilot supports an executable representation-repair path, but neither
-an LLM contribution nor an independent targeted-search advantage.
-
-\input{followup_results}
-
-\paragraph{Required next experiments.}
-Independent matched-budget generation runs should compare witness-guided
-and free feature--rule search with identical graph information and typed
-libraries, recording actual model versions, calls, tokens, prompts, failed
-candidates, and repeated sampling. Further controls should remove
-preservation, cost selection, or certified labels while retaining comparable
-acquisition costs. Larger original C3 windows must establish certification
-success and deployment latency as density grows. These experiments evaluate
-the central mechanism without replacing it by rule-only aggregate search
-or treating replay as model evidence.
-
-\balance
-\section{Conclusion}
-We presented an offline synthesis framework that uses exact contradictions
-in certified ranking evidence to refine graph representations. Sound
-conditional bounds, typed composition, cost-aware selection, and a feasible
-kernel make the mechanism executable and auditable. The pilot exposes input
-limitations that rule-only repair cannot resolve, but shared-bank controls
-select the same program and small reward differences do not establish an
-LLM or targeted-search advantage. Independent synthesis trials and larger
-held-out workloads are required to test those advantages.
+\input{sections/experiments}
+\input{sections/discussion}
+\input{sections/conclusion}
+\clearpage
 \bibliographystyle{ACM-Reference-Format}
-\bibliography{references}
+\bibliography{references_v03}
 \end{document}

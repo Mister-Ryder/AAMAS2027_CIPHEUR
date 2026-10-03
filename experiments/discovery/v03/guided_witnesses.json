@@ -1,0 +1,919 @@
+{
+  "comparison": "exact_integer_and_binary_float_numeric_equality",
+  "quotient_nodes": 28,
+  "quotient_edges": 24,
+  "self_loop_requirements": 32,
+  "contradictory": true,
+  "structural_witnesses": [
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 4.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 13.0,
+          "max_conflict_weight": 4.0,
+          "compatible_weight": 9.0,
+          "remaining_count": 8,
+          "station_gap": 0.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0066_seed",
+          "side": "left",
+          "preferred": "n_3bb5f76f",
+          "other": "n_0fe3eaf3",
+          "neighbor_sets": {
+            "n_3bb5f76f": [
+              "n_0fe3eaf3",
+              "n_1f8999c5",
+              "n_20389226",
+              "n_2d71c440"
+            ],
+            "n_0fe3eaf3": [
+              "n_24c00425",
+              "n_3778f9f6",
+              "n_3935b524",
+              "n_3bb5f76f"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_3bb5f76f": [
+              [
+                "n_1f8999c5",
+                "n_2d71c440"
+              ]
+            ],
+            "n_0fe3eaf3": []
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                4.0
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_24c00425",
+                "n_3778f9f6"
+              ],
+              [
+                "n_24c00425",
+                "n_3935b524"
+              ],
+              [
+                "n_3778f9f6",
+                "n_3935b524"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_1e142fc4"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 4.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 13.0,
+          "max_conflict_weight": 4.0,
+          "compatible_weight": 9.0,
+          "remaining_count": 8,
+          "station_gap": 4.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0066_seed",
+          "side": "right",
+          "preferred": "n_0fe3eaf3",
+          "other": "n_3bb5f76f",
+          "neighbor_sets": {
+            "n_0fe3eaf3": [
+              "n_24c00425",
+              "n_3778f9f6",
+              "n_3935b524",
+              "n_3bb5f76f"
+            ],
+            "n_3bb5f76f": [
+              "n_0fe3eaf3",
+              "n_1f8999c5",
+              "n_20389226",
+              "n_2d71c440"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_0fe3eaf3": [
+              [
+                "n_24c00425",
+                "n_3778f9f6"
+              ],
+              [
+                "n_24c00425",
+                "n_3935b524"
+              ],
+              [
+                "n_3778f9f6",
+                "n_3935b524"
+              ]
+            ],
+            "n_3bb5f76f": [
+              [
+                "n_1f8999c5",
+                "n_2d71c440"
+              ]
+            ]
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                4.0
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_24c00425",
+                "n_3778f9f6"
+              ],
+              [
+                "n_24c00425",
+                "n_3935b524"
+              ],
+              [
+                "n_3778f9f6",
+                "n_3935b524"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_1e142fc4"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 4.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 13.0,
+          "max_conflict_weight": 4.0,
+          "compatible_weight": 11.0,
+          "remaining_count": 10,
+          "station_gap": 0.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0078_seed",
+          "side": "left",
+          "preferred": "n_09c302ac",
+          "other": "n_3ce2442f",
+          "neighbor_sets": {
+            "n_09c302ac": [
+              "n_0029bc8b",
+              "n_062081fa",
+              "n_1690e001",
+              "n_3ce2442f"
+            ],
+            "n_3ce2442f": [
+              "n_09c302ac",
+              "n_11804a19",
+              "n_2650d534",
+              "n_37e541fb"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_09c302ac": [
+              [
+                "n_0029bc8b",
+                "n_1690e001"
+              ]
+            ],
+            "n_3ce2442f": []
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                0.5
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_0f27e8f4",
+                "n_2b737583"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_019068d2"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 4.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 13.0,
+          "max_conflict_weight": 4.0,
+          "compatible_weight": 11.0,
+          "remaining_count": 10,
+          "station_gap": 0.5,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0078_seed",
+          "side": "right",
+          "preferred": "n_09c302ac",
+          "other": "n_3ce2442f",
+          "neighbor_sets": {
+            "n_09c302ac": [
+              "n_0029bc8b",
+              "n_062081fa",
+              "n_1690e001",
+              "n_3ce2442f"
+            ],
+            "n_3ce2442f": [
+              "n_09c302ac",
+              "n_11804a19",
+              "n_2650d534",
+              "n_37e541fb"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_09c302ac": [
+              [
+                "n_0029bc8b",
+                "n_1690e001"
+              ]
+            ],
+            "n_3ce2442f": []
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                0.5
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_0f27e8f4",
+                "n_2b737583"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_019068d2"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 8.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 26.0,
+          "max_conflict_weight": 8.0,
+          "compatible_weight": 18.0,
+          "remaining_count": 8,
+          "station_gap": 0.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0062_seed",
+          "side": "left",
+          "preferred": "n_184d6fa3",
+          "other": "n_1ca8a751",
+          "neighbor_sets": {
+            "n_184d6fa3": [
+              "n_09be19b1",
+              "n_1ca8a751",
+              "n_29af8c5d",
+              "n_3f61af68"
+            ],
+            "n_1ca8a751": [
+              "n_01b74f31",
+              "n_0b3cbfc0",
+              "n_184d6fa3",
+              "n_3ace7e9b"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_184d6fa3": [
+              [
+                "n_09be19b1",
+                "n_29af8c5d"
+              ]
+            ],
+            "n_1ca8a751": []
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                4.0
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_01b74f31",
+                "n_0b3cbfc0"
+              ],
+              [
+                "n_01b74f31",
+                "n_3ace7e9b"
+              ],
+              [
+                "n_0b3cbfc0",
+                "n_3ace7e9b"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_34a476f1"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 8.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 26.0,
+          "max_conflict_weight": 8.0,
+          "compatible_weight": 18.0,
+          "remaining_count": 8,
+          "station_gap": 4.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0062_seed",
+          "side": "right",
+          "preferred": "n_1ca8a751",
+          "other": "n_184d6fa3",
+          "neighbor_sets": {
+            "n_1ca8a751": [
+              "n_01b74f31",
+              "n_0b3cbfc0",
+              "n_184d6fa3",
+              "n_3ace7e9b"
+            ],
+            "n_184d6fa3": [
+              "n_09be19b1",
+              "n_1ca8a751",
+              "n_29af8c5d",
+              "n_3f61af68"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_1ca8a751": [
+              [
+                "n_01b74f31",
+                "n_0b3cbfc0"
+              ],
+              [
+                "n_01b74f31",
+                "n_3ace7e9b"
+              ],
+              [
+                "n_0b3cbfc0",
+                "n_3ace7e9b"
+              ]
+            ],
+            "n_184d6fa3": [
+              [
+                "n_09be19b1",
+                "n_29af8c5d"
+              ]
+            ]
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                4.0
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_01b74f31",
+                "n_0b3cbfc0"
+              ],
+              [
+                "n_01b74f31",
+                "n_3ace7e9b"
+              ],
+              [
+                "n_0b3cbfc0",
+                "n_3ace7e9b"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_34a476f1"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 6.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 19.5,
+          "max_conflict_weight": 6.0,
+          "compatible_weight": 16.5,
+          "remaining_count": 10,
+          "station_gap": 0.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0068_seed",
+          "side": "left",
+          "preferred": "n_2837cda3",
+          "other": "n_088523ec",
+          "neighbor_sets": {
+            "n_2837cda3": [
+              "n_088523ec",
+              "n_0a6a4ffb",
+              "n_12043663",
+              "n_35bb503b"
+            ],
+            "n_088523ec": [
+              "n_02f26fdd",
+              "n_08908ab4",
+              "n_12d01a22",
+              "n_2837cda3"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_2837cda3": [
+              [
+                "n_0a6a4ffb",
+                "n_35bb503b"
+              ]
+            ],
+            "n_088523ec": []
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                0.5
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_01fdbf76",
+                "n_32335569"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_3a779c91"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 6.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 19.5,
+          "max_conflict_weight": 6.0,
+          "compatible_weight": 16.5,
+          "remaining_count": 10,
+          "station_gap": 0.5,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0068_seed",
+          "side": "right",
+          "preferred": "n_2837cda3",
+          "other": "n_088523ec",
+          "neighbor_sets": {
+            "n_2837cda3": [
+              "n_088523ec",
+              "n_0a6a4ffb",
+              "n_12043663",
+              "n_35bb503b"
+            ],
+            "n_088523ec": [
+              "n_02f26fdd",
+              "n_08908ab4",
+              "n_12d01a22",
+              "n_2837cda3"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_2837cda3": [
+              [
+                "n_0a6a4ffb",
+                "n_35bb503b"
+              ]
+            ],
+            "n_088523ec": []
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                0.5
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_01fdbf76",
+                "n_32335569"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_3a779c91"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 16.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 52.0,
+          "max_conflict_weight": 16.0,
+          "compatible_weight": 36.0,
+          "remaining_count": 8,
+          "station_gap": 0.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0075_seed",
+          "side": "left",
+          "preferred": "n_13a70204",
+          "other": "n_13ea86e6",
+          "neighbor_sets": {
+            "n_13a70204": [
+              "n_03fa3fdb",
+              "n_13ea86e6",
+              "n_25d9043f",
+              "n_316ffce4"
+            ],
+            "n_13ea86e6": [
+              "n_09b0bf5e",
+              "n_13a70204",
+              "n_3c726d28",
+              "n_3f146055"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_13a70204": [
+              [
+                "n_03fa3fdb",
+                "n_316ffce4"
+              ]
+            ],
+            "n_13ea86e6": []
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                4.0
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_09b0bf5e",
+                "n_3c726d28"
+              ],
+              [
+                "n_09b0bf5e",
+                "n_3f146055"
+              ],
+              [
+                "n_3c726d28",
+                "n_3f146055"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_0d27d8cb"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 16.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 52.0,
+          "max_conflict_weight": 16.0,
+          "compatible_weight": 36.0,
+          "remaining_count": 8,
+          "station_gap": 4.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0075_seed",
+          "side": "right",
+          "preferred": "n_13ea86e6",
+          "other": "n_13a70204",
+          "neighbor_sets": {
+            "n_13ea86e6": [
+              "n_09b0bf5e",
+              "n_13a70204",
+              "n_3c726d28",
+              "n_3f146055"
+            ],
+            "n_13a70204": [
+              "n_03fa3fdb",
+              "n_13ea86e6",
+              "n_25d9043f",
+              "n_316ffce4"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_13ea86e6": [
+              [
+                "n_09b0bf5e",
+                "n_3c726d28"
+              ],
+              [
+                "n_09b0bf5e",
+                "n_3f146055"
+              ],
+              [
+                "n_3c726d28",
+                "n_3f146055"
+              ]
+            ],
+            "n_13a70204": [
+              [
+                "n_03fa3fdb",
+                "n_316ffce4"
+              ]
+            ]
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                4.0
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_09b0bf5e",
+                "n_3c726d28"
+              ],
+              [
+                "n_09b0bf5e",
+                "n_3f146055"
+              ],
+              [
+                "n_3c726d28",
+                "n_3f146055"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_0d27d8cb"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 20.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 65.0,
+          "max_conflict_weight": 20.0,
+          "compatible_weight": 45.0,
+          "remaining_count": 8,
+          "station_gap": 0.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0060_seed",
+          "side": "left",
+          "preferred": "n_295eb941",
+          "other": "n_2f54094a",
+          "neighbor_sets": {
+            "n_295eb941": [
+              "n_0b96e2c0",
+              "n_192afcbe",
+              "n_1b37cf06",
+              "n_2f54094a"
+            ],
+            "n_2f54094a": [
+              "n_01225999",
+              "n_295eb941",
+              "n_31535378",
+              "n_384b6e85"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_295eb941": [
+              [
+                "n_0b96e2c0",
+                "n_1b37cf06"
+              ]
+            ],
+            "n_2f54094a": []
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                4.0
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_01225999",
+                "n_31535378"
+              ],
+              [
+                "n_01225999",
+                "n_384b6e85"
+              ],
+              [
+                "n_31535378",
+                "n_384b6e85"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_2a16d538"
+          ],
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "kind": "self_loop",
+      "vectors": [
+        {
+          "weight": 20.0,
+          "duration": 10,
+          "degree": 4,
+          "conflict_weight": 65.0,
+          "max_conflict_weight": 20.0,
+          "compatible_weight": 45.0,
+          "remaining_count": 8,
+          "station_gap": 4.0,
+          "satellite_gap": 0
+        }
+      ],
+      "requirements": [
+        {
+          "specification": "v03_diagnostic_train_0060_seed",
+          "side": "right",
+          "preferred": "n_2f54094a",
+          "other": "n_295eb941",
+          "neighbor_sets": {
+            "n_2f54094a": [
+              "n_01225999",
+              "n_295eb941",
+              "n_31535378",
+              "n_384b6e85"
+            ],
+            "n_295eb941": [
+              "n_0b96e2c0",
+              "n_192afcbe",
+              "n_1b37cf06",
+              "n_2f54094a"
+            ]
+          },
+          "neighbor_induced_edges": {
+            "n_2f54094a": [
+              [
+                "n_01225999",
+                "n_31535378"
+              ],
+              [
+                "n_01225999",
+                "n_384b6e85"
+              ],
+              [
+                "n_31535378",
+                "n_384b6e85"
+              ]
+            ],
+            "n_295eb941": [
+              [
+                "n_0b96e2c0",
+                "n_1b37cf06"
+              ]
+            ]
+          },
+          "intervention": {
+            "parameter_changes": {
+              "station_gap": [
+                0.0,
+                4.0
+              ]
+            },
+            "removed_edges": [],
+            "added_edges": [
+              [
+                "n_01225999",
+                "n_31535378"
+              ],
+              [
+                "n_01225999",
+                "n_384b6e85"
+              ],
+              [
+                "n_31535378",
+                "n_384b6e85"
+              ]
+            ]
+          },
+          "fixed": [
+            "n_2a16d538"
+          ],
+          "excluded": []
+        }
+      ]
+    }
+  ],
+  "scope": "deterministic_pointwise_scalar_rankings_on_observed_exact_feature_vectors",
+  "acyclic_does_not_prove_dsl_expressibility": true
+}

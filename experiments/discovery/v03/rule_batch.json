@@ -1,0 +1,157 @@
+{
+  "arm": "rule_only",
+  "backend": "Codex internal assistant agent",
+  "automated_API_calls": 0,
+  "model_identifier": "not exposed",
+  "candidate_budget": 24,
+  "candidates": [
+    {
+      "name": "rule_only_reward_priority",
+      "features": [],
+      "rule": "weight",
+      "rationale": "Use immediate reward as an explicit simple reference strategy. A greedy selection receives its own weight regardless of later choices, so this rule expresses a policy that trusts the largest available payoff. It deliberately omits every opportunity-cost correction; retaining this strategy in the proposal batch makes the cost-sensitive alternatives interpretable without requiring fitted coefficients or access to an optimum during execution."
+    },
+    {
+      "name": "rule_only_degree_efficiency",
+      "features": [],
+      "rule": "weight / (1 + degree)",
+      "rationale": "Divide reward by the number of available contacts removed by choosing the candidate, including the candidate itself. This is a cardinality-efficiency strategy: reward must compensate for consuming more alternatives. Degree treats all blocked contacts equally, so it can favor a contact with many light conflicts less than a weight-aware policy would. The denominator remains positive for an isolated candidate."
+    },
+    {
+      "name": "rule_only_conflict_mass_efficiency",
+      "features": [],
+      "rule": "weight / (1 + conflict_weight)",
+      "rationale": "Normalize immediate reward by the total reward of its current conflicts. This weighted opportunity-cost strategy replaces conflict counting with reward exposure and therefore distinguishes blocking many negligible contacts from blocking valuable contacts. Conflict mass is an aggregate proxy rather than the attainable reward of those contacts, since the supplied base features do not reveal whether the neighbors can coexist. The additive constant handles zero exposure."
+    },
+    {
+      "name": "rule_only_strongest_rival_surplus",
+      "features": [],
+      "rule": "weight - max_conflict_weight",
+      "rationale": "Rank the surplus over the strongest directly blocked alternative. This models a conservative one-for-one exchange and avoids treating every neighbor as simultaneously attainable. It should express a different preference from aggregate conflict penalties when one large rival dominates a neighborhood. It remains only a local exchange proxy, because additional compatible alternatives and interactions between neighbors are unavailable to the rule."
+    },
+    {
+      "name": "rule_only_total_exchange_surplus",
+      "features": [],
+      "rule": "weight - conflict_weight",
+      "rationale": "Subtract the entire exposed conflict reward from the selected reward. This is an aggressive additive loss strategy corresponding to the optimistic assumption that all blocked alternatives could otherwise contribute. It explores a pessimistic view of selecting a highly connected contact, which differs from ratios and a strongest-rival comparison. Negative scores are permitted because the fixed greedy kernel compares candidates rather than treating the score as objective reward."
+    },
+    {
+      "name": "rule_only_average_conflict_surplus",
+      "features": [],
+      "rule": "weight - conflict_weight / (1 + degree)",
+      "rationale": "Charge an amortized conflict reward instead of the sum of all conflicts. Dividing by the closed-neighborhood size tempers the additive penalty when many alternatives share the exposure and avoids the assumption that all neighbor rewards can be collected. The extra one makes the expression defined at degree zero. This strategy balances direct reward against typical conflict size without introducing a graph traversal or any learned auxiliary feature."
+    },
+    {
+      "name": "rule_only_duration_efficiency",
+      "features": [],
+      "rule": "weight / (1 + duration)",
+      "rationale": "Prioritize reward per occupied time using a regularized duration denominator. Short contacts can leave room for more future contacts under temporal resource constraints, while regularization limits the score inflation from very short intervals. Duration alone does not identify actual conflict structure, so this rule intentionally explores a temporal-capacity heuristic distinct from degree- and conflict-reward strategies. No absolute start time or contact identity is used."
+    },
+    {
+      "name": "rule_only_turnaround_efficiency",
+      "features": [],
+      "rule": "weight / (1 + duration + station_gap + satellite_gap)",
+      "rationale": "Treat contact duration and the two declared turnaround requirements as a combined time charge. This extends reward density to account for setup overhead: once gaps are large, tiny contact durations should not create an arbitrarily strong preference. The graph still enforces feasibility; this score merely orders available candidates using the current constraints. The gap values enter through arithmetic rather than an intervention label or side-specific condition."
+    },
+    {
+      "name": "rule_only_joint_time_cardinality_efficiency",
+      "features": [],
+      "rule": "weight / ((1 + degree) * (1 + duration + max(station_gap, satellite_gap)))",
+      "rationale": "Apply simultaneous cardinality and temporal charges by multiplying their denominators. A candidate receives a high rank only when both its blocked-contact count and its occupied-time proxy are modest relative to reward. Using the larger turnaround requirement gives a bottleneck resource interpretation instead of summing both overheads. This is a conjunctive efficiency strategy, distinct from an additive ensemble or a single dominant cost."
+    },
+    {
+      "name": "rule_only_preserved_reward_bonus",
+      "features": [],
+      "rule": "weight + compatible_weight / (1 + remaining_count)",
+      "rationale": "Add a per-residual-contact share of reward that survives the current selection. Compatible weight measures immediate continuation potential outside the candidate's conflict neighborhood, while division by remaining count prevents the global reward pool from overwhelming the selected reward. This is an additive continuation strategy. It makes no claim that all compatible contacts can coexist with one another, and it reads only the existing aggregate feature."
+    },
+    {
+      "name": "rule_only_preservation_reward_product",
+      "features": [],
+      "rule": "weight * (1 + compatible_weight) / (1 + weight + conflict_weight + compatible_weight)",
+      "rationale": "Multiply immediate reward by the share of total active reward preserved after selecting the candidate. The normalization places preserved reward on the scale of the current residual graph and the additive constants keep the score defined in small or zero-reward states. This expresses a complementarity strategy: a valuable contact is attractive when it also preserves a large reward pool. It differs from adding a continuation bonus because the preserved share scales the candidate reward."
+    },
+    {
+      "name": "rule_only_rival_and_tail_surplus",
+      "features": [],
+      "rule": "weight - max_conflict_weight - (conflict_weight - max_conflict_weight) / (1 + degree)",
+      "rationale": "Split exposed reward into a strongest rival and the remaining tail. Charge the strongest rival fully as a plausible direct replacement, then amortize the tail to avoid assuming every additional conflict is independently attainable. This hybrid loss model differentiates concentrated and dispersed conflict reward using the available maximum and sum. It intentionally stays within aggregate information and does not infer edges between neighbors."
+    },
+    {
+      "name": "rule_only_tail_reward_efficiency",
+      "features": [],
+      "rule": "weight / (1 + max(0, conflict_weight - max_conflict_weight))",
+      "rationale": "Normalize reward by conflict mass beyond the single strongest rival. This explores a policy in which one unavoidable direct competitor is treated as a common exchange issue, while additional exposed reward is the main evidence that selecting the contact could suppress several useful alternatives. The nonnegative clamp protects the denominator against numerical inconsistencies between maximum and sum. This policy is deliberately different from charging the strongest rival fully."
+    },
+    {
+      "name": "rule_only_aggregate_dominance_switch",
+      "features": [],
+      "rule": "weight + compatible_weight / (1 + remaining_count) if weight >= conflict_weight else weight / (1 + degree)",
+      "rationale": "Use an optimistic continuation score when the candidate reward covers all directly exposed conflict reward, and otherwise use cardinality efficiency. The dominance condition identifies an easy local tradeoff using only aggregate rewards; the second regime handles candidates whose conflicts collectively look costly. This introduces a substantive policy switch rather than a coefficient perturbation. The condition is recomputed from current features after every kernel step."
+    },
+    {
+      "name": "rule_only_stronger_rival_switch",
+      "features": [],
+      "rule": "weight / (1 + conflict_weight) if max_conflict_weight > weight else weight / (1 + degree)",
+      "rationale": "Apply a weighted exposure penalty when a directly conflicting contact has greater reward than the candidate. When no stronger individual rival is present, use the simpler count-based efficiency score. This explores asymmetry between having one clearly stronger alternative and having several individually weaker alternatives. It requires neither the identity of the strongest rival nor any conditional oracle, and its branch depends solely on two allowed numeric features."
+    },
+    {
+      "name": "rule_only_isolation_bonus",
+      "features": [],
+      "rule": "2 * weight + compatible_weight / (1 + remaining_count) if degree == 0 else weight / (1 + degree)",
+      "rationale": "Give currently isolated contacts a reward bonus because selecting them blocks no other active contact. Use degree efficiency for the remaining candidates, where order can alter the feasible continuation. The bonus does not alter the fixed kernel and does not guarantee an absolute lexicographic priority; it is a finite ranking preference for low-risk reward. Isolation is detected by degree rather than graph identities or additional feature code."
+    },
+    {
+      "name": "rule_only_residual_density_switch",
+      "features": [],
+      "rule": "weight / (1 + degree) if 2 * degree >= remaining_count else weight / (1 + duration)",
+      "rationale": "Switch to cardinality efficiency when a candidate conflicts with at least roughly half the active contacts, and use time efficiency in the sparser regime. Relative degree separates globally consuming choices from contacts whose occupancy may be the more useful proxy. The threshold is a general density boundary proposed without score-based tuning. Using remaining count makes the policy adapt as the residual graph shrinks."
+    },
+    {
+      "name": "rule_only_compact_residual_exchange_switch",
+      "features": [],
+      "rule": "weight - max_conflict_weight if remaining_count <= 8 else weight / (1 + degree)",
+      "rationale": "Use a strongest-rival exchange surplus once the residual graph is small, and a cardinality-efficiency policy while many choices remain. This explores whether a compact endgame benefits from prioritizing direct replacement value over broad conflict reduction. Eight is an untuned general policy threshold, not an instance identifier or a fitted boundary. The same frozen arithmetic rule executes across all graphs and residual states."
+    },
+    {
+      "name": "rule_only_load_weighted_turnaround_density",
+      "features": [],
+      "rule": "weight / (1 + duration + station_gap * degree / (1 + remaining_count) + satellite_gap * conflict_weight / (1 + weight + conflict_weight))",
+      "rationale": "Weight station turnaround by the fraction of active contacts exposed to the candidate and satellite turnaround by the fraction of local reward exposed. This produces a load-aware time charge: declared gaps matter more when the candidate encounters corresponding aggregate contention. The two fractions are bounded for nonnegative scheduling features, and the denominator is positive. The interpretation is a heuristic resource proxy; no resource-specific neighbor counts are created."
+    },
+    {
+      "name": "rule_only_capped_occupancy_density",
+      "features": [],
+      "rule": "weight / max(1, min(duration, 1 + station_gap + satellite_gap))",
+      "rationale": "Use a clipped occupied-time denominator with both a lower floor and a turnaround-dependent upper cap. The floor prevents tiny durations from overwhelming reward differences; the cap explores a policy that stops increasing the duration penalty once contact occupancy exceeds a setup-scale horizon. This is a robust saturation strategy rather than a linear time charge. Both clipping boundaries are constructed from constants and declared constraints, with no fitted instance lookup."
+    },
+    {
+      "name": "rule_only_bottleneck_efficiency",
+      "features": [],
+      "rule": "min(weight / (1 + degree), weight / (1 + duration), weight / (1 + conflict_weight))",
+      "rationale": "Take the lowest of count efficiency, time efficiency, and exposed-reward efficiency. This is a pessimistic bottleneck strategy that requires a candidate to look acceptable under all three cheap perspectives. It can reduce a score sharply when any one cost is large, unlike an average of the same perspectives. The quantities remain heuristic rankings with their native scales; the batch includes this deliberate scale-sensitive conservative alternative."
+    },
+    {
+      "name": "rule_only_efficiency_consensus",
+      "features": [],
+      "rule": "weight / (1 + degree) + weight / (1 + duration) + weight / (1 + conflict_weight)",
+      "rationale": "Sum three independently interpretable efficiency scores with equal coefficients. This is an additive consensus strategy: strong performance on one cheap perspective can compensate for weakness on another, unlike the bottleneck rule. The proposal uses cardinality, temporal occupancy, and weighted exposure without fitting their weights. Their differing native scales are part of this frozen heuristic rather than normalized through a new feature."
+    },
+    {
+      "name": "rule_only_density_amplified_rival_loss",
+      "features": [],
+      "rule": "weight - conflict_weight / (1 + degree) - max_conflict_weight * degree / (1 + remaining_count)",
+      "rationale": "Combine amortized conflict reward with an additional strongest-rival charge scaled by relative residual degree. The rival penalty grows when the candidate consumes a large share of remaining contacts, so direct competition matters most near global congestion. This gives a continuous alternative to the density switches in the batch. Every term comes from the existing base features, and the relative-degree denominator avoids division by an empty residual count."
+    },
+    {
+      "name": "rule_only_setup_dominated_switch",
+      "features": [],
+      "rule": "weight / (1 + duration + station_gap + satellite_gap) if (station_gap + satellite_gap > duration and degree > 1) else weight / (1 + degree + conflict_weight / (1 + max_conflict_weight))",
+      "rationale": "Use turnaround-adjusted time efficiency when setup overhead exceeds contact duration and the candidate has multiple conflicts. Otherwise combine degree with conflict mass normalized by the strongest rival, which acts as an effective count of valuable alternatives. This explores a resource-regime switch with a distinct normalized-conflict policy in its other branch. The Boolean condition uses only numeric scheduling features and carries no source, graph, or intervention-side label."
+    }
+  ],
+  "request_files": [
+    "experiments/discovery/v03/training_context.json",
+    "cipheur/graph_features.py"
+  ]
+}

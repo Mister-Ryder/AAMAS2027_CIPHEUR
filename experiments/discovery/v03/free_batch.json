@@ -1,0 +1,1197 @@
+{
+  "arm": "free_joint",
+  "backend": "Codex internal assistant agent",
+  "automated_API_calls": 0,
+  "model_identifier": "not exposed",
+  "candidate_budget": 24,
+  "candidates": [
+    {
+      "name": "free_01_neighbor_feasible_opportunity",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_pack",
+      "rationale": "Rank immediate utility against a feasible packing of the contacts it would delete. This estimates the value of mutually compatible alternatives rather than charging every conflict independently. It is a local one-feature strategy intended to retain schedule utility at modest feature cost; its packing is a fixed weight-ordered heuristic, so it is not an exact opportunity cost."
+    },
+    {
+      "name": "free_02_neighbor_cover_opportunity",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover",
+      "rationale": "Use the weighted clique cover of the active neighborhood as a conservative estimate of forgone alternatives. Dense mutually conflicting neighbors share a cover term, whereas independent neighbors remain separate terms. This tests a pessimistic local deletion penalty with one structural feature; a loose cover can over-penalize the root."
+    },
+    {
+      "name": "free_03_local_capture_share",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1, weight + neighbor_pack)",
+      "rationale": "Favor the root that captures the largest share of its own weight plus a feasible neighboring packing. The bounded positive denominator keeps the score safe on isolated and zero-weight contacts. This changes the decision from absolute net gain to relative capture efficiency, limiting domination by large but costly contacts while using only a local packing feature."
+    },
+    {
+      "name": "free_04_pair_discounted_deletion",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_edge_min)",
+      "rationale": "Discount the sum of deleted neighbor weights by the minimum endpoint weight on each internal neighborhood edge. Such an edge prevents taking both endpoints together. Clamp the discounted estimate at the largest single conflicting contact because pair discounts can overcount in dense graphs. This is a compact local structural surrogate that avoids running a packing or cover primitive."
+    },
+    {
+      "name": "free_05_density_compressed_conflicts",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight / (1 + 2 * neighbor_edges / max(1, degree)))",
+      "rationale": "Compress conflict weight by one plus the mean internal neighborhood degree. The estimate treats greater cohesion among alternatives as reducing their simultaneous opportunity value, and the largest-neighbor floor preserves a basic lower scale. This cheap topological approximation offers a different response from either edge-weight subtraction or an explicit independent packing."
+    },
+    {
+      "name": "free_06_weight_product_conflict_discount",
+      "features": [
+        {
+          "name": "neighbor_edge_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_edge_product / max(1, max_conflict_weight))",
+      "rationale": "Use products of endpoint weights to make overlap among valuable neighbors matter more than overlap among weak neighbors. Normalize by the largest conflict weight to return to utility units, then retain that largest weight as a floor against excessive discounting. The feature probes weighted cohesion with one bounded graph expression and no full residual-graph traversal."
+    },
+    {
+      "name": "free_07_local_interval_midpoint",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - (neighbor_pack + neighbor_cover) / 2",
+      "rationale": "Balance the feasible neighbor packing and its clique-cover upper estimate. The midpoint limits optimism from a poor packing without taking the whole penalty of a loose cover. Both expressions reuse the same active neighborhood. This candidate spends two local features to represent uncertainty in the alternative bundle instead of relying on a single estimate."
+    },
+    {
+      "name": "free_08_local_uncertainty_aversion",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover - (neighbor_cover - neighbor_pack)",
+      "rationale": "Subtract the conservative neighbor cover and an additional cover-to-packing gap. A large gap indicates that the local alternative bundle is difficult for the fixed approximation to summarize, so this rule avoids deleting it cheaply. It is deliberately risk-averse and may sacrifice immediate utility; the same two small feature expressions bound its representation cost."
+    },
+    {
+      "name": "free_09_positive_local_regret",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(0, neighbor_pack - weight)",
+      "rationale": "Apply a regret penalty only when a feasible neighbor packing exceeds the root weight. Contacts whose own utility dominates the estimated alternatives keep their immediate-weight priority; expensive deletions receive an additional deduction. This piecewise local strategy is designed to preserve attractive high-value contacts without ignoring jointly valuable alternatives."
+    },
+    {
+      "name": "free_10_net_gain_per_removed_contact",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(weight - neighbor_pack) / (1 + degree)",
+      "rationale": "Normalize local net utility by the number of contacts removed including the root. This targets gain per affected decision rather than absolute gain or utility share and reduces extreme scores from high-degree contacts. It can reorder negative regrets, which is an intentional portfolio tradeoff; the structural information still comes from one local feasible packing."
+    },
+    {
+      "name": "free_11_forced_completion_feasible",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_pack",
+      "rationale": "Estimate a complete feasible continuation after selecting the root: add its weight to a fixed greedy packing of all active contacts outside its closed neighborhood. This makes the full schedule the ranking target and can capture alternatives beyond one hop. It is more expensive than a local penalty, but uses one feature and no search oracle or learned instance lookup."
+    },
+    {
+      "name": "free_12_forced_completion_cover",
+      "features": [
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_cover",
+      "rationale": "Rank the root by its weight plus a clique-cover upper estimate of the remaining compatible schedule. This explores an optimistic full-continuation strategy that can see far beyond local conflict totals. The upper estimate is deterministic and polynomial; it may favor a loose residual cover, so its schedule benefit must justify its broader graph work."
+    },
+    {
+      "name": "free_13_forced_completion_gap_penalty",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_pack - (compatible_cover - compatible_pack)",
+      "rationale": "Start with the feasible forced-continuation estimate and deduct the residual cover-to-packing gap. This prefers roots whose remaining schedule is both valuable and easier for the deterministic bounds to agree on. It is a conservative continuation policy with two shared-set features, intended to avoid optimistic selection driven by a loosely structured residual graph."
+    },
+    {
+      "name": "free_14_forced_completion_midpoint",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + (compatible_pack + compatible_cover) / 2",
+      "rationale": "Use the midpoint of lower and upper continuation estimates after committing the root. Unlike a neighborhood opportunity penalty, this scores the whole compatible remainder directly. It occupies a balanced point between the feasible continuation and optimistic cover strategies; two residual traversals impose a meaningful feature-cost tradeoff."
+    },
+    {
+      "name": "free_15_feasible_include_exclude_advantage",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_pack - without_pack",
+      "rationale": "Compare a feasible completion with the root included against a feasible packing when only the root is excluded. Subtracting an action-specific exclusion baseline approximates the marginal value of commitment and helps distinguish contacts whose compatible schedules are large for unrelated reasons. Both sides use the same fixed packing primitive; their difference is a heuristic advantage, not a certified bound."
+    },
+    {
+      "name": "free_16_cover_include_exclude_advantage",
+      "features": [
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_cover - without_cover",
+      "rationale": "Compare clique-cover estimates for including and excluding the root. Shared distant opportunities may cancel, leaving a broader structural approximation of commitment value than a local neighborhood loss. The difference of two upper estimates has no formal lower-bound guarantee; this candidate tests whether cancellation is useful enough to repay two residual cover computations."
+    },
+    {
+      "name": "free_17_conservative_commitment_margin",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_pack - without_cover",
+      "rationale": "Measure a conservative inclusion-versus-exclusion margin by pairing a feasible included completion with an upper estimate for excluding the root. A positive margin is strong approximate evidence for commitment, while negative margins still give a deterministic ranking. The rule emphasizes robust decisions across the whole active graph at the cost of two polynomial continuation features."
+    },
+    {
+      "name": "free_18_optimistic_commitment_margin",
+      "features": [
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_cover - without_pack",
+      "rationale": "Pair an upper included-continuation estimate with a feasible excluded packing. This optimistic commitment margin favors roots with promising compatible schedules even when the fixed greedy continuation misses combinations. It complements the conservative margin with a different bound orientation rather than a coefficient change; loose included covers remain a recognized approximation risk."
+    },
+    {
+      "name": "free_19_local_regret_with_contact_efficiency",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_pack + weight / (1 + duration + abs(station_gap) + abs(satellite_gap))",
+      "rationale": "Combine structural local net utility with a secondary reward for useful contacts that occupy less temporal capacity including configured transition gaps. The efficiency term can resolve close local opportunity decisions on satellite schedules without using station or satellite identities. The principal penalty remains the neighbor packing, and only one structural feature is added."
+    },
+    {
+      "name": "free_20_cover_cost_per_conflict",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + neighbor_cover / max(1, degree))",
+      "rationale": "Evaluate immediate utility against cover-estimated alternative utility per conflicting contact. This emphasizes replacement efficiency and spreads the opportunity charge over the conflict count, producing a distinct high-degree tradeoff from absolute cover subtraction. An isolated root has a safe denominator of one. The candidate adds a single local structural feature."
+    },
+    {
+      "name": "free_21_pair_discounted_completion",
+      "features": [
+        {
+          "name": "compatible_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_max",
+          "expression": {
+            "op": "max_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + max(compatible_max, compatible_weight - compatible_edge_min)",
+      "rationale": "Estimate the remaining schedule by subtracting minimum endpoint weight for each internal residual conflict from its weight sum. Clamp at the heaviest compatible contact because overlapping edge deductions can be excessive. This substitutes explicit residual edge aggregation for packing or cover primitives; it is structurally different but its quadratic edge scan must earn its feature cost."
+    },
+    {
+      "name": "free_22_density_compressed_completion",
+      "features": [
+        {
+          "name": "compatible_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_weight / (1 + 2 * compatible_edges / max(1, remaining_count - degree - 1))",
+      "rationale": "Compress the compatible remainder by one plus its mean induced degree. The compatible contact count is derived from existing base features, so only one residual edge-count feature is needed. This is a coarse whole-schedule estimate that distinguishes concentrated conflicts from independent opportunity while avoiding weighted packing and clique-cover computations."
+    },
+    {
+      "name": "free_23_two_sided_cohesion_balance",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_weight / (1 + 2 * compatible_edges / max(1, remaining_count - degree - 1)) - conflict_weight / (1 + 2 * neighbor_edges / max(1, degree))",
+      "rationale": "Balance a density-compressed compatible continuation against density-compressed deleted alternatives. Measuring cohesion on both sides prevents treating all available weight or all neighbor weight as simultaneously attainable. This tests a two-sided graph-topology rule using two edge-count features, with a broader computation footprint than a purely local surrogate."
+    },
+    {
+      "name": "free_24_closed_bundle_replacement",
+      "features": [
+        {
+          "name": "closed_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "union",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "closed_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "union",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "2 * weight - closed_cover - 0.25 * (closed_cover - closed_pack)",
+      "rationale": "Treat the root and its active neighbors as a closed replacement bundle. Compare twice the root utility with the cover-estimated value of that bundle and apply a small uncertainty penalty from the closed-bundle cover-to-packing gap. Including the root inside both primitives gives a different local view when it dominates its neighbors, while retaining a bounded two-feature representation."
+    }
+  ],
+  "request_files": [
+    "experiments/discovery/v03/training_context.json",
+    "cipheur/graph_features.py"
+  ]
+}

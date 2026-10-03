@@ -1,0 +1,1318 @@
+{
+  "arm": "guided",
+  "backend": "Codex internal assistant agent",
+  "automated_API_calls": 0,
+  "model_identifier": "not exposed",
+  "candidate_budget": 24,
+  "candidates": [
+    {
+      "name": "g01_capped_pair_redundancy",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_pair_min)",
+      "rationale": "Equal base vectors in the certified witnesses hide a change from independent neighbors to one edge and then a clique. Discount pairwise conflict weight that cannot all be collected, cap the discount so at least the heaviest alternative remains, and use one cheap structural feature. The pair sum can overcount overlapping edges; the cap limits that approximation."
+    },
+    {
+      "name": "g02_cluster_adjusted_degree",
+      "features": [
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + max(0, degree - 2 * neighbor_edge_count / max(1, degree)))",
+      "rationale": "Replace raw degree by a continuous effective degree reduced by neighbor redundancy. One edge and a three-node clique have distinct corrections even when degree and neighbor weight match; this favors fewer independent alternatives at low feature cost without fixed resource-gap thresholds."
+    },
+    {
+      "name": "g03_density_adjusted_weight_pressure",
+      "features": [
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * (1 + 2 * neighbor_edge_count / max(1, degree * (degree - 1))) / (1 + conflict_weight / max(0.000001, weight))",
+      "rationale": "Combine a normalized neighbor density bonus with relative conflict weight. The witness preference changes with induced density rather than a changed base feature; normalization transfers to larger degrees and weight scales while retaining a simple ratio rule."
+    },
+    {
+      "name": "g04_product_redundancy_loss",
+      "features": [
+        {
+          "name": "neighbor_pair_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_pair_product / max(0.000001, max_conflict_weight))",
+      "rationale": "Use edge weight products to discount overlaps between two valuable alternatives more strongly than overlaps involving a negligible alternative. Normalize by the largest conflicting weight and retain a nonnegative opportunity-loss floor. This distinguishes equal-weight witness motifs but extends the strategy to heterogeneous weights."
+    },
+    {
+      "name": "g05_diminishing_pair_discount",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - conflict_weight + min(conflict_weight, neighbor_pair_min / (1 + neighbor_edge_count / max(1, degree)))",
+      "rationale": "A triangle contributes three pair edges but only one collectible alternative. Apply diminishing returns to accumulated edge-minimum redundancy to reduce overcounting in dense neighborhoods; the edge versus clique witnesses still produce distinct scores. Two inexpensive features trade arithmetic simplicity against a softer loss estimate."
+    },
+    {
+      "name": "g06_setup_adjusted_density_rate",
+      "features": [
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * (1 + 2 * neighbor_edge_count / max(1, degree * (degree - 1))) / (max(0.000001, duration + station_gap + satellite_gap) * (1 + degree))",
+      "rationale": "Estimate useful weight per occupied interval including declared setup gaps, then favor clustered rather than independent alternatives. Structural density breaks the base-vector ties while duration and gap normalization are intended to transfer to varying interval lengths and capacity pressure."
+    },
+    {
+      "name": "g07_residual_pair_corrected_value",
+      "features": [
+        {
+          "name": "residual_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + max(0, compatible_weight - min(compatible_weight, residual_pair_min))",
+      "rationale": "Look at the graph retained after selecting the root, not only the graph sacrificed around it. Subtract incompatible-pair weight from retained compatible weight. In the witnesses the chosen root preserves either three independent leaves, an edge plus a leaf, or a clique; the score reacts directly to that continuation structure. The pair correction is an approximation, not a certified bound."
+    },
+    {
+      "name": "g08_residual_density_continuation",
+      "features": [
+        {
+          "name": "residual_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + compatible_weight / (1 + 2 * residual_edge_count / max(1, residual_count))",
+      "rationale": "Discount compatible weight using the average conflict degree of the retained subgraph. This distinguishes retained independent leaves, one edge, and a clique while avoiding a full greedy continuation traversal; the density normalization aims to handle retained sets beyond the small witnesses."
+    },
+    {
+      "name": "g09_residual_product_correction",
+      "features": [
+        {
+          "name": "residual_pair_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + max(0, compatible_weight - residual_pair_product / max(0.000001, weight, max_conflict_weight))",
+      "rationale": "A single high-value incompatible pair in the retained graph matters more than many edges among small contacts. Product-weight the retained conflict correction and normalize by the local weight scale. The preserved leaf motifs change the correction even when compatible total weight is identical."
+    },
+    {
+      "name": "g10_eliminated_conflict_weight",
+      "features": [
+        {
+          "name": "all_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + degree) + (all_pair_min - residual_pair_min) / max(1, degree)",
+      "rationale": "Rank actions by immediate weight per removal and weighted conflicts removed from the residual graph. A root whose neighbors are mutually conflicting removes redundant choices, which the witnesses expose. The global edge term is snapshot-constant and reusable; retained-edge work is more costly than a purely local feature, so this is a distinct cost-quality hypothesis."
+    },
+    {
+      "name": "g11_neighborhood_cover_net_gain",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover",
+      "rationale": "Estimate the opportunity sacrificed by selecting the root using a deterministic weighted clique cover of its active neighbors. Independent leaves, one edge, and a clique have different collectible upper bounds despite equal base features. A single structural feature is enough for the concrete motifs; loose covers can remain pessimistic on general graphs."
+    },
+    {
+      "name": "g12_neighborhood_greedy_value_ratio",
+      "features": [
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(0.000001, weight, neighbor_greedy)",
+      "rationale": "Compare root weight with a deterministically constructed independent alternative within its neighborhood. This ratio is invariant to positive weight rescaling and reacts to the witnessed edge and clique compression. The primitive is polynomial and supplies a feasible lower estimate, with order-dependent looseness acknowledged."
+    },
+    {
+      "name": "g13_neighborhood_interval_midpoint",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - (neighbor_cover + neighbor_greedy) / 2",
+      "rationale": "Bracket sacrificed opportunity with a greedy independent weight and a clique-cover weight, and score against the midpoint. Agreement on the witnessed simple motifs gives the structural distinction; disagreement on harder neighborhoods softens the pessimism of cover-only scoring at the cost of two traversals."
+    },
+    {
+      "name": "g14_neighborhood_uncertainty_penalty",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover - abs(neighbor_cover - neighbor_greedy)",
+      "rationale": "Prefer actions with small and tightly estimated alternative value. The witness motifs are separated by opportunity loss, while a cover-greedy gap adds an explicit penalty for ambiguous neighborhoods. This conservative policy differs from midpoint scoring and may sacrifice immediate gain for more predictable local decisions."
+    },
+    {
+      "name": "g15_adaptive_neighborhood_bracket",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - (neighbor_cover if neighbor_cover - neighbor_greedy > 0.25 * max(weight, neighbor_greedy) else neighbor_greedy) + weight * neighbor_edge_count / max(1, degree * (degree + 1))",
+      "rationale": "Use the feasible alternative estimate when the bracket is tight, switch to the conservative cover when relative uncertainty is large, and retain a bounded density tie signal. The branch depends on structural uncertainty rather than an identifier or observed configuration; all three features are deterministic."
+    },
+    {
+      "name": "g16_greedy_retained_continuation",
+      "features": [
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_greedy",
+      "rationale": "Evaluate the immediate root plus a deterministic feasible independent continuation on exactly the compatible active subgraph. This directly models the witness mechanism: the preferred root preserves the more valuable leaf pattern. It costs more than local edge statistics and is a one-pass proxy rather than an online certificate search."
+    },
+    {
+      "name": "g17_cover_retained_continuation",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_cover",
+      "rationale": "Evaluate the root plus a clique-cover upper estimate of retained opportunity. It exactly separates the supplied independent/edge/clique motifs and explores optimism about difficult continuation graphs. The cover is a fixed graph primitive, and its extra work must earn enough quality to offset the declared cost penalty."
+    },
+    {
+      "name": "g18_retained_bracket_midpoint",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + (residual_cover + residual_greedy) / 2",
+      "rationale": "Use a midpoint of optimistic and feasible retained continuation estimates. The witness reversal arises because the retained structure changes; combining both estimates aims to temper optimistic cover scores and greedy underestimation on larger residual graphs, while exposing an explicit two-primitive cost tradeoff."
+    },
+    {
+      "name": "g19_retained_downside_adjusted_gain",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_greedy - min(weight, max(0, residual_cover - residual_greedy))",
+      "rationale": "Start from immediate gain plus a feasible retained continuation, then discount uncertain continuation by at most the root weight. The cap avoids allowing a wide bound gap to dominate every decision. Concrete witness brackets should coincide, while general-graph uncertainty produces a distinct downside-sensitive strategy."
+    },
+    {
+      "name": "g20_dual_local_retained_margin",
+      "features": [
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_greedy - 0.5 * neighbor_greedy",
+      "rationale": "Combine a feasible retained continuation with the value of a feasible local alternative sacrificed by the root. Both sides distinguish neighbor redundancy in the certified witnesses, and the hybrid can reject a high immediate score with expensive excluded alternatives. It uses two polynomial traversals and no conditional oracle."
+    },
+    {
+      "name": "g21_normalized_retention_exchange",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * (weight + residual_greedy) / max(0.000001, weight + neighbor_cover)",
+      "rationale": "Treat an action as an exchange: multiply its immediate reward by retained feasible value relative to root-plus-sacrificed opportunity. This differs from additive continuation and local net-gain scores; it balances a valuable root, recoverable compatible contacts, and clustered neighborhood alternatives across weight scales."
+    },
+    {
+      "name": "g22_retained_size_adjusted_hybrid",
+      "features": [
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_greedy / (1 + degree / max(1, residual_count)) - neighbor_greedy / (1 + degree)",
+      "rationale": "Attenuate retained continuation when selecting the root removes a large fraction of remaining contacts, and normalize local sacrifice by degree. The retained and sacrificed graph patterns both break the witness ties. This seeks a size-aware compromise between broad continuation work and local pressure rather than a fixed coefficient grid."
+    },
+    {
+      "name": "g23_setup_relative_redundancy_margin",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover + min(weight, neighbor_pair_min / max(1, degree)) * (station_gap + satellite_gap) / max(0.000001, duration + station_gap + satellite_gap)",
+      "rationale": "Use cover-based sacrificed opportunity as the main score, adding a bounded redundancy bonus proportional to setup time relative to occupation time. Witness distinctions remain structural even at zero setup gap; varying declared gaps change the emphasis smoothly, without encoding a particular intervention threshold."
+    },
+    {
+      "name": "g24_cross_boundary_pair_discount",
+      "features": [
+        {
+          "name": "outside_root_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_pair_min - max(0, outside_root_pair_min - neighbor_pair_min - residual_pair_min) / (1 + degree))",
+      "rationale": "Account for edges linking excluded neighbors to the retained compatible set, obtained by subtracting the two induced-subgraph pair sums from the graph without the root. Alternatives that also conflict with valuable retained contacts are less costly to sacrifice. Neighbor redundancy still distinguishes the concrete witnesses, and the extra boundary signal explores a broader structural mechanism at higher feature cost."
+    }
+  ],
+  "request_files": [
+    "experiments/discovery/v03/training_context.json",
+    "experiments/discovery/v03/guided_witnesses.json"
+  ]
+}

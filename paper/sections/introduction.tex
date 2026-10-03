@@ -1,0 +1,88 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Selecting a satellite--ground contact commits scarce communication resources
+and removes competing opportunities. Its reward alone does not determine
+its value: the reward forgone also depends on whether the excluded
+alternatives could have been scheduled together. Ground-station switching
+intervals and satellite resource constraints change these relationships,
+even when contact windows and rewards remain fixed. Scheduling methods
+already account for coupled operational resources~\cite{augenstein2016optimal,
+levinson2025optimal,tao2023transmitting}. We study contact selection under
+hard constraints represented by pairwise conflicts, where a reusable
+maximum-weight independent set (MWIS) heuristic must respond to different
+static resource configurations.
+
+Large language models (LLMs) offer a way to synthesize such heuristics as
+executable programs. FunSearch, EoH, and ReEvo search priority functions,
+heuristic code, and reflective revisions using objective
+feedback~\cite{romeraparedes2024funsearch,liu2024eoh,ye2024reevo}.
+DRAGON uses decomposition and reconstruction agents with boundary
+constraints and checker feedback during instance
+optimization~\cite{chen2026dragon}. These approaches motivate a more
+specific synthesis question: when a ranking failure reflects information
+missing from the scoring interface, how should the synthesizer discover
+and repair that interface? Repeatedly changing a formula cannot satisfy
+incompatible strict rankings over identical observable inputs.
+
+Figure~\ref{fig:motivation} illustrates the obstruction. Competing contacts
+$a$ and $b$ each have reward $8$ and conflict with three peripheral
+alternatives of reward $6$, yet those alternatives have different internal
+conflicts. Before a
+ground-station switching intervention, forcing $a$ or $b$ permits additional
+completion rewards $20$ or $26$; afterward, the values are $20$ or $14$.
+The certified preference changes from $b$ to $a$, while both remain
+individually feasible and share the complete base feature vector within
+each state. Every deterministic pointwise scorer of that vector assigns
+them equal scores. Configuration fields shared by both actions do not
+resolve the contradiction. A neighborhood-edge feature exposes the missing
+distinction; these conditional values describe forced completions, not
+the reward of an unrestricted heuristic rollout.
+
+We propose certified representation--rule refinement: an offline synthesis
+framework that turns decision evidence into explicit targets for structural
+feature construction. Counterexample-guided refinement and learned planning
+features provide established precedents~\cite{clarke2000cegar,
+frances2021policies}. Sound conditional-completion bounds specify action
+preferences under replayed commitments. Projecting the accumulated strict
+relations onto exact feature-equivalence classes exposes directed cycles,
+which certify an information obstruction for the current interface.
+Concrete witnesses retain both ranking relations and the equality joins
+that close each cycle. They direct LLM proposals toward graph operations
+that distinguish the implicated occurrences. A finite feature master and
+repeated full-quotient checks then select a cost-aware repair before rule
+synthesis proceeds over the refined interface.
+
+Comparisons replay actual incumbent rollout boundaries. Feasible schedules
+supply lower bounds and clique envelopes bound the full residual completion
+space; strict separation certifies reversals and preservations, while
+unresolved queries remain unknown. Typed features compile into shared DAGs
+with incremental residual aggregates. Selection charges actual compiled work
+alongside complete-schedule reward and consistency, distinguishing deployment
+cost from the additive repair surrogate.
+
+Our contributions are:
+\begin{enumerate}
+\item \textbf{Decision-relevant certified specifications.}
+We develop rollout-anchored boundary replay and sound full-residual clique
+bounds to certify reversal and preservation requirements across controlled
+resource interventions.
+\item \textbf{Witness-guided representation repair.}
+We characterize finite pointwise representability by quotient acyclicity
+and formulate equality-join separation as feature selection. Globally
+solved masters terminating with an acyclic quotient minimize additive cost
+over the fixed evidence, finite proposal catalogue, and declared feature limit.
+\item \textbf{Executable joint refinement.}
+We synthesize typed feature--rule pairs, share and incrementally maintain
+their graph computations, and select frozen programs using specification
+consistency, complete-schedule quality, and compiled computation cost.
+\end{enumerate}
+
+The fixed constructive kernel enforces feasibility throughout deployment.
+Quotient acyclicity establishes representability of observed relations by
+an unrestricted pointwise score; realizability in the permitted rule
+language requires a separate check. Neither relational consistency nor
+shared feature execution guarantees global schedule quality or
+generalization. The evaluation therefore separates information repair,
+decision relevance, discovery cost, and held-out quality--cost tradeoffs,
+using independent synthesis requests with matched proposal counts.

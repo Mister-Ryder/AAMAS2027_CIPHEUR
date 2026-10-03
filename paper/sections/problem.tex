@@ -1,0 +1,88 @@
+\section{Problem Setting}
+\label{sec:problem}
+
+We consider a finite set $V$ of satellite--ground contact opportunities.
+Each contact $v$ specifies a satellite $\sigma_v$, a ground station
+$\gamma_v$, a fixed communication interval $[s_v,e_v)$, and a nonnegative
+reward $w_v$. Selecting $v$ reserves that opportunity for its full interval.
+For source-derived contacts, the reward is link duration,
+$w_v=e_v-s_v$; synthetic instances allow independent nonnegative rewards.
+A resource configuration $\theta$ determines which pairs can coexist.
+The configuration remains fixed throughout a scheduling run.
+Figure~\ref{fig:problem} illustrates how contact intervals become a
+conflict graph and how a selected independent set maps back to a schedule.
+
+Graph construction is model-specific. For contacts $u,v$ ordered by start
+time, a shared ground station creates a conflict when $s_v<e_u+\tau_g$,
+where $\tau_g\geq0$ is the station transition time.
+Shared-satellite conflicts depend on nonnegative change and transition
+thresholds $\tau_c,\tau_t$ and the interval relation.
+Source-derived instances retain their declared satellite predicate,
+including its admissible crossing overlaps.\footnote{For a common satellite,
+equal starts or containment create conflicts. A crossing overlap
+$s_u<s_v<e_u<e_v$ conflicts exactly when $e_u-s_v<\tau_c$;
+nonoverlapping intervals conflict when $s_v-e_u<\tau_t$.}
+Synthetic probes use a separately declared single-capacity overlap model.
+An intervention changes parameter values while preserving the chosen
+model's semantics.
+
+The resulting weighted graph is $G_\theta=(V,E_\theta,w)$, with an
+undirected edge for every pair rejected by the chosen predicates.
+Let $w(I)=\sum_{v\in I}w_v$. Feasible selections are independent sets,
+and contact selection is maximum-weight independent set (MWIS):
+\begin{equation}
+ \max_{\substack{I\subseteq V\\
+                 I\text{ independent in }G_\theta}}w(I).
+ \label{eq:mwis}
+\end{equation}
+This formulation requires the evaluated hard constraints to be fully
+represented by pairwise conflicts; feasibility is relative to those
+resource predicates.
+
+A boundary $B=(F,X)$ records previously selected contacts $F$ and explicit
+exclusions $X$. It is admissible when $F$ is independent,
+$F,X\subseteq V$, and $F\cap X=\varnothing$. Let
+$N_\theta(F)=\bigcup_{v\in F}N_\theta(v)$, where $N_\theta(v)$ is the
+neighbor set of $v$. The available actions are
+\begin{equation}
+ R_\theta(B)=V\setminus\bigl(F\cup X\cup N_\theta(F)\bigr).
+ \label{eq:residual}
+\end{equation}
+For a feasible next action $d\in R_\theta(B)$, define its conditional
+completion value as
+\begin{equation}
+ V_\theta(d\mid B)=
+ \max_{\substack{I\text{ independent in }G_\theta\\
+                 F\cup\{d\}\subseteq I,\ I\cap X=\varnothing}}w(I).
+ \label{eq:conditional-value}
+\end{equation}
+This value includes the fixed reward and every globally compatible future
+contact. 
+
+An aligned intervention produces two static configurations
+$\theta_0,\theta_1$ by changing one admissible resource parameter.
+Contacts, resource identities, intervals, rewards, and the boundary are
+shared, and $B$ must remain admissible on both sides.
+We compare competing actions $a,b$ available and adjacent in both graphs.
+Changed conflicts among other contacts can alter their completion values.
+
+A frozen program $P=(\phi,h)$ computes a finite scalar score
+$h(\phi(G_\theta,R,v))$ for each available contact. The fixed scheduling
+kernel repeatedly selects a maximum-score contact, commits it, and removes
+its closed neighborhood from $R$, using a fixed deterministic tie rule.
+Each new commitment is compatible with all previous commitments.
+When $R$ is empty, the kernel returns a complete feasible selection.
+At deployment, adaptation uses the current graph and permitted resource
+fields, with no online LLM or conditional-value oracle calls.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\columnwidth]{figures/problem_setting.drawio.pdf}
+ \Description{Contact intervals for labeled satellites and ground stations,
+ their weighted conflict graph, and the intervals retained in a complete
+ feasible selection.}
+ \caption{From contact opportunities to a complete feasible schedule:
+ resource predicates create conflict edges; vertex weights encode contact
+ rewards; an independent set selects mutually compatible contact intervals.}
+ \label{fig:problem}
+\end{figure}

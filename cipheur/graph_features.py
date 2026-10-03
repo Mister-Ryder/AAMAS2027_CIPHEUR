@@ -36,6 +36,8 @@ GRAPH_OPERATION_TYPES = {
     "count": (("NodeSet|EdgeSet",), "Number"),
     "sum_weights": (("NodeSet",), "Number"),
     "max_weight": (("NodeSet",), "Number"),
+    "clique_cover_weight": (("NodeSet",), "Number"),
+    "greedy_independent_weight": (("NodeSet",), "Number"),
     "edge_min_weight_sum": (("EdgeSet",), "Number"),
     "edge_weight_product_sum": (("EdgeSet",), "Number"),
     "weight": (("Node",), "Number"),
@@ -204,6 +206,48 @@ class _FeatureState:
             _charge(self.meter, "aggregation", len(ordered))
             weights = [graph.nodes[node].weight for node in ordered]
             value = math.fsum(weights) if op == "sum_weights" else max(weights, default=0.0)
+        elif op in ("clique_cover_weight", "greedy_independent_weight"):
+            # Fixed polynomial graph primitives. They do not call a synthesis
+            # provider or conditional oracle, and do not solve neighborhood MWIS.
+            remaining = set(args[0])
+            _charge(self.meter, "set_copy", len(remaining))
+            terms = []
+            if op == "greedy_independent_weight":
+                order = sorted(remaining, key=lambda v: (-graph.nodes[v].weight, v))
+                _charge(self.meter, "weight_read", len(order))
+                for v in order:
+                    _charge(self.meter, "active_membership")
+                    if v not in remaining:
+                        continue
+                    terms.append(graph.nodes[v].weight)
+                    _charge(self.meter, "adjacency_scan", len(graph.adj[v]))
+                    remaining.difference_update(graph.adj[v] | {v})
+            else:
+                order = sorted(remaining, key=lambda v: (-graph.nodes[v].weight, v))
+                _charge(self.meter, "weight_read", len(order))
+                for v in order:
+                    _charge(self.meter, "active_membership")
+                    if v not in remaining:
+                        continue
+                    clique = [v]
+                    remaining.remove(v)
+                    for u in order:
+                        _charge(self.meter, "active_membership")
+                        if u not in remaining:
+                            continue
+                        compatible = True
+                        for q in clique:
+                            _charge(self.meter, "adjacency_membership")
+                            if u not in graph.adj[q]:
+                                compatible = False
+                                break
+                        if compatible:
+                            clique.append(u)
+                            remaining.remove(u)
+                    terms.append(max(graph.nodes[q].weight for q in clique))
+                    _charge(self.meter, "weight_read", len(clique))
+            _charge(self.meter, "aggregation", len(terms))
+            value = math.fsum(terms)
         elif op in ("edge_min_weight_sum", "edge_weight_product_sum"):
             edges = sorted(args[0])
             _charge(self.meter, "weight_read", 2 * len(edges))

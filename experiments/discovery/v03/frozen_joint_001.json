@@ -1,0 +1,704 @@
+{
+  "programs": {
+    "free": {
+      "name": "free_04_pair_discounted_deletion",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_edge_min)",
+      "rationale": "Discount the sum of deleted neighbor weights by the minimum endpoint weight on each internal neighborhood edge. Such an edge prevents taking both endpoints together. Clamp the discounted estimate at the largest single conflicting contact because pair discounts can overcount in dense graphs. This is a compact local structural surrogate that avoids running a packing or cover primitive."
+    },
+    "rule": {
+      "name": "rule_only_conflict_mass_efficiency",
+      "features": [],
+      "rule": "weight / (1 + conflict_weight)",
+      "rationale": "Normalize immediate reward by the total reward of its current conflicts. This weighted opportunity-cost strategy replaces conflict counting with reward exposure and therefore distinguishes blocking many negligible contacts from blocking valuable contacts. Conflict mass is an aggregate proxy rather than the attainable reward of those contacts, since the supplied base features do not reveal whether the neighbors can coexist. The additive constant handles zero exposure."
+    },
+    "enumerated": {
+      "name": "enum_edge_min_2",
+      "features": [
+        {
+          "name": "f",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.6*conflict_weight+f/max(1,degree)",
+      "rationale": "Prespecified deterministic expression enumeration."
+    },
+    "guided_no_cost": {
+      "name": "g18_retained_bracket_midpoint",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + (residual_cover + residual_greedy) / 2",
+      "rationale": "Use a midpoint of optimistic and feasible retained continuation estimates. The witness reversal arises because the retained structure changes; combining both estimates aims to temper optimistic cover scores and greedy underestimation on larger residual graphs, while exposing an explicit two-primitive cost tradeoff."
+    },
+    "guided_no_consistency": {
+      "name": "g05_diminishing_pair_discount",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - conflict_weight + min(conflict_weight, neighbor_pair_min / (1 + neighbor_edge_count / max(1, degree)))",
+      "rationale": "A triangle contributes three pair edges but only one collectible alternative. Apply diminishing returns to accumulated edge-minimum redundancy to reduce overcounting in dense neighborhoods; the edge versus clique witnesses still produce distinct scores. Two inexpensive features trade arithmetic simplicity against a softer loss estimate."
+    },
+    "guided_no_master": {
+      "name": "g05_diminishing_pair_discount",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - conflict_weight + min(conflict_weight, neighbor_pair_min / (1 + neighbor_edge_count / max(1, degree)))",
+      "rationale": "A triangle contributes three pair edges but only one collectible alternative. Apply diminishing returns to accumulated edge-minimum redundancy to reduce overcounting in dense neighborhoods; the edge versus clique witnesses still produce distinct scores. Two inexpensive features trade arithmetic simplicity against a softer loss estimate."
+    },
+    "guided_minimum_interface": {
+      "name": "g03_density_adjusted_weight_pressure",
+      "features": [
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * (1 + 2 * neighbor_edge_count / max(1, degree * (degree - 1))) / (1 + conflict_weight / max(0.000001, weight))",
+      "rationale": "Combine a normalized neighbor density bonus with relative conflict weight. The witness preference changes with induced density rather than a changed base feature; normalization transfers to larger degrees and weight scales while retaining a simple ratio rule."
+    },
+    "guided": {
+      "name": "g05_diminishing_pair_discount",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - conflict_weight + min(conflict_weight, neighbor_pair_min / (1 + neighbor_edge_count / max(1, degree)))",
+      "rationale": "A triangle contributes three pair edges but only one collectible alternative. Apply diminishing returns to accumulated edge-minimum redundancy to reduce overcounting in dense neighborhoods; the edge versus clique witnesses still produce distinct scores. Two inexpensive features trade arithmetic simplicity against a softer loss estimate."
+    },
+    "guided_low_penalty": {
+      "name": "g05_diminishing_pair_discount",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - conflict_weight + min(conflict_weight, neighbor_pair_min / (1 + neighbor_edge_count / max(1, degree)))",
+      "rationale": "A triangle contributes three pair edges but only one collectible alternative. Apply diminishing returns to accumulated edge-minimum redundancy to reduce overcounting in dense neighborhoods; the edge versus clique witnesses still produce distinct scores. Two inexpensive features trade arithmetic simplicity against a softer loss estimate."
+    },
+    "guided_high_penalty": {
+      "name": "g05_diminishing_pair_discount",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - conflict_weight + min(conflict_weight, neighbor_pair_min / (1 + neighbor_edge_count / max(1, degree)))",
+      "rationale": "A triangle contributes three pair edges but only one collectible alternative. Apply diminishing returns to accumulated edge-minimum redundancy to reduce overcounting in dense neighborhoods; the edge versus clique witnesses still produce distinct scores. Two inexpensive features trade arithmetic simplicity against a softer loss estimate."
+    },
+    "guided_one_feature": {
+      "name": "g01_capped_pair_redundancy",
+      "features": [
+        {
+          "name": "neighbor_pair_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_pair_min)",
+      "rationale": "Equal base vectors in the certified witnesses hide a change from independent neighbors to one edge and then a clique. Discount pairwise conflict weight that cannot all be collected, cap the discount so at least the heaviest alternative remains, and use one cheap structural feature. The pair sum can overcount overlapping edges; the cap limits that approximation."
+    },
+    "guided_natural_validation": {
+      "name": "g12_neighborhood_greedy_value_ratio",
+      "features": [
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(0.000001, weight, neighbor_greedy)",
+      "rationale": "Compare root weight with a deterministically constructed independent alternative within its neighborhood. This ratio is invariant to positive weight rescaling and reacts to the witnessed edge and clique compression. The primitive is polynomial and supplies a feasible lower estimate, with order-dependent looseness acknowledged."
+    }
+  },
+  "test_accessed": false,
+  "candidate_budget_per_arm": 24,
+  "assistant_generation_calls_per_arm": 1,
+  "API_calls": 0,
+  "selection": {
+    "lambda": 0.002,
+    "tau": 0.75,
+    "validation_max_n": 128,
+    "joint_feature_rule_utility": true,
+    "minimum_interface_is_ablation": true,
+    "matched_candidate_counts": true
+  },
+  "known_scope": "one_assistant_batch_per_arm_no_token_count_available",
+  "input_sha256": {
+    "/root/autodl-tmp/aamas2027_v03/runs/development_scale_001/data.json": "7ec32a0ebf0588c1f8fd8b3b522975c0743d84be53bb05ecb5d00bb8b9db5342",
+    "/root/autodl-tmp/aamas2027_v03/runs/development_scale_001/results.jsonl": "6405fd446cc245781a15f3ca93610c712d05a2723bbfec44269c63d696625bfd",
+    "experiments/discovery/v03/seed_specifications.json": "eac7c794e47e5ba8b6a42bc513e33d3d9ac0bba90a696c5bdb5ba250cc16f533",
+    "experiments/discovery/v03/guided_batch.json": "e1c69b95ce72f06a42a94cabd30bdf4f8d21fbad9f67225620c0bc355d5112bc",
+    "experiments/discovery/v03/free_batch.json": "b642fb86bb3cb53616c41e38f5fb18791b2887274728dd6470e0fe786783b79d",
+    "experiments/discovery/v03/rule_batch.json": "5f774083b00ef433e52f432804cc98ba1330e8bd03242cebab3549a885ce2d7d"
+  },
+  "selection_details": [
+    {
+      "label": "guided",
+      "eligible": 24,
+      "program": "g05_diminishing_pair_discount",
+      "quality": 0.993220243812037,
+      "work": 51820.91935483871,
+      "consistency": 0.9722222222222222,
+      "lambda": 0.002,
+      "feature_limit": 6,
+      "natural_validation_only": false
+    },
+    {
+      "label": "free",
+      "eligible": 24,
+      "program": "free_04_pair_discounted_deletion",
+      "quality": 0.9903574263112709,
+      "work": 47451.1129032258,
+      "consistency": 0.9444444444444444,
+      "lambda": 0.002,
+      "feature_limit": 6,
+      "natural_validation_only": false
+    },
+    {
+      "label": "enumerated",
+      "eligible": 12,
+      "program": "enum_edge_min_2",
+      "quality": 0.9943899913896573,
+      "work": 46915.959677419356,
+      "consistency": 0.9722222222222222,
+      "lambda": 0.002,
+      "feature_limit": 6,
+      "natural_validation_only": false
+    },
+    {
+      "label": "guided_low_penalty",
+      "eligible": 24,
+      "program": "g05_diminishing_pair_discount",
+      "quality": 0.993220243812037,
+      "work": 51820.91935483871,
+      "consistency": 0.9722222222222222,
+      "lambda": 0.0005,
+      "feature_limit": 6,
+      "natural_validation_only": false
+    },
+    {
+      "label": "guided_high_penalty",
+      "eligible": 24,
+      "program": "g05_diminishing_pair_discount",
+      "quality": 0.993220243812037,
+      "work": 51820.91935483871,
+      "consistency": 0.9722222222222222,
+      "lambda": 0.008,
+      "feature_limit": 6,
+      "natural_validation_only": false
+    },
+    {
+      "label": "guided_one_feature",
+      "eligible": 11,
+      "program": "g01_capped_pair_redundancy",
+      "quality": 0.9903574263112709,
+      "work": 47451.1129032258,
+      "consistency": 0.9444444444444444,
+      "lambda": 0.002,
+      "feature_limit": 1,
+      "natural_validation_only": false
+    },
+    {
+      "label": "guided_natural_validation",
+      "eligible": 24,
+      "program": "g12_neighborhood_greedy_value_ratio",
+      "quality": 0.9930166884125979,
+      "work": 71920.37903225806,
+      "consistency": 0.9722222222222222,
+      "lambda": 0.002,
+      "feature_limit": 6,
+      "natural_validation_only": true
+    }
+  ],
+  "joint_prefix_curves": [
+    {
+      "arm": "guided",
+      "budget": 8,
+      "eligible": 8,
+      "name": "g05_diminishing_pair_discount",
+      "quality": 0.993220243812037,
+      "work": 51820.91935483871,
+      "consistency": 0.9722222222222222
+    },
+    {
+      "arm": "guided",
+      "budget": 16,
+      "eligible": 16,
+      "name": "g05_diminishing_pair_discount",
+      "quality": 0.993220243812037,
+      "work": 51820.91935483871,
+      "consistency": 0.9722222222222222
+    },
+    {
+      "arm": "guided",
+      "budget": 24,
+      "eligible": 24,
+      "name": "g05_diminishing_pair_discount",
+      "quality": 0.993220243812037,
+      "work": 51820.91935483871,
+      "consistency": 0.9722222222222222
+    },
+    {
+      "arm": "free",
+      "budget": 8,
+      "eligible": 8,
+      "name": "free_04_pair_discounted_deletion",
+      "quality": 0.9903574263112709,
+      "work": 47451.1129032258,
+      "consistency": 0.9444444444444444
+    },
+    {
+      "arm": "free",
+      "budget": 16,
+      "eligible": 16,
+      "name": "free_04_pair_discounted_deletion",
+      "quality": 0.9903574263112709,
+      "work": 47451.1129032258,
+      "consistency": 0.9444444444444444
+    },
+    {
+      "arm": "free",
+      "budget": 24,
+      "eligible": 24,
+      "name": "free_04_pair_discounted_deletion",
+      "quality": 0.9903574263112709,
+      "work": 47451.1129032258,
+      "consistency": 0.9444444444444444
+    },
+    {
+      "arm": "rule",
+      "budget": 8,
+      "eligible": 8,
+      "name": "rule_only_conflict_mass_efficiency",
+      "quality": 0.9941677969963829,
+      "work": 43971.040322580644,
+      "consistency": 0.1111111111111111
+    },
+    {
+      "arm": "rule",
+      "budget": 16,
+      "eligible": 16,
+      "name": "rule_only_conflict_mass_efficiency",
+      "quality": 0.9941677969963829,
+      "work": 43971.040322580644,
+      "consistency": 0.1111111111111111
+    },
+    {
+      "arm": "rule",
+      "budget": 24,
+      "eligible": 24,
+      "name": "rule_only_conflict_mass_efficiency",
+      "quality": 0.9941677969963829,
+      "work": 43971.040322580644,
+      "consistency": 0.1111111111111111
+    },
+    {
+      "arm": "enumerated",
+      "budget": 8,
+      "eligible": 3,
+      "name": "enum_edge_count_2",
+      "quality": 0.9934801823905559,
+      "work": 45753.25,
+      "consistency": 1.0
+    },
+    {
+      "arm": "enumerated",
+      "budget": 16,
+      "eligible": 8,
+      "name": "enum_edge_min_2",
+      "quality": 0.9943899913896573,
+      "work": 46915.959677419356,
+      "consistency": 0.9722222222222222
+    },
+    {
+      "arm": "enumerated",
+      "budget": 24,
+      "eligible": 12,
+      "name": "enum_edge_min_2",
+      "quality": 0.9943899913896573,
+      "work": 46915.959677419356,
+      "consistency": 0.9722222222222222
+    }
+  ],
+  "input_assessments_sha256": "4193c3df2bb822f13a97e2228ffe1e7ed9f6233b3245171e2977a77563d9298f",
+  "protocol": "Declared before opening any test outcome; no new candidate generation."
+}

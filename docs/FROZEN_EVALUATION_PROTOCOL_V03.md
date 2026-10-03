@@ -1,0 +1,9 @@
+# Pre-test evaluation protocol
+
+Primary: 420 prespecified test pairs, 840 graph contexts, immutable feature--rule programs. Additional transfer: 108 dense/long-contact pairs, 216 contexts, n=64/128/256 and three resource regimes. Dense profile horizon=0.18n, duration uniform quarter units in [0.5,48], unchanged reward generation; new seed range. Transfer outcomes are never used for candidate selection.
+
+Joint selection compares whole acyclic, consistency-eligible feature--rule pairs using validation quality minus lambda=0.002 compiled cost. The globally cheapest additive feature interface is retained as a separate ablation, because imposing it before quality selection can exclude valuable representations. This protocol is written before opening any test outcome. Low/high penalties, one-feature limit, and natural-validation-only selection are additional frozen controls. Proposal banks remain byte-identical; no new generation occurs.
+
+Primary hypothesis: witness-guided proposals improve specification consistency at a competitive quality/computation tradeoff. Separate hypotheses: clique bounds improve certificate yield per search node; full-quotient separation rejects incomplete repairs; compiled evaluation preserves exact traces and lowers measured work/time. Natural-workload quotient contradictions are an incidence measurement, not an assumed fact. Negative or null findings must remain.
+
+Inference: keep both configurations of each pair together. Temporal aggregate intervals cluster the common seed across regimes; C3 resamples entire original-contact blocks. Families are reported separately. Solver reference is a floating MILP upper bound, not a formal exact-optimum certificate. Source verifier is reconstructed from original C3 IDs and predicates for every saved selection.

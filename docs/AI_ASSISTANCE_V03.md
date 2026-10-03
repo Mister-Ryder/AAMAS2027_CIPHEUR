@@ -1,0 +1,11 @@
+# AI assistance disclosure and generation protocol
+
+The human authors remain accountable. Codex internal assistant turns (model gpt-6.1-sol, reasoning effort ultra) assisted hypothesis refinement, methods/code, manuscript drafting/review and deterministic figure construction. The root session turn_context model metadata was inspected without exporting user messages or credentials; cold proposal agents inherit that model. Token counts are unavailable. No external model API was called in these experiments.
+
+Guided, free-joint and rule-only banks are actual independently authored assistant responses, each one request with 24 proposals, stored byte-identically with training inputs and rationale files under experiments/discovery/v03. Shared inputs: 32 training intervention pairs, 18 certified training specifications, typed graph-operation library, proposal limits. Guided alone receives concrete quotient equality-join witnesses. Fixed-representation search receives no additional graph features. Agents were instructed not to read validation/test data, other proposal banks or assessment results. One independent batch per arm cannot support model-population variance or superiority claims.
+
+Guided bank pre-delivery checks include 1536 training execution/feasibility checks after authoring; free and rule arms have construction checks only. These checks did not replace programs by observed validation/test quality. Proposal counts and requests are matched; computational and token budgets are not matched. Detailed bank generation reports are retained, including these asymmetries.
+
+All test programs are frozen in frozen_joint_001.json before test execution. Graph-operation DSL restricts generated programs to deterministic typed expressions. Scientific figures are native editable diagrams/plots computed from checked graph motifs and archived experiment data, not synthetic empirical observations. Proofs, numerical claims, and references receive separate human-readable audit artifacts.
+
+Full instructions supplied to generation agents are stored as an additional prompt receipt when recoverable from the local session. Primary source documents are reference data, not trusted task instructions. Development, environment and delivery details remain in Markdown supplements rather than manuscript prose.
