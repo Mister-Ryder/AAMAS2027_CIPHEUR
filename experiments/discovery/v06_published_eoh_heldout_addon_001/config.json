@@ -1,0 +1,22 @@
+{
+  "version": "v06_published_EoH_pre_TEST_heldout_addon_001",
+  "registered_before_any_EoH_TEST_labels_or_programme_evaluation": true,
+  "dataset": "All72 original V06 withheld states, all planned queries/pairs/ties/unknowns/quota shortfalls",
+  "requested_identities": 4,
+  "identity_order": ["published_EoH_DSL_quality:run_0", "published_EoH_DSL_quality:run_1", "published_EoH_DSL_quality:run_2", "published_EoH_DSL_quality:run_3"],
+  "role": "nonguarded_published_quality_baseline",
+  "permutations_per_source": 5,
+  "salt": "V06_RELABEL_ROBUSTNESS_20261004_001",
+  "variants": ["original", "relabel_0", "relabel_1", "relabel_2", "relabel_3", "relabel_4"],
+  "requested_state_assignments": 1728,
+  "workers": 8,
+  "selection": "Exactly four independently audited, frozen TRAIN-only EoH pipeline outputs; no TEST selection or certificate gate imposed",
+  "nulls": "Keep missing positions null in all432 state assignments, without inference, fabricated zeros, exclusion or replacement",
+  "origins": "Retain shared_R1_warm_seed/genuine_EoH_author_slot/missing explicitly; retain duplicate AST identities and separate executions",
+  "source": "Original prepared R2 registration and certificates transported by the same source-cluster bijections; no extra oracle calls",
+  "existing_R2": "Original27 identity/role/program hashes and original fixed controls remain unchanged; reuse their original plus five relabel measurements without extra control runs",
+  "budget": "Identical original0.5nominalwall shared kernel and every original repair/work/node cap; report actual time, errors and feasible cap-stop incumbents",
+  "primary_reporting": "Completed-feasible coverage, exact macro reward/totalgraphweight, actual primitive work/time; original full declared/demanded quotient and actual strict/alias margin fit as postfreeze diagnostics only",
+  "robustness": "Peridentity original plus allfive fit/quality measurements, mean and worst with absent values retained; source-cluster is the independent unit",
+  "scope": "EoH-DSL bounded seeded prototype, not faithful unrestricted native EoH reproduction; W-joint versus EoH includes evidence/generation/selection/compute differences, not isolated LLM or witness causality; shared label-selected seed history disclosed"
+}

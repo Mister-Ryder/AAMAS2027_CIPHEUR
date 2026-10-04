@@ -1,0 +1,696 @@
+{
+  "version": "v07_scene_input_overlap_001",
+  "source_grain": "one original contact/tracking opportunity, first six normalized columns",
+  "normalization": "strip surrounding ASCII quotes/whitespace from resource labels; exact integer times; no rounding/duration clipping",
+  "source_metadata": [
+    {
+      "name": "C1.csv",
+      "sha256": "aa54d2a7f33d43df3e73a74ecd5b4cdc0086c0f3b4b99a894b4e457bf45eaf5a",
+      "bytes": 1562483,
+      "rows": 23598,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "C2.csv",
+      "sha256": "fdce63126a0d260a99e77b671adebd5ba498f08719399056d141ee0145c512a2",
+      "bytes": 3114862,
+      "rows": 46818,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "C3.csv",
+      "sha256": "ec95f50c11d800f051e218aa1e414df873ddd12e1f71ce911da3ba28adff647e",
+      "bytes": 4682663,
+      "rows": 69923,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "C4.csv",
+      "sha256": "0b40f2383a3cd7ba05315bbb39345dbc57f3ddb0039fa934552cee3cbdfc578d",
+      "bytes": 6254745,
+      "rows": 93153,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "C5.csv",
+      "sha256": "aa6c705f50fcaec89638db1be20fd0f70f24989162501c6d82d8e8b37d66817b",
+      "bytes": 7844691,
+      "rows": 116755,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "C6.csv",
+      "sha256": "2e6b398fe2a6cee1497ab3eccf45d0108bdb30b4f2fa6c12f276e2028c9446cb",
+      "bytes": 9433020,
+      "rows": 140406,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "W1.csv",
+      "sha256": "7a7fb47257417afe84430b9dcda03391d6aa283ec7f52283475cce0172a8e65a",
+      "bytes": 3173426,
+      "rows": 46542,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "W2.csv",
+      "sha256": "4826680c60c7848dc114c60fed1b27c646572d517ac0e59dcdf55cb83643ef75",
+      "bytes": 6361038,
+      "rows": 93068,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "W3.csv",
+      "sha256": "73fb7cfe7d5f6e522cf1e437f86b5b5b1f1a1652a0a68e6bc434f41ba30b485e",
+      "bytes": 9554276,
+      "rows": 139690,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "W4.csv",
+      "sha256": "69f6f86b6867d8a1c02b4e3522cad3768cd292094f657db2d8657ea3a4b989b1",
+      "bytes": 12746341,
+      "rows": 186320,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "W5.csv",
+      "sha256": "5ac896dff8682a04cfce107a8bfa19189163026ec6a276579d99f73cae74659c",
+      "bytes": 15938726,
+      "rows": 232967,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    },
+    {
+      "name": "W6.csv",
+      "sha256": "c0fe378c68400d985c05617d89e41b320df03e6565b91ac7ad6821a6659e01ca",
+      "bytes": 19125726,
+      "rows": 279521,
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ]
+    }
+  ],
+  "all_within_series_containments": [
+    {
+      "left": "C1.csv",
+      "right": "C2.csv",
+      "left_unique": 23598,
+      "right_unique": 46818,
+      "intersection": 23598,
+      "left_only": 0,
+      "right_only": 23220,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C1.csv",
+      "right": "C3.csv",
+      "left_unique": 23598,
+      "right_unique": 69923,
+      "intersection": 23598,
+      "left_only": 0,
+      "right_only": 46325,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C1.csv",
+      "right": "C4.csv",
+      "left_unique": 23598,
+      "right_unique": 93153,
+      "intersection": 23598,
+      "left_only": 0,
+      "right_only": 69555,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C1.csv",
+      "right": "C5.csv",
+      "left_unique": 23598,
+      "right_unique": 116755,
+      "intersection": 23598,
+      "left_only": 0,
+      "right_only": 93157,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C1.csv",
+      "right": "C6.csv",
+      "left_unique": 23598,
+      "right_unique": 140406,
+      "intersection": 23598,
+      "left_only": 0,
+      "right_only": 116808,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C2.csv",
+      "right": "C3.csv",
+      "left_unique": 46818,
+      "right_unique": 69923,
+      "intersection": 46818,
+      "left_only": 0,
+      "right_only": 23105,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C2.csv",
+      "right": "C4.csv",
+      "left_unique": 46818,
+      "right_unique": 93153,
+      "intersection": 46818,
+      "left_only": 0,
+      "right_only": 46335,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C2.csv",
+      "right": "C5.csv",
+      "left_unique": 46818,
+      "right_unique": 116755,
+      "intersection": 46818,
+      "left_only": 0,
+      "right_only": 69937,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C2.csv",
+      "right": "C6.csv",
+      "left_unique": 46818,
+      "right_unique": 140406,
+      "intersection": 46818,
+      "left_only": 0,
+      "right_only": 93588,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C3.csv",
+      "right": "C4.csv",
+      "left_unique": 69923,
+      "right_unique": 93153,
+      "intersection": 69923,
+      "left_only": 0,
+      "right_only": 23230,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C3.csv",
+      "right": "C5.csv",
+      "left_unique": 69923,
+      "right_unique": 116755,
+      "intersection": 69923,
+      "left_only": 0,
+      "right_only": 46832,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C3.csv",
+      "right": "C6.csv",
+      "left_unique": 69923,
+      "right_unique": 140406,
+      "intersection": 69923,
+      "left_only": 0,
+      "right_only": 70483,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C4.csv",
+      "right": "C5.csv",
+      "left_unique": 93153,
+      "right_unique": 116755,
+      "intersection": 93153,
+      "left_only": 0,
+      "right_only": 23602,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C4.csv",
+      "right": "C6.csv",
+      "left_unique": 93153,
+      "right_unique": 140406,
+      "intersection": 93153,
+      "left_only": 0,
+      "right_only": 47253,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "C5.csv",
+      "right": "C6.csv",
+      "left_unique": 116755,
+      "right_unique": 140406,
+      "intersection": 116755,
+      "left_only": 0,
+      "right_only": 23651,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W1.csv",
+      "right": "W2.csv",
+      "left_unique": 46542,
+      "right_unique": 93068,
+      "intersection": 46542,
+      "left_only": 0,
+      "right_only": 46526,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W1.csv",
+      "right": "W3.csv",
+      "left_unique": 46542,
+      "right_unique": 139690,
+      "intersection": 46542,
+      "left_only": 0,
+      "right_only": 93148,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W1.csv",
+      "right": "W4.csv",
+      "left_unique": 46542,
+      "right_unique": 186320,
+      "intersection": 46542,
+      "left_only": 0,
+      "right_only": 139778,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W1.csv",
+      "right": "W5.csv",
+      "left_unique": 46542,
+      "right_unique": 232967,
+      "intersection": 46542,
+      "left_only": 0,
+      "right_only": 186425,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W1.csv",
+      "right": "W6.csv",
+      "left_unique": 46542,
+      "right_unique": 279521,
+      "intersection": 46542,
+      "left_only": 0,
+      "right_only": 232979,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W2.csv",
+      "right": "W3.csv",
+      "left_unique": 93068,
+      "right_unique": 139690,
+      "intersection": 93068,
+      "left_only": 0,
+      "right_only": 46622,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W2.csv",
+      "right": "W4.csv",
+      "left_unique": 93068,
+      "right_unique": 186320,
+      "intersection": 93068,
+      "left_only": 0,
+      "right_only": 93252,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W2.csv",
+      "right": "W5.csv",
+      "left_unique": 93068,
+      "right_unique": 232967,
+      "intersection": 93068,
+      "left_only": 0,
+      "right_only": 139899,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W2.csv",
+      "right": "W6.csv",
+      "left_unique": 93068,
+      "right_unique": 279521,
+      "intersection": 93068,
+      "left_only": 0,
+      "right_only": 186453,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W3.csv",
+      "right": "W4.csv",
+      "left_unique": 139690,
+      "right_unique": 186320,
+      "intersection": 139690,
+      "left_only": 0,
+      "right_only": 46630,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W3.csv",
+      "right": "W5.csv",
+      "left_unique": 139690,
+      "right_unique": 232967,
+      "intersection": 139690,
+      "left_only": 0,
+      "right_only": 93277,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W3.csv",
+      "right": "W6.csv",
+      "left_unique": 139690,
+      "right_unique": 279521,
+      "intersection": 139690,
+      "left_only": 0,
+      "right_only": 139831,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W4.csv",
+      "right": "W5.csv",
+      "left_unique": 186320,
+      "right_unique": 232967,
+      "intersection": 186320,
+      "left_only": 0,
+      "right_only": 46647,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W4.csv",
+      "right": "W6.csv",
+      "left_unique": 186320,
+      "right_unique": 279521,
+      "intersection": 186320,
+      "left_only": 0,
+      "right_only": 93201,
+      "left_subset_of_right": true
+    },
+    {
+      "left": "W5.csv",
+      "right": "W6.csv",
+      "left_unique": 232967,
+      "right_unique": 279521,
+      "intersection": 232967,
+      "left_only": 0,
+      "right_only": 46554,
+      "left_subset_of_right": true
+    }
+  ],
+  "C6_vs_W6_opportunity_keys": {
+    "left_unique": 140406,
+    "right_unique": 279521,
+    "intersection": 0,
+    "left_only": 140406,
+    "right_only": 279521,
+    "left_subset_of_right": false
+  },
+  "canonical_chronological_splits": {
+    "C6.csv": {
+      "split_role_candidate": {
+        "day_0": "TRAIN",
+        "day_1": "validation",
+        "day_2": "retrospective_temporal_TEST"
+      },
+      "no_same_opportunity_key_between_days": true,
+      "opportunity_key_split_relations": [
+        {
+          "left_start_day": 0,
+          "right_start_day": 1,
+          "left_unique": 47156,
+          "right_unique": 46664,
+          "intersection": 0,
+          "left_only": 47156,
+          "right_only": 46664,
+          "left_subset_of_right": false
+        },
+        {
+          "left_start_day": 0,
+          "right_start_day": 2,
+          "left_unique": 47156,
+          "right_unique": 46586,
+          "intersection": 0,
+          "left_only": 47156,
+          "right_only": 46586,
+          "left_subset_of_right": false
+        },
+        {
+          "left_start_day": 1,
+          "right_start_day": 2,
+          "left_unique": 46664,
+          "right_unique": 46586,
+          "intersection": 0,
+          "left_only": 46664,
+          "right_only": 46586,
+          "left_subset_of_right": false
+        }
+      ],
+      "boundary_contacts": [
+        {
+          "start_day": 0,
+          "assigned_rows": 47156,
+          "link_end_after_day_boundary": 556,
+          "tracking_end_after_day_boundary": 565
+        },
+        {
+          "start_day": 1,
+          "assigned_rows": 46664,
+          "link_end_after_day_boundary": 552,
+          "tracking_end_after_day_boundary": 560
+        },
+        {
+          "start_day": 2,
+          "assigned_rows": 46586,
+          "link_end_after_day_boundary": 0,
+          "tracking_end_after_day_boundary": 500
+        }
+      ],
+      "whole_day_unique_counts": [
+        47156,
+        46664,
+        46586
+      ]
+    },
+    "W6.csv": {
+      "split_role_candidate": {
+        "day_0": "TRAIN",
+        "day_1": "validation",
+        "day_2": "retrospective_temporal_TEST"
+      },
+      "no_same_opportunity_key_between_days": true,
+      "opportunity_key_split_relations": [
+        {
+          "left_start_day": 0,
+          "right_start_day": 1,
+          "left_unique": 93877,
+          "right_unique": 92926,
+          "intersection": 0,
+          "left_only": 93877,
+          "right_only": 92926,
+          "left_subset_of_right": false
+        },
+        {
+          "left_start_day": 0,
+          "right_start_day": 2,
+          "left_unique": 93877,
+          "right_unique": 92718,
+          "intersection": 0,
+          "left_only": 93877,
+          "right_only": 92718,
+          "left_subset_of_right": false
+        },
+        {
+          "left_start_day": 1,
+          "right_start_day": 2,
+          "left_unique": 92926,
+          "right_unique": 92718,
+          "intersection": 0,
+          "left_only": 92926,
+          "right_only": 92718,
+          "left_subset_of_right": false
+        }
+      ],
+      "boundary_contacts": [
+        {
+          "start_day": 0,
+          "assigned_rows": 93877,
+          "link_end_after_day_boundary": 1099,
+          "tracking_end_after_day_boundary": 1122
+        },
+        {
+          "start_day": 1,
+          "assigned_rows": 92926,
+          "link_end_after_day_boundary": 1117,
+          "tracking_end_after_day_boundary": 1131
+        },
+        {
+          "start_day": 2,
+          "assigned_rows": 92718,
+          "link_end_after_day_boundary": 0,
+          "tracking_end_after_day_boundary": 1004
+        }
+      ],
+      "whole_day_unique_counts": [
+        93877,
+        92926,
+        92718
+      ]
+    }
+  },
+  "no_scheduling_oracle_or_model_execution": true,
+  "limits": [
+    "Original row disjointness does not establish independence of recurring resources or temporal context.",
+    "Boundary-crossing contacts remain intact; separately solved windows cannot be stitched into a feasible whole-day schedule.",
+    "An input-compatible dataset does not establish strict representation conflicts, certified transfer, or optimizer advantage.",
+    "Prior C3 exposure remains documented; metadata inspection is not a corpus-unseen experiment."
+  ]
+}

@@ -1,0 +1,12 @@
+2026-10-03T15:33:58.454284Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T15:33:58.454353Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T15:33:58.465888Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T15:34:03.426687Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T15:34:03.426830Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL: error sending request for url (https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL)
+2026-10-03T15:34:06.762985Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T15:34:06.763026Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T15:34:29.511407Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"Failed to create unified exec process: helper_unknown_error: apply deny-read ACLs\")" }
+2026-10-03T15:35:07.796118Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a10266-9014-7032-a970-25e6937f67a9: invalid thread-store request: no rollout found for thread id 01a10266-9014-7032-a970-25e6937f67a9
+2026-10-03T15:38:38.435781Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T15:42:40.241154Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a10266-90b0-7212-a541-2633594de1df hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)
+2026-10-03T15:43:05.251404Z  WARN codex_analytics::client: timed out or failed while flushing analytics events

@@ -1,0 +1,50 @@
+{
+  "cell": "block_0_objective",
+  "block": 0,
+  "arm": "objective",
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 282.56864738464355,
+  "requested_configuration": {
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "model_reasoning_effort": "ultra",
+    "model_reasoning_summary": null,
+    "profile": null
+  },
+  "observed_model": null,
+  "usage_events": [
+    {
+      "event_type": "turn.completed",
+      "usage": {
+        "input_tokens": 94175,
+        "cached_input_tokens": 59904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6178,
+        "reasoning_output_tokens": 3573
+      }
+    }
+  ],
+  "packet_sha256": "da4bee44ead35790a24d9213fca590cedd075d6ca4874523a5c7ff2a534feb03",
+  "frozen_prompt_sha256": "d3fd6b27671e05b9c1c90127b7baa4da8a8feea6f9dc63c2dc00950400f830aa",
+  "wrapper_prompt_sha256": "496d20fb3f73695ee1b6e82e97cc7d01c74b35a340951d09f0d849bae45d54fb",
+  "response_sha256": "0fa5fd18588bb00ff5408b1be366ea590cb05c7b902f8a61e5fb9d842945af0b",
+  "cli_executable_sha256": "34549ded6e2aee87c911c62d025e52e26c488683d0f489cd68f756baef1a6df6",
+  "command_flags": [
+    "exec",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "--json",
+    "--cd",
+    "ISOLATED_PACKET_DIRECTORY",
+    "--output-last-message",
+    "CONTROLLER_RECEIPT",
+    "-"
+  ],
+  "raw_event_sha256": "2e9ddfcbeefdb5f9094be2725148b81746e2e6039101af649e8f64ada6d5e1eb",
+  "raw_stderr_sha256": "e5137e4cfe7575b75d7ef0f4e220675e93b81b27d0aad1c5dcb6ee57d44f7f44",
+  "no_retry": true,
+  "no_candidate_assessment": true
+}

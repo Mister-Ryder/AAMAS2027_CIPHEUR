@@ -1,0 +1,506 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 1,
+  "arm": "objective",
+  "candidates": [
+    {
+      "name": "mass_ratio",
+      "features": [],
+      "rule": "weight*weight/max(1e-9,weight+conflict_weight)",
+      "rationale": "Balances earned weight against closed-neighborhood weight using inexpensive base features."
+    },
+    {
+      "name": "clique_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(1e-9,weight+neighbor_cover)",
+      "rationale": "Uses the neighborhood clique-cover score to discount competing contacts that cannot coexist."
+    },
+    {
+      "name": "clique_margin",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-neighbor_cover+weight/max(1,degree+1)",
+      "rationale": "Ranks conservative replacement surplus with a degree-discounted reward term that softens the neighborhood penalty."
+    },
+    {
+      "name": "packing_ratio",
+      "features": [
+        {
+          "name": "neighbor_packing",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(1e-9,weight+neighbor_packing)",
+      "rationale": "Prices local opportunity cost using a deterministic feasible packing of the contacts selection would remove."
+    },
+    {
+      "name": "packing_margin",
+      "features": [
+        {
+          "name": "neighbor_packing",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-neighbor_packing",
+      "rationale": "Directly compares earned weight with a feasible neighborhood alternative; the alternative can underestimate opportunity cost."
+    },
+    {
+      "name": "local_mid_ratio",
+      "features": [
+        {
+          "name": "neighbor_packing",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(1e-9,weight+0.5*(neighbor_packing+neighbor_cover))",
+      "rationale": "Blends feasible packing and clique-cover estimates to moderate both optimistic and conservative local loss estimates."
+    },
+    {
+      "name": "forced_packing",
+      "features": [
+        {
+          "name": "residual_packing",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+residual_packing",
+      "rationale": "Scores selecting the candidate by its immediate reward plus a deterministic feasible continuation."
+    },
+    {
+      "name": "forced_cover",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+residual_cover",
+      "rationale": "Preserves candidates with strong estimated residual opportunity, accepting that the clique-cover score can be optimistic."
+    },
+    {
+      "name": "forced_midpoint",
+      "features": [
+        {
+          "name": "residual_packing",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+0.5*(residual_packing+residual_cover)",
+      "rationale": "Adds immediate reward to a midpoint continuation estimate, balancing residual packing and cover scores."
+    },
+    {
+      "name": "branch_gain",
+      "features": [
+        {
+          "name": "residual_packing",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exclusion_packing",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+residual_packing-exclusion_packing",
+      "rationale": "Estimates the advantage of selecting versus excluding the candidate using feasible continuations for both branches."
+    },
+    {
+      "name": "branch_safe_margin",
+      "features": [
+        {
+          "name": "residual_packing",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "exclusion_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+residual_packing-exclusion_cover",
+      "rationale": "Compares a feasible inclusion score with an optimistic exclusion score as a conservative branch preference."
+    },
+    {
+      "name": "edge_discount_ratio",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(1e-9,weight+max(max_conflict_weight,conflict_weight-neighbor_edge_min))",
+      "rationale": "Discounts conflict mass for incompatible neighbor pairs while retaining the strongest individual alternative; overlapping edges may overdiscount."
+    }
+  ]
+}

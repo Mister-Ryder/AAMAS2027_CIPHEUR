@@ -1,0 +1,123 @@
+{
+  "name": "figure_kernel_v05_unit_graph",
+  "contacts": [
+    {
+      "id": "P",
+      "weight": 1.0,
+      "satellite": "illustrative_sat_P",
+      "station": "illustrative_station_P",
+      "start": 0.0,
+      "end": 1.0,
+      "task": ""
+    },
+    {
+      "id": "Q",
+      "weight": 1.0,
+      "satellite": "illustrative_sat_Q",
+      "station": "illustrative_station_Q",
+      "start": 0.0,
+      "end": 1.0,
+      "task": ""
+    },
+    {
+      "id": "R",
+      "weight": 1.0,
+      "satellite": "illustrative_sat_R",
+      "station": "illustrative_station_R",
+      "start": 0.0,
+      "end": 1.0,
+      "task": ""
+    },
+    {
+      "id": "U",
+      "weight": 1.0,
+      "satellite": "illustrative_sat_U",
+      "station": "illustrative_station_U",
+      "start": 0.0,
+      "end": 1.0,
+      "task": ""
+    },
+    {
+      "id": "V",
+      "weight": 1.0,
+      "satellite": "illustrative_sat_V",
+      "station": "illustrative_station_V",
+      "start": 0.0,
+      "end": 1.0,
+      "task": ""
+    },
+    {
+      "id": "W",
+      "weight": 1.0,
+      "satellite": "illustrative_sat_W",
+      "station": "illustrative_station_W",
+      "start": 0.0,
+      "end": 1.0,
+      "task": ""
+    },
+    {
+      "id": "Z",
+      "weight": 1.0,
+      "satellite": "illustrative_sat_Z",
+      "station": "illustrative_station_Z",
+      "start": 0.0,
+      "end": 1.0,
+      "task": ""
+    }
+  ],
+  "edges": [
+    [
+      "P",
+      "U"
+    ],
+    [
+      "P",
+      "W"
+    ],
+    [
+      "Q",
+      "U"
+    ],
+    [
+      "Q",
+      "V"
+    ],
+    [
+      "R",
+      "V"
+    ],
+    [
+      "R",
+      "W"
+    ],
+    [
+      "R",
+      "Z"
+    ],
+    [
+      "U",
+      "Z"
+    ],
+    [
+      "V",
+      "Z"
+    ],
+    [
+      "W",
+      "Z"
+    ]
+  ],
+  "constraints": {
+    "model": "explicit_abstract_conflict_graph",
+    "station_gap": 0.0,
+    "satellite_gap": 0.0
+  },
+  "provenance": {
+    "kind": "constructed_semantic_fixture",
+    "not_experimental_outcome": true,
+    "physical_contact_fields": "Placeholder fields required by Graph; times do not generate these explicit edges. A displayed P/Q/R timetable is an illustrative contact-ID mapping only.",
+    "edge_list_source": "Author-specified formal seven-node schematic, 3 October 2026.",
+    "selected_program_source": "examples/frozen_program_v04.json",
+    "selected_program_sha256": "a8db4544e33eccfe35818ddf423a4df5c8ec5ac5fda517a5c2ceab135fecb1c9"
+  }
+}

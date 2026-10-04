@@ -1,0 +1,122 @@
+\documentclass[sigconf,anonymous,balance=false]{aamas}
+% AAMAS v2.19 omits its default editors argument and consumes a closing \fi.
+% Repair only that exact sentinel with one pending class-loader conditional.
+\makeatletter
+\def\CIP@missingeditors{\fi}
+\let\CIP@classrepair\@empty
+\edef\CIP@classloadlevel{\the\currentiflevel}
+\ifx\acmConference@editors\CIP@missingeditors
+  \ifnum\CIP@classloadlevel=1\relax
+    \let\CIP@classrepair\CIP@missingeditors
+    \gdef\acmConference@editors{}
+  \fi
+\fi
+\CIP@classrepair
+\makeatother
+\usepackage{balance}
+\usepackage{colortbl}
+% Compact table cells use class-defined sizes; body geometry stays official.
+\AtBeginEnvironment{table}{\renewcommand{\arraystretch}{0.94}}
+\AtBeginEnvironment{table*}{\renewcommand{\arraystretch}{0.94}}
+\AtBeginEnvironment{tabular}{\small}
+% Unmodified official AAMAS 2027 copyright block and class.
+\makeatletter
+\gdef\@copyrightpermission{
+  \begin{minipage}{0.2\columnwidth}
+   \href{https://creativecommons.org/licenses/by/4.0/}{\includegraphics[width=0.90\textwidth]{by}}
+  \end{minipage}\hfill
+  \begin{minipage}{0.8\columnwidth}
+   \href{https://creativecommons.org/licenses/by/4.0/}{This work is licensed under a Creative Commons Attribution International 4.0 License.}
+  \end{minipage}
+  \vspace{5pt}
+}
+\makeatother
+\setcopyright{ifaamas}
+\acmConference[AAMAS 2027]{Proc.\@ of the 26th International Conference
+on Autonomous Agents and Multiagent Systems (AAMAS 2027)}{3--7 May 2027}{Hanoi, Vietnam}{M.~Baldoni, F.~Fang, W.~Yeoh, N.~Yorke-Smith (eds.)}
+\copyrightyear{2027}
+\acmYear{2027}
+\acmDOI{}
+\acmISBN{}
+\acmSubmissionID{1997}
+\submissionType{Research Paper Track}
+\title{LLM-Guided Synthesis of Constraint-Adaptive Heuristics for Satellite--Ground Scheduling}
+\begin{abstract}
+Graph optimization heuristics can achieve strong aggregate performance while relying on decision rules that fail under changes in resource constraints. Effective adaptation requires identifying not only when action preferences should change, but also whether the input representation contains the information needed for that change. We propose an LLM-guided synthesis framework for con\-straint-\allowbreak{}adaptive satellite--ground scheduling that uses certified decision evidence to jointly refine graph representations and ranking rules. Its central mechanism detects ranking requirements that become contradictory under the current feature representation and directs synthesis toward the missing structural distinctions, rather than repeatedly adjusting an insufficient scoring interface. Two complementary mechanisms support this refinement. First, controlled offline interventions on resource-constraint configurations generate paired static scheduling problems in which the same competing actions remain individually feasible. Sound bounds on conditional completion values certify preference reversals or preservation under explicit boundary commitments, yielding relational specifications of when rankings should change or remain stable. Second, structural witnesses guide the LLM to compose distinguishing features from a typed graph-operation library and synthesize corresponding ranking rules. Feature--rule pairs are selected jointly for declared-interface acyclicity, complete-schedule quality, and feature-computation cost, making representation expansion targeted and cost-aware. We formulate contact selection as maximum-weight independent set optimization and study adaptation using a frozen program on held-out scheduling instances and constraint configurations. The synthesized program responds to the current conflict graph within a fixed feasibility-enforcing kernel, without online LLM or oracle calls. By linking representation refinement to certified decision conflicts, the framework addresses information limitations beyond rule-only repair while explicitly accounting for the computational cost of constraint adaptation.
+\end{abstract}
+\keywords{Satellite scheduling, maximum-weight independent set, heuristic synthesis, representation refinement, large language models}
+\ccsdesc[500]{Computing methodologies~Planning and scheduling}
+\ccsdesc[300]{Mathematics of computing~Combinatorial optimization}
+\begin{document}
+\maketitle
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=.90\textwidth]{figures/context_evidence_v05.png}
+\Description{Aligned contact graphs exhibit equal base features for two actions while a ground-gap intervention reverses their certified completion preferences.}
+\caption{\textbf{Why a ranking rule can need new inputs.} A constructed ground-gap intervention changes neighborhood compatibility and reverses forced-completion preferences, while preserving the nine-input alias within each configuration. Neighborhood structure supplies the missing distinction. Values exclude the same fixed boundary reward; the physical scene illustrates the domain.}
+\label{fig:motivation}
+\label{fig:problem}
+\end{figure*}
+\input{sections/introduction}
+\input{sections/related_work}
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=.90\textwidth]{figures/mechanism_v05.png}
+\Description{Common conditional components cancel; a separate feature-equivalence witness guides an offline LLM to propose typed expressions. Checks precede freezing. A graph-feasible example selection maps to three contact bars without online model calls.}
+\caption{\textbf{From certified conflicts to an executable heuristic.} Common $K$ cancels: $\Delta=(8+5)-(6+2)=5$. A separate equal-reward witness guides offline typed synthesis. Quotient, schedule and cost checks precede freezing $w/\max(10^{-6},w,n_c)$, where $n_c$ is neighbor clique-cover weight. The unit-weight toy returns optimum $\{P,Q,R\}$; bars identify contacts rather than physical conflict provenance. Deployment uses no LLM or oracle.}
+\label{fig:method}
+\label{fig:cancellation}
+\label{fig:repair}
+\end{figure*}
+\input{sections/problem}
+\begin{figure*}[tp]
+\centering
+\includegraphics[width=.92\textwidth]{figures/algorithms_v05.pdf}
+\Description{A decision flow certifies comparisons or abstains, diagnoses the full quotient, validates typed proposals, selects on TRAIN and freezes. A separate exact finite-catalogue repair has its own cut loop. Online scoring repeats feasible commitment and residual updates.}
+\caption{\textbf{Executable control flow and its guarantees.} Unknown comparisons abstain, invalid proposals fail, and the practical bank gate rebuilds the full quotient before TRAIN selection. The separate dashed finite-catalogue subroutine supports the additive-cost theorem; the practical proposal bank is not asserted to attain that optimum. The online loop enforces encoded pairwise feasibility.}
+\label{fig:algorithm}
+\end{figure*}
+\input{sections/method}
+\begin{figure*}[t!]
+\centering
+\begin{minipage}[t]{.495\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/effect_gain_compact_v05.pdf}
+\par\small (a) Constraint-dependent final gain
+\end{minipage}\hfill
+\begin{minipage}[t]{.495\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/effect_trajectory_compact_v05.pdf}
+\par\small (b) Feasible schedule prefixes
+\end{minipage}
+\Description{Paired quality gains vary with contact count and resource regime. Actual frozen-program rollout prefixes show cumulative feasible reward gaps against Degree, rule-only and Free policies, indexed by eliminated-vertex fraction.}
+\caption{\textbf{Quality by constraint regime and schedule progress.} Left: primary-minus-rule-only gain on 216 dense/long contexts, with paired source-cluster intervals. Right: feasible-prefix gaps against three controls, with pointwise bands. Early deficits can recover by completion. Progress is eliminated-vertex fraction, not time or LLM learning.}
+\label{fig:effect-curves}
+\end{figure*}
+\begin{figure*}[t!]
+\centering
+\begin{minipage}[t]{.495\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/llm_yield_compact_v05.pdf}
+\par\small (a) Eligible original proposals
+\end{minipage}\hfill
+\begin{minipage}[t]{.495\textwidth}
+\centering
+\includegraphics[width=\linewidth]{figures/llm_utility_compact_v05.pdf}
+\par\small (b) Best eligible TRAIN utility
+\end{minipage}
+\Description{Four cold authoring blocks per prompt arm show cumulative eligible proposals and best eligible TRAIN utility by original slot. Missing eligible prefixes remain visible.}
+\caption{\textbf{Does decision evidence help synthesis?} Original-slot TRAIN curves: thin lines show four banks; thick means require every bank to have an eligible prefix. The strip counts missing prefixes. Full-interface DAG eligibility does not imply scalar rule fit. Witnesses add no final mean utility over labels alone; no TEST selection occurs.}
+\label{fig:llm-pilot}
+\end{figure*}
+\input{sections/experiments}
+\input{sections/discussion}
+\input{sections/conclusion}
+\clearpage
+\balance
+\bibliographystyle{ACM-Reference-Format}
+\begingroup
+\interlinepenalty=10000
+\bibliography{references_v03,references_extension_v05}
+\endgroup
+\end{document}

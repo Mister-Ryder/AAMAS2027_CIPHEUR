@@ -1,0 +1,127 @@
+{
+  "version": "v07_input_evidence_arithmetic_004",
+  "source_sha256": {
+    "experiments/analysis/v07/source_overlap_001.json": "8ca5f66be4955e8023ceeb88f22a657c3a55ff046a9ab444ab08968ac7359813",
+    "experiments/discovery/contact_scene_screen_v07_002/screen_summary.json": "f01d60e86231cef5f726e22353400e7ad39159c85ecf86859d1f637d220dd6dc",
+    "experiments/discovery/scene_alias_classification_v07_003/classification_summary.json": "4b71e538fbdaa1a8c4fb8e32035403c30bba4f7f14a7c0e635e846114c4104d7",
+    "experiments/analysis/v07/public_benchmark_scenario_metadata_001.json": "8ae17b9c5c8b32769f8bd193e43e349f6a067addbcddb4dc5a8ae790baf6982e",
+    "experiments/analysis/v07/satnet_input_profile_001.json": "02002ffe80606be21ecce0bbb2c2f501ea86dff5ea49bf3d025fc2016d87fe72"
+  },
+  "source_and_split": {
+    "within_series_containment_pairs": 30,
+    "all_within_series_earlier_nested": true,
+    "C6_W6_opportunity_intersection": 0,
+    "canonical_sources": [
+      {
+        "source": "C6",
+        "full_contacts": 140406,
+        "start_day_counts": [
+          47156,
+          46664,
+          46586
+        ],
+        "training_windows": 12,
+        "configuration_graphs": 24,
+        "window_contact_min": 3563,
+        "window_contact_max": 4252,
+        "added_edges": 170974,
+        "changed_neighborhood_roots": 47074,
+        "training_contacts": 47156,
+        "changed_root_fraction_exact": "23537/23578",
+        "all_initial_graphs_connected": true,
+        "start_day_key_intersections": [
+          0,
+          0,
+          0
+        ],
+        "link_boundary_spills": [
+          556,
+          552,
+          0
+        ]
+      },
+      {
+        "source": "W6",
+        "full_contacts": 279521,
+        "start_day_counts": [
+          93877,
+          92926,
+          92718
+        ],
+        "training_windows": 12,
+        "configuration_graphs": 24,
+        "window_contact_min": 7642,
+        "window_contact_max": 8760,
+        "added_edges": 343969,
+        "changed_neighborhood_roots": 93763,
+        "training_contacts": 93877,
+        "changed_root_fraction_exact": "93763/93877",
+        "all_initial_graphs_connected": true,
+        "start_day_key_intersections": [
+          0,
+          0,
+          0
+        ],
+        "link_boundary_spills": [
+          1099,
+          1117,
+          0
+        ]
+      }
+    ],
+    "limits": "Distinct start-day contact keys do not establish independent resources or physical calendar feasibility; whole-corpus novelty is not asserted."
+  },
+  "alias_and_competition": {
+    "all_alias_occurrences": 556,
+    "all_action_occurrences": 282066,
+    "actions_in_alias_fraction_exact": "556/141033",
+    "compatible_alias_occurrences": 509,
+    "competing_alias_occurrences": 47,
+    "competing_alias_kinds": {
+      "non_twins": 43,
+      "adjacent_true_twins": 4
+    },
+    "unique_cross_configuration_pairs": 531,
+    "both_configurations_competing_pairs": 46,
+    "both_configurations_compatible_pairs": 485,
+    "mixed_competition_pairs": 0,
+    "proved_empty_boundary_tie_occurrences": 4,
+    "non_twin_alias_occurrences": 552,
+    "weighted_WL2_distinguished_occurrences": 550,
+    "strict_preferences": "Not inferred by this input-only arithmetic. Consult separately frozen conditional certificates.",
+    "complete_schedule_improvement": "Not measured by these input-only passes."
+  },
+  "public_corpora": [
+    {
+      "corpus": "WDP",
+      "graphs": 50,
+      "n_range": [
+        500,
+        1500
+      ],
+      "contact_metadata_present": false,
+      "domain_configuration_reconstructable": false
+    },
+    {
+      "corpus": "UAI_MMAP",
+      "graphs": 81,
+      "n_range": [
+        832,
+        25341
+      ],
+      "contact_metadata_present": false,
+      "domain_configuration_reconstructable": false
+    }
+  ],
+  "satnet": {
+    "request_week_count": 5,
+    "fixed_track_mwis_lossless_status": "not ready; native flexible start/duration, alternatives and split totals require explicit restricted task or richer representation",
+    "all_week_request_ids_disjoint": true,
+    "all_week_time_extents_disjoint": true
+  },
+  "graph_builds": 0,
+  "optimizer_calls": 0,
+  "oracle_calls": 0,
+  "model_calls": 0,
+  "heldout_graphs_or_outcomes_accessed": false
+}

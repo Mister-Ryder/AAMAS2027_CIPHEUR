@@ -1,0 +1,17 @@
+{
+  "before_any_input_generation": true,
+  "source_sha256": {
+    "scripts/prepare_performance_v06.py": "893115422a9e7dbae61105cec7ffa27d257e8a482cab380af9909c11a4364ee8",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "scripts/run_performance_inputs_server_v06.py": "b4185823e5ccde2d6946c09bebbc4d69ba652edd35098fd11530fe927bb476dc"
+  },
+  "workers": 4,
+  "pairs": 108,
+  "endpoints": 216,
+  "optimization_calls_permitted": 0,
+  "candidate_evaluations_permitted": 0,
+  "selection_binding": null,
+  "wall_safety_seconds": 3600,
+  "all_prespecified_cells_retained": true
+}

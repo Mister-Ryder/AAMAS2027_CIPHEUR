@@ -1,0 +1,19 @@
+2026-10-03T16:08:30.135786Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T16:08:30.135870Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T16:08:30.146191Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T16:08:35.061651Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T16:08:35.061702Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T16:08:35.093434Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL: error sending request for url (https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL)
+2026-10-03T16:08:35.093485Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T16:08:50.264705Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL: error sending request for url (https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL)
+2026-10-03T16:08:59.604634Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL: error sending request for url (https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL)
+2026-10-03T16:09:00.187489Z  WARN codex_core_plugins::manager: failed to refresh cached remote plugin catalog error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/list?scope=GLOBAL&limit=200: error decoding response body scope=Global
+2026-10-03T16:09:10.485533Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"Failed to create unified exec process: helper_unknown_error: apply deny-read ACLs\")" }
+2026-10-03T16:09:15.505378Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL: error sending request for url (https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL)
+2026-10-03T16:09:47.539891Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a10286-2c93-74b3-b2e9-7235790408df: invalid thread-store request: no rollout found for thread id 01a10286-2c93-74b3-b2e9-7235790408df
+2026-10-03T16:13:10.118155Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T16:16:55.950842Z  WARN codex_analytics::client: failed to send events request: error sending request for url (https://chatgpt.com/backend-api/codex/analytics-events/events)
+2026-10-03T16:17:00.882717Z  WARN codex_core::hook_runtime: failed to resolve parent transcript path for subagent hook parent_thread_id=01a10286-2c93-74b3-b2e9-7235790408df error=invalid thread-store request: no rollout found for thread id 01a10286-2c93-74b3-b2e9-7235790408df
+2026-10-03T16:17:45.139417Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T16:21:02.957001Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a10286-2d2b-7282-9979-a37edb3797ef hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)
+2026-10-03T16:21:27.974812Z  WARN codex_analytics::client: timed out or failed while flushing analytics events

@@ -1,0 +1,17 @@
+# Catalogue-cost TRAIN server receipt V06
+
+This is a separate server execution of the preregistered fixed catalogue study, not a change to R1/R2 assessment, the typed library or any scheduling runtime. No TEST data, R2 response/candidate/outcome file, LLM, scheduling policy or conditional oracle was accessed or invoked. These outcomes are excluded from R2 author packets and its selector.
+
+The provided 456,187-byte source capsule was independently checked before execution: all 12 member names and hashes, the static protocol, original 120 TRAIN-only records, 53-expression catalogue, K=6, 128 refinement rounds and 250,000 master-subset budget. Capsule SHA256: `2c19af4c639926e457b9bcdbf5c2eb5dd9b23c23055af748da5217003c7a64f6`; protocol SHA256: `b0e9949454d0b4f6bc0516e5b9fdce27b660cc7e4417e766549e48b33c9851ca`.
+
+The isolated server directory was `/root/autodl-tmp/aamas2027_v06_catalogue_cost_001`. Eight workers were launched under detached wrapper PID 56055. The server had a 16-CPU quota and 60 GiB memory quota; a read-only inventory before launch found no other active research processes and approximately 9.68 GB used. No unrelated process was interrupted. The outer 7,200-second safety guard is separate from the frozen expression/master budgets and did not trigger.
+
+Execution ran from 2026-10-03 19:03:41.172899 UTC to 19:04:39.064799 UTC, exit code 0. Measured outer wall time was 57.891901 seconds; child user CPU was 70.891316 seconds and child system CPU was 1.830842 seconds. No retries or budget/configuration changes occurred.
+
+All 54 feature assignments returned and completed. All four catalogue assignments returned and completed execution. Their scientific statuses are **one `resolved_additive_minimum` and three `unresolved`**. Completing an assigned task is not a proof of a successful refinement. Unresolved rows and all measured costs/values are preserved. Any additive minimum claim remains limited to the fixed finite catalogue and K under the declared standalone operation proxy; it is not a claim about shared-DAG deployment runtime, scalar-rule fit or globally optimal representation selection. Method/proof analysis is handed back to the method agent.
+
+The immutable downloaded archive is `experiments/runs/v06/catalogue_cost_server_v06_001.tar.gz`, 1,092,436 bytes, SHA256 `dab90de26a486d11174ba10f06723c8c02ae277aa2907d643fe36909107ecc05`, below the 100 MB bound. Source, study inputs, logs, host/process receipts and all results are included. Its 29 files were safely extracted without altering their bytes into `experiments/discovery/v06_catalogue_cost_server_001/remote/`; capsule/source/input/complete/results hash bindings all match.
+
+The execution-only checks and extraction receipt are in `experiments/discovery/v06_catalogue_cost_server_001/{pre_execution_check.json,archive_receipt.json,extraction_receipt.json}`. Complete receipt SHA256: `e29f1f62d4bdb59f75917f99d4792a2509b0b5e1832d5a93a6f854b5ae926a12`; feature rows SHA256: `70bf31a97914dd2f3ef188d7997d5d3245f62b8759c06472b351473f62a7f942`; catalogue result rows SHA256: `b91f7d57517acf0096a5d8e9cd6d7119458faf8b84528a0d1efbd1ccb66e9880`.
+
+The previous local SSH controller session expired between turns. A replacement non-echoing authenticated session was used; no credential was printed or saved in these artifacts. Controller 78479 remains connected for a future root-approved TRAIN phase. No R2 assessment upload or TEST launch has been performed by this task.

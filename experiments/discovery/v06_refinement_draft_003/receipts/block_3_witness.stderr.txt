@@ -1,0 +1,7 @@
+2026-10-03T18:50:44.715338Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T18:50:44.715426Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T18:50:44.722852Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T18:50:47.851680Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T18:50:47.851725Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T18:50:55.863382Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"Failed to create unified exec process: helper_unknown_error: apply deny-read ACLs\")" }
+2026-10-03T19:00:01.035855Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a1031a-b6d9-7ab1-b9c8-f14bccda302a hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)

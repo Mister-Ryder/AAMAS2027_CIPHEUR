@@ -1,0 +1,13 @@
+# V06 introduction draft review
+
+Owned output: `paper/drafts/v06/introduction.tex`; this is an independently drafted replacement fragment. The retained introduction, current title/abstract, new method, V06 TRAIN evidence/audit, shared repair design and evaluation protocol informed it. Only this draft and review note were written. No main file, active section, frozen material, raw author response or new candidate/TEST evaluation was opened or changed. A deterministic prose count gives 662 words including the ROOT placeholder; braces balance and all ten citation keys exist in `references_v03.bib`.
+
+The research-paper-writing skill informed contribution framing and claim scope. The draft distinguishes: full-residual conditional certification; finite exact-feature representability; scalar fit; and empirical shared-kernel performance. It states the complete quotient theorem with its unrestricted finite-score scope, requires explicit joins/full rebuilding, distinguishes the optional finite-catalogue additive optimum from actual shared computation, and preserves demanded-feature versus unused-declaration semantics.
+
+The Figure 1 values are retained exactly as forced conditional increments: 20/26 → 20/14, preference b → a, equal base-nine features within each configuration, fixed boundary reward excluded. No LLM success is inferred from the toy or independently audited TRAIN conflicts. Real cold authoring is the empirical study, not a hand-authored replay claim; no V06 winner, fit or TEST effect is asserted.
+
+The shared Degree initializer, multi-vertex bounded repair, clique bounds and branch-and-bound are explicitly classical infrastructure. The frozen rule changes local greedy/pivot ordering only. No online model/full-residual certification call is claimed; bounded classical optimization remains disclosed. No SOTA, solver reproduction, model-population or acceptance guarantee appears.
+
+Existing formal keys are used, with no arXiv entry. Primary pages rechecked for EoH (PMLR), ReEvo (NeurIPS), FunSearch's author description (DeepMind; Nature identity redirect prevented automated access), and DRAGON's formal AAMAS contents (2026, p.2809). Full DRAGON mechanism is supported by the retained supplied-PDF review; the formal proceedings citation remains unchanged. No bibliography was edited.
+
+The final empirical paragraph contains an explicit ROOT placeholder for verified witness-versus-relations, held-out paired fit, reward/work uncertainty and complete published comparisons. Root must replace it only after the corresponding TEST results exist. Integration compilation/layout remains root-owned; this section fragment is not a standalone LaTeX document.

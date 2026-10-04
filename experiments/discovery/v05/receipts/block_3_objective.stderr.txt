@@ -1,0 +1,8 @@
+2026-10-03T10:25:51.263997Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:25:51.264094Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:25:51.272212Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T10:25:53.589487Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:25:53.589555Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:26:06.211899Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a1014c-7881-7981-b9a4-6ce8e9529f2e: invalid thread-store request: no rollout found for thread id 01a1014c-7881-7981-b9a4-6ce8e9529f2e
+2026-10-03T10:27:55.301342Z  WARN codex_core::hook_runtime: failed to resolve parent transcript path for subagent hook parent_thread_id=01a1014c-7881-7981-b9a4-6ce8e9529f2e error=invalid thread-store request: no rollout found for thread id 01a1014c-7881-7981-b9a4-6ce8e9529f2e
+2026-10-03T10:29:29.537290Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a1014c-790e-72c1-936d-5041a47da8dd hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)

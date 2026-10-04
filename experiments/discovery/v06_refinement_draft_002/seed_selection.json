@@ -1,0 +1,2132 @@
+{
+  "all_R1_original_positions_retained": 120,
+  "all_common_states": [
+    "v06_public32|hamming6-2_unit",
+    "v06_public32|MANN_a9_unit",
+    "v06_unit_train_ground_scarce_short_006:left",
+    "v06_public32|hamming8-4_unit",
+    "v06_public32|san200_0.7_1_unit",
+    "v06_unit_train_ground_scarce_short_006:right"
+  ],
+  "authoring_access_forbidden": true,
+  "cycle_witnesses": [
+    {
+      "equality_joins": [
+        {
+          "negative": "v06_public32|MANN_a9_unit|5",
+          "negative_vector": {
+            "boundary_edges": 4,
+            "compatible_weight": 29.0,
+            "conflict_weight": 2.0,
+            "degree": 2,
+            "duration": 1,
+            "max_conflict_weight": 1,
+            "neighbor_edges": 0,
+            "neighbor_pack": 2.0,
+            "remaining_count": 32,
+            "residual_cover": 15.0,
+            "residual_edges": 32,
+            "residual_pack": 12.0,
+            "satellite_gap": 0,
+            "station_gap": 0,
+            "weight": 1
+          },
+          "positive": "v06_public32|MANN_a9_unit|7",
+          "positive_vector": {
+            "boundary_edges": 4,
+            "compatible_weight": 29.0,
+            "conflict_weight": 2.0,
+            "degree": 2,
+            "duration": 1,
+            "max_conflict_weight": 1,
+            "neighbor_edges": 0,
+            "neighbor_pack": 2.0,
+            "remaining_count": 32,
+            "residual_cover": 15.0,
+            "residual_edges": 32,
+            "residual_pack": 12.0,
+            "satellite_gap": 0,
+            "station_gap": 0,
+            "weight": 1
+          }
+        },
+        {
+          "negative": "v06_public32|MANN_a9_unit|35",
+          "negative_vector": {
+            "boundary_edges": 3,
+            "compatible_weight": 28.0,
+            "conflict_weight": 3.0,
+            "degree": 3,
+            "duration": 1,
+            "max_conflict_weight": 1,
+            "neighbor_edges": 1,
+            "neighbor_pack": 2.0,
+            "remaining_count": 32,
+            "residual_cover": 14.0,
+            "residual_edges": 31,
+            "residual_pack": 12.0,
+            "satellite_gap": 0,
+            "station_gap": 0,
+            "weight": 1
+          },
+          "positive": "v06_public32|MANN_a9_unit|34",
+          "positive_vector": {
+            "boundary_edges": 3,
+            "compatible_weight": 28.0,
+            "conflict_weight": 3.0,
+            "degree": 3,
+            "duration": 1,
+            "max_conflict_weight": 1,
+            "neighbor_edges": 1,
+            "neighbor_pack": 2.0,
+            "remaining_count": 32,
+            "residual_cover": 14.0,
+            "residual_edges": 31,
+            "residual_pack": 12.0,
+            "satellite_gap": 0,
+            "station_gap": 0,
+            "weight": 1
+          }
+        }
+      ],
+      "kind": "directed_cycle",
+      "requirements": [
+        {
+          "other": "v06_public32|MANN_a9_unit|5",
+          "preferred": "v06_public32|MANN_a9_unit|34",
+          "query_index": 9,
+          "requirement_index": 17,
+          "state": "v06_public32|MANN_a9_unit"
+        },
+        {
+          "other": "v06_public32|MANN_a9_unit|35",
+          "preferred": "v06_public32|MANN_a9_unit|7",
+          "query_index": 4,
+          "requirement_index": 12,
+          "state": "v06_public32|MANN_a9_unit"
+        }
+      ]
+    }
+  ],
+  "deployment_AST_sha256": "47e2ff4e164a0686485fd06a572fcc544d4045b6e0b8fbea23f5f04663cda2e9",
+  "feedback_cap_decisions": [
+    {
+      "included": true,
+      "key": [
+        "v06_public32|MANN_a9_unit",
+        "34",
+        "33"
+      ],
+      "metadata_sha256": "1d27004d4554db091043c3a1baf474fcb6cda08efb7e1dafb11de4e361ce1bf9"
+    },
+    {
+      "included": true,
+      "key": [
+        "v06_public32|hamming6-2_unit",
+        "11",
+        "10"
+      ],
+      "metadata_sha256": "1ded6523eb877e34abc4e3833d3c9afe69ce63d8b50491d03c546040ed7c2f4f"
+    },
+    {
+      "included": true,
+      "key": [
+        "v06_unit_train_ground_scarce_short_006:right",
+        "v000",
+        "v006"
+      ],
+      "metadata_sha256": "5c407146f0d0abad772dde2d85943275d27952d3fdd06a7012a426d1a32f0635"
+    },
+    {
+      "included": true,
+      "key": [
+        "v06_public32|hamming8-4_unit",
+        "52",
+        "149"
+      ],
+      "metadata_sha256": "666e407ea8d23f5d0ec3e88924d516cdaccda0bce28ffc333976f667d099a60e"
+    },
+    {
+      "included": true,
+      "key": [
+        "v06_public32|hamming8-4_unit",
+        "79",
+        "89"
+      ],
+      "metadata_sha256": "7ac1c9b86b4c7766af1c6cab10d0932864f58b4d956d8540e2724f1fc88c0a14"
+    },
+    {
+      "included": true,
+      "key": [
+        "v06_public32|san200_0.7_1_unit",
+        "155",
+        "46"
+      ],
+      "metadata_sha256": "a14ef77bc7efbf784b831e918cf6be86cfad588ecca31f505cd1a5d8cd33e65f"
+    },
+    {
+      "included": true,
+      "key": [
+        "v06_public32|hamming8-4_unit",
+        "196",
+        "12"
+      ],
+      "metadata_sha256": "bc37feae36bd916fb7c108ebd695f139b4fa6e963b98ebdbfd65f486a6a38ad6"
+    },
+    {
+      "included": true,
+      "key": [
+        "v06_public32|hamming8-4_unit",
+        "157",
+        "12"
+      ],
+      "metadata_sha256": "c1bcaf6dc2a925aae2a01b48a6316b2f3ae35b96dc5aadaf7c0e7bc9e75a7094"
+    },
+    {
+      "included": true,
+      "key": [
+        "v06_public32|san200_0.7_1_unit",
+        "68",
+        "46"
+      ],
+      "metadata_sha256": "c8e7836a1629ce7e9028267be52e78caed3d190cb33e95ee6edc36c3fa05dead"
+    }
+  ],
+  "finite_status_scope": "unchanged f640 completed finite interface; every saved strict score and witness vector independently finite-checked; no new candidate execution",
+  "mandatory_cycle_requirements": [
+    [
+      "v06_public32|MANN_a9_unit",
+      "34",
+      "5"
+    ],
+    [
+      "v06_public32|MANN_a9_unit",
+      "7",
+      "35"
+    ]
+  ],
+  "masked_state_bindings": {
+    "v06_public32|MANN_a9_unit": "case_001",
+    "v06_public32|hamming6-2_unit": "case_000",
+    "v06_public32|hamming8-4_unit": "case_003",
+    "v06_public32|san200_0.7_1_unit": "case_004",
+    "v06_unit_train_ground_scarce_short_006:left": "case_002",
+    "v06_unit_train_ground_scarce_short_006:right": "case_005"
+  },
+  "paired_companions_included": true,
+  "raw_original_slot_inventory": [
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_objective:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "31235159/5760",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 572
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_objective:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "37549973/5760",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 581
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_objective:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "38357957/5760",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_objective:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "2032421/320",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 560
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_objective:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "31939783/5760",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 569
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": true,
+      "id": "block_0_objective:5",
+      "seed_pool": false,
+      "slot": 5,
+      "status": "static_valid"
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_objective:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "32488757/5760",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_objective:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3914673/640",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 577
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "invalid_response_schema",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_relations:0",
+      "seed_pool": false,
+      "slot": 0,
+      "status": "invalid_response_schema"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "invalid_response_schema",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_relations:1",
+      "seed_pool": false,
+      "slot": 1,
+      "status": "invalid_response_schema"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "invalid_response_schema",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_relations:2",
+      "seed_pool": false,
+      "slot": 2,
+      "status": "invalid_response_schema"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "invalid_response_schema",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_relations:3",
+      "seed_pool": false,
+      "slot": 3,
+      "status": "invalid_response_schema"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "invalid_response_schema",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_relations:4",
+      "seed_pool": false,
+      "slot": 4,
+      "status": "invalid_response_schema"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "invalid_response_schema",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_relations:5",
+      "seed_pool": false,
+      "slot": 5,
+      "status": "invalid_response_schema"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "invalid_response_schema",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_relations:6",
+      "seed_pool": false,
+      "slot": 6,
+      "status": "invalid_response_schema"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "invalid_response_schema",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_relations:7",
+      "seed_pool": false,
+      "slot": 7,
+      "status": "invalid_response_schema"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_witness:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3561811/640",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_witness:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "31777139/5760",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 546
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_witness:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "16029197/2880",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 579
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_witness:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "16251191/2880",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": true,
+      "id": "block_0_witness:4",
+      "seed_pool": false,
+      "slot": 4,
+      "status": "static_valid"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_witness:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "11875397/1920",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 579
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_witness:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3737851/640",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 0,
+      "eligible": false,
+      "id": "block_0_witness:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "36183617/5760",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 574
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_objective:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "478631/80",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 571
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_objective:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "6392587/1152",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 579
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_objective:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "39061459/5760",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 532
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_objective:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "41040091/5760",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 573
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_objective:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "7813705/1152",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 558
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_objective:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "5651713/960",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 561
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_objective:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "29956109/5760",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 566
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": true,
+      "id": "block_1_objective:7",
+      "seed_pool": false,
+      "slot": 7,
+      "status": "static_valid"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_relations:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "7782731/1440",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_relations:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "11639761/1920",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 577
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_relations:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "35276383/5760",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 549
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_relations:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "9313583/1440",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 550
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_relations:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "28968889/5760",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_relations:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "1497463/192",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 579
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_relations:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "32007751/5760",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 534
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_relations:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "4418813/640",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 573
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_witness:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "5758067/960",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_witness:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "8640967/1440",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 569
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": true,
+      "id": "block_1_witness:2",
+      "seed_pool": false,
+      "slot": 2,
+      "status": "static_valid"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_witness:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "8651993/1440",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_witness:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "46677581/5760",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 580
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": true,
+      "id": "block_1_witness:5",
+      "seed_pool": false,
+      "slot": 5,
+      "status": "static_valid"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_witness:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "32053123/5760",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 541
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 1,
+      "eligible": false,
+      "id": "block_1_witness:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "36068227/5760",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_objective:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "961739/160",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 572
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_objective:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "5924969/960",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 579
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_objective:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "1787173/288",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 578
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_objective:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "18510577/2880",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 555
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_objective:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "13691167/2880",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 518
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_objective:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "31401967/5760",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 476
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_objective:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "26176259/5760",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 502
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_objective:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "4542553/640",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 527
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_relations:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "31358579/5760",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 526
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_relations:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "6917191/1152",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 582
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_relations:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "12783989/1920",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 574
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_relations:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "34510619/5760",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 584
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": true,
+      "id": "block_2_relations:4",
+      "seed_pool": false,
+      "slot": 4,
+      "status": "static_valid"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_relations:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "31855537/5760",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 570
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_relations:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "5017619/640",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 580
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": true,
+      "id": "block_2_relations:7",
+      "seed_pool": false,
+      "slot": 7,
+      "status": "static_valid"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_witness:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "2008069/360",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 574
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": true,
+      "id": "block_2_witness:1",
+      "seed_pool": false,
+      "slot": 1,
+      "status": "static_valid"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_witness:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "1409243/240",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 581
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_witness:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "2507827/480",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 549
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_witness:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "7915991/1440",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 564
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_witness:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "32295533/5760",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 577
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": true,
+      "id": "block_2_witness:6",
+      "seed_pool": false,
+      "slot": 6,
+      "status": "static_valid"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 2,
+      "eligible": false,
+      "id": "block_2_witness:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "33750949/5760",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 572
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_objective:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "17207611/2880",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 529
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_objective:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3918523/640",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 578
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_objective:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "40602943/5760",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 573
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_objective:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "5134523/720",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 572
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_objective:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3460945/576",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 502
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_objective:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "15601909/1920",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 546
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_objective:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "6860657/1152",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 560
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": true,
+      "id": "block_3_objective:7",
+      "seed_pool": false,
+      "slot": 7,
+      "status": "static_valid"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_relations:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "10561903/1920",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 571
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_relations:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "9184807/1440",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_relations:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "37347607/5760",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 567
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_relations:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "8087761/1440",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 572
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_relations:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "19165691/2880",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 574
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": true,
+      "id": "block_3_relations:5",
+      "seed_pool": false,
+      "slot": 5,
+      "status": "static_valid"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_relations:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "34916683/5760",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 573
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_relations:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "2386109/360",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 582
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_witness:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3559411/640",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": true,
+      "id": "block_3_witness:1",
+      "seed_pool": false,
+      "slot": 1,
+      "status": "static_valid"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_witness:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "44904263/5760",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 581
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_witness:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "11749699/1920",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_witness:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "5795105/1152",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 574
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_witness:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "5524981/960",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 559
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": true,
+      "id": "block_3_witness:6",
+      "seed_pool": false,
+      "slot": 6,
+      "status": "static_valid"
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 3,
+      "eligible": false,
+      "id": "block_3_witness:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "12672893/1920",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 578
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_objective:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "40585709/5760",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 566
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_objective:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "22071493/2880",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 577
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": true,
+      "id": "block_4_objective:2",
+      "seed_pool": false,
+      "slot": 2,
+      "status": "static_valid"
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_objective:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "42828811/5760",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 554
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_objective:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3115607/480",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 577
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_objective:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "41646809/5760",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 574
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_objective:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "4989827/720",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "objective",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_objective:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "2919019/480",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 557
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_relations:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3957629/480",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_relations:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "23973271/2880",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 568
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_relations:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "7798463/960",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 544
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_relations:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "15694619/1920",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 582
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_relations:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "3513653/640",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_relations:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "39136583/5760",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": true,
+      "id": "block_4_relations:6",
+      "seed_pool": false,
+      "slot": 6,
+      "status": "static_valid"
+    },
+    {
+      "arm": "relations",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_relations:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "12087959/1920",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 571
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_witness:0",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "250193/45",
+      "seed_pool": true,
+      "slot": 0,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_witness:1",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "16029197/2880",
+      "seed_pool": true,
+      "slot": 1,
+      "status": "static_valid",
+      "strict_passed": 579
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_witness:2",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "9880547/1920",
+      "seed_pool": true,
+      "slot": 2,
+      "status": "static_valid",
+      "strict_passed": 573
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_witness:3",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "30764383/5760",
+      "seed_pool": true,
+      "slot": 3,
+      "status": "static_valid",
+      "strict_passed": 574
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_witness:4",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "4998943/960",
+      "seed_pool": true,
+      "slot": 4,
+      "status": "static_valid",
+      "strict_passed": 556
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_witness:5",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "26001503/5760",
+      "seed_pool": true,
+      "slot": 5,
+      "status": "static_valid",
+      "strict_passed": 575
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_witness:6",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "2003189/360",
+      "seed_pool": true,
+      "slot": 6,
+      "status": "static_valid",
+      "strict_passed": 576
+    },
+    {
+      "arm": "witness",
+      "assessment_status": "assessed",
+      "block": 4,
+      "eligible": false,
+      "id": "block_4_witness:7",
+      "macro_quality_exact": "2693/4480",
+      "macro_work_exact": "6610163/1152",
+      "seed_pool": true,
+      "slot": 7,
+      "status": "static_valid",
+      "strict_passed": 578
+    }
+  ],
+  "seed_kernel_summary": {
+    "family_reward_over_total_weight": {
+      "DIMACS": "265/672",
+      "SATLIB": "197/240",
+      "temporal_unit_balanced_long": "383/512",
+      "temporal_unit_balanced_short": "149/256",
+      "temporal_unit_ground_scarce_long": "319/512",
+      "temporal_unit_ground_scarce_short": "29/64",
+      "temporal_unit_satellite_scarce_long": "177/256",
+      "temporal_unit_satellite_scarce_short": "127/256"
+    },
+    "family_work": {
+      "DIMACS": "241753/9",
+      "SATLIB": "17288/15",
+      "temporal_unit_balanced_long": "19953/16",
+      "temporal_unit_balanced_short": "8467/2",
+      "temporal_unit_ground_scarce_long": "2187",
+      "temporal_unit_ground_scarce_short": "40799/8",
+      "temporal_unit_satellite_scarce_long": "28607/16",
+      "temporal_unit_satellite_scarce_short": "85793/16"
+    },
+    "macro_quality_exact": "2693/4480",
+    "macro_work_exact": "34510619/5760"
+  },
+  "seed_pool": "completed static-valid finite unchanged-assessor interface; full120 feasible completed kernels; demanded quotient contradictory",
+  "seed_program": {
+    "features": [
+      {
+        "expression": {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "available"
+                    },
+                    {
+                      "args": [
+                        {
+                          "args": [],
+                          "op": "root"
+                        }
+                      ],
+                      "op": "neighbors"
+                    }
+                  ],
+                  "op": "difference"
+                },
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "root"
+                    }
+                  ],
+                  "op": "singleton"
+                }
+              ],
+              "op": "difference"
+            }
+          ],
+          "op": "greedy_independent_weight"
+        },
+        "name": "residual_pack"
+      },
+      {
+        "expression": {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "available"
+                    },
+                    {
+                      "args": [
+                        {
+                          "args": [],
+                          "op": "root"
+                        }
+                      ],
+                      "op": "neighbors"
+                    }
+                  ],
+                  "op": "difference"
+                },
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "root"
+                    }
+                  ],
+                  "op": "singleton"
+                }
+              ],
+              "op": "difference"
+            }
+          ],
+          "op": "clique_cover_weight"
+        },
+        "name": "residual_cover"
+      },
+      {
+        "expression": {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [],
+                          "op": "available"
+                        },
+                        {
+                          "args": [
+                            {
+                              "args": [],
+                              "op": "root"
+                            }
+                          ],
+                          "op": "neighbors"
+                        }
+                      ],
+                      "op": "difference"
+                    },
+                    {
+                      "args": [
+                        {
+                          "args": [],
+                          "op": "root"
+                        }
+                      ],
+                      "op": "singleton"
+                    }
+                  ],
+                  "op": "difference"
+                }
+              ],
+              "op": "induced_edges"
+            }
+          ],
+          "op": "count"
+        },
+        "name": "residual_edges"
+      },
+      {
+        "expression": {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "root"
+                    }
+                  ],
+                  "op": "neighbors"
+                }
+              ],
+              "op": "induced_edges"
+            }
+          ],
+          "op": "count"
+        },
+        "name": "neighbor_edges"
+      },
+      {
+        "expression": {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [],
+                              "op": "available"
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [],
+                                  "op": "root"
+                                }
+                              ],
+                              "op": "singleton"
+                            }
+                          ],
+                          "op": "difference"
+                        }
+                      ],
+                      "op": "induced_edges"
+                    }
+                  ],
+                  "op": "count"
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [],
+                              "op": "root"
+                            }
+                          ],
+                          "op": "neighbors"
+                        }
+                      ],
+                      "op": "induced_edges"
+                    }
+                  ],
+                  "op": "count"
+                }
+              ],
+              "op": "sub"
+            },
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [],
+                              "op": "available"
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [],
+                                  "op": "root"
+                                }
+                              ],
+                              "op": "neighbors"
+                            }
+                          ],
+                          "op": "difference"
+                        },
+                        {
+                          "args": [
+                            {
+                              "args": [],
+                              "op": "root"
+                            }
+                          ],
+                          "op": "singleton"
+                        }
+                      ],
+                      "op": "difference"
+                    }
+                  ],
+                  "op": "induced_edges"
+                }
+              ],
+              "op": "count"
+            }
+          ],
+          "op": "sub"
+        },
+        "name": "boundary_edges"
+      },
+      {
+        "expression": {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [],
+                  "op": "root"
+                }
+              ],
+              "op": "neighbors"
+            }
+          ],
+          "op": "greedy_independent_weight"
+        },
+        "name": "neighbor_pack"
+      }
+    ],
+    "name": "boundary_relief",
+    "rationale": "Hypothesis: excluding neighbors that conflict heavily with the residual releases more compatibility than degree alone indicates; internal neighbor conflicts reduce the effective exclusion cost.",
+    "rule": "weight + 0.6*residual_pack + 0.4*residual_cover - 0.15*neighbor_pack + 0.2*boundary_edges/max(1e-9,abs(1+degree)) + 0.1*neighbor_edges/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree"
+  },
+  "seed_source_id": "block_2_relations:3",
+  "seed_strict_passed": 584,
+  "seed_strict_total": 594,
+  "selected_requirements": [
+    {
+      "kind": "alias",
+      "label_id": "r000",
+      "lower_exact": "1",
+      "other": "33",
+      "preferred": "34",
+      "query_index": 2,
+      "state": "v06_public32|MANN_a9_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "alias",
+      "label_id": "r001",
+      "lower_exact": "1",
+      "other": "10",
+      "preferred": "11",
+      "query_index": 0,
+      "state": "v06_public32|hamming6-2_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "control",
+      "label_id": "r002",
+      "lower_exact": "1",
+      "other": "v006",
+      "preferred": "v000",
+      "query_index": 9,
+      "state": "v06_unit_train_ground_scarce_short_006:right",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "alias",
+      "label_id": "r003",
+      "lower_exact": "1",
+      "other": "149",
+      "preferred": "52",
+      "query_index": 3,
+      "state": "v06_public32|hamming8-4_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "alias",
+      "label_id": "r004",
+      "lower_exact": "1",
+      "other": "89",
+      "preferred": "79",
+      "query_index": 1,
+      "state": "v06_public32|hamming8-4_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "control",
+      "label_id": "r005",
+      "lower_exact": "1",
+      "other": "46",
+      "preferred": "155",
+      "query_index": 12,
+      "state": "v06_public32|san200_0.7_1_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "control",
+      "label_id": "r006",
+      "lower_exact": "1",
+      "other": "5",
+      "preferred": "34",
+      "query_index": 9,
+      "state": "v06_public32|MANN_a9_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "control",
+      "label_id": "r007",
+      "lower_exact": "1",
+      "other": "12",
+      "preferred": "196",
+      "query_index": 8,
+      "state": "v06_public32|hamming8-4_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "control",
+      "label_id": "r008",
+      "lower_exact": "1",
+      "other": "12",
+      "preferred": "157",
+      "query_index": 6,
+      "state": "v06_public32|hamming8-4_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "control",
+      "label_id": "r009",
+      "lower_exact": "1",
+      "other": "46",
+      "preferred": "68",
+      "query_index": 9,
+      "state": "v06_public32|san200_0.7_1_unit",
+      "upper_exact": "1"
+    },
+    {
+      "kind": "control",
+      "label_id": "r010",
+      "lower_exact": "1",
+      "other": "35",
+      "preferred": "7",
+      "query_index": 4,
+      "state": "v06_public32|MANN_a9_unit",
+      "upper_exact": "1"
+    }
+  ],
+  "selection_split": "train",
+  "selector": [
+    "maximize_actual_strict_fit",
+    "maximize_exact_macro_family_quality",
+    "minimize_exact_macro_family_work",
+    "lexicographic_source_id"
+  ],
+  "test_accessed": false,
+  "version": "v06_r2_common_seed_selection_002"
+}

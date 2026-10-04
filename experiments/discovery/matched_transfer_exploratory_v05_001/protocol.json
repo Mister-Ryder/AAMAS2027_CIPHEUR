@@ -1,0 +1,58 @@
+{
+  "version": "matched_transfer_exploratory_v05_001",
+  "design": "exploratory post-V05 frozen-program transfer; not a new confirmatory population",
+  "before_any_extension_execution": true,
+  "no_authoring_no_test_selection": true,
+  "seed": 1,
+  "contexts": 120,
+  "methods_per_context": 13,
+  "assignments": 1560,
+  "population_counts": {
+    "DIMACS_hash_weighted": 18,
+    "DIMACS_unit": 18,
+    "SATLIB_hash_weighted": 30,
+    "SATLIB_unit": 30,
+    "C3": 24
+  },
+  "programs": [
+    "block_0_objective",
+    "block_0_relations",
+    "block_0_witness",
+    "block_1_objective",
+    "block_1_relations",
+    "block_1_witness",
+    "block_2_objective",
+    "block_2_relations",
+    "block_2_witness",
+    "block_3_objective",
+    "block_3_relations",
+    "block_3_witness"
+  ],
+  "reference_program": {
+    "name": "fixed_degree_reference",
+    "features": [],
+    "rule": "weight/max(1,degree)",
+    "rationale": "Fixed classical transfer reference"
+  },
+  "all_assigned_banks_retained": true,
+  "backend": "cipheur.matched_synthesis_v05.execute -> schedule_compiled(score_slice=True), unchanged",
+  "program_cpu_seconds": 5,
+  "workers": 16,
+  "hard_wall_safety_no_context_progress_seconds": 1800,
+  "budget_scope": "Program parse/compile, evaluator initialization, updates and complete schedule are inside original cooperative CPU meter; graph materialization and source validation recorded separately. Overshoot retained.",
+  "execution_order": "Lexical context inventory; per-context sorted 13 method IDs rotated by graph digest, without outcomes; one deterministic schedule per assignment.",
+  "hard_wall_policy": "Only if no completed context for 1800 seconds, stop workers and record all unfinished assignments as explicit zero-quality failures; no alternate backend or fallback.",
+  "quality": "100*exact feasible reward/pre-existing independently verified formal clique upper U; incomplete assignment is zero. Secondary 100*reward/pre-existing best feasible L may exceed 100. U and L never replaced by these new results.",
+  "aggregation": "Five populations separately; per arm report four fixed block means and equal-block mean, completion counts and failure types; common single Degree reference. No deduplication of identical ASTs, no winner reselection, no failure censoring.",
+  "scope": "The same 48 public source graphs occur in both unit and deterministic hash-weight variants; the existing 24 C3 contexts are 12 paired source subproblems, not 24 independent fresh satellites. These contexts were observed in V04. Transfer is exploratory.",
+  "timing_scope": "Only new same-host 13-method assignments are comparable; archived native V04 baselines and their old-server timings remain a distinct study.",
+  "source_archive_sha256": {
+    "public": "b37999eb75b52a12da80ae071984791e37bff54a8351c836fc4ac7a800e29050",
+    "fresh": "4bbddde5655edf06b6959ada796166ff44b909e8bec9f8d5383e1796cdab7828",
+    "train": "eca11e5803ab68ba7456eca496c53a331b533fcf925eb4e108b019b1d6825d49"
+  },
+  "config_sha256": "d1925b0d97833ec6f430c5ac96640cb13a7050cafb9b2d9b3c5a988f4c9e0408",
+  "frozen_programs_sha256": "37757102547f7e8b774900ac78a5c714bccb795d5471afed546f393f915e0eaa",
+  "data_sha256": "7a572d043ff0d3a05a630b5b0ecf522c90a50cef74b8e7c66fdbc6e2784e6793",
+  "pre_execution_reference_checks": 57718
+}

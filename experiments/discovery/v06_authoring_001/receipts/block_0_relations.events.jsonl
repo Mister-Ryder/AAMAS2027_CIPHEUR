@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a10266-9044-7e01-baa8-9cbeb14a3971"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.\n  user (C:\\Users\\JIA\\.codex\\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored."}}
+{"type":"item.completed","item":{"id":"item_1","type":"error","message":"Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.\n  user (C:\\Users\\JIA\\.codex\\config.toml): `computer_use.windows.always_allowed_app_ids` is ignored."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"I’ll read packet.json once and author the eight candidates from the frozen grammar and examples, without evaluations or further file access.\n"}}
+{"type":"item.started","item":{"id":"item_3","type":"command_execution","command":"\"C:\\\\Users\\\\JIA\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content -LiteralPath packet.json -Raw'","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_3","type":"command_execution","command":"\"C:\\\\Users\\\\JIA\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content -LiteralPath packet.json -Raw'","aggregated_output":"Failed to create unified exec process: helper_unknown_error: apply deny-read ACLs","exit_code":-1,"status":"failed"}}
+{"type":"error","message":"Selected model is at capacity. Please try a different model."}
+{"type":"turn.failed","error":{"message":"Selected model is at capacity. Please try a different model."}}

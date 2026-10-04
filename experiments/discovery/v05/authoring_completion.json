@@ -1,0 +1,303 @@
+{
+  "version": "matched_cli_authoring_completion_v05",
+  "transport_amendment_sha256": "b7f7f1d782febe33770fbd840611d6907740e94d562fdb3d2a7f9d81d01686a9",
+  "all_authoring_completed_before_assessment": true,
+  "same_requested_model_and_settings_all_cells": true,
+  "response_sha256": {
+    "block_0_objective.json": "0fa5fd18588bb00ff5408b1be366ea590cb05c7b902f8a61e5fb9d842945af0b",
+    "block_0_relations.json": "1b11cb6e16b11b004bf0b5297cb659a42b5ee061bfc7c4619824d1c474b1fa12",
+    "block_0_witness.json": "17b3c183ae418838a610cf322282cb7398dc5de2cdafe4535c4285a97acf89c5",
+    "block_1_objective.json": "1002712297da1b1d6b601a4bc878c14bebcd15bb07c1f78da2180bae944c1d82",
+    "block_1_relations.json": "2f5db591189f6fe2c70c03e8794f28a45f5ed33c77ab991a874b7ad9ac4865a3",
+    "block_1_witness.json": "8c30472dbfc9df074b68a0006f9280cd70cc3263e9778239de75dbf6677143dc",
+    "block_2_objective.json": "394ccf8dadb059cc076978626deb5de3e1fbecac76f8447417345f264d4a0775",
+    "block_2_relations.json": "555abc3cbd66d5bdde40137909416c0db6e4a16eac1c18d5cef7c158cedab283",
+    "block_2_witness.json": "1ee7e93ebd59ab06c498e6e3624fb975e3dcb180c913c173043b655785c4e49a",
+    "block_3_objective.json": "570c9ad36e8abc5e613449f89a945483ea4746d84d81c20dd6f9ee76342a3dba",
+    "block_3_relations.json": "b43afb1adaad1600b3ab326d228a55647126047070a33e314b08272eddbc5599",
+    "block_3_witness.json": "17c49c54d7ca6f1484ac0ac24ba381c6851bf4e2ccfa38bdc6e08f304b8badf6"
+  },
+  "receipt_paths": {
+    "block_0_relations": "receipts/block_0_relations.receipt.json",
+    "block_0_witness": "receipts/block_0_witness.receipt.json",
+    "block_0_objective": "receipts/block_0_objective.receipt.json",
+    "block_1_witness": "receipts/block_1_witness.receipt.json",
+    "block_1_relations": "receipts/block_1_relations.receipt.json",
+    "block_1_objective": "receipts/block_1_objective.receipt.json",
+    "block_2_relations": "receipts/block_2_relations.receipt.json",
+    "block_2_witness": "receipts/block_2_witness.receipt.json",
+    "block_2_objective": "receipts/block_2_objective.receipt.json",
+    "block_3_witness": "receipts/block_3_witness.receipt.json",
+    "block_3_objective": "receipts/block_3_objective.receipt.json",
+    "block_3_relations": "receipts/block_3_relations.receipt.json"
+  },
+  "actual_model_and_usage": {
+    "block_0_relations": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 145051,
+            "cached_input_tokens": 109056,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 5985,
+            "reasoning_output_tokens": 2761
+          }
+        }
+      ]
+    },
+    "block_0_witness": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 96132,
+            "cached_input_tokens": 60928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 8768,
+            "reasoning_output_tokens": 5694
+          }
+        }
+      ]
+    },
+    "block_0_objective": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 94175,
+            "cached_input_tokens": 59904,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 6178,
+            "reasoning_output_tokens": 3573
+          }
+        }
+      ]
+    },
+    "block_1_witness": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 146439,
+            "cached_input_tokens": 109696,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 10145,
+            "reasoning_output_tokens": 5140
+          }
+        }
+      ]
+    },
+    "block_1_relations": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 194189,
+            "cached_input_tokens": 156544,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 4844,
+            "reasoning_output_tokens": 2246
+          }
+        }
+      ]
+    },
+    "block_1_objective": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 143127,
+            "cached_input_tokens": 108544,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 4310,
+            "reasoning_output_tokens": 1479
+          }
+        }
+      ]
+    },
+    "block_2_relations": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 350836,
+            "cached_input_tokens": 272896,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 6043,
+            "reasoning_output_tokens": 1803
+          }
+        }
+      ]
+    },
+    "block_2_witness": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 144146,
+            "cached_input_tokens": 108672,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 13248,
+            "reasoning_output_tokens": 8530
+          }
+        }
+      ]
+    },
+    "block_2_objective": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 191233,
+            "cached_input_tokens": 154752,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 5696,
+            "reasoning_output_tokens": 3011
+          }
+        }
+      ]
+    },
+    "block_3_witness": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 96113,
+            "cached_input_tokens": 60928,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9150,
+            "reasoning_output_tokens": 4871
+          }
+        }
+      ]
+    },
+    "block_3_objective": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 191599,
+            "cached_input_tokens": 156160,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 5891,
+            "reasoning_output_tokens": 3446
+          }
+        }
+      ]
+    },
+    "block_3_relations": {
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "usage_events": [
+        {
+          "event_type": "turn.completed",
+          "usage": {
+            "input_tokens": 351050,
+            "cached_input_tokens": 308864,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 8271,
+            "reasoning_output_tokens": 2859
+          }
+        }
+      ]
+    }
+  },
+  "completed_at_utc": "2026-10-03T10:31:30.096908+00:00",
+  "failed_transport_cells": [],
+  "no_candidate_assessment_or_replacement": true
+}

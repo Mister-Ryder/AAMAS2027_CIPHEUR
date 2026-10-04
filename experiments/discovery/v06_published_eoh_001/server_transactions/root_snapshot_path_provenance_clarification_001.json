@@ -1,0 +1,31 @@
+{
+  "TEST_accessed": false,
+  "actual_failure_archive_path": "experiments/discovery/v06_published_eoh_001/server_transactions/run_0_seed.tar.gz",
+  "actual_failure_archive_sha256": "a857776f005c919b18615b40ce3a2b5fd18ab35474f92728d52b1c22e0dea3f2",
+  "actual_failure_archive_sha256_length": 64,
+  "alias_mapping_sha256_unchanged": "7028a303b4961e9e4a40646d05434d1f5cf4337be87fbd8ccad82b0669fbcbbb",
+  "candidate_or_seed_fitness_evaluations_in_failed_attempt": 0,
+  "clarification_preparation_note": "An initial local clarification generator asserted the incorrectly reported length63 and stopped before creating this file. Actual machine-measured lengths are65 and64 as retained above.",
+  "clarifies_receipt_path": "experiments/discovery/v06_published_eoh_001/server_transactions/snapshot_path_compatibility_receipt.json",
+  "clarifies_receipt_sha256": "7028a303b4961e9e4a40646d05434d1f5cf4337be87fbd8ccad82b0669fbcbbb",
+  "correction_reason": "The unchanged compatibility mapping typed a 65-character archive hash, inserting one extra hexadecimal 3 in ...18ab335474... versus the actual ...18ab35474.... The actual archive byte SHA256 equals the unchanged transport receipt.",
+  "failed_log_sha256": "b587549bfb4673d927e200823776da2579087f6c04d4adfd67a3ebc72a564448",
+  "failure_archive_regular_file_inventory": [
+    "run_0_seed/run_0_seed.transport_receipt.json",
+    "run_0_seed/run_0_seed.log",
+    "run_0_seed/eoh_server_transaction_wrapper_v06.py",
+    "run_0_seed/host_staging_receipt.json"
+  ],
+  "failure_stage": "load_study source-path validation, before request parsing or quality/kernel evaluation",
+  "issued_by": "root",
+  "issued_utc": "2026-10-03T20:50:26.262681+00:00",
+  "metrics_not_relabelled_or_rerun": true,
+  "scope": "Append-only deployment provenance clarification. It corrects no outcome and authorizes no additional authoring or evaluation.",
+  "source_protocol_request_freeze_selector_unchanged": true,
+  "unchanged_original_field": "old_failure_archive_sha256",
+  "unchanged_original_value": "a857776f005c919b18615b40ce3a2b5fd18ab335474f92728d52b1c22e0dea3f2",
+  "unchanged_original_value_length": 65,
+  "verified_transport_receipt_path": "experiments/discovery/v06_published_eoh_001/server_transactions/run_0_seed.archive_receipt.json",
+  "verified_transport_receipt_sha256": "815a4928258e0c2f4e242b9d400b1ca1e82dfa1ea106d5a5540a10cd8ecb7cd8",
+  "version": "v06_EoH_root_deployment_provenance_clarification_001"
+}

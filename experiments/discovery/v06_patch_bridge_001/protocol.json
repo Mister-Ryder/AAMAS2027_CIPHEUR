@@ -1,0 +1,46 @@
+{
+  "version": "v06_TRAIN_patch_ranking_bridge_001",
+  "split": "train",
+  "before_any_bridge_certificate_or_program_score": true,
+  "bridge_program_inventory_accessed": false,
+  "selection_performed": false,
+  "archive_sha256": "e67be3ca5c91d6d5d413c4226de6ae047f0b63673d3b951d1cfd95de62f717fc",
+  "archive_members": {
+    "training_contexts.json": {
+      "member": "repair_degree_feedback_v06_001/training_contexts.json",
+      "sha256": "47f9166e8ee158a4997ba824e4618cb45a40613200c274d953fb971c58120b3e"
+    },
+    "results.jsonl": {
+      "member": "repair_degree_feedback_v06_001/results.jsonl",
+      "sha256": "080a662a735aae9e911a0e6910515738af4f83a0983825283de6568949384b5b"
+    },
+    "protocol.json": {
+      "member": "repair_degree_feedback_v06_001/protocol.json",
+      "sha256": "5d10011c743ff878d63331046747723bc2c7062af730a2d5518d2a9ccd93b412"
+    },
+    "freeze_receipt.json": {
+      "member": "repair_degree_feedback_v06_001/freeze_receipt.json",
+      "sha256": "8e158d339b7ae78cebcd6c99d38719c09bf04e1c54e09537da4231539c38f4ab"
+    }
+  },
+  "original_training_evidence_sha256": "762fc25046eeb13f49044b96c5d74b7136dedcc363e1fec81809bcc83aa62913",
+  "states": 120,
+  "patch_status_counts": {
+    "constructed": 120
+  },
+  "planned_queries": 159,
+  "core_SHA_queries": 155,
+  "original_full_strict_pair_queries": 7,
+  "added_query_scope": "All pre-existing strict full-TRAIN pairs surviving in Rprime; certification-conditioned, not natural incidence",
+  "query_shortfalls": 325,
+  "local_label_scope": "restricted_patch_forced_include_with_saved_outside_incumbent_fixed",
+  "original_label_scope": "original_full_residual_requirement_at_original_permanent_boundary",
+  "runtime_source_sha256": {
+    "scripts/patch_ranking_bridge_v06.py": "b0d4a599fa165eb2a74b55d85ec375ef538c9fa174bd4ce8783ea5233b870523",
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "cipheur/graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "cipheur/compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788"
+  }
+}

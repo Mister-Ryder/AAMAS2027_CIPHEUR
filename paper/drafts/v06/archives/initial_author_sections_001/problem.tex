@@ -1,0 +1,78 @@
+% Independent V06 draft fragment; not included in the current manuscript.
+% Symbols and execution semantics follow paper/drafts/v06/method.tex.
+\section{Problem Setting}
+\label{sec:problem}
+
+Each candidate contact $v\in V$ specifies a satellite $\sigma_v$, ground
+station $\gamma_v$, fixed interval $[s_v,e_v)$ with $s_v<e_v$, and
+nonnegative reward $w_v$. Selecting it reserves the entire interval.
+The configuration $\theta$ remains fixed throughout optimization; adaptation
+compares separate static problems rather than online constraint changes.
+Our main scheduling model gives every satellite and station capacity one.
+For contacts $u,v$ ordered by start time, a common station causes a conflict
+when $s_v<e_u+\tau_g$; a common satellite uses $s_v<e_u+\tau_s$.
+The switching gaps $\tau_g,\tau_s$ are nonnegative configuration parameters.
+Synthetic rewards are specified independently of contact duration.
+
+Let $G_\theta=(V,E_\theta,w)$ contain exactly these incompatible pairs, and
+write $w(I)=\sum_{v\in I}w_v$. Contact selection is maximum-weight independent
+set optimization:
+\begin{equation}
+ \max_{\substack{I\subseteq V\\I\text{ independent in }G_\theta}}w(I).
+ \label{eq:mwis}
+\end{equation}
+The formulation covers hard constraints expressible by pairwise conflicts.
+Public graph instances exercise this MWIS problem without a satellite
+physical interpretation. Historical C3 results retain their separate
+inherited conflict predicates and serve as background, not validation of
+the main synthetic model.
+
+A boundary $B=(F,X)$ records permanent commitments $F$ and exclusions $X$.
+It is admissible when $F,X\subseteq V$, $F\cap X=\varnothing$, and $F$ is
+independent in $G_\theta$. With $N_\theta(F)$ the union of their neighbor
+sets, the available contacts are
+\begin{equation}
+ R_\theta(B)=V\setminus\bigl(F\cup X\cup N_\theta(F)\bigr).
+ \label{eq:residual}
+\end{equation}
+For $d\in R_\theta(B)$, its forced conditional completion value is
+\begin{equation}
+ V_\theta(d\mid B)=
+ \max_{\substack{I\subseteq V\text{ independent in }G_\theta\\
+                 F\cup\{d\}\subseteq I,\ I\cap X=\varnothing}}w(I).
+ \label{eq:conditional-value}
+\end{equation}
+This value includes the fixed reward and every globally compatible
+completion, rather than only contacts near the forced action.
+
+An aligned intervention changes one resource-constraint parameter between
+$\theta_0$ and $\theta_1$, preserving contact identities, resources,
+intervals, rewards, and the declared model. The same boundary must be
+admissible under both configurations. Competing actions $a,b$ must belong
+to both available sets and be adjacent in both graphs, so each remains
+individually feasible while their joint selection is forbidden. Changes
+elsewhere can then reverse or preserve their conditional preference.
+Offline evidence certifies such comparisons at this explicit boundary;
+ties or unresolved bounds impose no strict ranking requirement.
+
+The deployed object is a frozen deterministic typed priority program
+$P=(\phi_P,h_P)$, assigning finite scores
+$h_P(\phi_P(G_\theta,A,v))$ to $v\in A$ on a current active snapshot $A$.
+It uses permitted graph and resource information through the typed library.
+All program conditions share a classical anytime repair kernel, initializer,
+patch-construction rules, feasibility checks, and budget conventions.
+The priority changes local greedy proposals and search pivots; their
+feasibility and bounding logic remain shared. Different improvements can
+produce different subsequent incumbents and repair trajectories.
+
+The kernel maintains an independent incumbent $I$ containing $F$ and
+avoiding $X$. It can retract movable contacts in $I\setminus F$, while
+permanent commitments remain protected. Each local replacement is compatible
+with the temporarily retained exterior and is committed only after checking
+global feasibility and strictly positive reward gain. Budget termination
+retains the best feasible incumbent, which need not be maximal or globally
+optimal. This bounded local classical search operates at deployment without
+online LLM calls or full-residual certification-oracle calls.
+Full-graph conditional labels do not certify preferences inside a restricted
+repair patch with different temporary commitments. Rule agreement on the
+certified snapshots and repair quality therefore require separate evaluation.

@@ -1,0 +1,14 @@
+{
+  "version": "matched_transfer_budget_scope_clarification_v05_001",
+  "created_utc": "2026-10-03T12:52:31Z",
+  "original_protocol_sha256": "8f785558ace072936baf2e29b2c3585c1cf3fd8528036ad2398695f9cb061288",
+  "source_zip_sha256": "81cee9ea27374ba055cc15a6af11d810c7aad68982a1830fbae045d202031b62",
+  "code_execution_backend_budget_unchanged": true,
+  "reason": "Clarify Python argument-evaluation order in the preserved execute backend; no program, assignment, schedule, budget or selection change.",
+  "exact_cap_scope": "FeatureRuleProgram.from_dict is evaluated before _Meter(5) is constructed. The 5-process-CPU-second cooperative deadline therefore covers compiled evaluator initialization, feature queries, deletion updates and schedule construction after parsing, not the preceding AST parse. Every 128 meter writes checks the deadline; late overshoot is retained.",
+  "recorded_assignment_cpu_wall_scope": "execute starts both timers before FeatureRuleProgram.from_dict; returned cpu_seconds and wall_seconds retain AST parsing, compiled initialization, all scheduling work, feasibility and exact-reward validation, including cooperative overshoot.",
+  "other_costs": "Graph.from_dict and original C3 reconstruction/source verification are separately recorded; no archived native timings are pooled.",
+  "protocol_wording_superseded_only": "The phrase Program parse/compile ... inside original cooperative CPU meter in budget_scope should be read according to the exact_cap_scope above. All design and failure-zero quality provisions remain fixed.",
+  "clarification_before_analysis": true,
+  "new_result_rewards_accessed_for_this_clarification": false
+}

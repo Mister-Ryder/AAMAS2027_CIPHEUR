@@ -1,0 +1,281 @@
+{
+  "program": {
+    "name": "shared_seed_v06r2",
+    "features": [
+      {
+        "name": "residual_pack",
+        "expression": {
+          "op": "greedy_independent_weight",
+          "args": [
+            {
+              "op": "difference",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "available",
+                      "args": []
+                    },
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "singleton",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "residual_cover",
+        "expression": {
+          "op": "clique_cover_weight",
+          "args": [
+            {
+              "op": "difference",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "available",
+                      "args": []
+                    },
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "singleton",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "residual_edges",
+        "expression": {
+          "op": "count",
+          "args": [
+            {
+              "op": "induced_edges",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "neighbor_edges",
+        "expression": {
+          "op": "count",
+          "args": [
+            {
+              "op": "induced_edges",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "boundary_edges",
+        "expression": {
+          "op": "sub",
+          "args": [
+            {
+              "op": "sub",
+              "args": [
+                {
+                  "op": "count",
+                  "args": [
+                    {
+                      "op": "induced_edges",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "count",
+                  "args": [
+                    {
+                      "op": "induced_edges",
+                      "args": [
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "neighbor_pack",
+        "expression": {
+          "op": "greedy_independent_weight",
+          "args": [
+            {
+              "op": "neighbors",
+              "args": [
+                {
+                  "op": "root",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "rule": "weight + 0.6*residual_pack + 0.4*residual_cover - 0.15*neighbor_pack + 0.2*boundary_edges/max(1e-9,abs(1+degree)) + 0.1*neighbor_edges/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree",
+    "rationale": ""
+  },
+  "program_sha256": "83dc9ce30a4d7ff8c529c36d33b3aa4d47276480a88da3ca4bc6a48b391c156c",
+  "source_candidate_id": "block_2_relations:3",
+  "TRAIN_label_selected_history": true,
+  "R1_seed_selection_sha256": "7067d4237f2e5df54216727fba33059724ad71cb28c226c1af011e9fea43065b",
+  "original_R1_seed_program_sha256": "a278615e138562aef69ca7e09512db01e725779e7b3186829682038518b1913b",
+  "exact_author_visible_R2_seed_preserved": true
+}

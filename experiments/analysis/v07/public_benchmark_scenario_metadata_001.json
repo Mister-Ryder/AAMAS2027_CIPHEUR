@@ -1,0 +1,191 @@
+{
+  "version": "v07_public_benchmark_scenario_audit_metadata_001",
+  "scope": "source_and_schema_only_no_optimizer_no_certificate_no_TEST_score_reads",
+  "repository": "jamestrimble/max-weight-clique-instances",
+  "commit": "a0fd6b631136255807a98727b496a09a65b3301d",
+  "primary_source_readme_tree_pins": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e799a018ab170e1849dcdaf465fb15bc898f95c4",
+      "size": 1031,
+      "url": "https://api.github.com/repos/jamestrimble/max-weight-clique-instances/git/blobs/e799a018ab170e1849dcdaf465fb15bc898f95c4"
+    },
+    {
+      "path": "UAI/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cda9e39181a57a9aeed8a545b31ec276387fd701",
+      "size": 1605,
+      "url": "https://api.github.com/repos/jamestrimble/max-weight-clique-instances/git/blobs/cda9e39181a57a9aeed8a545b31ec276387fd701"
+    },
+    {
+      "path": "WDP/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7ba4f035251f74d7514ff5569d5933034255c7b",
+      "size": 958,
+      "url": "https://api.github.com/repos/jamestrimble/max-weight-clique-instances/git/blobs/b7ba4f035251f74d7514ff5569d5933034255c7b"
+    }
+  ],
+  "source_bindings": {
+    "scripts/fetch_wdp_v06.py": "48e154a3f7068f2a9c358dbe85a7fd7b139ea4d5b33eba909038a9430fa55c32",
+    "scripts/fetch_uai_mmap_v06.py": "bff4c4fe601c364115514dba334acfbd23ea7f87ba0c5220b4d851c472b9d330",
+    "scripts/run_classic_public_train_v06.py": "e2048a61c073fad2e692d179511c30b92fc30f4bc196cf43f3c681d329376230",
+    "scripts/run_performance_r2_eoh_test_v06.py": "785d8d262082b62b301e1b6681dc0d98b347b8ab17ba948144b761d52b0cefc9",
+    "cipheur/advanced_baselines_v06.py": "713364f084ef9c3538be275b2437e681e6a9d0457dbc028d621ba0bc71ee4477",
+    "cipheur/public_benchmarks.py": "ba4c9041dfb6325a22d5d829e6483b523581f3f83d4aa753b3b6ce798d125799",
+    "experiments/discovery/wdp_inputs_v06_001/protocol.json": "3a469823d789bddd483b77288dc719e55476069ff0affb30c4be10e17542d76f",
+    "experiments/discovery/uai_mmap_v06_001/protocol.json": "cd4b45f3115118cac883294f532f4d229ad6b3f1c00d36aaead7d43545caa5c6",
+    "experiments/discovery/v06_public_metadata_001/inventory.json": "7ce0455066e5b542f0865913602472b6dc3c9b355cf1b66fe95fd844a1ebc522"
+  },
+  "corpora": [
+    {
+      "corpus": "WDP",
+      "archive_path": "experiments\\runs\\v06\\wdp_inputs_v06_001.tar.gz",
+      "archive_sha256": "b47996fd674af7d4a1c2543c628b0d51f204d6c66f8bbd74687d3148a9f67c06",
+      "archive_bytes": 11031009,
+      "inventory_member": "wdp_inputs_v06_001/inventory.json",
+      "inventory_sha256": "d7899055c070ea5fe9a066acb7d70b540fa6aadef162dfdbf0b080ae07d6521b",
+      "graph_count": 50,
+      "n_range": [
+        500,
+        1500
+      ],
+      "families": [
+        "WDP_1xx",
+        "WDP_2xx",
+        "WDP_4xx",
+        "WDP_5xx",
+        "WDP_6xx"
+      ],
+      "exact_signed32_compatible_input_count": 0,
+      "sample": {
+        "member": "wdp_inputs_v06_001/WDP/wdp-instances/in101.grf",
+        "raw_sha256": "0df1193b19de9bba0c5b25e868144b0a5d3e99e3c0799f433155c4975314e48f",
+        "raw_bytes": 1538926,
+        "header_kind": "edge",
+        "n": 1000,
+        "m": 155734,
+        "first20_line_row_kinds": [
+          "n",
+          "p"
+        ],
+        "raw_lines_reproduced": false,
+        "format": {
+          "p": "p edge_or_edges vertex_count edge_count",
+          "n": "n integer_vertex_id numeric_weight",
+          "e": "e integer_vertex_id integer_vertex_id"
+        }
+      },
+      "metadata_members": [
+        {
+          "path": "WDP/README.md",
+          "raw_sha256": "43deb6b21eb9882b2c950714c35a054f62a3b4fc97ec9f91f7374304da63885d"
+        }
+      ],
+      "contacts_or_resource_times_in_supplied_graph_schema": false,
+      "domain_counterfactual_reconstructable_from_supplied_graph": false,
+      "source_semantics": "winner_determination_bid_compatibility_clique",
+      "transformations": [
+        "source precise bid scaling by1000 and vertex permutation",
+        "our exact simple undirected complement, same vertices/weights",
+        "carrier Contact attributes public_sat/public_ground and time0..1"
+      ],
+      "recommended_role": "secondary_static_public_MWIS_native_methods_comparison_and_abstract_mechanism_diagnostic"
+    },
+    {
+      "corpus": "UAI_MMAP",
+      "archive_path": "experiments\\runs\\v06\\uai_mmap_inputs_v06_001.tar.gz",
+      "archive_sha256": "4c9d8decb20d771f581dbbbee825408a42baa36eab353fb80f3991af47bb0940",
+      "archive_bytes": 3213097,
+      "inventory_member": "uai_mmap_v06_001/inventory.json",
+      "inventory_sha256": "d1ba42377fb00e25e8ad5e91815406172f150f6481b7c9203c60b30eb113bd7f",
+      "graph_count": 81,
+      "n_range": [
+        832,
+        25341
+      ],
+      "families": [
+        "Grids",
+        "Promedas",
+        "ProteinFolding",
+        "Segmentation"
+      ],
+      "exact_signed32_compatible_input_count": 6,
+      "sample": {
+        "member": "uai_mmap_v06_001/UAI/MMAP/Grids_18.mwvc",
+        "raw_sha256": "79e15c67346a10d350d41724bca61e9a14fcd75e3c3e2e9209441205372e22f4",
+        "raw_bytes": 187674,
+        "header_kind": "edges",
+        "n": 6412,
+        "m": 8012,
+        "first20_line_row_kinds": [
+          "n",
+          "p"
+        ],
+        "raw_lines_reproduced": false,
+        "format": {
+          "p": "p edge_or_edges vertex_count edge_count",
+          "n": "n integer_vertex_id numeric_weight",
+          "e": "e integer_vertex_id integer_vertex_id"
+        }
+      },
+      "metadata_members": [],
+      "contacts_or_resource_times_in_supplied_graph_schema": false,
+      "domain_counterfactual_reconstructable_from_supplied_graph": false,
+      "source_semantics": "MAP_to_WCSP_to_constraint_composite_graph_MWVC_equivalent_MWIS",
+      "transformations": [
+        "source UAI2014 MAP/WCSP CCG conversion",
+        "our same source edges as MWIS conflicts, same rational weights up to exact integer scale",
+        "carrier Contact attributes public_sat/public_ground and time0..1"
+      ],
+      "recommended_role": "secondary_static_public_MWIS_native_methods_comparison_and_abstract_mechanism_diagnostic"
+    }
+  ],
+  "CHILS64_track": {
+    "existing_population_tag": "UAI_Grids_CHILS64",
+    "underlying_input_corpus": "same_UAI_MMAP_Grids",
+    "separate_new_physical_dataset": false,
+    "meaning": "exact signed64 integer encoding supported by source-verified CHILS implementation",
+    "actual_formal_CHILS_paper_core_population": "37 application-derived vehicle-routing MWIS instances with supplied warm starts and clique metadata",
+    "actual_CHILS_paper_population_is_our_WDP_or_UAI_population": false
+  },
+  "missing_fields": [
+    "original satellite/ground identities",
+    "contact start/end/tracking times",
+    "ground or satellite switching gaps",
+    "operational configurations",
+    "future chronological contact source periods"
+  ],
+  "prohibited_claims": [
+    "ground gap intervention reconstructed from arbitrary public graph edits",
+    "carrier fields presented as physical contacts",
+    "hash/unit weight extensions presented as original application rewards",
+    "UAI_Grids_CHILS64 presented as independent CHILS corpus"
+  ],
+  "recommended_main_role": "C6/W6 real_contact_window_configurations_pending_core_mechanism_screening_not_guaranteed_positive",
+  "primary_references": [
+    {
+      "title": "On Maximum Weight Clique Algorithms, and How They Are Evaluated",
+      "venue": "CP2017",
+      "doi": "10.1007/978-3-319-66158-2_14",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-66158-2_14"
+    },
+    {
+      "title": "A Constraint Composite Graph-Based ILP Encoding of the Boolean Weighted CSP",
+      "venue": "CP2017",
+      "doi": "10.1007/978-3-319-66158-2_40",
+      "publisher_contents_url": "https://link.springer.com/book/10.1007/978-3-319-66158-2?page=3",
+      "author_readme_url": "https://raw.githubusercontent.com/jamestrimble/max-weight-clique-instances/a0fd6b631136255807a98727b496a09a65b3301d/UAI/README.md"
+    },
+    {
+      "title": "Concurrent Iterated Local Search for the Maximum Weight Independent Set Problem",
+      "venue": "SEA2025",
+      "doi": "10.4230/LIPIcs.SEA.2025.22",
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SEA.2025.22",
+      "formal_dataset_section_url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol338-sea2025/html/LIPIcs.SEA.2025.22/LIPIcs.SEA.2025.22.html"
+    }
+  ]
+}

@@ -1,0 +1,934 @@
+{
+  "version": "v06_independent_EoH_heldout_result_audit_001",
+  "checked_utc": "2026-10-04T03:58:05.320263+00:00",
+  "archive_sha256": "338865589b9a35248296a904bffbd31afdbcbfcc9c401769d329e16b508de55c",
+  "kind": "EoH",
+  "checks": 252218,
+  "checks_by_kind": {
+    "independently_pinned_original_prepared_registration": 1,
+    "immutable_prepared_artifact": 28,
+    "unchanged_registered_scientific_source": 13,
+    "all_requested_frozen_roles_and_variants": 1,
+    "executed_exact_original_root_release": 1,
+    "execution_source_registration_workers_and_frame_binding": 1,
+    "execution_selection_and_certificate_binding": 3,
+    "no_TEST_selection_or_extra_queries": 1,
+    "prior_independent_TEST_certificate_proof": 1,
+    "prior_certified_result_bytes": 1,
+    "all_original_TEST_labels_byte_payload": 1,
+    "all_original_TEST_input_payloads": 1,
+    "independent_all_five_paired_bijections": 5,
+    "assigned_identity_variant_once": 24,
+    "exact_frozen_programme_identity": 24,
+    "each_assignment_no_selection_or_oracle": 24,
+    "independent_actual_interface_fit": 144,
+    "all_independent_strict_numeric_predictions": 24,
+    "complete_independent_quotient": 48,
+    "explicit_obstruction_witness_presence": 48,
+    "complete_cycle_witness": 24,
+    "actual_cycle_witness_kind": 24,
+    "actual_certified_cycle_arc": 24,
+    "exact_equality_join": 24,
+    "independent_actual_base_signature_alias": 10872,
+    "all_strict_tied_unknown_query_payloads": 24,
+    "all_paired_reversal_preservation_and_ties": 24,
+    "complete_certificate_status_counts": 24,
+    "all_original_query_quota_shortfalls": 24,
+    "all_assigned_original_state_receipts": 24,
+    "state_cluster_family_identity": 1728,
+    "unchanged_kernel_caps_and_priority": 1728,
+    "retained_original_graph_exact_objective_boundary": 1728,
+    "ordinary_budget_stop_separate_from_error": 1728,
+    "every_common_degree_initializer_prefix": 32540,
+    "initial_incumbent_and_stop_scope": 1728,
+    "permanent_boundary_start": 1728,
+    "legal_destroy_and_outside_commitment": 22208,
+    "feasible_restricted_lower": 22208,
+    "unchanged_exact_D_preserving_restriction": 22208,
+    "root_clique_partition_proof": 22208,
+    "sound_root_upper": 22208,
+    "independent_exact_restricted_optimum": 22208,
+    "independent_complete_local_priority_order": 2852,
+    "common_degree_priority_order": 2852,
+    "local_greedy_full_or_feasible_prefix": 5704,
+    "strict_positive_commit": 22208,
+    "per_patch_node_cap": 22208,
+    "every_patch_replay_final_identity": 1728,
+    "global_charged_search_node_cap": 1728,
+    "charged_primitive_breakdown_with_interrupted_tick": 3456,
+    "saved_actual_nonnegative_times_not_remeasured": 1728,
+    "monotone_global_feasible_commit": 64,
+    "complete_feasible_error_coverage": 24,
+    "exact_family_macro_reward_and_work": 24,
+    "complete_requested_identity_variant_frame": 1,
+    "terminal_complete_marker_and_original_result_bytes": 1,
+    "terminal_all_failure_and_missing_counts": 1,
+    "all_original_five_relabel_mean_worst_and_null_summary": 1
+  },
+  "errors": 0,
+  "error_records": [],
+  "totals": {
+    "saved_patch_traces": 22208,
+    "verified_kernel_assignments": 1728
+  },
+  "executed_status_counts": {
+    "no_improvement_in_attempted_patches": 1688,
+    "patch_limit": 40
+  },
+  "verified_identity_variant_count": 24,
+  "requested_state_assignments": 1728,
+  "programme_summaries": [
+    {
+      "id": "published_EoH_DSL_quality:run_1",
+      "variant": "original",
+      "strict_passed": 428,
+      "strict_total": 453,
+      "alias_passed": 67,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "469757/90",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "161740/9",
+          "SATLIB": "12946/15",
+          "temporal_unit_balanced_long": "4751/2",
+          "temporal_unit_balanced_short": "29115/8",
+          "temporal_unit_ground_scarce_long": "9023/4",
+          "temporal_unit_ground_scarce_short": "7772",
+          "temporal_unit_satellite_scarce_long": "15717/8",
+          "temporal_unit_satellite_scarce_short": "19659/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_2",
+      "variant": "original",
+      "strict_passed": 428,
+      "strict_total": 453,
+      "alias_passed": 67,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "469757/90",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "161740/9",
+          "SATLIB": "12946/15",
+          "temporal_unit_balanced_long": "4751/2",
+          "temporal_unit_balanced_short": "29115/8",
+          "temporal_unit_ground_scarce_long": "9023/4",
+          "temporal_unit_ground_scarce_short": "7772",
+          "temporal_unit_satellite_scarce_long": "15717/8",
+          "temporal_unit_satellite_scarce_short": "19659/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_0",
+      "variant": "original",
+      "strict_passed": 428,
+      "strict_total": 453,
+      "alias_passed": 67,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "469757/90",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "161740/9",
+          "SATLIB": "12946/15",
+          "temporal_unit_balanced_long": "4751/2",
+          "temporal_unit_balanced_short": "29115/8",
+          "temporal_unit_ground_scarce_long": "9023/4",
+          "temporal_unit_ground_scarce_short": "7772",
+          "temporal_unit_satellite_scarce_long": "15717/8",
+          "temporal_unit_satellite_scarce_short": "19659/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_0",
+      "variant": "relabel_0",
+      "strict_passed": 437,
+      "strict_total": 453,
+      "alias_passed": 73,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "7969763/1440",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "164557/9",
+          "SATLIB": "5393/5",
+          "temporal_unit_balanced_long": "5553/2",
+          "temporal_unit_balanced_short": "18705/8",
+          "temporal_unit_ground_scarce_long": "11037/4",
+          "temporal_unit_ground_scarce_short": "17733/2",
+          "temporal_unit_satellite_scarce_long": "1240",
+          "temporal_unit_satellite_scarce_short": "55467/8"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_3",
+      "variant": "original",
+      "strict_passed": 428,
+      "strict_total": 453,
+      "alias_passed": 67,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "469757/90",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "161740/9",
+          "SATLIB": "12946/15",
+          "temporal_unit_balanced_long": "4751/2",
+          "temporal_unit_balanced_short": "29115/8",
+          "temporal_unit_ground_scarce_long": "9023/4",
+          "temporal_unit_ground_scarce_short": "7772",
+          "temporal_unit_satellite_scarce_long": "15717/8",
+          "temporal_unit_satellite_scarce_short": "19659/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_1",
+      "variant": "relabel_0",
+      "strict_passed": 437,
+      "strict_total": 453,
+      "alias_passed": 73,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "7969763/1440",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "164557/9",
+          "SATLIB": "5393/5",
+          "temporal_unit_balanced_long": "5553/2",
+          "temporal_unit_balanced_short": "18705/8",
+          "temporal_unit_ground_scarce_long": "11037/4",
+          "temporal_unit_ground_scarce_short": "17733/2",
+          "temporal_unit_satellite_scarce_long": "1240",
+          "temporal_unit_satellite_scarce_short": "55467/8"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_2",
+      "variant": "relabel_0",
+      "strict_passed": 437,
+      "strict_total": 453,
+      "alias_passed": 73,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "7969763/1440",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "164557/9",
+          "SATLIB": "5393/5",
+          "temporal_unit_balanced_long": "5553/2",
+          "temporal_unit_balanced_short": "18705/8",
+          "temporal_unit_ground_scarce_long": "11037/4",
+          "temporal_unit_ground_scarce_short": "17733/2",
+          "temporal_unit_satellite_scarce_long": "1240",
+          "temporal_unit_satellite_scarce_short": "55467/8"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_3",
+      "variant": "relabel_0",
+      "strict_passed": 437,
+      "strict_total": 453,
+      "alias_passed": 73,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "7969763/1440",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "164557/9",
+          "SATLIB": "5393/5",
+          "temporal_unit_balanced_long": "5553/2",
+          "temporal_unit_balanced_short": "18705/8",
+          "temporal_unit_ground_scarce_long": "11037/4",
+          "temporal_unit_ground_scarce_short": "17733/2",
+          "temporal_unit_satellite_scarce_long": "1240",
+          "temporal_unit_satellite_scarce_short": "55467/8"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_0",
+      "variant": "relabel_1",
+      "strict_passed": 435,
+      "strict_total": 453,
+      "alias_passed": 68,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "403919/80",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "53570/3",
+          "SATLIB": "13616/15",
+          "temporal_unit_balanced_long": "6051/2",
+          "temporal_unit_balanced_short": "23515/8",
+          "temporal_unit_ground_scarce_long": "10273/4",
+          "temporal_unit_ground_scarce_short": "52913/8",
+          "temporal_unit_satellite_scarce_long": "10585/8",
+          "temporal_unit_satellite_scarce_short": "41257/8"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_1",
+      "variant": "relabel_1",
+      "strict_passed": 435,
+      "strict_total": 453,
+      "alias_passed": 68,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "403919/80",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "53570/3",
+          "SATLIB": "13616/15",
+          "temporal_unit_balanced_long": "6051/2",
+          "temporal_unit_balanced_short": "23515/8",
+          "temporal_unit_ground_scarce_long": "10273/4",
+          "temporal_unit_ground_scarce_short": "52913/8",
+          "temporal_unit_satellite_scarce_long": "10585/8",
+          "temporal_unit_satellite_scarce_short": "41257/8"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_2",
+      "variant": "relabel_1",
+      "strict_passed": 435,
+      "strict_total": 453,
+      "alias_passed": 68,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "403919/80",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "53570/3",
+          "SATLIB": "13616/15",
+          "temporal_unit_balanced_long": "6051/2",
+          "temporal_unit_balanced_short": "23515/8",
+          "temporal_unit_ground_scarce_long": "10273/4",
+          "temporal_unit_ground_scarce_short": "52913/8",
+          "temporal_unit_satellite_scarce_long": "10585/8",
+          "temporal_unit_satellite_scarce_short": "41257/8"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_3",
+      "variant": "relabel_1",
+      "strict_passed": 435,
+      "strict_total": 453,
+      "alias_passed": 68,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "403919/80",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "53570/3",
+          "SATLIB": "13616/15",
+          "temporal_unit_balanced_long": "6051/2",
+          "temporal_unit_balanced_short": "23515/8",
+          "temporal_unit_ground_scarce_long": "10273/4",
+          "temporal_unit_ground_scarce_short": "52913/8",
+          "temporal_unit_satellite_scarce_long": "10585/8",
+          "temporal_unit_satellite_scarce_short": "41257/8"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_0",
+      "variant": "relabel_2",
+      "strict_passed": 444,
+      "strict_total": 453,
+      "alias_passed": 74,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1307/2304",
+        "macro_work_exact": "5035693/960",
+        "family_reward_over_total_weight": {
+          "DIMACS": "49/144",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "19093",
+          "SATLIB": "16196/15",
+          "temporal_unit_balanced_long": "21483/8",
+          "temporal_unit_balanced_short": "17437/8",
+          "temporal_unit_ground_scarce_long": "29023/8",
+          "temporal_unit_ground_scarce_short": "26063/4",
+          "temporal_unit_satellite_scarce_long": "6763/4",
+          "temporal_unit_satellite_scarce_short": "5092"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_1",
+      "variant": "relabel_2",
+      "strict_passed": 444,
+      "strict_total": 453,
+      "alias_passed": 74,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1307/2304",
+        "macro_work_exact": "5035693/960",
+        "family_reward_over_total_weight": {
+          "DIMACS": "49/144",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "19093",
+          "SATLIB": "16196/15",
+          "temporal_unit_balanced_long": "21483/8",
+          "temporal_unit_balanced_short": "17437/8",
+          "temporal_unit_ground_scarce_long": "29023/8",
+          "temporal_unit_ground_scarce_short": "26063/4",
+          "temporal_unit_satellite_scarce_long": "6763/4",
+          "temporal_unit_satellite_scarce_short": "5092"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_2",
+      "variant": "relabel_2",
+      "strict_passed": 444,
+      "strict_total": 453,
+      "alias_passed": 74,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1307/2304",
+        "macro_work_exact": "5035693/960",
+        "family_reward_over_total_weight": {
+          "DIMACS": "49/144",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "19093",
+          "SATLIB": "16196/15",
+          "temporal_unit_balanced_long": "21483/8",
+          "temporal_unit_balanced_short": "17437/8",
+          "temporal_unit_ground_scarce_long": "29023/8",
+          "temporal_unit_ground_scarce_short": "26063/4",
+          "temporal_unit_satellite_scarce_long": "6763/4",
+          "temporal_unit_satellite_scarce_short": "5092"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_3",
+      "variant": "relabel_2",
+      "strict_passed": 444,
+      "strict_total": 453,
+      "alias_passed": 74,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1307/2304",
+        "macro_work_exact": "5035693/960",
+        "family_reward_over_total_weight": {
+          "DIMACS": "49/144",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "19093",
+          "SATLIB": "16196/15",
+          "temporal_unit_balanced_long": "21483/8",
+          "temporal_unit_balanced_short": "17437/8",
+          "temporal_unit_ground_scarce_long": "29023/8",
+          "temporal_unit_ground_scarce_short": "26063/4",
+          "temporal_unit_satellite_scarce_long": "6763/4",
+          "temporal_unit_satellite_scarce_short": "5092"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_0",
+      "variant": "relabel_3",
+      "strict_passed": 436,
+      "strict_total": 453,
+      "alias_passed": 69,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "109/192",
+        "macro_work_exact": "502849/90",
+        "family_reward_over_total_weight": {
+          "DIMACS": "11/32",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "175592/9",
+          "SATLIB": "19312/15",
+          "temporal_unit_balanced_long": "12001/4",
+          "temporal_unit_balanced_short": "24633/8",
+          "temporal_unit_ground_scarce_long": "7213/2",
+          "temporal_unit_ground_scarce_short": "7424",
+          "temporal_unit_satellite_scarce_long": "8695/8",
+          "temporal_unit_satellite_scarce_short": "22813/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_1",
+      "variant": "relabel_3",
+      "strict_passed": 436,
+      "strict_total": 453,
+      "alias_passed": 69,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "109/192",
+        "macro_work_exact": "502849/90",
+        "family_reward_over_total_weight": {
+          "DIMACS": "11/32",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "175592/9",
+          "SATLIB": "19312/15",
+          "temporal_unit_balanced_long": "12001/4",
+          "temporal_unit_balanced_short": "24633/8",
+          "temporal_unit_ground_scarce_long": "7213/2",
+          "temporal_unit_ground_scarce_short": "7424",
+          "temporal_unit_satellite_scarce_long": "8695/8",
+          "temporal_unit_satellite_scarce_short": "22813/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_2",
+      "variant": "relabel_3",
+      "strict_passed": 436,
+      "strict_total": 453,
+      "alias_passed": 69,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "109/192",
+        "macro_work_exact": "502849/90",
+        "family_reward_over_total_weight": {
+          "DIMACS": "11/32",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "175592/9",
+          "SATLIB": "19312/15",
+          "temporal_unit_balanced_long": "12001/4",
+          "temporal_unit_balanced_short": "24633/8",
+          "temporal_unit_ground_scarce_long": "7213/2",
+          "temporal_unit_ground_scarce_short": "7424",
+          "temporal_unit_satellite_scarce_long": "8695/8",
+          "temporal_unit_satellite_scarce_short": "22813/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_3",
+      "variant": "relabel_3",
+      "strict_passed": 436,
+      "strict_total": 453,
+      "alias_passed": 69,
+      "quotient_contradictory": true,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "109/192",
+        "macro_work_exact": "502849/90",
+        "family_reward_over_total_weight": {
+          "DIMACS": "11/32",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "175592/9",
+          "SATLIB": "19312/15",
+          "temporal_unit_balanced_long": "12001/4",
+          "temporal_unit_balanced_short": "24633/8",
+          "temporal_unit_ground_scarce_long": "7213/2",
+          "temporal_unit_ground_scarce_short": "7424",
+          "temporal_unit_satellite_scarce_long": "8695/8",
+          "temporal_unit_satellite_scarce_short": "22813/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_0",
+      "variant": "relabel_4",
+      "strict_passed": 436,
+      "strict_total": 453,
+      "alias_passed": 74,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "7391759/1440",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "156037/9",
+          "SATLIB": "13277/15",
+          "temporal_unit_balanced_long": "17587/8",
+          "temporal_unit_balanced_short": "14707/4",
+          "temporal_unit_ground_scarce_long": "11335/4",
+          "temporal_unit_ground_scarce_short": "24321/4",
+          "temporal_unit_satellite_scarce_long": "10579/8",
+          "temporal_unit_satellite_scarce_short": "26925/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_1",
+      "variant": "relabel_4",
+      "strict_passed": 436,
+      "strict_total": 453,
+      "alias_passed": 74,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "7391759/1440",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "156037/9",
+          "SATLIB": "13277/15",
+          "temporal_unit_balanced_long": "17587/8",
+          "temporal_unit_balanced_short": "14707/4",
+          "temporal_unit_ground_scarce_long": "11335/4",
+          "temporal_unit_ground_scarce_short": "24321/4",
+          "temporal_unit_satellite_scarce_long": "10579/8",
+          "temporal_unit_satellite_scarce_short": "26925/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_2",
+      "variant": "relabel_4",
+      "strict_passed": 436,
+      "strict_total": 453,
+      "alias_passed": 74,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "7391759/1440",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "156037/9",
+          "SATLIB": "13277/15",
+          "temporal_unit_balanced_long": "17587/8",
+          "temporal_unit_balanced_short": "14707/4",
+          "temporal_unit_ground_scarce_long": "11335/4",
+          "temporal_unit_ground_scarce_short": "24321/4",
+          "temporal_unit_satellite_scarce_long": "10579/8",
+          "temporal_unit_satellite_scarce_short": "26925/4"
+        }
+      }
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_3",
+      "variant": "relabel_4",
+      "strict_passed": 436,
+      "strict_total": 453,
+      "alias_passed": 74,
+      "quotient_contradictory": false,
+      "verified_incumbents": 72,
+      "normal_completed": 72,
+      "kernel_errors": 0,
+      "kernel_summary": {
+        "macro_quality_exact": "1309/2304",
+        "macro_work_exact": "7391759/1440",
+        "family_reward_over_total_weight": {
+          "DIMACS": "25/72",
+          "SATLIB": "79/96",
+          "temporal_unit_balanced_long": "173/256",
+          "temporal_unit_balanced_short": "135/256",
+          "temporal_unit_ground_scarce_long": "141/256",
+          "temporal_unit_ground_scarce_short": "107/256",
+          "temporal_unit_satellite_scarce_long": "181/256",
+          "temporal_unit_satellite_scarce_short": "127/256"
+        },
+        "family_work": {
+          "DIMACS": "156037/9",
+          "SATLIB": "13277/15",
+          "temporal_unit_balanced_long": "17587/8",
+          "temporal_unit_balanced_short": "14707/4",
+          "temporal_unit_ground_scarce_long": "11335/4",
+          "temporal_unit_ground_scarce_short": "24321/4",
+          "temporal_unit_satellite_scarce_long": "10579/8",
+          "temporal_unit_satellite_scarce_short": "26925/4"
+        }
+      }
+    }
+  ],
+  "independent_exact_patch_queries": 5512,
+  "independent_exact_verifier_states": 38497,
+  "audit_script_sha256": "2e6625390671b515dada316da82be0f05af73ff1e3402a50e836fd0c34f39bd9",
+  "independent_helper_sha256": {
+    "scripts/verify_matched_llm_v05.py": "52b331fea2214642ac50ffe3996c95a6fb9893320e50df84e1371f8fedae087b",
+    "scripts/verify_public_alias_v05.py": "6b349b659bad3acfd3a9e1abbf9046a984f8f66df05068841c1ba8c076aa959a",
+    "scripts/verify_synthesis_train_v06.py": "941264da65d8aac3ccb9242de75ebff4c7f8cc29eb602e071be11d4e25dc8322"
+  },
+  "verification_wall_seconds": 10.475235100020654,
+  "production_scheduler_or_oracle_calls": 0,
+  "programme_selection": false,
+  "scope": "Separate root-executed independent numeric/graph/trace reconstruction; actual execution timings/work retained, error incumbents remain diagnostics, no new experimental rollout or TEST tuning."
+}

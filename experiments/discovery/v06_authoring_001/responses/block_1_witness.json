@@ -1,0 +1,111 @@
+{
+  "version": "matched_cold_bank_v06",
+  "block": 1,
+  "arm": "witness",
+  "candidates": [
+    {
+      "name": "interval_completion",
+      "features": [
+        {"name":"neighbor_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"neighbor_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_cover","expression":{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight + 0.75*residual_pack + 0.25*residual_cover - 0.15*neighbor_pack - 0.05*neighbor_cover + 0.02*neighbor_edges/max(1e-9,abs(1+degree)) - 0.01*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.001*(compatible_weight-conflict_weight-max_conflict_weight)/max(1e-9,abs(1+remaining_count+degree+duration+station_gap+satellite_gap))",
+      "rationale": "Blend feasible residual packing and its clique-cover bound, discount independent alternatives destroyed by inclusion, and retain both neighborhood and residual edge witnesses for equal Base9 joins."
+    },
+    {
+      "name": "residual_density",
+      "features": [
+        {"name":"neighbor_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"boundary_edges","expression":{"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}},
+        {"name":"residual_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"full_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"available","args":[]}]}]}}
+      ],
+      "rule": "weight + compatible_weight*compatible_weight/max(1e-9,abs(compatible_weight+2*residual_edges)) + 0.2*residual_pack + 0.05*residual_cover + 0.03*boundary_edges/max(1e-9,abs(1+degree)) - 0.02*neighbor_edges/max(1e-9,abs(1+degree)) - 0.01*full_edges*degree/max(1e-9,abs(1+remaining_count*remaining_count)) + 0.001*(compatible_weight-conflict_weight-max_conflict_weight)/max(1e-9,abs(1+remaining_count+degree+duration+station_gap+satellite_gap))",
+      "rationale": "A density surrogate favors numerous compatible actions with fewer surviving conflicts. Boundary exposure supplies information beyond internal neighborhood edges, while global density adjusts the degree penalty."
+    },
+    {
+      "name": "force_forbid_margin",
+      "features": [
+        {"name":"neighbor_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"residual_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"excluded_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"excluded_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight + residual_pack - excluded_pack + 0.35*(weight+residual_cover-excluded_cover) + 0.02*neighbor_edges/max(1e-9,abs(1+degree)) - 0.01*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.001*(compatible_weight-conflict_weight-max_conflict_weight)/max(1e-9,abs(1+remaining_count+degree+duration+station_gap+satellite_gap))",
+      "rationale": "Compare polynomial completion summaries after forcing the root with those after excluding it. Packing and cover margins offer different structural witnesses, with edge corrections resolving some equal-size completions."
+    },
+    {
+      "name": "clustered_opportunities",
+      "features": [
+        {"name":"neighbor_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"neighbor_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_cover","expression":{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight + 0.5*(residual_pack+residual_cover) - (0.35 if 4*neighbor_edges <= degree*max(0,degree-1) else 0.1)*neighbor_pack - 0.05*neighbor_cover + 0.02*neighbor_edges/max(1e-9,abs(1+degree)) - 0.01*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.001*(compatible_weight-conflict_weight-max_conflict_weight)/max(1e-9,abs(1+remaining_count+degree+duration+station_gap+satellite_gap))",
+      "rationale": "Sparse neighborhoods may contain several mutually compatible alternatives, so inclusion receives a larger opportunity-cost penalty there. Residual packing, cover, and edges address ties with identical local density."
+    },
+    {
+      "name": "weighted_boundary_relief",
+      "features": [
+        {"name":"neighbor_edge_min","expression":{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_edge_min","expression":{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"boundary_edge_min","expression":{"op":"sub","args":[{"op":"sub","args":[{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}},
+        {"name":"neighbor_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight/max(1e-9,abs(weight+neighbor_pack)) + 0.25*residual_pack + 0.1*residual_cover + 0.05*boundary_edge_min/max(1e-9,abs(1+degree)) - 0.02*neighbor_edge_min/max(1e-9,abs(1+degree)) - 0.02*residual_edge_min/max(1e-9,abs(1+compatible_weight)) + 0.001*(compatible_weight-conflict_weight-max_conflict_weight)/max(1e-9,abs(1+remaining_count+degree+duration+station_gap+satellite_gap))",
+      "rationale": "Weighted boundary conflicts proxy pressure released when the neighborhood is removed. Balance that relief against feasible lost alternatives and surviving conflict mass, extending edge-count witnesses to weighted active graphs."
+    },
+    {
+      "name": "packed_edge_witness",
+      "features": [
+        {"name":"neighbor_witness","expression":{"op":"sub","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"residual_witness","expression":{"op":"sub","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}},
+        {"name":"neighbor_cover","expression":{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"excluded_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"excluded_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight + (residual_witness-0.15*neighbor_witness)/max(1e-9,abs(remaining_count*remaining_count)) - 0.4*excluded_pack + 0.2*(weight+residual_cover-excluded_cover) - 0.05*neighbor_cover + 0.001*(compatible_weight-conflict_weight-max_conflict_weight)/max(1e-9,abs(1+remaining_count+degree+duration+station_gap+satellite_gap))",
+      "rationale": "For unit graphs, scaling integer packing by active-set size squared and subtracting induced edges preserves both summaries at fixed size. This carries eight structural summaries in six demanded features and combines them with exclusion context."
+    },
+    {
+      "name": "uncertainty_adaptive",
+      "features": [
+        {"name":"neighbor_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"neighbor_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"global_gap","expression":{"op":"sub","args":[{"op":"clique_cover_weight","args":[{"op":"available","args":[]}]},{"op":"greedy_independent_weight","args":[{"op":"available","args":[]}]}]}}
+      ],
+      "rule": "weight + residual_pack - 0.35*(residual_cover-residual_pack)/max(1e-9,abs(1+global_gap)) - (0.1+0.05*(station_gap+satellite_gap))*neighbor_pack + 0.02*neighbor_edges/max(1e-9,abs(1+degree)) - 0.01*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.001*(compatible_weight-conflict_weight-max_conflict_weight)/max(1e-9,abs(1+remaining_count+degree+duration+station_gap+satellite_gap))",
+      "rationale": "Prefer demonstrated residual packing and penalize residual bound looseness relative to the whole graph's packing-cover gap. Resource gaps increase the opportunity-cost penalty, while edge witnesses retain local structural distinctions."
+    },
+    {
+      "name": "economical_edge_pack",
+      "features": [
+        {"name":"neighbor_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"excluded_edges","expression":{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"neighbor_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_pack","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight/max(1e-9,abs(1+conflict_weight)) + 0.2*residual_pack + 0.05*residual_cover - 0.1*neighbor_pack + 0.02*(excluded_edges-neighbor_edges-residual_edges)/max(1e-9,abs(1+degree)) - 0.01*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.001*(compatible_weight-conflict_weight-max_conflict_weight)/max(1e-9,abs(1+remaining_count+degree+duration+station_gap+satellite_gap))",
+      "rationale": "Use three inexpensive edge summaries, two greedy packings, and one cover bound. Recover boundary exposure directly in the rule and preserve a weighted-degree preference alongside residual completion evidence."
+    }
+  ]
+}

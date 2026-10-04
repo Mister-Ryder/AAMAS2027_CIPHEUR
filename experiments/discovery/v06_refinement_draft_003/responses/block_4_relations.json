@@ -1,0 +1,255 @@
+{
+  "version": "matched_cold_bank_v06",
+  "block": 4,
+  "arm": "relations",
+  "candidates": [
+    {
+      "name": "interval_margin",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "deletion_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "deletion_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.25*residual_pack + 0.75*residual_cover + 0.2*(weight+residual_pack-deletion_pack) + 0.1*(weight+residual_cover-deletion_cover) - 0.05*neighbor_pack + 0.08*boundary_edges/max(1e-9,abs(1+degree)) - 0.005*degree",
+      "rationale": "Tests a cover-led completion estimate augmented by root-exclusion margins. Demanded deletion bounds may distinguish structural aliases, while neighborhood packing and boundary relief retain local context."
+    },
+    {
+      "name": "neighbor_interval",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + residual_cover - 0.15*(residual_cover-residual_pack) - 0.2*neighbor_pack - 0.1*(neighbor_cover-neighbor_pack) + 0.15*neighbor_edges/max(1e-9,abs(1+degree)) + 0.1*boundary_edges/max(1e-9,abs(1+degree)) - 0.005*degree",
+      "rationale": "Adds a neighborhood packing interval to distinguish tightly conflicting neighbors from mutually compatible opportunity loss. Tests whether greater residual-cover emphasis repairs the seed's completion underestimates."
+    },
+    {
+      "name": "density_bound_switch",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "deletion_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        }
+      ],
+      "rule": "weight + (0.15*residual_pack+0.85*residual_cover if 2*residual_edges > 0.25*max(0,remaining_count-degree-1)*max(0,remaining_count-degree-2) else 0.85*residual_pack+0.15*residual_cover) + 0.12*(weight+residual_pack-deletion_pack) - 0.08*neighbor_pack + 0.12*neighbor_edges/max(1e-9,abs(1+degree)) - 0.005*degree",
+      "rationale": "Tests a structural density switch: favor constructive packing in sparse retained graphs and cover estimates in dense ones. Root-deletion packing supplies additional demanded action information."
+    },
+    {
+      "name": "global_gap_discount",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "snapshot_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"available","args":[]}]}
+        },
+        {
+          "name": "snapshot_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"available","args":[]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + residual_cover - 0.35*(residual_cover-residual_pack)/max(1e-9,abs(1+snapshot_cover-snapshot_pack)) - 0.1*neighbor_pack + 0.12*boundary_edges/max(1e-9,abs(1+degree)) - 0.005*degree",
+      "rationale": "Uses the whole snapshot's packing interval to calibrate the residual lower-bound discount. Tests whether snapshot context improves rankings across states without using IDs or family lookups."
+    },
+    {
+      "name": "inclusion_bound_witness",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "deletion_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "deletion_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.3*residual_pack + 0.7*residual_cover + 0.4*max(0,weight+residual_pack-deletion_cover) + 0.15*(weight+residual_cover-deletion_pack) + 0.1*neighbor_edges/max(1e-9,abs(1+degree)) + 0.05*boundary_edges/max(1e-9,abs(1+degree)) - 0.005*degree",
+      "rationale": "Adds full-residual include/exclude bound gaps, including a positive lower-include versus upper-exclude witness. These are ranking signals at the current boundary, not restricted-patch pivot guarantees."
+    },
+    {
+      "name": "cover_density_relief",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        }
+      ],
+      "rule": "weight + 0.2*residual_pack + 0.8*residual_cover - 0.08*neighbor_pack + 0.35*boundary_edges/max(1e-9,abs(1+degree)) + 0.25*neighbor_edges/max(1e-9,abs(1+degree)) - 0.2*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.005*degree",
+      "rationale": "Retains the seed's six demanded structural features while shifting toward residual cover and stronger conflict relief. Tests scalar repair without introducing additional feature operations."
+    },
+    {
+      "name": "closed_neighborhood_loss",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "closed_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "closed_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "deletion_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.4*residual_pack + 0.6*residual_cover - 0.2*(closed_pack-weight) - 0.1*(closed_cover-closed_pack) + 0.2*(weight+residual_pack-deletion_pack) + 0.1*boundary_edges/max(1e-9,abs(1+degree)) - 0.005*degree",
+      "rationale": "Measures opportunity loss using the closed neighborhood's packing interval, incorporating the root's competition with its neighbors. Root-exclusion packing and boundary structure provide complementary distinctions."
+    },
+    {
+      "name": "relative_interval_switch",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "deletion_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "deletion_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        }
+      ],
+      "rule": "weight + (0.75*residual_pack+0.25*residual_cover if residual_cover-residual_pack <= deletion_cover-deletion_pack else 0.25*residual_pack+0.75*residual_cover) + 0.25*(weight+residual_pack-deletion_pack) + 0.1*(weight+residual_cover-deletion_cover) + 0.08*neighbor_edges/max(1e-9,abs(1+degree)) - 0.03*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.005*degree",
+      "rationale": "Tests whether relative include/exclude interval tightness should select the completion estimate. Both deletion bounds are demanded, with retained and neighborhood edge counts supplying inexpensive structural refinements."
+    }
+  ]
+}

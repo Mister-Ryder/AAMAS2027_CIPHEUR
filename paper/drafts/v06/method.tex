@@ -1,0 +1,185 @@
+% Root review of independently authored V06 method; original preserved.
+\section{Certified Representation--Rule Refinement}
+\label{sec:method}
+Figure~\ref{fig:algorithm} separates certified preferences, quotient-guided
+feature--rule synthesis and frozen execution in a common bounded kernel.
+
+\subsection{Full-Residual Decision Evidence}
+\label{sec:method:certificates}
+At boundary $B=(F,X)$, put $A=R_\theta(B)$ and
+$A_d=A\setminus(\{d\}\cup N_\theta(d))$. Let $\mathcal C_d$ be the connected
+components of $G_\theta[A_d]$, identified by complete vertex sets. Then
+\begin{equation}
+ V_\theta(d\mid B)=w(F)+w_d+
+             \sum_{C\in\mathcal C_d}\alpha_w(G_\theta[C]),
+ \label{eq:component-completion}
+\end{equation}
+where $\alpha_w$ is the MWIS optimum. Within one graph and boundary, set
+$\mathcal A=\mathcal C_a\setminus\mathcal C_b$ and
+$\mathcal B=\mathcal C_b\setminus\mathcal C_a$; identical components cancel:
+\begin{equation}
+ \Delta_{ab}=w_a-w_b+\sum_{C\in\mathcal A}\alpha_w(G_\theta[C])
+                        -\sum_{C\in\mathcal B}\alpha_w(G_\theta[C]).
+ \label{eq:cancelled-difference}
+\end{equation}
+Sound component intervals $[L_C,U_C]$ give
+\begin{equation}
+ \begin{split}
+ \underline\Delta_{ab}&=w_a-w_b+\sum_{C\in\mathcal A}L_C-\sum_{C\in\mathcal B}U_C,\\
+ \overline\Delta_{ab}&=w_a-w_b+\sum_{C\in\mathcal A}U_C-\sum_{C\in\mathcal B}L_C.
+ \end{split}
+ \label{eq:difference-envelope}
+\end{equation}
+\paragraph{Lemma 1 (within-graph cancellation).}
+The endpoints enclose the full conditional-completion difference.
+\emph{Proof.} Component optima unite feasibly; identical induced components
+cancel. Bounds on remaining signed terms give the enclosure.\hfill$\square$
+
+Cancellation requires identical vertex sets within the same graph, not equal
+size or weight; overlapping components remain separate. Verified packings
+give lower bounds and clique partitions give upper bounds by summing clique
+maximum weights. Bounded exact search tightens intervals; unsearched components
+retain $[0,w(C)]$. Rational arithmetic and outward display rounding preserve
+soundness; unresolved comparisons abstain.
+
+Certify aligned configurations separately. For $\epsilon\geq0$,
+$\underline\Delta^{\theta_0}_{ab}>\epsilon$ and
+$\overline\Delta^{\theta_1}_{ab}<-\epsilon$ certify reversal; equal strict
+signs certify preservation. Ties impose no strict requirement. Certified pairs
+require
+\begin{equation}
+ h(\phi(x^+))>h(\phi(x^-)),\qquad x=(G_\theta,A,v).
+ \label{eq:strict-requirement}
+\end{equation}
+Each label retains its graph, boundary, actions and signed bounds.
+
+\subsection{Complete Quotients and Structural Witnesses}
+\label{sec:method:repair}
+Merge occurrences with exactly equal represented values under frozen
+semantics. Quotient $Q_\phi$ has one vertex per class and an arc
+$[x^+]\to[x^-]$ for every strict requirement, including self-loops.
+The base nine coordinates are reward, duration, degree, neighbor-weight
+sum/maximum, compatible-weight sum, ground/satellite gaps and residual count;
+explicit IDs and dataset labels are excluded.
+
+\paragraph{Theorem 1 (finite pointwise representability).}
+An unrestricted deterministic scalar $h(\phi(x))$ satisfies all observed
+requirements if and only if $Q_\phi$ is acyclic.
+\emph{Proof.} A directed cycle demands a strict decrease back to the same
+vector. On a finite DAG, each class's longest outgoing-path length strictly
+decreases along every arc. Scaling gives any positive margin.\hfill$\square$
+
+Observed-vector existence implies neither bounded-grammar expressibility
+nor unseen correctness. A cycle stores concrete
+arcs $p_i\to n_i$ and equality joins $n_i\sim_\phi p_{i+1}$, with cyclic
+indices (Figure~\ref{fig:repair}); a repair must split a join. Joins can cross
+configurations or boundaries, making statewise checks insufficient. Splitting
+one witness can expose another; each proposal rebuilds the \emph{complete}
+quotient over all retained requirements.
+
+\subsection{Scoped Minimum-Cost Interface Repair}
+Fix the base, evidence and occurrence feature table. For finite catalogue
+$\mathcal F$, positive standalone costs $c_f$ and limit $K$, set $d_{Wf}=1$
+when $f$ splits a join of witness $W$. The optional exact master is
+\begin{equation}
+ \begin{split}
+ \min_{z\in\{0,1\}^{|\mathcal F|}}\quad&\sum_f c_fz_f,\\
+ \text{subject to}\quad&\sum_f d_{Wf}z_f\geq1\quad(\text{retained }W),\\
+ &\sum_fz_f\leq K.
+ \end{split}
+ \label{eq:repair-cover}
+\end{equation}
+Globally solve each master and rebuild the entire quotient from the base and
+selected additions. A surviving cycle adds a cut; subsequent solutions can
+replace additions. Refined cycles can revisit coarse classes, so splitting
+only the original witness is insufficient.
+
+\paragraph{Theorem 2 (finite-catalogue additive optimum).}
+An acyclic terminating solution minimizes additive cost among catalogue
+repairs satisfying $K$.
+\emph{Proof.} Every acyclic repair splits a join of each retained witness,
+satisfying all cuts. Exact master cost lower-bounds valid repairs; the final
+DAG attains it. Each cut excludes the current cyclic subset. Finitely many
+subsets imply termination or infeasibility under unrestricted search.\hfill$\square$
+
+Inseparable witnesses and truncated masters remain unresolved. This guarantee
+covers fixed evidence and additive standalone work, not shared-DAG runtime
+or scalar fit. Practical proposal banks do not inherit master optimality.
+
+\subsection{Typed Feature--Rule Proposals}
+\label{sec:method:features}
+\paragraph{Why use an LLM?}
+A witness diagnoses joins to split without constructing a distinguishing
+computation and compatible score. Typed graph operations, reductions and
+score expressions create a combinatorial programme space. The LLM supplies
+a witness-conditioned proposal operator~\cite{romeraparedes2024funsearch,liu2024eoh};
+deterministic quotient, scalar-fit and execution checks retain authority.
+Theorem~1 requires representation refinement, not an LLM. The fixed-catalogue
+procedure is a deterministic alternative once expressions are available.
+
+The offline grammar permits active, neighbor, root-deleted and compatible
+continuation sets, typed union/intersection/difference, and count, weight-sum,
+edge-count, greedy-packing and clique-cover reductions. Arithmetic and
+conditionals combine scalars. Static validation enforces types, bounded syntax
+and deterministic operations rather than unrestricted executable code.
+
+\paragraph{Constructing a distinguishing programme.}
+The request supplies graph snapshots, certified relations, concrete joins,
+the current programme and typed grammar. For an illustrative construction,
+not a learned winner, let $D_v=A\setminus\{v\}$ and
+$C_v=A\setminus(N(v)\cup\{v\})$. Valid packing and induced-edge reductions give
+\begin{equation}
+ \begin{aligned}
+ f_p(v)&=g(C_v),\qquad f_e(v)=|E[D_v]|,\\
+ h(v)&=w_v+\alpha f_p(v)-\beta f_e(v)/(1+\deg(v)),
+ \end{aligned}
+ \label{eq:typed-construction}
+\end{equation}
+where $g$ is greedy-packing weight and $\alpha,\beta$ are bounded constants.
+Continuation packing measures coexistence; root deletion exposes residual
+structure. Actual join splitting and score signs still require complete-inventory
+checks. The LLM constructs expressions and rules together; the catalogue
+master selects existing expressions.
+
+The information gate uses all nine base coordinates and only added features
+referenced by the rule; unused additions cannot repair it. All declarations
+must pass finite-value checks. Shared expression DAGs and branch-sensitive
+evaluation avoid redundant work. Priorities are computed once per immutable
+patch snapshot; initialization and feature queries are charged.
+
+\subsection{Shared Classical Execution and Joint Selection}
+\label{sec:method:execution}
+All conditions share Degree initialization or a charged CHILS
+incumbent~\cite{grossmann2025chils}, then a bounded clique-bound repair kernel.
+Feasible incumbents, weighted bounds and local improving replacements are
+standard MWIS primitives
+\cite{lamm2019weighted,gellner2021struction,grossmann2024mmwis}.
+These shared components are not our contribution. Imported incumbents must
+be independent, include
+permanent $F$ and exclude $X$.
+For independent incumbent $I$, destroy movable $D\subseteq I\setminus F$ and
+retain $F_{\rm out}=I\setminus D$. A patch satisfies
+$D\subseteq R'\subseteq V\setminus(F_{\rm out}\cup N(F_{\rm out})\cup X)$.
+Branch-and-bound searches independent replacements in $R'$; only checked
+positive exact gains are committed. The programme controls greedy additions
+and pivots; targets, patches, bounds and include-first traversal remain common.
+Caps retain the feasible incumbent.
+Full-residual labels do not certify restricted-patch preferences.
+
+\label{sec:method:selection}
+Eligibility requires finite validated syntax, an acyclic demanded quotient
+and feasible error-free TRAIN execution. Strict fit $m(P)$ counts requirements
+whose score difference exceeds $\eta\geq0$. For family state sets $\mathcal D_t$,
+use
+\begin{equation}
+ q(P)=\frac1{|\mathcal T|}\sum_{t\in\mathcal T}\frac1{|\mathcal D_t|}
+       \sum_{G\in\mathcal D_t}\frac{w(I_P(G))}{w(V_G)}.
+ \label{eq:train-macro-quality}
+\end{equation}
+This is total-input-reward fraction, not optimum percentage; zero-total states
+use one. Feature-plus-repair work $c(P)$ uses the same averaging. Eligible
+selection maximizes $m$, then $q$, minimizes $c$, then uses original slot.
+Empty banks have no replacement. Quality-only baselines maximize $q$, then
+minimize $c$, without a gate. Budgets, ASTs and selectors freeze on TRAIN.
+Measured CPU/wall accompany the work proxy; deployment calls neither LLM nor
+full-residual certification oracle.

@@ -1,0 +1,496 @@
+{
+  "version": "matched_authoring_cost_receipt_audit_v05_001",
+  "authoring_completion_sha256": "5d09e7862753e87b975e9d2b68a846a4cd639379b4cdb5baa893dcb272fc88b2",
+  "checks": {
+    "no_retry_assessment_transport": 12,
+    "unmodified_last_message_response_bytes": 12,
+    "raw_receipt_bytes": 60,
+    "inline_frozen_prompt_and_packet": 12,
+    "actual_event_metadata_reconstruction": 12,
+    "no_other_recorded_tool_type": 57,
+    "only_recorded_packet_read_attempt_failed_precreation": 3,
+    "empty_wait_no_additional_authoring": 3,
+    "all_twelve_authoring_receipts": 1,
+    "same_requested_configuration": 1
+  },
+  "errors": [],
+  "all_requested_settings_identical": true,
+  "observed_model_available_any_session": false,
+  "sessions": [
+    {
+      "cell": "block_0_objective",
+      "arm": "objective",
+      "block": 0,
+      "receipt_sha256": "ae3013c931fe75bcf300fca8f6a582c6fd959294eb2dd31e7a83bfc251852452",
+      "raw_event_sha256": "2e9ddfcbeefdb5f9094be2725148b81746e2e6039101af649e8f64ada6d5e1eb",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 282.56864738464355,
+      "usage_totals": {
+        "input_tokens": 94175,
+        "cached_input_tokens": 59904,
+        "output_tokens": 6178,
+        "reasoning_output_tokens": 3573
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 5,
+        "turn.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_0_relations",
+      "arm": "relations",
+      "block": 0,
+      "receipt_sha256": "c64fc5d781b81d8068cdf615cb4d603df66a481657677d5f3aab2674baf49694",
+      "raw_event_sha256": "08670108b056cd2020c2484ae87ce76b82a07fd4d6c9bb23a240013d5def08c1",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 293.0437376499176,
+      "usage_totals": {
+        "input_tokens": 145051,
+        "cached_input_tokens": 109056,
+        "output_tokens": 5985,
+        "reasoning_output_tokens": 2761
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 5,
+        "turn.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_0_witness",
+      "arm": "witness",
+      "block": 0,
+      "receipt_sha256": "4800be2e1d07715b5f7d0679abeed4b15482d43b53e351c6d051662ad4d4a2fd",
+      "raw_event_sha256": "55be6a99887f19dd15aebbef994ad1e5df3e655fa7e9cabcba29364af81d4342",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 403.4625427722931,
+      "usage_totals": {
+        "input_tokens": 96132,
+        "cached_input_tokens": 60928,
+        "output_tokens": 8768,
+        "reasoning_output_tokens": 5694
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 4,
+        "turn.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_1_objective",
+      "arm": "objective",
+      "block": 1,
+      "receipt_sha256": "bb3c8de573f41e5f328cf9fdd448e85140ef00dd16f5e0e5cdff86bbd535106e",
+      "raw_event_sha256": "fbbe0483caf17708d9caf44e73d6be8901708afd4cc72eb460a89da41bb90d81",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 267.4899048805237,
+      "usage_totals": {
+        "input_tokens": 143127,
+        "cached_input_tokens": 108544,
+        "output_tokens": 4310,
+        "reasoning_output_tokens": 1479
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 4,
+        "turn.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_1_relations",
+      "arm": "relations",
+      "block": 1,
+      "receipt_sha256": "dc6c246927774906d7bba7996e58a9d960e84bfe40008dd419db3f4db0ce9cea",
+      "raw_event_sha256": "b8a1a2e748252573242999a6a0941c9338893a3c7efcce94b17782005bcdc947",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 318.27890133857727,
+      "usage_totals": {
+        "input_tokens": 194189,
+        "cached_input_tokens": 156544,
+        "output_tokens": 4844,
+        "reasoning_output_tokens": 2246
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [
+        {
+          "command_sha256": "168502851a2156d6d3600ac8dcafdb6d452407e6f9e2be611cc260ca223b4b3d",
+          "requested_packet_read": true,
+          "status": "failed",
+          "exit_code": -1,
+          "failed_before_process_creation": true
+        }
+      ],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 6,
+        "turn.started": 1,
+        "item.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_1_witness",
+      "arm": "witness",
+      "block": 1,
+      "receipt_sha256": "089135603c1ea409b78932a746f4e3e8f4a39c272656d3e9b8fbdda82a302b87",
+      "raw_event_sha256": "f608aff61b241b912128a921bb4e192b393b5670276a38f7b25aa061f9ccf0bb",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 455.86618661880493,
+      "usage_totals": {
+        "input_tokens": 146439,
+        "cached_input_tokens": 109696,
+        "output_tokens": 10145,
+        "reasoning_output_tokens": 5140
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 5,
+        "turn.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_2_objective",
+      "arm": "objective",
+      "block": 2,
+      "receipt_sha256": "f7d203b419e339b3737d7887128946165ab8604d91e776ba4d1e7ba80aeb8637",
+      "raw_event_sha256": "be3e7f1af0d90e90e63e5606c9328bf899dced9e649cada4dab7c83c7f3ae412",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 339.77556324005127,
+      "usage_totals": {
+        "input_tokens": 191233,
+        "cached_input_tokens": 154752,
+        "output_tokens": 5696,
+        "reasoning_output_tokens": 3011
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [
+        {
+          "command_sha256": "08bdb86ee9aea73e62d8e9a99ae3d7fed52ecf88ca298ebed22c51b6bbed93dc",
+          "requested_packet_read": true,
+          "status": "failed",
+          "exit_code": -1,
+          "failed_before_process_creation": true
+        }
+      ],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 6,
+        "turn.started": 1,
+        "item.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_2_relations",
+      "arm": "relations",
+      "block": 2,
+      "receipt_sha256": "6a6f7c8affa554ef74ef5b939896d6635a94d71c883abe9350efb3d94837ee7d",
+      "raw_event_sha256": "1d70c1f90f4904ccf25ccfaa289c83ade23181fbb3e08d34a9e92e3512e1d084",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 331.0065062046051,
+      "usage_totals": {
+        "input_tokens": 350836,
+        "cached_input_tokens": 272896,
+        "output_tokens": 6043,
+        "reasoning_output_tokens": 1803
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [
+        {
+          "tool": "wait",
+          "receiver_count": 0,
+          "status": "completed"
+        },
+        {
+          "tool": "wait",
+          "receiver_count": 0,
+          "status": "completed"
+        }
+      ],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 6,
+        "turn.started": 1,
+        "item.started": 2,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_2_witness",
+      "arm": "witness",
+      "block": 2,
+      "receipt_sha256": "9e86251c7f4fb6b9287ddc48b803c6558d7e77b7488aee8b299bdffe52e00b3f",
+      "raw_event_sha256": "95ea9d6d0965f629b6c33970e509a6014239ddda40ab46e812ff33f1610f8fd0",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 600.0251204967499,
+      "usage_totals": {
+        "input_tokens": 144146,
+        "cached_input_tokens": 108672,
+        "output_tokens": 13248,
+        "reasoning_output_tokens": 8530
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [
+        {
+          "command_sha256": "371a3bd2303afcc20de1ee6f73b6efc3a2faea98c1fc1a01a1f27079608dd775",
+          "requested_packet_read": true,
+          "status": "failed",
+          "exit_code": -1,
+          "failed_before_process_creation": true
+        }
+      ],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 6,
+        "turn.started": 1,
+        "item.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_3_objective",
+      "arm": "objective",
+      "block": 3,
+      "receipt_sha256": "2e171ac91826947eac8df3dd2dfdb80ebdec64a142f8b5c24db88606ae70a028",
+      "raw_event_sha256": "7b950d12511ba5c569e87917b79ab32546099ab21a3daff0847c62bb9e4606ed",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 234.81892943382263,
+      "usage_totals": {
+        "input_tokens": 191599,
+        "cached_input_tokens": 156160,
+        "output_tokens": 5891,
+        "reasoning_output_tokens": 3446
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 5,
+        "turn.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_3_relations",
+      "arm": "relations",
+      "block": 3,
+      "receipt_sha256": "cf9a44d5bf4d551a5d557f4963590a2a25a422ada7aef40a0cf1285fca95ed8e",
+      "raw_event_sha256": "fa946fce202b5298028d62f3de99029873f181c3e01ad6b47149b90544e63ac9",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 396.9571096897125,
+      "usage_totals": {
+        "input_tokens": 351050,
+        "cached_input_tokens": 308864,
+        "output_tokens": 8271,
+        "reasoning_output_tokens": 2859
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [
+        {
+          "tool": "wait",
+          "receiver_count": 0,
+          "status": "completed"
+        }
+      ],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 6,
+        "turn.started": 1,
+        "item.started": 1,
+        "turn.completed": 1
+      }
+    },
+    {
+      "cell": "block_3_witness",
+      "arm": "witness",
+      "block": 3,
+      "receipt_sha256": "4a6fdd3d921f6cdfdab93d4888a107777404608adf81112e19a3e3e763259296",
+      "raw_event_sha256": "762b6af42f1c916d8450367210a40870244e6b236134600f8d42e52fcdff00bb",
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null,
+      "wall_seconds": 361.96476006507874,
+      "usage_totals": {
+        "input_tokens": 96113,
+        "cached_input_tokens": 60928,
+        "output_tokens": 9150,
+        "reasoning_output_tokens": 4871
+      },
+      "exit_code": 0,
+      "timed_out": false,
+      "recorded_command_attempts": [],
+      "recorded_collaboration_calls": [],
+      "event_types": {
+        "thread.started": 1,
+        "item.completed": 5,
+        "turn.started": 1,
+        "turn.completed": 1
+      }
+    }
+  ],
+  "summary": {
+    "witness": {
+      "sessions": 4,
+      "slots": 48,
+      "total_reported_usage": {
+        "input_tokens": 482830,
+        "cached_input_tokens": 340224,
+        "output_tokens": 41311,
+        "reasoning_output_tokens": 24235
+      },
+      "mean_session_wall_seconds": 455.32965248823166,
+      "median_session_wall_seconds": 429.664364695549
+    },
+    "relations": {
+      "sessions": 4,
+      "slots": 48,
+      "total_reported_usage": {
+        "input_tokens": 1041126,
+        "cached_input_tokens": 847360,
+        "output_tokens": 25143,
+        "reasoning_output_tokens": 9669
+      },
+      "mean_session_wall_seconds": 334.8215637207031,
+      "median_session_wall_seconds": 324.6427037715912
+    },
+    "objective": {
+      "sessions": 4,
+      "slots": 48,
+      "total_reported_usage": {
+        "input_tokens": 620134,
+        "cached_input_tokens": 479360,
+        "output_tokens": 22075,
+        "reasoning_output_tokens": 11509
+      },
+      "mean_session_wall_seconds": 281.1632612347603,
+      "median_session_wall_seconds": 275.0292761325836
+    }
+  },
+  "scope": [
+    "Metadata/hash inspection only: no candidate JSON parsing, TRAIN/TEST outcomes or scorer assessment.",
+    "CLI reported usage is not a count of backend API calls; cached input is retained without monetary-cost inference.",
+    "Requested settings and session/slot counts match; token/latency/actual served-model matching is not established.",
+    "Retained events contain three packet-read attempts failing before process creation and three empty-target waits; no successful or outside-data tool action is recorded.",
+    "Startup error messages and raw stderr contents are not printed or copied into the report. Every raw log hash is retained."
+  ]
+}

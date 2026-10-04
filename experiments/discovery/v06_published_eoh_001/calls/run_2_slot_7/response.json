@@ -1,0 +1,136 @@
+{
+  "name": "certified_exchange_continuation",
+  "features": [
+    {
+      "name": "active_weight",
+      "expression": {
+        "op": "sum_weights",
+        "args": [{"op": "available", "args": []}]
+      }
+    },
+    {
+      "name": "residual_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [{
+          "op": "difference",
+          "args": [
+            {
+              "op": "difference",
+              "args": [
+                {"op": "available", "args": []},
+                {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+              ]
+            },
+            {"op": "singleton", "args": [{"op": "root", "args": []}]}
+          ]
+        }]
+      }
+    },
+    {
+      "name": "residual_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [{
+          "op": "difference",
+          "args": [
+            {
+              "op": "difference",
+              "args": [
+                {"op": "available", "args": []},
+                {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+              ]
+            },
+            {"op": "singleton", "args": [{"op": "root", "args": []}]}
+          ]
+        }]
+      }
+    },
+    {
+      "name": "neighbor_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [{
+          "op": "intersection",
+          "args": [
+            {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+            {"op": "available", "args": []}
+          ]
+        }]
+      }
+    },
+    {
+      "name": "neighbor_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [{
+          "op": "intersection",
+          "args": [
+            {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+            {"op": "available", "args": []}
+          ]
+        }]
+      }
+    },
+    {
+      "name": "boundary_edges",
+      "expression": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "count",
+                "args": [{
+                  "op": "induced_edges",
+                  "args": [{
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }]
+                }]
+              },
+              {
+                "op": "count",
+                "args": [{
+                  "op": "induced_edges",
+                  "args": [{
+                    "op": "intersection",
+                    "args": [
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                      {"op": "available", "args": []}
+                    ]
+                  }]
+                }]
+              }
+            ]
+          },
+          {
+            "op": "count",
+            "args": [{
+              "op": "induced_edges",
+              "args": [{
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }]
+            }]
+          }
+        ]
+      }
+    }
+  ],
+  "rule": "(2*active_weight if weight >= neighbor_cover else 0) + weight + residual_pack - 0.2*max(0,residual_cover-residual_pack) - 0.3*max(0,neighbor_pack-weight) + 0.02*weight*boundary_edges/max(1,degree*max(0,remaining_count-1-degree))",
+  "rationale": "Both parents are identical: their backbone combines root reward, pack/cover estimates of the compatible remainder, neighborhood opportunity cost, and conflict structure. Explore certified exchange before ordinary continuation ranking. When root weight reaches the active neighborhood's clique-cover upper bound, replacing any selected neighbors by the root cannot decrease reward, so give that choice a separate priority tier. Otherwise emphasize feasible residual packing, discount uncertainty through the cover-minus-pack gap, and penalize stronger neighborhood alternatives. A small boundary-density bonus favors removing conflicts that constrain the surviving remainder."
+}

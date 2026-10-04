@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-03T20:55:31Z",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.31",
+  "source_hashes_pass": true,
+  "executables": {
+    "CHILS": {
+      "path": "/root/autodl-tmp/aamas2027_v03/baselines/CHILS/CHILS",
+      "sha256": "19610c03f334c6267f94543ad3053d792cba56e9ae211fceb6c36f21750c88a0"
+    },
+    "M2WIS": {
+      "path": "/root/autodl-tmp/aamas2027_v03/baselines/KaMIS_v32/mmwis/build/mmwis",
+      "sha256": "2238c64a6552fa4e21bd8c340e09475c187f26a49b43f41c4cda152b04316967"
+    },
+    "Struction": {
+      "path": "/root/autodl-tmp/aamas2027_v03/baselines/KaMIS_v32/mmwis/build/extern/struction/branch_reduce_convergence",
+      "sha256": "84ccdd9bfd1fac5ae3e5c83037a72898207c408a11251971b4bf3617a2d5b46f"
+    },
+    "WeightedBR": {
+      "path": "/root/autodl-tmp/aamas2027_v03/baselines/KaMIS_v32/build/wmis/branch_reduce",
+      "sha256": "8be531bea571585e0f582a13f9494ea68f24375c1c140309ab35c7a9afc0b73c"
+    }
+  },
+  "disk_free_bytes": 30073110528,
+  "disk_total_bytes": 53687091200,
+  "cgroup_cpu_max": "1600000 100000",
+  "cgroup_memory_max": "64424509440",
+  "cgroup_memory_current": "11226841088",
+  "workers": 8,
+  "root_worker_thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "prepared_output_absolute": "/root/autodl-tmp/aamas2027_v06_performance_r2_eoh_test_003/output/performance_r2_eoh_test_v06_003_inputs",
+  "study_absolute": "/root/autodl-tmp/aamas2027_v06_performance_r2_eoh_test_003/experiments/discovery/performance_r2_eoh_test_v06_003_registered_001",
+  "context_count": 302,
+  "assigned_future_requests": 52548,
+  "deployment_bound": false,
+  "TEST_root_release_exists": false,
+  "optimization_calls": 0,
+  "all_graph_inputs_prepared": true
+}

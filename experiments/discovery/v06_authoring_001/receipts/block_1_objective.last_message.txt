@@ -1,0 +1,111 @@
+{
+  "version": "matched_cold_bank_v06",
+  "block": 1,
+  "arm": "objective",
+  "candidates": [
+    {
+      "name": "feasible_continuation",
+      "features": [
+        {"name":"residual_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"neighbor_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_cover","expression":{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_edge_cost","expression":{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"neighbor_edge_cost","expression":{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight + residual_greedy + 0.2*(residual_cover-residual_greedy) - 0.25*neighbor_greedy + 0.05*(neighbor_cover-neighbor_greedy) + 0.02*neighbor_edge_cost/max(1e-9,abs(1+conflict_weight)) - 0.02*residual_edge_cost/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Prioritize feasible forced reward with modest continuation optimism, discounted neighbor alternatives, and small edge corrections."
+    },
+    {
+      "name": "density_objective",
+      "features": [
+        {"name":"residual_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_weight","expression":{"op":"sum_weights","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_edge_cost","expression":{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"neighbor_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_edge_cost","expression":{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight + 0.45*residual_greedy + 0.35*residual_cover + 0.2*residual_weight*residual_weight/max(1e-9,abs(residual_weight+2*residual_edge_cost)) - 0.15*neighbor_greedy + 0.03*neighbor_edge_cost/max(1e-9,abs(1+degree))",
+      "rationale": "Blend feasible and upper continuation summaries with a density surrogate motivated by the unit-weight examples; weighted transfer remains a hypothesis."
+    },
+    {
+      "name": "uncertainty_discount",
+      "features": [
+        {"name":"residual_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"neighbor_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_cover","expression":{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_edge_cost","expression":{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"boundary_edge_cost","expression":{"op":"sub","args":[{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"available","args":[]}]}]},{"op":"add","args":[{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}]}}
+      ],
+      "rule": "weight + residual_greedy - (0.15+0.35*(station_gap+satellite_gap)/max(1e-9,abs(1+station_gap+satellite_gap)))*(residual_cover-residual_greedy) - 0.1*neighbor_greedy + 0.05*(conflict_weight-neighbor_cover)/max(1e-9,abs(1+degree)) + 0.02*boundary_edge_cost/max(1e-9,abs(1+residual_edge_cost))",
+      "rationale": "Favor reliable continuation under tighter gaps while rewarding compressed conflicts and removal of neighbors that constrain the residual."
+    },
+    {
+      "name": "include_exclude_envelope",
+      "features": [
+        {"name":"residual_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"exclusion_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"exclusion_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"neighbor_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_edge_cost","expression":{"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "0.65*(weight+residual_greedy-exclusion_cover) + 0.35*(weight+residual_cover-exclusion_greedy) - 0.1*neighbor_greedy + 0.01*neighbor_edge_cost/max(1e-9,abs(1+conflict_weight))",
+      "rationale": "Rank inclusion by a conservative and optimistic advantage envelope against polynomial exclusion summaries."
+    },
+    {
+      "name": "opportunity_ratio",
+      "features": [
+        {"name":"residual_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"neighbor_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_cover","expression":{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"residual_edge_mass","expression":{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}},
+        {"name":"boundary_edge_mass","expression":{"op":"sub","args":[{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"available","args":[]}]}]},{"op":"add","args":[{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}]}}
+      ],
+      "rule": "(weight+residual_greedy+0.1*(residual_cover-residual_greedy))/max(1e-9,abs(1+neighbor_greedy+0.25*neighbor_cover)) + 0.05*boundary_edge_mass/max(1e-9,abs(1+residual_edge_mass)) + 0.02*weight/max(1e-9,abs(1+duration+station_gap+satellite_gap))",
+      "rationale": "Normalize projected forced reward by feasible and upper neighbor opportunity, with boundary relief and temporal cost corrections."
+    },
+    {
+      "name": "closed_local_regret",
+      "features": [
+        {"name":"residual_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"neighbor_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_cover","expression":{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"closed_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"closed_cover","expression":{"op":"clique_cover_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}}
+      ],
+      "rule": "weight + 0.8*residual_greedy + 0.2*residual_cover - max(0,neighbor_greedy-weight) - 0.15*max(0,closed_greedy-weight) + 0.05*(closed_cover-neighbor_cover)",
+      "rationale": "Penalize forcing a root when its closed neighborhood supports a better local packing, while retaining projected residual reward."
+    },
+    {
+      "name": "global_gap_switch",
+      "features": [
+        {"name":"residual_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"neighbor_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}},
+        {"name":"neighbor_edge_mass","expression":{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"available_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"available","args":[]}]}},
+        {"name":"available_cover","expression":{"op":"clique_cover_weight","args":[{"op":"available","args":[]}]}}
+      ],
+      "rule": "(weight+residual_greedy-0.2*neighbor_greedy+0.02*neighbor_edge_mass/max(1e-9,abs(1+degree))) if available_cover-available_greedy <= 0.1*max(1.0,available_cover) else (weight+0.55*residual_greedy+0.45*residual_cover-0.1*neighbor_greedy+0.01*neighbor_edge_mass/max(1e-9,abs(1+conflict_weight)))",
+      "rationale": "Use feasible continuation when global packing and cover agree; otherwise admit more upper-bound guidance for unresolved structure."
+    },
+    {
+      "name": "bounded_regret_bridge",
+      "features": [
+        {"name":"residual_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"residual_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"exclusion_greedy","expression":{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"exclusion_cover","expression":{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"neighbor_edge_mass","expression":{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}},
+        {"name":"boundary_edge_mass","expression":{"op":"sub","args":[{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"available","args":[]}]}]},{"op":"add","args":[{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}]}}
+      ],
+      "rule": "weight + min(residual_cover,residual_greedy+0.5*max(0,exclusion_cover-exclusion_greedy)) - 0.25*max(0,exclusion_greedy-weight-residual_greedy) + 0.01*neighbor_edge_mass/max(1e-9,abs(1+degree)) + 0.02*boundary_edge_mass/max(1e-9,abs(1+conflict_weight))",
+      "rationale": "Allow continuation optimism bounded by the exclusion gap, penalize observed feasible exclusion advantage, and credit boundary relief."
+    }
+  ]
+}

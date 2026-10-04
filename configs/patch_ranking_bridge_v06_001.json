@@ -1,0 +1,32 @@
+{
+  "version": "v06_TRAIN_patch_ranking_bridge_001",
+  "split": "train",
+  "no_authoring_or_selection_feedback": true,
+  "feedback_archive_sha256": "e67be3ca5c91d6d5d413c4226de6ae047f0b63673d3b951d1cfd95de62f717fc",
+  "expected_states": 120,
+  "patch_selection": "First nonempty constructed patch in the original common-Degree trace, including root-pruned/capped patches; never use gain, bound tightness, labels or program outcome",
+  "pairs_per_patch": 4,
+  "pair_selection": "SHA-first adjacent pairs, then SHA-first nonadjacent pairs on edge shortfall; every quota shortfall remains",
+  "salt": "V06_TRAIN_PATCH_BRIDGE_20261004_001",
+  "max_patch_vertices": 24,
+  "query_bank": "Union of four core SHA pairs and ALL original strict TRAIN requirement pairs whose actions both remain in Rprime; deduplicate unordered pairs, preserve both stratum flags",
+  "added_stratum_scope": "Conditioned on already-frozen full strict certification and patch membership, not natural incidence; no program/new-local-outcome filtering",
+  "recurrence_states_per_query": 100000,
+  "certificate_epsilon_exact": "1/100000000",
+  "score_margin_exact": "1/1000000000",
+  "max_score_feature_work": 200000,
+  "required_roles": {
+    "witness_joint": 4,
+    "witness_quality": 4,
+    "relations_quality": 4,
+    "objective_quality": 4,
+    "fixed_structural": 1,
+    "fixed_base": 1,
+    "degree": 1
+  },
+  "optional_eoh_identities": 4,
+  "duplicate_deployment_asts": "Retain assigned identities; they are not independent program draws",
+  "local_scope": "Forced include values in the saved restricted patch with saved outside incumbent fixed; outside constant weight cancels",
+  "full_scope": "Existing original full-residual labels at original permanent F/X, separately evaluated on patch scores; no new full-label query",
+  "interpretation": "Ranking agreement is neither branch-pivot efficiency certification nor complete-schedule improvement"
+}

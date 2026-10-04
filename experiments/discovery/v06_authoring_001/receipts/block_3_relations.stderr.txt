@@ -1,0 +1,13 @@
+2026-10-03T16:21:30.345285Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T16:21:30.345357Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T16:21:30.353126Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T16:21:35.313522Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T16:21:35.313577Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL: error sending request for url (https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL)
+2026-10-03T16:21:35.456318Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T16:21:35.456345Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T16:21:45.710655Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL: error sending request for url (https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL)
+2026-10-03T16:22:00.875763Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"Failed to create unified exec process: helper_unknown_error: apply deny-read ACLs\")" }
+2026-10-03T16:22:16.130830Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a10292-144e-7f92-b7b8-f05283bfa1eb: invalid thread-store request: no rollout found for thread id 01a10292-144e-7f92-b7b8-f05283bfa1eb
+2026-10-03T16:26:10.330158Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T16:30:40.049857Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a10292-14d6-75f0-b8b0-f445075d82b4 hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)
+2026-10-03T16:31:05.059483Z  WARN codex_analytics::client: timed out or failed while flushing analytics events

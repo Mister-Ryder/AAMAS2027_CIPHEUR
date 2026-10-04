@@ -1,0 +1,163 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 1,
+  "arm": "relations",
+  "candidates": [
+    {
+      "name": "cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight/max(1,neighbor_cover)",
+      "rationale": "Measures weight against clique-cover competition, accounting for mutual conflicts among excluded neighbors."
+    },
+    {
+      "name": "packing_ratio",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight/max(1,neighbor_pack)",
+      "rationale": "Uses a feasible neighborhood packing to estimate the competing weight removed by selecting the root."
+    },
+    {
+      "name": "cover_margin",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight-neighbor_cover",
+      "rationale": "Prioritizes absolute weight surplus over the neighborhood clique-cover estimate."
+    },
+    {
+      "name": "packing_margin",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight-neighbor_pack+0.25*weight/max(1,degree)",
+      "rationale": "Combines estimated local surplus with a smaller preference for immediate weight per conflict."
+    },
+    {
+      "name": "edge_min_ratio",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1,max(max_conflict_weight,conflict_weight*conflict_weight/max(1e-9,conflict_weight+2*neighbor_edge_min)))",
+      "rationale": "Compresses neighbor competition using internal conflict mass while retaining the heaviest neighbor as a floor."
+    },
+    {
+      "name": "edge_product_ratio",
+      "features": [
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1,max(max_conflict_weight,conflict_weight*conflict_weight*max_conflict_weight/max(1e-9,max_conflict_weight*conflict_weight+2*neighbor_edge_product)))",
+      "rationale": "Uses weighted internal overlap to interpolate competition between independent neighbors and an equal-weight clique."
+    },
+    {
+      "name": "midpoint_ratio",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight/max(1,0.5*(neighbor_pack+neighbor_cover))",
+      "rationale": "Balances feasible packing and clique-cover estimates of neighborhood opportunity cost."
+    },
+    {
+      "name": "residual_packing",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        }
+      ],
+      "rule": "weight+residual_pack",
+      "rationale": "Ranks root weight plus a feasible continuation in the compatible residual graph."
+    },
+    {
+      "name": "residual_cover",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        }
+      ],
+      "rule": "weight+residual_cover",
+      "rationale": "Ranks root weight plus an optimistic clique-cover continuation estimate."
+    },
+    {
+      "name": "residual_blend",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        }
+      ],
+      "rule": "weight+0.75*residual_pack+0.25*residual_cover",
+      "rationale": "Favors feasible continuation value while assigning some value to unresolved residual opportunity."
+    },
+    {
+      "name": "packing_regret",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "without_root_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight+residual_pack-without_root_pack",
+      "rationale": "Compares estimated value when taking the root with estimated value when excluding it."
+    },
+    {
+      "name": "boundary_discount",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "without_root_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "residual_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1,neighbor_pack/(1+max(0,without_root_edge_min-neighbor_edge_min-residual_edge_min)/max(1,conflict_weight)))",
+      "rationale": "Discounts neighborhood opportunity cost when those neighbors also conflict with the compatible residual graph."
+    }
+  ]
+}

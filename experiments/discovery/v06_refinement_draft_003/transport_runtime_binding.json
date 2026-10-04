@@ -1,0 +1,25 @@
+{
+  "version": "R2_transport_runtime_pre_generation_binding_v06_002",
+  "before_any_R2_authoring_or_candidate_assessment": true,
+  "requested_configuration": {
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "model_reasoning_effort": "ultra",
+    "model_reasoning_summary": null,
+    "profile": null
+  },
+  "cli_executable_sha256": "34549ded6e2aee87c911c62d025e52e26c488683d0f489cd68f756baef1a6df6",
+  "authoring_transport_sha256": "662ea1abf3b07964cdfb2ab163593095a302da0a2933d18e60ecdc97a7a5ede6",
+  "transport_helper_sha256": "b25daef0767105f08fc600f8a1e0ba3697aa54bb42f6adc7eb77be8d12c0a994",
+  "R2_assessment_sha256": "8a200a923cb50c0f691a2fe378300d89ce74c4565ade71437a1d07a282b087e6",
+  "preparation_receipt_sha256": "a90a17bd2cd632fae963de090a34eca82cdb03ef04af705e1c2deff0c976ecbb",
+  "draft_protocol_sha256": "c221899818df0a72f088b022bc502a818a26c6037217036b2794e9814efc6907",
+  "selection_plan_sha256": "2fda6a9ef59f8483deb838c0edca2b515118c2d7409f44ee3bc655217d7c71d9",
+  "independent_packet_audit_sha256": "7cabb43f86f1346dfd7b0156c096fc05bfd70c6f24850ee663394137f803837c",
+  "source_review_scope": "Independent v05_llm_audit review before generation: uniform unchanged joint selector, separate identical quality selector, four genuine W framework winners; original R1 barrier remains failed",
+  "workers": 2,
+  "timeout_seconds": 1800,
+  "no_retry": true,
+  "workspace_namespace": ".research/v06_refinement_cli_workspaces/{study_name}/{block_arm}",
+  "served_model_not_inferred_from_requested_settings": true
+}

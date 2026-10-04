@@ -1,0 +1,113 @@
+{
+  "version": "matched_analysis_plan_v05_001",
+  "registered_at_utc": "2026-10-03 10:43:18 UTC",
+  "registered_before_any_v05_train_or_test_outcome_read": true,
+  "outcome_members_read_at_registration": [],
+  "source_protocol_sha256": "4b7422b6e65c9ab670f47c4de3dd922d544d8344fc6559c4c0c79bebb82c4d02",
+  "authoring_completion_sha256": "5d09e7862753e87b975e9d2b68a846a4cd639379b4cdb5baa893dcb272fc88b2",
+  "transport_amendment_sha256": "b7f7f1d782febe33770fbd840611d6907740e94d562fdb3d2a7f9d81d01686a9",
+  "arms": {
+    "A": "witness",
+    "B": "relations",
+    "C": "objective"
+  },
+  "authoring_blocks": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "authoritative_slots_per_cell": 12,
+  "requested_slots": 144,
+  "test_assignment": {
+    "pairs": 108,
+    "contexts": 216,
+    "profiles": [
+      "standard",
+      "dense_long"
+    ],
+    "regimes": [
+      "balanced",
+      "ground_scarce",
+      "satellite_scarce"
+    ],
+    "sizes": [
+      64,
+      128,
+      256
+    ],
+    "pairs_per_cell": 6,
+    "intervention_sides": [
+      "left",
+      "right"
+    ],
+    "methods": "all twelve assigned frozen block-arm cells plus one common Degree reference"
+  },
+  "primary_metric": {
+    "name": "feasible_reward_over_common_clique_upper",
+    "numerator": "exact Fraction of the stored binary contact weights in an independently checked feasible selected set; failure=0",
+    "denominator": "independently verified deterministic zero-search weighted clique cover upper on the original graph; common to all methods in that context",
+    "aggregation": "equal assigned-context mean within block/arm; equal mean of all four authoring blocks for the pilot arm summary; no complete-case exclusion",
+    "not": "optimality ratio or ratio to a strongest feasible programme"
+  },
+  "primary_contrasts": [
+    "A_minus_B",
+    "B_minus_C"
+  ],
+  "contrast_units": "same graph and authoring block paired before aggregation; all four blocks individually and descriptive four-block average",
+  "strata": [
+    "overall",
+    "standard",
+    "dense_long"
+  ],
+  "extra_descriptive_strata": [
+    "size_64",
+    "size_128",
+    "size_256",
+    "balanced",
+    "ground_scarce",
+    "satellite_scarce"
+  ],
+  "uncertainty": {
+    "authoring_population_inference": false,
+    "confidence_intervals": false,
+    "p_values": false,
+    "report": "four block estimates, observed range, and sign counts; no programme/graph replication substituted for authoring replication"
+  },
+  "coverage_cost": {
+    "completion": "completed/requested assignments, including no-eligible bank failures",
+    "runtime": "equal-context means and medians of recorded CPU/wall seconds; no imputed missing runtime",
+    "feature_work": "completed-context work summarized separately; failures retain null work"
+  },
+  "proposal_curves": {
+    "x": "original authoritative slot prefix 1..12; no sorting or replacements",
+    "eligible": "static-valid nonduplicate AST and saved full-interface DAG gate passed; no new completed-context hard gate",
+    "yield": "cumulative eligible count; all failed/missing/duplicate slots remain in denominator",
+    "utility": "saved TRAIN J verified against all raw TRAIN contexts under frozen protocol; prefix best among eligible original slots only",
+    "no_eligible": "null best J, explicit no-eligible-bank counts per arm/prefix; never imputed as zero",
+    "mean": "yield averages all four blocks; best-J mean is null unless all four blocks have an eligible prefix; each block retained",
+    "not": "online learning, CPU anytime performance, or TEST prefix selection"
+  },
+  "outputs": {
+    "figure": "two TRAIN proposal-efficiency panels, 7in x 2.8in, Arial >=9pt; A purple, B blue, C slate, missing orange",
+    "table": "three arms by four authoring-block TEST quality means, plus gate yield and completion; paired contrasts below; common Degree reference retained",
+    "json": "input archive/member hashes, selected-AST hashes, independent reward/upper/mean reconciliation, paired counts, full slot statuses, authoring token metadata"
+  },
+  "authoring_metadata": {
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning": "ultra",
+    "actual_served_model": "unavailable in native event receipts",
+    "sessions": 12,
+    "slots_matched": true,
+    "token_compute_matched": false,
+    "scope": "retain actual usage events per cell separately; no fabricated provider/model observations"
+  },
+  "scope": [
+    "bounded four-block descriptive pilot",
+    "new standard/dense temporal graphs only",
+    "no new C3 or public/SOTA dominance claim",
+    "no candidate evaluation, replacement, test-based selection, or model invocation by analysis"
+  ],
+  "archive_inventory": "safe POSIX member inventory; reject traversal, absolute paths, links, duplicate members and ambiguous basename matches; never extract",
+  "frozen_source_bindings": "verify protocol, authoring completion, TRAIN frozen selection, fresh input, evaluation receipt and all completed assignment counts before generating final results"
+}

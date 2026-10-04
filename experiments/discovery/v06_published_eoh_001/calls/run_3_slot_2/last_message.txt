@@ -1,0 +1,47 @@
+{
+  "name": "simplicial_certificate_congestion_product",
+  "features": [
+    {
+      "name": "neighborhood_edges",
+      "expression": {
+        "op": "count",
+        "args": [
+          {
+            "op": "induced_edges",
+            "args": [
+              {
+                "op": "intersection",
+                "args": [
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                  {"op": "available", "args": []}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "overlap_mass",
+      "expression": {
+        "op": "edge_min_weight_sum",
+        "args": [
+          {
+            "op": "induced_edges",
+            "args": [
+              {
+                "op": "intersection",
+                "args": [
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                  {"op": "available", "args": []}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rule": "1 + weight/max(1e-9,weight+conflict_weight) if degree*(degree-1) <= 2*neighborhood_edges and weight >= max_conflict_weight else weight*weight/max(1e-9,(weight+conflict_weight)*(weight+max(max_conflict_weight,conflict_weight*conflict_weight/max(1e-9,conflict_weight+2*overlap_mass))))",
+  "rationale": "Replace additive residual packing and cover lookahead with a local exchange certificate and multiplicative congestion discounts. Rank a vertex first when its active neighbors form a clique and its weight dominates every neighbor. Otherwise multiply its share of closed-neighborhood weight by a second share that discounts conflicts among its rivals, with the heaviest rival retained as a cost floor. Only two local edge aggregates are required."
+}

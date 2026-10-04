@@ -1,0 +1,92 @@
+% Independently authored V06 fragment; root owns manuscript integration.
+% No experimental effectiveness or comparative model claim is inferred here.
+\section{Related Work}
+\label{sec:related}
+
+Satellite scheduling couples observation, downlink and shared ground
+resources~\cite{augenstein2016optimal,levinson2025optimal,picard2021constellations}.
+Our contact-conflict formulation isolates a static pairwise scheduling
+subproblem; it does not model every constellation constraint. Graph-based
+learning can guide constructive optimization and exact
+search~\cite{khalil2017learning,li2018gcn,gasse2019exact}, while local
+topological information can improve neural generalization~\cite{bai2025local}.
+These approaches motivate structural inputs. Our question is more specific:
+when certified decisions conflict, can the current inputs express the
+required preferences at all?
+
+\paragraph{LLM-driven algorithm design.}
+FunSearch combines generated programs with executable evaluation~\cite{romeraparedes2024funsearch}.
+EoH evolves heuristic descriptions and code~\cite{liu2024eoh}; ReEvo adds
+language-based reflection to evolutionary search~\cite{ye2024reevo}; LLaMEA
+generates and evolves metaheuristics using fitness feedback~\cite{vanstein2025llamea}.
+A$_2$DEPT evolves complete solver programs with hierarchical edits and
+maintenance~\cite{chen2026a2dept}, while PathWise carries derivation history
+through a search-memory graph and routed reflections~\cite{gungordu2026pathwise}.
+These systems establish objective-driven algorithm synthesis. Their
+open-ended programs can introduce structural computations, so feature
+invention itself is not our distinction. We instead expose a certified
+obstruction to a proposed input interface and use its concrete equality
+joins to direct feature--rule refinement. Schedule quality and computation
+cost remain necessary selection criteria: eliminating an information
+obstruction does not imply a useful heuristic. DRAGON uses LLM decomposition
+and reconstruction agents during instance optimization, passing local
+metadata and boundary constraints~\cite{chen2026dragon}. Here the LLM acts
+offline; a frozen typed program supplies priorities inside a classical
+feasibility-enforcing kernel, without deployment-time model or conditional
+oracle calls. This distinction concerns where reasoning occurs, not a
+demonstrated advantage over DRAGON.
+Dynamic heuristic selection conditions choices on search
+state~\cite{speck2021dynamic}, and algorithm configuration optimizes settings
+over instance distributions~\cite{hutter2009paramils}. We adapt the scorer's
+available distinctions, while accounting for their deployment computation.
+
+\paragraph{Representation and expressibility.}
+Graph-neural-network expressiveness relates architectural distinctions to
+graph isomorphism tests~\cite{xu2019powerful,morris2019weisfeiler}. Our quotient
+instead identifies exactly equal feature vectors on a finite inventory of
+decision occurrences. A directed cycle of strict requirements prevents any
+deterministic pointwise scalar on that interface from satisfying them;
+acyclicity permits an unrestricted scalar on those observed vectors. It
+does not prove that our bounded rule grammar contains that scalar or that
+it transfers to unseen graphs. Generalized planning already studies
+representation change, feature learning and abstract actions shared across
+instances~\cite{bonet2018representation,bonet2019features,frances2021policies}.
+We specialize representation refinement to conditional optimization
+preferences, with exact information conflicts and measured feature work.
+Information adequacy and operational scheduling performance therefore require
+separate empirical assessments.
+
+\paragraph{Counterexample-guided and relational synthesis.}
+CEGAR refines abstractions after detecting spurious
+counterexamples~\cite{clarke2000cegar}; abstraction-guided synthesis similarly
+refines program semantics~\cite{wang2018abstraction}. Sketching and
+syntax-guided synthesis separate candidate syntax from semantic
+obligations~\cite{solarlezama2006sketch,alur2013sygus}, and relational synthesis
+constrains relationships among calls or programs~\cite{wang2018relational}.
+Our counterexamples are sound conditional-preference requirements that
+become contradictory after information is collapsed, rather than spurious
+executions of a program abstraction. Refinement separates the responsible
+occurrences before fitting a numerical ranking rule. The finite-catalogue
+additive-cost repair result is scoped to fixed evidence and candidate
+features; it neither certifies an LLM's search nor minimizes general
+shared-computation runtime. These connections position the contribution
+within established synthesis principles rather than claiming generic
+counterexample-guided refinement as new.
+
+\paragraph{Classical MWIS algorithms and evaluation.}
+Independent-set exchanges~\cite{andrade2012local} and clique-based
+branch-and-bound~\cite{ostergard2002clique} provide classical foundations.
+Strong weighted solvers include concurrent local search in
+CHILS~\cite{grossmann2025chils}, multilevel search in
+M2WIS~\cite{grossmann2024mmwis}, increasing transformations in
+Struction~\cite{gellner2021struction}, and weighted branch-and-reduce in
+WeightedBR~\cite{lamm2019weighted}. Our bounded weighted repair is a shared
+evaluation kernel, not a reproduction of these solvers or a new exact-search
+primitive. Comparing authoring conditions within that kernel tests evidence
+and representation contributions; comparisons with published solvers assess
+complete algorithm performance separately. McCreesh et
+al.~\cite{mccreesh2017evaluation} show that artificial weight assignments can
+favor particular heuristics and inference rules. Their application-derived
+benchmark collection motivates evaluating genuine weight structures as well
+as scheduling graphs, with explicit graph transformations and numerical
+compatibility rather than silently altering weights.

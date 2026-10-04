@@ -1,0 +1,612 @@
+{
+  "version": "matched_transfer_independent_audit_v05_001",
+  "archive": "E:\\01-Joycecyq\\2026-AAMAS\\\u7b2c\u4e8c\u7bc7\\experiments\\runs\\v05\\matched_transfer_exploratory_v05_001.tar.gz",
+  "archive_sha256": "4b4888820ac71797aa5f1e05980f0216fd94acac2f9e17f65340001fdc8536a2",
+  "protocol_sha256": "8f785558ace072936baf2e29b2c3585c1cf3fd8528036ad2398695f9cb061288",
+  "source_zip_sha256": "81cee9ea27374ba055cc15a6af11d810c7aad68982a1830fbae045d202031b62",
+  "data_sha256": "7a572d043ff0d3a05a630b5b0ecf522c90a50cef74b8e7c66fdbc6e2784e6793",
+  "frozen_programs_sha256": "37757102547f7e8b774900ac78a5c714bccb795d5471afed546f393f915e0eaa",
+  "original_source_archive_sha256": {
+    "public": "b37999eb75b52a12da80ae071984791e37bff54a8351c836fc4ac7a800e29050",
+    "fresh": "4bbddde5655edf06b6959ada796166ff44b909e8bec9f8d5383e1796cdab7828",
+    "train": "eca11e5803ab68ba7456eca496c53a331b533fcf925eb4e108b019b1d6825d49"
+  },
+  "original_C3_csv_sha256": "ec95f50c11d800f051e218aa1e414df873ddd12e1f71ce911da3ba28adff647e",
+  "budget_scope_clarification_sha256": "678ad9d2d282298488c575cc5933247c6c8acad4227724079e0cbab07a9c8c2d",
+  "publisher_analysis_sha256": "f2713f139f539ded9f1c3496f6cdeb2adc3ecbf59d99d30660c12fcc3abecd04",
+  "audit_script_sha256": "f8494b0bf17788801415079f8821c8cec214194aa3fe4dc0d72cddc0f1891d9e",
+  "independent_helper_sha256": {
+    "verify_matched_llm_v05.py": "52b331fea2214642ac50ffe3996c95a6fb9893320e50df84e1371f8fedae087b",
+    "verify_public_alias_v05.py": "6b349b659bad3acfd3a9e1abbf9046a984f8f66df05068841c1ba8c076aa959a"
+  },
+  "checks": {
+    "original_protocol_pin": 1,
+    "original_source_capsule_pin": 1,
+    "fixed_exploratory_contract": 1,
+    "registered_population_and_budget": 1,
+    "fixed_execution_budget": 1,
+    "registered_input_bytes": 3,
+    "protocol_input_bytes": 2,
+    "source_receipt_pin": 1,
+    "complete_capsule_inventory": 1,
+    "unchanged_source_and_capsule_bytes": 46,
+    "preexecution_source_freeze": 42,
+    "unchanged_original_matched_semantics": 10,
+    "independent_source_parse_before_meter_argument_order": 1,
+    "independent_source_actual_timers_before_AST_parse": 1,
+    "independent_source_cooperative_CPU_deadline_every_128_writes": 1,
+    "original_source_archive_identity": 3,
+    "exact_original_train_winner_bytes": 1,
+    "all_twelve_winner_banks_no_deduplication": 1,
+    "original_train_only_selection": 1,
+    "all_original_graph_source_boundary_U_L_identity": 1,
+    "all_120_preserved_source_contexts": 1,
+    "original_C3_source_csv_bytes_and_contact_ids": 24,
+    "independent_graph_identity": 120,
+    "positive_finite_graph_weights": 120,
+    "independent_upper_partition_domain": 120,
+    "nonempty_upper_clique": 21571,
+    "independent_upper_clique_edges": 56878,
+    "exact_original_upper_denominator": 120,
+    "independent_prior_lower_witness_feasibility": 120,
+    "exact_original_lower_denominator": 120,
+    "unchanged_archived_inputs_and_clarification": 5,
+    "executed_frozen_protocol_source_binding": 1,
+    "registration_precedes_execution_timestamp": 1,
+    "append_only_honest_meter_scope_clarification": 1,
+    "complete_raw_archive_binding": 1,
+    "complete_context_result_coverage": 1,
+    "result_original_graph_identity": 120,
+    "all_13_assigned_methods_retained": 120,
+    "registered_outcome_free_execution_order": 120,
+    "independent_complete_schedule_feasibility": 1007,
+    "preserved_explicit_boundary": 1007,
+    "independent_complete_schedule_reward": 1007,
+    "nonnegative_executed_work_receipt": 1007,
+    "trace_available_counts_scores": 50336,
+    "complete_maximal_trace_reconstructs_schedule": 1007,
+    "completed_status_consistency": 1007,
+    "completed_reward_below_prior_upper": 1007,
+    "executed_nonnegative_or_unknown_timing": 3120,
+    "independent_bounded_first_argmax": 130,
+    "retained_failed_assignment": 553,
+    "failure_status_consistency": 553,
+    "all_assignment_failures_and_completion_accounted": 1,
+    "publisher_analysis_archive_binding": 1,
+    "analysis_original_context_inventory": 5,
+    "independent_failure_zero_per_method_quality": 65,
+    "per_method_uncensored_failure_counts": 65,
+    "all_known_timing_receipts_not_only_successes": 65,
+    "common_degree_reference_not_replicated_blocks": 5,
+    "independent_all_four_equal_block_arm_means": 15,
+    "independent_descriptive_arm_contrasts": 5
+  },
+  "errors": [],
+  "elapsed_wall_seconds": 9.873091400018893,
+  "contexts": {
+    "DIMACS_unit": 18,
+    "DIMACS_hash_weighted": 18,
+    "SATLIB_unit": 30,
+    "SATLIB_hash_weighted": 30,
+    "C3": 24
+  },
+  "assignments": 1560,
+  "completed_assignments": 1007,
+  "failure_status_counts": {
+    "_CPUCap": 553
+  },
+  "first_argmax_policy": {
+    "eligible_max_vertices": 300,
+    "eligible_max_edges": 15000,
+    "contexts_per_population": 2,
+    "order": "graph_sha256, then context ID",
+    "verification_process_cpu_seconds_per_assignment": 2,
+    "scope": "Only a first-state argmax; no later scores or policy rollouts."
+  },
+  "first_argmax_context_ids": [
+    "MANN_a9_hash_weighted:graph",
+    "MANN_a9_unit:graph",
+    "brock200_1_unit:graph",
+    "san200_0.7_1_hash_weighted:graph",
+    "uf20-91:uf20-0100_unit:graph",
+    "uf20-91:uf20-0102_hash_weighted:graph",
+    "uf20-91:uf20-0104_hash_weighted:graph",
+    "uf20-91:uf20-0106_unit:graph",
+    "v04_c3_test_128_0001:left",
+    "v04_c3_test_256_0001:left"
+  ],
+  "first_argmax_checked": [
+    "MANN_a9_hash_weighted:graph:block_1_witness",
+    "MANN_a9_hash_weighted:graph:block_2_objective",
+    "MANN_a9_hash_weighted:graph:block_2_relations",
+    "MANN_a9_hash_weighted:graph:block_2_witness",
+    "MANN_a9_hash_weighted:graph:block_3_objective",
+    "MANN_a9_hash_weighted:graph:block_3_relations",
+    "MANN_a9_hash_weighted:graph:block_3_witness",
+    "MANN_a9_hash_weighted:graph:Degree",
+    "MANN_a9_hash_weighted:graph:block_0_objective",
+    "MANN_a9_hash_weighted:graph:block_0_relations",
+    "MANN_a9_hash_weighted:graph:block_0_witness",
+    "MANN_a9_hash_weighted:graph:block_1_objective",
+    "MANN_a9_hash_weighted:graph:block_1_relations",
+    "MANN_a9_unit:graph:block_3_relations",
+    "MANN_a9_unit:graph:block_3_witness",
+    "MANN_a9_unit:graph:Degree",
+    "MANN_a9_unit:graph:block_0_objective",
+    "MANN_a9_unit:graph:block_0_relations",
+    "MANN_a9_unit:graph:block_0_witness",
+    "MANN_a9_unit:graph:block_1_objective",
+    "MANN_a9_unit:graph:block_1_relations",
+    "MANN_a9_unit:graph:block_1_witness",
+    "MANN_a9_unit:graph:block_2_objective",
+    "MANN_a9_unit:graph:block_2_relations",
+    "MANN_a9_unit:graph:block_2_witness",
+    "MANN_a9_unit:graph:block_3_objective",
+    "brock200_1_unit:graph:block_0_objective",
+    "brock200_1_unit:graph:block_0_relations",
+    "brock200_1_unit:graph:block_0_witness",
+    "brock200_1_unit:graph:block_1_objective",
+    "brock200_1_unit:graph:block_1_relations",
+    "brock200_1_unit:graph:block_1_witness",
+    "brock200_1_unit:graph:block_2_objective",
+    "brock200_1_unit:graph:block_2_relations",
+    "brock200_1_unit:graph:block_2_witness",
+    "brock200_1_unit:graph:block_3_objective",
+    "brock200_1_unit:graph:block_3_relations",
+    "brock200_1_unit:graph:block_3_witness",
+    "brock200_1_unit:graph:Degree",
+    "san200_0.7_1_hash_weighted:graph:block_2_witness",
+    "san200_0.7_1_hash_weighted:graph:block_3_objective",
+    "san200_0.7_1_hash_weighted:graph:block_3_relations",
+    "san200_0.7_1_hash_weighted:graph:block_3_witness",
+    "san200_0.7_1_hash_weighted:graph:Degree",
+    "san200_0.7_1_hash_weighted:graph:block_0_objective",
+    "san200_0.7_1_hash_weighted:graph:block_0_relations",
+    "san200_0.7_1_hash_weighted:graph:block_0_witness",
+    "san200_0.7_1_hash_weighted:graph:block_1_objective",
+    "san200_0.7_1_hash_weighted:graph:block_1_relations",
+    "san200_0.7_1_hash_weighted:graph:block_1_witness",
+    "san200_0.7_1_hash_weighted:graph:block_2_objective",
+    "san200_0.7_1_hash_weighted:graph:block_2_relations",
+    "uf20-91:uf20-0100_unit:graph:block_0_objective",
+    "uf20-91:uf20-0100_unit:graph:block_0_relations",
+    "uf20-91:uf20-0100_unit:graph:block_0_witness",
+    "uf20-91:uf20-0100_unit:graph:block_1_objective",
+    "uf20-91:uf20-0100_unit:graph:block_1_relations",
+    "uf20-91:uf20-0100_unit:graph:block_1_witness",
+    "uf20-91:uf20-0100_unit:graph:block_2_objective",
+    "uf20-91:uf20-0100_unit:graph:block_2_relations",
+    "uf20-91:uf20-0100_unit:graph:block_2_witness",
+    "uf20-91:uf20-0100_unit:graph:block_3_objective",
+    "uf20-91:uf20-0100_unit:graph:block_3_relations",
+    "uf20-91:uf20-0100_unit:graph:block_3_witness",
+    "uf20-91:uf20-0100_unit:graph:Degree",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_1_witness",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_2_objective",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_2_relations",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_2_witness",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_3_objective",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_3_relations",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_3_witness",
+    "uf20-91:uf20-0102_hash_weighted:graph:Degree",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_0_objective",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_0_relations",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_0_witness",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_1_objective",
+    "uf20-91:uf20-0102_hash_weighted:graph:block_1_relations",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_3_objective",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_3_relations",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_3_witness",
+    "uf20-91:uf20-0104_hash_weighted:graph:Degree",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_0_objective",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_0_relations",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_0_witness",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_1_objective",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_1_relations",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_1_witness",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_2_objective",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_2_relations",
+    "uf20-91:uf20-0104_hash_weighted:graph:block_2_witness",
+    "uf20-91:uf20-0106_unit:graph:block_1_objective",
+    "uf20-91:uf20-0106_unit:graph:block_1_relations",
+    "uf20-91:uf20-0106_unit:graph:block_1_witness",
+    "uf20-91:uf20-0106_unit:graph:block_2_objective",
+    "uf20-91:uf20-0106_unit:graph:block_2_relations",
+    "uf20-91:uf20-0106_unit:graph:block_2_witness",
+    "uf20-91:uf20-0106_unit:graph:block_3_objective",
+    "uf20-91:uf20-0106_unit:graph:block_3_relations",
+    "uf20-91:uf20-0106_unit:graph:block_3_witness",
+    "uf20-91:uf20-0106_unit:graph:Degree",
+    "uf20-91:uf20-0106_unit:graph:block_0_objective",
+    "uf20-91:uf20-0106_unit:graph:block_0_relations",
+    "uf20-91:uf20-0106_unit:graph:block_0_witness",
+    "v04_c3_test_128_0001:left:block_3_relations",
+    "v04_c3_test_128_0001:left:block_3_witness",
+    "v04_c3_test_128_0001:left:Degree",
+    "v04_c3_test_128_0001:left:block_0_objective",
+    "v04_c3_test_128_0001:left:block_0_relations",
+    "v04_c3_test_128_0001:left:block_0_witness",
+    "v04_c3_test_128_0001:left:block_1_objective",
+    "v04_c3_test_128_0001:left:block_1_relations",
+    "v04_c3_test_128_0001:left:block_1_witness",
+    "v04_c3_test_128_0001:left:block_2_objective",
+    "v04_c3_test_128_0001:left:block_2_relations",
+    "v04_c3_test_128_0001:left:block_2_witness",
+    "v04_c3_test_128_0001:left:block_3_objective",
+    "v04_c3_test_256_0001:left:block_1_relations",
+    "v04_c3_test_256_0001:left:block_1_witness",
+    "v04_c3_test_256_0001:left:block_2_objective",
+    "v04_c3_test_256_0001:left:block_2_relations",
+    "v04_c3_test_256_0001:left:block_2_witness",
+    "v04_c3_test_256_0001:left:block_3_objective",
+    "v04_c3_test_256_0001:left:block_3_relations",
+    "v04_c3_test_256_0001:left:block_3_witness",
+    "v04_c3_test_256_0001:left:Degree",
+    "v04_c3_test_256_0001:left:block_0_objective",
+    "v04_c3_test_256_0001:left:block_0_relations",
+    "v04_c3_test_256_0001:left:block_0_witness",
+    "v04_c3_test_256_0001:left:block_1_objective"
+  ],
+  "first_argmax_skipped": [],
+  "independent_summaries": {
+    "DIMACS_unit": {
+      "contexts": 18,
+      "arms": {
+        "witness": {
+          "block_percent_U": [
+            40.10633196360763,
+            40.2994169403838,
+            40.10633196360763,
+            40.10633196360763
+          ],
+          "mean_percent_U": 40.15460320780167,
+          "block_percent_L": [
+            74.9728140414415,
+            73.74878570957003,
+            74.9728140414415,
+            74.9728140414415
+          ],
+          "mean_percent_L": 74.66680695847363,
+          "assigned": 72,
+          "completed": 63
+        },
+        "relations": {
+          "block_percent_U": [
+            40.10633196360763,
+            40.10633196360763,
+            40.10633196360763,
+            40.10633196360763
+          ],
+          "mean_percent_U": 40.10633196360763,
+          "block_percent_L": [
+            74.9728140414415,
+            74.9728140414415,
+            74.9728140414415,
+            74.9728140414415
+          ],
+          "mean_percent_L": 74.9728140414415,
+          "assigned": 72,
+          "completed": 64
+        },
+        "objective": {
+          "block_percent_U": [
+            39.06466529694096,
+            40.10633196360763,
+            40.10633196360763,
+            40.10633196360763
+          ],
+          "mean_percent_U": 39.84591529694096,
+          "block_percent_L": [
+            70.80614737477482,
+            74.9728140414415,
+            74.9728140414415,
+            74.9728140414415
+          ],
+          "mean_percent_L": 73.93114737477482,
+          "assigned": 72,
+          "completed": 63
+        }
+      },
+      "degree": {
+        "mean_percent_U": 43.93955096344164,
+        "mean_percent_L": 85.04087325165756,
+        "assigned": 18,
+        "completed": 17
+      },
+      "contrasts_pp": {
+        "witness_minus_relations_pp": 0.04827124419404072,
+        "witness_minus_objective_pp": 0.3086879108607121,
+        "relations_minus_objective_pp": 0.2604166666666714
+      }
+    },
+    "DIMACS_hash_weighted": {
+      "contexts": 18,
+      "arms": {
+        "witness": {
+          "block_percent_U": [
+            40.827137053219175,
+            40.827137053219175,
+            40.827137053219175,
+            42.63849115085558
+          ],
+          "mean_percent_U": 41.27997557762828,
+          "block_percent_L": [
+            81.51816893900916,
+            81.51816893900916,
+            81.51816893900916,
+            87.0737244945647
+          ],
+          "mean_percent_L": 82.90705782789804,
+          "assigned": 72,
+          "completed": 65
+        },
+        "relations": {
+          "block_percent_U": [
+            40.827137053219175,
+            40.827137053219175,
+            40.80121588001227,
+            40.827137053219175
+          ],
+          "mean_percent_U": 40.82065675991745,
+          "block_percent_L": [
+            81.51816893900916,
+            81.51816893900916,
+            81.40600210621183,
+            81.51816893900916
+          ],
+          "mean_percent_L": 81.49012723080983,
+          "assigned": 72,
+          "completed": 64
+        },
+        "objective": {
+          "block_percent_U": [
+            42.438087337550705,
+            42.438087337550705,
+            41.60604277327445,
+            42.438087337550705
+          ],
+          "mean_percent_U": 42.23007619648164,
+          "block_percent_L": [
+            86.42331968599788,
+            86.42331968599788,
+            82.29230372953738,
+            86.42331968599788
+          ],
+          "mean_percent_L": 85.39056569688276,
+          "assigned": 72,
+          "completed": 67
+        }
+      },
+      "degree": {
+        "mean_percent_U": 41.71962342547751,
+        "mean_percent_L": 84.91519110244187,
+        "assigned": 18,
+        "completed": 17
+      },
+      "contrasts_pp": {
+        "witness_minus_relations_pp": 0.4593188177108303,
+        "witness_minus_objective_pp": -0.9501006188533623,
+        "relations_minus_objective_pp": -1.4094194365641926
+      }
+    },
+    "SATLIB_unit": {
+      "contexts": 30,
+      "arms": {
+        "witness": {
+          "block_percent_U": [
+            24.64533258440659,
+            24.64533258440659,
+            24.64533258440659,
+            24.64533258440659
+          ],
+          "mean_percent_U": 24.64533258440659,
+          "block_percent_L": [
+            32.930402930402934,
+            32.930402930402934,
+            32.930402930402934,
+            32.930402930402934
+          ],
+          "mean_percent_L": 32.930402930402934,
+          "assigned": 120,
+          "completed": 40
+        },
+        "relations": {
+          "block_percent_U": [
+            24.64533258440659,
+            24.64533258440659,
+            24.64533258440659,
+            24.64533258440659
+          ],
+          "mean_percent_U": 24.64533258440659,
+          "block_percent_L": [
+            32.930402930402934,
+            32.930402930402934,
+            32.930402930402934,
+            32.930402930402934
+          ],
+          "mean_percent_L": 32.930402930402934,
+          "assigned": 120,
+          "completed": 40
+        },
+        "objective": {
+          "block_percent_U": [
+            24.64533258440659,
+            24.64533258440659,
+            24.64533258440659,
+            24.64533258440659
+          ],
+          "mean_percent_U": 24.64533258440659,
+          "block_percent_L": [
+            32.930402930402934,
+            32.930402930402934,
+            32.930402930402934,
+            32.930402930402934
+          ],
+          "mean_percent_L": 32.930402930402934,
+          "assigned": 120,
+          "completed": 40
+        }
+      },
+      "degree": {
+        "mean_percent_U": 49.49375330364896,
+        "mean_percent_L": 65.92095977417078,
+        "assigned": 30,
+        "completed": 20
+      },
+      "contrasts_pp": {
+        "witness_minus_relations_pp": 0.0,
+        "witness_minus_objective_pp": 0.0,
+        "relations_minus_objective_pp": 0.0
+      }
+    },
+    "SATLIB_hash_weighted": {
+      "contexts": 30,
+      "arms": {
+        "witness": {
+          "block_percent_U": [
+            22.595132698501075,
+            22.595132698501075,
+            22.595132698501075,
+            22.595132698501075
+          ],
+          "mean_percent_U": 22.595132698501075,
+          "block_percent_L": [
+            31.045463135871078,
+            31.045463135871078,
+            31.045463135871078,
+            31.045463135871078
+          ],
+          "mean_percent_L": 31.045463135871078,
+          "assigned": 120,
+          "completed": 40
+        },
+        "relations": {
+          "block_percent_U": [
+            22.595132698501075,
+            22.595132698501075,
+            22.652575935593863,
+            22.595132698501075
+          ],
+          "mean_percent_U": 22.60949350777427,
+          "block_percent_L": [
+            31.045463135871078,
+            31.045463135871078,
+            31.124192868563924,
+            31.045463135871078
+          ],
+          "mean_percent_L": 31.06514556904429,
+          "assigned": 120,
+          "completed": 40
+        },
+        "objective": {
+          "block_percent_U": [
+            23.68928826904412,
+            23.68928826904412,
+            22.595132698501075,
+            23.68928826904412
+          ],
+          "mean_percent_U": 23.415749376408357,
+          "block_percent_L": [
+            32.546346755887576,
+            32.546346755887576,
+            31.045463135871078,
+            32.546346755887576
+          ],
+          "mean_percent_L": 32.17112585088345,
+          "assigned": 120,
+          "completed": 40
+        }
+      },
+      "degree": {
+        "mean_percent_U": 44.439600812655755,
+        "mean_percent_L": 61.38285918693102,
+        "assigned": 30,
+        "completed": 20
+      },
+      "contrasts_pp": {
+        "witness_minus_relations_pp": -0.01436080927319594,
+        "witness_minus_objective_pp": -0.8206166779072817,
+        "relations_minus_objective_pp": -0.8062558686340857
+      }
+    },
+    "C3": {
+      "contexts": 24,
+      "arms": {
+        "witness": {
+          "block_percent_U": [
+            68.6264232744105,
+            56.515876580796174,
+            68.6264232744105,
+            68.6264232744105
+          ],
+          "mean_percent_U": 65.59878660100692,
+          "block_percent_L": [
+            97.56104080884312,
+            77.56861178731657,
+            97.56104080884312,
+            97.56104080884312
+          ],
+          "mean_percent_L": 92.56293355346148,
+          "assigned": 96,
+          "completed": 91
+        },
+        "relations": {
+          "block_percent_U": [
+            68.6264232744105,
+            68.6264232744105,
+            68.6264232744105,
+            68.6264232744105
+          ],
+          "mean_percent_U": 68.6264232744105,
+          "block_percent_L": [
+            97.56104080884312,
+            97.56104080884312,
+            97.56104080884312,
+            97.56104080884312
+          ],
+          "mean_percent_L": 97.56104080884312,
+          "assigned": 96,
+          "completed": 96
+        },
+        "objective": {
+          "block_percent_U": [
+            69.11240619278315,
+            69.11240619278315,
+            68.6264232744105,
+            69.11240619278315
+          ],
+          "mean_percent_U": 68.99091046318999,
+          "block_percent_L": [
+            98.30876273503485,
+            98.30876273503485,
+            97.56104080884312,
+            98.30876273503485
+          ],
+          "mean_percent_L": 98.12183225348691,
+          "assigned": 96,
+          "completed": 96
+        }
+      },
+      "degree": {
+        "mean_percent_U": 68.23258070461627,
+        "mean_percent_L": 97.03799911220987,
+        "assigned": 24,
+        "completed": 24
+      },
+      "contrasts_pp": {
+        "witness_minus_relations_pp": -3.0276366734035776,
+        "witness_minus_objective_pp": -3.3921238621830696,
+        "relations_minus_objective_pp": -0.36448718877949204
+      }
+    }
+  },
+  "scope": [
+    "Exploratory transfer on repeated, prior-observed V04 graphs; not new confirmatory held-out instances.",
+    "All twelve original TRAIN-selected ASTs retained, including identical deployment ASTs. No new authoring or test selection.",
+    "Every complete saved trace independently checked for boundary, feasibility, complete deletion and exact reward; later scores not rerun.",
+    "Every original U clique partition and L feasible witness checked independently; U is not an exact optimum and L may be exceeded.",
+    "Four generation blocks are descriptive paired units; duplicate weight views and C3 pair sides are not independent sources.",
+    "CPU/wall costs are recorded executed measurements, not independently remeasured; cooperative deadline starts after AST parsing.",
+    "No new source-C3 physical reconstruction was implemented by this independent auditor; original graphs/metadata are byte-identical and graph feasibility is replayed."
+  ]
+}

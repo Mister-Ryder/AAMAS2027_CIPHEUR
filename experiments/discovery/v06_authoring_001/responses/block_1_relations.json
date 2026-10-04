@@ -1,0 +1,255 @@
+{
+  "version": "matched_cold_bank_v06",
+  "block": 1,
+  "arm": "relations",
+  "candidates": [
+    {
+      "name": "feasible_completion",
+      "features": [
+        {
+          "name": "residual_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "neighbor_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        }
+      ],
+      "rule": "weight+0.85*residual_greedy+0.15*residual_cover-0.05*neighbor_greedy-0.02*neighbor_cover+0.02*neighbor_edges/max(1e-9,abs(1+degree))-0.01*residual_edges/max(1e-9,abs(1+remaining_count-degree))",
+      "rationale": "Prioritize a feasible completion after inclusion, with a small cover contribution and local conflict corrections for structural ties."
+    },
+    {
+      "name": "cover_completion",
+      "features": [
+        {
+          "name": "residual_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "neighbor_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "closed_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "closed_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        }
+      ],
+      "rule": "weight+residual_cover-0.25*max(0,residual_cover-residual_greedy)-0.10*neighbor_cover-0.05*neighbor_greedy+0.05*(closed_cover-neighbor_cover)+0.05*(closed_greedy-neighbor_greedy)",
+      "rationale": "Favor residual upper capacity while checking feasible support and whether adding the root changes closed-neighborhood packing capacity."
+    },
+    {
+      "name": "clique_cost_ratio",
+      "features": [
+        {
+          "name": "neighbor_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_edge_mass",
+          "expression": {"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edge_mass",
+          "expression": {"op":"edge_min_weight_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1e-9,abs(weight+0.5*neighbor_greedy+0.5*neighbor_cover))+0.10*(weight+residual_greedy)/max(1e-9,abs(weight+compatible_weight))+0.05*(weight+residual_cover)/max(1e-9,abs(weight+compatible_weight))+0.02*neighbor_edge_mass/max(1e-9,abs((1+degree)*(weight+conflict_weight)))-0.01*residual_edge_mass/max(1e-9,abs((1+remaining_count-degree)*(weight+compatible_weight)))",
+      "rationale": "Estimate lost independent neighbor reward rather than summing all conflicts, then use normalized residual capacity and weighted edge redundancy."
+    },
+    {
+      "name": "boundary_credit",
+      "features": [
+        {
+          "name": "neighbor_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1e-9,abs(weight+0.6*neighbor_greedy+0.4*neighbor_cover))+0.20*boundary_edges/max(1e-9,abs((1+degree)*(1+remaining_count)))+0.10*neighbor_edges/max(1e-9,abs((1+degree)*(1+degree)))+0.10*(weight+residual_greedy)/max(1e-9,abs(weight+compatible_weight))+0.05*(weight+residual_cover)/max(1e-9,abs(weight+compatible_weight))",
+      "rationale": "Credit removing neighbors that also constrain surviving actions, while accounting for mutually conflicting alternatives and residual completion."
+    },
+    {
+      "name": "density_adaptive",
+      "features": [
+        {
+          "name": "active_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"available","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        }
+      ],
+      "rule": "(weight+0.6*residual_greedy+0.4*residual_cover-0.1*neighbor_cover+0.01*(neighbor_edges-residual_edges)/max(1e-9,abs(1+remaining_count))) if 2*active_edges>0.2*remaining_count*max(1,remaining_count-1) else (weight/max(1e-9,abs(weight+neighbor_cover))+0.1*residual_greedy+0.03*residual_cover+0.01*(neighbor_edges-residual_edges)/max(1e-9,abs(1+remaining_count)))",
+      "rationale": "Use completion estimates more strongly in dense active graphs and emphasize independent neighborhood cost in sparse graphs."
+    },
+    {
+      "name": "weighted_edge_relief",
+      "features": [
+        {
+          "name": "neighbor_products",
+          "expression": {"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_products",
+          "expression": {"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_products",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"edge_weight_product_sum","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        }
+      ],
+      "rule": "weight+0.7*residual_greedy+0.3*residual_cover-0.2*neighbor_cover+0.1*(neighbor_products+max(0,boundary_products))/max(1e-9,abs(weight+conflict_weight))-0.05*residual_products/max(1e-9,abs(weight+compatible_weight))",
+      "rationale": "Reward removal of conflicts among heavy actions and penalize weighted conflict pressure remaining after inclusion."
+    },
+    {
+      "name": "gap_cautious",
+      "features": [
+        {
+          "name": "residual_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "neighbor_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        }
+      ],
+      "rule": "weight+residual_greedy-(0.25+0.25*(station_gap+satellite_gap)/max(1e-9,abs(duration+station_gap+satellite_gap)))*max(0,residual_cover-residual_greedy)-0.1*max(0,neighbor_cover-neighbor_greedy)-0.2*neighbor_greedy+0.01*(neighbor_edges-residual_edges)/max(1e-9,abs(1+remaining_count))",
+      "rationale": "Test a conservative completion hypothesis that penalizes large cover-versus-packing gaps, with stronger caution as temporal gaps grow."
+    },
+    {
+      "name": "include_exclude_margin",
+      "features": [
+        {
+          "name": "omitted_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "omitted_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "neighbor_greedy",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}
+        }
+      ],
+      "rule": "0.6*(weight+residual_greedy-omitted_cover)+0.4*(weight+residual_cover-omitted_greedy)-0.05*neighbor_greedy-0.02*neighbor_cover",
+      "rationale": "Contrast polynomial inclusion and exclusion summaries, blending a conservative margin with an optimistic margin and local opportunity cost."
+    }
+  ]
+}

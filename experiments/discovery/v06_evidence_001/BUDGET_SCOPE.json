@@ -1,0 +1,22 @@
+{
+  "scope": "append-only pre-execution clarification; no query or code change",
+  "original_freeze_sha256": "00e67514c70d76547991fa3c9908b85c954d48e35a4dab605dcf0876234a87c5",
+  "before_any_oracle_query": true,
+  "budget_unit": "per graph/state snapshot, including all prescheduled queries in that state",
+  "max_calls": 1024,
+  "max_expanded_nodes": 2000000,
+  "per_unmatched_component_expanded_limit": 50000,
+  "per_component_vertex_search_cutoff": 32,
+  "component_bound_cache_shared_within_state": true,
+  "cancelled_identical_components_do_not_consume_solver_calls": true,
+  "new_oracle_instance_per_state": true,
+  "global_call_cap": null,
+  "train_states": 120,
+  "test_states": 72,
+  "train_public_states": 24,
+  "train_synthetic_pairs": 48,
+  "test_public_states": 24,
+  "test_synthetic_pairs": 24,
+  "unknown_ties_and_shortfall_retained": true,
+  "test_queries_prohibited_until_train_program_freeze": true
+}

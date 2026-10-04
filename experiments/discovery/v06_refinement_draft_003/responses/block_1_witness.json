@@ -1,0 +1,255 @@
+{
+  "version": "matched_cold_bank_v06",
+  "block": 1,
+  "arm": "witness",
+  "candidates": [
+    {
+      "name": "context_exclusion_margin",
+      "features": [
+        {
+          "name": "retained_pack",
+          "expression": {"op":"add","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"greedy_independent_weight","args":[{"op":"available","args":[]}]}]}]}
+        },
+        {
+          "name": "retained_cover",
+          "expression": {"op":"add","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"clique_cover_weight","args":[{"op":"available","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "deletion_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + retained_pack - 0.2*retained_cover - 0.8*deletion_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) - 0.08*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.15*boundary_edges/max(1e-9,abs(1+degree)) - 0.02*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.025*degree",
+      "rationale": "Demands deletion packing, deletion cover and closed-neighborhood packing witnesses, with snapshot context to distinguish states. Tests a retained-versus-deleted packing margin and a mild residual-cover penalty; full quotient acyclicity remains unverified."
+    },
+    {
+      "name": "context_seed_conservative",
+      "features": [
+        {
+          "name": "retained_pack",
+          "expression": {"op":"add","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"greedy_independent_weight","args":[{"op":"available","args":[]}]}]}]}
+        },
+        {
+          "name": "retained_cover",
+          "expression": {"op":"add","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"clique_cover_weight","args":[{"op":"available","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "deletion_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.6*retained_pack + 0.4*retained_cover - 0.7*deletion_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) - 0.15*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.2*boundary_edges/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree",
+      "rationale": "Keeps the seed's packing-cover balance while demanding structural deletion witnesses. The added snapshot terms are constant across roots in a unit-weight snapshot, preserving that part of the local ranking while enriching the interface."
+    },
+    {
+      "name": "context_dense_switch",
+      "features": [
+        {
+          "name": "retained_pack",
+          "expression": {"op":"add","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"greedy_independent_weight","args":[{"op":"available","args":[]}]}]}]}
+        },
+        {
+          "name": "retained_cover",
+          "expression": {"op":"add","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"clique_cover_weight","args":[{"op":"available","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "deletion_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.7*retained_pack - 0.2*retained_cover - (1.1 if 2*degree > remaining_count-1 else 0.6)*deletion_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) - (0.25 if degree > 6 else 0.1)*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.2*boundary_edges/max(1e-9,abs(1+degree)) - 0.03*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.05*degree",
+      "rationale": "Uses the enriched witness interface with stronger exclusion and neighborhood penalties for dense roots. Tests whether density-sensitive priorities improve the dense source graph without changing the shared repair kernel."
+    },
+    {
+      "name": "context_boundary_gain",
+      "features": [
+        {
+          "name": "retained_pack",
+          "expression": {"op":"add","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"greedy_independent_weight","args":[{"op":"available","args":[]}]}]}]}
+        },
+        {
+          "name": "retained_cover",
+          "expression": {"op":"add","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"clique_cover_weight","args":[{"op":"available","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "deletion_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.8*retained_pack - 0.15*retained_cover - (0.9+0.15*station_gap+0.1*satellite_gap)*deletion_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.08*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.05*boundary_edges - 0.06*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.04*degree",
+      "rationale": "Tests boundary-edge removal as an absolute gain, with exclusion evidence strengthened by the supplied gap constraints. Demands the same expanded structural witnesses while exploring a different repair priority."
+    },
+    {
+      "name": "local_cover_gap",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "deletion_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.9*residual_pack - 0.5*max(0,residual_cover-residual_pack) - deletion_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) - 0.2*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.1*boundary_edges/max(1e-9,abs(1+degree)) - 0.025*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.02*degree",
+      "rationale": "Removes whole-snapshot packing calls while retaining deletion and closed-neighborhood witnesses. Penalizes a large residual cover-packing gap as uncertainty in the local feasible completion estimate."
+    },
+    {
+      "name": "local_degree_rescue",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "deletion_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + residual_pack + 0.05*residual_cover - deletion_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) - 0.1*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.2*boundary_edges/max(1e-9,abs(1+degree)) - 0.04*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.25*min(degree,3) - 0.02*max(0,degree-3)",
+      "rationale": "Tests a capped positive degree contribution to counter the displayed low-degree bias, with a penalty beyond degree three. The deletion profile supplies structural distinctions beyond degree and the seed summaries."
+    },
+    {
+      "name": "lean_deletion_cover",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "deletion_pair",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.85*residual_pack - 0.3*residual_cover - 0.95*deletion_pair/max(1e-9,abs(remaining_count+weight)) - 0.12*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.12*boundary_edges/max(1e-9,abs(1+degree)) - 0.015*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.08*degree",
+      "rationale": "Uses deletion packing and cover as the new demanded witness while omitting closed-neighborhood and whole-snapshot calls. Tests whether this cheaper interface suffices for the full quotient and improves the strict inequalities."
+    },
+    {
+      "name": "lean_closed_witness",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+        },
+        {
+          "name": "residual_edges",
+          "expression": {"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]},{"op":"mul","args":[{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"mul","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"count","args":[{"op":"available","args":[]}]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"clique_cover_weight","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}
+        },
+        {
+          "name": "deletion_closed_pair",
+          "expression": {"op":"add","args":[{"op":"mul","args":[{"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]},{"op":"add","args":[{"op":"count","args":[{"op":"available","args":[]}]},{"op":"weight","args":[{"op":"root","args":[]}]}]}]},{"op":"greedy_independent_weight","args":[{"op":"union","args":[{"op":"neighbors","args":[{"op":"root","args":[]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}
+        }
+      ],
+      "rule": "weight + residual_pack - 0.25*residual_cover - deletion_closed_pair/max(1e-9,abs(remaining_count+weight)) - 0.1*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.15*boundary_edges/max(1e-9,abs(1+degree)) - 0.02*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.2*min(degree,3) - 0.03*max(0,degree-3)",
+      "rationale": "Pairs root-deletion packing with closed-neighborhood packing instead of deletion cover. Tests a cheaper structural alternative with a capped degree correction; neither the displayed join split nor full TRAIN acyclicity is assumed."
+    }
+  ]
+}

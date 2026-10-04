@@ -1,0 +1,51 @@
+% Root review of independently authored V06 section; original preserved.
+\section{Related Work}
+\label{sec:related}
+Satellite scheduling couples observation, downlink and shared ground
+resources~\cite{augenstein2016optimal,levinson2025optimal,picard2021constellations}.
+Graph learning guides constructive optimization and exact
+search~\cite{khalil2017learning,li2018gcn,gasse2019exact}; local topology can aid
+neural generalization~\cite{bai2025local}. Our question concerns whether an
+interface can express certified decision requirements before fitting a scorer.
+
+\paragraph{LLM design.}
+FunSearch combines generated programmes with executable evaluation;
+EoH evolves descriptions and code; ReEvo and LLaMEA add reflective or evolutionary
+fitness feedback~\cite{romeraparedes2024funsearch,liu2024eoh,ye2024reevo,vanstein2025llamea}.
+A$_2$DEPT evolves complete solvers with hierarchical edits,
+while PathWise carries derivation history through a search-memory
+graph~\cite{chen2026a2dept,gungordu2026pathwise}. Their open-ended programmes can
+introduce structural computations, so feature invention alone is not our
+contribution. We supply certified contradictions in the current interface and
+concrete equality joins to direct that invention. DRAGON uses decomposition and
+reconstruction agents during optimization~\cite{chen2026dragon}; here an offline
+LLM yields a frozen priority inside classical search. Dynamic heuristic selection
+and algorithm configuration optimize state-dependent choices and
+settings~\cite{speck2021dynamic,hutter2009paramils}; we refine the available
+input distinctions and account for their computation.
+
+\paragraph{Representation and synthesis.}
+GNN expressiveness connects architectural distinctions to graph isomorphism
+tests~\cite{xu2019powerful,morris2019weisfeiler}. Our quotient instead collapses
+exactly equal observed feature vectors. Generalized planning learns features,
+representations and policies shared across
+instances~\cite{bonet2018representation,bonet2019features,frances2021policies}.
+CEGAR and abstraction-guided synthesis refine abstractions after
+counterexamples~\cite{clarke2000cegar,wang2018abstraction}; sketching,
+syntax-guided and relational synthesis separate syntax from semantic
+obligations~\cite{solarlezama2006sketch,alur2013sygus,wang2018relational}.
+Our requirements are sound conditional preferences made contradictory by
+information collapse, rather than spurious abstract executions. Equality joins
+identify distinctions needed before rule fitting. Finite representability,
+bounded-grammar fit and deployment effectiveness remain different properties.
+
+\paragraph{Classical MWIS and evaluation.}
+Independent-set exchanges and clique-based branch-and-bound provide
+foundations~\cite{andrade2012local,ostergard2002clique}. Published weighted solvers
+include concurrent CHILS search, multilevel M$^2$WIS, Struction transformations
+and WeightedBR~\cite{grossmann2025chils,grossmann2024mmwis,gellner2021struction,lamm2019weighted}.
+These mature components support our common kernel and separate algorithm
+comparisons; they are not claimed as new search primitives. Artificial weights
+can favor particular heuristics and inference rules~\cite{mccreesh2017evaluation}.
+We therefore include application-derived public weighted graphs, preserving
+objectives through exact transformations and reporting numerical compatibility.

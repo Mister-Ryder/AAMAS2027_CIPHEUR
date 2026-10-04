@@ -1,0 +1,49 @@
+{
+  "version": "repair_feedback_server_v06_001",
+  "before_any_feedback": true,
+  "data": "experiments/discovery/v06_evidence_001/data.json",
+  "split": "train",
+  "assigned": 120,
+  "workers": 8,
+  "output": "output/repair_degree_feedback_v06_001",
+  "clock": "wall",
+  "seconds": 0.5,
+  "whole_run_wall_guard_seconds": 3600,
+  "guard_is_failure_safeguard_only": true,
+  "source_sha256": {
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "cipheur/graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "cipheur/compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+    "cipheur/repair_v06.py": "c4cbdb9878c041321f4cfcc0637a7a3113add38732ca04d05c8687d9a8e7e8f3",
+    "scripts/run_repair_feedback_v06.py": "b1df66408db5f7ccfcea72f67b12b62e27baaf894567f38e86af2f4306c4aa82"
+  },
+  "data_sha256": "968f96b7712ca3ecc8a7b43f567c6b6403742f26f0e76e9d5f2c680973827784",
+  "root_config_sha256": "3587db7ba52fe9f21f0171600fee120e5598b551ed06bbe674e7d0cb38e3cb4b",
+  "root_config": {
+    "version": "v06_shared_repair_train_configuration_001",
+    "decided_before_any_v06_shared_kernel_outcome": true,
+    "seconds": 0.5,
+    "clock": "wall",
+    "workers": 8,
+    "repair_config": {
+      "max_patch_vertices": 24,
+      "max_destroy": 4,
+      "max_patches": 32,
+      "expansion_steps": 1,
+      "node_budget_per_patch": 128,
+      "max_search_nodes": 4096,
+      "max_work": 200000,
+      "upper_pruning": true,
+      "policy_scope": "branch"
+    },
+    "author_packet_selection": "TRAIN metadata only: SHA-ordered first three DIMACS sources and first three SATLIB sources, then both sides of the SHA-ordered first source pair in each of the six temporal regime/horizon families; 18 states. No quality or conditional-label filtering.",
+    "quality_normalization": "Macro-average across the eight TRAIN families of exact feasible reward / total graph weight; this denominator is neither optimum nor a feasible best-method reference.",
+    "all_arms_share": "Initializer, targets/regions, patch construction, include-first traversal, bounds and all caps. Program priority changes only the local feasible greedy proposal and pivot vertex.",
+    "cap_scope": "Cooperative end-to-end nominal wall time and charged-operation cap; final incumbent validation is charged and any overshoot reported. An ordinary budget stop retains the feasible incumbent."
+  },
+  "test_execution_permitted": false,
+  "query_retries": 0,
+  "timing_scope": "Kernel starts before AST/init; task includes reconstruction; batch wall separately includes interpreter/import/verification/pool startup and receipts"
+}

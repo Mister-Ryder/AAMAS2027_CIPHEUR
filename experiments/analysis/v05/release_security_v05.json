@@ -1,0 +1,628 @@
+{
+  "version": "public_release_security_scan_v05_001",
+  "finished_at_utc": "2026-10-03T11:29:05.243768+00:00",
+  "elapsed_seconds": 151.906,
+  "scanner_source_sha256": "4f0bfba31dfd174c8e692d89cfdaa9c4c04be4b1abece71058f1d3a65aed1566",
+  "scope": {
+    "git_history_read": false,
+    "ignored_research_read": false,
+    "server_or_credentials_accessed": false,
+    "direct_files": "git ls-files --cached --others --exclude-standard, plus first-level repository-root ZIP/TAR containers",
+    "archives": "all first-level regular nonarchive member streams; no extraction to filesystem or nested archive recursion",
+    "binary_policy": "ASCII byte signatures scanned throughout direct files and regular members; UTF-16 streams also decoded when detected; no decompression of arbitrary embedded media metadata",
+    "self_generated_receipts_excluded": [
+      "docs/PUBLIC_RELEASE_SCAN_V05.md",
+      "experiments/analysis/v05/release_security_v05.json"
+    ],
+    "root_archive_additions": [
+      "CIPHEUR_FOUNDATION_V01.zip"
+    ]
+  },
+  "inventory_paths_at_start": 693,
+  "counts": {
+    "working_tree_files_read": 693,
+    "working_tree_bytes_read": 273671601,
+    "working_tree_signature_streams": 649,
+    "v05_authoring_related_file_streams": 18,
+    "utf16_streams": 8
+  },
+  "archive_count": 44,
+  "archive_member_streams_scanned": 925,
+  "archive_content_bytes_read": 2345763565,
+  "nested_archive_members_not_opened": 7,
+  "findings": [],
+  "finding_path_category_count": 0,
+  "skipped_or_unread": [],
+  "archives": [
+    {
+      "path": "CIPHEUR_FOUNDATION_V01.zip",
+      "members": 100,
+      "regular_members_scanned": 100,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 556397,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/alias_census_001.tar.gz",
+      "members": 8,
+      "regular_members_scanned": 7,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 252446644,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/development_scale_001.tar.gz",
+      "members": 8,
+      "regular_members_scanned": 7,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 45620203,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/discovery_001.tar.gz",
+      "members": 7,
+      "regular_members_scanned": 6,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 8729614,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/holdout_bounded_partial_002.tar.gz",
+      "members": 9,
+      "regular_members_scanned": 8,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 97322461,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/holdout_cooperative_003.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 9,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 159730920,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/holdout_unbounded_partial_001.tar.gz",
+      "members": 9,
+      "regular_members_scanned": 8,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 95339589,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/mechanisms_001.tar.gz",
+      "members": 9,
+      "regular_members_scanned": 8,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 32491193,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/relevance_001.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 9,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 465148,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/scalability_001.tar.gz",
+      "members": 8,
+      "regular_members_scanned": 7,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 67246166,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/transfer_001.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 9,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 100829240,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/transfer_bounded_002.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 9,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 99963317,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v03/transfer_cooperative_003.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 9,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 99848162,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/advanced_fresh_v04_001.tar.gz",
+      "members": 17,
+      "regular_members_scanned": 16,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 203984107,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/advanced_public_v04_001.tar.gz",
+      "members": 17,
+      "regular_members_scanned": 16,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 61855096,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/advanced_sparse_v04_002.tar.gz",
+      "members": 15,
+      "regular_members_scanned": 14,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 57052207,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/fresh_data_v04_002.tar.gz",
+      "members": 5,
+      "regular_members_scanned": 4,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 135297692,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/frozen_action_v04_001.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 8,
+      "nested_archives_not_opened": 1,
+      "content_bytes": 236561260,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/heap_fresh_v04_001.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 8,
+      "nested_archives_not_opened": 1,
+      "content_bytes": 169485101,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/heap_sparse_v04_001.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 8,
+      "nested_archives_not_opened": 1,
+      "content_bytes": 54462297,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/heap_sparse_v04_30s_001.tar.gz",
+      "members": 10,
+      "regular_members_scanned": 8,
+      "nested_archives_not_opened": 1,
+      "content_bytes": 58328110,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/public_data_v04_002.tar.gz",
+      "members": 27,
+      "regular_members_scanned": 22,
+      "nested_archives_not_opened": 3,
+      "content_bytes": 42606284,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/public_sparse_v04_001.tar.gz",
+      "members": 13,
+      "regular_members_scanned": 11,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 51203976,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v04/relevance_train_v04_001.tar.gz",
+      "members": 11,
+      "regular_members_scanned": 10,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 48628424,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v05/matched_eval_v05_001.tar.gz",
+      "members": 6,
+      "regular_members_scanned": 5,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 59134286,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v05/matched_fresh_v05_001.tar.gz",
+      "members": 4,
+      "regular_members_scanned": 3,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 47427161,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v05/matched_train_v05_001.tar.gz",
+      "members": 22,
+      "regular_members_scanned": 21,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 24320386,
+      "complete": true
+    },
+    {
+      "path": "experiments/runs/v05/public_alias_v05_001.tar.gz",
+      "members": 8,
+      "regular_members_scanned": 7,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 7444756,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v03/bounded_v03_source.zip",
+      "members": 39,
+      "regular_members_scanned": 39,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 464987,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v03/cooperative_v03_source.zip",
+      "members": 31,
+      "regular_members_scanned": 31,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 318546,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v03/development_001_source.zip",
+      "members": 20,
+      "regular_members_scanned": 20,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 194465,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v03/discovery_v03_source.zip",
+      "members": 34,
+      "regular_members_scanned": 34,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 4820874,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v03/holdout_v03_source.zip",
+      "members": 35,
+      "regular_members_scanned": 35,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 440787,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v03/mechanisms_v03_source.zip",
+      "members": 23,
+      "regular_members_scanned": 23,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 246562,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v03/scalability_v03_source.zip",
+      "members": 24,
+      "regular_members_scanned": 24,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 256008,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v04/advanced_v04_002_source.zip",
+      "members": 37,
+      "regular_members_scanned": 37,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 397603,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v04/advanced_v04_003_source.zip",
+      "members": 39,
+      "regular_members_scanned": 39,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 463198,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v04/frozen_action_v04_001_source.zip",
+      "members": 39,
+      "regular_members_scanned": 39,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 436832,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v04/heap_execution_v04_source.zip",
+      "members": 9,
+      "regular_members_scanned": 9,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 82869,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v04/heap_v04_001_source.zip",
+      "members": 39,
+      "regular_members_scanned": 39,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 432804,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v04/heap_v04_30s_001_source.zip",
+      "members": 39,
+      "regular_members_scanned": 39,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 437887,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v04/relevance_v04_source.zip",
+      "members": 37,
+      "regular_members_scanned": 37,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 907302,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v05/matched_v05_001_source.zip",
+      "members": 74,
+      "regular_members_scanned": 74,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 10355839,
+      "complete": true
+    },
+    {
+      "path": "experiments/source_snapshots/v05/public_alias_v05_001_source.zip",
+      "members": 49,
+      "regular_members_scanned": 49,
+      "nested_archives_not_opened": 0,
+      "content_bytes": 7126805,
+      "complete": true
+    }
+  ],
+  "input_inventory_sha256": "789caf92995e4a41cffa8a4b8c6626a9248f562a810ba615a7c411673cf992b9",
+  "archive_member_inventory_sha256": "b8526587d7144ea0bdc30cd04456216be4e554f7d3a276c1bce929430d865e83",
+  "rules": {
+    "categories": [
+      "private_key_signature",
+      "api_token_signature",
+      "credential_url_userinfo",
+      "credential_url_query",
+      "high_confidence_assignment",
+      "sensitive_filename",
+      "unsafe_archive_member_name"
+    ],
+    "known_provider_prefixes": "OpenAI/Anthropic, GitHub, GitLab, Slack, Google, Stripe and AWS access-key identifiers",
+    "assignment_policy": "quoted literal values >=20 characters, entropy>=3.5 and >=8 distinct characters, recognizable authentication variable names; require digits/mixed case/encoding punctuation",
+    "private_key_policy": "PEM/OpenSSH-style header plus >=80 encoded-body characters and matching footer; literal regex headers without key material are not findings",
+    "url_policy": "userinfo containing a decoded colon or long high-entropy authentication/signed query values; bare usernames are not credentials",
+    "placeholder_policy": "known example/dummy/redaction markers suppressed; scanner regular-expression source is not a credential",
+    "placeholder_matches_suppressed": {}
+  },
+  "limits": [
+    "Snapshot of current working tree and registered top-level archive members only; not a Git-history or ignored-directory audit.",
+    "Nested archives, symlink targets, arbitrary embedded media compression and unavailable entries are outside content scope.",
+    "Signature heuristics can miss custom formats, short/low-entropy secrets and unsupported encodings; zero findings do not establish secret-free status."
+  ],
+  "post_scan_detector_smokecheck": {
+    "scope": "in-memory synthetic signatures only; no test values stored or printed",
+    "passed": true,
+    "checks": {
+      "PEM_signature_positive": true,
+      "JSON_escaped_PEM_positive": true,
+      "OpenAI_shape_positive": true,
+      "GitHub_shape_positive": true,
+      "credential_URL_positive": true,
+      "credential_query_positive": true,
+      "quoted_assignment_positive": true,
+      "UTF16_assignment_positive": true,
+      "PEM_header_regex_literal_negative": true,
+      "API_shape_regex_literal_negative": true,
+      "scientific_SHA_field_negative": true,
+      "assignment_entropy_threshold_positive": true
+    },
+    "count": 12
+  },
+  "delta_review": {
+    "version": "public_release_security_delta_v05_001",
+    "complete": true,
+    "completed_at_utc": "2026-10-03T11:49:22.515921+00:00",
+    "scope": "Parent-declared late-writing text files only; Git tracked/nonignored inventory verified; no archive reread, history or ignored .research access",
+    "files_read": 14,
+    "bytes_read": 64439,
+    "inventory": [
+      {
+        "path": ".gitattributes",
+        "bytes": 423,
+        "sha256": "0969e88c995557da6a4c58af4248d7561d6a531de4363e5ebda8ab89f37c905d"
+      },
+      {
+        "path": "README.md",
+        "bytes": 13618,
+        "sha256": "dd01352c1e78423e2e5d921c131a1d76994f05682297c7baa0cb6a59235d6856"
+      },
+      {
+        "path": "autoresearch/loop-261003-v05/handoff.json",
+        "bytes": 1401,
+        "sha256": "68f092643be9c807d3ace99d7b9f941aa32d69b908c9edbbdce92e7e69170bd7"
+      },
+      {
+        "path": "autoresearch/loop-261003-v05/results.tsv",
+        "bytes": 2401,
+        "sha256": "63d7f2866b1ce3c27cef43341f8dc4f352a8a58593432a35918bd797eb9987c9"
+      },
+      {
+        "path": "cipheur/__init__.py",
+        "bytes": 98,
+        "sha256": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4"
+      },
+      {
+        "path": "docs/AI_ASSISTANCE_V05.md",
+        "bytes": 3727,
+        "sha256": "d8ad818e86e4e8ada67ac21dc66edd54c2c17a7ce0c69120a7f5f605a8e115c9"
+      },
+      {
+        "path": "docs/DELIVERY_V05.md",
+        "bytes": 3788,
+        "sha256": "b1c9668fb5106371241b2df6942d8f014bdf3e1415dd3068937c0e96d72bc600"
+      },
+      {
+        "path": "docs/FIGURE_DESIGN_V05.md",
+        "bytes": 4292,
+        "sha256": "0ceb35cfe6e116a5a5c66ab71b19a4c071a3019aa4f920a0ed8804ea1e77fb93"
+      },
+      {
+        "path": "docs/FINAL_REVIEW_V05.md",
+        "bytes": 5802,
+        "sha256": "ecbef683d6b736c0972c31245e714109fa361810002dab13e1dcf9d546bdff3b"
+      },
+      {
+        "path": "docs/REPLAY_V05.md",
+        "bytes": 2436,
+        "sha256": "e508331ab74a28a638813fecc95eae92a34d915a1430c2e22a6b575bfbd3c38c"
+      },
+      {
+        "path": "paper/figures/IMAGEGEN_EARLY_PROVENANCE_V05.json",
+        "bytes": 10245,
+        "sha256": "614a50887080a4aff65c161a0cde83be2eb9a7f6a884078b742fa3b79de33047"
+      },
+      {
+        "path": "paper/figures/IMAGEGEN_PROVENANCE_V05.json",
+        "bytes": 13940,
+        "sha256": "8147e8ffcad6eb4380bf9c96a594966bdd981909a70fddf925d999f2bf37e7b5"
+      },
+      {
+        "path": "pyproject.toml",
+        "bytes": 588,
+        "sha256": "de85741428bb142d0b6efd96259cd1b96a6c516ba768d1769e0dd886c6be8805"
+      },
+      {
+        "path": "scripts/update_manifest.py",
+        "bytes": 1680,
+        "sha256": "02adad4227e014b21b23cecdb9f6c435f8a77ee05eab826898db638176c4549e"
+      }
+    ],
+    "inventory_sha256": "25bccc757333ae36a8784e5b6069939a7151906a6fed9871794a2aed52428cb0",
+    "findings": [],
+    "finding_path_category_count": 0,
+    "placeholder_matches_suppressed": {},
+    "elapsed_seconds": 0.037,
+    "base_full_scan_preserved": true,
+    "base_record_canonical_sha256": "a6b5844d3d3e164a8305892b45058ba8caaf4bc1d1ce83481977898dafeb4e63",
+    "existing_scientific_outputs_modified": false,
+    "provenance_hash_scope": "Parent clarified 1977c3db prefix belongs to the mechanism PNG figure2.sha256 field, not the provenance JSON file; actual JSON bytes are hashed in this inventory",
+    "subsequent_manifest_scope": "Parent generates the final manifest after this delta; manifest/source cryptographic hashes are not credential values"
+  },
+  "late_layout_delta": {
+    "version": "public_release_late_layout_delta_v05_001",
+    "complete": true,
+    "completed_at_utc": "2026-10-03T12:29:59.846207+00:00",
+    "scope": "Parent-declared stable late-presentation text files after explicit finaldocready signal; includes the existing effect-curves numeric JSON solely as changed builder-hash receipt",
+    "files_read": 12,
+    "bytes_read": 12618398,
+    "inventory": [
+      {
+        "path": "README.md",
+        "bytes": 13713,
+        "sha256": "1c9dbff552f25362f0d87fddeb24862d12f9c84aeebca627e1eb7e05e4ee1339",
+        "CRLF_count": 0
+      },
+      {
+        "path": "autoresearch/loop-261003-v05/results.tsv",
+        "bytes": 2770,
+        "sha256": "dcf5ce425f70717c37fea8ad083beab36d6bd01cc4c936349ecb7d6b589ba9af",
+        "CRLF_count": 0
+      },
+      {
+        "path": "docs/COMPACT_FIGURES_V05.md",
+        "bytes": 4630,
+        "sha256": "42a508f389f3d0c3ab37170a167ba28b2200a8066e7d4673e8b82fbcc3b12de8",
+        "CRLF_count": 0
+      },
+      {
+        "path": "docs/DELIVERY_V05.md",
+        "bytes": 4090,
+        "sha256": "c754a63867e2f2fb7f1e0253d0c7399d0c38617303bf9437dacec785191ee84c",
+        "CRLF_count": 0
+      },
+      {
+        "path": "docs/FIGURE_DESIGN_V05.md",
+        "bytes": 5585,
+        "sha256": "5de08e21257d159ca1e910f76a0aa3a38c9f1b26ad1256bff4fe0d585bc863bc",
+        "CRLF_count": 0
+      },
+      {
+        "path": "docs/FINAL_REVIEW_V05.md",
+        "bytes": 6650,
+        "sha256": "edb9ded32f2a406588f771d2590e87f908a73c10cdc8a719068d387ac8bf1603",
+        "CRLF_count": 0
+      },
+      {
+        "path": "experiments/analysis/v05/effect_curves.json",
+        "bytes": 12517137,
+        "sha256": "68e541ddec1d58f9cfb65c7d49de5ed7539a1b5c3aee773c4fd67127d3df64b9",
+        "CRLF_count": 508329
+      },
+      {
+        "path": "paper/main.tex",
+        "bytes": 9320,
+        "sha256": "b48bccfea95cfab267d6473723ec1ff203fde6b88d27fcb3a2da2a4894b1e3c3",
+        "CRLF_count": 0
+      },
+      {
+        "path": "paper/sections/discussion.tex",
+        "bytes": 1402,
+        "sha256": "be9b578a46d0740244b52e6a14281dad4be800ffa60b19d6c5665188f69ac851",
+        "CRLF_count": 0
+      },
+      {
+        "path": "paper/sections/experiments.tex",
+        "bytes": 9590,
+        "sha256": "47500f7b2bb4755b157621e8d5f65d3a2f1bcecfafe658ee890a5912f17326aa",
+        "CRLF_count": 0
+      },
+      {
+        "path": "scripts/build_compact_figures_v05.py",
+        "bytes": 14498,
+        "sha256": "0d0dd7dca7e2a535509d7f75449203340a260959230d5f5690813e9fb52e17b5",
+        "CRLF_count": 0
+      },
+      {
+        "path": "scripts/build_effect_curves_v05.py",
+        "bytes": 29013,
+        "sha256": "ac660b29159bbdd394e999d93398eb7fe333a8b12bd37b6e3b6d68f9724aa6e7",
+        "CRLF_count": 0
+      }
+    ],
+    "inventory_sha256": "4f1ad54301cb4d3e787f87d25a4a6ba3198934102c59c48a354e24ea7f36a414",
+    "findings": [],
+    "finding_path_category_count": 0,
+    "placeholder_matches_suppressed": {},
+    "elapsed_seconds": 0.831,
+    "base_record_canonical_sha256": "2654778b57ab0ad97f1adf50eceaae80747ca594a1edca96d5b36261d15329d3",
+    "original_full_scan_and_14_file_delta_preserved": true,
+    "all_scanned_targets_LF": false,
+    "archive_members_reopened": 0,
+    "server_accessed": false,
+    "git_history_read": false,
+    "ignored_research_read": false,
+    "scientific_data_scripts_figures_paper_modified": false,
+    "new_presentation_JSON": "None expected per parent; existing experiments/analysis/v05/effect_curves.json read as explicitly changed builder-SHA receipt",
+    "subsequent_manifest_scope": "Parent will regenerate manifest/stage/push after this delta; no claim about later unlisted edits",
+    "source_doc_targets_all_LF": true,
+    "raw_numeric_receipt_CRLF_retained": [
+      {
+        "path": "experiments/analysis/v05/effect_curves.json",
+        "CRLF_count": 508329,
+        "sha256": "68e541ddec1d58f9cfb65c7d49de5ed7539a1b5c3aee773c4fd67127d3df64b9"
+      }
+    ]
+  }
+}

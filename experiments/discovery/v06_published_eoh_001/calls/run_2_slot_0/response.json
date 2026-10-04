@@ -1,0 +1,199 @@
+{
+  "name": "exchange_safe_completion",
+  "features": [
+    {
+      "name": "residual_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "intersection",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              },
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "residual_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "intersection",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              },
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "residual_edges",
+      "expression": {
+        "op": "count",
+        "args": [
+          {
+            "op": "induced_edges",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "intersection",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "boundary_edges",
+      "expression": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "intersection",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {
+                            "op": "intersection",
+                            "args": [
+                              {"op": "available", "args": []},
+                              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                            ]
+                          }
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rule": "2*(1+weight+conflict_weight+compatible_weight+remaining_count) + weight/max(1e-9,abs(1+degree)) if weight >= neighbor_cover else weight + 0.6*residual_pack + 0.4*residual_cover - 0.15*neighbor_pack + 0.2*boundary_edges/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree",
+  "rationale": "Prioritize exchange-safe vertices whose weight dominates a clique-cover bound on their active neighborhood, then use the warm seed's residual completion quality and boundary relief to order the remaining choices."
+}

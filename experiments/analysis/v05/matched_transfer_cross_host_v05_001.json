@@ -1,0 +1,510 @@
+{
+  "version": "matched_transfer_cross_host_v05_001",
+  "local_archive_sha256": "4b4888820ac71797aa5f1e05980f0216fd94acac2f9e17f65340001fdc8536a2",
+  "server_archive_sha256": "3bf2197f96206411354930a4c2c042ea393bc9f63808f1a08d0c4a78cb8b2c31",
+  "data_sha256": "7a572d043ff0d3a05a630b5b0ecf522c90a50cef74b8e7c66fdbc6e2784e6793",
+  "frozen_programs_sha256": "37757102547f7e8b774900ac78a5c714bccb795d5471afed546f393f915e0eaa",
+  "assignment_pairs": 1560,
+  "counts": {
+    "both_complete": 1007,
+    "exact_reward_equal": 1007,
+    "selected_set_equal": 1007,
+    "decision_trace_equal": 1007,
+    "trace_choices_counts_equal": 1007,
+    "neither_complete": 506,
+    "server_only_complete": 47
+  },
+  "per_method_completion": {
+    "Degree": {
+      "both_complete": 98,
+      "neither_complete": 2,
+      "server_only_complete": 20
+    },
+    "block_0_objective": {
+      "both_complete": 76,
+      "neither_complete": 42,
+      "server_only_complete": 2
+    },
+    "block_0_relations": {
+      "both_complete": 76,
+      "neither_complete": 42,
+      "server_only_complete": 2
+    },
+    "block_0_witness": {
+      "both_complete": 76,
+      "neither_complete": 42,
+      "server_only_complete": 2
+    },
+    "block_1_objective": {
+      "both_complete": 77,
+      "neither_complete": 42,
+      "server_only_complete": 1
+    },
+    "block_1_relations": {
+      "both_complete": 76,
+      "neither_complete": 42,
+      "server_only_complete": 2
+    },
+    "block_1_witness": {
+      "both_complete": 70,
+      "neither_complete": 42,
+      "server_only_complete": 8
+    },
+    "block_2_objective": {
+      "both_complete": 76,
+      "neither_complete": 42,
+      "server_only_complete": 2
+    },
+    "block_2_relations": {
+      "both_complete": 76,
+      "neither_complete": 42,
+      "server_only_complete": 2
+    },
+    "block_2_witness": {
+      "both_complete": 76,
+      "neither_complete": 42,
+      "server_only_complete": 2
+    },
+    "block_3_objective": {
+      "both_complete": 77,
+      "neither_complete": 42,
+      "server_only_complete": 1
+    },
+    "block_3_relations": {
+      "both_complete": 76,
+      "neither_complete": 42,
+      "server_only_complete": 2
+    },
+    "block_3_witness": {
+      "both_complete": 77,
+      "neither_complete": 42,
+      "server_only_complete": 1
+    }
+  },
+  "all_differences": [
+    {
+      "context": "p_hat300-1_hash_weighted:graph",
+      "method": "block_2_objective",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.8011020229999986
+    },
+    {
+      "context": "p_hat300-1_unit:graph",
+      "method": "block_0_objective",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.7703640200000024
+    },
+    {
+      "context": "p_hat300-1_unit:graph",
+      "method": "block_1_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.953619887000002
+    },
+    {
+      "context": "p_hat300-2_hash_weighted:graph",
+      "method": "block_0_relations",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.892043681000004
+    },
+    {
+      "context": "p_hat300-2_hash_weighted:graph",
+      "method": "block_0_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.836491047999999
+    },
+    {
+      "context": "p_hat300-2_hash_weighted:graph",
+      "method": "block_1_relations",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.8500483640000027
+    },
+    {
+      "context": "p_hat300-2_hash_weighted:graph",
+      "method": "block_1_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.065387612999999
+    },
+    {
+      "context": "p_hat300-2_hash_weighted:graph",
+      "method": "block_2_relations",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.03125,
+      "server_cpu_seconds": 3.855766666000001
+    },
+    {
+      "context": "p_hat300-2_hash_weighted:graph",
+      "method": "block_2_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.86431348
+    },
+    {
+      "context": "p_hat300-2_hash_weighted:graph",
+      "method": "block_3_relations",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.03125,
+      "server_cpu_seconds": 3.847421221999994
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_0_objective",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.154241280000001
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_0_relations",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.183317412000001
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_0_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.176845639
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_1_objective",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.188912615
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_1_relations",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.144246375999998
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_1_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.321806459999998
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_2_objective",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.279819851999989
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_2_relations",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.12924203
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_2_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.141349815000012
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_3_objective",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.135466523000002
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_3_relations",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.145048185999997
+    },
+    {
+      "context": "p_hat300-2_unit:graph",
+      "method": "block_3_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.147125068000001
+    },
+    {
+      "context": "uf75-325:uf75-0100_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.18772459500002
+    },
+    {
+      "context": "uf75-325:uf75-0100_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.329063903000019
+    },
+    {
+      "context": "uf75-325:uf75-010_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.187766503999967
+    },
+    {
+      "context": "uf75-325:uf75-010_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.370403080000017
+    },
+    {
+      "context": "uf75-325:uf75-011_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.211087863999978
+    },
+    {
+      "context": "uf75-325:uf75-011_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.360776816999987
+    },
+    {
+      "context": "uf75-325:uf75-012_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.099607076999973
+    },
+    {
+      "context": "uf75-325:uf75-012_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.351929611999992
+    },
+    {
+      "context": "uf75-325:uf75-013_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.13213883200001
+    },
+    {
+      "context": "uf75-325:uf75-013_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.319385898999997
+    },
+    {
+      "context": "uf75-325:uf75-014_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.128370059000019
+    },
+    {
+      "context": "uf75-325:uf75-014_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.2889907759999915
+    },
+    {
+      "context": "uf75-325:uf75-015_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.167238075
+    },
+    {
+      "context": "uf75-325:uf75-015_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.388151916999959
+    },
+    {
+      "context": "uf75-325:uf75-016_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.117826374999993
+    },
+    {
+      "context": "uf75-325:uf75-016_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.316253848000031
+    },
+    {
+      "context": "uf75-325:uf75-017_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.144550787000014
+    },
+    {
+      "context": "uf75-325:uf75-017_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.380029784000044
+    },
+    {
+      "context": "uf75-325:uf75-01_hash_weighted:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.16501223399996
+    },
+    {
+      "context": "uf75-325:uf75-01_unit:graph",
+      "method": "Degree",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 4.3083992250000165
+    },
+    {
+      "context": "v04_c3_test_512_0000:left",
+      "method": "block_1_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.8384518290000074
+    },
+    {
+      "context": "v04_c3_test_512_0001:left",
+      "method": "block_1_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.6209558190000166
+    },
+    {
+      "context": "v04_c3_test_512_0001:right",
+      "method": "block_1_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.6095233639999833
+    },
+    {
+      "context": "v04_c3_test_512_0002:left",
+      "method": "block_1_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.963137900999982
+    },
+    {
+      "context": "v04_c3_test_512_0002:right",
+      "method": "block_1_witness",
+      "kind": "completion_or_failure_difference",
+      "local_status": "_CPUCap",
+      "server_status": "completed",
+      "local_cpu_seconds": 5.015625,
+      "server_cpu_seconds": 3.985963169999991
+    }
+  ],
+  "interpretation": "Cross-host computational replay on identical already-observed inputs; no new independent scheduling population or authoring. Both outcomes retained, no replacement or selection. Process CPU is host-specific; the shared nominal deadline does not make different processors/interpreters equivalent."
+}

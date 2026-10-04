@@ -27,3 +27,17 @@ paper/*.out
 paper/*.fls
 paper/*.fdb_latexmk
 paper/*.synctex.gz
+# Reconstructed assessment caches; the complete compressed, hash-bound server
+# archives under experiments/runs/v06 are the public raw evidence source.
+/experiments/discovery/v06_synthesis_server_001/
+/experiments/discovery/v06_refinement_server_002/
+# Exact large cloud evidence is a hash-bound public V06 Release asset.
+/experiments/runs/v06/performance_r2_eoh_test_v06_003_inputs.tar.gz
+# Full frozen heldout compact is preserved in exact 48 MiB binary parts.
+/experiments/analysis/v06/heldout_mechanism_analysis_v06_001_compact.json
+# Preserve the old open-viewer file locally; current delivery has a versioned PDF.
+/paper/main.pdf
+# Full performance analysis is retained in exact 48 MiB binary parts.
+/experiments/analysis/v06/performance_TEST_analysis_v06_003/analysis.json
+/experiments/analysis/v06/performance_TEST_analysis_v06_003/identity_context_estimates.jsonl
+/experiments/analysis/v06/performance_TEST_analysis_v06_003/identity_contrast_contexts.jsonl

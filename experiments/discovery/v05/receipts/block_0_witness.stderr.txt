@@ -1,0 +1,8 @@
+2026-10-03T09:54:54.203279Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T09:54:54.203367Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T09:54:54.317941Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T09:54:56.660576Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T09:54:56.660643Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T09:55:15.592936Z  WARN codex_core_plugins::manager: failed to auto-upgrade configured marketplace marketplace="drawio" error=installed marketplace `drawio` changed while auto-upgrade was in flight
+2026-10-03T09:55:35.614228Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a10130-2186-7db0-9daf-48a3113f29a7: invalid thread-store request: no rollout found for thread id 01a10130-2186-7db0-9daf-48a3113f29a7
+2026-10-03T10:01:23.736512Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a10130-2347-7942-8f56-a5fd42218245 hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)

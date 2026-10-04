@@ -1,0 +1,49 @@
+% Root review of independently authored V06 section; original preserved.
+\section{Problem Setting}
+\label{sec:problem}
+A contact $v$ specifies satellite $\sigma_v$, station $\gamma_v$, interval
+$[s_v,e_v)$, with $s_v<e_v$, and nonnegative reward $w_v$. Selection reserves that entire
+interval. Each main-model satellite and station has capacity one. For contacts
+ordered by start, a shared station conflicts if $s_v<e_u+\tau_g$; a shared
+satellite uses $s_v<e_u+\tau_s$. Nonnegative switching gaps are fixed within
+configuration $\theta$. Synthetic reward is independent of duration.
+The weighted conflict graph $G_\theta=(V,E_\theta,w)$ yields
+\begin{equation}
+ \max_{\substack{I\subseteq V\\ I\text{ independent in }G_\theta}} w(I),
+ \qquad w(I)=\sum_{v\in I}w_v.
+ \label{eq:mwis}
+\end{equation}
+This models constraints expressible by pairwise conflicts. Public graphs
+exercise MWIS without a satellite interpretation; exploratory C3 tracks retain
+their separate inherited predicates.
+
+An admissible boundary $B=(F,X)$ records independent permanent commitments
+$F$, disjoint from permanent exclusions $X$. Available contacts are
+\begin{equation}
+ R_\theta(B)=V\setminus(F\cup X\cup N_\theta(F)).
+ \label{eq:residual}
+\end{equation}
+For $d\in R_\theta(B)$, its full conditional-completion value is
+\begin{equation}
+ V_\theta(d\mid B)=
+ \max_{\substack{I\subseteq V\text{ independent in }G_\theta\\
+                 F\cup\{d\}\subseteq I,\ I\cap X=\varnothing}}w(I).
+ \label{eq:conditional-value}
+\end{equation}
+It includes fixed reward and every compatible global completion.
+An aligned intervention changes one constraint parameter while preserving
+contacts, resources, intervals, weights and boundary. The common boundary must
+be admissible under both configurations. Competing $a,b$ must
+remain available and adjacent in both configurations. Their certified
+preferences can change even though each remains individually feasible.
+Adaptation compares separate static problems, not online constraint changes.
+
+A frozen deterministic typed programme $P=(\phi_P,h_P)$ gives finite priorities
+$h_P(\phi_P(G_\theta,A,v))$ on active snapshot $A$.
+All programmes share an initializer, patch rules, classical search and
+feasibility checks. They alter greedy additions and pivots, which can change
+later repair trajectories. The kernel protects $F$, avoids $X$, retracts only
+movable incumbent vertices and commits only globally feasible positive gains.
+Budget termination retains a feasible incumbent, not necessarily an optimum.
+Full-residual labels and restricted-patch search have different temporary
+commitments; ranking agreement and schedule quality require separate evaluation.

@@ -1,0 +1,17 @@
+% Presentation only: bound to frozen exploratory transfer archive and independently audited analysis.
+\begin{table*}[t]
+\centering
+\caption{Exploratory transfer on 120 reused contexts, without reselection. Cells: failure-zero mean $100W/U$ (completed/assigned), using prior clique upper $U$ and equal authoring-block weights. All arms use the compiled five-CPU-second target after AST parsing. Blue identifies Witness; bold marks displayed column maxima, including ties, without significance.}
+\label{tab:matched-transfer}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Arm & DIMACS unit & DIMACS hash & SATLIB unit & SATLIB hash & C3 \\
+\midrule
+\rowcolor{blue!7} A Witness & 40.15 (63/72) & 41.28 (65/72) & 24.65 (40/120) & 22.60 (40/120) & 65.60 (91/96) \\
+B Relations & 40.11 (64/72) & 40.82 (64/72) & 24.65 (40/120) & 22.61 (40/120) & 68.63 (96/96) \\
+C Objective & 39.85 (63/72) & \textbf{42.23} (67/72) & 24.65 (40/120) & 23.42 (40/120) & \textbf{68.99} (96/96) \\
+Degree (compiled) & \textbf{43.94} (17/18) & 41.72 (17/18) & \textbf{49.49} (20/30) & \textbf{44.44} (20/30) & 68.23 (24/24) \\
+\bottomrule
+\end{tabular}
+\end{table*}

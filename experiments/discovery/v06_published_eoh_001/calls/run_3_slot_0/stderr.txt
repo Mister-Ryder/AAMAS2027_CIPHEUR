@@ -1,0 +1,8 @@
+2026-10-03T21:09:24.097517Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T21:09:24.097592Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T21:09:24.105606Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T21:09:27.302581Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: failed to persist identity for cached remote installed plugin remote_plugin_id=plugin_connector_1p_ab21a553bfbc81919ea8fd1858e3ffa7 plugin=google-drive marketplace=openai-curated-remote error=failed to persist remote plugin install metadata: 拒绝访问。 (os error 5)
+2026-10-03T21:09:27.409475Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T21:09:27.409504Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T21:09:46.334312Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a10399-a7e9-7281-bd4e-9345d8a83c5e: invalid thread-store request: no rollout found for thread id 01a10399-a7e9-7281-bd4e-9345d8a83c5e
+2026-10-03T21:12:07.674660Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a10399-a86d-74c3-b99b-e590f55ebcc7 hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)

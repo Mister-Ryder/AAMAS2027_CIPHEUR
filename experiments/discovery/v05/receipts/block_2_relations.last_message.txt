@@ -1,0 +1,461 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 2,
+  "arm": "relations",
+  "candidates": [
+    {
+      "name": "neighbor_clique_ratio",
+      "features": [
+        {
+          "name": "neighbor_clique_cost",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [{"op": "root", "args": []}]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1.0, 1.0 + neighbor_clique_cost)",
+      "rationale": "Estimate blocked neighboring opportunity through a clique-partition upper bound and rank root weight relative to that cost."
+    },
+    {
+      "name": "neighbor_packing_ratio",
+      "features": [
+        {
+          "name": "neighbor_greedy_weight",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [{"op": "root", "args": []}]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1.0, 1.0 + neighbor_greedy_weight)",
+      "rationale": "Use a feasible neighboring packing to estimate the alternatives excluded by choosing the root."
+    },
+    {
+      "name": "clique_weight_share",
+      "features": [
+        {
+          "name": "neighbor_clique_cost",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [{"op": "root", "args": []}]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * (weight / max(1.0, 1.0 + weight + neighbor_clique_cost))",
+      "rationale": "Discount absolute root value by its share of root weight and estimated neighboring competition."
+    },
+    {
+      "name": "clique_degree_blend",
+      "features": [
+        {
+          "name": "neighbor_clique_cost",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [{"op": "root", "args": []}]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1.0, 1.0 + 0.5 * neighbor_clique_cost + 0.5 * degree)",
+      "rationale": "Blend discounted neighboring opportunity cost with conflict count."
+    },
+    {
+      "name": "residual_greedy_completion",
+      "features": [
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_greedy",
+      "rationale": "Estimate attainable completion value using root weight and a feasible greedy packing of its compatible residual."
+    },
+    {
+      "name": "residual_cover_completion",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_cover",
+      "rationale": "Favor root choices retaining large completion potential according to a compatible-residual clique-cover bound."
+    },
+    {
+      "name": "packing_pressure_margin",
+      "features": [
+        {
+          "name": "neighbor_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "intersection",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [{"op": "root", "args": []}]
+                  },
+                  {"op": "available", "args": []}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_edge_cost",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_weight",
+          "expression": {
+            "op": "sum_weights",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + (weight - neighbor_greedy) / max(1.0, 1.0 + residual_edge_cost / max(weight + residual_weight, 1e-9))",
+      "rationale": "Normalize the root's margin over excluded neighboring packing by conflict pressure inside its compatible residual."
+    },
+    {
+      "name": "residual_bound_blend",
+      "features": [
+        {
+          "name": "residual_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_greedy + 0.25 * max(0, residual_cover - residual_greedy)",
+      "rationale": "Anchor completion value in feasible residual packing and add one quarter of its gap to the clique-cover bound."
+    },
+    {
+      "name": "edge_effective_degree",
+      "features": [
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1, 1 + max(0, degree - 2 * neighbor_edge_count / max(1, degree)))",
+      "rationale": "Discount conflict count when neighboring alternatives conflict with one another."
+    },
+    {
+      "name": "edge_min_conflict_mass",
+      "features": [
+        {
+          "name": "neighbor_edge_min_mass",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * weight / max(1e-9, weight + max(max_conflict_weight, conflict_weight - 2 * neighbor_edge_min_mass / max(1, degree)))",
+      "rationale": "Discount overlapping conflict mass using smaller endpoint weights, with the heaviest neighbor providing a floor."
+    },
+    {
+      "name": "edge_product_clustering",
+      "features": [
+        {
+          "name": "neighbor_edge_product_mass",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * weight / max(1e-9, weight + max(max_conflict_weight, conflict_weight - 2 * neighbor_edge_product_mass / max(1e-9, conflict_weight)))",
+      "rationale": "Correct conflict mass through normalized weight products, emphasizing conflicts between heavy neighboring alternatives."
+    },
+    {
+      "name": "residual_edge_penalty",
+      "features": [
+        {
+          "name": "residual_edge_min_mass",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_max_weight",
+          "expression": {
+            "op": "max_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + max(residual_max_weight, compatible_weight - 2 * residual_edge_min_mass / max(1, residual_count))",
+      "rationale": "Estimate surviving compatible value through an internal edge penalty, floored by the heaviest compatible residual node."
+    }
+  ]
+}

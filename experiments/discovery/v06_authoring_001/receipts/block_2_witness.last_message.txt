@@ -1,0 +1,285 @@
+{
+  "version": "matched_cold_bank_v06",
+  "block": 2,
+  "arm": "witness",
+  "candidates": [
+    {
+      "name": "residual_consensus",
+      "features": [
+        {
+          "name": "n_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "n_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "n_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "r_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight + 0.75*r_pack + 0.25*r_cover - 0.08*n_pack + 0.03*n_cover + 0.02*n_edges/max(1e-9,abs(1+degree)) - 0.02*r_edges/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Combines feasible residual packing with a modest upper-summary contribution. Neighborhood and residual structure may distinguish joins that collide on base features or neighborhood edge counts."
+    },
+    {
+      "name": "completion_margin",
+      "features": [
+        {
+          "name": "r_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "x_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "x_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "n_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        }
+      ],
+      "rule": "(weight+r_pack-x_pack) + 0.35*(weight+r_cover-x_cover) + 0.025*n_edges/max(1e-9,abs(1+degree)) - 0.025*r_edges/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Tests polynomial inclusion-versus-exclusion margins as an opportunity-cost estimate. Residual and neighborhood edge summaries provide distinctions beyond packing and cover totals."
+    },
+    {
+      "name": "cover_boundary_loss",
+      "features": [
+        {
+          "name": "r_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "n_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "r_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "n_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {
+            "op": "sub",
+            "args": [
+              {
+                "op": "sub",
+                "args": [
+                  {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "available", "args": []}]}]},
+                  {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+                ]
+              },
+              {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+            ]
+          }
+        }
+      ],
+      "rule": "weight + r_cover - 0.4*(r_cover-r_pack) - 0.15*min(conflict_weight,n_cover) + 0.03*boundary_edges/max(1e-9,abs(1+degree)) + 0.02*n_edges/max(1e-9,abs(1+degree)) - 0.02*r_edges/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Discounts optimistic residual cover by its packing gap and charges neighborhood opportunity cost. Boundary edges expose how removed neighbors interact with the remaining graph."
+    },
+    {
+      "name": "density_adaptation",
+      "features": [
+        {
+          "name": "all_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "available", "args": []}]}]}
+        },
+        {
+          "name": "n_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "r_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "n_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "(weight+r_pack-0.1*n_pack-0.1*(r_cover-r_pack) if 2*all_edges < remaining_count*(2+station_gap+satellite_gap) else weight+0.6*r_cover+0.4*r_pack-0.15*n_pack) + 0.03*n_edges/max(1e-9,abs(1+degree)) - 0.02*r_edges/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Hypothesizes that sparse active graphs favor reliable packing while denser graphs benefit from residual cover information. The switch uses current density and constraint gaps without source lookup."
+    },
+    {
+      "name": "neighbor_exchange",
+      "features": [
+        {
+          "name": "n_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "n_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "n_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "r_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1e-9,abs(weight+n_pack)) + 0.1*(weight+r_pack) + 0.04*(r_cover-r_pack) + 0.08*(conflict_weight-n_cover)/max(1e-9,abs(1+conflict_weight)) + 0.03*n_edges/max(1e-9,abs(1+degree*degree)) - 0.02*r_edges/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Emphasizes root reward relative to a feasible competing neighborhood packing. Residual completion and neighborhood redundancy temper the local exchange estimate."
+    },
+    {
+      "name": "boundary_relief",
+      "features": [
+        {
+          "name": "n_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {
+            "op": "sub",
+            "args": [
+              {
+                "op": "sub",
+                "args": [
+                  {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "available", "args": []}]}]},
+                  {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+                ]
+              },
+              {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+            ]
+          }
+        },
+        {
+          "name": "n_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "r_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1e-9,abs(1+conflict_weight)) + 0.15*(boundary_edges+2*n_edges)/max(1e-9,abs(1+degree)) + 0.4*r_pack + 0.1*r_cover - 0.2*n_pack - 0.05*r_edges/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Tests whether removing heavily interconnected neighbors yields useful conflict relief. Feasible neighborhood opportunity cost and residual completion prevent edge relief from being the sole priority."
+    },
+    {
+      "name": "conservative_margin",
+      "features": [
+        {
+          "name": "r_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "x_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "x_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "n_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+        }
+      ],
+      "rule": "min(weight+r_pack-x_pack,weight+r_cover-x_cover) + 0.1*(weight+r_pack) - 0.05*abs((r_cover-r_pack)-(x_cover-x_pack)) + 0.02*n_edges/max(1e-9,abs(1+degree)) - 0.02*r_edges/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Favors agreement between inclusion-versus-exclusion packing and cover margins, penalizing disagreement in their gaps. This is a conservative heuristic rather than a certified conditional bound."
+    },
+    {
+      "name": "residual_floor",
+      "features": [
+        {
+          "name": "n_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "n_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "n_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "r_floor",
+          "expression": {
+            "op": "sub",
+            "args": [
+              {"op": "sum_weights", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]},
+              {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}
+            ]
+          }
+        },
+        {
+          "name": "r_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "r_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight + max(r_pack,r_floor) + 0.1*min(r_cover-r_pack,weight+max_conflict_weight) - 0.08*n_pack + 0.03*n_cover + 0.02*n_edges/max(1e-9,abs(1+degree))",
+      "rationale": "Combines greedy residual packing with a weighted edge-deletion floor and limits optimism from the cover gap. The floor retains residual edge distinctions in unit-weight examples while extending to weighted graphs."
+    }
+  ]
+}

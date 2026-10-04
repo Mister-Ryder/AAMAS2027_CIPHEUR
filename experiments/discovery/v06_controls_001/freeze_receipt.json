@@ -1,0 +1,30 @@
+{
+  "version": "v06_control_bank_freeze_001",
+  "before_candidate_assessment": true,
+  "control_banks_sha256": "79effeaff504fb76995c0493f53551b668441f82e9e8a0bb1b4542e14ce3cba8",
+  "generator_sha256": "626a5d07fa68f5ef78eca9bb7140f01c9f7eb0943dddfcfe3ef64a5e677e3b8a",
+  "static_validator_sha256": "52b331fea2214642ac50ffe3996c95a6fb9893320e50df84e1371f8fedae087b",
+  "bank_deployment_AST_sha256": {
+    "enumerated_structural": [
+      "577f6569f6dccc97198f56459a00754785de8a3e970b7312675b68e97aa39be4",
+      "6b458d876bb2656e7f22ce6ef21b77238e3724fef1c513ac10f4a96eff386f91",
+      "3bddf99548e5fad6b25ef2e9b60f45d51a76121719621b2f9e1cd3bcc5c4ea6a",
+      "3e6b3580936b881537fd04b38f1b5fcc19d0e56154272cfc2c72910a64d6e6e7",
+      "68b81b949fe2f966cab88d272ef628680fed5542fa4aa0482178aba9ccd77d11",
+      "e229a40c8df940566676fc7de8c1a25439c7f301ca28d9e70578b02854c62159",
+      "116430c2adb62f8fd53264e601b0fbad8f8b764c61b01bf9d58a3a07a416584e",
+      "2514674412e433c9a4172105ec786a80c8ae6a310f9c043833002f9d55bd1c77"
+    ],
+    "fixed_base9": [
+      "6c8fdf667d5ebbf9d2787aa08aa02239f0829b4e13c93f160785fed12490049d",
+      "9dddbbc95acd3cafa2b569dcee07571ff99541f2db424dc496b07f1b01fcfc4d",
+      "dae553111e9d685b60d9e5f956593bbc8585af79f981bf051a6c310c8043fb6b",
+      "1244c11f8321423cecd9fefe96114407b11f5484f8c0073f2374c6bb8cf2952f",
+      "ef24068ae25595dfe04158f09b2f7d23e25523d4633bcdee09870eb65a987e74",
+      "7cfa8c900fbe15f797173cc14df14bbf390f39a52195fc311ed2efde6ed17d26",
+      "0d7fa6ac1565f8e92ef944304f9588b5a7e5b70d6ab3fd0500bb4cda90559caf",
+      "5254602b03bfbb7ce64de360311a1f4731d983e547b6dc47488a11c695133660"
+    ]
+  },
+  "kernel_caps_must_be_bound_by_controller_execution_protocol": true
+}

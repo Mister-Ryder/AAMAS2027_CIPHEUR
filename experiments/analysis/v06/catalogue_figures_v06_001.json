@@ -1,0 +1,89 @@
+{
+  "version": "v06_catalogue_figures_001",
+  "independent_audit_sha256": "b485a74414364e551abebc250dd6922498865a0a41ed93a8523ab4a559f5e0d2",
+  "server_archive_sha256": "dab90de26a486d11174ba10f06723c8c02ae277aa2907d643fe36909107ecc05",
+  "script_sha256": "c2619ceefe670debf217aad22246b4c2eee631035f453cf3e7a29f8a61326027",
+  "font": "Arial9pt at native3.35in width",
+  "outputs": {
+    "paper/figures/refinement_cost_curve_v06.pdf": "9b80767781469453ec533e043aabb279e1926cdbd4c7be657e168609099006a8",
+    "paper/figures/refinement_cost_curve_v06.png": "2a48b5c08e3da9fc9127e70b9cde517d47e14f90e1daa9f3fa6e68abe4e0edb3",
+    "paper/figures/refinement_feature_work_v06.pdf": "ebe1ea7c8e442f2093ecadabdfe38e9bdaa92f0dce69ee4bf7acba77ad597c2e",
+    "paper/figures/refinement_feature_work_v06.png": "ca4afbd3063223876c9cfd0eaa39ef073ae0054841755180cca5ba0d6744f4bb"
+  },
+  "arrays": {
+    "refinement_cost_curve_v06": {
+      "round": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "cost_exact": [
+        0,
+        16022,
+        168563,
+        184585,
+        214549,
+        394682,
+        424646,
+        1194337,
+        1341504,
+        1371468
+      ],
+      "self_loop_requirements": [
+        90,
+        50,
+        18,
+        9,
+        7,
+        9,
+        3,
+        0,
+        0,
+        0
+      ],
+      "cyclic": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+      ]
+    },
+    "refinement_feature_work_v06": {
+      "index": [
+        4,
+        16,
+        27,
+        29
+      ],
+      "cost_exact": [
+        29964,
+        147167,
+        394682,
+        799655
+      ],
+      "scope": "fresh standalone expression operation counts"
+    }
+  },
+  "checks": [
+    "all10 cost/self-loop arrays equal audited server trace",
+    "solutions7,8 cyclic despite0selfloops; solution9fullDAG",
+    "selected4work sums equal independently certified minimum1371468"
+  ],
+  "optimization_or_oracle_or_policy_execution": false,
+  "TRAIN_only": true,
+  "TEST_accessed": false,
+  "scope": "fixed53-expression catalogue,594strict requirements; not learned scalar fit or scheduling gain"
+}

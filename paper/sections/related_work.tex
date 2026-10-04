@@ -15,6 +15,9 @@ Published weighted branch-and-reduce~\cite{lamm2019weighted},
 Struction~\cite{gellner2021struction}, memetic
 kernelization~\cite{grossmann2024mmwis} and concurrent local
 search~\cite{grossmann2025chils} provide our specialized comparators.
+Exchange neighborhoods~\cite{andrade2012local} and coloring-based clique
+search~\cite{ostergard2002clique} are classical building blocks; our weighted
+exchange control is not an ARW reproduction.
 
 GNN expressiveness analyses characterize aggregation
 indistinguishability~\cite{xu2019powerful,morris2019weisfeiler}. Our exact
@@ -23,11 +26,16 @@ pointwise scalar scorer on observed occurrences; it is neither graph
 isomorphism nor a bound on all policies. Structural witnesses also appear
 in AAMAS universal motion-reachability theory~\cite{dhar2026universal},
 addressing a different guarantee.
+Dynamic heuristic selection uses search state~\cite{speck2021dynamic}, while
+algorithm configuration optimizes over instance distributions and controls
+evaluation effort~\cite{hutter2009paramils}. Adaptivity and cost accounting
+alone are therefore not novel; we diagnose the distinctions a scorer must see.
 
 \paragraph{LLM algorithm discovery.}
 FunSearch searches priorities inside fixed skeletons~\cite{romeraparedes2024funsearch};
 EoH evolves thoughts/code~\cite{liu2024eoh}; ReEvo uses
-reflection~\cite{ye2024reevo}. EoH-S optimizes complementary heuristic
+reflection~\cite{ye2024reevo}; LLaMEA evolves executable metaheuristics
+through fitness feedback~\cite{vanstein2025llamea}. EoH-S optimizes complementary heuristic
 sets~\cite{liu2026eohs}; LACE combines verified interfaces, tools and
 runtime-constrained portfolio evolution~\cite{gong2026lace}. Offline discovery
 and cost budgets are precedents. DRAGON's per-instance agents transmit
@@ -38,9 +46,16 @@ establish no advantage.
 
 \paragraph{Abstraction and synthesis.}
 Counterexample-guided refinement uses failure witnesses~\cite{clarke2000cegar}.
+Syntax-guided synthesis~\cite{alur2013sygus} separates candidate syntax from behavioral
+specifications. Abstraction-guided synthesis refines program
+semantics~\cite{wang2018abstraction}; relational synthesis constrains
+relationships among calls or programs~\cite{wang2018relational}.
 Generalized planning learns symbolic features/actions~\cite{bonet2019features},
 including feature selection and transition
-separation~\cite{frances2021policies}; DreamCoder learns reusable components
+separation~\cite{frances2021policies}, and changes feature/action
+representations~\cite{bonet2018representation}. Exact game-strategy synthesis
+separates state classification from executable action
+conditions~\cite{fang2024generalized}. DreamCoder learns reusable components
 with synthesis guidance~\cite{ellis2021dreamcoder}. We couple aligned resource
 interventions and feasible boundary replay to sound rankings, equality-join
 feature selection and repeated full-quotient separation. Acyclicity removes

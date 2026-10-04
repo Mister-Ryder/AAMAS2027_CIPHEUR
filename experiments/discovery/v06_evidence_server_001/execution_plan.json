@@ -1,0 +1,44 @@
+{
+  "version": "v06_evidence_server_train_replay_001",
+  "registered_before_any_query": true,
+  "split": "train",
+  "test_queries_permitted": false,
+  "workers": 8,
+  "whole_run_wall_guard_seconds": 3600,
+  "guard_scope": "failure guard only; no query relabeling, subsampling or retry",
+  "command": [
+    "-m",
+    "cipheur.evidence_study_v06",
+    "run",
+    "--plan",
+    "experiments/discovery/v06_evidence_001",
+    "--out",
+    "output/v06_evidence_train_001",
+    "--split",
+    "train"
+  ],
+  "train_states": 120,
+  "train_queries": 1503,
+  "train_query_kind": {
+    "alias": 847,
+    "control": 656
+  },
+  "prior_plan_freeze_sha256": "00e67514c70d76547991fa3c9908b85c954d48e35a4dab605dcf0876234a87c5",
+  "budget_scope_sha256": "16834240d6136cf54cf208e3f03b24f7d0505f72b9cc898df8bf1ac31f4b19d2",
+  "original_source_sha256": {
+    "evidence_study_v06.py": "968bf3e7c1aee39b42de9066dc605507eb2a108de29b7ed29ea9460684dab567",
+    "model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "representation.py": "5f844dd5ab6d5f79e92a0a7ea6ba0af6073d2e7d3f39a69a091b3fcf875d9dc0",
+    "public_alias_v05.py": "62aca85308a85da319e06e68fa3bfdcfbbe4cfd2d89873dcbcb0506ec847ed98",
+    "relevance_synthesis_v04.py": "3560b612286b92894bbbc48073212cb0b8f64390b4c1572e29c053a65eb2c10d",
+    "oracle.py": "d018a4711289b83ae425e3edbd3d41b0e89360d17d7bf0a40f3f345ec3753f06",
+    "refinement.py": "90a7e6c6981a73d13b715dc0b2b773cd2052724c2e044af617b7795eb074bd99",
+    "compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788"
+  },
+  "budget_receipt_append_only": true,
+  "outcome_unknowns_ties_shortfalls_retained": true,
+  "source_constructor_and_queries_unchanged": true,
+  "public_states_prior_corpus_scope": "source-disjoint TRAIN/TEST raw sources within previously exposed corpus"
+}

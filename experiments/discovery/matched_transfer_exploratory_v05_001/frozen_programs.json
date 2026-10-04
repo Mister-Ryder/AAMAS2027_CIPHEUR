@@ -1,0 +1,475 @@
+{
+  "version": "matched_freeze_v05_001",
+  "selection_split": "train",
+  "test_accessed": false,
+  "programs": {
+    "block_0_witness": {
+      "name": "local_cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,neighbor_cover)",
+      "rationale": "Estimate displaced value with a neighborhood clique cover, distinguishing mutually conflicting blockers from compatible blockers."
+    },
+    "block_0_relations": {
+      "name": "local_cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,neighbor_cover)",
+      "rationale": "Normalize contact value by the clique-cover estimate of competing neighborhood value."
+    },
+    "block_0_objective": {
+      "name": "local_cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000000001,weight+neighbor_cover)",
+      "rationale": "Uses a clique partition upper construction as a conservative estimate of conflicting opportunity."
+    },
+    "block_1_witness": {
+      "name": "clique_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,neighbor_cover)+0.001*weight/max(1,neighbor_pack)",
+      "rationale": "Estimate blocked opportunity through a clique partition, with feasible packing providing a secondary structural signal."
+    },
+    "block_1_relations": {
+      "name": "cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,neighbor_cover)",
+      "rationale": "Measures weight against clique-cover competition, accounting for mutual conflicts among excluded neighbors."
+    },
+    "block_1_objective": {
+      "name": "clique_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(1e-9,weight+neighbor_cover)",
+      "rationale": "Uses the neighborhood clique-cover score to discount competing contacts that cannot coexist."
+    },
+    "block_2_witness": {
+      "name": "cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.25,neighbor_cover)",
+      "rationale": "Compares candidate value with a clique-partition upper estimate of selectable blocked weight; edge moments supplement the declared structural interface."
+    },
+    "block_2_relations": {
+      "name": "neighbor_clique_ratio",
+      "features": [
+        {
+          "name": "neighbor_clique_cost",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1.0, 1.0 + neighbor_clique_cost)",
+      "rationale": "Estimate blocked neighboring opportunity through a clique-partition upper bound and rank root weight relative to that cost."
+    },
+    "block_2_objective": {
+      "name": "certified_cover",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(2 + weight / max(1e-9, weight + conflict_weight)) if weight >= neighbor_cover else weight / max(1e-9, neighbor_cover)",
+      "rationale": "Prioritize candidates whose weight covers the neighborhood upper bound; otherwise rank by local objective coverage."
+    },
+    "block_3_witness": {
+      "name": "neighbor_cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,neighbor_cover)",
+      "rationale": "Use a neighborhood upper construction as a conservative opportunity-cost budget that recognizes mutually conflicting alternatives."
+    },
+    "block_3_relations": {
+      "name": "rel01_neighbor_clique_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,neighbor_cover)",
+      "rationale": "Treat mutually conflicting neighbors as shared alternatives, using a clique partition upper estimate of displaced independent weight."
+    },
+    "block_3_objective": {
+      "name": "neighbor_cover_density",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000001,weight+neighbor_cover)",
+      "rationale": "Normalizes root value using a clique-cover estimate of neighboring opportunity cost."
+    }
+  },
+  "selection": {
+    "block_0_witness": {
+      "selected_id": "block_0_witness:0",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_0_relations": {
+      "selected_id": "block_0_relations:5",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_0_objective": {
+      "selected_id": "block_0_objective:3",
+      "eligible_slots": 10,
+      "utility": 0.975542307258517
+    },
+    "block_1_witness": {
+      "selected_id": "block_1_witness:1",
+      "eligible_slots": 12,
+      "utility": 0.973211961875892
+    },
+    "block_1_relations": {
+      "selected_id": "block_1_relations:0",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_1_objective": {
+      "selected_id": "block_1_objective:1",
+      "eligible_slots": 11,
+      "utility": 0.975542307258517
+    },
+    "block_2_witness": {
+      "selected_id": "block_2_witness:2",
+      "eligible_slots": 12,
+      "utility": 0.9785888763065312
+    },
+    "block_2_relations": {
+      "selected_id": "block_2_relations:0",
+      "eligible_slots": 12,
+      "utility": 0.9794063214544557
+    },
+    "block_2_objective": {
+      "selected_id": "block_2_objective:5",
+      "eligible_slots": 10,
+      "utility": 0.9779905061890859
+    },
+    "block_3_witness": {
+      "selected_id": "block_3_witness:1",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_3_relations": {
+      "selected_id": "block_3_relations:0",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_3_objective": {
+      "selected_id": "block_3_objective:4",
+      "eligible_slots": 9,
+      "utility": 0.975542307258517
+    }
+  },
+  "protocol_sha256": "4b7422b6e65c9ab670f47c4de3dd922d544d8344fc6559c4c0c79bebb82c4d02",
+  "training_evidence_sha256": "3bf0854b8ed5c4317faf68d8c614a7f9e6e405d1c3927575881478a9590def69",
+  "candidate_bank_sha256": "f11dceb30798a46eb08e9a9c031d6694ae88763d24b965a0a72755105d9234f8",
+  "response_sha256": {
+    "block_0_witness.json": "17b3c183ae418838a610cf322282cb7398dc5de2cdafe4535c4285a97acf89c5",
+    "block_0_relations.json": "1b11cb6e16b11b004bf0b5297cb659a42b5ee061bfc7c4619824d1c474b1fa12",
+    "block_0_objective.json": "0fa5fd18588bb00ff5408b1be366ea590cb05c7b902f8a61e5fb9d842945af0b",
+    "block_1_witness.json": "8c30472dbfc9df074b68a0006f9280cd70cc3263e9778239de75dbf6677143dc",
+    "block_1_relations.json": "2f5db591189f6fe2c70c03e8794f28a45f5ed33c77ab991a874b7ad9ac4865a3",
+    "block_1_objective.json": "1002712297da1b1d6b601a4bc878c14bebcd15bb07c1f78da2180bae944c1d82",
+    "block_2_witness.json": "1ee7e93ebd59ab06c498e6e3624fb975e3dcb180c913c173043b655785c4e49a",
+    "block_2_relations.json": "555abc3cbd66d5bdde40137909416c0db6e4a16eac1c18d5cef7c158cedab283",
+    "block_2_objective.json": "394ccf8dadb059cc076978626deb5de3e1fbecac76f8447417345f264d4a0775",
+    "block_3_witness.json": "17c49c54d7ca6f1484ac0ac24ba381c6851bf4e2ccfa38bdc6e08f304b8badf6",
+    "block_3_relations.json": "b43afb1adaad1600b3ab326d228a55647126047070a33e314b08272eddbc5599",
+    "block_3_objective.json": "570c9ad36e8abc5e613449f89a945483ea4746d84d81c20dd6f9ee76342a3dba"
+  },
+  "source_sha256": {
+    "matched_synthesis_v05.py": "3087c493a9685a99915d53b40eedb06e725892346b28e469b3928b1c0c890d1d",
+    "compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+    "model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "representation.py": "5f844dd5ab6d5f79e92a0a7ea6ba0af6073d2e7d3f39a69a091b3fcf875d9dc0",
+    "refinement.py": "90a7e6c6981a73d13b715dc0b2b773cd2052724c2e044af617b7795eb074bd99",
+    "oracle.py": "d018a4711289b83ae425e3edbd3d41b0e89360d17d7bf0a40f3f345ec3753f06",
+    "relevance_synthesis_v04.py": "3560b612286b92894bbbc48073212cb0b8f64390b4c1572e29c053a65eb2c10d",
+    "experiment_data.py": "685238f0ba69f18a089f04456ca5a5c9d45d2134237dc23055d0e889fa55ff01"
+  },
+  "transport_amendment_sha256": "b7f7f1d782febe33770fbd840611d6907740e94d562fdb3d2a7f9d81d01686a9",
+  "authoring_completion_sha256": "5d09e7862753e87b975e9d2b68a846a4cd639379b4cdb5baa893dcb272fc88b2",
+  "prior_input_inventory_sha256": "c2b4cd67bd940e803295f5a544891095fab4eb1c0476b5e14aabf56eaa3e0853",
+  "all_assigned_banks": 12,
+  "no_eligible_banks": 0,
+  "no_replacement_no_fallback": true
+}

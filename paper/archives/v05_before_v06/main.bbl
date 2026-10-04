@@ -1,0 +1,566 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{36}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Ahn et~al\mbox{.}(2020)]%
+        {ahn2020defer}
+\bibfield{author}{\bibinfo{person}{Sungsoo Ahn}, \bibinfo{person}{Younggyo
+  Seo}, {and} \bibinfo{person}{Jinwoo Shin}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Learning What to Defer for Maximum Independent
+  Sets}. In \bibinfo{booktitle}{\emph{Proceedings of the 37th International
+  Conference on Machine Learning}} \emph{(\bibinfo{series}{Proceedings of
+  Machine Learning Research}, Vol.~\bibinfo{volume}{119})}.
+  \bibinfo{publisher}{PMLR}, \bibinfo{pages}{134--144}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.mlr.press/v119/ahn20a.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Alur et~al\mbox{.}(2013)]%
+        {alur2013sygus}
+\bibfield{author}{\bibinfo{person}{Rajeev Alur}, \bibinfo{person}{Rastislav
+  Bod{\'i}k}, \bibinfo{person}{Garvit Juniwal}, \bibinfo{person}{Milo M.~K.
+  Martin}, \bibinfo{person}{Mukund Raghothaman}, \bibinfo{person}{Sanjit~A.
+  Seshia}, \bibinfo{person}{Rishabh Singh}, \bibinfo{person}{Armando
+  Solar-Lezama}, \bibinfo{person}{Emina Torlak}, {and}
+  \bibinfo{person}{Abhishek Udupa}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Syntax-Guided Synthesis}. In
+  \bibinfo{booktitle}{\emph{2013 Formal Methods in Computer-Aided Design}}.
+  \bibinfo{publisher}{IEEE}, \bibinfo{pages}{1--8}.
+\newblock
+\href{https://doi.org/10.1109/FMCAD.2013.6679385}{doi:\nolinkurl{10.1109/FMCAD.2013.6679385}}
+
+
+\bibitem[Andrade et~al\mbox{.}(2012)]%
+        {andrade2012local}
+\bibfield{author}{\bibinfo{person}{Diogo~V. Andrade}, \bibinfo{person}{Mauricio
+  G.~C. Resende}, {and} \bibinfo{person}{Renato~F. Werneck}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Fast Local Search for the Maximum Independent Set
+  Problem}.
+\newblock \bibinfo{journal}{\emph{Journal of Heuristics}} \bibinfo{volume}{18},
+  \bibinfo{number}{4} (\bibinfo{year}{2012}), \bibinfo{pages}{525--547}.
+\newblock
+\href{https://doi.org/10.1007/s10732-012-9196-4}{doi:\nolinkurl{10.1007/s10732-012-9196-4}}
+
+
+\bibitem[Augenstein et~al\mbox{.}(2016)]%
+        {augenstein2016optimal}
+\bibfield{author}{\bibinfo{person}{Sean Augenstein}, \bibinfo{person}{Alejandra
+  Estanislao}, \bibinfo{person}{Emmanuel Guere}, {and} \bibinfo{person}{Sean
+  Blaes}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Optimal Scheduling of a Constellation of
+  Earth-Imaging Satellites, for Maximal Data Throughput and Efficient Human
+  Management}. In \bibinfo{booktitle}{\emph{Proceedings of the International
+  Conference on Automated Planning and Scheduling}}, Vol.~\bibinfo{volume}{26}.
+  \bibinfo{pages}{345--352}.
+\newblock
+\href{https://doi.org/10.1609/icaps.v26i1.13784}{doi:\nolinkurl{10.1609/icaps.v26i1.13784}}
+
+
+\bibitem[Bai et~al\mbox{.}(2025)]%
+        {bai2025local}
+\bibfield{author}{\bibinfo{person}{Xiaoxin Bai}, \bibinfo{person}{JunYang
+  Yang}, \bibinfo{person}{Shengchao Yuan}, \bibinfo{person}{Yinghao Zhang},
+  {and} \bibinfo{person}{Hanqian Wu}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Local Topological Information as A Powerful
+  Enhancer for Generalizable Neural Method in Travelling Salesman Problem}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 24th International Conference on
+  Autonomous Agents and Multiagent Systems}}. \bibinfo{publisher}{IFAAMAS},
+  \bibinfo{pages}{188--196}.
+\newblock
+\urldef\tempurl%
+\url{https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p188.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Bonet et~al\mbox{.}(2019)]%
+        {bonet2019features}
+\bibfield{author}{\bibinfo{person}{Blai Bonet}, \bibinfo{person}{Guillem
+  Franc{\`e}s}, {and} \bibinfo{person}{Hector Geffner}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Learning Features and Abstract Actions for
+  Computing Generalized Plans}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  AAAI Conference on Artificial Intelligence}}, Vol.~\bibinfo{volume}{33}.
+  \bibinfo{pages}{2703--2710}.
+\newblock
+\href{https://doi.org/10.1609/aaai.v33i01.33012703}{doi:\nolinkurl{10.1609/aaai.v33i01.33012703}}
+
+
+\bibitem[Bonet and Geffner(2018)]%
+        {bonet2018representation}
+\bibfield{author}{\bibinfo{person}{Blai Bonet} {and} \bibinfo{person}{Hector
+  Geffner}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Features, Projections, and Representation Change
+  for Generalized Planning}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  Twenty-Seventh International Joint Conference on Artificial Intelligence}}.
+  \bibinfo{publisher}{International Joint Conferences on Artificial
+  Intelligence Organization}, \bibinfo{pages}{4667--4673}.
+\newblock
+\href{https://doi.org/10.24963/ijcai.2018/649}{doi:\nolinkurl{10.24963/ijcai.2018/649}}
+
+
+\bibitem[Chen et~al\mbox{.}(2026)]%
+        {chen2026dragon}
+\bibfield{author}{\bibinfo{person}{Shengkai Chen}, \bibinfo{person}{Zhiguang
+  Cao}, \bibinfo{person}{Jianan Zhou}, \bibinfo{person}{Yaoxin Wu},
+  \bibinfo{person}{Senthilnath Jayavelu}, \bibinfo{person}{Zhuoyi Lin},
+  \bibinfo{person}{Xiaoli Li}, {and} \bibinfo{person}{Shili Xiang}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{{DRAGON}: {LLM}-Driven Decomposition and
+  Reconstruction Agents for Large-Scale Combinatorial Optimization}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 25th International Conference on
+  Autonomous Agents and Multiagent Systems}}. \bibinfo{publisher}{IFAAMAS},
+  \bibinfo{pages}{2809--2817}.
+\newblock
+\href{https://doi.org/10.65109/SBAY6258}{doi:\nolinkurl{10.65109/SBAY6258}}
+
+
+\bibitem[Clarke et~al\mbox{.}(2000)]%
+        {clarke2000cegar}
+\bibfield{author}{\bibinfo{person}{Edmund Clarke}, \bibinfo{person}{Orna
+  Grumberg}, \bibinfo{person}{Somesh Jha}, \bibinfo{person}{Yuan Lu}, {and}
+  \bibinfo{person}{Helmut Veith}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{Counterexample-Guided Abstraction Refinement}. In
+  \bibinfo{booktitle}{\emph{Computer Aided Verification}}
+  \emph{(\bibinfo{series}{Lecture Notes in Computer Science},
+  Vol.~\bibinfo{volume}{1855})}. \bibinfo{publisher}{Springer},
+  \bibinfo{pages}{154--169}.
+\newblock
+\href{https://doi.org/10.1007/10722167_15}{doi:\nolinkurl{10.1007/10722167_15}}
+
+
+\bibitem[Dai et~al\mbox{.}(2017)]%
+        {khalil2017learning}
+\bibfield{author}{\bibinfo{person}{Hanjun Dai}, \bibinfo{person}{Elias~B.
+  Khalil}, \bibinfo{person}{Yuyu Zhang}, \bibinfo{person}{Bistra Dilkina},
+  {and} \bibinfo{person}{Le Song}.} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Learning Combinatorial Optimization Algorithms over
+  Graphs}. In \bibinfo{booktitle}{\emph{Advances in Neural Information
+  Processing Systems}}, Vol.~\bibinfo{volume}{30}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.neurips.cc/paper_files/paper/2017/hash/d9896106ca98d3d05b8cbdf4fd8b13a1-Abstract.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Dhar et~al\mbox{.}(2026)]%
+        {dhar2026universal}
+\bibfield{author}{\bibinfo{person}{Anubhav Dhar}, \bibinfo{person}{Pranav
+  Nyati}, \bibinfo{person}{Tanishq Prasad}, \bibinfo{person}{Ashlesha Hota},
+  {and} \bibinfo{person}{Sudeshna Kolay}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Universal Solvability for Robot Motion Planning on
+  Graphs}. In \bibinfo{booktitle}{\emph{Proceedings of the 25th International
+  Conference on Autonomous Agents and Multiagent Systems}}.
+  \bibinfo{publisher}{IFAAMAS}, \bibinfo{pages}{947--955}.
+\newblock
+\href{https://doi.org/10.65109/VEXW9837}{doi:\nolinkurl{10.65109/VEXW9837}}
+
+
+\bibitem[Ellis et~al\mbox{.}(2021)]%
+        {ellis2021dreamcoder}
+\bibfield{author}{\bibinfo{person}{Kevin Ellis}, \bibinfo{person}{Catherine
+  Wong}, \bibinfo{person}{Maxwell Nye}, \bibinfo{person}{Mathias
+  Sabl{\'e}-Meyer}, \bibinfo{person}{Lucas Morales}, \bibinfo{person}{Luke
+  Hewitt}, \bibinfo{person}{Luc Cary}, \bibinfo{person}{Armando Solar-Lezama},
+  {and} \bibinfo{person}{Joshua~B. Tenenbaum}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{{DreamCoder}: Bootstrapping Inductive Program
+  Synthesis with Wake-Sleep Library Learning}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 42nd ACM SIGPLAN International
+  Conference on Programming Language Design and Implementation}}.
+  \bibinfo{publisher}{Association for Computing Machinery},
+  \bibinfo{pages}{835--850}.
+\newblock
+\href{https://doi.org/10.1145/3453483.3454080}{doi:\nolinkurl{10.1145/3453483.3454080}}
+
+
+\bibitem[Fang et~al\mbox{.}(2024)]%
+        {fang2024generalized}
+\bibfield{author}{\bibinfo{person}{Liangda Fang}, \bibinfo{person}{Meihong
+  Yang}, \bibinfo{person}{Dingliang Cheng}, \bibinfo{person}{Yunlai Hao},
+  \bibinfo{person}{Quanlong Guan}, {and} \bibinfo{person}{Liping Xiong}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Generalized Strategy Synthesis of Infinite-State
+  Impartial Combinatorial Games via Exact Binary Classification}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 23rd International Conference on
+  Autonomous Agents and Multiagent Systems}}. \bibinfo{publisher}{IFAAMAS},
+  \bibinfo{pages}{562--570}.
+\newblock
+\urldef\tempurl%
+\url{https://www.ifaamas.org/Proceedings/aamas2024/pdfs/p562.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Franc{\`e}s et~al\mbox{.}(2021)]%
+        {frances2021policies}
+\bibfield{author}{\bibinfo{person}{Guillem Franc{\`e}s}, \bibinfo{person}{Blai
+  Bonet}, {and} \bibinfo{person}{Hector Geffner}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Learning General Planning Policies from Small
+  Examples Without Supervision}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the AAAI Conference on Artificial Intelligence}}, Vol.~\bibinfo{volume}{35}.
+  \bibinfo{pages}{11801--11808}.
+\newblock
+\href{https://doi.org/10.1609/aaai.v35i13.17402}{doi:\nolinkurl{10.1609/aaai.v35i13.17402}}
+
+
+\bibitem[Gellner et~al\mbox{.}(2021)]%
+        {gellner2021struction}
+\bibfield{author}{\bibinfo{person}{Alexander Gellner},
+  \bibinfo{person}{Sebastian Lamm}, \bibinfo{person}{Christian Schulz},
+  \bibinfo{person}{Darren Strash}, {and} \bibinfo{person}{Bogd{\'a}n
+  Zav{\'a}lnij}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Boosting Data Reduction for the Maximum Weight
+  Independent Set Problem Using Increasing Transformations}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the Symposium on Algorithm
+  Engineering and Experiments (ALENEX)}}. \bibinfo{publisher}{Society for
+  Industrial and Applied Mathematics}, \bibinfo{pages}{128--142}.
+\newblock
+\href{https://doi.org/10.1137/1.9781611976472.10}{doi:\nolinkurl{10.1137/1.9781611976472.10}}
+
+
+\bibitem[Gong et~al\mbox{.}(2026)]%
+        {gong2026lace}
+\bibfield{author}{\bibinfo{person}{Huatian Gong}, \bibinfo{person}{Shuaian
+  Wang}, \bibinfo{person}{Dongping Song}, \bibinfo{person}{Jiuh-Biing Sheu},
+  {and} \bibinfo{person}{Ran Yan}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Large language models discover complementary
+  heuristics for combinatorial optimization}.
+\newblock \bibinfo{journal}{\emph{Nature Machine Intelligence}}
+  (\bibinfo{year}{2026}).
+\newblock
+\href{https://doi.org/10.1038/s42256-026-01307-8}{doi:\nolinkurl{10.1038/s42256-026-01307-8}}
+
+
+\bibitem[Gro{\ss}mann et~al\mbox{.}(2024)]%
+        {grossmann2024mmwis}
+\bibfield{author}{\bibinfo{person}{Ernestine Gro{\ss}mann},
+  \bibinfo{person}{Sebastian Lamm}, \bibinfo{person}{Christian Schulz}, {and}
+  \bibinfo{person}{Darren Strash}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Finding Near-Optimal Weight Independent Sets at
+  Scale}.
+\newblock \bibinfo{journal}{\emph{Journal of Graph Algorithms and
+  Applications}} \bibinfo{volume}{28}, \bibinfo{number}{1}
+  (\bibinfo{year}{2024}), \bibinfo{pages}{439--473}.
+\newblock
+\href{https://doi.org/10.7155/jgaa.v28i1.2997}{doi:\nolinkurl{10.7155/jgaa.v28i1.2997}}
+
+
+\bibitem[Gro{\ss}mann et~al\mbox{.}(2025)]%
+        {grossmann2025chils}
+\bibfield{author}{\bibinfo{person}{Ernestine Gro{\ss}mann},
+  \bibinfo{person}{Kenneth Langedal}, {and} \bibinfo{person}{Christian
+  Schulz}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Concurrent Iterated Local Search for the Maximum
+  Weight Independent Set Problem}. In \bibinfo{booktitle}{\emph{23rd
+  International Symposium on Experimental Algorithms (SEA 2025)}}
+  \emph{(\bibinfo{series}{Leibniz International Proceedings in Informatics},
+  Vol.~\bibinfo{volume}{338})}. \bibinfo{publisher}{Schloss Dagstuhl --
+  Leibniz-Zentrum f{\"u}r Informatik}, \bibinfo{pages}{22:1--22:18}.
+\newblock
+\href{https://doi.org/10.4230/LIPIcs.SEA.2025.22}{doi:\nolinkurl{10.4230/LIPIcs.SEA.2025.22}}
+
+
+\bibitem[Huangfu and Hall(2018)]%
+        {huangfu2018highs}
+\bibfield{author}{\bibinfo{person}{Qi Huangfu} {and} \bibinfo{person}{J.~A.~J.
+  Hall}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Parallelizing the Dual Revised Simplex Method}.
+\newblock \bibinfo{journal}{\emph{Mathematical Programming Computation}}
+  \bibinfo{volume}{10}, \bibinfo{number}{1} (\bibinfo{year}{2018}),
+  \bibinfo{pages}{119--142}.
+\newblock
+\href{https://doi.org/10.1007/s12532-017-0130-5}{doi:\nolinkurl{10.1007/s12532-017-0130-5}}
+
+
+\bibitem[Hutter et~al\mbox{.}(2009)]%
+        {hutter2009paramils}
+\bibfield{author}{\bibinfo{person}{Frank Hutter}, \bibinfo{person}{Holger~H.
+  Hoos}, \bibinfo{person}{Kevin Leyton-Brown}, {and} \bibinfo{person}{Thomas
+  St{\"u}tzle}.} \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{{ParamILS}: An Automatic Algorithm Configuration
+  Framework}.
+\newblock \bibinfo{journal}{\emph{Journal of Artificial Intelligence Research}}
+   \bibinfo{volume}{36} (\bibinfo{year}{2009}), \bibinfo{pages}{267--306}.
+\newblock
+\href{https://doi.org/10.1613/jair.2861}{doi:\nolinkurl{10.1613/jair.2861}}
+
+
+\bibitem[Lamm et~al\mbox{.}(2019)]%
+        {lamm2019weighted}
+\bibfield{author}{\bibinfo{person}{Sebastian Lamm}, \bibinfo{person}{Christian
+  Schulz}, \bibinfo{person}{Darren Strash}, \bibinfo{person}{Robert Williger},
+  {and} \bibinfo{person}{Huashuo Zhang}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Exactly Solving the Maximum Weight Independent Set
+  Problem on Large Real-World Graphs}. In \bibinfo{booktitle}{\emph{Proceedings
+  of the Twenty-First Workshop on Algorithm Engineering and Experiments
+  (ALENEX)}}. \bibinfo{publisher}{Society for Industrial and Applied
+  Mathematics}, \bibinfo{pages}{144--158}.
+\newblock
+\href{https://doi.org/10.1137/1.9781611975499.12}{doi:\nolinkurl{10.1137/1.9781611975499.12}}
+
+
+\bibitem[Levinson et~al\mbox{.}(2025)]%
+        {levinson2025optimal}
+\bibfield{author}{\bibinfo{person}{Richard Levinson}, \bibinfo{person}{Vinay
+  Ravindra}, {and} \bibinfo{person}{Sreeja Roy-Singh}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Optimal Planning to Coordinate Science Data
+  Collection and Downlink for a Constellation of Agile Satellites with Limited
+  Storage}. In \bibinfo{booktitle}{\emph{Proceedings of the Thirty-Fourth
+  International Joint Conference on Artificial Intelligence}}.
+  \bibinfo{publisher}{International Joint Conferences on Artificial
+  Intelligence Organization}, \bibinfo{pages}{8544--8553}.
+\newblock
+\href{https://doi.org/10.24963/ijcai.2025/950}{doi:\nolinkurl{10.24963/ijcai.2025/950}}
+
+
+\bibitem[Li et~al\mbox{.}(2024)]%
+        {li2024factor}
+\bibfield{author}{\bibinfo{person}{Yixuan Li}, \bibinfo{person}{Wanyuan Wang},
+  \bibinfo{person}{Weiyi Xu}, \bibinfo{person}{Yanchen Deng}, {and}
+  \bibinfo{person}{Weiwei Wu}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Factor Graph Neural Network Meets Max-Sum: A
+  Real-Time Route Planning Algorithm for Massive-Scale Trips}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 23rd International Conference on
+  Autonomous Agents and Multiagent Systems}}. \bibinfo{publisher}{IFAAMAS},
+  \bibinfo{pages}{1165--1173}.
+\newblock
+\urldef\tempurl%
+\url{https://www.ifaamas.org/Proceedings/aamas2024/pdfs/p1165.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Liu et~al\mbox{.}(2026)]%
+        {liu2026eohs}
+\bibfield{author}{\bibinfo{person}{Fei Liu}, \bibinfo{person}{Yilu Liu},
+  \bibinfo{person}{Qingfu Zhang}, \bibinfo{person}{Xialiang Tong}, {and}
+  \bibinfo{person}{Mingxuan Yuan}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{{EoH-S}: Evolution of Heuristic Set Using {LLMs}
+  for Automated Heuristic Design}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the AAAI Conference on Artificial Intelligence}}, Vol.~\bibinfo{volume}{40}.
+  \bibinfo{pages}{37090--37098}.
+\newblock
+\href{https://doi.org/10.1609/aaai.v40i43.41038}{doi:\nolinkurl{10.1609/aaai.v40i43.41038}}
+
+
+\bibitem[Liu et~al\mbox{.}(2024)]%
+        {liu2024eoh}
+\bibfield{author}{\bibinfo{person}{Fei Liu}, \bibinfo{person}{Xialiang Tong},
+  \bibinfo{person}{Mingxuan Yuan}, \bibinfo{person}{Xi Lin},
+  \bibinfo{person}{Fu Luo}, \bibinfo{person}{Zhenkun Wang},
+  \bibinfo{person}{Zhichao Lu}, {and} \bibinfo{person}{Qingfu Zhang}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Evolution of Heuristics: Towards Efficient
+  Automatic Algorithm Design Using Large Language Model}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 41st International Conference on
+  Machine Learning}} \emph{(\bibinfo{series}{Proceedings of Machine Learning
+  Research}, Vol.~\bibinfo{volume}{235})}. \bibinfo{publisher}{PMLR},
+  \bibinfo{pages}{32201--32223}.
+\newblock
+\urldef\tempurl%
+\url{https://proceedings.mlr.press/v235/liu24bs.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Morris et~al\mbox{.}(2019)]%
+        {morris2019weisfeiler}
+\bibfield{author}{\bibinfo{person}{Christopher Morris}, \bibinfo{person}{Martin
+  Ritzert}, \bibinfo{person}{Matthias Fey}, \bibinfo{person}{William~L.
+  Hamilton}, \bibinfo{person}{Jan~Eric Lenssen}, \bibinfo{person}{Gaurav
+  Rattan}, {and} \bibinfo{person}{Martin Grohe}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Weisfeiler and Leman Go Neural: Higher-Order Graph
+  Neural Networks}. In \bibinfo{booktitle}{\emph{Proceedings of the AAAI
+  Conference on Artificial Intelligence}}, Vol.~\bibinfo{volume}{33}.
+  \bibinfo{pages}{4602--4609}.
+\newblock
+\href{https://doi.org/10.1609/aaai.v33i01.33014602}{doi:\nolinkurl{10.1609/aaai.v33i01.33014602}}
+
+
+\bibitem[{\"O}sterg{\aa}rd(2002)]%
+        {ostergard2002clique}
+\bibfield{author}{\bibinfo{person}{Patric R.~J. {\"O}sterg{\aa}rd}.}
+  \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{A Fast Algorithm for the Maximum Clique Problem}.
+\newblock \bibinfo{journal}{\emph{Discrete Applied Mathematics}}
+  \bibinfo{volume}{120}, \bibinfo{number}{1--3} (\bibinfo{year}{2002}),
+  \bibinfo{pages}{197--207}.
+\newblock
+\href{https://doi.org/10.1016/S0166-218X(01)00290-6}{doi:\nolinkurl{10.1016/S0166-218X(01)00290-6}}
+
+
+\bibitem[Picard et~al\mbox{.}(2021)]%
+        {picard2021constellations}
+\bibfield{author}{\bibinfo{person}{Gauthier Picard},
+  \bibinfo{person}{Cl{\'e}ment Caron}, \bibinfo{person}{Jean-Loup Farges},
+  \bibinfo{person}{Jonathan Guerra}, \bibinfo{person}{C{\'e}dric Pralet}, {and}
+  \bibinfo{person}{St{\'e}phanie Roussel}.} \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Autonomous Agents and Multiagent Systems Challenges
+  in Earth Observation Satellite Constellations}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 20th International Conference on
+  Autonomous Agents and Multiagent Systems}}. \bibinfo{publisher}{IFAAMAS},
+  \bibinfo{pages}{39--44}.
+\newblock
+\shownote{Blue Sky Ideas Track}.
+\newblock
+\urldef\tempurl%
+\url{https://www.ifaamas.org/Proceedings/aamas2021/pdfs/p39.pdf}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Romera-Paredes et~al\mbox{.}(2024)]%
+        {romeraparedes2024funsearch}
+\bibfield{author}{\bibinfo{person}{Bernardino Romera-Paredes},
+  \bibinfo{person}{Mohammadamin Barekatain}, \bibinfo{person}{Alexander
+  Novikov}, \bibinfo{person}{Matej Balog}, \bibinfo{person}{M.~Pawan Kumar},
+  \bibinfo{person}{Emilien Dupont}, \bibinfo{person}{Francisco J.~R. Ruiz},
+  \bibinfo{person}{Jordan~S. Ellenberg}, \bibinfo{person}{Pengming Wang},
+  \bibinfo{person}{Omar Fawzi}, \bibinfo{person}{Pushmeet Kohli}, {and}
+  \bibinfo{person}{Alhussein Fawzi}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Mathematical discoveries from program search with
+  large language models}.
+\newblock \bibinfo{journal}{\emph{Nature}}  \bibinfo{volume}{625}
+  (\bibinfo{year}{2024}), \bibinfo{pages}{468--475}.
+\newblock
+\href{https://doi.org/10.1038/s41586-023-06924-6}{doi:\nolinkurl{10.1038/s41586-023-06924-6}}
+
+
+\bibitem[Speck et~al\mbox{.}(2021)]%
+        {speck2021dynamic}
+\bibfield{author}{\bibinfo{person}{David Speck}, \bibinfo{person}{Andr{\'e}
+  Biedenkapp}, \bibinfo{person}{Frank Hutter}, \bibinfo{person}{Robert
+  Mattm{\"u}ller}, {and} \bibinfo{person}{Marius Lindauer}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Learning Heuristic Selection with Dynamic Algorithm
+  Configuration}. In \bibinfo{booktitle}{\emph{Proceedings of the International
+  Conference on Automated Planning and Scheduling}}, Vol.~\bibinfo{volume}{31}.
+  \bibinfo{pages}{597--605}.
+\newblock
+\href{https://doi.org/10.1609/icaps.v31i1.16008}{doi:\nolinkurl{10.1609/icaps.v31i1.16008}}
+
+
+\bibitem[Tao et~al\mbox{.}(2023)]%
+        {tao2023transmitting}
+\bibfield{author}{\bibinfo{person}{Bill Tao}, \bibinfo{person}{Maleeha Masood},
+  \bibinfo{person}{Indranil Gupta}, {and} \bibinfo{person}{Deepak Vasisht}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Transmitting, Fast and Slow: Scheduling Satellite
+  Traffic through Space and Time}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 29th Annual International Conference on Mobile Computing and
+  Networking}}. \bibinfo{publisher}{Association for Computing Machinery}.
+\newblock
+\href{https://doi.org/10.1145/3570361.3592521}{doi:\nolinkurl{10.1145/3570361.3592521}}
+
+
+\bibitem[van Stein and B{\"a}ck(2025)]%
+        {vanstein2025llamea}
+\bibfield{author}{\bibinfo{person}{Niki van Stein} {and}
+  \bibinfo{person}{Thomas B{\"a}ck}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{LLaMEA}: A Large Language Model Evolutionary
+  Algorithm for Automatically Generating Metaheuristics}.
+\newblock \bibinfo{journal}{\emph{IEEE Transactions on Evolutionary
+  Computation}} \bibinfo{volume}{29}, \bibinfo{number}{2}
+  (\bibinfo{year}{2025}), \bibinfo{pages}{331--345}.
+\newblock
+\href{https://doi.org/10.1109/TEVC.2024.3497793}{doi:\nolinkurl{10.1109/TEVC.2024.3497793}}
+
+
+\bibitem[Wang et~al\mbox{.}(2018a)]%
+        {wang2018abstraction}
+\bibfield{author}{\bibinfo{person}{Xinyu Wang}, \bibinfo{person}{Isil Dillig},
+  {and} \bibinfo{person}{Rishabh Singh}.} \bibinfo{year}{2018}\natexlab{a}.
+\newblock \showarticletitle{Program Synthesis Using Abstraction Refinement}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the ACM on Programming
+  Languages}} \bibinfo{volume}{2}, \bibinfo{number}{POPL}, Article
+  \bibinfo{articleno}{63} (\bibinfo{year}{2018}), \bibinfo{numpages}{30}~pages.
+\newblock
+\href{https://doi.org/10.1145/3158151}{doi:\nolinkurl{10.1145/3158151}}
+
+
+\bibitem[Wang et~al\mbox{.}(2018b)]%
+        {wang2018relational}
+\bibfield{author}{\bibinfo{person}{Yuepeng Wang}, \bibinfo{person}{Xinyu Wang},
+  {and} \bibinfo{person}{Isil Dillig}.} \bibinfo{year}{2018}\natexlab{b}.
+\newblock \showarticletitle{Relational Program Synthesis}.
+\newblock \bibinfo{journal}{\emph{Proceedings of the ACM on Programming
+  Languages}} \bibinfo{volume}{2}, \bibinfo{number}{OOPSLA}, Article
+  \bibinfo{articleno}{155} (\bibinfo{year}{2018}),
+  \bibinfo{numpages}{27}~pages.
+\newblock
+\href{https://doi.org/10.1145/3276525}{doi:\nolinkurl{10.1145/3276525}}
+
+
+\bibitem[Xu et~al\mbox{.}(2019)]%
+        {xu2019powerful}
+\bibfield{author}{\bibinfo{person}{Keyulu Xu}, \bibinfo{person}{Weihua Hu},
+  \bibinfo{person}{Jure Leskovec}, {and} \bibinfo{person}{Stefanie Jegelka}.}
+  \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{How Powerful are Graph Neural Networks?}. In
+  \bibinfo{booktitle}{\emph{International Conference on Learning
+  Representations}}.
+\newblock
+\urldef\tempurl%
+\url{https://openreview.net/forum?id=ryGs6iA5Km}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Ye et~al\mbox{.}(2024)]%
+        {ye2024reevo}
+\bibfield{author}{\bibinfo{person}{Haoran Ye}, \bibinfo{person}{Jiarui Wang},
+  \bibinfo{person}{Zhiguang Cao}, \bibinfo{person}{Federico Berto},
+  \bibinfo{person}{Chuanbo Hua}, \bibinfo{person}{Haeyeon Kim},
+  \bibinfo{person}{Jinkyoo Park}, {and} \bibinfo{person}{Guojie Song}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{ReEvo}: Large Language Models as Hyper-Heuristics
+  with Reflective Evolution}. In \bibinfo{booktitle}{\emph{Advances in Neural
+  Information Processing Systems}}, Vol.~\bibinfo{volume}{37}.
+\newblock
+\href{https://doi.org/10.52202/079017-1381}{doi:\nolinkurl{10.52202/079017-1381}}
+
+
+\end{thebibliography}

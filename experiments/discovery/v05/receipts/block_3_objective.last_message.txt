@@ -1,0 +1,346 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 3,
+  "arm": "objective",
+  "candidates": [
+    {
+      "name": "closed_degree_density",
+      "features": [],
+      "rule": "weight/(1+degree)",
+      "rationale": "Balances root value against the number of vertices removed by its inclusion."
+    },
+    {
+      "name": "weighted_closed_density",
+      "features": [],
+      "rule": "weight*weight/max(0.000001,weight+conflict_weight)",
+      "rationale": "Uses conflicting weight as the local deletion cost while favoring valuable roots."
+    },
+    {
+      "name": "strongest_rival_margin",
+      "features": [],
+      "rule": "weight-max_conflict_weight",
+      "rationale": "Uses the strongest conflicting alternative as a cheap local replacement estimate."
+    },
+    {
+      "name": "neighbor_cover_margin",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-neighbor_cover",
+      "rationale": "Subtracts a clique-cover estimate of the neighboring objective sacrificed by inclusion."
+    },
+    {
+      "name": "neighbor_cover_density",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000001,weight+neighbor_cover)",
+      "rationale": "Normalizes root value using a clique-cover estimate of neighboring opportunity cost."
+    },
+    {
+      "name": "neighbor_packing_margin",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-neighbor_pack",
+      "rationale": "Compares root value with a deterministic feasible packing of conflicting alternatives."
+    },
+    {
+      "name": "neighbor_packing_density",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000001,weight+neighbor_pack)",
+      "rationale": "Uses neighboring feasible packing value as a scale-aware opportunity-cost penalty."
+    },
+    {
+      "name": "edge_discount_density",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000001,weight+max(max_conflict_weight,conflict_weight-neighbor_edge_min))",
+      "rationale": "Discounts neighboring weight for internal conflict edges, using the strongest neighbor as a cost floor."
+    },
+    {
+      "name": "cluster_discount_density",
+      "features": [
+        {
+          "name": "neighbor_edge_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000001,weight+max(max_conflict_weight,conflict_weight/(1+2*neighbor_edge_count/max(1,degree))))",
+      "rationale": "Uses average internal neighbor degree to discount competing alternatives while retaining a strongest-neighbor floor."
+    },
+    {
+      "name": "retained_cover_objective",
+      "features": [
+        {
+          "name": "retained_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+retained_cover",
+      "rationale": "Scores forced inclusion by root value plus a clique-cover estimate of the surviving residual objective."
+    },
+    {
+      "name": "retained_packing_objective",
+      "features": [
+        {
+          "name": "retained_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+retained_pack",
+      "rationale": "Scores forced inclusion by root value plus a deterministic feasible packing of the surviving residual."
+    },
+    {
+      "name": "paired_packing_advantage",
+      "features": [
+        {
+          "name": "retained_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "rejected_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+retained_pack-rejected_pack",
+      "rationale": "Compares estimated completion objectives after including the root and after excluding it."
+    }
+  ]
+}

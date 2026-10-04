@@ -1,0 +1,8 @@
+2026-10-03T10:09:48.589049Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:09:48.589147Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:09:48.597896Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T10:09:52.624816Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:09:52.624879Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:10:08.786074Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a1013d-c814-7c60-b8cd-60187eb21674: invalid thread-store request: no rollout found for thread id 01a1013d-c814-7c60-b8cd-60187eb21674
+2026-10-03T10:10:42.976377Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"Failed to create unified exec process: helper_unknown_error: apply deny-read ACLs\")" }
+2026-10-03T10:19:31.670223Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a1013d-c894-7a02-b073-40cea3dbd9fa hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)

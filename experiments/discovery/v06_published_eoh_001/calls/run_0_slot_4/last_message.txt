@@ -1,0 +1,169 @@
+{
+  "name": "certified_choices_with_pack_dominant_completion",
+  "features": [
+    {
+      "name": "residual_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {"op": "available", "args": []},
+              {
+                "op": "union",
+                "args": [
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "residual_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {"op": "available", "args": []},
+              {
+                "op": "union",
+                "args": [
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_edges",
+      "expression": {
+        "op": "count",
+        "args": [
+          {
+            "op": "induced_edges",
+            "args": [
+              {
+                "op": "intersection",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "boundary_edges",
+      "expression": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "intersection",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "union",
+                        "args": [
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rule": "(2+degree/max(1,remaining_count)) if weight >= neighbor_cover else (weight+0.9*residual_pack+0.1*residual_cover-0.1*max(0,neighbor_pack-weight)/max(1,degree)+0.05*weight*boundary_edges/max(1,degree*max(1,remaining_count-1-degree))+0.05*weight*neighbor_edges/max(1,degree*(degree-1))-0.01*weight*degree/max(1,remaining_count))/max(1e-9,abs(weight)+abs(conflict_weight)+abs(compatible_weight))",
+  "rationale": "Replace residual edge count with an active-neighborhood clique-cover bound. Prioritize vertices whose weight covers every possible independent neighborhood replacement; among these certified choices, favor larger neighborhood removal. Otherwise emphasize achievable complete-schedule packing over optimistic cover, penalize independently packable alternatives, and use bounded, weight-scaled boundary and neighborhood densities as small structural corrections. All sets derive solely from the current available graph."
+}

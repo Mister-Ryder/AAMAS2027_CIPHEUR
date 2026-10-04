@@ -1,0 +1,4980 @@
+{
+  "training_archive": "experiments/runs/v05/matched_train_v05_001.tar.gz",
+  "evaluation_archive": null,
+  "source_zip_sha256": "506bc5628efc32673420552c65246f4a8bb0d8358217aedf729eb691edbd9376",
+  "checks": {
+    "original_protocol_hash": 1,
+    "copied_protocol_content": 1,
+    "training_input_identity": 4,
+    "author_transport_completion": 1,
+    "transport_amendment_scope": 1,
+    "train_only_numerical_selection": 1,
+    "frozen_execution_source": 10,
+    "original_capsule_bytes": 5,
+    "original_packet_hash": 24,
+    "identical_common_authoring_graphs_grammar_feedback": 12,
+    "registered_prompt_arm_differences": 12,
+    "identical_relational_labels_A_B": 8,
+    "unmodified_exact_author_response": 12,
+    "all_assigned_slots_retained": 1,
+    "independent_static_slot_classification": 144,
+    "frozen_bank_bytes": 1,
+    "assigned_training_context_population": 1,
+    "assigned_gate_population": 1,
+    "independent_declared_interface_gate": 144,
+    "independent_exact_quotient": 288,
+    "independent_scalar_agreement": 144,
+    "original_training_graph_references": 66,
+    "assigned_training_attempt_population": 66,
+    "independent_complete_schedule_feasibility": 9005,
+    "preserved_explicit_boundary": 9005,
+    "independent_complete_schedule_reward": 9005,
+    "nonnegative_executed_work_receipt": 9005,
+    "trace_available_counts_scores": 219537,
+    "complete_maximal_trace_reconstructs_schedule": 9005,
+    "retained_failed_assignment": 499,
+    "all_assessments_retained": 1,
+    "independent_equal_family_quality_work_utility": 144,
+    "independent_train_selection": 12,
+    "training_completion_receipt": 1
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "cell": "block_0_witness",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_0_relations",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_0_objective",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_1_witness",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_1_relations",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_1_objective",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_2_witness",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_2_relations",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_2_objective",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_3_witness",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_3_relations",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    },
+    {
+      "cell": "block_3_objective",
+      "kind": "common_packet_div_note_mismatch",
+      "scope": "Packet describes a signed near-zero guard; actual frozen typed feature division rejects zero and otherwise divides normally. No packet, source or candidate repair."
+    }
+  ],
+  "slot_status_by_arm": {
+    "witness": {
+      "static_valid": 48
+    },
+    "relations": {
+      "static_valid": 48
+    },
+    "objective": {
+      "static_valid": 48
+    }
+  },
+  "independent_gates": [
+    {
+      "candidate_id": "block_0_witness:0",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 593,
+        "violate": 227,
+        "tie": 4
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 211
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 610,
+        "violate": 214
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 602,
+        "violate": 215,
+        "tie": 7
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 625,
+        "violate": 192,
+        "tie": 7
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 593,
+        "violate": 227,
+        "tie": 4
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 757,
+        "violate": 67
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 745,
+        "violate": 79
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 764,
+        "violate": 60
+      }
+    },
+    {
+      "candidate_id": "block_0_witness:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 611,
+        "violate": 213
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:0",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 202,
+        "tie": 9
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 657,
+        "violate": 159,
+        "tie": 8
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 615,
+        "violate": 205,
+        "tie": 4
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 209,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 593,
+        "violate": 227,
+        "tie": 4
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 632,
+        "violate": 184,
+        "tie": 8
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 528,
+        "violate": 295,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 583,
+        "tie": 196,
+        "violate": 45
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 725,
+        "violate": 98,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 745,
+        "violate": 79
+      }
+    },
+    {
+      "candidate_id": "block_0_relations:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 643,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 595,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 226,
+        "agree": 598
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:0",
+      "passed": false,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": true,
+        "quotient_nodes": 622,
+        "quotient_edges": 812,
+        "self_loop_requirements": 32
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 279,
+        "agree": 513,
+        "tie": 32
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:1",
+      "passed": false,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": true,
+        "quotient_nodes": 622,
+        "quotient_edges": 812,
+        "self_loop_requirements": 32
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 457,
+        "violate": 328,
+        "tie": 39
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 529,
+        "violate": 295
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 550,
+        "violate": 274
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 632,
+        "violate": 184,
+        "tie": 8
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 523,
+        "violate": 294,
+        "tie": 7
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 550,
+        "violate": 274
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 583,
+        "tie": 196,
+        "violate": 45
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 725,
+        "violate": 98,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 705,
+        "violate": 100,
+        "tie": 19
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 648,
+        "quotient_edges": 814,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 481,
+        "tie": 318,
+        "violate": 25
+      }
+    },
+    {
+      "candidate_id": "block_0_objective:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 741,
+        "violate": 81,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:0",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 595,
+        "violate": 229
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 595,
+        "violate": 229
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 526,
+        "violate": 298
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 511,
+        "violate": 313
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 603,
+        "violate": 221
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 758,
+        "violate": 66
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 757,
+        "violate": 67
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 597,
+        "violate": 227
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 706,
+        "violate": 118
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 761,
+        "violate": 63
+      }
+    },
+    {
+      "candidate_id": "block_1_witness:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 608,
+        "violate": 216
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:0",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 593,
+        "violate": 227,
+        "tie": 4
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 657,
+        "violate": 159,
+        "tie": 8
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 606,
+        "violate": 218
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 616,
+        "violate": 203,
+        "tie": 5
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 610,
+        "violate": 214
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 211
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 583,
+        "tie": 196,
+        "violate": 45
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 725,
+        "violate": 98,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 741,
+        "violate": 81,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 752,
+        "violate": 64,
+        "tie": 8
+      }
+    },
+    {
+      "candidate_id": "block_1_relations:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 193,
+        "agree": 631
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:0",
+      "passed": false,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": true,
+        "quotient_nodes": 622,
+        "quotient_edges": 812,
+        "self_loop_requirements": 32
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 279,
+        "agree": 513,
+        "tie": 32
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 550,
+        "violate": 274
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 647,
+        "violate": 177
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 529,
+        "violate": 295
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 202,
+        "tie": 9
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 545,
+        "violate": 279
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 583,
+        "tie": 196,
+        "violate": 45
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 725,
+        "violate": 98,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 743,
+        "violate": 79,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 752,
+        "violate": 64,
+        "tie": 8
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 700,
+        "violate": 114,
+        "tie": 10
+      }
+    },
+    {
+      "candidate_id": "block_1_objective:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 523,
+        "violate": 294,
+        "tie": 7
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:0",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 528,
+        "violate": 295,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 560,
+        "violate": 264
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 593,
+        "violate": 227,
+        "tie": 4
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 211
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 550,
+        "violate": 274
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 529,
+        "violate": 295
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 501,
+        "violate": 323
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 472,
+        "violate": 352
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 703,
+        "violate": 121
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 741,
+        "violate": 83
+      }
+    },
+    {
+      "candidate_id": "block_2_witness:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 756,
+        "violate": 68
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:0",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 595,
+        "violate": 229
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 546,
+        "violate": 278
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 609,
+        "violate": 215
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 583,
+        "tie": 196,
+        "violate": 45
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 725,
+        "violate": 98,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 526,
+        "violate": 298
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 741,
+        "violate": 81,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 532,
+        "violate": 291,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 550,
+        "violate": 274
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 560,
+        "violate": 264
+      }
+    },
+    {
+      "candidate_id": "block_2_relations:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 190,
+        "agree": 634
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:0",
+      "passed": false,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": true,
+        "quotient_nodes": 622,
+        "quotient_edges": 812,
+        "self_loop_requirements": 32
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 279,
+        "agree": 513,
+        "tie": 32
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:1",
+      "passed": false,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": true,
+        "quotient_nodes": 622,
+        "quotient_edges": 812,
+        "self_loop_requirements": 32
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 501,
+        "violate": 291,
+        "tie": 32
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 202,
+        "tie": 9
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 657,
+        "violate": 159,
+        "tie": 8
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 550,
+        "violate": 274
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 593,
+        "violate": 219,
+        "tie": 12
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 619,
+        "violate": 203,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 583,
+        "tie": 196,
+        "violate": 45
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 725,
+        "violate": 98,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 743,
+        "violate": 79,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_2_objective:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 700,
+        "violate": 114,
+        "tie": 10
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:0",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 593,
+        "violate": 227,
+        "tie": 4
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 605,
+        "violate": 219
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 211
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 505,
+        "violate": 319
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 634,
+        "violate": 190
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 727,
+        "violate": 95,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 722,
+        "violate": 102
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 284,
+        "agree": 540
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 757,
+        "violate": 67
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 211
+      }
+    },
+    {
+      "candidate_id": "block_3_witness:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 699,
+        "violate": 125
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:0",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 631,
+        "violate": 193
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:1",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 593,
+        "violate": 227,
+        "tie": 4
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:2",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 703,
+        "violate": 121
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 676,
+        "violate": 148
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 211
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 610,
+        "violate": 214
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 223,
+        "agree": 601
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 197,
+        "agree": 625,
+        "tie": 2
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 759,
+        "violate": 65
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 302,
+        "agree": 522
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 605,
+        "violate": 219
+      }
+    },
+    {
+      "candidate_id": "block_3_relations:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 757,
+        "violate": 67
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:0",
+      "passed": false,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": true,
+        "quotient_nodes": 622,
+        "quotient_edges": 812,
+        "self_loop_requirements": 32
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 485,
+        "violate": 306,
+        "tie": 33
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:1",
+      "passed": false,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": true,
+        "quotient_nodes": 622,
+        "quotient_edges": 812,
+        "self_loop_requirements": 32
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "violate": 279,
+        "agree": 513,
+        "tie": 32
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:2",
+      "passed": false,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": true,
+        "quotient_nodes": 622,
+        "quotient_edges": 812,
+        "self_loop_requirements": 32
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 542,
+        "violate": 239,
+        "tie": 43
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:3",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 657,
+        "violate": 159,
+        "tie": 8
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:4",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 550,
+        "violate": 274
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:5",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 613,
+        "violate": 202,
+        "tie": 9
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:6",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 529,
+        "violate": 295
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:7",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 523,
+        "violate": 294,
+        "tie": 7
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:8",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 642,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 594,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 541,
+        "violate": 276,
+        "tie": 7
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:9",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 725,
+        "violate": 98,
+        "tie": 1
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:10",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 583,
+        "tie": 196,
+        "violate": 45
+      }
+    },
+    {
+      "candidate_id": "block_3_objective:11",
+      "passed": true,
+      "status": "completed",
+      "full_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 644,
+        "quotient_edges": 812,
+        "self_loop_requirements": 0
+      },
+      "actual_only_quotient": {
+        "contradictory": false,
+        "quotient_nodes": 596,
+        "quotient_edges": 788,
+        "self_loop_requirements": 0
+      },
+      "scalar_agreement": {
+        "agree": 752,
+        "violate": 64,
+        "tie": 8
+      }
+    }
+  ],
+  "declared_feature_rule_usage": [
+    {
+      "candidate_id": "block_0_witness:0",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:1",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:2",
+      "declared_features": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:3",
+      "declared_features": [
+        "neighbor_cover",
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_cover",
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:4",
+      "declared_features": [
+        "neighbor_edge_products"
+      ],
+      "rule_references": [
+        "neighbor_edge_products"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:5",
+      "declared_features": [
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:6",
+      "declared_features": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:7",
+      "declared_features": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:8",
+      "declared_features": [
+        "compatible_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "compatible_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:9",
+      "declared_features": [
+        "compatible_pack",
+        "compatible_cover",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "compatible_pack",
+        "compatible_cover",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:10",
+      "declared_features": [
+        "compatible_pack",
+        "without_root_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "compatible_pack",
+        "without_root_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_witness:11",
+      "declared_features": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:0",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:1",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:2",
+      "declared_features": [
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:3",
+      "declared_features": [
+        "neighbor_edge_product"
+      ],
+      "rule_references": [
+        "neighbor_edge_product"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:4",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:5",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:6",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:7",
+      "declared_features": [
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:8",
+      "declared_features": [
+        "residual_pack"
+      ],
+      "rule_references": [
+        "residual_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:9",
+      "declared_features": [
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:10",
+      "declared_features": [
+        "residual_pack",
+        "residual_cover",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "residual_cover",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_relations:11",
+      "declared_features": [
+        "neighbor_pack",
+        "boundary_min"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "boundary_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:0",
+      "declared_features": [],
+      "rule_references": [],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:1",
+      "declared_features": [],
+      "rule_references": [],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:2",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:3",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:4",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:5",
+      "declared_features": [
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:6",
+      "declared_features": [
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:7",
+      "declared_features": [
+        "residual_pack"
+      ],
+      "rule_references": [
+        "residual_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:8",
+      "declared_features": [
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:9",
+      "declared_features": [
+        "total_cover",
+        "residual_cover"
+      ],
+      "rule_references": [
+        "total_cover",
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:10",
+      "declared_features": [
+        "total_pack",
+        "residual_pack"
+      ],
+      "rule_references": [
+        "total_pack",
+        "residual_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_0_objective:11",
+      "declared_features": [
+        "residual_pack",
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:0",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:1",
+      "declared_features": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:2",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:3",
+      "declared_features": [
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ],
+      "rule_references": [
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:4",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_edges",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:5",
+      "declared_features": [
+        "neighbor_edge_product",
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_edge_product",
+        "neighbor_cover",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:6",
+      "declared_features": [
+        "residual_pack",
+        "neighbor_pack",
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "neighbor_pack",
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:7",
+      "declared_features": [
+        "residual_pack",
+        "skip_pack",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "skip_pack",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:8",
+      "declared_features": [
+        "neighbor_cover",
+        "neighbor_pack",
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "neighbor_cover",
+        "neighbor_pack",
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:9",
+      "declared_features": [
+        "total_cover",
+        "residual_cover",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "total_cover",
+        "residual_cover",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:10",
+      "declared_features": [
+        "residual_pack",
+        "residual_cover",
+        "skip_pack",
+        "skip_cover",
+        "neighbor_pack",
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "residual_cover",
+        "skip_pack",
+        "skip_cover",
+        "neighbor_pack",
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_witness:11",
+      "declared_features": [
+        "residual_pack",
+        "residual_cover",
+        "neighbor_pack",
+        "neighbor_cover",
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "residual_cover",
+        "neighbor_pack",
+        "neighbor_cover",
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:0",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:1",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:2",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:3",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:4",
+      "declared_features": [
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:5",
+      "declared_features": [
+        "neighbor_edge_product"
+      ],
+      "rule_references": [
+        "neighbor_edge_product"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:6",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:7",
+      "declared_features": [
+        "residual_pack"
+      ],
+      "rule_references": [
+        "residual_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:8",
+      "declared_features": [
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:9",
+      "declared_features": [
+        "residual_pack",
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:10",
+      "declared_features": [
+        "residual_pack",
+        "without_root_pack"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "without_root_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_relations:11",
+      "declared_features": [
+        "neighbor_pack",
+        "without_root_edge_min",
+        "neighbor_edge_min",
+        "residual_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "without_root_edge_min",
+        "neighbor_edge_min",
+        "residual_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:0",
+      "declared_features": [],
+      "rule_references": [],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:1",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:2",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:3",
+      "declared_features": [
+        "neighbor_packing"
+      ],
+      "rule_references": [
+        "neighbor_packing"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:4",
+      "declared_features": [
+        "neighbor_packing"
+      ],
+      "rule_references": [
+        "neighbor_packing"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:5",
+      "declared_features": [
+        "neighbor_packing",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_packing",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:6",
+      "declared_features": [
+        "residual_packing"
+      ],
+      "rule_references": [
+        "residual_packing"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:7",
+      "declared_features": [
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:8",
+      "declared_features": [
+        "residual_packing",
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_packing",
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:9",
+      "declared_features": [
+        "residual_packing",
+        "exclusion_packing"
+      ],
+      "rule_references": [
+        "residual_packing",
+        "exclusion_packing"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:10",
+      "declared_features": [
+        "residual_packing",
+        "exclusion_cover"
+      ],
+      "rule_references": [
+        "residual_packing",
+        "exclusion_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_1_objective:11",
+      "declared_features": [
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_witness:0",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ],
+      "rule_references": [
+        "neighbor_edges"
+      ],
+      "unused_declared_features": [
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:1",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ],
+      "rule_references": [
+        "neighbor_edge_product"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:2",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:3",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:4",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:5",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:6",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:7",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_pack"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:8",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_cover"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:9",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_pack",
+        "neighbor_cover",
+        "compatible_pack"
+      ],
+      "rule_references": [
+        "compatible_pack"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_pack",
+        "neighbor_cover"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:10",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_cover",
+        "compatible_pack",
+        "compatible_cover"
+      ],
+      "rule_references": [
+        "compatible_pack",
+        "compatible_cover"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_min",
+        "neighbor_edge_product",
+        "neighbor_cover"
+      ]
+    },
+    {
+      "candidate_id": "block_2_witness:11",
+      "declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_product",
+        "neighbor_cover",
+        "compatible_pack",
+        "compatible_cover",
+        "without_root_pack"
+      ],
+      "rule_references": [
+        "compatible_pack",
+        "without_root_pack"
+      ],
+      "unused_declared_features": [
+        "neighbor_edges",
+        "neighbor_edge_product",
+        "neighbor_cover",
+        "compatible_cover"
+      ]
+    },
+    {
+      "candidate_id": "block_2_relations:0",
+      "declared_features": [
+        "neighbor_clique_cost"
+      ],
+      "rule_references": [
+        "neighbor_clique_cost"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:1",
+      "declared_features": [
+        "neighbor_greedy_weight"
+      ],
+      "rule_references": [
+        "neighbor_greedy_weight"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:2",
+      "declared_features": [
+        "neighbor_clique_cost"
+      ],
+      "rule_references": [
+        "neighbor_clique_cost"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:3",
+      "declared_features": [
+        "neighbor_clique_cost"
+      ],
+      "rule_references": [
+        "neighbor_clique_cost"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:4",
+      "declared_features": [
+        "residual_greedy"
+      ],
+      "rule_references": [
+        "residual_greedy"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:5",
+      "declared_features": [
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:6",
+      "declared_features": [
+        "neighbor_greedy",
+        "residual_edge_cost",
+        "residual_weight"
+      ],
+      "rule_references": [
+        "neighbor_greedy",
+        "residual_edge_cost",
+        "residual_weight"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:7",
+      "declared_features": [
+        "residual_greedy",
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_greedy",
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:8",
+      "declared_features": [
+        "neighbor_edge_count"
+      ],
+      "rule_references": [
+        "neighbor_edge_count"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:9",
+      "declared_features": [
+        "neighbor_edge_min_mass"
+      ],
+      "rule_references": [
+        "neighbor_edge_min_mass"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:10",
+      "declared_features": [
+        "neighbor_edge_product_mass"
+      ],
+      "rule_references": [
+        "neighbor_edge_product_mass"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_relations:11",
+      "declared_features": [
+        "residual_edge_min_mass",
+        "residual_count",
+        "residual_max_weight"
+      ],
+      "rule_references": [
+        "residual_edge_min_mass",
+        "residual_count",
+        "residual_max_weight"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:0",
+      "declared_features": [],
+      "rule_references": [],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:1",
+      "declared_features": [],
+      "rule_references": [],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:2",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:3",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:4",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:5",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:6",
+      "declared_features": [
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:7",
+      "declared_features": [
+        "neighbor_edge_product"
+      ],
+      "rule_references": [
+        "neighbor_edge_product"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:8",
+      "declared_features": [
+        "residual_pack"
+      ],
+      "rule_references": [
+        "residual_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:9",
+      "declared_features": [
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:10",
+      "declared_features": [
+        "residual_pack",
+        "residual_cover"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "residual_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_2_objective:11",
+      "declared_features": [
+        "residual_pack",
+        "skip_cover"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "skip_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:0",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:1",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:2",
+      "declared_features": [
+        "neighbor_edge_loss",
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "neighbor_edge_loss",
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:3",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:4",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:5",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:6",
+      "declared_features": [
+        "residual_pack",
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:7",
+      "declared_features": [
+        "residual_cover",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "residual_cover",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:8",
+      "declared_features": [
+        "residual_pack",
+        "residual_cover",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "residual_cover",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:9",
+      "declared_features": [
+        "residual_pack",
+        "avoid_pack",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "avoid_pack",
+        "neighbor_pack",
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:10",
+      "declared_features": [
+        "neighbor_pack",
+        "neighbor_cover",
+        "neighbor_edge_loss",
+        "neighbor_edge_product",
+        "neighbor_edges"
+      ],
+      "rule_references": [
+        "neighbor_pack",
+        "neighbor_cover",
+        "neighbor_edge_loss",
+        "neighbor_edge_product",
+        "neighbor_edges"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_witness:11",
+      "declared_features": [
+        "residual_pack",
+        "residual_cover",
+        "avoid_pack",
+        "neighbor_pack",
+        "neighbor_cover",
+        "neighbor_edge_loss"
+      ],
+      "rule_references": [
+        "residual_pack",
+        "residual_cover",
+        "avoid_pack",
+        "neighbor_pack",
+        "neighbor_cover",
+        "neighbor_edge_loss"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:0",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:1",
+      "declared_features": [
+        "neighbor_greedy"
+      ],
+      "rule_references": [
+        "neighbor_greedy"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:2",
+      "declared_features": [
+        "compatible_greedy"
+      ],
+      "rule_references": [
+        "compatible_greedy"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:3",
+      "declared_features": [
+        "excluded_cover",
+        "compatible_cover"
+      ],
+      "rule_references": [
+        "excluded_cover",
+        "compatible_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:4",
+      "declared_features": [
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:5",
+      "declared_features": [
+        "neighbor_edge_product"
+      ],
+      "rule_references": [
+        "neighbor_edge_product"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:6",
+      "declared_features": [
+        "neighbor_edge_count"
+      ],
+      "rule_references": [
+        "neighbor_edge_count"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:7",
+      "declared_features": [
+        "neighbor_edge_product"
+      ],
+      "rule_references": [
+        "neighbor_edge_product"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:8",
+      "declared_features": [
+        "take_greedy",
+        "take_cover",
+        "drop_greedy",
+        "drop_cover"
+      ],
+      "rule_references": [
+        "take_greedy",
+        "take_cover",
+        "drop_greedy",
+        "drop_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:9",
+      "declared_features": [
+        "take_greedy",
+        "take_cover",
+        "drop_greedy",
+        "drop_cover"
+      ],
+      "rule_references": [
+        "take_greedy",
+        "take_cover",
+        "drop_greedy",
+        "drop_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:10",
+      "declared_features": [
+        "neighbor_greedy",
+        "neighbor_cover",
+        "neighbor_edges",
+        "neighbor_count"
+      ],
+      "rule_references": [
+        "neighbor_greedy",
+        "neighbor_cover",
+        "neighbor_edges",
+        "neighbor_count"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_relations:11",
+      "declared_features": [
+        "take_greedy",
+        "drop_greedy",
+        "take_weight",
+        "drop_weight",
+        "take_edge_products",
+        "drop_edge_products"
+      ],
+      "rule_references": [
+        "take_greedy",
+        "drop_greedy",
+        "take_weight",
+        "drop_weight",
+        "take_edge_products",
+        "drop_edge_products"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:0",
+      "declared_features": [],
+      "rule_references": [],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:1",
+      "declared_features": [],
+      "rule_references": [],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:2",
+      "declared_features": [],
+      "rule_references": [],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:3",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:4",
+      "declared_features": [
+        "neighbor_cover"
+      ],
+      "rule_references": [
+        "neighbor_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:5",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:6",
+      "declared_features": [
+        "neighbor_pack"
+      ],
+      "rule_references": [
+        "neighbor_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:7",
+      "declared_features": [
+        "neighbor_edge_min"
+      ],
+      "rule_references": [
+        "neighbor_edge_min"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:8",
+      "declared_features": [
+        "neighbor_edge_count"
+      ],
+      "rule_references": [
+        "neighbor_edge_count"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:9",
+      "declared_features": [
+        "retained_cover"
+      ],
+      "rule_references": [
+        "retained_cover"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:10",
+      "declared_features": [
+        "retained_pack"
+      ],
+      "rule_references": [
+        "retained_pack"
+      ],
+      "unused_declared_features": []
+    },
+    {
+      "candidate_id": "block_3_objective:11",
+      "declared_features": [
+        "retained_pack",
+        "rejected_pack"
+      ],
+      "rule_references": [
+        "retained_pack",
+        "rejected_pack"
+      ],
+      "unused_declared_features": []
+    }
+  ],
+  "frozen_selection": {
+    "block_0_witness": {
+      "selected_id": "block_0_witness:0",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_0_relations": {
+      "selected_id": "block_0_relations:5",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_0_objective": {
+      "selected_id": "block_0_objective:3",
+      "eligible_slots": 10,
+      "utility": 0.975542307258517
+    },
+    "block_1_witness": {
+      "selected_id": "block_1_witness:1",
+      "eligible_slots": 12,
+      "utility": 0.973211961875892
+    },
+    "block_1_relations": {
+      "selected_id": "block_1_relations:0",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_1_objective": {
+      "selected_id": "block_1_objective:1",
+      "eligible_slots": 11,
+      "utility": 0.975542307258517
+    },
+    "block_2_witness": {
+      "selected_id": "block_2_witness:2",
+      "eligible_slots": 12,
+      "utility": 0.9785888763065312
+    },
+    "block_2_relations": {
+      "selected_id": "block_2_relations:0",
+      "eligible_slots": 12,
+      "utility": 0.9794063214544557
+    },
+    "block_2_objective": {
+      "selected_id": "block_2_objective:5",
+      "eligible_slots": 10,
+      "utility": 0.9779905061890859
+    },
+    "block_3_witness": {
+      "selected_id": "block_3_witness:1",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_3_relations": {
+      "selected_id": "block_3_relations:0",
+      "eligible_slots": 12,
+      "utility": 0.9786546829041267
+    },
+    "block_3_objective": {
+      "selected_id": "block_3_objective:4",
+      "eligible_slots": 9,
+      "utility": 0.975542307258517
+    }
+  },
+  "test_summary": null,
+  "scope": [
+    "All declared-feature gates and scalar-agreement counts independently evaluated on the frozen 824 requirements.",
+    "All complete saved schedules independently checked for graph feasibility, explicit boundary, trace evolution and exact reward; argmax scores are not rerun.",
+    "Feature-work and CPU timeout counts remain saved executed measurements; selection arithmetic is independently reproduced.",
+    "No candidate repair, replacement, reauthoring, fresh policy selection, online model/oracle calls or new evaluation queries.",
+    "Four generation blocks cannot support a strong model-population superiority claim; requested settings are not proof of actual served model if metadata is unavailable."
+  ]
+}

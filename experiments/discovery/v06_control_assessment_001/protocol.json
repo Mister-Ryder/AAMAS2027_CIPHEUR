@@ -1,0 +1,4272 @@
+{
+  "version": "v06_controls_TRAIN_assessment_001",
+  "registered_before_any_raw_LLM_candidate_assessment": true,
+  "parent_protocol_sha256": "cb2e597e056d3734329afa37aa1da3b46c47634610b2270de32e744ef462ada8",
+  "supplement_protocol_sha256": "758a6dd03616b1e004eaf7b609ff8dd29912b35271e609879a142e91ef725601",
+  "control_bank_sha256": "79effeaff504fb76995c0493f53551b668441f82e9e8a0bb1b4542e14ce3cba8",
+  "control_freeze_sha256": "642fc9c1ee58018b9e4a148e5b59bc5b2150b1f5dd17e881adaaa6cbe4ce287c",
+  "source_sha256": {
+    "control_assessment_v06.py": "ee6c8ca1b441d5f66d9aabad4c5ffa72ab93fcb80a605b38e8cfb351593d5013",
+    "synthesis_extension_v06.py": "1df0e3f9616d0ab73a2b8dfba67997ec2bc3c8dde659b4f3370d64e543a55637",
+    "synthesis_study_v06.py": "f640af65645426cdf172d1cbc7326bae221acf43ece81225ef8bf06cf2c8b0bb",
+    "repair_v06.py": "c4cbdb9878c041321f4cfcc0637a7a3113add38732ca04d05c8687d9a8e7e8f3",
+    "graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788"
+  },
+  "entries": [
+    {
+      "id": "control_0_enumerated_structural:0",
+      "block": 0,
+      "arm": "enumerated_structural",
+      "slot": 0,
+      "program": {
+        "name": "enum_struct_2_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "2bfd8278e9e84a1a3eb55aefc833ea29b9cb4f2ece11fa19921d2554218f07c7",
+      "deployment_AST_sha256": "577f6569f6dccc97198f56459a00754785de8a3e970b7312675b68e97aa39be4",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_enumerated_structural:1",
+      "block": 0,
+      "arm": "enumerated_structural",
+      "slot": 1,
+      "program": {
+        "name": "enum_struct_2_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "7bd78771bfdb8a54a21f5253489688aac6c4b6699578f0cbcadaf28ffdbab4f1",
+      "deployment_AST_sha256": "6b458d876bb2656e7f22ce6ef21b77238e3724fef1c513ac10f4a96eff386f91",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_enumerated_structural:2",
+      "block": 0,
+      "arm": "enumerated_structural",
+      "slot": 2,
+      "program": {
+        "name": "enum_struct_3_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + rg",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "b10a0ca0cf7e47ab8a33e269e698034d104be4174b5b87e793acd5e2594f9e1f",
+      "deployment_AST_sha256": "3bddf99548e5fad6b25ef2e9b60f45d51a76121719621b2f9e1cd3bcc5c4ea6a",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_enumerated_structural:3",
+      "block": 0,
+      "arm": "enumerated_structural",
+      "slot": 3,
+      "program": {
+        "name": "enum_struct_3_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + rg",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "88a7b105813dcf6ec5690260e408d6331fc890d4ee49d89f51377702ea63de2a",
+      "deployment_AST_sha256": "3e6b3580936b881537fd04b38f1b5fcc19d0e56154272cfc2c72910a64d6e6e7",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_enumerated_structural:4",
+      "block": 0,
+      "arm": "enumerated_structural",
+      "slot": 4,
+      "program": {
+        "name": "enum_struct_4_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + 0.25*rg + 0.75*ru",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "74f966f5780993fc18298cc166b806b5ac29b555f31d9eefcdb57e5847111c09",
+      "deployment_AST_sha256": "68b81b949fe2f966cab88d272ef628680fed5542fa4aa0482178aba9ccd77d11",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_enumerated_structural:5",
+      "block": 0,
+      "arm": "enumerated_structural",
+      "slot": 5,
+      "program": {
+        "name": "enum_struct_4_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + 0.75*rg + 0.25*ru",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "c27f425753937d27b72976d36d4e1d4742e8576883e173725339971f4bfe4b0a",
+      "deployment_AST_sha256": "e229a40c8df940566676fc7de8c1a25439c7f301ca28d9e70578b02854c62159",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_enumerated_structural:6",
+      "block": 0,
+      "arm": "enumerated_structural",
+      "slot": 6,
+      "program": {
+        "name": "enum_struct_6_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ne",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "re",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + 0.25*rg + 0.75*ru + 0.125*ne/max(1,degree*(degree-1)) - 0.125*re/max(1,(remaining_count-degree-1)*(remaining_count-degree-2))",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "af02a12d8f1a0870db2009acdeeaf17bea74b6ee8567f60abf92287dc01ea4fa",
+      "deployment_AST_sha256": "116430c2adb62f8fd53264e601b0fbad8f8b764c61b01bf9d58a3a07a416584e",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_enumerated_structural:7",
+      "block": 0,
+      "arm": "enumerated_structural",
+      "slot": 7,
+      "program": {
+        "name": "enum_struct_6_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ne",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "re",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + 0.75*rg + 0.25*ru + 0.125*ne/max(1,degree*(degree-1)) - 0.125*re/max(1,(remaining_count-degree-1)*(remaining_count-degree-2))",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "33721397988a9017980d8bdd428323908079a3da831d166e1951a01ce3223982",
+      "deployment_AST_sha256": "2514674412e433c9a4172105ec786a80c8ae6a310f9c043833002f9d55bd1c77",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_fixed_base9:0",
+      "block": 0,
+      "arm": "fixed_base9",
+      "slot": 0,
+      "program": {
+        "name": "fixed_base9_00",
+        "features": [],
+        "rule": "weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "4956717e011da46628405f5faa8ef434e63eb8eb2d0851c3c95acee406ed401e",
+      "deployment_AST_sha256": "6c8fdf667d5ebbf9d2787aa08aa02239f0829b4e13c93f160785fed12490049d",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_fixed_base9:1",
+      "block": 0,
+      "arm": "fixed_base9",
+      "slot": 1,
+      "program": {
+        "name": "fixed_base9_01",
+        "features": [],
+        "rule": "weight/max(1,degree)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "cb2c418c239c563ac80367c4249a9d758ce0badc3dcc05d50cfe857933c1e64a",
+      "deployment_AST_sha256": "9dddbbc95acd3cafa2b569dcee07571ff99541f2db424dc496b07f1b01fcfc4d",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_fixed_base9:2",
+      "block": 0,
+      "arm": "fixed_base9",
+      "slot": 2,
+      "program": {
+        "name": "fixed_base9_02",
+        "features": [],
+        "rule": "weight/max(1,conflict_weight)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "1bb723415c2793c3dc9049fbebe19290167cdd8cbf28b8c3b6455050652d74d1",
+      "deployment_AST_sha256": "dae553111e9d685b60d9e5f956593bbc8585af79f981bf051a6c310c8043fb6b",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_fixed_base9:3",
+      "block": 0,
+      "arm": "fixed_base9",
+      "slot": 3,
+      "program": {
+        "name": "fixed_base9_03",
+        "features": [],
+        "rule": "weight-conflict_weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "8f7c4200e05ad637e42d69c3cfeae005ed0ba22de188e7be1740c075ed82dcca",
+      "deployment_AST_sha256": "1244c11f8321423cecd9fefe96114407b11f5484f8c0073f2374c6bb8cf2952f",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_fixed_base9:4",
+      "block": 0,
+      "arm": "fixed_base9",
+      "slot": 4,
+      "program": {
+        "name": "fixed_base9_04",
+        "features": [],
+        "rule": "weight*(1+degree)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "7f55613813af3cd2f0c0bc458a11283eece4ad6e09d0a369322375ae25b6e39b",
+      "deployment_AST_sha256": "ef24068ae25595dfe04158f09b2f7d23e25523d4633bcdee09870eb65a987e74",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_fixed_base9:5",
+      "block": 0,
+      "arm": "fixed_base9",
+      "slot": 5,
+      "program": {
+        "name": "fixed_base9_05",
+        "features": [],
+        "rule": "weight+compatible_weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "782901f6df8db5a1c4e2fb43401bdf61e531be1870b186f56810781d3613fd83",
+      "deployment_AST_sha256": "7cfa8c900fbe15f797173cc14df14bbf390f39a52195fc311ed2efde6ed17d26",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_fixed_base9:6",
+      "block": 0,
+      "arm": "fixed_base9",
+      "slot": 6,
+      "program": {
+        "name": "fixed_base9_06",
+        "features": [],
+        "rule": "weight/max(1,duration)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "d77012d53d800d3b17291893450b0f5ebfcaf60e68fec6a2b9aa82694221bb7d",
+      "deployment_AST_sha256": "0d7fa6ac1565f8e92ef944304f9588b5a7e5b70d6ab3fd0500bb4cda90559caf",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_0_fixed_base9:7",
+      "block": 0,
+      "arm": "fixed_base9",
+      "slot": 7,
+      "program": {
+        "name": "fixed_base9_07",
+        "features": [],
+        "rule": "weight*(1+max_conflict_weight)/max(1,degree+station_gap+satellite_gap)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "bc83d9febdf320f4534f53cfe5c61fa4e33c2540d821df6a9a08cd2e6488f60a",
+      "deployment_AST_sha256": "5254602b03bfbb7ce64de360311a1f4731d983e547b6dc47488a11c695133660",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_enumerated_structural:0",
+      "block": 1,
+      "arm": "enumerated_structural",
+      "slot": 0,
+      "program": {
+        "name": "enum_struct_2_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "2bfd8278e9e84a1a3eb55aefc833ea29b9cb4f2ece11fa19921d2554218f07c7",
+      "deployment_AST_sha256": "577f6569f6dccc97198f56459a00754785de8a3e970b7312675b68e97aa39be4",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_enumerated_structural:1",
+      "block": 1,
+      "arm": "enumerated_structural",
+      "slot": 1,
+      "program": {
+        "name": "enum_struct_2_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "7bd78771bfdb8a54a21f5253489688aac6c4b6699578f0cbcadaf28ffdbab4f1",
+      "deployment_AST_sha256": "6b458d876bb2656e7f22ce6ef21b77238e3724fef1c513ac10f4a96eff386f91",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_enumerated_structural:2",
+      "block": 1,
+      "arm": "enumerated_structural",
+      "slot": 2,
+      "program": {
+        "name": "enum_struct_3_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + rg",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "b10a0ca0cf7e47ab8a33e269e698034d104be4174b5b87e793acd5e2594f9e1f",
+      "deployment_AST_sha256": "3bddf99548e5fad6b25ef2e9b60f45d51a76121719621b2f9e1cd3bcc5c4ea6a",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_enumerated_structural:3",
+      "block": 1,
+      "arm": "enumerated_structural",
+      "slot": 3,
+      "program": {
+        "name": "enum_struct_3_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + rg",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "88a7b105813dcf6ec5690260e408d6331fc890d4ee49d89f51377702ea63de2a",
+      "deployment_AST_sha256": "3e6b3580936b881537fd04b38f1b5fcc19d0e56154272cfc2c72910a64d6e6e7",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_enumerated_structural:4",
+      "block": 1,
+      "arm": "enumerated_structural",
+      "slot": 4,
+      "program": {
+        "name": "enum_struct_4_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + 0.25*rg + 0.75*ru",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "74f966f5780993fc18298cc166b806b5ac29b555f31d9eefcdb57e5847111c09",
+      "deployment_AST_sha256": "68b81b949fe2f966cab88d272ef628680fed5542fa4aa0482178aba9ccd77d11",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_enumerated_structural:5",
+      "block": 1,
+      "arm": "enumerated_structural",
+      "slot": 5,
+      "program": {
+        "name": "enum_struct_4_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + 0.75*rg + 0.25*ru",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "c27f425753937d27b72976d36d4e1d4742e8576883e173725339971f4bfe4b0a",
+      "deployment_AST_sha256": "e229a40c8df940566676fc7de8c1a25439c7f301ca28d9e70578b02854c62159",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_enumerated_structural:6",
+      "block": 1,
+      "arm": "enumerated_structural",
+      "slot": 6,
+      "program": {
+        "name": "enum_struct_6_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ne",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "re",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + 0.25*rg + 0.75*ru + 0.125*ne/max(1,degree*(degree-1)) - 0.125*re/max(1,(remaining_count-degree-1)*(remaining_count-degree-2))",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "af02a12d8f1a0870db2009acdeeaf17bea74b6ee8567f60abf92287dc01ea4fa",
+      "deployment_AST_sha256": "116430c2adb62f8fd53264e601b0fbad8f8b764c61b01bf9d58a3a07a416584e",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_enumerated_structural:7",
+      "block": 1,
+      "arm": "enumerated_structural",
+      "slot": 7,
+      "program": {
+        "name": "enum_struct_6_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ne",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "re",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + 0.75*rg + 0.25*ru + 0.125*ne/max(1,degree*(degree-1)) - 0.125*re/max(1,(remaining_count-degree-1)*(remaining_count-degree-2))",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "33721397988a9017980d8bdd428323908079a3da831d166e1951a01ce3223982",
+      "deployment_AST_sha256": "2514674412e433c9a4172105ec786a80c8ae6a310f9c043833002f9d55bd1c77",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_fixed_base9:0",
+      "block": 1,
+      "arm": "fixed_base9",
+      "slot": 0,
+      "program": {
+        "name": "fixed_base9_00",
+        "features": [],
+        "rule": "weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "4956717e011da46628405f5faa8ef434e63eb8eb2d0851c3c95acee406ed401e",
+      "deployment_AST_sha256": "6c8fdf667d5ebbf9d2787aa08aa02239f0829b4e13c93f160785fed12490049d",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_fixed_base9:1",
+      "block": 1,
+      "arm": "fixed_base9",
+      "slot": 1,
+      "program": {
+        "name": "fixed_base9_01",
+        "features": [],
+        "rule": "weight/max(1,degree)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "cb2c418c239c563ac80367c4249a9d758ce0badc3dcc05d50cfe857933c1e64a",
+      "deployment_AST_sha256": "9dddbbc95acd3cafa2b569dcee07571ff99541f2db424dc496b07f1b01fcfc4d",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_fixed_base9:2",
+      "block": 1,
+      "arm": "fixed_base9",
+      "slot": 2,
+      "program": {
+        "name": "fixed_base9_02",
+        "features": [],
+        "rule": "weight/max(1,conflict_weight)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "1bb723415c2793c3dc9049fbebe19290167cdd8cbf28b8c3b6455050652d74d1",
+      "deployment_AST_sha256": "dae553111e9d685b60d9e5f956593bbc8585af79f981bf051a6c310c8043fb6b",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_fixed_base9:3",
+      "block": 1,
+      "arm": "fixed_base9",
+      "slot": 3,
+      "program": {
+        "name": "fixed_base9_03",
+        "features": [],
+        "rule": "weight-conflict_weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "8f7c4200e05ad637e42d69c3cfeae005ed0ba22de188e7be1740c075ed82dcca",
+      "deployment_AST_sha256": "1244c11f8321423cecd9fefe96114407b11f5484f8c0073f2374c6bb8cf2952f",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_fixed_base9:4",
+      "block": 1,
+      "arm": "fixed_base9",
+      "slot": 4,
+      "program": {
+        "name": "fixed_base9_04",
+        "features": [],
+        "rule": "weight*(1+degree)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "7f55613813af3cd2f0c0bc458a11283eece4ad6e09d0a369322375ae25b6e39b",
+      "deployment_AST_sha256": "ef24068ae25595dfe04158f09b2f7d23e25523d4633bcdee09870eb65a987e74",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_fixed_base9:5",
+      "block": 1,
+      "arm": "fixed_base9",
+      "slot": 5,
+      "program": {
+        "name": "fixed_base9_05",
+        "features": [],
+        "rule": "weight+compatible_weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "782901f6df8db5a1c4e2fb43401bdf61e531be1870b186f56810781d3613fd83",
+      "deployment_AST_sha256": "7cfa8c900fbe15f797173cc14df14bbf390f39a52195fc311ed2efde6ed17d26",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_fixed_base9:6",
+      "block": 1,
+      "arm": "fixed_base9",
+      "slot": 6,
+      "program": {
+        "name": "fixed_base9_06",
+        "features": [],
+        "rule": "weight/max(1,duration)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "d77012d53d800d3b17291893450b0f5ebfcaf60e68fec6a2b9aa82694221bb7d",
+      "deployment_AST_sha256": "0d7fa6ac1565f8e92ef944304f9588b5a7e5b70d6ab3fd0500bb4cda90559caf",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_1_fixed_base9:7",
+      "block": 1,
+      "arm": "fixed_base9",
+      "slot": 7,
+      "program": {
+        "name": "fixed_base9_07",
+        "features": [],
+        "rule": "weight*(1+max_conflict_weight)/max(1,degree+station_gap+satellite_gap)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "bc83d9febdf320f4534f53cfe5c61fa4e33c2540d821df6a9a08cd2e6488f60a",
+      "deployment_AST_sha256": "5254602b03bfbb7ce64de360311a1f4731d983e547b6dc47488a11c695133660",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_enumerated_structural:0",
+      "block": 2,
+      "arm": "enumerated_structural",
+      "slot": 0,
+      "program": {
+        "name": "enum_struct_2_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "2bfd8278e9e84a1a3eb55aefc833ea29b9cb4f2ece11fa19921d2554218f07c7",
+      "deployment_AST_sha256": "577f6569f6dccc97198f56459a00754785de8a3e970b7312675b68e97aa39be4",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_enumerated_structural:1",
+      "block": 2,
+      "arm": "enumerated_structural",
+      "slot": 1,
+      "program": {
+        "name": "enum_struct_2_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "7bd78771bfdb8a54a21f5253489688aac6c4b6699578f0cbcadaf28ffdbab4f1",
+      "deployment_AST_sha256": "6b458d876bb2656e7f22ce6ef21b77238e3724fef1c513ac10f4a96eff386f91",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_enumerated_structural:2",
+      "block": 2,
+      "arm": "enumerated_structural",
+      "slot": 2,
+      "program": {
+        "name": "enum_struct_3_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + rg",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "b10a0ca0cf7e47ab8a33e269e698034d104be4174b5b87e793acd5e2594f9e1f",
+      "deployment_AST_sha256": "3bddf99548e5fad6b25ef2e9b60f45d51a76121719621b2f9e1cd3bcc5c4ea6a",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_enumerated_structural:3",
+      "block": 2,
+      "arm": "enumerated_structural",
+      "slot": 3,
+      "program": {
+        "name": "enum_struct_3_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + rg",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "88a7b105813dcf6ec5690260e408d6331fc890d4ee49d89f51377702ea63de2a",
+      "deployment_AST_sha256": "3e6b3580936b881537fd04b38f1b5fcc19d0e56154272cfc2c72910a64d6e6e7",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_enumerated_structural:4",
+      "block": 2,
+      "arm": "enumerated_structural",
+      "slot": 4,
+      "program": {
+        "name": "enum_struct_4_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + 0.25*rg + 0.75*ru",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "74f966f5780993fc18298cc166b806b5ac29b555f31d9eefcdb57e5847111c09",
+      "deployment_AST_sha256": "68b81b949fe2f966cab88d272ef628680fed5542fa4aa0482178aba9ccd77d11",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_enumerated_structural:5",
+      "block": 2,
+      "arm": "enumerated_structural",
+      "slot": 5,
+      "program": {
+        "name": "enum_struct_4_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + 0.75*rg + 0.25*ru",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "c27f425753937d27b72976d36d4e1d4742e8576883e173725339971f4bfe4b0a",
+      "deployment_AST_sha256": "e229a40c8df940566676fc7de8c1a25439c7f301ca28d9e70578b02854c62159",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_enumerated_structural:6",
+      "block": 2,
+      "arm": "enumerated_structural",
+      "slot": 6,
+      "program": {
+        "name": "enum_struct_6_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ne",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "re",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + 0.25*rg + 0.75*ru + 0.125*ne/max(1,degree*(degree-1)) - 0.125*re/max(1,(remaining_count-degree-1)*(remaining_count-degree-2))",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "af02a12d8f1a0870db2009acdeeaf17bea74b6ee8567f60abf92287dc01ea4fa",
+      "deployment_AST_sha256": "116430c2adb62f8fd53264e601b0fbad8f8b764c61b01bf9d58a3a07a416584e",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_enumerated_structural:7",
+      "block": 2,
+      "arm": "enumerated_structural",
+      "slot": 7,
+      "program": {
+        "name": "enum_struct_6_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ne",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "re",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + 0.75*rg + 0.25*ru + 0.125*ne/max(1,degree*(degree-1)) - 0.125*re/max(1,(remaining_count-degree-1)*(remaining_count-degree-2))",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "33721397988a9017980d8bdd428323908079a3da831d166e1951a01ce3223982",
+      "deployment_AST_sha256": "2514674412e433c9a4172105ec786a80c8ae6a310f9c043833002f9d55bd1c77",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_fixed_base9:0",
+      "block": 2,
+      "arm": "fixed_base9",
+      "slot": 0,
+      "program": {
+        "name": "fixed_base9_00",
+        "features": [],
+        "rule": "weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "4956717e011da46628405f5faa8ef434e63eb8eb2d0851c3c95acee406ed401e",
+      "deployment_AST_sha256": "6c8fdf667d5ebbf9d2787aa08aa02239f0829b4e13c93f160785fed12490049d",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_fixed_base9:1",
+      "block": 2,
+      "arm": "fixed_base9",
+      "slot": 1,
+      "program": {
+        "name": "fixed_base9_01",
+        "features": [],
+        "rule": "weight/max(1,degree)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "cb2c418c239c563ac80367c4249a9d758ce0badc3dcc05d50cfe857933c1e64a",
+      "deployment_AST_sha256": "9dddbbc95acd3cafa2b569dcee07571ff99541f2db424dc496b07f1b01fcfc4d",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_fixed_base9:2",
+      "block": 2,
+      "arm": "fixed_base9",
+      "slot": 2,
+      "program": {
+        "name": "fixed_base9_02",
+        "features": [],
+        "rule": "weight/max(1,conflict_weight)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "1bb723415c2793c3dc9049fbebe19290167cdd8cbf28b8c3b6455050652d74d1",
+      "deployment_AST_sha256": "dae553111e9d685b60d9e5f956593bbc8585af79f981bf051a6c310c8043fb6b",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_fixed_base9:3",
+      "block": 2,
+      "arm": "fixed_base9",
+      "slot": 3,
+      "program": {
+        "name": "fixed_base9_03",
+        "features": [],
+        "rule": "weight-conflict_weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "8f7c4200e05ad637e42d69c3cfeae005ed0ba22de188e7be1740c075ed82dcca",
+      "deployment_AST_sha256": "1244c11f8321423cecd9fefe96114407b11f5484f8c0073f2374c6bb8cf2952f",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_fixed_base9:4",
+      "block": 2,
+      "arm": "fixed_base9",
+      "slot": 4,
+      "program": {
+        "name": "fixed_base9_04",
+        "features": [],
+        "rule": "weight*(1+degree)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "7f55613813af3cd2f0c0bc458a11283eece4ad6e09d0a369322375ae25b6e39b",
+      "deployment_AST_sha256": "ef24068ae25595dfe04158f09b2f7d23e25523d4633bcdee09870eb65a987e74",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_fixed_base9:5",
+      "block": 2,
+      "arm": "fixed_base9",
+      "slot": 5,
+      "program": {
+        "name": "fixed_base9_05",
+        "features": [],
+        "rule": "weight+compatible_weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "782901f6df8db5a1c4e2fb43401bdf61e531be1870b186f56810781d3613fd83",
+      "deployment_AST_sha256": "7cfa8c900fbe15f797173cc14df14bbf390f39a52195fc311ed2efde6ed17d26",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_fixed_base9:6",
+      "block": 2,
+      "arm": "fixed_base9",
+      "slot": 6,
+      "program": {
+        "name": "fixed_base9_06",
+        "features": [],
+        "rule": "weight/max(1,duration)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "d77012d53d800d3b17291893450b0f5ebfcaf60e68fec6a2b9aa82694221bb7d",
+      "deployment_AST_sha256": "0d7fa6ac1565f8e92ef944304f9588b5a7e5b70d6ab3fd0500bb4cda90559caf",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_2_fixed_base9:7",
+      "block": 2,
+      "arm": "fixed_base9",
+      "slot": 7,
+      "program": {
+        "name": "fixed_base9_07",
+        "features": [],
+        "rule": "weight*(1+max_conflict_weight)/max(1,degree+station_gap+satellite_gap)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "bc83d9febdf320f4534f53cfe5c61fa4e33c2540d821df6a9a08cd2e6488f60a",
+      "deployment_AST_sha256": "5254602b03bfbb7ce64de360311a1f4731d983e547b6dc47488a11c695133660",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_enumerated_structural:0",
+      "block": 3,
+      "arm": "enumerated_structural",
+      "slot": 0,
+      "program": {
+        "name": "enum_struct_2_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "2bfd8278e9e84a1a3eb55aefc833ea29b9cb4f2ece11fa19921d2554218f07c7",
+      "deployment_AST_sha256": "577f6569f6dccc97198f56459a00754785de8a3e970b7312675b68e97aa39be4",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_enumerated_structural:1",
+      "block": 3,
+      "arm": "enumerated_structural",
+      "slot": 1,
+      "program": {
+        "name": "enum_struct_2_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "7bd78771bfdb8a54a21f5253489688aac6c4b6699578f0cbcadaf28ffdbab4f1",
+      "deployment_AST_sha256": "6b458d876bb2656e7f22ce6ef21b77238e3724fef1c513ac10f4a96eff386f91",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_enumerated_structural:2",
+      "block": 3,
+      "arm": "enumerated_structural",
+      "slot": 2,
+      "program": {
+        "name": "enum_struct_3_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + rg",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "b10a0ca0cf7e47ab8a33e269e698034d104be4174b5b87e793acd5e2594f9e1f",
+      "deployment_AST_sha256": "3bddf99548e5fad6b25ef2e9b60f45d51a76121719621b2f9e1cd3bcc5c4ea6a",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_enumerated_structural:3",
+      "block": 3,
+      "arm": "enumerated_structural",
+      "slot": 3,
+      "program": {
+        "name": "enum_struct_3_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + rg",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "88a7b105813dcf6ec5690260e408d6331fc890d4ee49d89f51377702ea63de2a",
+      "deployment_AST_sha256": "3e6b3580936b881537fd04b38f1b5fcc19d0e56154272cfc2c72910a64d6e6e7",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_enumerated_structural:4",
+      "block": 3,
+      "arm": "enumerated_structural",
+      "slot": 4,
+      "program": {
+        "name": "enum_struct_4_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + 0.25*rg + 0.75*ru",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "74f966f5780993fc18298cc166b806b5ac29b555f31d9eefcdb57e5847111c09",
+      "deployment_AST_sha256": "68b81b949fe2f966cab88d272ef628680fed5542fa4aa0482178aba9ccd77d11",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_enumerated_structural:5",
+      "block": 3,
+      "arm": "enumerated_structural",
+      "slot": 5,
+      "program": {
+        "name": "enum_struct_4_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + 0.75*rg + 0.25*ru",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "c27f425753937d27b72976d36d4e1d4742e8576883e173725339971f4bfe4b0a",
+      "deployment_AST_sha256": "e229a40c8df940566676fc7de8c1a25439c7f301ca28d9e70578b02854c62159",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_enumerated_structural:6",
+      "block": 3,
+      "arm": "enumerated_structural",
+      "slot": 6,
+      "program": {
+        "name": "enum_struct_6_0_25",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ne",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "re",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.25*ng - 0.75*nu + 0.25*rg + 0.75*ru + 0.125*ne/max(1,degree*(degree-1)) - 0.125*re/max(1,(remaining_count-degree-1)*(remaining_count-degree-2))",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "af02a12d8f1a0870db2009acdeeaf17bea74b6ee8567f60abf92287dc01ea4fa",
+      "deployment_AST_sha256": "116430c2adb62f8fd53264e601b0fbad8f8b764c61b01bf9d58a3a07a416584e",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_enumerated_structural:7",
+      "block": 3,
+      "arm": "enumerated_structural",
+      "slot": 7,
+      "program": {
+        "name": "enum_struct_6_0_75",
+        "features": [
+          {
+            "name": "ng",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "nu",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "rg",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ru",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "ne",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "re",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight - 0.75*ng - 0.25*nu + 0.75*rg + 0.25*ru + 0.125*ne/max(1,degree*(degree-1)) - 0.125*re/max(1,(remaining_count-degree-1)*(remaining_count-degree-2))",
+        "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+      },
+      "program_sha256": "33721397988a9017980d8bdd428323908079a3da831d166e1951a01ce3223982",
+      "deployment_AST_sha256": "2514674412e433c9a4172105ec786a80c8ae6a310f9c043833002f9d55bd1c77",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_fixed_base9:0",
+      "block": 3,
+      "arm": "fixed_base9",
+      "slot": 0,
+      "program": {
+        "name": "fixed_base9_00",
+        "features": [],
+        "rule": "weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "4956717e011da46628405f5faa8ef434e63eb8eb2d0851c3c95acee406ed401e",
+      "deployment_AST_sha256": "6c8fdf667d5ebbf9d2787aa08aa02239f0829b4e13c93f160785fed12490049d",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_fixed_base9:1",
+      "block": 3,
+      "arm": "fixed_base9",
+      "slot": 1,
+      "program": {
+        "name": "fixed_base9_01",
+        "features": [],
+        "rule": "weight/max(1,degree)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "cb2c418c239c563ac80367c4249a9d758ce0badc3dcc05d50cfe857933c1e64a",
+      "deployment_AST_sha256": "9dddbbc95acd3cafa2b569dcee07571ff99541f2db424dc496b07f1b01fcfc4d",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_fixed_base9:2",
+      "block": 3,
+      "arm": "fixed_base9",
+      "slot": 2,
+      "program": {
+        "name": "fixed_base9_02",
+        "features": [],
+        "rule": "weight/max(1,conflict_weight)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "1bb723415c2793c3dc9049fbebe19290167cdd8cbf28b8c3b6455050652d74d1",
+      "deployment_AST_sha256": "dae553111e9d685b60d9e5f956593bbc8585af79f981bf051a6c310c8043fb6b",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_fixed_base9:3",
+      "block": 3,
+      "arm": "fixed_base9",
+      "slot": 3,
+      "program": {
+        "name": "fixed_base9_03",
+        "features": [],
+        "rule": "weight-conflict_weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "8f7c4200e05ad637e42d69c3cfeae005ed0ba22de188e7be1740c075ed82dcca",
+      "deployment_AST_sha256": "1244c11f8321423cecd9fefe96114407b11f5484f8c0073f2374c6bb8cf2952f",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_fixed_base9:4",
+      "block": 3,
+      "arm": "fixed_base9",
+      "slot": 4,
+      "program": {
+        "name": "fixed_base9_04",
+        "features": [],
+        "rule": "weight*(1+degree)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "7f55613813af3cd2f0c0bc458a11283eece4ad6e09d0a369322375ae25b6e39b",
+      "deployment_AST_sha256": "ef24068ae25595dfe04158f09b2f7d23e25523d4633bcdee09870eb65a987e74",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_fixed_base9:5",
+      "block": 3,
+      "arm": "fixed_base9",
+      "slot": 5,
+      "program": {
+        "name": "fixed_base9_05",
+        "features": [],
+        "rule": "weight+compatible_weight",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "782901f6df8db5a1c4e2fb43401bdf61e531be1870b186f56810781d3613fd83",
+      "deployment_AST_sha256": "7cfa8c900fbe15f797173cc14df14bbf390f39a52195fc311ed2efde6ed17d26",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_fixed_base9:6",
+      "block": 3,
+      "arm": "fixed_base9",
+      "slot": 6,
+      "program": {
+        "name": "fixed_base9_06",
+        "features": [],
+        "rule": "weight/max(1,duration)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "d77012d53d800d3b17291893450b0f5ebfcaf60e68fec6a2b9aa82694221bb7d",
+      "deployment_AST_sha256": "0d7fa6ac1565f8e92ef944304f9588b5a7e5b70d6ab3fd0500bb4cda90559caf",
+      "status": "static_valid"
+    },
+    {
+      "id": "control_3_fixed_base9:7",
+      "block": 3,
+      "arm": "fixed_base9",
+      "slot": 7,
+      "program": {
+        "name": "fixed_base9_07",
+        "features": [],
+        "rule": "weight*(1+max_conflict_weight)/max(1,degree+station_gap+satellite_gap)",
+        "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+      },
+      "program_sha256": "bc83d9febdf320f4534f53cfe5c61fa4e33c2540d821df6a9a08cd2e6488f60a",
+      "deployment_AST_sha256": "5254602b03bfbb7ce64de360311a1f4731d983e547b6dc47488a11c695133660",
+      "status": "static_valid"
+    }
+  ],
+  "entries_sha256": "9b208c9cd9f8471d780b43f0b73fb152f58b5dbdd1a34965e43568881c6f3e2b",
+  "original_slots": 64,
+  "unique_original_ASTs": 16,
+  "repeated_blocks": 4,
+  "independent_authoring_draws": false,
+  "kernel_config": {
+    "version": "v06_shared_repair_train_configuration_001",
+    "decided_before_any_v06_shared_kernel_outcome": true,
+    "seconds": 0.5,
+    "clock": "wall",
+    "workers": 8,
+    "repair_config": {
+      "max_patch_vertices": 24,
+      "max_destroy": 4,
+      "max_patches": 32,
+      "expansion_steps": 1,
+      "node_budget_per_patch": 128,
+      "max_search_nodes": 4096,
+      "max_work": 200000,
+      "upper_pruning": true,
+      "policy_scope": "branch"
+    },
+    "author_packet_selection": "TRAIN metadata only: SHA-ordered first three DIMACS sources and first three SATLIB sources, then both sides of the SHA-ordered first source pair in each of the six temporal regime/horizon families; 18 states. No quality or conditional-label filtering.",
+    "quality_normalization": "Macro-average across the eight TRAIN families of exact feasible reward / total graph weight; this denominator is neither optimum nor a feasible best-method reference.",
+    "all_arms_share": "Initializer, targets/regions, patch construction, include-first traversal, bounds and all caps. Program priority changes only the local feasible greedy proposal and pivot vertex.",
+    "cap_scope": "Cooperative end-to-end nominal wall time and charged-operation cap; final incumbent validation is charged and any overshoot reported. An ordinary budget stop retains the feasible incumbent."
+  },
+  "interface_limits": {
+    "max_work": 100000000,
+    "cpu_seconds": 60
+  },
+  "joint_selector": "Unchanged full demanded-interface acyclicity gate, then max strict fit, max exact family quality, min exact family work, original slot",
+  "quality_only_baseline_selector": "Among all completed feasible TRAIN assessments (including interface-gate failures): max exact family quality, min exact family work, original slot. No gate failure is relabeled as eligible.",
+  "performance_deployment": "For each bank use the quality-only winner of repeat block0; the four repetitions do not multiply the performance sample size. Keep every other outcome in the mechanism report.",
+  "empty_bank": "Keep null; no extra AST, repair, oracle or fallback",
+  "selection_split": "train",
+  "test_accessed": false,
+  "authoring_barrier": "All15 original/supplemental requests must be frozen before execution"
+}

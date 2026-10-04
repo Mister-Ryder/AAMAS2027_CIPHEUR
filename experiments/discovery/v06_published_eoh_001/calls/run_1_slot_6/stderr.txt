@@ -1,0 +1,7 @@
+2026-10-03T20:57:18.628124Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T20:57:18.628193Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T20:57:18.637387Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T20:57:20.965964Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T20:57:20.966006Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T20:57:51.772028Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a1038e-960c-7cb2-9e43-ec7a86b5a973: invalid thread-store request: no rollout found for thread id 01a1038e-960c-7cb2-9e43-ec7a86b5a973
+2026-10-03T20:59:19.499460Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a1038e-968f-7d80-9e5b-b4e8258075d3 hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)

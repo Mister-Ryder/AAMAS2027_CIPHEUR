@@ -1,0 +1,262 @@
+{
+  "name": "clique_compressed_opportunity_ratio",
+  "features": [
+    {
+      "name": "active_weight",
+      "expression": {
+        "op": "sum_weights",
+        "args": [
+          {
+            "op": "available",
+            "args": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "residual_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "singleton",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "residual_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "singleton",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              },
+              {
+                "op": "available",
+                "args": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              },
+              {
+                "op": "available",
+                "args": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "boundary_edges",
+      "expression": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "intersection",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "available",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rule": "weight/max(1e-9,weight+0.5*(neighbor_pack+neighbor_cover)) + 0.35*(weight+residual_pack)/max(1e-9,active_weight) - 0.15*max(0,residual_cover-residual_pack)/max(1e-9,active_weight) + 0.05*min(1,max(0,boundary_edges)/max(1,degree*max(1,remaining_count-degree-1)))",
+  "rationale": "The parents are identical: their common backbone combines immediate weight, residual greedy packing and clique-cover continuation, neighbor opportunity cost, and conflict-edge relief. This variant explores a ratio based on compressed neighbor alternatives: mutually conflicting neighbors should cost less than equally heavy independent neighbors. The midpoint of neighbor packing and cover estimates supplies that cost. A normalized feasible continuation supports the ratio, while the residual cover-minus-pack gap penalizes uncertain optimism instead of rewarding it. Boundary density adds a small preference for removing conflicts that constrain surviving vertices. Structural sets are restricted to available vertices. This is an unevaluated heuristic."
+}

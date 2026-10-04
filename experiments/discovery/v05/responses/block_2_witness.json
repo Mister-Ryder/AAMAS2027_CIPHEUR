@@ -1,0 +1,407 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 2,
+  "arm": "witness",
+  "candidates": [
+    {
+      "name": "cluster_degree",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1,degree-2*neighbor_edges/max(1,degree))",
+      "rationale": "Discounts blocking degree when neighbors conflict with each other; weighted edge moments retain further distinctions hidden by the base features."
+    },
+    {
+      "name": "edge_product_loss",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight*weight/max(0.25,weight+max(max_conflict_weight,conflict_weight-2*neighbor_edge_product/max(0.25,conflict_weight)))",
+      "rationale": "Uses weighted internal conflicts to discount redundant neighbor mass, with the largest neighbor weight providing a floor on estimated opportunity cost."
+    },
+    {
+      "name": "cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight/max(0.25,neighbor_cover)",
+      "rationale": "Compares candidate value with a clique-partition upper estimate of selectable blocked weight; edge moments supplement the declared structural interface."
+    },
+    {
+      "name": "pack_ratio",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight/max(0.25,neighbor_pack)",
+      "rationale": "Treats a feasible packing of neighbors as blocked opportunity weight, directly exposing the neighbor compatibility distinction in the supplied witness."
+    },
+    {
+      "name": "bound_blend_ratio",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight/max(0.25,(neighbor_pack+neighbor_cover)/2)",
+      "rationale": "Blends feasible neighbor packing and clique-cover estimates to hedge their different biases while retaining weighted neighborhood detail."
+    },
+    {
+      "name": "cover_weighted_gain",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight*weight/max(0.25,weight+neighbor_cover)",
+      "rationale": "Balances absolute candidate value against cover-based opportunity cost, reducing the tendency of a pure ratio to favor very small contacts."
+    },
+    {
+      "name": "pack_weighted_gain",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight*weight/max(0.25,weight+neighbor_pack)",
+      "rationale": "Balances absolute value against a feasible estimate of blocked alternatives, preserving sensitivity to compatibility among neighbors."
+    },
+    {
+      "name": "cover_effective_degree",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight/max(1,degree*neighbor_cover/max(0.25,conflict_weight))",
+      "rationale": "Rescales degree by the fraction of neighbor mass represented in the clique-cover construction, discounting mutually incompatible blockers."
+    },
+    {
+      "name": "pack_effective_degree",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight/max(1,degree*neighbor_pack/max(0.25,conflict_weight))",
+      "rationale": "Uses feasible neighbor packing to estimate effective blocking degree, providing a more aggressive redundancy discount than the cover variant."
+    },
+    {
+      "name": "forced_lower_completion",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "union",
+                    "args": [
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+compatible_pack+0.01*weight/max(1,degree)",
+      "rationale": "Ranks a forced inclusion by its value plus a feasible compatible completion, with a small preference for value per conflict."
+    },
+    {
+      "name": "forced_mixed_completion",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "union",
+                    "args": [
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "union",
+                    "args": [
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+0.75*compatible_pack+0.25*compatible_cover+0.01*weight/max(1,degree)",
+      "rationale": "Combines feasible and optimistic compatible-completion estimates, preserving the hypothesis that greedy residual packing can undervalue promising branches."
+    },
+    {
+      "name": "forced_pack_regret",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "union",
+                    "args": [
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {
+                    "op": "union",
+                    "args": [
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_root_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+compatible_pack-without_root_pack+0.01*weight/max(1,degree)",
+      "rationale": "Measures forced-inclusion gain relative to a feasible packing with the root removed, adding a small preference for value per conflict."
+    }
+  ]
+}

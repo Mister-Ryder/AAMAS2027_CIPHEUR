@@ -1,0 +1,15 @@
+{
+  "version": "v06_pre_TEST_relabel_robustness_001",
+  "registered_before_any_TEST_programme_evaluation": true,
+  "dataset": "All72 frozen V06 withheld-label states, retaining every planned query and quota shortfall",
+  "permutations_per_source": 5,
+  "salt": "V06_RELABEL_ROBUSTNESS_20261004_001",
+  "mapping": "For each original source cluster and permutation index, SHA256(salt|cluster|index|old_node_id) orders the original IDs; replace them bijectively by r000,r001,... . Use the same mapping for both paired configurations.",
+  "labels": "Reuse sound original TEST signed intervals through the exact graph/weight/F/X/action bijection after program freeze; no new conditional oracle call is needed or allowed for a relabeling.",
+  "comparators": "All12 genuine TRAIN-selected programs, fixed Degree, and the pre-frozen enumerated structural control bank under identical evaluation semantics",
+  "metrics": ["Actual strict fit on original labels", "Mean and worst strict fit across all5 relabelings", "Strict feature alias and quotient obstruction counts", "Normal/error incumbent coverage and shared-kernel reward/work"],
+  "rationale": "Greedy packing and clique-partition feature primitives have deterministic ID tie breaks. A typed DSL without explicit ID lookup does not imply graph-isomorphism invariance; this test measures whether learned distinctions transfer across harmless input renaming.",
+  "conditions": "No program/library/kernel/selector changes based on this TEST result; all permutations retained regardless of performance. Four authoring blocks remain distinct from source-instance uncertainty.",
+  "budget": "Use the same0.5 nominal-wall shared held-out mechanism configuration as TRAIN (24patch vertices/4destroy/32patches/128nodes perpatch/4096total/200000work). Report actual time and all budget/error statuses; scalar strict-fit is checked on the original full certified snapshots.",
+  "hypothesis": "This is a robustness measurement, not an assumed invariance theorem or promised advantage. Negative sensitivity is reported."
+}

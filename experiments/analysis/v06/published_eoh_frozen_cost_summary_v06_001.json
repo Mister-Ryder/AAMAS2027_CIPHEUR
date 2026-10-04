@@ -1,0 +1,50 @@
+{
+  "version": "v06_frozen_EoH_32_author_cost_and_selection_summary_001",
+  "selection_sha256": "7b29fc50cc922c18dab66616f08b57dc267bb9599e2707338d5dbbc1de649cf8",
+  "author_audit_sha256": "bf97171fba2e5b666c57b51298c43d33f1a678996c8fae545600fc6b94e3a778",
+  "TRAIN_audit_sha256": "63f320c6fbc1c42a3100e0e840171888d88a62be6b6a90f45a104b251f0d305d",
+  "actual_native_author_calls": 32,
+  "call_wall_sum_seconds": 5995.335014299984,
+  "call_wall_mean_seconds": 187.3542191968745,
+  "call_wall_min_seconds": 72.47697200000403,
+  "call_wall_max_seconds": 411.3909595999867,
+  "observed_usage_totals": {
+    "input_tokens": 2964177,
+    "cached_input_tokens": 1569152,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 127613,
+    "reasoning_output_tokens": 101151
+  },
+  "actual_served_model_identity_known": false,
+  "observed_model_all_null": true,
+  "completed_fitness_positions": 36,
+  "kernel_assignments": 4320,
+  "quality_values_exact": [
+    "2693/4480"
+  ],
+  "winner_origins": [
+    {
+      "id": "published_EoH_DSL_quality:run_0",
+      "origin": "shared_R1_warm_seed",
+      "source_id": "run_0:warm_seed"
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_1",
+      "origin": "shared_R1_warm_seed",
+      "source_id": "run_1:warm_seed"
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_2",
+      "origin": "shared_R1_warm_seed",
+      "source_id": "run_2:warm_seed"
+    },
+    {
+      "id": "published_EoH_DSL_quality:run_3",
+      "origin": "shared_R1_warm_seed",
+      "source_id": "run_3:warm_seed"
+    }
+  ],
+  "no_author_feedback_from_analysis": true,
+  "TEST_evaluated": false,
+  "scope": "Cumulative original author-call wall receipts, not concurrent elapsed time; cached tokens are a subset of input. Parent evaluator CPU excludes worker CPU. Rounded-quality ties retain shared seed; no newly authored performance improvement."
+}

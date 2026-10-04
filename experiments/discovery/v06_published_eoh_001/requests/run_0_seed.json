@@ -1,0 +1,285 @@
+{
+  "version": "v06_published_EoH_transaction_001",
+  "run": 0,
+  "slot": null,
+  "id": "run_0:warm_seed",
+  "operator": "seed",
+  "protocol_sha256": "7885a103ffd550ae8e50b95367220d3967e62d73eb17e5a6dfd31493d0a9e283",
+  "root_release_sha256": "6f3a7059c92bebbf2905cdf51a9eda681a73d8990f3f254fc567c3b461ad9c35",
+  "training_states_sha256": "898b4746d2f4daa6b4672340598115daba5adea137d2eb1ba6386eca18ef7d8d",
+  "parents": [],
+  "population_before": [],
+  "program": {
+    "name": "shared_seed_v06r2",
+    "features": [
+      {
+        "name": "residual_pack",
+        "expression": {
+          "op": "greedy_independent_weight",
+          "args": [
+            {
+              "op": "difference",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "available",
+                      "args": []
+                    },
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "singleton",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "residual_cover",
+        "expression": {
+          "op": "clique_cover_weight",
+          "args": [
+            {
+              "op": "difference",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "available",
+                      "args": []
+                    },
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "singleton",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "residual_edges",
+        "expression": {
+          "op": "count",
+          "args": [
+            {
+              "op": "induced_edges",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "neighbor_edges",
+        "expression": {
+          "op": "count",
+          "args": [
+            {
+              "op": "induced_edges",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "boundary_edges",
+        "expression": {
+          "op": "sub",
+          "args": [
+            {
+              "op": "sub",
+              "args": [
+                {
+                  "op": "count",
+                  "args": [
+                    {
+                      "op": "induced_edges",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "count",
+                  "args": [
+                    {
+                      "op": "induced_edges",
+                      "args": [
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "neighbor_pack",
+        "expression": {
+          "op": "greedy_independent_weight",
+          "args": [
+            {
+              "op": "neighbors",
+              "args": [
+                {
+                  "op": "root",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "rule": "weight + 0.6*residual_pack + 0.4*residual_cover - 0.15*neighbor_pack + 0.2*boundary_edges/max(1e-9,abs(1+degree)) + 0.1*neighbor_edges/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree",
+    "rationale": ""
+  }
+}

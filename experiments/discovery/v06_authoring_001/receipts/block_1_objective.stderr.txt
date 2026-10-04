@@ -1,0 +1,11 @@
+2026-10-03T15:58:12.474957Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T15:58:12.475057Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T15:58:12.485616Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T15:58:17.339852Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T15:58:17.339931Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T15:58:17.453050Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T15:58:41.332126Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"Failed to create unified exec process: helper_unknown_error: apply deny-read ACLs\")" }
+2026-10-03T15:59:20.345217Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a1027c-bfe1-7273-8fc9-8153aeaba400: invalid thread-store request: no rollout found for thread id 01a1027c-bfe1-7273-8fc9-8153aeaba400
+2026-10-03T16:02:52.472957Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-10-03T16:05:34.909327Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a1027c-c05a-7fb1-bf75-c8ef5e501827 hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)
+2026-10-03T16:05:59.926594Z  WARN codex_analytics::client: timed out or failed while flushing analytics events

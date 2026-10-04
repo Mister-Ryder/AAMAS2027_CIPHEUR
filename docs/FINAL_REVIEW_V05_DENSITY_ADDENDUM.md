@@ -1,0 +1,37 @@
+# Independent V05 density-candidate review and V06 handoff
+
+Date: 2026-10-03. Read-only scientific and rendered-page review. This supplements, rather than overwrites, the historical `FINAL_REVIEW_V05.md` bound to the earlier 25-reference PDF.
+
+Reviewed PDF: `paper/main.pdf`, SHA256 **a17b566e0616db7ba56b045aec26ce31527f12dbba32744ca4281f2640820fbc**. All nine existing page renders `.research/v05_compact/finaldensity-1.png` through `finaldensity-9.png` were visually inspected. The candidate has **eight body pages plus one reference page, 36 printed formal references, six figures and five tables**. No manuscript, figure, table, frozen result or source capsule was changed by this review.
+
+**Status: not approved for final publication.** The user rejected the current scientific execution after reviewing the first comparison table. The paper's remaining weakness is substantive: specialized native MWIS methods and classical exchange dominate the greedy policy on the current mostly saturated small scheduling problems. The existing matched study supports a small relational-feedback difference and almost no explicit-witness difference. Visual polish, denser tables or a different denominator cannot repair those findings. V06 requires a new shared strong kernel and new frozen evidence/authoring/evaluation protocol, while retaining all V05 results.
+
+## Page layout and visuals
+
+All nine pages are legible in the supplied renders. No clipped graph, caption, table cell, equation or overlapping text was observed. References begin on page nine, with conclusion on page eight. Main Table 1 retains the full quality and coverage method inventory; observed native maxima are emphasized. Full timing panels have moved to supplementary Markdown, while the body retains the principal timing caveat. This is acceptable space management, not permission to hide unfavorable methods.
+
+The concept graphics comprise the introductory graph example, the evidence/refinement mechanism and the native editable algorithm flow. Quantitative panels comprise effect gain, the evidence trajectory, authoring yield, authoring utility, heap scaling and exploratory transfer completion. Compact quantitative panels preserve the registered counts, prefix gaps, block curves and intervals. Identical A/B authoring yield curves use nested markers without numerical jitter.
+
+Concrete presentation issues remain:
+
+- Figure 5 uses purple for A/Witness and blue for B/Relations; Tables 3/4 and Figure 6 use blue for the witness arm. Make categorical colors consistent without changing data.
+- Figure 6's left caption should explicitly identify the **primary AST**: the plotted 1,368 pairs are primary-program comparisons, whereas 2,736 in the prose includes Degree as well. This is CPU/backend evidence, not a quality or LLM effect.
+- Figure 2a's unequal-reward actions and Figure 2b's equal-reward alias witness are different examples. The caption already says so; visual headings could make the distinction easier to see.
+- Concept raster graphics use serif text while algorithm/quantitative panels use Arial. The flowchart has approximately 8.3–8.6-point actual PDF text; quantitative upright glyphs are approximately 9.3 points at target width. They are readable, but the entire figure suite should not be described as uniformly nine-point text. Rotated glyph bounding boxes are not a valid estimate of their font size.
+- The body describes twelve cold authoring sessions without identifying their requested model/reasoning configuration. A brief reproducibility sentence can state the receipt's requested `gpt-6.1-sol`/`ultra` configuration and distinguish this from unavailable served-model metadata.
+
+## Scientific checks
+
+The manuscript appropriately separates conditional interval certification, feature-interface representability, bounded numerical rule fit, inference performance and model contribution. Its finite quotient result concerns arbitrary scalar scores on observed equivalence classes, not guaranteed DSL fit or transfer. Its finite catalogue optimality statement assumes globally solved positive additive standalone costs and final elimination of all cycles; it is not the observed LLM-bank selector or shared-cache runtime optimum. Cancellation relies on identical fixed graph/boundary and exact matching residual components. Restricted pooled regret does not cover every possible action or whole greedy schedules. Pairwise feasibility does not establish all physical resource constraints beyond the declared conflict predicate.
+
+Important empirical limitations remain correctly visible: original authoring/control counts are unmatched; public selected-rule counterexamples are not successful repairs; all 144 new actual-only quotients are acyclic; prior diagnostic requirements cause gate-yield differences; no new candidate fits all 824 numerical requirements; witness–relations TEST difference is approximately +0.0143 percentage points with two block ties; relations–objective difference is approximately +0.6571 points over four blocks. These results do not establish an overall LLM causal effect or a superior witness strategy.
+
+The exploratory local transfer uses twelve unchanged TRAIN winners on 120 already seen graph contexts with 1,560 assignments. Of those, 1,007 complete and 553 reach a cooperative CPU cap. The independent archive-bound audit verifies 141,652 checks with zero errors, including original U/L denominators, trace rewards, source/winner identity and selected first argmax checks. Reused source graphs, unit/hash variants and physical pair sides are not independent new TEST sources. Interrupted runs' original zero-quality convention remains disclosed; V06's incumbent-preserving kernel should instead retain its verified incumbent and record interruption separately. Parsing precedes the cooperative meter but is included in reported actual CPU/wall time.
+
+The requested server replay was pending when the PDF candidate was reviewed. It subsequently completed and received a separate independent 156,291-check/zero-error audit, recorded in `MATCHED_TRANSFER_SERVER_AUDIT_V05.md`. All 1,007 jointly completed assignments have identical exact rewards, selected lists and full scores/traces; 47 additional server assignments complete and 506 remain capped. This addendum does not silently reinterpret the PDF's local rows as server outcomes. The original 2,808-assignment matched TEST already had server provenance and is not claimed as a new rerun. The replay addresses execution verification, while the user's scientific rejection still requires V06 reconstruction.
+
+The 36 printed references are formal proceedings/journal items. Existing bibliography files and the bibliography-only check exclude arXiv/preprint entries. Reference breadth now supplies relevant prior art; it does not substitute for a competitive algorithm or new evidence. The V06 draft separates framework attribution from complete published-method comparison and forbids a guaranteed-acceptance claim.
+
+## Handoff
+
+The historical V05 candidate remains an evidence-bearing intermediate draft, with its PDF hash and original audits retained. The new design is recorded separately in `V06_EVALUATION_PROTOCOL_DRAFT.md`. No final manifest should bind this rejected scientific candidate as the achieved target, and no result should be written as completed before its source-bound execution and independent review exist.

@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/root/autodl-tmp/aamas2027_v06_published_eoh_001/cipheur/published_eoh_v06.py", line 450, in <module>
+    main()
+  File "/root/autodl-tmp/aamas2027_v06_published_eoh_001/cipheur/published_eoh_v06.py", line 446, in main
+    print(json.dumps(action(**args), ensure_ascii=False))
+                     ^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/aamas2027_v06_published_eoh_001/cipheur/published_eoh_v06.py", line 291, in evaluate
+    proto = load_study(study, root_release_sha256); req = read(request_path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/aamas2027_v06_published_eoh_001/cipheur/published_eoh_v06.py", line 141, in load_study
+    if digest(study / name) != expected:
+       ^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/aamas2027_v06_published_eoh_001/cipheur/synthesis_study_v06.py", line 30, in digest
+    return sha256(Path(path).read_bytes()).hexdigest()
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/aamas2027_v03/py311/lib/python3.11/pathlib.py", line 1050, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/aamas2027_v03/py311/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'experiments/discovery/v06_published_eoh_001/source_snapshot\\cipheur\\__init__.py'

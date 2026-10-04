@@ -1,0 +1,515 @@
+{
+  "scope": "read-only source and compile-flag width inventory; no benchmark solver execution",
+  "records": [
+    {
+      "path": "CHILS/include/graph.h",
+      "sha256": "8e9d38b0c80c68a073440da50759f5770caa36e4467cbdd282ab11cca0bdeba8",
+      "relevant_lines": [
+        {
+          "line": 10,
+          "text": "long long m;  // Number of edges"
+        },
+        {
+          "line": 11,
+          "text": "long long *V; // Neighborhood pointers"
+        },
+        {
+          "line": 13,
+          "text": "long long *W; // Vertex weights"
+        },
+        {
+          "line": 27,
+          "text": "void graph_subgraph_par(graph *g, graph *sg, int *Mask, int *RM, int *FM, long long *S1, long long *S2);"
+        }
+      ]
+    },
+    {
+      "path": "CHILS/include/local_search.h",
+      "sha256": "64bf1cec407f3e38f331a4c0f17d773f58e3f14988b93923f9514cadd32dbd0b",
+      "relevant_lines": [
+        {
+          "line": 8,
+          "text": "long long cost;"
+        },
+        {
+          "line": 20,
+          "text": "long long *adjacent_weight;"
+        },
+        {
+          "line": 24,
+          "text": "long long log_count, log_alloc;"
+        },
+        {
+          "line": 53,
+          "text": "void local_search_explore(graph *g, local_search *ls, double tl, long long il, int verbose);"
+        }
+      ]
+    },
+    {
+      "path": "CHILS/include/chils_internal.h",
+      "sha256": "9f9632a69552c501daec03300fd4c8f2f87190904a12ec167b6929581baf179e",
+      "relevant_lines": [
+        {
+          "line": 9,
+          "text": "long long step_count;"
+        },
+        {
+          "line": 11,
+          "text": "long long cost;"
+        },
+        {
+          "line": 19,
+          "text": "long long *S1, *S2;"
+        },
+        {
+          "line": 26,
+          "text": "void chils_run(graph *g, chils *c, double tl, long long cl, int verbose);"
+        }
+      ]
+    },
+    {
+      "path": "CHILS/src/graph.c",
+      "sha256": "4b684cf91ece5690ede3fe1fa80237e8081aef3204001e99f0db10ad11e9db26",
+      "relevant_lines": [
+        {
+          "line": 7,
+          "text": "static inline void parse_id(char *Data, size_t *p, long long *v)"
+        },
+        {
+          "line": 42,
+          "text": "long long n, m, t = 0;"
+        },
+        {
+          "line": 61,
+          "text": "long long *V = malloc(sizeof(long long) * (n + 1));"
+        },
+        {
+          "line": 64,
+          "text": "long long *W = malloc(sizeof(long long) * n);"
+        },
+        {
+          "line": 66,
+          "text": "long long ei = 0;"
+        },
+        {
+          "line": 85,
+          "text": "long long e;"
+        },
+        {
+          "line": 140,
+          "text": "long long *Edge_pos = malloc(sizeof(long long) * g->n);"
+        },
+        {
+          "line": 142,
+          "text": "long long M = 0;"
+        },
+        {
+          "line": 147,
+          "text": "long long d_u = g->V[u + 1] - g->V[u];"
+        },
+        {
+          "line": 159,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 230,
+          "text": "long long n = 0, m = 0;"
+        },
+        {
+          "line": 240,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 248,
+          "text": "sg->V = malloc(sizeof(long long) * (n + 1));"
+        },
+        {
+          "line": 250,
+          "text": "sg->W = malloc(sizeof(long long) * n);"
+        },
+        {
+          "line": 261,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 278,
+          "text": "void graph_subgraph_par(graph *g, graph *sg, int *Mask, int *RM, int *FM, long long *S1, long long *S2)"
+        },
+        {
+          "line": 282,
+          "text": "long long n = 0, m = 0;"
+        },
+        {
+          "line": 292,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 302,
+          "text": "long long n_offset = 0;"
+        },
+        {
+          "line": 319,
+          "text": "long long m_offset = 0;"
+        },
+        {
+          "line": 332,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        }
+      ]
+    },
+    {
+      "path": "CHILS/src/local_search.c",
+      "sha256": "72b9ce55083d5c4f4e5b91ba02a95cad01776b3b047c280eb96e4bca4cc3ac6e",
+      "relevant_lines": [
+        {
+          "line": 25,
+          "text": "ls->adjacent_weight = malloc(sizeof(long long) * g->n);"
+        },
+        {
+          "line": 53,
+          "text": "free(ls->adjacent_weight);"
+        },
+        {
+          "line": 84,
+          "text": "ls->adjacent_weight[u] = 0;"
+        },
+        {
+          "line": 107,
+          "text": "if (!ls->tabu[u] && ls->adjacent_weight[u] < g->W[u])"
+        },
+        {
+          "line": 127,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 133,
+          "text": "ls->adjacent_weight[v] += g->W[u];"
+        },
+        {
+          "line": 163,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 166,
+          "text": "ls->adjacent_weight[v] -= g->W[u];"
+        },
+        {
+          "line": 183,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 200,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 219,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 229,
+          "text": "long long best = LLONG_MIN;"
+        },
+        {
+          "line": 235,
+          "text": "long long i2 = g->V[v];"
+        },
+        {
+          "line": 251,
+          "text": "long long gain = (my_rand_r(&ls->seed) % (1 << 30)) - (1 << 29);"
+        },
+        {
+          "line": 252,
+          "text": "long long diff = (g->W[w1] + g->W[v]) - g->W[u];"
+        },
+        {
+          "line": 283,
+          "text": "for (long long i = g->V[u]; i < g->V[u + 1]; i++)"
+        },
+        {
+          "line": 304,
+          "text": "long long best = INT_MIN;"
+        },
+        {
+          "line": 307,
+          "text": "for (long long i = g->V[current]; i < g->V[current + 1]; i++)"
+        },
+        {
+          "line": 315,
+          "text": "for (long long j = g->V[v]; j < g->V[v + 1] && valid; j++)"
+        },
+        {
+          "line": 327,
+          "text": "long long gain;"
+        },
+        {
+          "line": 333,
+          "text": "long long change = g->W[v];"
+        },
+        {
+          "line": 359,
+          "text": "long long diff = 0, best = LLONG_MIN;"
+        },
+        {
+          "line": 374,
+          "text": "ls->temp[(long long)g->n + to_add++] = v;"
+        },
+        {
+          "line": 391,
+          "text": "int v = ls->temp[(long long)g->n + i];"
+        },
+        {
+          "line": 426,
+          "text": "if (!ls->independent_set[u] && ls->adjacent_weight[u] < g->W[u])"
+        },
+        {
+          "line": 452,
+          "text": "long long best = ls->cost;"
+        },
+        {
+          "line": 491,
+          "text": "void local_search_explore(graph *g, local_search *ls, double tl, long long il, int verbose)"
+        },
+        {
+          "line": 493,
+          "text": "long long best = ls->cost, c = 0;"
+        }
+      ]
+    },
+    {
+      "path": "CHILS/src/chils.c",
+      "sha256": "5fb4fa4189c81e41d1ee6cb09cb6dc1b79ff0faab4475a2e0e095e3fc4d8a6e6",
+      "relevant_lines": [
+        {
+          "line": 17,
+          "text": "long long _an, m, _am;"
+        },
+        {
+          "line": 18,
+          "text": "long long *W;"
+        },
+        {
+          "line": 25,
+          "text": "long long cost;"
+        },
+        {
+          "line": 42,
+          "text": "d->W = malloc(sizeof(long long) * d->_an);"
+        },
+        {
+          "line": 73,
+          "text": "int chils_add_vertex(void *solver, long long weight)"
+        },
+        {
+          "line": 86,
+          "text": "d->W = realloc(d->W, sizeof(long long) * d->_an);"
+        },
+        {
+          "line": 111,
+          "text": "void chils_set_graph(void *solver, int n, const long long *xadj, const int *adjncy, const long long *weights)"
+        },
+        {
+          "line": 118,
+          "text": "d->g->V = malloc(sizeof(long long) * (n + 1));"
+        },
+        {
+          "line": 120,
+          "text": "d->g->W = malloc(sizeof(long long) * n);"
+        },
+        {
+          "line": 125,
+          "text": "for (long long i = 0; i < xadj[n]; i++)"
+        },
+        {
+          "line": 139,
+          "text": "long long *V = malloc(sizeof(long long) * (d->n + 1));"
+        },
+        {
+          "line": 141,
+          "text": "long long *W = malloc(sizeof(long long) * d->n);"
+        },
+        {
+          "line": 167,
+          "text": "for (long long i = 0; i < d->m; i++)"
+        },
+        {
+          "line": 180,
+          "text": "long long p = 0;"
+        },
+        {
+          "line": 184,
+          "text": "for (long long i = V[u]; i < V[u + 1]; i++)"
+        },
+        {
+          "line": 275,
+          "text": "long long chils_solution_get_weight(void *solver)"
+        }
+      ]
+    },
+    {
+      "path": "KaMIS_v32/mmwis/extern/KaHIP/lib/definitions.h",
+      "sha256": "26c7a36ab7f484269e31f06ab7d510b5e3b5463dc4d08987a78fa65c5c88c5f4",
+      "relevant_lines": [
+        {
+          "line": 36,
+          "text": "typedef unsigned int \tNodeWeight;"
+        }
+      ]
+    },
+    {
+      "path": "KaMIS_v32/mmwis/lib/mis/evolutionary/population_mis.cpp",
+      "sha256": "a8a6402874302f9dc223cd1627b8bd50388e759a18ca3428c23f3024ba45eda5",
+      "relevant_lines": [
+        {
+          "line": 88,
+          "text": "NodeWeight solution_weight = create_solution(G, solution);"
+        },
+        {
+          "line": 90,
+          "text": "ind.solution_weight = solution_weight;"
+        },
+        {
+          "line": 112,
+          "text": "unsigned int winner_weight = 0;"
+        },
+        {
+          "line": 115,
+          "text": "if (internal_population[ind_id].solution_weight > winner_weight) {"
+        },
+        {
+          "line": 117,
+          "text": "winner_weight = internal_population[ind_id].solution_weight;"
+        },
+        {
+          "line": 155,
+          "text": "if (internal_population[i].solution_weight > max_solution) {"
+        },
+        {
+          "line": 156,
+          "text": "max_solution = internal_population[i].solution_weight;"
+        },
+        {
+          "line": 172,
+          "text": "NodeWeight population_mis::create_solution(graph_access & G, NodeID *solution) {"
+        },
+        {
+          "line": 173,
+          "text": "NodeWeight solution_weight = 0;"
+        },
+        {
+          "line": 177,
+          "text": "solution_weight += G.getNodeWeight(node);"
+        },
+        {
+          "line": 181,
+          "text": "return solution_weight;"
+        },
+        {
+          "line": 224,
+          "text": "NodeWeight solution_weight = create_solution(G, solution);"
+        },
+        {
+          "line": 226,
+          "text": "ind.solution_weight = solution_weight;"
+        },
+        {
+          "line": 246,
+          "text": "if (internal_population[i].solution_weight < worse_solution) {"
+        },
+        {
+          "line": 247,
+          "text": "worse_solution = internal_population[i].solution_weight;"
+        },
+        {
+          "line": 260,
+          "text": "ind.solution_weight = 0;"
+        },
+        {
+          "line": 263,
+          "text": "ind.solution_weight += G.getNodeWeight(node);"
+        },
+        {
+          "line": 273,
+          "text": "if (ind.solution_weight <= worse_solution) {"
+        },
+        {
+          "line": 285,
+          "text": "ind.solution_weight = 0;"
+        },
+        {
+          "line": 287,
+          "text": "if (G.getPartitionIndex(node) == 1) {ind.solution_weight += G.getNodeWeight(node);}"
+        },
+        {
+          "line": 322,
+          "text": "if (ind.solution_weight < internal_population[i].solution_weight) continue;"
+        },
+        {
+          "line": 469,
+          "text": "MaxHeap<NodeWeight> pq;"
+        },
+        {
+          "line": 474,
+          "text": "NodeWeight key_value = 0;"
+        },
+        {
+          "line": 475,
+          "text": "pq.insert(node, G.getNodeWeight(node));"
+        },
+        {
+          "line": 499,
+          "text": "printf(\"|--Solution weight:\\t%ld\\n\", internal_population[i].solution_weight);"
+        },
+        {
+          "line": 504,
+          "text": "double population_mis::get_avg_solution_weight() {"
+        },
+        {
+          "line": 507,
+          "text": "total_size += (double) internal_population[i].solution_weight;"
+        }
+      ]
+    },
+    {
+      "path": "KaMIS_v32/wmis/extern/KaHIP/lib/definitions.h",
+      "sha256": "4a71c119031e1ec6418e7a394b0eee8fd5e6ea2fc2a750737654417ee361d2d8",
+      "relevant_lines": [
+        {
+          "line": 35,
+          "text": "typedef unsigned int \tNodeWeight;"
+        }
+      ]
+    },
+    {
+      "path": "KaMIS_v32/mmwis/build/CMakeFiles/mmwis.dir/flags.make",
+      "sha256": "4f45ff788c804dd92cb2b3dec93a8afa186fe99b391f44ac028f25beab792087",
+      "relevant_lines": [
+        {
+          "line": 12,
+          "text": "CXX_FLAGS = -O3 -DNDEBUG -fPIE   -w -funroll-loops -fno-stack-limit -march=native -fpermissive -Wno-unused-value -Wno-unused-result -fopenmp -std=c++11"
+        }
+      ]
+    },
+    {
+      "path": "KaMIS_v32/build/wmis/CMakeFiles/branch_reduce.dir/flags.make",
+      "sha256": "b6f866e3a1b8e8335464c4a4fb1590006a8383d9d5970f607d2abac7ce7f0c84",
+      "relevant_lines": [
+        {
+          "line": 12,
+          "text": "CXX_FLAGS = -O3 -DNDEBUG -fPIE   -funroll-loops -fno-stack-limit -march=native -fpermissive -Wno-unused-value -Wno-unused-result -fopenmp -fno-omit-frame-pointer -march=native -Wno-unused-value -Wno-unused-result -fno-stack-limit -funroll-loops -std=c++14"
+        }
+      ]
+    },
+    {
+      "path": "KaMIS_v32/mmwis/build/extern/struction/CMakeFiles/branch_reduce_convergence.dir/flags.make",
+      "sha256": "38bd31bdcf2c1dffa3c92fdc34911cb93e7e1f7d09dc0fe606f110579a233f67",
+      "relevant_lines": [
+        {
+          "line": 12,
+          "text": "CXX_FLAGS =  -std=c++14 -fno-omit-frame-pointer -march=native -DNDEBUG -fPIC -O3  -O3 -DNDEBUG -fPIE   -w -funroll-loops -fno-stack-limit -march=native -fpermissive -Wno-unused-value -Wno-unused-result -fopenmp -std=c++11"
+        }
+      ]
+    }
+  ],
+  "conclusion": "CHILS weight/parser/cost/local-neighbor accumulators are signed long long; M2WIS and WeightedBR NodeWeight uses unsigned int32; no universal safe signed64 enlargement inferred",
+  "graphs_optimized": 0
+}

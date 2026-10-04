@@ -1,0 +1,1919 @@
+{
+  "version": "v06_four_genuine_joint_demo_bank_001",
+  "TRAIN_selection_sha256": "bce7361133bc2ae2fc0eba0d22206c64a78d5e5ad22c7f163bc8a3c8de14ce73",
+  "selection_split": "train",
+  "TEST_used_for_selection": false,
+  "representative_default": "first preregistered matched block, not selected by TEST",
+  "programs": [
+    {
+      "id": "joint|block_0_witness:2",
+      "block": 0,
+      "arm": "witness",
+      "slot": 2,
+      "program": {
+        "name": "mixed_deletion_signature",
+        "features": [
+          {
+            "name": "residual_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "residual_cover",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "neighbor_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "neighbor_edges",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "boundary_edges",
+            "expression": {
+              "op": "sub",
+              "args": [
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "count",
+                  "args": [
+                    {
+                      "op": "induced_edges",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "neighbors",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "deletion_signature",
+            "expression": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "op": "sum_weights",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            }
+                          ]
+                        },
+                        {
+                          "op": "weight",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "clique_cover_weight",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight + 0.6*residual_pack + 0.4*residual_cover - 0.15*neighbor_pack - 0.2*boundary_edges/max(1e-9,abs(1+degree)) + 0.1*neighbor_edges/max(1e-9,abs(1+degree)) + 0.3*degree - 0.8*deletion_signature/max(1e-9,abs(remaining_count+weight))",
+        "rationale": "Preserve five seed features and replace residual edge count with a demanded mixed deletion signature. The signature combines packing and cover within one feature slot; it does not certify the complete quotient."
+      },
+      "program_sha256": "c210ae1446dfdc7248241131abd4624e70ea3051dc25077da04ca76f1693f8ad",
+      "eligible": true,
+      "source_candidate_id": "block_0_witness:2",
+      "role": "proposed_witness_joint",
+      "joint_gate_required": true
+    },
+    {
+      "id": "joint|block_1_witness:1",
+      "block": 1,
+      "arm": "witness",
+      "slot": 1,
+      "program": {
+        "name": "context_seed_conservative",
+        "features": [
+          {
+            "name": "retained_pack",
+            "expression": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "greedy_independent_weight",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "op": "count",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            }
+                          ]
+                        },
+                        {
+                          "op": "weight",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "retained_cover",
+            "expression": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "clique_cover_weight",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "op": "count",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            }
+                          ]
+                        },
+                        {
+                          "op": "weight",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "clique_cover_weight",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "residual_edges",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "boundary_edges",
+            "expression": {
+              "op": "sub",
+              "args": [
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "count",
+                  "args": [
+                    {
+                      "op": "induced_edges",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "neighbors",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "neighbor_profile",
+            "expression": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "mul",
+                              "args": [
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "weight",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "mul",
+                              "args": [
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "weight",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "count",
+                          "args": [
+                            {
+                              "op": "induced_edges",
+                              "args": [
+                                {
+                                  "op": "neighbors",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "mul",
+                              "args": [
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "weight",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "clique_cover_weight",
+                      "args": [
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "deletion_profile",
+            "expression": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "mul",
+                              "args": [
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "weight",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "mul",
+                              "args": [
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "weight",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "clique_cover_weight",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "add",
+                          "args": [
+                            {
+                              "op": "mul",
+                              "args": [
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "count",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "weight",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "union",
+                          "args": [
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight + 0.6*retained_pack + 0.4*retained_cover - 0.7*deletion_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) - 0.15*neighbor_profile/max(1e-9,abs((remaining_count*remaining_count+weight)*(remaining_count*remaining_count+weight))) + 0.2*boundary_edges/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree",
+        "rationale": "Keeps the seed's packing-cover balance while demanding structural deletion witnesses. The added snapshot terms are constant across roots in a unit-weight snapshot, preserving that part of the local ranking while enriching the interface."
+      },
+      "program_sha256": "a716a96b2af013c7fed4ff8f52ec83fdc23e324937db73a51c76303bd46708ad",
+      "eligible": true,
+      "source_candidate_id": "block_1_witness:1",
+      "role": "proposed_witness_joint",
+      "joint_gate_required": true
+    },
+    {
+      "id": "joint|block_2_witness:0",
+      "block": 2,
+      "arm": "witness",
+      "slot": 0,
+      "program": {
+        "name": "seed_delete_tilt",
+        "features": [
+          {
+            "name": "residual_mix",
+            "expression": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "neighbors",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "neighbors",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "neighbors",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "op": "clique_cover_weight",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "difference",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    },
+                                    {
+                                      "op": "neighbors",
+                                      "args": [
+                                        {
+                                          "op": "root",
+                                          "args": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "clique_cover_weight",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "difference",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    },
+                                    {
+                                      "op": "neighbors",
+                                      "args": [
+                                        {
+                                          "op": "root",
+                                          "args": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "edge_pressure",
+            "expression": {
+              "op": "sub",
+              "args": [
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "op": "count",
+                          "args": [
+                            {
+                              "op": "induced_edges",
+                              "args": [
+                                {
+                                  "op": "difference",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    },
+                                    {
+                                      "op": "singleton",
+                                      "args": [
+                                        {
+                                          "op": "root",
+                                          "args": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "count",
+                          "args": [
+                            {
+                              "op": "induced_edges",
+                              "args": [
+                                {
+                                  "op": "difference",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    },
+                                    {
+                                      "op": "singleton",
+                                      "args": [
+                                        {
+                                          "op": "root",
+                                          "args": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "difference",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    },
+                                    {
+                                      "op": "neighbors",
+                                      "args": [
+                                        {
+                                          "op": "root",
+                                          "args": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "difference",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    },
+                                    {
+                                      "op": "neighbors",
+                                      "args": [
+                                        {
+                                          "op": "root",
+                                          "args": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "residual_edges",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "neighbor_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "exclusion_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "available",
+                      "args": []
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "exclusion_cover",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "available",
+                      "args": []
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight + 0.2*residual_mix - 0.15*neighbor_pack + 0.1*edge_pressure/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree - 0.2*exclusion_pack - 0.05*exclusion_cover",
+        "rationale": "Typed aggregates preserve the seed terms while making both root-deletion summaries demanded distinctions; full TRAIN acyclicity remains unverified."
+      },
+      "program_sha256": "55617ed694297b667e9f1e2fa3ee6214bea911f6a47d2cc7668c4a1fcf8201a0",
+      "eligible": true,
+      "source_candidate_id": "block_2_witness:0",
+      "role": "proposed_witness_joint",
+      "joint_gate_required": true
+    },
+    {
+      "id": "joint|block_3_witness:3",
+      "block": 3,
+      "arm": "witness",
+      "slot": 3,
+      "program": {
+        "name": "w3_completion_ratio",
+        "features": [
+          {
+            "name": "residual_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "residual_cover",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "neighbor_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "edge_code",
+            "expression": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "mul",
+                          "args": [
+                            {
+                              "op": "count",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                }
+                              ]
+                            },
+                            {
+                              "op": "count",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "mul",
+                          "args": [
+                            {
+                              "op": "count",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                }
+                              ]
+                            },
+                            {
+                              "op": "count",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "difference",
+                                  "args": [
+                                    {
+                                      "op": "available",
+                                      "args": []
+                                    },
+                                    {
+                                      "op": "neighbors",
+                                      "args": [
+                                        {
+                                          "op": "root",
+                                          "args": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "add",
+                  "args": [
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "mul",
+                      "args": [
+                        {
+                          "op": "mul",
+                          "args": [
+                            {
+                              "op": "count",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                }
+                              ]
+                            },
+                            {
+                              "op": "count",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "op": "count",
+                          "args": [
+                            {
+                              "op": "induced_edges",
+                              "args": [
+                                {
+                                  "op": "neighbors",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "deletion_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "available",
+                      "args": []
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "deletion_cover",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "available",
+                      "args": []
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "(weight+residual_pack)/max(1e-9,abs(1+deletion_cover)) + 0.35*(weight+residual_cover)/max(1e-9,abs(1+deletion_pack)) + 0.1*weight/max(1e-9,abs(1+neighbor_pack)) - 0.0005*degree - 0.0001*edge_code/max(1e-9,abs(remaining_count*remaining_count*remaining_count*remaining_count))",
+        "rationale": "Normalize inclusion completions by root-deletion alternatives to reduce sensitivity to graph reward scale. Packing and cover deletion summaries both affect the nonlinear ranking."
+      },
+      "program_sha256": "769787b97b77b1e44ddc2e4ec6b54ec33bf42c1089cef7a600c4473dd23138cb",
+      "eligible": true,
+      "source_candidate_id": "block_3_witness:3",
+      "role": "proposed_witness_joint",
+      "joint_gate_required": true
+    }
+  ]
+}

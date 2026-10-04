@@ -1,0 +1,139 @@
+{
+  "version": "v07_C3_chronological_scene_screening_plan_001",
+  "status": "input_only_plan_not_accepted_mechanism_dataset",
+  "created_date": "2026-10-04",
+  "outcomes_read": false,
+  "optimization_executed": false,
+  "certificate_queries_executed": false,
+  "execution_protocol_frozen": false,
+  "scenario_candidates": {
+    "A": {
+      "name": "original_duration_weighted_V51",
+      "role": "background_authenticity_control_and_unconfirmed_mechanism_candidate",
+      "objective": "original_link_duration",
+      "conflicts": "unchanged_V51_legacy_predicates_except_declared_ground_gap"
+    },
+    "B": {
+      "name": "C3_availability_derived_fixed_packet_workload",
+      "role": "hypothesized_core_mechanism_candidate_not_original_C3_objective",
+      "status": "model_proposal_only_parameters_and_workload_must_be_registered_before_screening",
+      "original_C3_job_or_packet_metadata_available": false,
+      "preserve_original_contact_objective": false,
+      "physical_availability_windows_preserved": true,
+      "declared_job_fields_required": ["satellite", "release", "deadline", "payload_value", "fixed_service_duration"],
+      "frame_assignment": "job_release_in_chronological_block_visibility_inputs_cover_full_job_horizon_even_if_original_link_started_earlier",
+      "visibility_boundary_overlap_between_frames": "retain_and_report_not_contact_source_disjoint",
+      "candidate_counts": null,
+      "candidate_rule_required": "deterministic_predeclared_feasible_service_interval_generation_no_outcome_selection",
+      "job_alternative_mutual_exclusion": "complete_clique_for_all_candidates_of_one_job",
+      "resource_conflicts": "explicit_single_capacity_interval_model_separate_from_V51_legacy",
+      "equal_duration_reward_rationale": "fixed_service_protocol_and_equal_payload_not_reweighting_original_contacts_for_alias",
+      "unrealizable_jobs": "retain_as_zero_coverage_not_resample",
+      "empirical_workload_distribution_claim": false,
+      "alias_or_label_success_selects_protocol": false
+    }
+  },
+  "prospective_configuration_candidate": {
+    "status": "alternative_proposal_not_execution_freeze_not_adopted_by_outcome",
+    "TRAIN_ground_gaps": [340, 680],
+    "validation_ground_gaps": [340, 680],
+    "retrospective_heldout_ground_gaps": [425, 595],
+    "claim_scope": "within_range_controlled_configuration_interpolation_not_measured_hardware_policy",
+    "must_choose_before_any_decision_labels_or_optimization_outcomes": true
+  },
+  "source": {
+    "local_csv": "E:/01-Joycecyq/2026-ESWA/DAI2026_SNSD_V51_STABLE/SNSD_V51_FINAL/data/C3.csv",
+    "sha256": "ec95f50c11d800f051e218aa1e414df873ddd12e1f71ce911da3ba28adff647e",
+    "row_count": 69923,
+    "ground_count": 40,
+    "satellite_count": 84,
+    "time_origin": 0,
+    "horizon_seconds": 259200,
+    "previously_exposed": true,
+    "exposure_claim": "retrospective_chronological_frame_not_corpus_unseen",
+    "raw_data_publication": false
+  },
+  "preserve": {
+    "all_contacts_assigned_by_start": true,
+    "original_ground_and_satellite_assignments": true,
+    "original_link_and_tracking_times": true,
+    "weight_equals_original_link_duration": true,
+    "time_clipping": false,
+    "reward_rescaling": false,
+    "resource_subsampling": false,
+    "density_based_window_selection": false,
+    "performance_based_gap_selection": false
+  },
+  "model": {
+    "name": "v51_legacy_authoritative_predicates",
+    "source": "SNSD_V51_FINAL/src/snsd_core/graph.py",
+    "source_sha256": "030d6d0e26776c5817083ee95edb9c536da92ec30eb9afb727ce783e8232c5c4",
+    "ground_trans_time_candidates": [340, 510, 680],
+    "ground_gap_rationale": "predeclared_1_1p5_2_multiples_of_repository_baseline_not_empirical_hardware_validation",
+    "satellite_change_time": 150,
+    "satellite_trans_time": 300,
+    "gap_domain_shared_across_splits": true,
+    "unseen_gap_generalization_claim": false,
+    "ideal_interval_model": false
+  },
+  "splits": [
+    {"day_index": 0, "start": 0, "end": 86400, "role": "TRAIN", "contacts": 23386},
+    {"day_index": 1, "start": 86400, "end": 172800, "role": "validation", "contacts": 23284},
+    {"day_index": 2, "start": 172800, "end": 259200, "role": "retrospective_heldout", "contacts": 23253}
+  ],
+  "window_assignment": {
+    "rule": "window_start <= original_link_start < window_end",
+    "keep_full_contact_end_even_after_window": true,
+    "initial_fixed": [],
+    "initial_excluded": [],
+    "problem_scope": "standalone_static_start_window_opportunities",
+    "outside_contacts": "not_implicitly_committed_or_assumed_feasible",
+    "compose_window_solutions_into_day_schedule": false
+  },
+  "primary": {
+    "window_hours": 2,
+    "windows_per_day": 12,
+    "source_windows": 36,
+    "graphs_per_window": 3,
+    "planned_graphs": 108,
+    "planned_TRAIN_graphs": 36,
+    "planned_validation_graphs": 36,
+    "planned_retrospective_heldout_graphs": 36,
+    "contact_counts_by_day": [
+      [1614, 2188, 2520, 2686, 2543, 2161, 2080, 2101, 1863, 1526, 1129, 975],
+      [1550, 2227, 2576, 2732, 2521, 2102, 2045, 2070, 1825, 1524, 1113, 999],
+      [1614, 2273, 2614, 2751, 2497, 2068, 2005, 2036, 1769, 1525, 1089, 1012]
+    ],
+    "end_crossing_contact_counts_by_day": [
+      [246, 358, 382, 398, 316, 307, 292, 276, 243, 198, 110, 162],
+      [251, 350, 399, 397, 315, 294, 287, 278, 240, 184, 117, 172],
+      [262, 349, 410, 387, 322, 298, 291, 277, 228, 175, 124, 0]
+    ]
+  },
+  "nested_scale_checks": [
+    {"window_hours": 4, "windows_per_day": 6, "source_windows": 18, "contact_counts_by_day": [[3802, 5206, 4704, 4181, 3389, 2104], [3777, 5308, 4623, 4115, 3349, 2112], [3887, 5365, 4565, 4041, 3294, 2101]]},
+    {"window_hours": 8, "windows_per_day": 3, "source_windows": 9, "contact_counts_by_day": [[9008, 8885, 5493], [9085, 8738, 5461], [9252, 8606, 5395]]}
+  ],
+  "nested_scale_scope": "same_contacts_nested_in_2h_frame_not_independent_replications_not_alternative_selected_by_outcome",
+  "screening": {
+    "first_phase_split": "TRAIN_only",
+    "first_phase_optimization_or_oracle_allowed": false,
+    "retain_all_windows_and_configurations": true,
+    "label_free_fields": ["source_resource_pair_recurrence", "connected_component_sizes", "degrees_and_weighted_neighborhoods", "rooted_structural_signature_recurrence", "complete_base9_exact_alias_incidence", "configuration_edge_change", "graph_and_feature_build_cost"],
+    "full_base9_coordinates": ["weight", "duration", "degree", "conflict_weight", "max_conflict_weight", "compatible_weight", "remaining_count", "station_gap", "satellite_gap"],
+    "rounding_or_omitting_coordinates_to_create_alias": false,
+    "gap_change_is_not_itself_alias_evidence": true,
+    "no_alias_or_structure_trigger": "retain_zero_report_and_do_not_promote_to_information_obstruction_benchmark",
+    "runtime_relevance": "cannot_be_certified_by_input_only_screen_later_separately_frozen_TRAIN_path_probe_required",
+    "validation_and_heldout_graph_or_outcome_access_before_TRAIN_interface_freeze": false,
+    "no_trigger_replacement_or_denser_subset_search": true
+  },
+  "later_acceptance_requirements": [
+    "TRAIN-defined structural families and exact interface are frozen before future-state measurements",
+    "Future structural-family coverage is measured without selecting or discarding windows",
+    "Any claimed quotient obstruction uses exact sound labels at the same deployment decision boundary",
+    "A branch-pivot benefit is measured as path or work effect and is not inferred from forced-inclusion preference alone",
+    "The shared mature kernel has exercised ranking decisions under a predeclared budget; fully solved or pre-score-pruned patches are separated",
+    "Missing, zero-trigger, tied and uncovered states remain in denominators"
+  ]
+}

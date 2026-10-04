@@ -1,0 +1,10 @@
+2026-10-03T10:13:41.539169Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:13:41.539248Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:13:41.547838Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-03T10:13:43.869319Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:13:43.869365Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-03T10:14:24.409829Z ERROR codex_core::tools::router: error=collab spawn failed: Fatal error: failed to load model context for thread 01a10141-560a-76f0-80d9-a11eeada8cb0: invalid thread-store request: no rollout found for thread id 01a10141-560a-76f0-80d9-a11eeada8cb0
+2026-10-03T10:15:37.584232Z  WARN codex_core::hook_runtime: failed to resolve parent transcript path for subagent hook parent_thread_id=01a10141-560a-76f0-80d9-a11eeada8cb0 error=invalid thread-store request: no rollout found for thread id 01a10141-560a-76f0-80d9-a11eeada8cb0
+2026-10-03T10:16:13.260204Z  WARN codex_core::hook_runtime: failed to resolve parent transcript path for subagent hook parent_thread_id=01a10141-560a-76f0-80d9-a11eeada8cb0 error=invalid thread-store request: no rollout found for thread id 01a10141-560a-76f0-80d9-a11eeada8cb0
+2026-10-03T10:16:58.311388Z  WARN codex_core::hook_runtime: failed to resolve parent transcript path for subagent hook parent_thread_id=01a10141-560a-76f0-80d9-a11eeada8cb0 error=invalid thread-store request: no rollout found for thread id 01a10141-560a-76f0-80d9-a11eeada8cb0
+2026-10-03T10:19:01.205101Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=01a10141-5693-7142-ab83-402cc8713acc hook_name=legacy_notify error=文件名或扩展名太长。 (os error 206)

@@ -58,15 +58,3 @@ $h(\phi(G_\theta,R,v))$. The kernel commits an argmax with deterministic ties,
 deletes its closed neighborhood and repeats until $R=\varnothing$.
 This guarantees a complete feasible selection. Adaptation uses current graph
 and permitted resource fields, without online LLM or oracle calls.
-
-\begin{figure*}[tp]
- \centering
- \includegraphics[width=\textwidth]{figures/problem_setting-wide.drawio.pdf}
- \Description{Contact intervals grouped by ground station,
- their weighted conflict graph, and the intervals retained in a complete
- feasible selection.}
- \caption{From contact opportunities to a complete feasible schedule:
- resource predicates create conflict edges; vertex weights encode contact
- rewards; an independent set selects mutually compatible contact intervals.}
- \label{fig:problem}
-\end{figure*}

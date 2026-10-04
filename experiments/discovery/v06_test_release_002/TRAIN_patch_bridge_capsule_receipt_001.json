@@ -1,0 +1,28 @@
+{
+  "version": "v06_TRAIN_patch_bridge_execution_capsule_001",
+  "before_any_bridge_certificate_or_program_score": true,
+  "source_zip_sha256": "824f6f7ae3d4f9e88f79149794aa74842f03970278f132e8d71f7d4e70d37e77",
+  "files_sha256": {
+    "scripts/patch_ranking_bridge_v06.py": "b0d4a599fa165eb2a74b55d85ec375ef538c9fa174bd4ce8783ea5233b870523",
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "cipheur/graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "cipheur/compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+    "experiments/discovery/v06_patch_bridge_001/config.json": "ba158d95c38511e533e182952e26db29fcc5a29de107476b71f3977e57a6fcc4",
+    "experiments/discovery/v06_patch_bridge_001/inventory.json": "c467844655c0ba84f2c122f18da66f90fdeea48f85a8a08082ed93bbba598152",
+    "experiments/discovery/v06_patch_bridge_001/protocol.json": "967f7a60d1a7f158280b27e08f8db783391c7fa13298a7f8c90148fc83cec07a",
+    "experiments/discovery/v06_patch_bridge_001/original_training_evidence.json": "762fc25046eeb13f49044b96c5d74b7136dedcc363e1fec81809bcc83aa62913",
+    "experiments/discovery/v06_patch_bridge_001/freeze_receipt.json": "52fba1417af9be535e2a22ff030f99c33ff715349974a7150a79cc0bab3aa347",
+    "experiments/discovery/v06_patch_bridge_programs_frozen_001/program_inventory.json": "f19b64047748a673a2fcd3335abbf9dc922b404ed6d45a18a3d26a90725d9602",
+    "experiments/discovery/v06_test_release_002/TRAIN_patch_bridge_root_release_001.json": "975846ae34e90d2d8efb7bdbacb6c189693ddf14544b1c5baac0c506275d8311"
+  },
+  "root_release_sha256": "975846ae34e90d2d8efb7bdbacb6c189693ddf14544b1c5baac0c506275d8311",
+  "program_inventory_sha256": "f19b64047748a673a2fcd3335abbf9dc922b404ed6d45a18a3d26a90725d9602",
+  "bridge_freeze_sha256": "52fba1417af9be535e2a22ff030f99c33ff715349974a7150a79cc0bab3aa347",
+  "programme_identities": 23,
+  "states": 120,
+  "bytes": 527001,
+  "programme_runs": 0,
+  "new_local_certificate_queries": 0
+}

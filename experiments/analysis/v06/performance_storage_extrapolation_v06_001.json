@@ -1,0 +1,28 @@
+{
+  "version": "v06_pre_TEST_STORAGE_extrapolation_001",
+  "TRAIN_metadata_sha256": "5724ba51d2f78deb086b83f33a9d841f1ef58b8bc72edadcfb6d21484c218c7b",
+  "contexts": 302,
+  "policy_slots": 23,
+  "no_TEST_outcomes_used": true,
+  "scenarios": [
+    {
+      "empirical_scenario": "mean",
+      "estimated_unique_result_bytes": 5657255637.875,
+      "two_result_copies_bytes": 11314511275.75,
+      "safety_bound": false
+    },
+    {
+      "empirical_scenario": "p95_nearest_rank",
+      "estimated_unique_result_bytes": 15570787498,
+      "two_result_copies_bytes": 31141574996,
+      "safety_bound": false
+    },
+    {
+      "empirical_scenario": "max",
+      "estimated_unique_result_bytes": 18033458880,
+      "two_result_copies_bytes": 36066917760,
+      "safety_bound": false
+    }
+  ],
+  "scope": "Existing Degree TRAIN row bytes extrapolated to all23 future policies; no scientific-effectiveness measurement or formal output upper bound."
+}

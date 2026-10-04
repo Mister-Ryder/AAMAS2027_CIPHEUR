@@ -1,0 +1,111 @@
+{
+  "version": "matched_cold_bank_v06",
+  "block": 2,
+  "arm": "objective",
+  "candidates": [
+    {
+      "name": "forced_packing",
+      "features": [
+        {"name": "r_pack", "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "r_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "n_pack", "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}},
+        {"name": "n_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}},
+        {"name": "n_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "r_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}}
+      ],
+      "rule": "weight + r_pack - 0.1*n_pack + 0.02*(r_cover-r_pack) - 0.01*(n_cover-n_pack) + 0.005*n_edge_min/max(1e-9,abs(1+conflict_weight)) - 0.005*r_edge_min/max(1e-9,abs(1+compatible_weight)) - 0.001*degree",
+      "rationale": "Prioritize feasible reward after forcing the action, with smaller corrections for discarded independent alternatives, neighborhood redundancy, and residual conflict."
+    },
+    {
+      "name": "forced_cover",
+      "features": [
+        {"name": "r_pack", "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "r_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "n_pack", "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}},
+        {"name": "n_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}},
+        {"name": "n_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "r_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}}
+      ],
+      "rule": "weight + r_cover - 0.15*(r_cover-r_pack) - 0.05*n_cover + 0.02*n_pack + 0.01*n_edge_min/max(1e-9,abs(1+conflict_weight)) - 0.01*r_edge_min/max(1e-9,abs(1+compatible_weight)) - 0.001*degree",
+      "rationale": "Favor optimistic residual capacity while discounting disagreement with feasible packing. Neighborhood and residual edge summaries provide smaller structural corrections."
+    },
+    {
+      "name": "gap_envelope",
+      "features": [
+        {"name": "r_pack", "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "r_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "n_pack", "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}},
+        {"name": "n_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}},
+        {"name": "n_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "r_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}}
+      ],
+      "rule": "weight + r_cover - (0.25+0.5*(station_gap+satellite_gap)/max(1e-9,abs(1+station_gap+satellite_gap)))*(r_cover-r_pack) - 0.25*n_pack - 0.05*(n_cover-n_pack) + 0.02*n_edge_min/max(1e-9,abs(1+conflict_weight)) - 0.02*r_edge_min/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Hypothesize that stronger separation constraints warrant a larger discount on speculative residual capacity, alongside neighborhood opportunity cost and conflict redundancy."
+    },
+    {
+      "name": "opportunity_ratio",
+      "features": [
+        {"name": "n_pack", "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}},
+        {"name": "n_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}},
+        {"name": "r_pack", "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "r_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "n_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "c_cover", "expression": {"op": "clique_cover_weight", "args": [{"op": "union", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}}
+      ],
+      "rule": "weight/max(1e-9,abs(1+0.75*n_pack+0.25*n_cover)) + 0.02*r_pack + 0.005*r_cover + 0.01*n_edge_min/max(1e-9,abs(1+conflict_weight)) - 0.01*max(0,c_cover-weight)/max(1e-9,abs(1+conflict_weight)) - 0.001*degree",
+      "rationale": "Rank immediate reward relative to independently usable neighbor reward, then use residual capacity and closed-neighborhood scarcity as smaller corrections."
+    },
+    {
+      "name": "edge_density_penalty",
+      "features": [
+        {"name": "neighbor_count", "expression": {"op": "count", "args": [{"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "neighbor_edge_count", "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}},
+        {"name": "neighbor_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}},
+        {"name": "residual_count", "expression": {"op": "count", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "residual_mass", "expression": {"op": "sum_weights", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "residual_edge_product", "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}}
+      ],
+      "rule": "weight - conflict_weight / max(1e-9, abs(1 + 2 * neighbor_edge_count / max(1e-9, abs(1 + neighbor_count)) + neighbor_edge_min / max(1e-9, abs(conflict_weight)))) - residual_edge_product / max(1e-9, abs(residual_mass * (1 + residual_count)))",
+      "rationale": "Test an inexpensive objective that discounts removed neighbor weight when neighbors conflict mutually, then penalizes normalized weighted edge pressure in the forced residual."
+    },
+    {
+      "name": "closed_redundancy",
+      "features": [
+        {"name": "closed_mass", "expression": {"op": "sum_weights", "args": [{"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}},
+        {"name": "closed_count", "expression": {"op": "count", "args": [{"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}},
+        {"name": "closed_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}]}},
+        {"name": "closed_edge_count", "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}]}},
+        {"name": "closed_upper", "expression": {"op": "clique_cover_weight", "args": [{"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}},
+        {"name": "closed_lower", "expression": {"op": "greedy_independent_weight", "args": [{"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}}
+      ],
+      "rule": "weight - closed_lower + (closed_mass - closed_upper) / max(1e-9, abs(1 + closed_count)) + closed_edge_min / max(1e-9, abs(1 + closed_edge_count)) - (closed_upper - closed_lower) / max(1e-9, abs(1 + closed_count))",
+      "rationale": "Credit mutually exclusive mass in the closed neighborhood while charging local feasible packing and bound disagreement. Average edge redundancy supplies a second compression signal."
+    },
+    {
+      "name": "gap_aversion",
+      "features": [
+        {"name": "residual_upper", "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "residual_lower", "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "residual_mass", "expression": {"op": "sum_weights", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "residual_count", "expression": {"op": "count", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "residual_edge_count", "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}},
+        {"name": "residual_edge_min", "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}]}}
+      ],
+      "rule": "weight + residual_lower - max(0, residual_upper - residual_lower) * (1 + 2 * residual_edge_count / max(1e-9, abs(residual_count * (1 + residual_count))) + residual_edge_min / max(1e-9, abs(residual_mass * (1 + residual_count))))",
+      "rationale": "Test uncertainty aversion beyond feasible forced reward: penalize the residual cover-versus-packing gap more strongly when residual edge density and weighted conflict density increase."
+    },
+    {
+      "name": "include_exclude_regret",
+      "features": [
+        {"name": "include_lower", "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "include_upper", "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "exclude_lower", "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "exclude_upper", "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "singleton", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "neighbor_lower", "expression": {"op": "greedy_independent_weight", "args": [{"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}},
+        {"name": "neighbor_upper", "expression": {"op": "clique_cover_weight", "args": [{"op": "intersection", "args": [{"op": "available", "args": []}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}}
+      ],
+      "rule": "min(1, max(0, neighbor_lower / max(1e-9, abs(neighbor_upper)))) * (weight + include_lower - exclude_lower) + (1 - min(1, max(0, neighbor_lower / max(1e-9, abs(neighbor_upper))))) * (weight + include_upper - exclude_upper)",
+      "rationale": "Compare forcing the action with dropping only that action. Neighborhood packing-to-cover agreement controls a mixture of feasible-packing regret and clique-cover regret."
+    }
+  ]
+}

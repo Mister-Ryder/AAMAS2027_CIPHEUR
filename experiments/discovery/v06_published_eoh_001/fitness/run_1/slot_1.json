@@ -1,0 +1,35 @@
+{
+  "id": "run_1_slot_1",
+  "run": 1,
+  "slot": 1,
+  "operator": "i1",
+  "program_sha256": "c66b9d7de09cb94e965d1fc71951f889db942087c56d6128ec592dde7b14fd7a",
+  "quality_covered": true,
+  "status": "quality_covered",
+  "macro_quality_exact": "2693/4480",
+  "macro_work_exact": "11453953/1920",
+  "family_quality": {
+    "DIMACS": "265/672",
+    "SATLIB": "197/240",
+    "temporal_unit_balanced_long": "383/512",
+    "temporal_unit_balanced_short": "149/256",
+    "temporal_unit_ground_scarce_long": "319/512",
+    "temporal_unit_ground_scarce_short": "29/64",
+    "temporal_unit_satellite_scarce_long": "177/256",
+    "temporal_unit_satellite_scarce_short": "127/256"
+  },
+  "family_work": {
+    "DIMACS": "85255/3",
+    "SATLIB": "16403/15",
+    "temporal_unit_balanced_long": "9641/8",
+    "temporal_unit_balanced_short": "30299/8",
+    "temporal_unit_ground_scarce_long": "16397/8",
+    "temporal_unit_ground_scarce_short": "74165/16",
+    "temporal_unit_satellite_scarce_long": "26665/16",
+    "temporal_unit_satellite_scarce_short": "77903/16"
+  },
+  "assigned_states": 120,
+  "completed_feasible_states": 120,
+  "error_count": 0,
+  "unexecuted_states": 0
+}

@@ -1,0 +1,507 @@
+{
+  "version": "R1_TRAIN_cycle_replacement_illustration_evidence_v06_002",
+  "TRAIN_only": true,
+  "R2_outputs_accessed": false,
+  "TEST_accessed": false,
+  "seed_candidate_id": "block_2_relations:3",
+  "feature_exemplar_id": "block_3_objective:7",
+  "frame_sha256": "762fc25046eeb13f49044b96c5d74b7136dedcc363e1fec81809bcc83aa62913",
+  "R1_results_sha256": "9520ab3b3f85d2ca6e04ca91fc805a4d1f720152e4be9fe87e873abb7580fa24",
+  "record_id": "v06_public32|MANN_a9_unit",
+  "source_scope": "new induced state in previously exposed public corpus",
+  "graph_digest": "d6ea5119c7e508f0db510e845178119bd2f85e2cbc998d8564872c11dcc5b5f6",
+  "fixed": [],
+  "excluded": [],
+  "seed_program_sha256": "a278615e138562aef69ca7e09512db01e725779e7b3186829682038518b1913b",
+  "exemplar_program_sha256": "58ef00c905f5e15fd549e74b126e20cf7d17ae31128b26f79879ad7de1821714",
+  "seed_feature_vectors": {
+    "34": {
+      "weight": 1,
+      "duration": 1,
+      "degree": 3,
+      "conflict_weight": 3.0,
+      "max_conflict_weight": 1,
+      "compatible_weight": 28.0,
+      "remaining_count": 32,
+      "station_gap": 0,
+      "satellite_gap": 0,
+      "residual_pack": 12.0,
+      "residual_cover": 14.0,
+      "residual_edges": 31,
+      "neighbor_edges": 1,
+      "boundary_edges": 3,
+      "neighbor_pack": 2.0
+    },
+    "5": {
+      "weight": 1,
+      "duration": 1,
+      "degree": 2,
+      "conflict_weight": 2.0,
+      "max_conflict_weight": 1,
+      "compatible_weight": 29.0,
+      "remaining_count": 32,
+      "station_gap": 0,
+      "satellite_gap": 0,
+      "residual_pack": 12.0,
+      "residual_cover": 15.0,
+      "residual_edges": 32,
+      "neighbor_edges": 0,
+      "boundary_edges": 4,
+      "neighbor_pack": 2.0
+    },
+    "7": {
+      "weight": 1,
+      "duration": 1,
+      "degree": 2,
+      "conflict_weight": 2.0,
+      "max_conflict_weight": 1,
+      "compatible_weight": 29.0,
+      "remaining_count": 32,
+      "station_gap": 0,
+      "satellite_gap": 0,
+      "residual_pack": 12.0,
+      "residual_cover": 15.0,
+      "residual_edges": 32,
+      "neighbor_edges": 0,
+      "boundary_edges": 4,
+      "neighbor_pack": 2.0
+    },
+    "35": {
+      "weight": 1,
+      "duration": 1,
+      "degree": 3,
+      "conflict_weight": 3.0,
+      "max_conflict_weight": 1,
+      "compatible_weight": 28.0,
+      "remaining_count": 32,
+      "station_gap": 0,
+      "satellite_gap": 0,
+      "residual_pack": 12.0,
+      "residual_cover": 14.0,
+      "residual_edges": 31,
+      "neighbor_edges": 1,
+      "boundary_edges": 3,
+      "neighbor_pack": 2.0
+    }
+  },
+  "refined_feature_vectors": {
+    "34": {
+      "weight": 1,
+      "duration": 1,
+      "degree": 3,
+      "conflict_weight": 3.0,
+      "max_conflict_weight": 1,
+      "compatible_weight": 28.0,
+      "remaining_count": 32,
+      "station_gap": 0,
+      "satellite_gap": 0,
+      "residual_cover": 14.0,
+      "residual_edges": 31,
+      "neighbor_edges": 1,
+      "boundary_edges": 3,
+      "neighbor_pack": 2.0,
+      "illustrative_exclude_lb": 13.0
+    },
+    "5": {
+      "weight": 1,
+      "duration": 1,
+      "degree": 2,
+      "conflict_weight": 2.0,
+      "max_conflict_weight": 1,
+      "compatible_weight": 29.0,
+      "remaining_count": 32,
+      "station_gap": 0,
+      "satellite_gap": 0,
+      "residual_cover": 15.0,
+      "residual_edges": 32,
+      "neighbor_edges": 0,
+      "boundary_edges": 4,
+      "neighbor_pack": 2.0,
+      "illustrative_exclude_lb": 13.0
+    },
+    "7": {
+      "weight": 1,
+      "duration": 1,
+      "degree": 2,
+      "conflict_weight": 2.0,
+      "max_conflict_weight": 1,
+      "compatible_weight": 29.0,
+      "remaining_count": 32,
+      "station_gap": 0,
+      "satellite_gap": 0,
+      "residual_cover": 15.0,
+      "residual_edges": 32,
+      "neighbor_edges": 0,
+      "boundary_edges": 4,
+      "neighbor_pack": 2.0,
+      "illustrative_exclude_lb": 12.0
+    },
+    "35": {
+      "weight": 1,
+      "duration": 1,
+      "degree": 3,
+      "conflict_weight": 3.0,
+      "max_conflict_weight": 1,
+      "compatible_weight": 28.0,
+      "remaining_count": 32,
+      "station_gap": 0,
+      "satellite_gap": 0,
+      "residual_cover": 14.0,
+      "residual_edges": 31,
+      "neighbor_edges": 1,
+      "boundary_edges": 3,
+      "neighbor_pack": 2.0,
+      "illustrative_exclude_lb": 13.0
+    }
+  },
+  "coordinate_replaced": "residual_pack",
+  "additional_feature_count_before_and_after": [
+    6,
+    6
+  ],
+  "full_frame_not_rechecked_for_this_local_illustration": true,
+  "requirements": [
+    {
+      "preferred": "34",
+      "other": "5"
+    },
+    {
+      "preferred": "7",
+      "other": "35"
+    }
+  ],
+  "saved_certificates": [
+    {
+      "a": "34",
+      "b": "5",
+      "kind": "control",
+      "base_alias_by_side": [
+        false
+      ],
+      "difference": {
+        "a": "34",
+        "b": "5",
+        "lower_exact": "1",
+        "upper_exact": "1",
+        "lower": 1.0,
+        "upper": 1.0,
+        "preferred": "34",
+        "status": "strict",
+        "exact": true,
+        "forced_weight_difference_exact": "0",
+        "cancelled_components": [
+          [
+            "42",
+            "44"
+          ]
+        ],
+        "unmatched": {
+          "a": [
+            {
+              "vertices": [
+                "0",
+                "1",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "17",
+                "18",
+                "20",
+                "27",
+                "28",
+                "29",
+                "3",
+                "31",
+                "32",
+                "36",
+                "38",
+                "39",
+                "4",
+                "40",
+                "41",
+                "7",
+                "8",
+                "9"
+              ],
+              "bound": {
+                "lower_exact": "13",
+                "upper_exact": "13",
+                "selected": [
+                  "0",
+                  "1",
+                  "11",
+                  "14",
+                  "15",
+                  "20",
+                  "29",
+                  "3",
+                  "32",
+                  "36",
+                  "39",
+                  "4",
+                  "7"
+                ],
+                "exact": true,
+                "expanded": 85,
+                "reason": "searched"
+              }
+            }
+          ],
+          "b": [
+            {
+              "vertices": [
+                "0",
+                "1",
+                "10",
+                "11",
+                "12",
+                "13",
+                "15",
+                "17",
+                "18",
+                "20",
+                "27",
+                "28",
+                "29",
+                "3",
+                "31",
+                "32",
+                "33",
+                "35",
+                "36",
+                "38",
+                "39",
+                "4",
+                "40",
+                "41",
+                "7",
+                "8",
+                "9"
+              ],
+              "bound": {
+                "lower_exact": "12",
+                "upper_exact": "12",
+                "selected": [
+                  "0",
+                  "1",
+                  "11",
+                  "12",
+                  "15",
+                  "28",
+                  "32",
+                  "35",
+                  "36",
+                  "4",
+                  "41",
+                  "8"
+                ],
+                "exact": true,
+                "expanded": 69,
+                "reason": "searched"
+              }
+            }
+          ]
+        },
+        "scope": "full_residual_conditional_value_difference; identical components cancel exactly"
+      }
+    },
+    {
+      "a": "35",
+      "b": "7",
+      "kind": "control",
+      "base_alias_by_side": [
+        false
+      ],
+      "difference": {
+        "a": "35",
+        "b": "7",
+        "lower_exact": "-1",
+        "upper_exact": "-1",
+        "lower": -1.0,
+        "upper": -1.0,
+        "preferred": "7",
+        "status": "strict",
+        "exact": true,
+        "forced_weight_difference_exact": "0",
+        "cancelled_components": [
+          [
+            "42",
+            "44"
+          ]
+        ],
+        "unmatched": {
+          "a": [
+            {
+              "vertices": [
+                "0",
+                "1",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "17",
+                "18",
+                "20",
+                "27",
+                "28",
+                "29",
+                "3",
+                "31",
+                "32",
+                "36",
+                "38",
+                "39",
+                "4",
+                "40",
+                "41",
+                "5",
+                "8",
+                "9"
+              ],
+              "bound": {
+                "lower_exact": "12",
+                "upper_exact": "12",
+                "selected": [
+                  "0",
+                  "1",
+                  "11",
+                  "12",
+                  "15",
+                  "28",
+                  "32",
+                  "36",
+                  "39",
+                  "4",
+                  "5",
+                  "8"
+                ],
+                "exact": true,
+                "expanded": 53,
+                "reason": "searched"
+              }
+            }
+          ],
+          "b": [
+            {
+              "vertices": [
+                "0",
+                "1",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "17",
+                "18",
+                "20",
+                "27",
+                "28",
+                "29",
+                "3",
+                "31",
+                "32",
+                "33",
+                "34",
+                "36",
+                "38",
+                "39",
+                "4",
+                "40",
+                "5",
+                "8",
+                "9"
+              ],
+              "bound": {
+                "lower_exact": "13",
+                "upper_exact": "13",
+                "selected": [
+                  "0",
+                  "1",
+                  "11",
+                  "14",
+                  "15",
+                  "20",
+                  "29",
+                  "3",
+                  "32",
+                  "34",
+                  "36",
+                  "39",
+                  "4"
+                ],
+                "exact": true,
+                "expanded": 85,
+                "reason": "searched"
+              }
+            }
+          ]
+        },
+        "scope": "full_residual_conditional_value_difference; identical components cancel exactly"
+      }
+    }
+  ],
+  "independent_conditional_values_exact": {
+    "34": "15",
+    "5": "14",
+    "7": "15",
+    "35": "14"
+  },
+  "independent_recurrence_states": 38149,
+  "distinguishing_feature": {
+    "name": "exclude_lb",
+    "expression": {
+      "op": "greedy_independent_weight",
+      "args": [
+        {
+          "op": "difference",
+          "args": [
+            {
+              "op": "available",
+              "args": []
+            },
+            {
+              "op": "singleton",
+              "args": [
+                {
+                  "op": "root",
+                  "args": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "distinguishing_values": {
+    "34": 13.0,
+    "5": 13.0,
+    "7": 12.0,
+    "35": 13.0
+  },
+  "displayed_quotient_before": {
+    "contradictory": true,
+    "quotient_nodes": 2,
+    "quotient_edges": 2,
+    "self_loop_requirements": 0
+  },
+  "displayed_quotient_after": {
+    "contradictory": false,
+    "quotient_nodes": 3,
+    "quotient_edges": 2,
+    "self_loop_requirements": 0
+  },
+  "scope": "Only these two requirements; no perfect full-frame fit, prompting advantage or schedule-quality claim",
+  "ID_tie_breaking_not_assumed_invariant": true,
+  "script_sha256": "4390b2ca0dc5c62e92bd7199457a9089a14de84994257de0266e823ace1e7289",
+  "independent_helper_sha256": {
+    "scripts/verify_matched_llm_v05.py": "52b331fea2214642ac50ffe3996c95a6fb9893320e50df84e1371f8fedae087b",
+    "scripts/verify_public_alias_v05.py": "6b349b659bad3acfd3a9e1abbf9046a984f8f66df05068841c1ba8c076aa959a"
+  }
+}

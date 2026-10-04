@@ -1,0 +1,35 @@
+\input{generated/reward_cost_methods_v06}
+\IfFileExists{figures/performance_cpu_scaling_v06__fresh_standard_balanced__standard_balanced.pdf}{%
+\begin{figure*}[!t]
+  \centering
+  \begin{minipage}[t]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/performance_cpu_scaling_v06__fresh_standard_balanced__standard_balanced.pdf}
+    {\small (a)}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.495\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/performance_cpu_scaling_v06__fresh_dense_long_ground_scarce__dense_long_ground_scarce.pdf}
+    {\small (b)}
+  \end{minipage}
+  \par\vspace{1pt}
+  \includegraphics[width=\textwidth]{figures/performance_cpu_scaling_legend_v06.pdf}
+  \caption{Measured deployment CPU versus contact count at fixed nominal
+  $T=5$ seconds: standard balanced (a) and dense-long ground scarce (b).
+  Faint points show six paired sources per size; lines show their mean,
+  after within-context seed/member averaging. Warm policies each charge
+  the full common CHILS initializer and their own repair; shared graph
+  loading remains separate. These are scale comparisons, not anytime traces
+  or evidence of LLM speed superiority. Complete gain/coverage matrices
+  remain in the supporting report.}
+  \Description{Two panels compare actual standalone CPU seconds at contact
+  counts 512, 1024, and 2048 for five native method families and warm
+  joint witness, EoH-DSL, and Degree policies. Each faint point is one
+  paired-source cost; each line joins the six-source means at the three
+  sizes. All policies use their frozen identities and native methods
+  retain their prescribed seeds. A shared legend identifies eight curves.
+  The comparison uses fixed nominal five-second targets and retains
+  the full charged common initializer for warm policies.}
+  \label{fig:v06_performance_budget}
+\end{figure*}
+}{}
