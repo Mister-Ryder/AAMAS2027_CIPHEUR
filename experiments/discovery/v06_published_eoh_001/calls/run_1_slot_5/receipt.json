@@ -1,0 +1,40 @@
+{
+  "id": "run_1_slot_5",
+  "run": 1,
+  "slot": 5,
+  "operator": "m2",
+  "request_sha256": "5eff30d9290ca1e4afcdb8604774e555ef03dc1f5946e2dc41f9ba6a6cf81ae2",
+  "response_sha256": "bc98b20181e09a1425edd032bf775adf05bdd547e0f69e94db55a7efdc71ebf4",
+  "wrapper_sha256": "95510e7ebf511f1bc2645fb8d1536dc90343a525908bae7fc62c9571ce21eb46",
+  "raw_event_sha256": "59656f3999e98c8ea9a020d26497241decff978f598655b8c15734c90f68d229",
+  "raw_stderr_sha256": "5129db34aa0845316949552256b2d894bf32261d4f7c1dcfa011720b7f442556",
+  "cli_executable_sha256": "34549ded6e2aee87c911c62d025e52e26c488683d0f489cd68f756baef1a6df6",
+  "requested_configuration": {
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "model_reasoning_effort": "ultra",
+    "model_reasoning_summary": null,
+    "profile": null
+  },
+  "observed_model": null,
+  "usage_events": [
+    {
+      "event_type": "turn.completed",
+      "usage": {
+        "input_tokens": 115172,
+        "cached_input_tokens": 70528,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1872,
+        "reasoning_output_tokens": 1032
+      }
+    }
+  ],
+  "root_release_sha256": "6f3a7059c92bebbf2905cdf51a9eda681a73d8990f3f254fc567c3b461ad9c35",
+  "wall_seconds": 83.59036989999004,
+  "exit_code": 0,
+  "timed_out": false,
+  "spawn_error": null,
+  "no_retry": true,
+  "no_candidate_assessment": true,
+  "TEST_accessed": false
+}

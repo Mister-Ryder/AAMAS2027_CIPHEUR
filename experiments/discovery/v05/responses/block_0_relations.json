@@ -1,0 +1,572 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 0,
+  "arm": "relations",
+  "candidates": [
+    {
+      "name": "local_pack_margin",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_pack",
+      "rationale": "Estimate local opportunity cost using mutually compatible neighboring alternatives rather than their total weight."
+    },
+    {
+      "name": "local_cover_margin",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover",
+      "rationale": "Subtract the neighborhood clique-cover construction as a conservative proxy for displaced alternative value."
+    },
+    {
+      "name": "edge_min_margin",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - 2*neighbor_edge_min/max(1,degree))",
+      "rationale": "Discount overlapping neighbor weight through internal edge minima, retaining the heaviest neighbor as a penalty floor."
+    },
+    {
+      "name": "product_cohesion_margin",
+      "features": [
+        {
+          "name": "neighbor_edge_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight/(1 + 2*neighbor_edge_product/max(1,conflict_weight*max_conflict_weight)))",
+      "rationale": "Use weighted neighborhood cohesion to reduce the estimated simultaneous value of conflicting alternatives."
+    },
+    {
+      "name": "local_pack_ratio",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,neighbor_pack)",
+      "rationale": "Test relative return against a feasible neighborhood packing instead of an absolute opportunity-cost margin."
+    },
+    {
+      "name": "local_cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,neighbor_cover)",
+      "rationale": "Normalize contact value by the clique-cover estimate of competing neighborhood value."
+    },
+    {
+      "name": "local_bracket_margin",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - (neighbor_pack + neighbor_cover)/2",
+      "rationale": "Balance feasible packing and clique-cover estimates when neighborhood opportunity cost is uncertain."
+    },
+    {
+      "name": "overlap_degree_ratio",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(1,degree - 2*neighbor_edges/max(1,degree))",
+      "rationale": "Reduce the degree penalty when neighboring alternatives conflict strongly with one another."
+    },
+    {
+      "name": "residual_pack_value",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_pack",
+      "rationale": "Rank inclusion by contact value plus a deterministic feasible packing of the surviving residual nodes."
+    },
+    {
+      "name": "residual_cover_value",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_cover",
+      "rationale": "Test an optimistic inclusion score based on the clique-cover construction for surviving residual nodes."
+    },
+    {
+      "name": "bracketed_completion",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + 0.75*residual_pack + 0.25*residual_cover - 0.25*max(0,neighbor_cover - neighbor_pack)",
+      "rationale": "Blend residual completion estimates while penalizing uncertainty about the value of excluded neighbors."
+    },
+    {
+      "name": "boundary_adjusted_margin",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "boundary_min",
+          "expression": {
+            "op": "sub",
+            "args": [
+              {
+                "op": "sub",
+                "args": [
+                  {
+                    "op": "edge_min_weight_sum",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "difference",
+                            "args": [
+                              {
+                                "op": "available",
+                                "args": []
+                              },
+                              {
+                                "op": "singleton",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "edge_min_weight_sum",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "edge_min_weight_sum",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          },
+                          {
+                            "op": "union",
+                            "args": [
+                              {
+                                "op": "neighbors",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              },
+                              {
+                                "op": "singleton",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_pack/(1 + max(0,boundary_min)/max(1,conflict_weight))",
+      "rationale": "Discount neighboring alternatives when they also conflict with surviving nodes, using crossing-edge minimum-weight mass."
+    }
+  ]
+}

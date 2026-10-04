@@ -1,0 +1,4448 @@
+{
+  "version": "v07_C_series_input_profiles_001",
+  "profile_scope": "input_only_no_optimizer_or_oracle",
+  "script_sha256": "d44806e3781ed1fd733089b6b27cafc94f9c5c88717a738740a6e91dcf558fdc",
+  "resource_labels_or_contact_rows_published": false,
+  "normalization": "whitespace_strip_then_all_boundary_single_double_quote_strip_then_whitespace_strip; integral_times_canonical_int; compact_ASCII_JSON_first6_SHA256",
+  "hash_scope": "First6 includes resource identity plus link/track integer times; only aggregate hashes published",
+  "p95_definition": "sorted_value_at_floor_0p95_times_n_minus_1",
+  "window_scope": "half_open_start_assignment; full_end_retained; incoming_link_overlap_not_implicitly_committed",
+  "profiles": [
+    {
+      "file": "C1.csv",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\C1.csv",
+      "sha256": "aa54d2a7f33d43df3e73a74ecd5b4cdc0086c0f3b4b99a894b4e457bf45eaf5a",
+      "bytes": 1562483,
+      "encoding": "gb18030_strict",
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ],
+      "row_count": 23598,
+      "valid_required_rows": 23598,
+      "column_count_distribution": {
+        "12": 23598
+      },
+      "required_missing_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_time_invalid_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wrong_column_count": 0,
+      "ground_count": 40,
+      "satellite_count": 28,
+      "ground_satellite_pair_count": 1120,
+      "resource_normalization": [
+        {
+          "column_index": 0,
+          "raw_label_count": 40,
+          "normalized_label_count": 40,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 23598
+          }
+        },
+        {
+          "column_index": 1,
+          "raw_label_count": 28,
+          "normalized_label_count": 28,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 23598
+          }
+        }
+      ],
+      "time": {
+        "basis": "integer_seconds",
+        "origin": 0,
+        "min_link_start": 0,
+        "max_link_end": 259200,
+        "link_span_seconds": 259200,
+        "link_span_days": 3.0,
+        "min_tracking_start": -20,
+        "max_tracking_end": 259220
+      },
+      "duration_seconds": {
+        "count": 23598,
+        "min": 101,
+        "median": 1123.0,
+        "p95": 1239,
+        "max": 1244,
+        "distinct": 1121
+      },
+      "objective_interpretation": "inherited_loader_weight_equals_link_duration_not_an_independent_CSV_weight_column",
+      "negative_duration_count": 0,
+      "zero_duration_count": 0,
+      "tracking_contains_link_count": 23598,
+      "tracking_nonmonotone_count": 0,
+      "tracking_lead_seconds": {
+        "count": 23598,
+        "min": 20,
+        "median": 20.0,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "tracking_tail_seconds": {
+        "count": 23598,
+        "min": 20,
+        "median": 20.0,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "keys": {
+        "first6_unique_count": 23598,
+        "first6_duplicate_excess": 0,
+        "first4_unique_count": 23598,
+        "first4_duplicate_excess": 0,
+        "normalized_full_row_duplicate_excess": 0,
+        "ordered_first6_inventory_sha256": "f784c84d2e5daa050b5812754be6b9691b6b5ef5593b19f2dacff011672f862b",
+        "sorted_first6_multiset_sha256": "0aea904b0cc76b1d36cb142f7e85a8e113fb94ef417c3b29201ac4d095e2a7db"
+      },
+      "metadata": [
+        {
+          "column_index": 6,
+          "header": "是否馈电",
+          "empty_count": 0,
+          "nonempty_count": 23598,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "是": 23598
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 7,
+          "header": "最大仰角",
+          "empty_count": 0,
+          "nonempty_count": 23598,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 23598,
+          "value_counts_if_small": {
+            "*": 23598
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 8,
+          "header": "任务执行日期",
+          "empty_count": 0,
+          "nonempty_count": 23598,
+          "nonempty_distinct": 3,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "1": 7817,
+            "2": 7821,
+            "3": 7960
+          },
+          "numeric_nonempty_count": 23598,
+          "numeric_summary_distinct_values": {
+            "count": 3,
+            "min": 1,
+            "median": 2,
+            "p95": 2,
+            "max": 3,
+            "distinct": 3
+          }
+        },
+        {
+          "column_index": 9,
+          "header": "圈次",
+          "empty_count": 0,
+          "nonempty_count": 23598,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 23598,
+          "value_counts_if_small": {
+            "*": 23598
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 10,
+          "header": "升降轨标识",
+          "empty_count": 0,
+          "nonempty_count": 23598,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 23598,
+          "value_counts_if_small": {
+            "*": 23598
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 11,
+          "header": "优先级",
+          "empty_count": 23598,
+          "nonempty_count": 0,
+          "nonempty_distinct": 0,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {},
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      ],
+      "execution_date_vs_start_day": [
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "1",
+          "rows": 7817
+        },
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "2",
+          "rows": 144
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "2",
+          "rows": 7677
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "3",
+          "rows": 150
+        },
+        {
+          "start_day_absolute": 2,
+          "metadata_execution_date": "3",
+          "rows": 7810
+        }
+      ],
+      "natural_days": [
+        {
+          "day_index": 0,
+          "start": 0,
+          "end": 86400,
+          "contacts_by_start": 7961,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 144,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 1,
+          "start": 86400,
+          "end": 172800,
+          "contacts_by_start": 7827,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 150,
+          "incoming_link_overlap_count": 144
+        },
+        {
+          "day_index": 2,
+          "start": 172800,
+          "end": 259200,
+          "contacts_by_start": 7810,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 150
+        }
+      ],
+      "two_hour_windows": [
+        {
+          "day_index": 0,
+          "block_index": 0,
+          "start": 0,
+          "end": 7200,
+          "contacts_by_start": 1252,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 180,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 0,
+          "block_index": 1,
+          "start": 7200,
+          "end": 14400,
+          "contacts_by_start": 1168,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 170,
+          "incoming_link_overlap_count": 180
+        },
+        {
+          "day_index": 0,
+          "block_index": 2,
+          "start": 14400,
+          "end": 21600,
+          "contacts_by_start": 1006,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 126,
+          "incoming_link_overlap_count": 170
+        },
+        {
+          "day_index": 0,
+          "block_index": 3,
+          "start": 21600,
+          "end": 28800,
+          "contacts_by_start": 810,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 130,
+          "incoming_link_overlap_count": 126
+        },
+        {
+          "day_index": 0,
+          "block_index": 4,
+          "start": 28800,
+          "end": 36000,
+          "contacts_by_start": 690,
+          "ground_count": 40,
+          "satellite_count": 23,
+          "end_crossing_count": 80,
+          "incoming_link_overlap_count": 130
+        },
+        {
+          "day_index": 0,
+          "block_index": 5,
+          "start": 36000,
+          "end": 43200,
+          "contacts_by_start": 558,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 64,
+          "incoming_link_overlap_count": 80
+        },
+        {
+          "day_index": 0,
+          "block_index": 6,
+          "start": 43200,
+          "end": 50400,
+          "contacts_by_start": 523,
+          "ground_count": 40,
+          "satellite_count": 19,
+          "end_crossing_count": 64,
+          "incoming_link_overlap_count": 64
+        },
+        {
+          "day_index": 0,
+          "block_index": 7,
+          "start": 50400,
+          "end": 57600,
+          "contacts_by_start": 436,
+          "ground_count": 40,
+          "satellite_count": 11,
+          "end_crossing_count": 44,
+          "incoming_link_overlap_count": 64
+        },
+        {
+          "day_index": 0,
+          "block_index": 8,
+          "start": 57600,
+          "end": 64800,
+          "contacts_by_start": 190,
+          "ground_count": 36,
+          "satellite_count": 10,
+          "end_crossing_count": 6,
+          "incoming_link_overlap_count": 44
+        },
+        {
+          "day_index": 0,
+          "block_index": 9,
+          "start": 64800,
+          "end": 72000,
+          "contacts_by_start": 136,
+          "ground_count": 34,
+          "satellite_count": 14,
+          "end_crossing_count": 26,
+          "incoming_link_overlap_count": 6
+        },
+        {
+          "day_index": 0,
+          "block_index": 10,
+          "start": 72000,
+          "end": 79200,
+          "contacts_by_start": 392,
+          "ground_count": 38,
+          "satellite_count": 15,
+          "end_crossing_count": 68,
+          "incoming_link_overlap_count": 26
+        },
+        {
+          "day_index": 0,
+          "block_index": 11,
+          "start": 79200,
+          "end": 86400,
+          "contacts_by_start": 800,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 144,
+          "incoming_link_overlap_count": 68
+        },
+        {
+          "day_index": 1,
+          "block_index": 0,
+          "start": 86400,
+          "end": 93600,
+          "contacts_by_start": 1133,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 172,
+          "incoming_link_overlap_count": 144
+        },
+        {
+          "day_index": 1,
+          "block_index": 1,
+          "start": 93600,
+          "end": 100800,
+          "contacts_by_start": 1164,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 163,
+          "incoming_link_overlap_count": 172
+        },
+        {
+          "day_index": 1,
+          "block_index": 2,
+          "start": 100800,
+          "end": 108000,
+          "contacts_by_start": 1000,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 130,
+          "incoming_link_overlap_count": 163
+        },
+        {
+          "day_index": 1,
+          "block_index": 3,
+          "start": 108000,
+          "end": 115200,
+          "contacts_by_start": 806,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 127,
+          "incoming_link_overlap_count": 130
+        },
+        {
+          "day_index": 1,
+          "block_index": 4,
+          "start": 115200,
+          "end": 122400,
+          "contacts_by_start": 673,
+          "ground_count": 40,
+          "satellite_count": 24,
+          "end_crossing_count": 79,
+          "incoming_link_overlap_count": 127
+        },
+        {
+          "day_index": 1,
+          "block_index": 5,
+          "start": 122400,
+          "end": 129600,
+          "contacts_by_start": 499,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 52,
+          "incoming_link_overlap_count": 79
+        },
+        {
+          "day_index": 1,
+          "block_index": 6,
+          "start": 129600,
+          "end": 136800,
+          "contacts_by_start": 499,
+          "ground_count": 40,
+          "satellite_count": 19,
+          "end_crossing_count": 60,
+          "incoming_link_overlap_count": 52
+        },
+        {
+          "day_index": 1,
+          "block_index": 7,
+          "start": 136800,
+          "end": 144000,
+          "contacts_by_start": 438,
+          "ground_count": 40,
+          "satellite_count": 10,
+          "end_crossing_count": 50,
+          "incoming_link_overlap_count": 60
+        },
+        {
+          "day_index": 1,
+          "block_index": 8,
+          "start": 144000,
+          "end": 151200,
+          "contacts_by_start": 170,
+          "ground_count": 34,
+          "satellite_count": 10,
+          "end_crossing_count": 6,
+          "incoming_link_overlap_count": 50
+        },
+        {
+          "day_index": 1,
+          "block_index": 9,
+          "start": 151200,
+          "end": 158400,
+          "contacts_by_start": 170,
+          "ground_count": 34,
+          "satellite_count": 14,
+          "end_crossing_count": 32,
+          "incoming_link_overlap_count": 6
+        },
+        {
+          "day_index": 1,
+          "block_index": 10,
+          "start": 158400,
+          "end": 165600,
+          "contacts_by_start": 452,
+          "ground_count": 40,
+          "satellite_count": 16,
+          "end_crossing_count": 83,
+          "incoming_link_overlap_count": 32
+        },
+        {
+          "day_index": 1,
+          "block_index": 11,
+          "start": 165600,
+          "end": 172800,
+          "contacts_by_start": 823,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 150,
+          "incoming_link_overlap_count": 83
+        },
+        {
+          "day_index": 2,
+          "block_index": 0,
+          "start": 172800,
+          "end": 180000,
+          "contacts_by_start": 1142,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 170,
+          "incoming_link_overlap_count": 150
+        },
+        {
+          "day_index": 2,
+          "block_index": 1,
+          "start": 180000,
+          "end": 187200,
+          "contacts_by_start": 1168,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 160,
+          "incoming_link_overlap_count": 170
+        },
+        {
+          "day_index": 2,
+          "block_index": 2,
+          "start": 187200,
+          "end": 194400,
+          "contacts_by_start": 979,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 127,
+          "incoming_link_overlap_count": 160
+        },
+        {
+          "day_index": 2,
+          "block_index": 3,
+          "start": 194400,
+          "end": 201600,
+          "contacts_by_start": 795,
+          "ground_count": 40,
+          "satellite_count": 27,
+          "end_crossing_count": 114,
+          "incoming_link_overlap_count": 127
+        },
+        {
+          "day_index": 2,
+          "block_index": 4,
+          "start": 201600,
+          "end": 208800,
+          "contacts_by_start": 646,
+          "ground_count": 40,
+          "satellite_count": 24,
+          "end_crossing_count": 74,
+          "incoming_link_overlap_count": 114
+        },
+        {
+          "day_index": 2,
+          "block_index": 5,
+          "start": 208800,
+          "end": 216000,
+          "contacts_by_start": 475,
+          "ground_count": 40,
+          "satellite_count": 26,
+          "end_crossing_count": 54,
+          "incoming_link_overlap_count": 74
+        },
+        {
+          "day_index": 2,
+          "block_index": 6,
+          "start": 216000,
+          "end": 223200,
+          "contacts_by_start": 474,
+          "ground_count": 40,
+          "satellite_count": 19,
+          "end_crossing_count": 68,
+          "incoming_link_overlap_count": 54
+        },
+        {
+          "day_index": 2,
+          "block_index": 7,
+          "start": 223200,
+          "end": 230400,
+          "contacts_by_start": 430,
+          "ground_count": 40,
+          "satellite_count": 10,
+          "end_crossing_count": 41,
+          "incoming_link_overlap_count": 68
+        },
+        {
+          "day_index": 2,
+          "block_index": 8,
+          "start": 230400,
+          "end": 237600,
+          "contacts_by_start": 155,
+          "ground_count": 29,
+          "satellite_count": 10,
+          "end_crossing_count": 6,
+          "incoming_link_overlap_count": 41
+        },
+        {
+          "day_index": 2,
+          "block_index": 9,
+          "start": 237600,
+          "end": 244800,
+          "contacts_by_start": 218,
+          "ground_count": 36,
+          "satellite_count": 15,
+          "end_crossing_count": 36,
+          "incoming_link_overlap_count": 6
+        },
+        {
+          "day_index": 2,
+          "block_index": 10,
+          "start": 244800,
+          "end": 252000,
+          "contacts_by_start": 510,
+          "ground_count": 40,
+          "satellite_count": 19,
+          "end_crossing_count": 96,
+          "incoming_link_overlap_count": 36
+        },
+        {
+          "day_index": 2,
+          "block_index": 11,
+          "start": 252000,
+          "end": 259200,
+          "contacts_by_start": 818,
+          "ground_count": 40,
+          "satellite_count": 28,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 96
+        }
+      ],
+      "two_hour_count_summary": {
+        "count": 36,
+        "min": 136,
+        "median": 602.0,
+        "p95": 1168,
+        "max": 1252,
+        "distinct": 33
+      },
+      "two_hour_end_crossing_summary": {
+        "count": 36,
+        "min": 0,
+        "median": 76.5,
+        "p95": 170,
+        "max": 180,
+        "distinct": 29
+      }
+    },
+    {
+      "file": "C2.csv",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\C2.csv",
+      "sha256": "fdce63126a0d260a99e77b671adebd5ba498f08719399056d141ee0145c512a2",
+      "bytes": 3114862,
+      "encoding": "gb18030_strict",
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ],
+      "row_count": 46818,
+      "valid_required_rows": 46818,
+      "column_count_distribution": {
+        "12": 46818
+      },
+      "required_missing_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_time_invalid_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wrong_column_count": 0,
+      "ground_count": 40,
+      "satellite_count": 56,
+      "ground_satellite_pair_count": 2240,
+      "resource_normalization": [
+        {
+          "column_index": 0,
+          "raw_label_count": 40,
+          "normalized_label_count": 40,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 46818
+          }
+        },
+        {
+          "column_index": 1,
+          "raw_label_count": 56,
+          "normalized_label_count": 56,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 46818
+          }
+        }
+      ],
+      "time": {
+        "basis": "integer_seconds",
+        "origin": 0,
+        "min_link_start": 0,
+        "max_link_end": 259200,
+        "link_span_seconds": 259200,
+        "link_span_days": 3.0,
+        "min_tracking_start": -20,
+        "max_tracking_end": 259220
+      },
+      "duration_seconds": {
+        "count": 46818,
+        "min": 101,
+        "median": 1123.0,
+        "p95": 1239,
+        "max": 1244,
+        "distinct": 1137
+      },
+      "objective_interpretation": "inherited_loader_weight_equals_link_duration_not_an_independent_CSV_weight_column",
+      "negative_duration_count": 0,
+      "zero_duration_count": 0,
+      "tracking_contains_link_count": 46818,
+      "tracking_nonmonotone_count": 0,
+      "tracking_lead_seconds": {
+        "count": 46818,
+        "min": 20,
+        "median": 20.0,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "tracking_tail_seconds": {
+        "count": 46818,
+        "min": 20,
+        "median": 20.0,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "keys": {
+        "first6_unique_count": 46818,
+        "first6_duplicate_excess": 0,
+        "first4_unique_count": 46818,
+        "first4_duplicate_excess": 0,
+        "normalized_full_row_duplicate_excess": 0,
+        "ordered_first6_inventory_sha256": "f04c66113dd4313b178da6207eae36514ec0b1444da5021efc9b36486d0e33a7",
+        "sorted_first6_multiset_sha256": "00f367c570b73f034f69888193a73f073fc9003cc1e3442730bbb83fc67cfaba"
+      },
+      "metadata": [
+        {
+          "column_index": 6,
+          "header": "是否馈电",
+          "empty_count": 0,
+          "nonempty_count": 46818,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "是": 46818
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 7,
+          "header": "最大仰角",
+          "empty_count": 0,
+          "nonempty_count": 46818,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 46818,
+          "value_counts_if_small": {
+            "*": 46818
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 8,
+          "header": "任务执行日期",
+          "empty_count": 0,
+          "nonempty_count": 46818,
+          "nonempty_distinct": 3,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "1": 15520,
+            "2": 15571,
+            "3": 15727
+          },
+          "numeric_nonempty_count": 46818,
+          "numeric_summary_distinct_values": {
+            "count": 3,
+            "min": 1,
+            "median": 2,
+            "p95": 2,
+            "max": 3,
+            "distinct": 3
+          }
+        },
+        {
+          "column_index": 9,
+          "header": "圈次",
+          "empty_count": 0,
+          "nonempty_count": 46818,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 46818,
+          "value_counts_if_small": {
+            "*": 46818
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 10,
+          "header": "升降轨标识",
+          "empty_count": 0,
+          "nonempty_count": 46818,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 46818,
+          "value_counts_if_small": {
+            "*": 46818
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 11,
+          "header": "优先级",
+          "empty_count": 46818,
+          "nonempty_count": 0,
+          "nonempty_distinct": 0,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {},
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      ],
+      "execution_date_vs_start_day": [
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "1",
+          "rows": 15520
+        },
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "2",
+          "rows": 162
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "2",
+          "rows": 15409
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "3",
+          "rows": 172
+        },
+        {
+          "start_day_absolute": 2,
+          "metadata_execution_date": "3",
+          "rows": 15555
+        }
+      ],
+      "natural_days": [
+        {
+          "day_index": 0,
+          "start": 0,
+          "end": 86400,
+          "contacts_by_start": 15682,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 162,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 1,
+          "start": 86400,
+          "end": 172800,
+          "contacts_by_start": 15581,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 172,
+          "incoming_link_overlap_count": 162
+        },
+        {
+          "day_index": 2,
+          "start": 172800,
+          "end": 259200,
+          "contacts_by_start": 15555,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 172
+        }
+      ],
+      "two_hour_windows": [
+        {
+          "day_index": 0,
+          "block_index": 0,
+          "start": 0,
+          "end": 7200,
+          "contacts_by_start": 1612,
+          "ground_count": 40,
+          "satellite_count": 50,
+          "end_crossing_count": 246,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 0,
+          "block_index": 1,
+          "start": 7200,
+          "end": 14400,
+          "contacts_by_start": 2148,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 346,
+          "incoming_link_overlap_count": 246
+        },
+        {
+          "day_index": 0,
+          "block_index": 2,
+          "start": 14400,
+          "end": 21600,
+          "contacts_by_start": 2184,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 314,
+          "incoming_link_overlap_count": 346
+        },
+        {
+          "day_index": 0,
+          "block_index": 3,
+          "start": 21600,
+          "end": 28800,
+          "contacts_by_start": 1858,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 256,
+          "incoming_link_overlap_count": 314
+        },
+        {
+          "day_index": 0,
+          "block_index": 4,
+          "start": 28800,
+          "end": 36000,
+          "contacts_by_start": 1504,
+          "ground_count": 40,
+          "satellite_count": 51,
+          "end_crossing_count": 194,
+          "incoming_link_overlap_count": 256
+        },
+        {
+          "day_index": 0,
+          "block_index": 5,
+          "start": 36000,
+          "end": 43200,
+          "contacts_by_start": 1316,
+          "ground_count": 40,
+          "satellite_count": 50,
+          "end_crossing_count": 183,
+          "incoming_link_overlap_count": 194
+        },
+        {
+          "day_index": 0,
+          "block_index": 6,
+          "start": 43200,
+          "end": 50400,
+          "contacts_by_start": 1326,
+          "ground_count": 40,
+          "satellite_count": 47,
+          "end_crossing_count": 180,
+          "incoming_link_overlap_count": 183
+        },
+        {
+          "day_index": 0,
+          "block_index": 7,
+          "start": 50400,
+          "end": 57600,
+          "contacts_by_start": 1283,
+          "ground_count": 40,
+          "satellite_count": 39,
+          "end_crossing_count": 138,
+          "incoming_link_overlap_count": 180
+        },
+        {
+          "day_index": 0,
+          "block_index": 8,
+          "start": 57600,
+          "end": 64800,
+          "contacts_by_start": 778,
+          "ground_count": 40,
+          "satellite_count": 31,
+          "end_crossing_count": 68,
+          "incoming_link_overlap_count": 138
+        },
+        {
+          "day_index": 0,
+          "block_index": 9,
+          "start": 64800,
+          "end": 72000,
+          "contacts_by_start": 385,
+          "ground_count": 40,
+          "satellite_count": 26,
+          "end_crossing_count": 36,
+          "incoming_link_overlap_count": 68
+        },
+        {
+          "day_index": 0,
+          "block_index": 10,
+          "start": 72000,
+          "end": 79200,
+          "contacts_by_start": 438,
+          "ground_count": 40,
+          "satellite_count": 24,
+          "end_crossing_count": 68,
+          "incoming_link_overlap_count": 36
+        },
+        {
+          "day_index": 0,
+          "block_index": 11,
+          "start": 79200,
+          "end": 86400,
+          "contacts_by_start": 850,
+          "ground_count": 40,
+          "satellite_count": 32,
+          "end_crossing_count": 162,
+          "incoming_link_overlap_count": 68
+        },
+        {
+          "day_index": 1,
+          "block_index": 0,
+          "start": 86400,
+          "end": 93600,
+          "contacts_by_start": 1550,
+          "ground_count": 40,
+          "satellite_count": 51,
+          "end_crossing_count": 251,
+          "incoming_link_overlap_count": 162
+        },
+        {
+          "day_index": 1,
+          "block_index": 1,
+          "start": 93600,
+          "end": 100800,
+          "contacts_by_start": 2181,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 337,
+          "incoming_link_overlap_count": 251
+        },
+        {
+          "day_index": 1,
+          "block_index": 2,
+          "start": 100800,
+          "end": 108000,
+          "contacts_by_start": 2192,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 320,
+          "incoming_link_overlap_count": 337
+        },
+        {
+          "day_index": 1,
+          "block_index": 3,
+          "start": 108000,
+          "end": 115200,
+          "contacts_by_start": 1839,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 247,
+          "incoming_link_overlap_count": 320
+        },
+        {
+          "day_index": 1,
+          "block_index": 4,
+          "start": 115200,
+          "end": 122400,
+          "contacts_by_start": 1487,
+          "ground_count": 40,
+          "satellite_count": 52,
+          "end_crossing_count": 197,
+          "incoming_link_overlap_count": 247
+        },
+        {
+          "day_index": 1,
+          "block_index": 5,
+          "start": 122400,
+          "end": 129600,
+          "contacts_by_start": 1262,
+          "ground_count": 40,
+          "satellite_count": 51,
+          "end_crossing_count": 171,
+          "incoming_link_overlap_count": 197
+        },
+        {
+          "day_index": 1,
+          "block_index": 6,
+          "start": 129600,
+          "end": 136800,
+          "contacts_by_start": 1292,
+          "ground_count": 40,
+          "satellite_count": 47,
+          "end_crossing_count": 174,
+          "incoming_link_overlap_count": 171
+        },
+        {
+          "day_index": 1,
+          "block_index": 7,
+          "start": 136800,
+          "end": 144000,
+          "contacts_by_start": 1249,
+          "ground_count": 40,
+          "satellite_count": 38,
+          "end_crossing_count": 142,
+          "incoming_link_overlap_count": 174
+        },
+        {
+          "day_index": 1,
+          "block_index": 8,
+          "start": 144000,
+          "end": 151200,
+          "contacts_by_start": 720,
+          "ground_count": 40,
+          "satellite_count": 30,
+          "end_crossing_count": 62,
+          "incoming_link_overlap_count": 142
+        },
+        {
+          "day_index": 1,
+          "block_index": 9,
+          "start": 151200,
+          "end": 158400,
+          "contacts_by_start": 410,
+          "ground_count": 40,
+          "satellite_count": 25,
+          "end_crossing_count": 42,
+          "incoming_link_overlap_count": 62
+        },
+        {
+          "day_index": 1,
+          "block_index": 10,
+          "start": 158400,
+          "end": 165600,
+          "contacts_by_start": 492,
+          "ground_count": 40,
+          "satellite_count": 25,
+          "end_crossing_count": 83,
+          "incoming_link_overlap_count": 42
+        },
+        {
+          "day_index": 1,
+          "block_index": 11,
+          "start": 165600,
+          "end": 172800,
+          "contacts_by_start": 907,
+          "ground_count": 40,
+          "satellite_count": 34,
+          "end_crossing_count": 172,
+          "incoming_link_overlap_count": 83
+        },
+        {
+          "day_index": 2,
+          "block_index": 0,
+          "start": 172800,
+          "end": 180000,
+          "contacts_by_start": 1614,
+          "ground_count": 40,
+          "satellite_count": 53,
+          "end_crossing_count": 262,
+          "incoming_link_overlap_count": 172
+        },
+        {
+          "day_index": 2,
+          "block_index": 1,
+          "start": 180000,
+          "end": 187200,
+          "contacts_by_start": 2221,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 337,
+          "incoming_link_overlap_count": 262
+        },
+        {
+          "day_index": 2,
+          "block_index": 2,
+          "start": 187200,
+          "end": 194400,
+          "contacts_by_start": 2172,
+          "ground_count": 40,
+          "satellite_count": 56,
+          "end_crossing_count": 319,
+          "incoming_link_overlap_count": 337
+        },
+        {
+          "day_index": 2,
+          "block_index": 3,
+          "start": 194400,
+          "end": 201600,
+          "contacts_by_start": 1809,
+          "ground_count": 40,
+          "satellite_count": 55,
+          "end_crossing_count": 229,
+          "incoming_link_overlap_count": 319
+        },
+        {
+          "day_index": 2,
+          "block_index": 4,
+          "start": 201600,
+          "end": 208800,
+          "contacts_by_start": 1460,
+          "ground_count": 40,
+          "satellite_count": 52,
+          "end_crossing_count": 194,
+          "incoming_link_overlap_count": 229
+        },
+        {
+          "day_index": 2,
+          "block_index": 5,
+          "start": 208800,
+          "end": 216000,
+          "contacts_by_start": 1239,
+          "ground_count": 40,
+          "satellite_count": 49,
+          "end_crossing_count": 178,
+          "incoming_link_overlap_count": 194
+        },
+        {
+          "day_index": 2,
+          "block_index": 6,
+          "start": 216000,
+          "end": 223200,
+          "contacts_by_start": 1250,
+          "ground_count": 40,
+          "satellite_count": 47,
+          "end_crossing_count": 174,
+          "incoming_link_overlap_count": 178
+        },
+        {
+          "day_index": 2,
+          "block_index": 7,
+          "start": 223200,
+          "end": 230400,
+          "contacts_by_start": 1201,
+          "ground_count": 40,
+          "satellite_count": 38,
+          "end_crossing_count": 135,
+          "incoming_link_overlap_count": 174
+        },
+        {
+          "day_index": 2,
+          "block_index": 8,
+          "start": 230400,
+          "end": 237600,
+          "contacts_by_start": 663,
+          "ground_count": 40,
+          "satellite_count": 29,
+          "end_crossing_count": 56,
+          "incoming_link_overlap_count": 135
+        },
+        {
+          "day_index": 2,
+          "block_index": 9,
+          "start": 237600,
+          "end": 244800,
+          "contacts_by_start": 442,
+          "ground_count": 40,
+          "satellite_count": 25,
+          "end_crossing_count": 50,
+          "incoming_link_overlap_count": 56
+        },
+        {
+          "day_index": 2,
+          "block_index": 10,
+          "start": 244800,
+          "end": 252000,
+          "contacts_by_start": 542,
+          "ground_count": 40,
+          "satellite_count": 27,
+          "end_crossing_count": 96,
+          "incoming_link_overlap_count": 50
+        },
+        {
+          "day_index": 2,
+          "block_index": 11,
+          "start": 252000,
+          "end": 259200,
+          "contacts_by_start": 942,
+          "ground_count": 40,
+          "satellite_count": 35,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 96
+        }
+      ],
+      "two_hour_count_summary": {
+        "count": 36,
+        "min": 385,
+        "median": 1287.5,
+        "p95": 2184,
+        "max": 2221,
+        "distinct": 36
+      },
+      "two_hour_end_crossing_summary": {
+        "count": 36,
+        "min": 0,
+        "median": 176.0,
+        "p95": 337,
+        "max": 346,
+        "distinct": 32
+      }
+    },
+    {
+      "file": "C3.csv",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\C3.csv",
+      "sha256": "ec95f50c11d800f051e218aa1e414df873ddd12e1f71ce911da3ba28adff647e",
+      "bytes": 4682663,
+      "encoding": "gb18030_strict",
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ],
+      "row_count": 69923,
+      "valid_required_rows": 69923,
+      "column_count_distribution": {
+        "12": 69923
+      },
+      "required_missing_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_time_invalid_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wrong_column_count": 0,
+      "ground_count": 40,
+      "satellite_count": 84,
+      "ground_satellite_pair_count": 3360,
+      "resource_normalization": [
+        {
+          "column_index": 0,
+          "raw_label_count": 40,
+          "normalized_label_count": 40,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 69923
+          }
+        },
+        {
+          "column_index": 1,
+          "raw_label_count": 84,
+          "normalized_label_count": 84,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 69923
+          }
+        }
+      ],
+      "time": {
+        "basis": "integer_seconds",
+        "origin": 0,
+        "min_link_start": 0,
+        "max_link_end": 259200,
+        "link_span_seconds": 259200,
+        "link_span_days": 3.0,
+        "min_tracking_start": -20,
+        "max_tracking_end": 259220
+      },
+      "duration_seconds": {
+        "count": 69923,
+        "min": 101,
+        "median": 1124,
+        "p95": 1239,
+        "max": 1244,
+        "distinct": 1142
+      },
+      "objective_interpretation": "inherited_loader_weight_equals_link_duration_not_an_independent_CSV_weight_column",
+      "negative_duration_count": 0,
+      "zero_duration_count": 0,
+      "tracking_contains_link_count": 69923,
+      "tracking_nonmonotone_count": 0,
+      "tracking_lead_seconds": {
+        "count": 69923,
+        "min": 20,
+        "median": 20,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "tracking_tail_seconds": {
+        "count": 69923,
+        "min": 20,
+        "median": 20,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "keys": {
+        "first6_unique_count": 69923,
+        "first6_duplicate_excess": 0,
+        "first4_unique_count": 69923,
+        "first4_duplicate_excess": 0,
+        "normalized_full_row_duplicate_excess": 0,
+        "ordered_first6_inventory_sha256": "8020a419e079e18689bdf189c407819069fb05437140a8e10a5aefbd1acdd5a6",
+        "sorted_first6_multiset_sha256": "aeae53fcdd93c2ab3864251591d27b106e5ef11c7fdd1310e1c962be89184f80"
+      },
+      "metadata": [
+        {
+          "column_index": 6,
+          "header": "是否馈电",
+          "empty_count": 0,
+          "nonempty_count": 69923,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "是": 69923
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 7,
+          "header": "最大仰角",
+          "empty_count": 0,
+          "nonempty_count": 69923,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 69923,
+          "value_counts_if_small": {
+            "*": 69923
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 8,
+          "header": "任务执行日期",
+          "empty_count": 0,
+          "nonempty_count": 69923,
+          "nonempty_distinct": 3,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "1": 23224,
+            "2": 23274,
+            "3": 23425
+          },
+          "numeric_nonempty_count": 69923,
+          "numeric_summary_distinct_values": {
+            "count": 3,
+            "min": 1,
+            "median": 2,
+            "p95": 2,
+            "max": 3,
+            "distinct": 3
+          }
+        },
+        {
+          "column_index": 9,
+          "header": "圈次",
+          "empty_count": 0,
+          "nonempty_count": 69923,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 69923,
+          "value_counts_if_small": {
+            "*": 69923
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 10,
+          "header": "升降轨标识",
+          "empty_count": 0,
+          "nonempty_count": 69923,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 69923,
+          "value_counts_if_small": {
+            "*": 69923
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 11,
+          "header": "优先级",
+          "empty_count": 69923,
+          "nonempty_count": 0,
+          "nonempty_distinct": 0,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {},
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      ],
+      "execution_date_vs_start_day": [
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "1",
+          "rows": 23224
+        },
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "2",
+          "rows": 162
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "2",
+          "rows": 23112
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "3",
+          "rows": 172
+        },
+        {
+          "start_day_absolute": 2,
+          "metadata_execution_date": "3",
+          "rows": 23253
+        }
+      ],
+      "natural_days": [
+        {
+          "day_index": 0,
+          "start": 0,
+          "end": 86400,
+          "contacts_by_start": 23386,
+          "ground_count": 40,
+          "satellite_count": 84,
+          "end_crossing_count": 162,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 1,
+          "start": 86400,
+          "end": 172800,
+          "contacts_by_start": 23284,
+          "ground_count": 40,
+          "satellite_count": 84,
+          "end_crossing_count": 172,
+          "incoming_link_overlap_count": 162
+        },
+        {
+          "day_index": 2,
+          "start": 172800,
+          "end": 259200,
+          "contacts_by_start": 23253,
+          "ground_count": 40,
+          "satellite_count": 84,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 172
+        }
+      ],
+      "two_hour_windows": [
+        {
+          "day_index": 0,
+          "block_index": 0,
+          "start": 0,
+          "end": 7200,
+          "contacts_by_start": 1614,
+          "ground_count": 40,
+          "satellite_count": 51,
+          "end_crossing_count": 246,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 0,
+          "block_index": 1,
+          "start": 7200,
+          "end": 14400,
+          "contacts_by_start": 2188,
+          "ground_count": 40,
+          "satellite_count": 65,
+          "end_crossing_count": 358,
+          "incoming_link_overlap_count": 246
+        },
+        {
+          "day_index": 0,
+          "block_index": 2,
+          "start": 14400,
+          "end": 21600,
+          "contacts_by_start": 2520,
+          "ground_count": 40,
+          "satellite_count": 70,
+          "end_crossing_count": 382,
+          "incoming_link_overlap_count": 358
+        },
+        {
+          "day_index": 0,
+          "block_index": 3,
+          "start": 21600,
+          "end": 28800,
+          "contacts_by_start": 2686,
+          "ground_count": 40,
+          "satellite_count": 81,
+          "end_crossing_count": 398,
+          "incoming_link_overlap_count": 382
+        },
+        {
+          "day_index": 0,
+          "block_index": 4,
+          "start": 28800,
+          "end": 36000,
+          "contacts_by_start": 2543,
+          "ground_count": 40,
+          "satellite_count": 79,
+          "end_crossing_count": 316,
+          "incoming_link_overlap_count": 398
+        },
+        {
+          "day_index": 0,
+          "block_index": 5,
+          "start": 36000,
+          "end": 43200,
+          "contacts_by_start": 2161,
+          "ground_count": 40,
+          "satellite_count": 78,
+          "end_crossing_count": 307,
+          "incoming_link_overlap_count": 316
+        },
+        {
+          "day_index": 0,
+          "block_index": 6,
+          "start": 43200,
+          "end": 50400,
+          "contacts_by_start": 2080,
+          "ground_count": 40,
+          "satellite_count": 69,
+          "end_crossing_count": 292,
+          "incoming_link_overlap_count": 307
+        },
+        {
+          "day_index": 0,
+          "block_index": 7,
+          "start": 50400,
+          "end": 57600,
+          "contacts_by_start": 2101,
+          "ground_count": 40,
+          "satellite_count": 67,
+          "end_crossing_count": 276,
+          "incoming_link_overlap_count": 292
+        },
+        {
+          "day_index": 0,
+          "block_index": 8,
+          "start": 57600,
+          "end": 64800,
+          "contacts_by_start": 1863,
+          "ground_count": 40,
+          "satellite_count": 59,
+          "end_crossing_count": 243,
+          "incoming_link_overlap_count": 276
+        },
+        {
+          "day_index": 0,
+          "block_index": 9,
+          "start": 64800,
+          "end": 72000,
+          "contacts_by_start": 1526,
+          "ground_count": 40,
+          "satellite_count": 54,
+          "end_crossing_count": 198,
+          "incoming_link_overlap_count": 243
+        },
+        {
+          "day_index": 0,
+          "block_index": 10,
+          "start": 72000,
+          "end": 79200,
+          "contacts_by_start": 1129,
+          "ground_count": 40,
+          "satellite_count": 52,
+          "end_crossing_count": 110,
+          "incoming_link_overlap_count": 198
+        },
+        {
+          "day_index": 0,
+          "block_index": 11,
+          "start": 79200,
+          "end": 86400,
+          "contacts_by_start": 975,
+          "ground_count": 40,
+          "satellite_count": 51,
+          "end_crossing_count": 162,
+          "incoming_link_overlap_count": 110
+        },
+        {
+          "day_index": 1,
+          "block_index": 0,
+          "start": 86400,
+          "end": 93600,
+          "contacts_by_start": 1550,
+          "ground_count": 40,
+          "satellite_count": 51,
+          "end_crossing_count": 251,
+          "incoming_link_overlap_count": 162
+        },
+        {
+          "day_index": 1,
+          "block_index": 1,
+          "start": 93600,
+          "end": 100800,
+          "contacts_by_start": 2227,
+          "ground_count": 40,
+          "satellite_count": 65,
+          "end_crossing_count": 350,
+          "incoming_link_overlap_count": 251
+        },
+        {
+          "day_index": 1,
+          "block_index": 2,
+          "start": 100800,
+          "end": 108000,
+          "contacts_by_start": 2576,
+          "ground_count": 40,
+          "satellite_count": 71,
+          "end_crossing_count": 399,
+          "incoming_link_overlap_count": 350
+        },
+        {
+          "day_index": 1,
+          "block_index": 3,
+          "start": 108000,
+          "end": 115200,
+          "contacts_by_start": 2732,
+          "ground_count": 40,
+          "satellite_count": 82,
+          "end_crossing_count": 397,
+          "incoming_link_overlap_count": 399
+        },
+        {
+          "day_index": 1,
+          "block_index": 4,
+          "start": 115200,
+          "end": 122400,
+          "contacts_by_start": 2521,
+          "ground_count": 40,
+          "satellite_count": 80,
+          "end_crossing_count": 315,
+          "incoming_link_overlap_count": 397
+        },
+        {
+          "day_index": 1,
+          "block_index": 5,
+          "start": 122400,
+          "end": 129600,
+          "contacts_by_start": 2102,
+          "ground_count": 40,
+          "satellite_count": 79,
+          "end_crossing_count": 294,
+          "incoming_link_overlap_count": 315
+        },
+        {
+          "day_index": 1,
+          "block_index": 6,
+          "start": 129600,
+          "end": 136800,
+          "contacts_by_start": 2045,
+          "ground_count": 40,
+          "satellite_count": 68,
+          "end_crossing_count": 287,
+          "incoming_link_overlap_count": 294
+        },
+        {
+          "day_index": 1,
+          "block_index": 7,
+          "start": 136800,
+          "end": 144000,
+          "contacts_by_start": 2070,
+          "ground_count": 40,
+          "satellite_count": 66,
+          "end_crossing_count": 278,
+          "incoming_link_overlap_count": 287
+        },
+        {
+          "day_index": 1,
+          "block_index": 8,
+          "start": 144000,
+          "end": 151200,
+          "contacts_by_start": 1825,
+          "ground_count": 40,
+          "satellite_count": 58,
+          "end_crossing_count": 240,
+          "incoming_link_overlap_count": 278
+        },
+        {
+          "day_index": 1,
+          "block_index": 9,
+          "start": 151200,
+          "end": 158400,
+          "contacts_by_start": 1524,
+          "ground_count": 40,
+          "satellite_count": 53,
+          "end_crossing_count": 184,
+          "incoming_link_overlap_count": 240
+        },
+        {
+          "day_index": 1,
+          "block_index": 10,
+          "start": 158400,
+          "end": 165600,
+          "contacts_by_start": 1113,
+          "ground_count": 40,
+          "satellite_count": 53,
+          "end_crossing_count": 117,
+          "incoming_link_overlap_count": 184
+        },
+        {
+          "day_index": 1,
+          "block_index": 11,
+          "start": 165600,
+          "end": 172800,
+          "contacts_by_start": 999,
+          "ground_count": 40,
+          "satellite_count": 52,
+          "end_crossing_count": 172,
+          "incoming_link_overlap_count": 117
+        },
+        {
+          "day_index": 2,
+          "block_index": 0,
+          "start": 172800,
+          "end": 180000,
+          "contacts_by_start": 1614,
+          "ground_count": 40,
+          "satellite_count": 53,
+          "end_crossing_count": 262,
+          "incoming_link_overlap_count": 172
+        },
+        {
+          "day_index": 2,
+          "block_index": 1,
+          "start": 180000,
+          "end": 187200,
+          "contacts_by_start": 2273,
+          "ground_count": 40,
+          "satellite_count": 65,
+          "end_crossing_count": 349,
+          "incoming_link_overlap_count": 262
+        },
+        {
+          "day_index": 2,
+          "block_index": 2,
+          "start": 187200,
+          "end": 194400,
+          "contacts_by_start": 2614,
+          "ground_count": 40,
+          "satellite_count": 73,
+          "end_crossing_count": 410,
+          "incoming_link_overlap_count": 349
+        },
+        {
+          "day_index": 2,
+          "block_index": 3,
+          "start": 194400,
+          "end": 201600,
+          "contacts_by_start": 2751,
+          "ground_count": 40,
+          "satellite_count": 83,
+          "end_crossing_count": 387,
+          "incoming_link_overlap_count": 410
+        },
+        {
+          "day_index": 2,
+          "block_index": 4,
+          "start": 201600,
+          "end": 208800,
+          "contacts_by_start": 2497,
+          "ground_count": 40,
+          "satellite_count": 80,
+          "end_crossing_count": 322,
+          "incoming_link_overlap_count": 387
+        },
+        {
+          "day_index": 2,
+          "block_index": 5,
+          "start": 208800,
+          "end": 216000,
+          "contacts_by_start": 2068,
+          "ground_count": 40,
+          "satellite_count": 77,
+          "end_crossing_count": 298,
+          "incoming_link_overlap_count": 322
+        },
+        {
+          "day_index": 2,
+          "block_index": 6,
+          "start": 216000,
+          "end": 223200,
+          "contacts_by_start": 2005,
+          "ground_count": 40,
+          "satellite_count": 69,
+          "end_crossing_count": 291,
+          "incoming_link_overlap_count": 298
+        },
+        {
+          "day_index": 2,
+          "block_index": 7,
+          "start": 223200,
+          "end": 230400,
+          "contacts_by_start": 2036,
+          "ground_count": 40,
+          "satellite_count": 66,
+          "end_crossing_count": 277,
+          "incoming_link_overlap_count": 291
+        },
+        {
+          "day_index": 2,
+          "block_index": 8,
+          "start": 230400,
+          "end": 237600,
+          "contacts_by_start": 1769,
+          "ground_count": 40,
+          "satellite_count": 57,
+          "end_crossing_count": 228,
+          "incoming_link_overlap_count": 277
+        },
+        {
+          "day_index": 2,
+          "block_index": 9,
+          "start": 237600,
+          "end": 244800,
+          "contacts_by_start": 1525,
+          "ground_count": 40,
+          "satellite_count": 53,
+          "end_crossing_count": 175,
+          "incoming_link_overlap_count": 228
+        },
+        {
+          "day_index": 2,
+          "block_index": 10,
+          "start": 244800,
+          "end": 252000,
+          "contacts_by_start": 1089,
+          "ground_count": 40,
+          "satellite_count": 54,
+          "end_crossing_count": 124,
+          "incoming_link_overlap_count": 175
+        },
+        {
+          "day_index": 2,
+          "block_index": 11,
+          "start": 252000,
+          "end": 259200,
+          "contacts_by_start": 1012,
+          "ground_count": 40,
+          "satellite_count": 50,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 124
+        }
+      ],
+      "two_hour_count_summary": {
+        "count": 36,
+        "min": 975,
+        "median": 2056.5,
+        "p95": 2686,
+        "max": 2751,
+        "distinct": 35
+      },
+      "two_hour_end_crossing_summary": {
+        "count": 36,
+        "min": 0,
+        "median": 282.5,
+        "p95": 398,
+        "max": 410,
+        "distinct": 36
+      }
+    },
+    {
+      "file": "C4.csv",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\C4.csv",
+      "sha256": "0b40f2383a3cd7ba05315bbb39345dbc57f3ddb0039fa934552cee3cbdfc578d",
+      "bytes": 6254745,
+      "encoding": "gb18030_strict",
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ],
+      "row_count": 93153,
+      "valid_required_rows": 93153,
+      "column_count_distribution": {
+        "12": 93153
+      },
+      "required_missing_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_time_invalid_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wrong_column_count": 0,
+      "ground_count": 40,
+      "satellite_count": 112,
+      "ground_satellite_pair_count": 4480,
+      "resource_normalization": [
+        {
+          "column_index": 0,
+          "raw_label_count": 40,
+          "normalized_label_count": 40,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 93153
+          }
+        },
+        {
+          "column_index": 1,
+          "raw_label_count": 112,
+          "normalized_label_count": 112,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 93153
+          }
+        }
+      ],
+      "time": {
+        "basis": "integer_seconds",
+        "origin": 0,
+        "min_link_start": 0,
+        "max_link_end": 259200,
+        "link_span_seconds": 259200,
+        "link_span_days": 3.0,
+        "min_tracking_start": -20,
+        "max_tracking_end": 259220
+      },
+      "duration_seconds": {
+        "count": 93153,
+        "min": 101,
+        "median": 1124,
+        "p95": 1239,
+        "max": 1244,
+        "distinct": 1144
+      },
+      "objective_interpretation": "inherited_loader_weight_equals_link_duration_not_an_independent_CSV_weight_column",
+      "negative_duration_count": 0,
+      "zero_duration_count": 0,
+      "tracking_contains_link_count": 93153,
+      "tracking_nonmonotone_count": 0,
+      "tracking_lead_seconds": {
+        "count": 93153,
+        "min": 20,
+        "median": 20,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "tracking_tail_seconds": {
+        "count": 93153,
+        "min": 20,
+        "median": 20,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "keys": {
+        "first6_unique_count": 93153,
+        "first6_duplicate_excess": 0,
+        "first4_unique_count": 93153,
+        "first4_duplicate_excess": 0,
+        "normalized_full_row_duplicate_excess": 0,
+        "ordered_first6_inventory_sha256": "df14938094bce365a69d5515673c4bee6bd8e0a257bedfce66cd7cb7a14e8077",
+        "sorted_first6_multiset_sha256": "db83005e04e504d3f80fd2e9401e16fcb4b41e0af1368a7e026c87ada9b42c58"
+      },
+      "metadata": [
+        {
+          "column_index": 6,
+          "header": "是否馈电",
+          "empty_count": 0,
+          "nonempty_count": 93153,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "是": 93153
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 7,
+          "header": "最大仰角",
+          "empty_count": 0,
+          "nonempty_count": 93153,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 93153,
+          "value_counts_if_small": {
+            "*": 93153
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 8,
+          "header": "任务执行日期",
+          "empty_count": 0,
+          "nonempty_count": 93153,
+          "nonempty_distinct": 3,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "1": 30971,
+            "2": 31009,
+            "3": 31173
+          },
+          "numeric_nonempty_count": 93153,
+          "numeric_summary_distinct_values": {
+            "count": 3,
+            "min": 1,
+            "median": 2,
+            "p95": 2,
+            "max": 3,
+            "distinct": 3
+          }
+        },
+        {
+          "column_index": 9,
+          "header": "圈次",
+          "empty_count": 0,
+          "nonempty_count": 93153,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 93153,
+          "value_counts_if_small": {
+            "*": 93153
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 10,
+          "header": "升降轨标识",
+          "empty_count": 0,
+          "nonempty_count": 93153,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 93153,
+          "value_counts_if_small": {
+            "*": 93153
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 11,
+          "header": "优先级",
+          "empty_count": 93153,
+          "nonempty_count": 0,
+          "nonempty_distinct": 0,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {},
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      ],
+      "execution_date_vs_start_day": [
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "1",
+          "rows": 30971
+        },
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "2",
+          "rows": 194
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "2",
+          "rows": 30815
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "3",
+          "rows": 198
+        },
+        {
+          "start_day_absolute": 2,
+          "metadata_execution_date": "3",
+          "rows": 30975
+        }
+      ],
+      "natural_days": [
+        {
+          "day_index": 0,
+          "start": 0,
+          "end": 86400,
+          "contacts_by_start": 31165,
+          "ground_count": 40,
+          "satellite_count": 112,
+          "end_crossing_count": 194,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 1,
+          "start": 86400,
+          "end": 172800,
+          "contacts_by_start": 31013,
+          "ground_count": 40,
+          "satellite_count": 112,
+          "end_crossing_count": 198,
+          "incoming_link_overlap_count": 194
+        },
+        {
+          "day_index": 2,
+          "start": 172800,
+          "end": 259200,
+          "contacts_by_start": 30975,
+          "ground_count": 40,
+          "satellite_count": 112,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 198
+        }
+      ],
+      "two_hour_windows": [
+        {
+          "day_index": 0,
+          "block_index": 0,
+          "start": 0,
+          "end": 7200,
+          "contacts_by_start": 1788,
+          "ground_count": 40,
+          "satellite_count": 70,
+          "end_crossing_count": 246,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 0,
+          "block_index": 1,
+          "start": 7200,
+          "end": 14400,
+          "contacts_by_start": 2220,
+          "ground_count": 40,
+          "satellite_count": 69,
+          "end_crossing_count": 374,
+          "incoming_link_overlap_count": 246
+        },
+        {
+          "day_index": 0,
+          "block_index": 2,
+          "start": 14400,
+          "end": 21600,
+          "contacts_by_start": 2836,
+          "ground_count": 40,
+          "satellite_count": 87,
+          "end_crossing_count": 434,
+          "incoming_link_overlap_count": 374
+        },
+        {
+          "day_index": 0,
+          "block_index": 3,
+          "start": 21600,
+          "end": 28800,
+          "contacts_by_start": 3346,
+          "ground_count": 40,
+          "satellite_count": 100,
+          "end_crossing_count": 528,
+          "incoming_link_overlap_count": 434
+        },
+        {
+          "day_index": 0,
+          "block_index": 4,
+          "start": 28800,
+          "end": 36000,
+          "contacts_by_start": 3475,
+          "ground_count": 40,
+          "satellite_count": 105,
+          "end_crossing_count": 463,
+          "incoming_link_overlap_count": 528
+        },
+        {
+          "day_index": 0,
+          "block_index": 5,
+          "start": 36000,
+          "end": 43200,
+          "contacts_by_start": 3220,
+          "ground_count": 40,
+          "satellite_count": 106,
+          "end_crossing_count": 435,
+          "incoming_link_overlap_count": 463
+        },
+        {
+          "day_index": 0,
+          "block_index": 6,
+          "start": 43200,
+          "end": 50400,
+          "contacts_by_start": 2928,
+          "ground_count": 40,
+          "satellite_count": 97,
+          "end_crossing_count": 412,
+          "incoming_link_overlap_count": 435
+        },
+        {
+          "day_index": 0,
+          "block_index": 7,
+          "start": 50400,
+          "end": 57600,
+          "contacts_by_start": 2856,
+          "ground_count": 40,
+          "satellite_count": 90,
+          "end_crossing_count": 390,
+          "incoming_link_overlap_count": 412
+        },
+        {
+          "day_index": 0,
+          "block_index": 8,
+          "start": 57600,
+          "end": 64800,
+          "contacts_by_start": 2633,
+          "ground_count": 40,
+          "satellite_count": 87,
+          "end_crossing_count": 347,
+          "incoming_link_overlap_count": 390
+        },
+        {
+          "day_index": 0,
+          "block_index": 9,
+          "start": 64800,
+          "end": 72000,
+          "contacts_by_start": 2376,
+          "ground_count": 40,
+          "satellite_count": 82,
+          "end_crossing_count": 332,
+          "incoming_link_overlap_count": 347
+        },
+        {
+          "day_index": 0,
+          "block_index": 10,
+          "start": 72000,
+          "end": 79200,
+          "contacts_by_start": 1931,
+          "ground_count": 40,
+          "satellite_count": 73,
+          "end_crossing_count": 220,
+          "incoming_link_overlap_count": 332
+        },
+        {
+          "day_index": 0,
+          "block_index": 11,
+          "start": 79200,
+          "end": 86400,
+          "contacts_by_start": 1556,
+          "ground_count": 40,
+          "satellite_count": 70,
+          "end_crossing_count": 194,
+          "incoming_link_overlap_count": 220
+        },
+        {
+          "day_index": 1,
+          "block_index": 0,
+          "start": 86400,
+          "end": 93600,
+          "contacts_by_start": 1654,
+          "ground_count": 40,
+          "satellite_count": 69,
+          "end_crossing_count": 251,
+          "incoming_link_overlap_count": 194
+        },
+        {
+          "day_index": 1,
+          "block_index": 1,
+          "start": 93600,
+          "end": 100800,
+          "contacts_by_start": 2283,
+          "ground_count": 40,
+          "satellite_count": 70,
+          "end_crossing_count": 368,
+          "incoming_link_overlap_count": 251
+        },
+        {
+          "day_index": 1,
+          "block_index": 2,
+          "start": 100800,
+          "end": 108000,
+          "contacts_by_start": 2922,
+          "ground_count": 40,
+          "satellite_count": 88,
+          "end_crossing_count": 459,
+          "incoming_link_overlap_count": 368
+        },
+        {
+          "day_index": 1,
+          "block_index": 3,
+          "start": 108000,
+          "end": 115200,
+          "contacts_by_start": 3402,
+          "ground_count": 40,
+          "satellite_count": 101,
+          "end_crossing_count": 525,
+          "incoming_link_overlap_count": 459
+        },
+        {
+          "day_index": 1,
+          "block_index": 4,
+          "start": 115200,
+          "end": 122400,
+          "contacts_by_start": 3499,
+          "ground_count": 40,
+          "satellite_count": 107,
+          "end_crossing_count": 469,
+          "incoming_link_overlap_count": 525
+        },
+        {
+          "day_index": 1,
+          "block_index": 5,
+          "start": 122400,
+          "end": 129600,
+          "contacts_by_start": 3178,
+          "ground_count": 40,
+          "satellite_count": 107,
+          "end_crossing_count": 432,
+          "incoming_link_overlap_count": 469
+        },
+        {
+          "day_index": 1,
+          "block_index": 6,
+          "start": 129600,
+          "end": 136800,
+          "contacts_by_start": 2875,
+          "ground_count": 40,
+          "satellite_count": 96,
+          "end_crossing_count": 409,
+          "incoming_link_overlap_count": 432
+        },
+        {
+          "day_index": 1,
+          "block_index": 7,
+          "start": 136800,
+          "end": 144000,
+          "contacts_by_start": 2820,
+          "ground_count": 40,
+          "satellite_count": 89,
+          "end_crossing_count": 388,
+          "incoming_link_overlap_count": 409
+        },
+        {
+          "day_index": 1,
+          "block_index": 8,
+          "start": 144000,
+          "end": 151200,
+          "contacts_by_start": 2595,
+          "ground_count": 40,
+          "satellite_count": 86,
+          "end_crossing_count": 348,
+          "incoming_link_overlap_count": 388
+        },
+        {
+          "day_index": 1,
+          "block_index": 9,
+          "start": 151200,
+          "end": 158400,
+          "contacts_by_start": 2339,
+          "ground_count": 40,
+          "satellite_count": 81,
+          "end_crossing_count": 304,
+          "incoming_link_overlap_count": 348
+        },
+        {
+          "day_index": 1,
+          "block_index": 10,
+          "start": 158400,
+          "end": 165600,
+          "contacts_by_start": 1910,
+          "ground_count": 40,
+          "satellite_count": 73,
+          "end_crossing_count": 222,
+          "incoming_link_overlap_count": 304
+        },
+        {
+          "day_index": 1,
+          "block_index": 11,
+          "start": 165600,
+          "end": 172800,
+          "contacts_by_start": 1536,
+          "ground_count": 40,
+          "satellite_count": 71,
+          "end_crossing_count": 198,
+          "incoming_link_overlap_count": 222
+        },
+        {
+          "day_index": 2,
+          "block_index": 0,
+          "start": 172800,
+          "end": 180000,
+          "contacts_by_start": 1696,
+          "ground_count": 40,
+          "satellite_count": 70,
+          "end_crossing_count": 262,
+          "incoming_link_overlap_count": 198
+        },
+        {
+          "day_index": 2,
+          "block_index": 1,
+          "start": 180000,
+          "end": 187200,
+          "contacts_by_start": 2365,
+          "ground_count": 40,
+          "satellite_count": 71,
+          "end_crossing_count": 373,
+          "incoming_link_overlap_count": 262
+        },
+        {
+          "day_index": 2,
+          "block_index": 2,
+          "start": 187200,
+          "end": 194400,
+          "contacts_by_start": 2986,
+          "ground_count": 40,
+          "satellite_count": 91,
+          "end_crossing_count": 480,
+          "incoming_link_overlap_count": 373
+        },
+        {
+          "day_index": 2,
+          "block_index": 3,
+          "start": 194400,
+          "end": 201600,
+          "contacts_by_start": 3437,
+          "ground_count": 40,
+          "satellite_count": 102,
+          "end_crossing_count": 510,
+          "incoming_link_overlap_count": 480
+        },
+        {
+          "day_index": 2,
+          "block_index": 4,
+          "start": 201600,
+          "end": 208800,
+          "contacts_by_start": 3530,
+          "ground_count": 40,
+          "satellite_count": 108,
+          "end_crossing_count": 495,
+          "incoming_link_overlap_count": 510
+        },
+        {
+          "day_index": 2,
+          "block_index": 5,
+          "start": 208800,
+          "end": 216000,
+          "contacts_by_start": 3125,
+          "ground_count": 40,
+          "satellite_count": 105,
+          "end_crossing_count": 434,
+          "incoming_link_overlap_count": 495
+        },
+        {
+          "day_index": 2,
+          "block_index": 6,
+          "start": 216000,
+          "end": 223200,
+          "contacts_by_start": 2839,
+          "ground_count": 40,
+          "satellite_count": 97,
+          "end_crossing_count": 417,
+          "incoming_link_overlap_count": 434
+        },
+        {
+          "day_index": 2,
+          "block_index": 7,
+          "start": 223200,
+          "end": 230400,
+          "contacts_by_start": 2782,
+          "ground_count": 40,
+          "satellite_count": 88,
+          "end_crossing_count": 389,
+          "incoming_link_overlap_count": 417
+        },
+        {
+          "day_index": 2,
+          "block_index": 8,
+          "start": 230400,
+          "end": 237600,
+          "contacts_by_start": 2518,
+          "ground_count": 40,
+          "satellite_count": 85,
+          "end_crossing_count": 332,
+          "incoming_link_overlap_count": 389
+        },
+        {
+          "day_index": 2,
+          "block_index": 9,
+          "start": 237600,
+          "end": 244800,
+          "contacts_by_start": 2319,
+          "ground_count": 40,
+          "satellite_count": 81,
+          "end_crossing_count": 295,
+          "incoming_link_overlap_count": 332
+        },
+        {
+          "day_index": 2,
+          "block_index": 10,
+          "start": 244800,
+          "end": 252000,
+          "contacts_by_start": 1883,
+          "ground_count": 40,
+          "satellite_count": 73,
+          "end_crossing_count": 228,
+          "incoming_link_overlap_count": 295
+        },
+        {
+          "day_index": 2,
+          "block_index": 11,
+          "start": 252000,
+          "end": 259200,
+          "contacts_by_start": 1495,
+          "ground_count": 40,
+          "satellite_count": 69,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 228
+        }
+      ],
+      "two_hour_count_summary": {
+        "count": 36,
+        "min": 1495,
+        "median": 2707.5,
+        "p95": 3475,
+        "max": 3530,
+        "distinct": 36
+      },
+      "two_hour_end_crossing_summary": {
+        "count": 36,
+        "min": 0,
+        "median": 381.0,
+        "p95": 510,
+        "max": 528,
+        "distinct": 34
+      }
+    },
+    {
+      "file": "C5.csv",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\C5.csv",
+      "sha256": "aa6c705f50fcaec89638db1be20fd0f70f24989162501c6d82d8e8b37d66817b",
+      "bytes": 7844691,
+      "encoding": "gb18030_strict",
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ],
+      "row_count": 116755,
+      "valid_required_rows": 116755,
+      "column_count_distribution": {
+        "12": 116755
+      },
+      "required_missing_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_time_invalid_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wrong_column_count": 0,
+      "ground_count": 40,
+      "satellite_count": 140,
+      "ground_satellite_pair_count": 5600,
+      "resource_normalization": [
+        {
+          "column_index": 0,
+          "raw_label_count": 40,
+          "normalized_label_count": 40,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 116755
+          }
+        },
+        {
+          "column_index": 1,
+          "raw_label_count": 140,
+          "normalized_label_count": 140,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 116755
+          }
+        }
+      ],
+      "time": {
+        "basis": "integer_seconds",
+        "origin": 0,
+        "min_link_start": 0,
+        "max_link_end": 259200,
+        "link_span_seconds": 259200,
+        "link_span_days": 3.0,
+        "min_tracking_start": -20,
+        "max_tracking_end": 259220
+      },
+      "duration_seconds": {
+        "count": 116755,
+        "min": 101,
+        "median": 1123,
+        "p95": 1239,
+        "max": 1244,
+        "distinct": 1144
+      },
+      "objective_interpretation": "inherited_loader_weight_equals_link_duration_not_an_independent_CSV_weight_column",
+      "negative_duration_count": 0,
+      "zero_duration_count": 0,
+      "tracking_contains_link_count": 116755,
+      "tracking_nonmonotone_count": 0,
+      "tracking_lead_seconds": {
+        "count": 116755,
+        "min": 20,
+        "median": 20,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "tracking_tail_seconds": {
+        "count": 116755,
+        "min": 20,
+        "median": 20,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "keys": {
+        "first6_unique_count": 116755,
+        "first6_duplicate_excess": 0,
+        "first4_unique_count": 116755,
+        "first4_duplicate_excess": 0,
+        "normalized_full_row_duplicate_excess": 0,
+        "ordered_first6_inventory_sha256": "03e0373c38dbdbc4b60c1a03395b0c8683da3966c9643f5df45c6b22fa41a0c0",
+        "sorted_first6_multiset_sha256": "37a7e9ca4cb9401e2dbcfec95819808a6bef14b63ffed65431b4d594b1875499"
+      },
+      "metadata": [
+        {
+          "column_index": 6,
+          "header": "是否馈电",
+          "empty_count": 0,
+          "nonempty_count": 116755,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "是": 116755
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 7,
+          "header": "最大仰角",
+          "empty_count": 0,
+          "nonempty_count": 116755,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 116755,
+          "value_counts_if_small": {
+            "*": 116755
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 8,
+          "header": "任务执行日期",
+          "empty_count": 0,
+          "nonempty_count": 116755,
+          "nonempty_distinct": 3,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "1": 38782,
+            "2": 38837,
+            "3": 39136
+          },
+          "numeric_nonempty_count": 116755,
+          "numeric_summary_distinct_values": {
+            "count": 3,
+            "min": 1,
+            "median": 2,
+            "p95": 2,
+            "max": 3,
+            "distinct": 3
+          }
+        },
+        {
+          "column_index": 9,
+          "header": "圈次",
+          "empty_count": 0,
+          "nonempty_count": 116755,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 116755,
+          "value_counts_if_small": {
+            "*": 116755
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 10,
+          "header": "升降轨标识",
+          "empty_count": 0,
+          "nonempty_count": 116755,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 116755,
+          "value_counts_if_small": {
+            "*": 116755
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 11,
+          "header": "优先级",
+          "empty_count": 116755,
+          "nonempty_count": 0,
+          "nonempty_distinct": 0,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {},
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      ],
+      "execution_date_vs_start_day": [
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "1",
+          "rows": 38782
+        },
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "2",
+          "rows": 370
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "2",
+          "rows": 38467
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "3",
+          "rows": 372
+        },
+        {
+          "start_day_absolute": 2,
+          "metadata_execution_date": "3",
+          "rows": 38764
+        }
+      ],
+      "natural_days": [
+        {
+          "day_index": 0,
+          "start": 0,
+          "end": 86400,
+          "contacts_by_start": 39152,
+          "ground_count": 40,
+          "satellite_count": 140,
+          "end_crossing_count": 370,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 1,
+          "start": 86400,
+          "end": 172800,
+          "contacts_by_start": 38839,
+          "ground_count": 40,
+          "satellite_count": 140,
+          "end_crossing_count": 372,
+          "incoming_link_overlap_count": 370
+        },
+        {
+          "day_index": 2,
+          "start": 172800,
+          "end": 259200,
+          "contacts_by_start": 38764,
+          "ground_count": 40,
+          "satellite_count": 140,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 372
+        }
+      ],
+      "two_hour_windows": [
+        {
+          "day_index": 0,
+          "block_index": 0,
+          "start": 0,
+          "end": 7200,
+          "contacts_by_start": 2910,
+          "ground_count": 40,
+          "satellite_count": 98,
+          "end_crossing_count": 340,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 0,
+          "block_index": 1,
+          "start": 7200,
+          "end": 14400,
+          "contacts_by_start": 2588,
+          "ground_count": 40,
+          "satellite_count": 96,
+          "end_crossing_count": 390,
+          "incoming_link_overlap_count": 340
+        },
+        {
+          "day_index": 0,
+          "block_index": 2,
+          "start": 14400,
+          "end": 21600,
+          "contacts_by_start": 2876,
+          "ground_count": 40,
+          "satellite_count": 95,
+          "end_crossing_count": 434,
+          "incoming_link_overlap_count": 390
+        },
+        {
+          "day_index": 0,
+          "block_index": 3,
+          "start": 21600,
+          "end": 28800,
+          "contacts_by_start": 3385,
+          "ground_count": 40,
+          "satellite_count": 108,
+          "end_crossing_count": 538,
+          "incoming_link_overlap_count": 434
+        },
+        {
+          "day_index": 0,
+          "block_index": 4,
+          "start": 28800,
+          "end": 36000,
+          "contacts_by_start": 3769,
+          "ground_count": 40,
+          "satellite_count": 115,
+          "end_crossing_count": 521,
+          "incoming_link_overlap_count": 538
+        },
+        {
+          "day_index": 0,
+          "block_index": 5,
+          "start": 36000,
+          "end": 43200,
+          "contacts_by_start": 3830,
+          "ground_count": 40,
+          "satellite_count": 125,
+          "end_crossing_count": 553,
+          "incoming_link_overlap_count": 521
+        },
+        {
+          "day_index": 0,
+          "block_index": 6,
+          "start": 43200,
+          "end": 50400,
+          "contacts_by_start": 3784,
+          "ground_count": 40,
+          "satellite_count": 125,
+          "end_crossing_count": 526,
+          "incoming_link_overlap_count": 553
+        },
+        {
+          "day_index": 0,
+          "block_index": 7,
+          "start": 50400,
+          "end": 57600,
+          "contacts_by_start": 3656,
+          "ground_count": 40,
+          "satellite_count": 118,
+          "end_crossing_count": 504,
+          "incoming_link_overlap_count": 526
+        },
+        {
+          "day_index": 0,
+          "block_index": 8,
+          "start": 57600,
+          "end": 64800,
+          "contacts_by_start": 3393,
+          "ground_count": 40,
+          "satellite_count": 110,
+          "end_crossing_count": 461,
+          "incoming_link_overlap_count": 504
+        },
+        {
+          "day_index": 0,
+          "block_index": 9,
+          "start": 64800,
+          "end": 72000,
+          "contacts_by_start": 3208,
+          "ground_count": 40,
+          "satellite_count": 110,
+          "end_crossing_count": 464,
+          "incoming_link_overlap_count": 461
+        },
+        {
+          "day_index": 0,
+          "block_index": 10,
+          "start": 72000,
+          "end": 79200,
+          "contacts_by_start": 3009,
+          "ground_count": 40,
+          "satellite_count": 101,
+          "end_crossing_count": 388,
+          "incoming_link_overlap_count": 464
+        },
+        {
+          "day_index": 0,
+          "block_index": 11,
+          "start": 79200,
+          "end": 86400,
+          "contacts_by_start": 2744,
+          "ground_count": 40,
+          "satellite_count": 98,
+          "end_crossing_count": 370,
+          "incoming_link_overlap_count": 388
+        },
+        {
+          "day_index": 1,
+          "block_index": 0,
+          "start": 86400,
+          "end": 93600,
+          "contacts_by_start": 2556,
+          "ground_count": 40,
+          "satellite_count": 97,
+          "end_crossing_count": 329,
+          "incoming_link_overlap_count": 370
+        },
+        {
+          "day_index": 1,
+          "block_index": 1,
+          "start": 93600,
+          "end": 100800,
+          "contacts_by_start": 2598,
+          "ground_count": 40,
+          "satellite_count": 96,
+          "end_crossing_count": 378,
+          "incoming_link_overlap_count": 329
+        },
+        {
+          "day_index": 1,
+          "block_index": 2,
+          "start": 100800,
+          "end": 108000,
+          "contacts_by_start": 2943,
+          "ground_count": 40,
+          "satellite_count": 94,
+          "end_crossing_count": 459,
+          "incoming_link_overlap_count": 378
+        },
+        {
+          "day_index": 1,
+          "block_index": 3,
+          "start": 108000,
+          "end": 115200,
+          "contacts_by_start": 3446,
+          "ground_count": 40,
+          "satellite_count": 110,
+          "end_crossing_count": 537,
+          "incoming_link_overlap_count": 459
+        },
+        {
+          "day_index": 1,
+          "block_index": 4,
+          "start": 115200,
+          "end": 122400,
+          "contacts_by_start": 3809,
+          "ground_count": 40,
+          "satellite_count": 117,
+          "end_crossing_count": 527,
+          "incoming_link_overlap_count": 537
+        },
+        {
+          "day_index": 1,
+          "block_index": 5,
+          "start": 122400,
+          "end": 129600,
+          "contacts_by_start": 3826,
+          "ground_count": 40,
+          "satellite_count": 126,
+          "end_crossing_count": 546,
+          "incoming_link_overlap_count": 527
+        },
+        {
+          "day_index": 1,
+          "block_index": 6,
+          "start": 129600,
+          "end": 136800,
+          "contacts_by_start": 3779,
+          "ground_count": 40,
+          "satellite_count": 124,
+          "end_crossing_count": 523,
+          "incoming_link_overlap_count": 546
+        },
+        {
+          "day_index": 1,
+          "block_index": 7,
+          "start": 136800,
+          "end": 144000,
+          "contacts_by_start": 3634,
+          "ground_count": 40,
+          "satellite_count": 117,
+          "end_crossing_count": 504,
+          "incoming_link_overlap_count": 523
+        },
+        {
+          "day_index": 1,
+          "block_index": 8,
+          "start": 144000,
+          "end": 151200,
+          "contacts_by_start": 3347,
+          "ground_count": 40,
+          "satellite_count": 108,
+          "end_crossing_count": 456,
+          "incoming_link_overlap_count": 504
+        },
+        {
+          "day_index": 1,
+          "block_index": 9,
+          "start": 151200,
+          "end": 158400,
+          "contacts_by_start": 3179,
+          "ground_count": 40,
+          "satellite_count": 109,
+          "end_crossing_count": 430,
+          "incoming_link_overlap_count": 456
+        },
+        {
+          "day_index": 1,
+          "block_index": 10,
+          "start": 158400,
+          "end": 165600,
+          "contacts_by_start": 3008,
+          "ground_count": 40,
+          "satellite_count": 101,
+          "end_crossing_count": 396,
+          "incoming_link_overlap_count": 430
+        },
+        {
+          "day_index": 1,
+          "block_index": 11,
+          "start": 165600,
+          "end": 172800,
+          "contacts_by_start": 2714,
+          "ground_count": 40,
+          "satellite_count": 99,
+          "end_crossing_count": 372,
+          "incoming_link_overlap_count": 396
+        },
+        {
+          "day_index": 2,
+          "block_index": 0,
+          "start": 172800,
+          "end": 180000,
+          "contacts_by_start": 2540,
+          "ground_count": 40,
+          "satellite_count": 98,
+          "end_crossing_count": 332,
+          "incoming_link_overlap_count": 372
+        },
+        {
+          "day_index": 2,
+          "block_index": 1,
+          "start": 180000,
+          "end": 187200,
+          "contacts_by_start": 2625,
+          "ground_count": 40,
+          "satellite_count": 95,
+          "end_crossing_count": 377,
+          "incoming_link_overlap_count": 332
+        },
+        {
+          "day_index": 2,
+          "block_index": 2,
+          "start": 187200,
+          "end": 194400,
+          "contacts_by_start": 2998,
+          "ground_count": 40,
+          "satellite_count": 96,
+          "end_crossing_count": 480,
+          "incoming_link_overlap_count": 377
+        },
+        {
+          "day_index": 2,
+          "block_index": 3,
+          "start": 194400,
+          "end": 201600,
+          "contacts_by_start": 3485,
+          "ground_count": 40,
+          "satellite_count": 112,
+          "end_crossing_count": 522,
+          "incoming_link_overlap_count": 480
+        },
+        {
+          "day_index": 2,
+          "block_index": 4,
+          "start": 201600,
+          "end": 208800,
+          "contacts_by_start": 3854,
+          "ground_count": 40,
+          "satellite_count": 119,
+          "end_crossing_count": 555,
+          "incoming_link_overlap_count": 522
+        },
+        {
+          "day_index": 2,
+          "block_index": 5,
+          "start": 208800,
+          "end": 216000,
+          "contacts_by_start": 3822,
+          "ground_count": 40,
+          "satellite_count": 126,
+          "end_crossing_count": 550,
+          "incoming_link_overlap_count": 555
+        },
+        {
+          "day_index": 2,
+          "block_index": 6,
+          "start": 216000,
+          "end": 223200,
+          "contacts_by_start": 3790,
+          "ground_count": 40,
+          "satellite_count": 125,
+          "end_crossing_count": 541,
+          "incoming_link_overlap_count": 550
+        },
+        {
+          "day_index": 2,
+          "block_index": 7,
+          "start": 223200,
+          "end": 230400,
+          "contacts_by_start": 3584,
+          "ground_count": 40,
+          "satellite_count": 116,
+          "end_crossing_count": 505,
+          "incoming_link_overlap_count": 541
+        },
+        {
+          "day_index": 2,
+          "block_index": 8,
+          "start": 230400,
+          "end": 237600,
+          "contacts_by_start": 3270,
+          "ground_count": 40,
+          "satellite_count": 106,
+          "end_crossing_count": 440,
+          "incoming_link_overlap_count": 505
+        },
+        {
+          "day_index": 2,
+          "block_index": 9,
+          "start": 237600,
+          "end": 244800,
+          "contacts_by_start": 3159,
+          "ground_count": 40,
+          "satellite_count": 109,
+          "end_crossing_count": 421,
+          "incoming_link_overlap_count": 440
+        },
+        {
+          "day_index": 2,
+          "block_index": 10,
+          "start": 244800,
+          "end": 252000,
+          "contacts_by_start": 2996,
+          "ground_count": 40,
+          "satellite_count": 101,
+          "end_crossing_count": 404,
+          "incoming_link_overlap_count": 421
+        },
+        {
+          "day_index": 2,
+          "block_index": 11,
+          "start": 252000,
+          "end": 259200,
+          "contacts_by_start": 2641,
+          "ground_count": 40,
+          "satellite_count": 97,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 404
+        }
+      ],
+      "two_hour_count_summary": {
+        "count": 36,
+        "min": 2540,
+        "median": 3239.0,
+        "p95": 3826,
+        "max": 3854,
+        "distinct": 36
+      },
+      "two_hour_end_crossing_summary": {
+        "count": 36,
+        "min": 0,
+        "median": 460.0,
+        "p95": 550,
+        "max": 555,
+        "distinct": 35
+      }
+    },
+    {
+      "file": "C6.csv",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\C6.csv",
+      "sha256": "2e6b398fe2a6cee1497ab3eccf45d0108bdb30b4f2fa6c12f276e2028c9446cb",
+      "bytes": 9433020,
+      "encoding": "gb18030_strict",
+      "header": [
+        "地面站标识",
+        "卫星标识",
+        "开始建链时间",
+        "结束建链时间",
+        "开始跟踪时间",
+        "结束跟踪时间",
+        "是否馈电",
+        "最大仰角",
+        "任务执行日期",
+        "圈次",
+        "升降轨标识",
+        "优先级"
+      ],
+      "row_count": 140406,
+      "valid_required_rows": 140406,
+      "column_count_distribution": {
+        "12": 140406
+      },
+      "required_missing_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "integer_time_invalid_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wrong_column_count": 0,
+      "ground_count": 40,
+      "satellite_count": 168,
+      "ground_satellite_pair_count": 6720,
+      "resource_normalization": [
+        {
+          "column_index": 0,
+          "raw_label_count": 40,
+          "normalized_label_count": 40,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 140406
+          }
+        },
+        {
+          "column_index": 1,
+          "raw_label_count": 168,
+          "normalized_label_count": 168,
+          "normalized_labels_with_multiple_raw_variants": 0,
+          "boundary_quote_shape_counts": {
+            "left:'|right:'": 140406
+          }
+        }
+      ],
+      "time": {
+        "basis": "integer_seconds",
+        "origin": 0,
+        "min_link_start": 0,
+        "max_link_end": 259200,
+        "link_span_seconds": 259200,
+        "link_span_days": 3.0,
+        "min_tracking_start": -20,
+        "max_tracking_end": 259220
+      },
+      "duration_seconds": {
+        "count": 140406,
+        "min": 101,
+        "median": 1123.0,
+        "p95": 1239,
+        "max": 1244,
+        "distinct": 1144
+      },
+      "objective_interpretation": "inherited_loader_weight_equals_link_duration_not_an_independent_CSV_weight_column",
+      "negative_duration_count": 0,
+      "zero_duration_count": 0,
+      "tracking_contains_link_count": 140406,
+      "tracking_nonmonotone_count": 0,
+      "tracking_lead_seconds": {
+        "count": 140406,
+        "min": 20,
+        "median": 20.0,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "tracking_tail_seconds": {
+        "count": 140406,
+        "min": 20,
+        "median": 20.0,
+        "p95": 20,
+        "max": 20,
+        "distinct": 1
+      },
+      "keys": {
+        "first6_unique_count": 140406,
+        "first6_duplicate_excess": 0,
+        "first4_unique_count": 140406,
+        "first4_duplicate_excess": 0,
+        "normalized_full_row_duplicate_excess": 0,
+        "ordered_first6_inventory_sha256": "5db050c6a14ca87281acc5b8ee56dbe1fb14d9ad0bdbb3644f2b98d6ae053a0a",
+        "sorted_first6_multiset_sha256": "1647fa4c78518fb52f55f7c9f18b79cfc2d82c7646d631dbe9dc15233cd790df"
+      },
+      "metadata": [
+        {
+          "column_index": 6,
+          "header": "是否馈电",
+          "empty_count": 0,
+          "nonempty_count": 140406,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "是": 140406
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 7,
+          "header": "最大仰角",
+          "empty_count": 0,
+          "nonempty_count": 140406,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 140406,
+          "value_counts_if_small": {
+            "*": 140406
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 8,
+          "header": "任务执行日期",
+          "empty_count": 0,
+          "nonempty_count": 140406,
+          "nonempty_distinct": 3,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {
+            "1": 46600,
+            "2": 46668,
+            "3": 47138
+          },
+          "numeric_nonempty_count": 140406,
+          "numeric_summary_distinct_values": {
+            "count": 3,
+            "min": 1,
+            "median": 2,
+            "p95": 2,
+            "max": 3,
+            "distinct": 3
+          }
+        },
+        {
+          "column_index": 9,
+          "header": "圈次",
+          "empty_count": 0,
+          "nonempty_count": 140406,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 140406,
+          "value_counts_if_small": {
+            "*": 140406
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 10,
+          "header": "升降轨标识",
+          "empty_count": 0,
+          "nonempty_count": 140406,
+          "nonempty_distinct": 1,
+          "star_sentinel_count": 140406,
+          "value_counts_if_small": {
+            "*": 140406
+          },
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        },
+        {
+          "column_index": 11,
+          "header": "优先级",
+          "empty_count": 140406,
+          "nonempty_count": 0,
+          "nonempty_distinct": 0,
+          "star_sentinel_count": 0,
+          "value_counts_if_small": {},
+          "numeric_nonempty_count": 0,
+          "numeric_summary_distinct_values": {
+            "count": 0,
+            "min": null,
+            "median": null,
+            "p95": null,
+            "max": null,
+            "distinct": 0
+          }
+        }
+      ],
+      "execution_date_vs_start_day": [
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "1",
+          "rows": 46600
+        },
+        {
+          "start_day_absolute": 0,
+          "metadata_execution_date": "2",
+          "rows": 556
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "2",
+          "rows": 46112
+        },
+        {
+          "start_day_absolute": 1,
+          "metadata_execution_date": "3",
+          "rows": 552
+        },
+        {
+          "start_day_absolute": 2,
+          "metadata_execution_date": "3",
+          "rows": 46586
+        }
+      ],
+      "natural_days": [
+        {
+          "day_index": 0,
+          "start": 0,
+          "end": 86400,
+          "contacts_by_start": 47156,
+          "ground_count": 40,
+          "satellite_count": 168,
+          "end_crossing_count": 556,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 1,
+          "start": 86400,
+          "end": 172800,
+          "contacts_by_start": 46664,
+          "ground_count": 40,
+          "satellite_count": 168,
+          "end_crossing_count": 552,
+          "incoming_link_overlap_count": 556
+        },
+        {
+          "day_index": 2,
+          "start": 172800,
+          "end": 259200,
+          "contacts_by_start": 46586,
+          "ground_count": 40,
+          "satellite_count": 168,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 552
+        }
+      ],
+      "two_hour_windows": [
+        {
+          "day_index": 0,
+          "block_index": 0,
+          "start": 0,
+          "end": 7200,
+          "contacts_by_start": 4252,
+          "ground_count": 40,
+          "satellite_count": 126,
+          "end_crossing_count": 506,
+          "incoming_link_overlap_count": 0
+        },
+        {
+          "day_index": 0,
+          "block_index": 1,
+          "start": 7200,
+          "end": 14400,
+          "contacts_by_start": 3608,
+          "ground_count": 40,
+          "satellite_count": 124,
+          "end_crossing_count": 536,
+          "incoming_link_overlap_count": 506
+        },
+        {
+          "day_index": 0,
+          "block_index": 2,
+          "start": 14400,
+          "end": 21600,
+          "contacts_by_start": 3563,
+          "ground_count": 40,
+          "satellite_count": 123,
+          "end_crossing_count": 506,
+          "incoming_link_overlap_count": 536
+        },
+        {
+          "day_index": 0,
+          "block_index": 3,
+          "start": 21600,
+          "end": 28800,
+          "contacts_by_start": 3713,
+          "ground_count": 40,
+          "satellite_count": 125,
+          "end_crossing_count": 556,
+          "incoming_link_overlap_count": 506
+        },
+        {
+          "day_index": 0,
+          "block_index": 4,
+          "start": 28800,
+          "end": 36000,
+          "contacts_by_start": 3896,
+          "ground_count": 40,
+          "satellite_count": 134,
+          "end_crossing_count": 538,
+          "incoming_link_overlap_count": 556
+        },
+        {
+          "day_index": 0,
+          "block_index": 5,
+          "start": 36000,
+          "end": 43200,
+          "contacts_by_start": 4161,
+          "ground_count": 40,
+          "satellite_count": 135,
+          "end_crossing_count": 611,
+          "incoming_link_overlap_count": 538
+        },
+        {
+          "day_index": 0,
+          "block_index": 6,
+          "start": 43200,
+          "end": 50400,
+          "contacts_by_start": 4222,
+          "ground_count": 40,
+          "satellite_count": 135,
+          "end_crossing_count": 590,
+          "incoming_link_overlap_count": 611
+        },
+        {
+          "day_index": 0,
+          "block_index": 7,
+          "start": 50400,
+          "end": 57600,
+          "contacts_by_start": 4138,
+          "ground_count": 40,
+          "satellite_count": 137,
+          "end_crossing_count": 562,
+          "incoming_link_overlap_count": 590
+        },
+        {
+          "day_index": 0,
+          "block_index": 8,
+          "start": 57600,
+          "end": 64800,
+          "contacts_by_start": 3941,
+          "ground_count": 40,
+          "satellite_count": 136,
+          "end_crossing_count": 547,
+          "incoming_link_overlap_count": 562
+        },
+        {
+          "day_index": 0,
+          "block_index": 9,
+          "start": 64800,
+          "end": 72000,
+          "contacts_by_start": 3932,
+          "ground_count": 40,
+          "satellite_count": 132,
+          "end_crossing_count": 582,
+          "incoming_link_overlap_count": 547
+        },
+        {
+          "day_index": 0,
+          "block_index": 10,
+          "start": 72000,
+          "end": 79200,
+          "contacts_by_start": 3846,
+          "ground_count": 40,
+          "satellite_count": 129,
+          "end_crossing_count": 500,
+          "incoming_link_overlap_count": 582
+        },
+        {
+          "day_index": 0,
+          "block_index": 11,
+          "start": 79200,
+          "end": 86400,
+          "contacts_by_start": 3884,
+          "ground_count": 40,
+          "satellite_count": 126,
+          "end_crossing_count": 556,
+          "incoming_link_overlap_count": 500
+        },
+        {
+          "day_index": 1,
+          "block_index": 0,
+          "start": 86400,
+          "end": 93600,
+          "contacts_by_start": 3728,
+          "ground_count": 40,
+          "satellite_count": 125,
+          "end_crossing_count": 497,
+          "incoming_link_overlap_count": 556
+        },
+        {
+          "day_index": 1,
+          "block_index": 1,
+          "start": 93600,
+          "end": 100800,
+          "contacts_by_start": 3600,
+          "ground_count": 40,
+          "satellite_count": 124,
+          "end_crossing_count": 512,
+          "incoming_link_overlap_count": 497
+        },
+        {
+          "day_index": 1,
+          "block_index": 2,
+          "start": 100800,
+          "end": 108000,
+          "contacts_by_start": 3579,
+          "ground_count": 40,
+          "satellite_count": 120,
+          "end_crossing_count": 515,
+          "incoming_link_overlap_count": 512
+        },
+        {
+          "day_index": 1,
+          "block_index": 3,
+          "start": 108000,
+          "end": 115200,
+          "contacts_by_start": 3740,
+          "ground_count": 40,
+          "satellite_count": 126,
+          "end_crossing_count": 549,
+          "incoming_link_overlap_count": 515
+        },
+        {
+          "day_index": 1,
+          "block_index": 4,
+          "start": 115200,
+          "end": 122400,
+          "contacts_by_start": 3911,
+          "ground_count": 40,
+          "satellite_count": 135,
+          "end_crossing_count": 541,
+          "incoming_link_overlap_count": 549
+        },
+        {
+          "day_index": 1,
+          "block_index": 5,
+          "start": 122400,
+          "end": 129600,
+          "contacts_by_start": 4172,
+          "ground_count": 40,
+          "satellite_count": 136,
+          "end_crossing_count": 606,
+          "incoming_link_overlap_count": 541
+        },
+        {
+          "day_index": 1,
+          "block_index": 6,
+          "start": 129600,
+          "end": 136800,
+          "contacts_by_start": 4215,
+          "ground_count": 40,
+          "satellite_count": 134,
+          "end_crossing_count": 587,
+          "incoming_link_overlap_count": 606
+        },
+        {
+          "day_index": 1,
+          "block_index": 7,
+          "start": 136800,
+          "end": 144000,
+          "contacts_by_start": 4146,
+          "ground_count": 40,
+          "satellite_count": 136,
+          "end_crossing_count": 564,
+          "incoming_link_overlap_count": 587
+        },
+        {
+          "day_index": 1,
+          "block_index": 8,
+          "start": 144000,
+          "end": 151200,
+          "contacts_by_start": 3952,
+          "ground_count": 40,
+          "satellite_count": 136,
+          "end_crossing_count": 544,
+          "incoming_link_overlap_count": 564
+        },
+        {
+          "day_index": 1,
+          "block_index": 9,
+          "start": 151200,
+          "end": 158400,
+          "contacts_by_start": 3921,
+          "ground_count": 40,
+          "satellite_count": 130,
+          "end_crossing_count": 562,
+          "incoming_link_overlap_count": 544
+        },
+        {
+          "day_index": 1,
+          "block_index": 10,
+          "start": 158400,
+          "end": 165600,
+          "contacts_by_start": 3843,
+          "ground_count": 40,
+          "satellite_count": 129,
+          "end_crossing_count": 513,
+          "incoming_link_overlap_count": 562
+        },
+        {
+          "day_index": 1,
+          "block_index": 11,
+          "start": 165600,
+          "end": 172800,
+          "contacts_by_start": 3857,
+          "ground_count": 40,
+          "satellite_count": 127,
+          "end_crossing_count": 552,
+          "incoming_link_overlap_count": 513
+        },
+        {
+          "day_index": 2,
+          "block_index": 0,
+          "start": 172800,
+          "end": 180000,
+          "contacts_by_start": 3720,
+          "ground_count": 40,
+          "satellite_count": 126,
+          "end_crossing_count": 500,
+          "incoming_link_overlap_count": 552
+        },
+        {
+          "day_index": 2,
+          "block_index": 1,
+          "start": 180000,
+          "end": 187200,
+          "contacts_by_start": 3601,
+          "ground_count": 40,
+          "satellite_count": 123,
+          "end_crossing_count": 497,
+          "incoming_link_overlap_count": 500
+        },
+        {
+          "day_index": 2,
+          "block_index": 2,
+          "start": 187200,
+          "end": 194400,
+          "contacts_by_start": 3596,
+          "ground_count": 40,
+          "satellite_count": 122,
+          "end_crossing_count": 530,
+          "incoming_link_overlap_count": 497
+        },
+        {
+          "day_index": 2,
+          "block_index": 3,
+          "start": 194400,
+          "end": 201600,
+          "contacts_by_start": 3733,
+          "ground_count": 40,
+          "satellite_count": 126,
+          "end_crossing_count": 530,
+          "incoming_link_overlap_count": 530
+        },
+        {
+          "day_index": 2,
+          "block_index": 4,
+          "start": 201600,
+          "end": 208800,
+          "contacts_by_start": 3950,
+          "ground_count": 40,
+          "satellite_count": 134,
+          "end_crossing_count": 571,
+          "incoming_link_overlap_count": 530
+        },
+        {
+          "day_index": 2,
+          "block_index": 5,
+          "start": 208800,
+          "end": 216000,
+          "contacts_by_start": 4178,
+          "ground_count": 40,
+          "satellite_count": 136,
+          "end_crossing_count": 620,
+          "incoming_link_overlap_count": 571
+        },
+        {
+          "day_index": 2,
+          "block_index": 6,
+          "start": 216000,
+          "end": 223200,
+          "contacts_by_start": 4222,
+          "ground_count": 40,
+          "satellite_count": 137,
+          "end_crossing_count": 603,
+          "incoming_link_overlap_count": 620
+        },
+        {
+          "day_index": 2,
+          "block_index": 7,
+          "start": 223200,
+          "end": 230400,
+          "contacts_by_start": 4128,
+          "ground_count": 40,
+          "satellite_count": 135,
+          "end_crossing_count": 569,
+          "incoming_link_overlap_count": 603
+        },
+        {
+          "day_index": 2,
+          "block_index": 8,
+          "start": 230400,
+          "end": 237600,
+          "contacts_by_start": 3919,
+          "ground_count": 40,
+          "satellite_count": 134,
+          "end_crossing_count": 532,
+          "incoming_link_overlap_count": 569
+        },
+        {
+          "day_index": 2,
+          "block_index": 9,
+          "start": 237600,
+          "end": 244800,
+          "contacts_by_start": 3915,
+          "ground_count": 40,
+          "satellite_count": 131,
+          "end_crossing_count": 551,
+          "incoming_link_overlap_count": 532
+        },
+        {
+          "day_index": 2,
+          "block_index": 10,
+          "start": 244800,
+          "end": 252000,
+          "contacts_by_start": 3848,
+          "ground_count": 40,
+          "satellite_count": 129,
+          "end_crossing_count": 534,
+          "incoming_link_overlap_count": 551
+        },
+        {
+          "day_index": 2,
+          "block_index": 11,
+          "start": 252000,
+          "end": 259200,
+          "contacts_by_start": 3776,
+          "ground_count": 40,
+          "satellite_count": 125,
+          "end_crossing_count": 0,
+          "incoming_link_overlap_count": 534
+        }
+      ],
+      "two_hour_count_summary": {
+        "count": 36,
+        "min": 3563,
+        "median": 3903.5,
+        "p95": 4222,
+        "max": 4252,
+        "distinct": 35
+      },
+      "two_hour_end_crossing_summary": {
+        "count": 36,
+        "min": 0,
+        "median": 545.5,
+        "p95": 606,
+        "max": 620,
+        "distinct": 30
+      }
+    }
+  ],
+  "nested_first6_multiset_comparisons": [
+    {
+      "earlier": "C1.csv",
+      "later": "C2.csv",
+      "earlier_rows": 23598,
+      "later_rows": 46818,
+      "shared_normalized_first6_occurrences": 23598,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 23220,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C1.csv",
+      "later": "C3.csv",
+      "earlier_rows": 23598,
+      "later_rows": 69923,
+      "shared_normalized_first6_occurrences": 23598,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 46325,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C1.csv",
+      "later": "C4.csv",
+      "earlier_rows": 23598,
+      "later_rows": 93153,
+      "shared_normalized_first6_occurrences": 23598,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 69555,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C1.csv",
+      "later": "C5.csv",
+      "earlier_rows": 23598,
+      "later_rows": 116755,
+      "shared_normalized_first6_occurrences": 23598,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 93157,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C1.csv",
+      "later": "C6.csv",
+      "earlier_rows": 23598,
+      "later_rows": 140406,
+      "shared_normalized_first6_occurrences": 23598,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 116808,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C2.csv",
+      "later": "C3.csv",
+      "earlier_rows": 46818,
+      "later_rows": 69923,
+      "shared_normalized_first6_occurrences": 46818,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 23105,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C2.csv",
+      "later": "C4.csv",
+      "earlier_rows": 46818,
+      "later_rows": 93153,
+      "shared_normalized_first6_occurrences": 46818,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 46335,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C2.csv",
+      "later": "C5.csv",
+      "earlier_rows": 46818,
+      "later_rows": 116755,
+      "shared_normalized_first6_occurrences": 46818,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 69937,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C2.csv",
+      "later": "C6.csv",
+      "earlier_rows": 46818,
+      "later_rows": 140406,
+      "shared_normalized_first6_occurrences": 46818,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 93588,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C3.csv",
+      "later": "C4.csv",
+      "earlier_rows": 69923,
+      "later_rows": 93153,
+      "shared_normalized_first6_occurrences": 69923,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 23230,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C3.csv",
+      "later": "C5.csv",
+      "earlier_rows": 69923,
+      "later_rows": 116755,
+      "shared_normalized_first6_occurrences": 69923,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 46832,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C3.csv",
+      "later": "C6.csv",
+      "earlier_rows": 69923,
+      "later_rows": 140406,
+      "shared_normalized_first6_occurrences": 69923,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 70483,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C4.csv",
+      "later": "C5.csv",
+      "earlier_rows": 93153,
+      "later_rows": 116755,
+      "shared_normalized_first6_occurrences": 93153,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 23602,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C4.csv",
+      "later": "C6.csv",
+      "earlier_rows": 93153,
+      "later_rows": 140406,
+      "shared_normalized_first6_occurrences": 93153,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 47253,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    },
+    {
+      "earlier": "C5.csv",
+      "later": "C6.csv",
+      "earlier_rows": 116755,
+      "later_rows": 140406,
+      "shared_normalized_first6_occurrences": 116755,
+      "earlier_only_occurrences": 0,
+      "later_only_occurrences": 23651,
+      "earlier_multiset_contained": true,
+      "ordered_prefix_equal": false
+    }
+  ],
+  "old_C3_comparison": {
+    "path": "E:\\01-Joycecyq\\2026-ESWA\\DAI2026_SNSD_V51_STABLE\\SNSD_V51_FINAL\\data\\C3.csv",
+    "exists": true,
+    "sha256": "ec95f50c11d800f051e218aa1e414df873ddd12e1f71ce911da3ba28adff647e",
+    "byte_sha256_equal_new_C3": true,
+    "normalized_first6_order_equal_new_C3": true,
+    "row_count": 69923
+  },
+  "schema_interpretation": {
+    "cancellation_flag_present": false,
+    "execution_count_present": false,
+    "column_6": "whether_feeder_link_not_cancellation",
+    "column_7": "maximum_elevation",
+    "column_8": "task_execution_date_not_execution_count",
+    "column_9": "orbit_revolution",
+    "column_10": "ascending_descending_orbit_flag",
+    "column_11": "priority",
+    "metadata_filtering_performed": false
+  },
+  "conclusion": {
+    "all_15_earlier_multisets_contained": true,
+    "all_15_ordered_prefixes_equal": false,
+    "C_file_number_is_not_day_count": true,
+    "C1_TRAIN_C6_TEST_source_contact_overlap": 23598,
+    "recommended_source": "C6_canonical_full_input_for_explicit_chronological_or_source_split_not_file_index_split",
+    "future_independence_or_structure_recurrence_proven": false
+  }
+}

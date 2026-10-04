@@ -1,0 +1,34 @@
+{
+  "version": "v06_count_schema_byte_field_review_001",
+  "review_execution_by": "root",
+  "design_independently_reviewed_by": "/root/v05_llm_audit before its subsequent account-quota failure",
+  "checks": 62,
+  "errors": 0,
+  "error_records": [],
+  "schema_only_approved": true,
+  "adapter_source_sha256": "d22bb897f2170359e8acc73ec614522bbef70ef5aeeb855b46b0d1238163c457",
+  "comparator_source_sha256": "c08236b9a6580a565e04dd7d30311475ad216ed6f532f1eb0365488b6e90967c",
+  "reports": [
+    {
+      "stem": "refinement_train_audit_v06_002",
+      "original_report_sha256": "a3f8e33667c43e83a9f3199ea2f95fb8be0a7e29c968c017bfde8749aa1b5b34",
+      "adapted_receipt_sha256": "fe2167f02c6720aa49143d1a9e064994bed0ca33aa538f8eef113e67f764e849",
+      "original_scientific_check_total": 2184019
+    },
+    {
+      "stem": "refinement_authoring_audit_v06_002",
+      "original_report_sha256": "2c3327ae92e0deccabb054636bcabfd9e31ed317679837fc26b31243128b7f7c",
+      "adapted_receipt_sha256": "43895916df80081ea0eaecbf0743a5dd1999e02ddd8c56cc86ee1372c4a9d5b3",
+      "original_scientific_check_total": 479
+    },
+    {
+      "stem": "refinement_packet_audit_v06_002",
+      "original_report_sha256": "7cabb43f86f1346dfd7b0156c096fc05bfd70c6f24850ee663394137f803837c",
+      "adapted_receipt_sha256": "b0ecae2f92522b42ff6b884cd8b1a0896984c3012904c041c0b5c3575ad14951",
+      "original_scientific_check_total": 386
+    }
+  ],
+  "new_scientific_audits_or_checks": 0,
+  "TEST_accessed": false,
+  "scope": "Separate byte/field compatibility review only; original independent scientific audits remain authoritative."
+}

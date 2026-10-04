@@ -1,0 +1,18 @@
+{
+  "version": "v06_published_EoH_seed_transaction_capsule_001",
+  "capsule_sha256": "4c1d8d9e3f3a5d3e1f90afe361a322a6dde7be41ad910959b36e4198794458a3",
+  "root_release_sha256": "6f3a7059c92bebbf2905cdf51a9eda681a73d8990f3f254fc567c3b461ad9c35",
+  "protocol_sha256": "7885a103ffd550ae8e50b95367220d3967e62d73eb17e5a6dfd31493d0a9e283",
+  "files_sha256": {
+    "experiments/discovery/v06_published_eoh_001/root_authoring_release.json": "6f3a7059c92bebbf2905cdf51a9eda681a73d8990f3f254fc567c3b461ad9c35",
+    "experiments/discovery/v06_published_eoh_001/requests/run_0_seed.json": "129e46d9296efb1249a1523c4c39f39ecc8bdfad3e79535dc9a7167a0ef3fb43",
+    "experiments/discovery/v06_published_eoh_001/requests/run_1_seed.json": "79cf7240ce542061736883ea4b4abc743ff173547f76fc975d47e6cce33433ae"
+  },
+  "ordered_requests": [
+    "run_0:warm_seed",
+    "run_1:warm_seed"
+  ],
+  "authoring_calls": 0,
+  "fitness_evaluations": 0,
+  "TEST_accessed": false
+}

@@ -1,0 +1,24 @@
+{
+  "assigned": 960,
+  "returned": 960,
+  "successful": 960,
+  "sources_returned": 32,
+  "status_counts": {
+    "CHILSfull:checked_feasible_incumbent": 288,
+    "CHILShalf:checked_feasible_incumbent": 288,
+    "Degreewarm:time_budget": 150,
+    "Degreecold:time_budget": 58,
+    "Degreewarm:patch_limit": 26,
+    "Degreecold:patch_limit": 10,
+    "Degreewarm:no_improvement_in_attempted_patches": 112,
+    "Degreecold:no_improvement_in_attempted_patches": 28
+  },
+  "wall_seconds": 220.03347642719746,
+  "results_sha256": "d44fa7cd2a7552ba38297ca2460f1ca30f713501dc7b7236c42e34efe50f6aae",
+  "protocol_sha256": "41a0108ea122efc65fa3bf10c690bf5d25fb7ef5f192d75361ec29e582a2d734",
+  "source_zip_sha256": "67526e9f78afe90008945c8747d3be0003cb22d64014d94b29c636c6f634ed11",
+  "TEST_solver_calls": 0,
+  "LLM_candidate_reads": 0,
+  "oracle_calls": 0,
+  "model_calls": 0
+}

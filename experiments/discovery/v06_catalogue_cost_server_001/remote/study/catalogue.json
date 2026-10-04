@@ -1,0 +1,5832 @@
+{
+  "canonicalization": "compiled_expression.to_dict then JSON sorted keys UTF8 compact separators; names and rationales excluded; no algebraic simplification",
+  "catalogue": [
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  }
+                ],
+                "op": "count"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "clique_cover_weight"
+          }
+        ],
+        "op": "add"
+      },
+      "expression_sha256": "00d0639cc8b803a85f03bd2952debe5719483537e24400952186b2dde9e13340",
+      "name": "f_00d0639cc8b803a85f03bd2952debe5719483537e24400952186b2dde9e13340",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "residual_profile",
+          "original_source_id": "block_2_relations:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "difference"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              }
+            ],
+            "op": "difference"
+          }
+        ],
+        "op": "greedy_independent_weight"
+      },
+      "expression_sha256": "01df1e088588026b2911ec4847f163adafafc49e365bc285a20acb793059106f",
+      "name": "f_01df1e088588026b2911ec4847f163adafafc49e365bc285a20acb793059106f",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_witness:0"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_witness:1"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_witness:2"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_witness:3"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_witness:6"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_witness:7"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_witness:5"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_witness:4"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_objective:0"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_objective:4"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_objective:6"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_objective:1"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_objective:3"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_objective:7"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_objective:2"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_0_objective:5"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_1_witness:0"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_1_witness:3"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_1_witness:1"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_1_witness:4"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_1_witness:6"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_1_witness:2"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_1_witness:7"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_relations:0"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_relations:1"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_relations:2"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_relations:4"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_relations:3"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_relations:6"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_relations:5"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_objective:0"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_objective:1"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_relations:7"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_objective:2"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_objective:5"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_objective:4"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_objective:6"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_objective:3"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_witness:0"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_witness:2"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_witness:3"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_1_objective:7"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_witness:4"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_witness:1"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_witness:5"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_witness:7"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_witness:6"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_2_relations:0"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_2_relations:1"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_2_relations:3"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_2_relations:5"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_2_relations:2"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_2_relations:6"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_objective:0"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_objective:1"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_objective:2"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_2_relations:7"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_2_objective:3"
+        },
+        {
+          "original_feature_name": "residual_lower",
+          "original_source_id": "block_2_objective:6"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_3_witness:0"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_3_witness:4"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_3_witness:3"
+        },
+        {
+          "original_feature_name": "include_lower",
+          "original_source_id": "block_2_objective:7"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_3_witness:2"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_3_witness:1"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_3_witness:6"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_3_relations:0"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_3_relations:3"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_3_relations:1"
+        },
+        {
+          "original_feature_name": "residual_greedy",
+          "original_source_id": "block_3_witness:7"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_3_relations:2"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_3_relations:6"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_3_relations:4"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_3_relations:5"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_3_relations:7"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_3_objective:0"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_3_objective:1"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_3_objective:4"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_3_objective:5"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_3_objective:6"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_witness:0"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_witness:1"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_witness:5"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_witness:2"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_witness:4"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_witness:3"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_witness:6"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_4_relations:2"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_4_relations:0"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_4_relations:1"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_4_relations:4"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_4_relations:3"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_4_relations:5"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_4_relations:7"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_objective:0"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_objective:1"
+        },
+        {
+          "original_feature_name": "r_pack",
+          "original_source_id": "block_4_relations:6"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_objective:4"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_objective:3"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_objective:2"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_objective:6"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_objective:5"
+        },
+        {
+          "original_feature_name": "residual_pack",
+          "original_source_id": "block_4_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "sum_weights"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_min_weight_sum"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "05e9cb367717a9c77b217364296b6a42284da1cb859625874d0d259de3fc652e",
+      "name": "f_05e9cb367717a9c77b217364296b6a42284da1cb859625874d0d259de3fc652e",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "r_floor",
+          "original_source_id": "block_2_witness:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "edge_weight_product_sum"
+      },
+      "expression_sha256": "09c64fd62f77b1d5e031390eb4af9329dd090934caf56d97f18b2371ea217986",
+      "name": "f_09c64fd62f77b1d5e031390eb4af9329dd090934caf56d97f18b2371ea217986",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "r_product",
+          "original_source_id": "block_0_witness:7"
+        },
+        {
+          "original_feature_name": "r_product",
+          "original_source_id": "block_0_objective:7"
+        },
+        {
+          "original_feature_name": "residual_products",
+          "original_source_id": "block_1_relations:5"
+        },
+        {
+          "original_feature_name": "residual_edge_mass",
+          "original_source_id": "block_1_objective:4"
+        },
+        {
+          "original_feature_name": "residual_edge_product",
+          "original_source_id": "block_2_objective:4"
+        },
+        {
+          "original_feature_name": "residual_product",
+          "original_source_id": "block_3_witness:3"
+        },
+        {
+          "original_feature_name": "residual_product",
+          "original_source_id": "block_3_objective:1"
+        },
+        {
+          "original_feature_name": "r_product",
+          "original_source_id": "block_4_relations:2"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              }
+            ],
+            "op": "union"
+          }
+        ],
+        "op": "greedy_independent_weight"
+      },
+      "expression_sha256": "10ca4d8351d14cb967e0e269165df776bec305dff72c02df49a9824943dd6576",
+      "name": "f_10ca4d8351d14cb967e0e269165df776bec305dff72c02df49a9824943dd6576",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "c_pack",
+          "original_source_id": "block_0_witness:6"
+        },
+        {
+          "original_feature_name": "closed_greedy",
+          "original_source_id": "block_1_relations:1"
+        },
+        {
+          "original_feature_name": "closed_greedy",
+          "original_source_id": "block_1_objective:5"
+        },
+        {
+          "original_feature_name": "closed_greedy",
+          "original_source_id": "block_3_witness:6"
+        },
+        {
+          "original_feature_name": "closed_pack",
+          "original_source_id": "block_3_relations:6"
+        },
+        {
+          "original_feature_name": "closed_pack",
+          "original_source_id": "block_4_relations:7"
+        },
+        {
+          "original_feature_name": "closed_pack",
+          "original_source_id": "block_4_objective:3"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "sum_weights"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "clique_cover_weight"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "1944eabed41b4959d404b82b62130c1eb483aa08282d30381cda7fe032f909ec",
+      "name": "f_1944eabed41b4959d404b82b62130c1eb483aa08282d30381cda7fe032f909ec",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "residual_cover_loss",
+          "original_source_id": "block_3_witness:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "clique_cover_weight"
+          }
+        ],
+        "op": "add"
+      },
+      "expression_sha256": "1b2733f2b760c52cdbd276fcd266ad7c0bb11e9a79887c9ef8b31be578d43c9c",
+      "name": "f_1b2733f2b760c52cdbd276fcd266ad7c0bb11e9a79887c9ef8b31be578d43c9c",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "residual_envelope",
+          "original_source_id": "block_4_witness:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "edge_min_weight_sum"
+      },
+      "expression_sha256": "20b5e1d7354c5a70c888cbeb3fcb0a8ca38438070d2c76897dd84b9b36fdf066",
+      "name": "f_20b5e1d7354c5a70c888cbeb3fcb0a8ca38438070d2c76897dd84b9b36fdf066",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "n_loss",
+          "original_source_id": "block_0_witness:7"
+        },
+        {
+          "original_feature_name": "n_loss",
+          "original_source_id": "block_0_objective:4"
+        },
+        {
+          "original_feature_name": "neighbor_edge_min",
+          "original_source_id": "block_1_witness:4"
+        },
+        {
+          "original_feature_name": "neighbor_edge_mass",
+          "original_source_id": "block_1_relations:2"
+        },
+        {
+          "original_feature_name": "neighbor_edge_cost",
+          "original_source_id": "block_1_objective:0"
+        },
+        {
+          "original_feature_name": "neighbor_edge_cost",
+          "original_source_id": "block_1_objective:1"
+        },
+        {
+          "original_feature_name": "neighbor_edge_cost",
+          "original_source_id": "block_1_objective:3"
+        },
+        {
+          "original_feature_name": "neighbor_edge_cost",
+          "original_source_id": "block_2_relations:6"
+        },
+        {
+          "original_feature_name": "n_edge_min",
+          "original_source_id": "block_2_objective:0"
+        },
+        {
+          "original_feature_name": "n_edge_min",
+          "original_source_id": "block_2_objective:1"
+        },
+        {
+          "original_feature_name": "n_edge_min",
+          "original_source_id": "block_2_objective:2"
+        },
+        {
+          "original_feature_name": "n_edge_min",
+          "original_source_id": "block_2_objective:3"
+        },
+        {
+          "original_feature_name": "neighbor_edge_cost",
+          "original_source_id": "block_3_objective:0"
+        },
+        {
+          "original_feature_name": "neighbor_edge_min",
+          "original_source_id": "block_3_objective:4"
+        },
+        {
+          "original_feature_name": "neighbor_edge_cost",
+          "original_source_id": "block_3_objective:6"
+        },
+        {
+          "original_feature_name": "n_min_edges",
+          "original_source_id": "block_4_relations:2"
+        },
+        {
+          "original_feature_name": "n_min_edges",
+          "original_source_id": "block_4_relations:5"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_objective:1"
+        },
+        {
+          "original_feature_name": "n_min_edges",
+          "original_source_id": "block_4_relations:6"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_objective:3"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_objective:6"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "union"
+          }
+        ],
+        "op": "clique_cover_weight"
+      },
+      "expression_sha256": "23c1d149cf92b98bf8d55920b3c3af0becfb2bb39331b500e9f43f7091f23c57",
+      "name": "f_23c1d149cf92b98bf8d55920b3c3af0becfb2bb39331b500e9f43f7091f23c57",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "closed_upper",
+          "original_source_id": "block_2_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_min_weight_sum"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_min_weight_sum"
+              }
+            ],
+            "op": "sub"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_min_weight_sum"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "260706e43bcb60524ad6a818b5c58721bfff982415bece1ffd2d96c25a432df3",
+      "name": "f_260706e43bcb60524ad6a818b5c58721bfff982415bece1ffd2d96c25a432df3",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "boundary_min",
+          "original_source_id": "block_3_objective:5"
+        },
+        {
+          "original_feature_name": "boundary_min",
+          "original_source_id": "block_3_objective:7"
+        },
+        {
+          "original_feature_name": "cut_weight",
+          "original_source_id": "block_4_objective:0"
+        },
+        {
+          "original_feature_name": "cut_weight",
+          "original_source_id": "block_4_objective:1"
+        },
+        {
+          "original_feature_name": "cut_weight",
+          "original_source_id": "block_4_objective:4"
+        },
+        {
+          "original_feature_name": "cut_weight",
+          "original_source_id": "block_4_objective:3"
+        },
+        {
+          "original_feature_name": "cut_weight",
+          "original_source_id": "block_4_objective:2"
+        },
+        {
+          "original_feature_name": "cut_weight",
+          "original_source_id": "block_4_objective:6"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "edge_weight_product_sum"
+      },
+      "expression_sha256": "3029bcd9fc9de15a2dcb3f1a6a07129a7cce7e013cca18b5be50e214fda4149a",
+      "name": "f_3029bcd9fc9de15a2dcb3f1a6a07129a7cce7e013cca18b5be50e214fda4149a",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "n_product",
+          "original_source_id": "block_0_objective:7"
+        },
+        {
+          "original_feature_name": "neighbor_products",
+          "original_source_id": "block_1_relations:5"
+        },
+        {
+          "original_feature_name": "neighbor_edge_mass",
+          "original_source_id": "block_1_objective:6"
+        },
+        {
+          "original_feature_name": "neighbor_edge_mass",
+          "original_source_id": "block_1_objective:7"
+        },
+        {
+          "original_feature_name": "neighbor_product",
+          "original_source_id": "block_3_witness:3"
+        },
+        {
+          "original_feature_name": "neighbor_product",
+          "original_source_id": "block_3_objective:1"
+        },
+        {
+          "original_feature_name": "neighbor_edge_product",
+          "original_source_id": "block_3_objective:4"
+        },
+        {
+          "original_feature_name": "n_product",
+          "original_source_id": "block_4_relations:0"
+        },
+        {
+          "original_feature_name": "n_product",
+          "original_source_id": "block_4_relations:3"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "root"
+              }
+            ],
+            "op": "weight"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "clique_cover_weight"
+          }
+        ],
+        "op": "add"
+      },
+      "expression_sha256": "37402e1a63689a0e4617c480b68edbb3a974c4ec4c9beb992c79a98fa1fd6ac2",
+      "name": "f_37402e1a63689a0e4617c480b68edbb3a974c4ec4c9beb992c79a98fa1fd6ac2",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "include_ub",
+          "original_source_id": "block_3_objective:2"
+        },
+        {
+          "original_feature_name": "include_ub",
+          "original_source_id": "block_3_objective:3"
+        },
+        {
+          "original_feature_name": "include_ub",
+          "original_source_id": "block_3_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "difference"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              }
+            ],
+            "op": "difference"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "3c96a0ba7714f418951cf743ed957202de8fadcada6cb605af4d6565c7b0f14b",
+      "name": "f_3c96a0ba7714f418951cf743ed957202de8fadcada6cb605af4d6565c7b0f14b",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "residual_count",
+          "original_source_id": "block_2_objective:4"
+        },
+        {
+          "original_feature_name": "residual_count",
+          "original_source_id": "block_2_objective:6"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "count"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "difference"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "count"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "count"
+              }
+            ],
+            "op": "add"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "409f6e0a90cf44bcc9c6807c20521efd34e8255168cd08b8689a35d7b374c117",
+      "name": "f_409f6e0a90cf44bcc9c6807c20521efd34e8255168cd08b8689a35d7b374c117",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "cut_edges",
+          "original_source_id": "block_0_witness:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_min_weight_sum"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_min_weight_sum"
+              }
+            ],
+            "op": "sub"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_min_weight_sum"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "41b9420c7978e5bb0fcfe4de2acad6ef28b696bfe05dc08149296a556d7cbaeb",
+      "name": "f_41b9420c7978e5bb0fcfe4de2acad6ef28b696bfe05dc08149296a556d7cbaeb",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "boundary_edge_min",
+          "original_source_id": "block_1_witness:4"
+        },
+        {
+          "original_feature_name": "boundary_edge_cost",
+          "original_source_id": "block_2_relations:6"
+        },
+        {
+          "original_feature_name": "boundary_min",
+          "original_source_id": "block_3_witness:2"
+        },
+        {
+          "original_feature_name": "boundary_min",
+          "original_source_id": "block_4_relations:2"
+        },
+        {
+          "original_feature_name": "boundary_min",
+          "original_source_id": "block_4_relations:1"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "available"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              }
+            ],
+            "op": "intersection"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "451f03b462937e1bfdddaa0591eb6d90f9560865d2e2a0576188d9b3038d7f28",
+      "name": "f_451f03b462937e1bfdddaa0591eb6d90f9560865d2e2a0576188d9b3038d7f28",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "neighbor_count",
+          "original_source_id": "block_2_objective:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "available"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              }
+            ],
+            "op": "difference"
+          }
+        ],
+        "op": "greedy_independent_weight"
+      },
+      "expression_sha256": "4b3f1126d59ca7d44be78d06fb334b6c7207f33b2b60448f08d844eeb46711f5",
+      "name": "f_4b3f1126d59ca7d44be78d06fb334b6c7207f33b2b60448f08d844eeb46711f5",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "d_pack",
+          "original_source_id": "block_0_witness:4"
+        },
+        {
+          "original_feature_name": "e_pack",
+          "original_source_id": "block_0_objective:2"
+        },
+        {
+          "original_feature_name": "e_pack",
+          "original_source_id": "block_0_objective:5"
+        },
+        {
+          "original_feature_name": "excluded_pack",
+          "original_source_id": "block_1_witness:2"
+        },
+        {
+          "original_feature_name": "excluded_pack",
+          "original_source_id": "block_1_witness:5"
+        },
+        {
+          "original_feature_name": "omitted_greedy",
+          "original_source_id": "block_1_relations:7"
+        },
+        {
+          "original_feature_name": "exclusion_greedy",
+          "original_source_id": "block_1_objective:3"
+        },
+        {
+          "original_feature_name": "exclusion_greedy",
+          "original_source_id": "block_1_objective:7"
+        },
+        {
+          "original_feature_name": "x_pack",
+          "original_source_id": "block_2_witness:1"
+        },
+        {
+          "original_feature_name": "x_pack",
+          "original_source_id": "block_2_witness:6"
+        },
+        {
+          "original_feature_name": "without_pack",
+          "original_source_id": "block_2_relations:2"
+        },
+        {
+          "original_feature_name": "without_pack",
+          "original_source_id": "block_2_relations:4"
+        },
+        {
+          "original_feature_name": "without_pack",
+          "original_source_id": "block_2_relations:7"
+        },
+        {
+          "original_feature_name": "exclude_lower",
+          "original_source_id": "block_2_objective:7"
+        },
+        {
+          "original_feature_name": "exclude_greedy",
+          "original_source_id": "block_3_witness:1"
+        },
+        {
+          "original_feature_name": "exclude_greedy",
+          "original_source_id": "block_3_witness:6"
+        },
+        {
+          "original_feature_name": "x_pack",
+          "original_source_id": "block_3_relations:4"
+        },
+        {
+          "original_feature_name": "x_pack",
+          "original_source_id": "block_3_relations:5"
+        },
+        {
+          "original_feature_name": "exclude_lb",
+          "original_source_id": "block_3_objective:2"
+        },
+        {
+          "original_feature_name": "exclude_lb",
+          "original_source_id": "block_3_objective:3"
+        },
+        {
+          "original_feature_name": "exclude_lb",
+          "original_source_id": "block_3_objective:7"
+        },
+        {
+          "original_feature_name": "excluded_pack",
+          "original_source_id": "block_4_relations:7"
+        },
+        {
+          "original_feature_name": "excluded_pack",
+          "original_source_id": "block_4_relations:6"
+        },
+        {
+          "original_feature_name": "exclude_pack",
+          "original_source_id": "block_4_objective:2"
+        },
+        {
+          "original_feature_name": "exclude_pack",
+          "original_source_id": "block_4_objective:5"
+        },
+        {
+          "original_feature_name": "exclude_pack",
+          "original_source_id": "block_4_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "available"
+              }
+            ],
+            "op": "clique_cover_weight"
+          },
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "available"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "4b52c7235b110dc0dd6dc98fd9d046aaa7cb797f63331f300cf6da3e8f231aad",
+      "name": "f_4b52c7235b110dc0dd6dc98fd9d046aaa7cb797f63331f300cf6da3e8f231aad",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "global_gap",
+          "original_source_id": "block_1_witness:6"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "count"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "count"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "difference"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "count"
+              }
+            ],
+            "op": "add"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "5949b976677709025d4aad63d1cdf920f6ee6ac4445b8c0585be27de8789c57d",
+      "name": "f_5949b976677709025d4aad63d1cdf920f6ee6ac4445b8c0585be27de8789c57d",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "cut_edges",
+          "original_source_id": "block_3_relations:1"
+        },
+        {
+          "original_feature_name": "cut_edges",
+          "original_source_id": "block_3_relations:2"
+        },
+        {
+          "original_feature_name": "cut_edges",
+          "original_source_id": "block_3_relations:5"
+        },
+        {
+          "original_feature_name": "cut_edges",
+          "original_source_id": "block_3_relations:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "sum_weights"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "5978f6ecb40316eb8eac7896317400518dc71ead67d6019b398433ff5d1f599a",
+      "name": "f_5978f6ecb40316eb8eac7896317400518dc71ead67d6019b398433ff5d1f599a",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "residual_greedy_loss",
+          "original_source_id": "block_3_witness:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "root"
+              }
+            ],
+            "op": "neighbors"
+          }
+        ],
+        "op": "greedy_independent_weight"
+      },
+      "expression_sha256": "598b223afc371a0797a8bf662f7d4bfdfeeb1474d2246900b7f45860ee0683bf",
+      "name": "f_598b223afc371a0797a8bf662f7d4bfdfeeb1474d2246900b7f45860ee0683bf",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_witness:0"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_witness:1"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_witness:2"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_witness:3"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_witness:7"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_witness:5"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_objective:0"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_objective:4"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_objective:6"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_objective:1"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_objective:3"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_objective:7"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_0_objective:2"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_1_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_1_witness:3"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_1_witness:4"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_1_witness:6"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_1_witness:7"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_relations:0"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_relations:1"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_relations:2"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_relations:3"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_relations:6"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_objective:0"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_objective:1"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_relations:7"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_objective:2"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_objective:5"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_objective:4"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_objective:6"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_1_objective:3"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_witness:0"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_witness:3"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_witness:4"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_witness:5"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_witness:7"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_2_relations:0"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_2_relations:1"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_2_relations:3"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_2_relations:5"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_2_relations:2"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_2_relations:6"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_objective:0"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_objective:1"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_objective:2"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_2_objective:3"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_3_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_3_witness:4"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_3_witness:3"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_3_witness:2"
+        },
+        {
+          "original_feature_name": "neighbor_greedy",
+          "original_source_id": "block_3_witness:5"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_3_relations:0"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_3_relations:3"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_3_relations:1"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_3_relations:2"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_3_relations:6"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_3_relations:4"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_3_relations:7"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_3_objective:0"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_3_objective:1"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_3_objective:4"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_3_objective:2"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_3_objective:5"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_3_objective:3"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_3_objective:6"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_witness:1"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_witness:5"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_witness:2"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_witness:4"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_3_objective:7"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_witness:6"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_witness:7"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_4_relations:2"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_4_relations:0"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_4_relations:1"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_4_relations:4"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_4_relations:3"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_4_relations:5"
+        },
+        {
+          "original_feature_name": "n_pack",
+          "original_source_id": "block_4_relations:7"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_objective:0"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_objective:1"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_objective:4"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_objective:2"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_objective:6"
+        },
+        {
+          "original_feature_name": "neighbor_pack",
+          "original_source_id": "block_4_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "root"
+              }
+            ],
+            "op": "neighbors"
+          }
+        ],
+        "op": "clique_cover_weight"
+      },
+      "expression_sha256": "5cbb2e1b95f094b6b5536d7c2de557f4948f7e262e9b096207628a3b2784e61b",
+      "name": "f_5cbb2e1b95f094b6b5536d7c2de557f4948f7e262e9b096207628a3b2784e61b",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_witness:0"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_witness:1"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_witness:2"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_witness:3"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_witness:7"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_witness:5"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_objective:0"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_objective:6"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_objective:1"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_objective:3"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_0_objective:7"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_witness:3"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_witness:5"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_relations:0"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_relations:1"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_relations:2"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_relations:4"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_relations:3"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_relations:6"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_relations:5"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_objective:0"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_relations:7"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_objective:2"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_objective:5"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_1_objective:4"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_2_witness:0"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_2_witness:2"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_2_witness:4"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_2_witness:7"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_2_relations:0"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_2_relations:1"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_2_relations:5"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_2_objective:0"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_2_objective:1"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_2_objective:2"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_2_relations:7"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_2_objective:3"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_witness:3"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_witness:5"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_3_relations:0"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_3_relations:3"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_3_relations:1"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_3_relations:2"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_3_relations:6"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_3_relations:5"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_3_relations:7"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_objective:0"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_objective:1"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_objective:4"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_objective:2"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_objective:5"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_objective:3"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_3_objective:6"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_witness:1"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_witness:4"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_witness:3"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_witness:6"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_witness:7"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_4_relations:2"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_4_relations:0"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_4_relations:1"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_4_relations:4"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_4_relations:5"
+        },
+        {
+          "original_feature_name": "n_cover",
+          "original_source_id": "block_4_relations:7"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_objective:0"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_objective:1"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_objective:6"
+        },
+        {
+          "original_feature_name": "neighbor_cover",
+          "original_source_id": "block_4_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "difference"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              }
+            ],
+            "op": "difference"
+          }
+        ],
+        "op": "sum_weights"
+      },
+      "expression_sha256": "6019e682ec355852f2d87e086c3218399a1b0c1f9c56b30ec391c553a95aa3f4",
+      "name": "f_6019e682ec355852f2d87e086c3218399a1b0c1f9c56b30ec391c553a95aa3f4",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "r_weight",
+          "original_source_id": "block_0_objective:4"
+        },
+        {
+          "original_feature_name": "residual_weight",
+          "original_source_id": "block_1_objective:1"
+        },
+        {
+          "original_feature_name": "residual_mass",
+          "original_source_id": "block_2_objective:4"
+        },
+        {
+          "original_feature_name": "residual_mass",
+          "original_source_id": "block_2_objective:6"
+        },
+        {
+          "original_feature_name": "residual_mass",
+          "original_source_id": "block_4_objective:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "available"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "64a97797274bb68a741874483db18489e212669d9171d9ae6eb36d0f20406044",
+      "name": "f_64a97797274bb68a741874483db18489e212669d9171d9ae6eb36d0f20406044",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "full_edges",
+          "original_source_id": "block_1_witness:1"
+        },
+        {
+          "original_feature_name": "active_edges",
+          "original_source_id": "block_1_relations:4"
+        },
+        {
+          "original_feature_name": "all_edges",
+          "original_source_id": "block_2_witness:3"
+        },
+        {
+          "original_feature_name": "total_edges",
+          "original_source_id": "block_3_witness:4"
+        },
+        {
+          "original_feature_name": "active_edges",
+          "original_source_id": "block_4_witness:5"
+        },
+        {
+          "original_feature_name": "active_edges",
+          "original_source_id": "block_4_witness:2"
+        },
+        {
+          "original_feature_name": "active_edges",
+          "original_source_id": "block_4_witness:4"
+        },
+        {
+          "original_feature_name": "active_edges",
+          "original_source_id": "block_4_witness:3"
+        },
+        {
+          "original_feature_name": "active_edges",
+          "original_source_id": "block_4_witness:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              }
+            ],
+            "op": "union"
+          }
+        ],
+        "op": "clique_cover_weight"
+      },
+      "expression_sha256": "6e9cd75478d1bfb56404dbe702b90f77a9ce6c10dcc158b9a1e985f956ed162c",
+      "name": "f_6e9cd75478d1bfb56404dbe702b90f77a9ce6c10dcc158b9a1e985f956ed162c",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "c_cover",
+          "original_source_id": "block_0_witness:6"
+        },
+        {
+          "original_feature_name": "closed_cover",
+          "original_source_id": "block_1_relations:1"
+        },
+        {
+          "original_feature_name": "closed_cover",
+          "original_source_id": "block_1_objective:5"
+        },
+        {
+          "original_feature_name": "closed_cover",
+          "original_source_id": "block_2_relations:1"
+        },
+        {
+          "original_feature_name": "closed_cover",
+          "original_source_id": "block_2_relations:4"
+        },
+        {
+          "original_feature_name": "c_cover",
+          "original_source_id": "block_2_objective:3"
+        },
+        {
+          "original_feature_name": "closed_cover",
+          "original_source_id": "block_3_relations:6"
+        },
+        {
+          "original_feature_name": "closed_cover",
+          "original_source_id": "block_4_objective:3"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "intersection"
+                  }
+                ],
+                "op": "union"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "edge_min_weight_sum"
+      },
+      "expression_sha256": "728d5f435b7fb3beef00724ba26dadba13cb46dd3672ebe6338f78c2618dcc67",
+      "name": "f_728d5f435b7fb3beef00724ba26dadba13cb46dd3672ebe6338f78c2618dcc67",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "closed_edge_min",
+          "original_source_id": "block_2_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "union"
+          }
+        ],
+        "op": "sum_weights"
+      },
+      "expression_sha256": "72c5d7a02ec5221e028325d0708de138e2f1d79af24adad2b09cef829c49b0ce",
+      "name": "f_72c5d7a02ec5221e028325d0708de138e2f1d79af24adad2b09cef829c49b0ce",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "closed_mass",
+          "original_source_id": "block_2_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "853a89fa52210d0cf7d508270d6ca456471a9f2c2f5ee46ce4433c7779026090",
+      "name": "f_853a89fa52210d0cf7d508270d6ca456471a9f2c2f5ee46ce4433c7779026090",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_witness:0"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_witness:1"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_witness:2"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_witness:3"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_witness:6"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_witness:4"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_objective:0"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_objective:6"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_0_objective:1"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_witness:0"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_witness:3"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_witness:1"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_witness:6"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_witness:2"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_witness:7"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_relations:0"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_relations:4"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_1_relations:6"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_2_witness:0"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_2_witness:2"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_2_witness:3"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_2_witness:4"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_2_witness:1"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_2_witness:5"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_2_witness:6"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_2_relations:0"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_2_relations:1"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_2_relations:3"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_2_relations:5"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_2_relations:4"
+        },
+        {
+          "original_feature_name": "residual_edge_count",
+          "original_source_id": "block_2_objective:6"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_3_witness:0"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_3_witness:4"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_3_witness:2"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_3_witness:5"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_3_witness:1"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_3_witness:6"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_3_relations:0"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_3_relations:3"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_3_relations:1"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_3_witness:7"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_3_relations:7"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_witness:0"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_witness:1"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_witness:5"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_witness:2"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_witness:4"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_witness:3"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_witness:6"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_witness:7"
+        },
+        {
+          "original_feature_name": "r_edges",
+          "original_source_id": "block_4_relations:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_min_weight_sum"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_min_weight_sum"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "8fcf08151f66e12155c4c9857f652cbf3d5c7a24b083ca42203ad48d2415d7b0",
+      "name": "f_8fcf08151f66e12155c4c9857f652cbf3d5c7a24b083ca42203ad48d2415d7b0",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "removed_min",
+          "original_source_id": "block_3_witness:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "difference"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              }
+            ],
+            "op": "difference"
+          }
+        ],
+        "op": "clique_cover_weight"
+      },
+      "expression_sha256": "913f6b443bd508df6f8b65d85104509b72df0629a702cfad6ec36027a1dd0b74",
+      "name": "f_913f6b443bd508df6f8b65d85104509b72df0629a702cfad6ec36027a1dd0b74",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_witness:0"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_witness:1"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_witness:2"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_witness:3"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_witness:6"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_witness:7"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_witness:5"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_witness:4"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_objective:0"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_objective:4"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_objective:6"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_objective:1"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_objective:3"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_objective:7"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_objective:2"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_0_objective:5"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_witness:0"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_witness:3"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_witness:1"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_witness:4"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_witness:6"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_witness:2"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_witness:7"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_witness:5"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_relations:0"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_relations:1"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_relations:2"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_relations:4"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_relations:3"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_relations:6"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_relations:5"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_objective:0"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_objective:1"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_relations:7"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_objective:2"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_objective:5"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_objective:4"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_objective:6"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_objective:3"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_witness:0"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_witness:2"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_witness:3"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_1_objective:7"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_witness:4"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_witness:1"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_witness:5"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_witness:7"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_witness:6"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_2_relations:0"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_2_relations:1"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_2_relations:3"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_2_relations:5"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_2_relations:2"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_2_relations:6"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_objective:0"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_objective:1"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_objective:2"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_2_relations:7"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_2_objective:3"
+        },
+        {
+          "original_feature_name": "residual_upper",
+          "original_source_id": "block_2_objective:6"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_witness:0"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_witness:4"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_witness:3"
+        },
+        {
+          "original_feature_name": "include_upper",
+          "original_source_id": "block_2_objective:7"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_witness:2"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_witness:1"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_witness:6"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_3_relations:0"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_3_relations:3"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_3_relations:1"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_witness:7"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_3_relations:2"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_3_relations:6"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_3_relations:4"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_3_relations:5"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_3_relations:7"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_objective:0"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_objective:1"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_objective:4"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_objective:5"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_3_objective:6"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_witness:0"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_witness:1"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_witness:2"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_witness:3"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_witness:6"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_4_relations:0"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_4_relations:1"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_4_relations:4"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_4_relations:3"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_4_relations:5"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_4_relations:7"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_objective:0"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_objective:1"
+        },
+        {
+          "original_feature_name": "r_cover",
+          "original_source_id": "block_4_relations:6"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_objective:4"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_objective:3"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_objective:2"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_objective:6"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_objective:5"
+        },
+        {
+          "original_feature_name": "residual_cover",
+          "original_source_id": "block_4_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "available"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              }
+            ],
+            "op": "intersection"
+          }
+        ],
+        "op": "clique_cover_weight"
+      },
+      "expression_sha256": "97d8f968b8586e269df8b8ed252abc564be02e3b14c4f1f6a511e40a3f2900ce",
+      "name": "f_97d8f968b8586e269df8b8ed252abc564be02e3b14c4f1f6a511e40a3f2900ce",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "neighbor_upper",
+          "original_source_id": "block_2_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_weight_product_sum"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_weight_product_sum"
+              }
+            ],
+            "op": "sub"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_weight_product_sum"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "a243b90384646b54f05d41aeca431d643b7f2aa644f3cb281719338bde8776bc",
+      "name": "f_a243b90384646b54f05d41aeca431d643b7f2aa644f3cb281719338bde8776bc",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "boundary_products",
+          "original_source_id": "block_1_relations:5"
+        },
+        {
+          "original_feature_name": "boundary_product",
+          "original_source_id": "block_4_relations:0"
+        },
+        {
+          "original_feature_name": "boundary_product",
+          "original_source_id": "block_4_relations:3"
+        },
+        {
+          "original_feature_name": "boundary_product",
+          "original_source_id": "block_4_relations:6"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "intersection"
+                  }
+                ],
+                "op": "union"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "a2cf48ac0d1129824194f75b3af62af2b65ea6a31a323eb6e393f3f1a750a9b5",
+      "name": "f_a2cf48ac0d1129824194f75b3af62af2b65ea6a31a323eb6e393f3f1a750a9b5",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "closed_edge_count",
+          "original_source_id": "block_2_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      }
+                    ],
+                    "op": "count"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      }
+                    ],
+                    "op": "count"
+                  }
+                ],
+                "op": "mul"
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "count"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "a5dee858fd6e344b330ce24dd04f33ecbedb6e76b56dee890f53cc9165ba2418",
+      "name": "f_a5dee858fd6e344b330ce24dd04f33ecbedb6e76b56dee890f53cc9165ba2418",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "neighbor_witness",
+          "original_source_id": "block_1_witness:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [],
+            "op": "available"
+          }
+        ],
+        "op": "greedy_independent_weight"
+      },
+      "expression_sha256": "a60b7204ee977e0c55c3cdd40f13e4512b929a6b2548df8fbcfaf1dcdfc642d4",
+      "name": "f_a60b7204ee977e0c55c3cdd40f13e4512b929a6b2548df8fbcfaf1dcdfc642d4",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "available_greedy",
+          "original_source_id": "block_1_objective:6"
+        },
+        {
+          "original_feature_name": "active_pack",
+          "original_source_id": "block_4_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "available"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              }
+            ],
+            "op": "intersection"
+          }
+        ],
+        "op": "greedy_independent_weight"
+      },
+      "expression_sha256": "a8a714bfdb0acc9373ce4b31b7e1ea4876bfdda46a42d92fd28dbeee11e9da42",
+      "name": "f_a8a714bfdb0acc9373ce4b31b7e1ea4876bfdda46a42d92fd28dbeee11e9da42",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "neighbor_lower",
+          "original_source_id": "block_2_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "edge_min_weight_sum"
+      },
+      "expression_sha256": "a973e9f75adcf8d6e76c3d98b529295fde248e267483d957945e38585ce59025",
+      "name": "f_a973e9f75adcf8d6e76c3d98b529295fde248e267483d957945e38585ce59025",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "r_loss",
+          "original_source_id": "block_0_objective:4"
+        },
+        {
+          "original_feature_name": "residual_edge_min",
+          "original_source_id": "block_1_witness:4"
+        },
+        {
+          "original_feature_name": "residual_edge_mass",
+          "original_source_id": "block_1_relations:2"
+        },
+        {
+          "original_feature_name": "residual_edge_cost",
+          "original_source_id": "block_1_objective:0"
+        },
+        {
+          "original_feature_name": "residual_edge_cost",
+          "original_source_id": "block_1_objective:1"
+        },
+        {
+          "original_feature_name": "residual_edge_cost",
+          "original_source_id": "block_1_objective:2"
+        },
+        {
+          "original_feature_name": "residual_edge_cost",
+          "original_source_id": "block_2_relations:6"
+        },
+        {
+          "original_feature_name": "r_edge_min",
+          "original_source_id": "block_2_objective:0"
+        },
+        {
+          "original_feature_name": "r_edge_min",
+          "original_source_id": "block_2_objective:1"
+        },
+        {
+          "original_feature_name": "r_edge_min",
+          "original_source_id": "block_2_objective:2"
+        },
+        {
+          "original_feature_name": "residual_edge_min",
+          "original_source_id": "block_2_objective:6"
+        },
+        {
+          "original_feature_name": "residual_edge_cost",
+          "original_source_id": "block_3_objective:0"
+        },
+        {
+          "original_feature_name": "residual_edge_cost",
+          "original_source_id": "block_3_objective:6"
+        },
+        {
+          "original_feature_name": "r_min_edges",
+          "original_source_id": "block_4_relations:1"
+        },
+        {
+          "original_feature_name": "r_min_edges",
+          "original_source_id": "block_4_relations:3"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_objective:0"
+        },
+        {
+          "original_feature_name": "residual_edges",
+          "original_source_id": "block_4_objective:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_min_weight_sum"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_min_weight_sum"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "difference"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_min_weight_sum"
+              }
+            ],
+            "op": "add"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "b01ea475522b64745488e9f297ddf245b9a6d2787f19a4e8b7e047299f9cb474",
+      "name": "f_b01ea475522b64745488e9f297ddf245b9a6d2787f19a4e8b7e047299f9cb474",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "boundary_edge_cost",
+          "original_source_id": "block_1_objective:2"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "union"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "b0f6149a0f50899dbd349a2f814d6ff538b8399a668ace65b448d9f4de000bca",
+      "name": "f_b0f6149a0f50899dbd349a2f814d6ff538b8399a668ace65b448d9f4de000bca",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "closed_count",
+          "original_source_id": "block_2_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      }
+                    ],
+                    "op": "count"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      }
+                    ],
+                    "op": "count"
+                  }
+                ],
+                "op": "mul"
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "count"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "bf2b1cb61e129a2fe0c6a6e0a269d1b40f3943acb503ffdc989866b5f13cfb1c",
+      "name": "f_bf2b1cb61e129a2fe0c6a6e0a269d1b40f3943acb503ffdc989866b5f13cfb1c",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "residual_witness",
+          "original_source_id": "block_1_witness:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_weight_product_sum"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_weight_product_sum"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "difference"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_weight_product_sum"
+              }
+            ],
+            "op": "add"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "c36a652e71ac398b508dd24f64e544c4da159b9c5d1b0125903dffd6c02b8cfa",
+      "name": "f_c36a652e71ac398b508dd24f64e544c4da159b9c5d1b0125903dffd6c02b8cfa",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "boundary_edge_mass",
+          "original_source_id": "block_1_objective:4"
+        },
+        {
+          "original_feature_name": "boundary_edge_mass",
+          "original_source_id": "block_1_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_weight_product_sum"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_weight_product_sum"
+              }
+            ],
+            "op": "sub"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_weight_product_sum"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "c3dd2a83e71e6905c9441fef4cfb26bc7ef169d18e42e20266cbe4cd216b6662",
+      "name": "f_c3dd2a83e71e6905c9441fef4cfb26bc7ef169d18e42e20266cbe4cd216b6662",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "boundary_product",
+          "original_source_id": "block_3_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "available"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              }
+            ],
+            "op": "difference"
+          }
+        ],
+        "op": "clique_cover_weight"
+      },
+      "expression_sha256": "c46a4ed37d5ad2bfee5cd02a3ba0cd6bd2a64eedaecebd0c83f5a0a8d7a3786c",
+      "name": "f_c46a4ed37d5ad2bfee5cd02a3ba0cd6bd2a64eedaecebd0c83f5a0a8d7a3786c",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "d_cover",
+          "original_source_id": "block_0_witness:4"
+        },
+        {
+          "original_feature_name": "e_cover",
+          "original_source_id": "block_0_objective:2"
+        },
+        {
+          "original_feature_name": "e_cover",
+          "original_source_id": "block_0_objective:5"
+        },
+        {
+          "original_feature_name": "excluded_cover",
+          "original_source_id": "block_1_witness:2"
+        },
+        {
+          "original_feature_name": "excluded_cover",
+          "original_source_id": "block_1_witness:5"
+        },
+        {
+          "original_feature_name": "omitted_cover",
+          "original_source_id": "block_1_relations:7"
+        },
+        {
+          "original_feature_name": "exclusion_cover",
+          "original_source_id": "block_1_objective:3"
+        },
+        {
+          "original_feature_name": "exclusion_cover",
+          "original_source_id": "block_1_objective:7"
+        },
+        {
+          "original_feature_name": "x_cover",
+          "original_source_id": "block_2_witness:1"
+        },
+        {
+          "original_feature_name": "x_cover",
+          "original_source_id": "block_2_witness:6"
+        },
+        {
+          "original_feature_name": "without_cover",
+          "original_source_id": "block_2_relations:2"
+        },
+        {
+          "original_feature_name": "without_cover",
+          "original_source_id": "block_2_relations:7"
+        },
+        {
+          "original_feature_name": "exclude_upper",
+          "original_source_id": "block_2_objective:7"
+        },
+        {
+          "original_feature_name": "exclude_cover",
+          "original_source_id": "block_3_witness:1"
+        },
+        {
+          "original_feature_name": "exclude_cover",
+          "original_source_id": "block_3_witness:7"
+        },
+        {
+          "original_feature_name": "x_cover",
+          "original_source_id": "block_3_relations:4"
+        },
+        {
+          "original_feature_name": "x_cover",
+          "original_source_id": "block_3_relations:5"
+        },
+        {
+          "original_feature_name": "exclude_ub",
+          "original_source_id": "block_3_objective:2"
+        },
+        {
+          "original_feature_name": "exclude_ub",
+          "original_source_id": "block_3_objective:3"
+        },
+        {
+          "original_feature_name": "exclude_ub",
+          "original_source_id": "block_3_objective:7"
+        },
+        {
+          "original_feature_name": "excluded_cover",
+          "original_source_id": "block_4_relations:6"
+        },
+        {
+          "original_feature_name": "exclude_cover",
+          "original_source_id": "block_4_objective:2"
+        },
+        {
+          "original_feature_name": "exclude_cover",
+          "original_source_id": "block_4_objective:5"
+        },
+        {
+          "original_feature_name": "exclude_cover",
+          "original_source_id": "block_4_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "c6d6f0d273454e985f89ea14fe29c094706d825ca81fea5dba80d8057dd7d72b",
+      "name": "f_c6d6f0d273454e985f89ea14fe29c094706d825ca81fea5dba80d8057dd7d72b",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "excluded_edges",
+          "original_source_id": "block_1_witness:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "edge_min_weight_sum"
+      },
+      "expression_sha256": "c7b93492e8d71375952a56de2871d3e6997bd49c9603fe375ec1e0a1f4a2a0a7",
+      "name": "f_c7b93492e8d71375952a56de2871d3e6997bd49c9603fe375ec1e0a1f4a2a0a7",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "neighbor_edge_min",
+          "original_source_id": "block_2_objective:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "count"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "count"
+              }
+            ],
+            "op": "sub"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "count"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "ca000d05d1c0b8e4979a60b0fc2b3352afdf79a899324184da87cdfd77fba2aa",
+      "name": "f_ca000d05d1c0b8e4979a60b0fc2b3352afdf79a899324184da87cdfd77fba2aa",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_2_witness:2"
+        },
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_2_witness:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "cd5a6767f5d05b4aa1facf6e82eee51acd144c5d880f38b16ec1bb8f1480a08b",
+      "name": "f_cd5a6767f5d05b4aa1facf6e82eee51acd144c5d880f38b16ec1bb8f1480a08b",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "neighbor_edge_count",
+          "original_source_id": "block_2_objective:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              }
+            ],
+            "op": "induced_edges"
+          }
+        ],
+        "op": "count"
+      },
+      "expression_sha256": "d447c2cb9d50ac72ad2aecb9889f03364648749584c443561288dc7b8d41bbf7",
+      "name": "f_d447c2cb9d50ac72ad2aecb9889f03364648749584c443561288dc7b8d41bbf7",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_witness:0"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_witness:1"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_witness:2"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_witness:3"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_witness:6"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_witness:5"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_witness:4"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_objective:0"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_objective:6"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_objective:3"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_objective:2"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_0_objective:5"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_witness:3"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_witness:1"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_witness:6"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_witness:2"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_witness:7"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_relations:0"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_relations:4"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_relations:3"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_1_relations:6"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_2_witness:0"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_2_witness:2"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_2_witness:3"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_2_witness:4"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_2_witness:1"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_2_witness:5"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_2_witness:7"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_2_witness:6"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_2_relations:0"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_2_relations:3"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_2_relations:5"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_2_relations:2"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_2_relations:4"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_3_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_3_witness:4"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_3_witness:2"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_3_witness:5"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_3_witness:1"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_3_witness:6"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_3_relations:0"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_3_relations:3"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_3_witness:7"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_3_relations:2"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_3_relations:4"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_witness:0"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_witness:1"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_witness:5"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_witness:2"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_witness:4"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_witness:3"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_witness:6"
+        },
+        {
+          "original_feature_name": "neighbor_edges",
+          "original_source_id": "block_4_witness:7"
+        },
+        {
+          "original_feature_name": "n_edges",
+          "original_source_id": "block_4_relations:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [],
+            "op": "available"
+          }
+        ],
+        "op": "clique_cover_weight"
+      },
+      "expression_sha256": "ddafd893729abffbd6cad36d1a33d0f40a3d3be6503eee443e5e761cb2b1dffc",
+      "name": "f_ddafd893729abffbd6cad36d1a33d0f40a3d3be6503eee443e5e761cb2b1dffc",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "available_cover",
+          "original_source_id": "block_1_objective:6"
+        },
+        {
+          "original_feature_name": "active_cover",
+          "original_source_id": "block_4_objective:7"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "singleton"
+              },
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "union"
+          }
+        ],
+        "op": "greedy_independent_weight"
+      },
+      "expression_sha256": "e40bb5bc56ff6088cbf224440efc06b85bc83ec136bf560d8936b4ab9f00bc8f",
+      "name": "f_e40bb5bc56ff6088cbf224440efc06b85bc83ec136bf560d8936b4ab9f00bc8f",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "closed_lower",
+          "original_source_id": "block_2_objective:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "count"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "count"
+              }
+            ],
+            "op": "sub"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "difference"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "count"
+          }
+        ],
+        "op": "sub"
+      },
+      "expression_sha256": "f122eac55d947d3ddeb91859997ebd9234df7664f7fb90254b09e50b40ba003e",
+      "name": "f_f122eac55d947d3ddeb91859997ebd9234df7664f7fb90254b09e50b40ba003e",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_0_objective:1"
+        },
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_0_objective:3"
+        },
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_0_objective:5"
+        },
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_1_witness:1"
+        },
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_1_relations:3"
+        },
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_2_relations:3"
+        },
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_2_relations:7"
+        },
+        {
+          "original_feature_name": "boundary_edges",
+          "original_source_id": "block_4_relations:5"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  }
+                ],
+                "op": "count"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "root"
+                  }
+                ],
+                "op": "neighbors"
+              }
+            ],
+            "op": "clique_cover_weight"
+          }
+        ],
+        "op": "add"
+      },
+      "expression_sha256": "fc7d848fd0bb0949b80b167ffc4b3eba08e457e60210d2ab248f4d9feac2e795",
+      "name": "f_fc7d848fd0bb0949b80b167ffc4b3eba08e457e60210d2ab248f4d9feac2e795",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "neighbor_profile",
+          "original_source_id": "block_2_relations:4"
+        }
+      ]
+    },
+    {
+      "expression": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "root"
+              }
+            ],
+            "op": "weight"
+          },
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "difference"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "singleton"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          }
+        ],
+        "op": "add"
+      },
+      "expression_sha256": "fce62143c370d91fcfe22d3118f418479ed5100e1b532a69984a1800e8d96377",
+      "name": "f_fce62143c370d91fcfe22d3118f418479ed5100e1b532a69984a1800e8d96377",
+      "original_metadata_sources": [
+        {
+          "original_feature_name": "include_lb",
+          "original_source_id": "block_3_objective:2"
+        },
+        {
+          "original_feature_name": "include_lb",
+          "original_source_id": "block_3_objective:3"
+        },
+        {
+          "original_feature_name": "include_lb",
+          "original_source_id": "block_3_objective:7"
+        }
+      ]
+    }
+  ],
+  "inventory": {
+    "all_original_positions": 120,
+    "canonical_expression_count": 53,
+    "original_positions": [
+      "block_0_objective:0",
+      "block_0_objective:1",
+      "block_0_objective:2",
+      "block_0_objective:3",
+      "block_0_objective:4",
+      "block_0_objective:5",
+      "block_0_objective:6",
+      "block_0_objective:7",
+      "block_0_relations:0",
+      "block_0_relations:1",
+      "block_0_relations:2",
+      "block_0_relations:3",
+      "block_0_relations:4",
+      "block_0_relations:5",
+      "block_0_relations:6",
+      "block_0_relations:7",
+      "block_0_witness:0",
+      "block_0_witness:1",
+      "block_0_witness:2",
+      "block_0_witness:3",
+      "block_0_witness:4",
+      "block_0_witness:5",
+      "block_0_witness:6",
+      "block_0_witness:7",
+      "block_1_objective:0",
+      "block_1_objective:1",
+      "block_1_objective:2",
+      "block_1_objective:3",
+      "block_1_objective:4",
+      "block_1_objective:5",
+      "block_1_objective:6",
+      "block_1_objective:7",
+      "block_1_relations:0",
+      "block_1_relations:1",
+      "block_1_relations:2",
+      "block_1_relations:3",
+      "block_1_relations:4",
+      "block_1_relations:5",
+      "block_1_relations:6",
+      "block_1_relations:7",
+      "block_1_witness:0",
+      "block_1_witness:1",
+      "block_1_witness:2",
+      "block_1_witness:3",
+      "block_1_witness:4",
+      "block_1_witness:5",
+      "block_1_witness:6",
+      "block_1_witness:7",
+      "block_2_objective:0",
+      "block_2_objective:1",
+      "block_2_objective:2",
+      "block_2_objective:3",
+      "block_2_objective:4",
+      "block_2_objective:5",
+      "block_2_objective:6",
+      "block_2_objective:7",
+      "block_2_relations:0",
+      "block_2_relations:1",
+      "block_2_relations:2",
+      "block_2_relations:3",
+      "block_2_relations:4",
+      "block_2_relations:5",
+      "block_2_relations:6",
+      "block_2_relations:7",
+      "block_2_witness:0",
+      "block_2_witness:1",
+      "block_2_witness:2",
+      "block_2_witness:3",
+      "block_2_witness:4",
+      "block_2_witness:5",
+      "block_2_witness:6",
+      "block_2_witness:7",
+      "block_3_objective:0",
+      "block_3_objective:1",
+      "block_3_objective:2",
+      "block_3_objective:3",
+      "block_3_objective:4",
+      "block_3_objective:5",
+      "block_3_objective:6",
+      "block_3_objective:7",
+      "block_3_relations:0",
+      "block_3_relations:1",
+      "block_3_relations:2",
+      "block_3_relations:3",
+      "block_3_relations:4",
+      "block_3_relations:5",
+      "block_3_relations:6",
+      "block_3_relations:7",
+      "block_3_witness:0",
+      "block_3_witness:1",
+      "block_3_witness:2",
+      "block_3_witness:3",
+      "block_3_witness:4",
+      "block_3_witness:5",
+      "block_3_witness:6",
+      "block_3_witness:7",
+      "block_4_objective:0",
+      "block_4_objective:1",
+      "block_4_objective:2",
+      "block_4_objective:3",
+      "block_4_objective:4",
+      "block_4_objective:5",
+      "block_4_objective:6",
+      "block_4_objective:7",
+      "block_4_relations:0",
+      "block_4_relations:1",
+      "block_4_relations:2",
+      "block_4_relations:3",
+      "block_4_relations:4",
+      "block_4_relations:5",
+      "block_4_relations:6",
+      "block_4_relations:7",
+      "block_4_witness:0",
+      "block_4_witness:1",
+      "block_4_witness:2",
+      "block_4_witness:3",
+      "block_4_witness:4",
+      "block_4_witness:5",
+      "block_4_witness:6",
+      "block_4_witness:7"
+    ],
+    "status_counts": {
+      "invalid_response_schema": 8,
+      "static_valid": 112
+    }
+  },
+  "selection": "SHA256 of canonical typed AST bytes ascending; all static-valid R1 positions, including ineligible candidates",
+  "version": "v06_fixed_catalogue_additive_cost_001"
+}

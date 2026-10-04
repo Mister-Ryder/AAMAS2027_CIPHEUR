@@ -1,0 +1,62 @@
+% Root review of independently authored V06 section; original preserved.
+\section{Introduction}
+\label{sec:introduction}
+A satellite--ground contact excludes opportunities sharing its resources.
+Changing a switching gap changes which alternatives can coexist, and hence
+their opportunity costs, while preserving contacts and rewards.
+We isolate the static pairwise-conflict subproblem as maximum-weight
+independent set (MWIS)~\cite{augenstein2016optimal,levinson2025optimal}
+and study a reusable heuristic across resource configurations.
+
+LLM synthesis searches executable heuristics through evaluation and
+reflection~\cite{romeraparedes2024funsearch,liu2024eoh,ye2024reevo}.
+Aggregate reward does not identify whether failure needs a different formula
+or missing input information. No pointwise rule can satisfy incompatible
+strict preferences over identical observations.
+
+Figure~\ref{fig:motivation} illustrates this obstruction. Two competing contacts
+have identical nine-input vectors within each configuration. Their
+forced-completion increments change from $20,26$ to $20,14$ after a ground-gap
+intervention, reversing preference while both contacts remain individually
+feasible. A base-only scalar necessarily ties them; neighborhood compatibility
+supplies the missing distinction. These illustrated values exclude the common
+fixed reward and are conditional optima, not heuristic rollout returns.
+
+We propose \emph{certified representation--rule refinement}. Offline interventions
+preserve contacts and explicit boundary commitments. Sound bounds certify
+full-residual preference reversals or preservation; unresolved comparisons abstain.
+Identical residual components cancel within each configuration. The resulting
+strict requirements are projected onto exact feature-equivalence classes.
+A directed cycle proves that every scalar on the interface is insufficient.
+Its concrete ranking arcs and equality joins identify occurrences that must be
+distinguished, adapting abstraction-refinement
+principles~\cite{clarke2000cegar,frances2021policies} to optimization decisions.
+
+We use an LLM as a conditionable proposal operator in the combinatorial space
+of bounded typed graph computations and score expressions. Witnesses identify
+necessary distinctions without supplying their computation, conditioning
+generation on an information deficit. Deterministic search remains viable:
+our supplied 53-expression TRAIN catalogue admits exact minimum-additive-cost
+repair. The theory motivates refinement; proposer efficiency remains empirical.
+
+Splitting one witness can expose another, requiring complete-quotient rechecks.
+TRAIN selection checks acyclicity, scalar fit, scheduling quality and work
+before freezing. Priorities control greedy additions and pivots in shared
+classical repair~\cite{lamm2019weighted,grossmann2025chils}; repeated deployment
+needs no LLM or full-residual certification calls.
+
+Our contributions are:
+\begin{enumerate}
+\item \textbf{Information diagnosis:} finite pointwise representability with
+concrete cycle witnesses, separating insufficient inputs from poor rule fit.
+\item \textbf{Targeted cost-aware synthesis:} certified completion requirements
+and equality joins direct typed feature--rule refinement, with full-quotient
+rechecks and a finite-catalogue additive-cost guarantee.
+\item \textbf{Frozen evaluation:} evidence-controlled authoring, separate
+representability and scalar-fit measurements under a common kernel,
+and separate published-solver comparisons.
+\end{enumerate}
+Shared-seed TRAIN repair yields 26/32 information-compatible W proposals
+versus 19/32 with relations alone. Joint selection raises withheld fit within
+W by 3.37 points, while relations-only outputs retain stronger fit.
+Scheduling improvement remains separate and is tested against published solvers.

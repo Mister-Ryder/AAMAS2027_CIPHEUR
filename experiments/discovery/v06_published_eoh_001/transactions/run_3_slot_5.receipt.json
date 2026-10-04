@@ -1,0 +1,40 @@
+{
+  "version": "v06_published_EoH_immutable_transaction_transfer_001",
+  "id": "run_3_slot_5",
+  "run": 3,
+  "slot": 5,
+  "capsule_sha256": "d3487049e07edca0043bbafa38a85c909ecab3fd198e00a2ef43f806eb53c1d8",
+  "files_sha256": {
+    "experiments/discovery/v06_published_eoh_001/root_authoring_release.json": "6f3a7059c92bebbf2905cdf51a9eda681a73d8990f3f254fc567c3b461ad9c35",
+    "experiments/discovery/v06_published_eoh_001/requests/run_3_slot_5.json": "72b6a186f73450b6aadc7230daa03d2545098122a5583759432c52bdefb2d7aa",
+    "experiments/discovery/v06_published_eoh_001/calls/run_3_slot_5/events.jsonl": "c489abde271613c69831e2f3dcb49d4f4d7410a50073c3701e7ed82c3e441fb0",
+    "experiments/discovery/v06_published_eoh_001/calls/run_3_slot_5/input.txt": "c650206bd85c221230162bf55bcf76ddfcc2cf30be6f5d3d64a261d30428b97e",
+    "experiments/discovery/v06_published_eoh_001/calls/run_3_slot_5/last_message.txt": "41cac28b4be481a800e28c2da9e71ab9042e1dfe60f91198835eceb92d043a88",
+    "experiments/discovery/v06_published_eoh_001/calls/run_3_slot_5/receipt.json": "85b4b3734223d9d11c60eab3ba6b6729cbdde837fd9090bcd107f3fdc7f74e90",
+    "experiments/discovery/v06_published_eoh_001/calls/run_3_slot_5/request.json": "72b6a186f73450b6aadc7230daa03d2545098122a5583759432c52bdefb2d7aa",
+    "experiments/discovery/v06_published_eoh_001/calls/run_3_slot_5/response.json": "41cac28b4be481a800e28c2da9e71ab9042e1dfe60f91198835eceb92d043a88",
+    "experiments/discovery/v06_published_eoh_001/calls/run_3_slot_5/stderr.txt": "806aaa22960f49fba7a75c5ffc8030939cfa1bca556343c20a802a67fc9681ee"
+  },
+  "protocol_sha256": "7885a103ffd550ae8e50b95367220d3967e62d73eb17e5a6dfd31493d0a9e283",
+  "root_release_sha256": "6f3a7059c92bebbf2905cdf51a9eda681a73d8990f3f254fc567c3b461ad9c35",
+  "source_sha256": {
+    "cipheur/compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+    "cipheur/graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "cipheur/refinement.py": "90a7e6c6981a73d13b715dc0b2b773cd2052724c2e044af617b7795eb074bd99",
+    "cipheur/repair_v06.py": "c4cbdb9878c041321f4cfcc0637a7a3113add38732ca04d05c8687d9a8e7e8f3",
+    "cipheur/representation.py": "5f844dd5ab6d5f79e92a0a7ea6ba0af6073d2e7d3f39a69a091b3fcf875d9dc0",
+    "cipheur/synthesis_study_v06.py": "f640af65645426cdf172d1cbc7326bae221acf43ece81225ef8bf06cf2c8b0bb",
+    "cipheur/heldout_refinement_v06.py": "1e8bd6a2577eabe8e33a73edc1303358f09cdbfc1c5c53604eaf91db3380ef1a",
+    "cipheur/heldout_mechanism_v06.py": "2df16b56c4910567c4112c4063e22cfe7eca603c0b22a6f3a8dffb1074c93b2f",
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "cipheur/refinement_study_v06.py": "8a200a923cb50c0f691a2fe378300d89ce74c4565ade71437a1d07a282b087e6",
+    "cipheur/published_eoh_v06.py": "96c115fa3d8ad8bbd8fad4995561acbeed5dfd220fe155e1769b7541a588f7b0",
+    "scripts/author_published_eoh_cli_v06.py": "c44497c9032124082d2414be0c4e92189ea6a331e156ef8fe1c9ecadffd899cf",
+    "scripts/author_matched_cli_v06.py": "b25daef0767105f08fc600f8a1e0ba3697aa54bb42f6adc7eb77be8d12c0a994"
+  },
+  "packaging_source_sha256": "5c1392b9c74eb27db42f0ec043466278b50f1f989e170eeb0acbd478fc4297b8",
+  "candidate_content_not_parsed_for_transfer": true,
+  "TEST_accessed": false
+}

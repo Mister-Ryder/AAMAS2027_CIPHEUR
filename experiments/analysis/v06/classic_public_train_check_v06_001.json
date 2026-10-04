@@ -1,0 +1,381 @@
+{
+  "errors": 0,
+  "independent_implementation_checks": 19959970,
+  "auditor_scope": "Separate audit implementation by execution agent; not a separate-person audit; no project runtime imported and no solver or oracle called",
+  "archive_sha256": "86152347d4f8da14083c90fac8494909e0dde2feafcc09b4bd72ffbbd682039f",
+  "source_zip_sha256": "fdd2a7baed510e54c95c99698758dfa6495f17c6a15aaa092e64dfbad18a8a31",
+  "protocol_sha256": "415cd558c4b0fdf60ac4e2969559ad69888733362ff6a3adf6cfc3ef04f24dcc",
+  "results_sha256": "4ca0dc21e9e281b9278dd9ce784d087345a30b7342bdf2f7665805ce19cb5d39",
+  "audit_source_sha256": "442af1644cb9dab3dd03547f16458d5987b2473b9336be82e61183c9368bba3d",
+  "all_1008_assignment_keys_verified": true,
+  "all_28_exact_source_graph_mappings_verified": true,
+  "all_633_incumbents_source_feasible_and_exact": true,
+  "all_375_input_limits_are_null": true,
+  "status_counts": {
+    "checked_feasible_incumbent": 549,
+    "encoding_not_supported": 375,
+    "time_budget": 50,
+    "no_improvement_in_attempted_patches": 28,
+    "patch_limit": 6
+  },
+  "groups": [
+    {
+      "input_family": "UAI",
+      "method": "CHILS",
+      "target": 0.1,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.11511898040771484,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "CHILS",
+      "target": 1,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 1.0140241086483002,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "CHILS",
+      "target": 5,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 5.011502295732498,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "CHILS_ILS",
+      "target": 0.1,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.12082992866635323,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "CHILS_ILS",
+      "target": 1,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 1.0194535553455353,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "CHILS_ILS",
+      "target": 5,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 5.016565024852753,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "Degree",
+      "target": 0.1,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.10094242170453072,
+      "mean_original_objective_exact": "498965107/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "Degree",
+      "target": 1,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.3465213514864445,
+      "mean_original_objective_exact": "498965107/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "Degree",
+      "target": 5,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.3437587358057499,
+      "mean_original_objective_exact": "498965107/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "M2WIS",
+      "target": 0.1,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.07739678025245667,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "M2WIS",
+      "target": 1,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.07494984939694405,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "M2WIS",
+      "target": 5,
+      "requests": 9,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.07434811070561409,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "Struction",
+      "target": 0.1,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.021094825118780136,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "Struction",
+      "target": 1,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.024305127561092377,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "Struction",
+      "target": 5,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.023983843624591827,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "WeightedBR",
+      "target": 0.1,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.022149689495563507,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "WeightedBR",
+      "target": 1,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.02107958495616913,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "UAI",
+      "method": "WeightedBR",
+      "target": 5,
+      "requests": 3,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.0176260843873024,
+      "mean_original_objective_exact": "501134959/300000"
+    },
+    {
+      "input_family": "WDP",
+      "method": "CHILS",
+      "target": 0.1,
+      "requests": 75,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.5979782901704311,
+      "mean_original_objective_exact": "6169704374/75"
+    },
+    {
+      "input_family": "WDP",
+      "method": "CHILS",
+      "target": 1,
+      "requests": 75,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 1.5094919987022877,
+      "mean_original_objective_exact": "6316859729/75"
+    },
+    {
+      "input_family": "WDP",
+      "method": "CHILS",
+      "target": 5,
+      "requests": 75,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 5.521360132843256,
+      "mean_original_objective_exact": "6391142902/75"
+    },
+    {
+      "input_family": "WDP",
+      "method": "CHILS_ILS",
+      "target": 0.1,
+      "requests": 75,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.6026191003620625,
+      "mean_original_objective_exact": "6169704374/75"
+    },
+    {
+      "input_family": "WDP",
+      "method": "CHILS_ILS",
+      "target": 1,
+      "requests": 75,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 1.5160116143524647,
+      "mean_original_objective_exact": "2105541418/25"
+    },
+    {
+      "input_family": "WDP",
+      "method": "CHILS_ILS",
+      "target": 5,
+      "requests": 75,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 5.512965224683285,
+      "mean_original_objective_exact": "6424217417/75"
+    },
+    {
+      "input_family": "WDP",
+      "method": "Degree",
+      "target": 0.1,
+      "requests": 25,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 0.10034458711743355,
+      "mean_original_objective_exact": "316916431/25"
+    },
+    {
+      "input_family": "WDP",
+      "method": "Degree",
+      "target": 1,
+      "requests": 25,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 1.0004160404205322,
+      "mean_original_objective_exact": "1206977456/25"
+    },
+    {
+      "input_family": "WDP",
+      "method": "Degree",
+      "target": 5,
+      "requests": 25,
+      "null_rewards": 0,
+      "median_wrapper_wall_seconds": 2.2037022598087788,
+      "mean_original_objective_exact": "1897643478/25"
+    },
+    {
+      "input_family": "WDP",
+      "method": "M2WIS",
+      "target": 0.1,
+      "requests": 75,
+      "null_rewards": 75,
+      "median_wrapper_wall_seconds": 0.002865295857191086,
+      "mean_original_objective_exact": null
+    },
+    {
+      "input_family": "WDP",
+      "method": "M2WIS",
+      "target": 1,
+      "requests": 75,
+      "null_rewards": 75,
+      "median_wrapper_wall_seconds": 0.0028374269604682922,
+      "mean_original_objective_exact": null
+    },
+    {
+      "input_family": "WDP",
+      "method": "M2WIS",
+      "target": 5,
+      "requests": 75,
+      "null_rewards": 75,
+      "median_wrapper_wall_seconds": 0.0028531476855278015,
+      "mean_original_objective_exact": null
+    },
+    {
+      "input_family": "WDP",
+      "method": "Struction",
+      "target": 0.1,
+      "requests": 25,
+      "null_rewards": 25,
+      "median_wrapper_wall_seconds": 0.004070352762937546,
+      "mean_original_objective_exact": null
+    },
+    {
+      "input_family": "WDP",
+      "method": "Struction",
+      "target": 1,
+      "requests": 25,
+      "null_rewards": 25,
+      "median_wrapper_wall_seconds": 0.004050787538290024,
+      "mean_original_objective_exact": null
+    },
+    {
+      "input_family": "WDP",
+      "method": "Struction",
+      "target": 5,
+      "requests": 25,
+      "null_rewards": 25,
+      "median_wrapper_wall_seconds": 0.0027222558856010437,
+      "mean_original_objective_exact": null
+    },
+    {
+      "input_family": "WDP",
+      "method": "WeightedBR",
+      "target": 0.1,
+      "requests": 25,
+      "null_rewards": 25,
+      "median_wrapper_wall_seconds": 0.002728395164012909,
+      "mean_original_objective_exact": null
+    },
+    {
+      "input_family": "WDP",
+      "method": "WeightedBR",
+      "target": 1,
+      "requests": 25,
+      "null_rewards": 25,
+      "median_wrapper_wall_seconds": 0.002705927938222885,
+      "mean_original_objective_exact": null
+    },
+    {
+      "input_family": "WDP",
+      "method": "WeightedBR",
+      "target": 5,
+      "requests": 25,
+      "null_rewards": 25,
+      "median_wrapper_wall_seconds": 0.0027469471096992493,
+      "mean_original_objective_exact": null
+    }
+  ],
+  "cloud_host": {
+    "before_any_calibration_outcomes": true,
+    "timestamp_unix": 1791045550.388022,
+    "pid": 51333,
+    "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.31",
+    "workers": 8,
+    "cgroup_cpu_max": "1600000 100000",
+    "cgroup_memory_max": "64424509440",
+    "cgroup_memory_current": "7648890880",
+    "cpu_model": "AMD EPYC 9654 96-Core Processor",
+    "process_inventory": [
+      "   PID COMMAND         %CPU %MEM",
+      "   764 supervisord      1.7  0.0",
+      "   786 autopanel        0.1  0.0",
+      "     1 bash             0.0  0.0",
+      "   778 sshd             0.0  0.0",
+      "   787 tensorboard      0.0  0.0",
+      "   788 jupyter-lab      0.0  0.0",
+      "   789 proxy            0.0  0.0",
+      "   790 proxy            0.0  0.0",
+      "   847 server           0.0  0.0",
+      " 47539 sshd             0.0  0.0",
+      " 47550 sftp-server      0.0  0.0",
+      " 51333 python           0.0  0.0",
+      " 51335 ps               0.0  0.0"
+    ],
+    "source_zip_sha256": "fdd2a7baed510e54c95c99698758dfa6495f17c6a15aaa092e64dfbad18a8a31",
+    "config_sha256": "e60f38761da24cac6be8858e08227ab3640be4cab05a1334dea4c2a74978895d",
+    "test_executions_permitted": false
+  },
+  "test_solver_calls": 0,
+  "quality_scope": "Raw original objective by source family; no optimum normalization or cross-family quality pooling",
+  "timing_scope": "Nominal native internal wall versus cooperative Degree timer; end-to-end wrapper and shared loading reported, not claimed hard-budget equivalent"
+}

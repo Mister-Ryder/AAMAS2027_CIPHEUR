@@ -1,0 +1,22 @@
+{
+  "version": "v06_shared_repair_train_configuration_001",
+  "decided_before_any_v06_shared_kernel_outcome": true,
+  "seconds": 0.5,
+  "clock": "wall",
+  "workers": 8,
+  "repair_config": {
+    "max_patch_vertices": 24,
+    "max_destroy": 4,
+    "max_patches": 32,
+    "expansion_steps": 1,
+    "node_budget_per_patch": 128,
+    "max_search_nodes": 4096,
+    "max_work": 200000,
+    "upper_pruning": true,
+    "policy_scope": "branch"
+  },
+  "author_packet_selection": "TRAIN metadata only: SHA-ordered first three DIMACS sources and first three SATLIB sources, then both sides of the SHA-ordered first source pair in each of the six temporal regime/horizon families; 18 states. No quality or conditional-label filtering.",
+  "quality_normalization": "Macro-average across the eight TRAIN families of exact feasible reward / total graph weight; this denominator is neither optimum nor a feasible best-method reference.",
+  "all_arms_share": "Initializer, targets/regions, patch construction, include-first traversal, bounds and all caps. Program priority changes only the local feasible greedy proposal and pivot vertex.",
+  "cap_scope": "Cooperative end-to-end nominal wall time and charged-operation cap; final incumbent validation is charged and any overshoot reported. An ordinary budget stop retains the feasible incumbent."
+}

@@ -1,0 +1,71 @@
+{
+  "version": "contact_scene_screen_v07_001",
+  "before_any_graph": true,
+  "sources": [
+    {
+      "name": "C6",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\C6.csv",
+      "sha256": "2e6b398fe2a6cee1497ab3eccf45d0108bdb30b4f2fa6c12f276e2028c9446cb"
+    },
+    {
+      "name": "W6",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\W6.csv",
+      "sha256": "c0fe378c68400d985c05617d89e41b320df03e6565b91ac7ad6821a6659e01ca"
+    }
+  ],
+  "time_origin_seconds": 0,
+  "train_days": [
+    0
+  ],
+  "validation_days_not_built": [
+    1
+  ],
+  "heldout_days_not_built": [
+    2
+  ],
+  "window_seconds": 7200,
+  "window_ownership": "half-open link-start only; never clip end",
+  "normalization": "strict GB18030; trim whitespace/BOM then all terminal single/double quotes; exact integer times",
+  "legacy_loader_difference": "Identity quote normalization also handles unmatched terminal quotes; inherited conflict predicates are unchanged",
+  "objective": "Original link duration, exact nonnegative integer; priority is not the objective",
+  "graph_model": "Original V51 legacy ground and satellite predicates, not ideal interval conflicts",
+  "ground_gaps": [
+    340,
+    680
+  ],
+  "satellite_change_time": 150,
+  "satellite_trans_time": 300,
+  "base9_fields": [
+    "weight",
+    "duration",
+    "degree",
+    "conflict_weight",
+    "max_conflict_weight",
+    "compatible_weight",
+    "station_gap",
+    "satellite_gap",
+    "remaining_count"
+  ],
+  "satellite_gap_base_feature": "satellite_change_time=150, matching existing programs.features fallback",
+  "window_count": 24,
+  "graph_count": 48,
+  "workers": 8,
+  "boundary": {
+    "fixed": [],
+    "excluded": []
+  },
+  "patterns": "unordered two-spoke reason-mask classes 1/2/3; no rim-edge classification, not induced-wedge/triangle counts",
+  "no_screening_filters": true,
+  "optimizer_calls": 0,
+  "oracle_calls": 0,
+  "model_calls": 0,
+  "source_sha256": {
+    "scripts/screen_contact_scene_v07.py": "9a2782bf5ef002d7c50a1ff6587affac23ea6b1d1cbb0d89fd4730afc4fb9365",
+    "cipheur/v51_adapter.py": "68699aa08e21a6dea1108ba64878916efaf56e05f076e93aa6cda9b7c6dad28d",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "legacy/data.py": "e18ebe861c8c578bc82e7386977cacf71904239a4332c03680314ec8d9b480ef",
+    "legacy/graph.py": "030d6d0e26776c5817083ee95edb9c536da92ec30eb9afb727ce783e8232c5c4",
+    "legacy/verifier.py": "7b9cdf331e5e427d412a2369e8c439153755e0d4dd2ef02042dd970c1890567b"
+  }
+}

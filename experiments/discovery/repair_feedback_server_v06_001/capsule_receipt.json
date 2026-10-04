@@ -1,0 +1,19 @@
+{
+  "before_any_feedback": true,
+  "source_zip": "experiments/source_snapshots/v06/repair_degree_feedback_v06_001_source.zip",
+  "source_zip_sha256": "c1908c18248d0be293588d30ed4bb56bdb647238547e3579dbf01f3f240196f3",
+  "files_sha256": {
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "cipheur/graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "cipheur/compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+    "cipheur/repair_v06.py": "c4cbdb9878c041321f4cfcc0637a7a3113add38732ca04d05c8687d9a8e7e8f3",
+    "scripts/run_repair_feedback_v06.py": "b1df66408db5f7ccfcea72f67b12b62e27baaf894567f38e86af2f4306c4aa82",
+    "scripts/run_repair_feedback_server_v06.py": "b53817377606a985ddef548e3d6db3e406d883dbfe49b35b21d66efb46746a92",
+    "experiments/discovery/v06_evidence_001/data.json": "968f96b7712ca3ecc8a7b43f567c6b6403742f26f0e76e9d5f2c680973827784",
+    "configs/repair_train_v06_001.json": "3587db7ba52fe9f21f0171600fee120e5598b551ed06bbe674e7d0cb38e3cb4b",
+    "experiments/discovery/repair_feedback_server_v06_001/execution_plan.json": "b52e0ab7513ab14b89dea99e0d281a4320dc279cd327a88e0697d42c6a437a59"
+  },
+  "execution_plan_sha256": "b52e0ab7513ab14b89dea99e0d281a4320dc279cd327a88e0697d42c6a437a59"
+}

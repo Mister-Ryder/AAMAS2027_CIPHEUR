@@ -1,0 +1,20 @@
+{
+  "version": "v06_supplement_authoring_completion_001",
+  "supplement_protocol_sha256": "758a6dd03616b1e004eaf7b609ff8dd29912b35271e609879a142e91ef725601",
+  "parent_completion_sha256": "aa304d523161d39443566c102e8c15739116991dffaa0a00f5a50ae98c3877a4",
+  "completed_utc": "2026-10-03T17:06:24.674183+00:00",
+  "all_authoring_completed_before_assessment": true,
+  "same_requested_model_and_settings_all_cells": true,
+  "response_sha256": {
+    "block_4_relations.json": "1751962b548f5e12748f09eaace05e89bf6542d267910bfeaab2a93ab9ddde81",
+    "block_4_witness.json": "93004d7a84aec2a0598d357f27d3564f3bde448fc680b57c11306cef4d806852",
+    "block_4_objective.json": "4062fa73a9dfea952cb5872396380c636ffdd68dc3e7cb1b143d6ca8e9faf5b0"
+  },
+  "receipt_paths": {
+    "block_4_relations": "receipts/block_4_relations.receipt.json",
+    "block_4_witness": "receipts/block_4_witness.receipt.json",
+    "block_4_objective": "receipts/block_4_objective.receipt.json"
+  },
+  "failed_transport_cells": [],
+  "no_assessment_or_retry": true
+}

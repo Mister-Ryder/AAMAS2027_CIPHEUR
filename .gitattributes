@@ -1,4 +1,6 @@
-* text=auto eol=lf
+# Research manifests bind exact written bytes, including source and review notes.
+# Preserve them on every platform instead of applying checkout normalization.
+* -text whitespace=cr-at-eol
 
 # Preserve exact recorded bytes: receipts hash these artifacts as written.
 baselines/** -text whitespace=cr-at-eol
@@ -6,3 +8,4 @@ manifest/** -text whitespace=cr-at-eol
 experiments/** -text whitespace=cr-at-eol
 paper/aamas.cls -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 paper/ACM-Reference-Format.bst -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+paper/figures/*.drawio -text whitespace=cr-at-eol

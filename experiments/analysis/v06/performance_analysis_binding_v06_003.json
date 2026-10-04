@@ -1,0 +1,29 @@
+{
+  "version": "v06_audited_performance_analysis_001",
+  "assignments": 52548,
+  "independent_audit_sha256": "db7209ad60c4d2f1cff07ec50b2bf26fd5d473153c56d809ff416f6781de22d6",
+  "audited_rows_sha256": "24b6f0302a95d144d3d7b0c17226abda2030370dd8ba73fd8e8bae2394b1b948",
+  "archive_sha256": "196848904ee99f4ec4bcc311edbddeab60893d39599dc6cc18e4adffad87c5e1",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 261004,
+  "analysis_source_sha256": "b01f05e1706d7a8ea10d2629f3c924170855b693f6c621bb80d46a370a5b88d2",
+  "analysis_config_sha256": {
+    "configs/analysis_v06_001.json": "52331002bdb20535cbeaa3fee727135a36d53a6b3577e76d5a18a4cf54a1ecd1",
+    "configs/analysis_refinement_v06_002.json": "f05c32a67f412105c57b91aaedab131f140db1d35423f210d209e990caa79769"
+  },
+  "registered_constants": {
+    "wall_targets": [
+      0.1,
+      1,
+      5
+    ],
+    "total_contexts": 302,
+    "total_assignments": 52548,
+    "policy_slots": 23
+  },
+  "no_TEST_selection": true,
+  "canonical_path": "experiments/analysis/v06/performance_TEST_analysis_v06_003/analysis.json",
+  "bytes": 897176638,
+  "sha256": "839324710784ba71ee40c25ea199b527ff346fb7ec1209f97756ed2d9513aaf9",
+  "scope": "Metadata extracted once from the complete analysis; exact canonical bytes are losslessly retained in parts."
+}

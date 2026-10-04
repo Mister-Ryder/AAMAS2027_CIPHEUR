@@ -1,0 +1,27 @@
+{
+  "version": "v06_V003_exact_identity_staging_and_detached_launch_001",
+  "timestamp_unix": 1791077743.5227776,
+  "launcher_pid": 66238,
+  "command": [
+    "/root/autodl-tmp/aamas2027_v03/py311/bin/python",
+    "-B",
+    "scripts/run_performance_r2_eoh_test_v06.py",
+    "server-run",
+    "--study",
+    "/root/autodl-tmp/aamas2027_v06_performance_r2_eoh_test_003/experiments/discovery/performance_r2_eoh_test_v06_003_registered_001",
+    "--out",
+    "/root/autodl-tmp/aamas2027_v06_performance_r2_eoh_test_003/output/performance_r2_eoh_test_v06_003_inputs",
+    "--authorization",
+    "/root/autodl-tmp/aamas2027_v06_performance_r2_eoh_test_003/experiments/discovery/v06_test_release_002/performance_root_release.json"
+  ],
+  "identity_files_byte_verified": 11,
+  "identity_capsule_sha256": "73c6d6ee1ca53801f6efa58785e374a7e0042e6649eec77c0efdc1b9bf84905c",
+  "identity_capsule_receipt_sha256": "fc1a7b36afa35920d89311191427bed0d4c79fb694e3619bb49e70f358d8965a",
+  "root_release_sha256": "5b6f82647e282a4491ad3b49775a21cf91afddfc1c2f46ea1defdad9d13e5063",
+  "input_freeze_sha256": "42f7e9606499e379063c81d66d96beaa9cefb77be57be66c6076784ff33e4689",
+  "staging_script_sha256": "8f02a53066c527bd4c052c7d11da9a1fe7321150c4524046d62995a49aba786f",
+  "source_hashes_verified": 16,
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "no_frozen_source_or_existing_artifact_overwritten": true,
+  "free_bytes_at_launch": 34462146560
+}

@@ -1,0 +1,1018 @@
+{
+  "version": "matched_cold_bank_v06",
+  "block": 2,
+  "arm": "relations",
+  "candidates": [
+    {
+      "name": "packing_interval_margin",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "residual_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_pack - 0.25*max(0,residual_cover-residual_pack) - 0.15*neighbor_pack + 0.05*neighbor_cover + 0.02*neighbor_edges/max(1e-9,abs(1+degree)) - 0.002*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.0001*degree",
+      "rationale": "Hypothesis: realized residual packing predicts preferred completions, while packing-cover disagreement and independently selectable excluded neighbors measure uncertainty and opportunity cost."
+    },
+    {
+      "name": "cover_clustering",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "residual_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "closed_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "union",
+                "args": [
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + 0.7*residual_cover + 0.3*residual_pack - 0.2*neighbor_cover - 0.05*neighbor_pack - 0.15*max(0,closed_cover-neighbor_cover) - 0.01*residual_edges/max(1e-9,abs(1+compatible_weight))",
+      "rationale": "Hypothesis: clique-aware residual capacity can recover preferences obscured by greedy tie choices; closed-neighborhood cover changes distinguish how the root participates in conflict clusters."
+    },
+    {
+      "name": "conditional_regret",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_pack - without_pack + 0.35*(weight+residual_cover-without_cover) - 0.1*neighbor_pack + 0.02*neighbor_edges/max(1e-9,abs(1+degree)) - 0.001*degree",
+      "rationale": "Hypothesis: polynomial inclusion-versus-deletion contrasts approximate conditional regret and distinguish candidates whose equal degree hides different alternative completions."
+    },
+    {
+      "name": "boundary_relief",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+              }
+            ]
+          }
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {
+            "op": "sub",
+            "args": [
+              {
+                "op": "sub",
+                "args": [
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "difference",
+                            "args": [
+                              {"op": "available", "args": []},
+                              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "difference",
+                            "args": [
+                              {"op": "available", "args": []},
+                              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                            ]
+                          },
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        }
+      ],
+      "rule": "weight + 0.6*residual_pack + 0.4*residual_cover - 0.15*neighbor_pack + 0.2*boundary_edges/max(1e-9,abs(1+degree)) + 0.1*neighbor_edges/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree",
+      "rationale": "Hypothesis: excluding neighbors that conflict heavily with the residual releases more compatibility than degree alone indicates; internal neighbor conflicts reduce the effective exclusion cost."
+    },
+    {
+      "name": "joint_capacity_profiles",
+      "features": [
+        {
+          "name": "residual_profile",
+          "expression": {
+            "op": "add",
+            "args": [
+              {
+                "op": "mul",
+                "args": [
+                  {"op": "count", "args": [{"op": "available", "args": []}]},
+                  {
+                    "op": "greedy_independent_weight",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "difference",
+                            "args": [
+                              {"op": "available", "args": []},
+                              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                            ]
+                          },
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_profile",
+          "expression": {
+            "op": "add",
+            "args": [
+              {
+                "op": "mul",
+                "args": [
+                  {"op": "count", "args": [{"op": "available", "args": []}]},
+                  {
+                    "op": "greedy_independent_weight",
+                    "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+                  }
+                ]
+              },
+              {
+                "op": "clique_cover_weight",
+                "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "closed_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "union",
+                "args": [
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_profile/max(1e-9,abs(1+remaining_count)) - 0.3*neighbor_profile/max(1e-9,abs(1+remaining_count)) + 0.2*neighbor_edges/max(1e-9,abs(1+degree)) - 0.02*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.05*closed_cover + 0.05*(weight+residual_profile/max(1e-9,abs(1+remaining_count))-without_pack)",
+      "rationale": "Hypothesis: size-scaled joint packing and cover profiles preserve several relational distinctions within six features, with clustering and deletion alternatives refining the packing-led priority."
+    },
+    {
+      "name": "gap_adaptive_completion",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "residual_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(weight + residual_pack + 0.05*(residual_cover-residual_pack) - 0.2*neighbor_pack + 0.05*neighbor_cover - 0.02*residual_edges/max(1e-9,abs(1+compatible_weight)) + 0.1*neighbor_edges/max(1e-9,abs(1+degree))) if station_gap+satellite_gap <= 0 else (weight + 0.5*(residual_pack+residual_cover) - 0.35*neighbor_pack + 0.15*neighbor_cover + 0.2*neighbor_edges/max(1e-9,abs(1+degree)) - 0.05*residual_edges/max(1e-9,abs(1+compatible_weight)) - 0.01*degree)",
+      "rationale": "Hypothesis: positive separation gaps justify stronger attention to residual capacity and clustered conflicts, while zero-gap states can rely more heavily on realized residual packing."
+    },
+    {
+      "name": "weighted_boundary_exchange",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "residual_edge_cost",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_cost",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+              }
+            ]
+          }
+        },
+        {
+          "name": "boundary_edge_cost",
+          "expression": {
+            "op": "sub",
+            "args": [
+              {
+                "op": "sub",
+                "args": [
+                  {
+                    "op": "edge_min_weight_sum",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "difference",
+                            "args": [
+                              {"op": "available", "args": []},
+                              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "edge_min_weight_sum",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "edge_min_weight_sum",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "difference",
+                            "args": [
+                              {"op": "available", "args": []},
+                              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                            ]
+                          },
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + 0.75*residual_pack + 0.25*residual_cover - 0.3*neighbor_pack + 0.25*boundary_edge_cost/max(1e-9,abs(1+conflict_weight)) + 0.15*neighbor_edge_cost/max(1e-9,abs(1+conflict_weight)) - 0.08*residual_edge_cost/max(1e-9,abs(1+compatible_weight)) - 0.005*max_conflict_weight",
+      "rationale": "Hypothesis: endpoint-minimum edge weights estimate the reward involved in residual conflicts and boundary exchanges, extending conflict-clustering preferences to heterogeneous rewards."
+    },
+    {
+      "name": "clipped_completion_regret",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  },
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "without_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+          }
+        },
+        {
+          "name": "boundary_edges",
+          "expression": {
+            "op": "sub",
+            "args": [
+              {
+                "op": "sub",
+                "args": [
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "difference",
+                            "args": [
+                              {"op": "available", "args": []},
+                              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "difference",
+                            "args": [
+                              {"op": "available", "args": []},
+                              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                            ]
+                          },
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + min(residual_cover,residual_pack+0.5*max(0,without_cover-without_pack)) - 0.2*neighbor_cover + 0.1*boundary_edges/max(1e-9,abs(1+degree)) - 0.1*max(0,without_pack-weight-residual_pack) - 0.0001*degree",
+      "rationale": "Hypothesis: deletion-state packing uncertainty can calibrate an optimistic residual estimate, while clipping and exclusion-regret penalties prevent loose capacity summaries from dominating preferred relations."
+    }
+  ]
+}

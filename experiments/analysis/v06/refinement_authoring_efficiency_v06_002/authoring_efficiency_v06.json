@@ -1,0 +1,530 @@
+{
+  "version": "v06_R2_authoring_efficiency_presentation_002",
+  "banks": [
+    {
+      "arm": "witness",
+      "block": 0,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 7,
+      "actual_call_wall_seconds": 658.8961420059204,
+      "actual_call_wall_exact": "1647240355014801/2500000000000",
+      "receipt_sha256": "229673e0e8d4bc48ca3c8466c5f33f4169d4e0c3f2736bc406393bc27c5a20c5",
+      "candidate_ids": [
+        "block_0_witness:0",
+        "block_0_witness:1",
+        "block_0_witness:2",
+        "block_0_witness:3",
+        "block_0_witness:4",
+        "block_0_witness:5",
+        "block_0_witness:6",
+        "block_0_witness:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "witness",
+      "block": 1,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 8,
+      "actual_call_wall_seconds": 814.0406451225281,
+      "actual_call_wall_exact": "8140406451225281/10000000000000",
+      "receipt_sha256": "e42814b638a59e05a798886b703f87285c2833dde5e7b6b00d39cca15c86c869",
+      "candidate_ids": [
+        "block_1_witness:0",
+        "block_1_witness:1",
+        "block_1_witness:2",
+        "block_1_witness:3",
+        "block_1_witness:4",
+        "block_1_witness:5",
+        "block_1_witness:6",
+        "block_1_witness:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "witness",
+      "block": 2,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 3,
+      "actual_call_wall_seconds": 513.499519109726,
+      "actual_call_wall_exact": "256749759554863/500000000000",
+      "receipt_sha256": "1edda5716d4a0118d12e0964e14874e27a20357f48d0eb887470c532a3a7454f",
+      "candidate_ids": [
+        "block_2_witness:0",
+        "block_2_witness:1",
+        "block_2_witness:2",
+        "block_2_witness:3",
+        "block_2_witness:4",
+        "block_2_witness:5",
+        "block_2_witness:6",
+        "block_2_witness:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "witness",
+      "block": 3,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 8,
+      "actual_call_wall_seconds": 567.1091294288635,
+      "actual_call_wall_exact": "1134218258857727/2000000000000",
+      "receipt_sha256": "02d321d63b568fd84f136f7cbef92adb1ad615b362c8b9fa362e2094c2a88b71",
+      "candidate_ids": [
+        "block_3_witness:0",
+        "block_3_witness:1",
+        "block_3_witness:2",
+        "block_3_witness:3",
+        "block_3_witness:4",
+        "block_3_witness:5",
+        "block_3_witness:6",
+        "block_3_witness:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "witness",
+      "block": 4,
+      "matched4": false,
+      "original_positions": 8,
+      "eligible": 2,
+      "actual_call_wall_seconds": 370.60423731803894,
+      "actual_call_wall_exact": "18530211865901947/50000000000000",
+      "receipt_sha256": "8454d77bdb0dd0400e55034cd9cdd80abd4f41110707891247bee56382820cd4",
+      "candidate_ids": [
+        "block_4_witness:0",
+        "block_4_witness:1",
+        "block_4_witness:2",
+        "block_4_witness:3",
+        "block_4_witness:4",
+        "block_4_witness:5",
+        "block_4_witness:6",
+        "block_4_witness:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "relations",
+      "block": 0,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 4,
+      "actual_call_wall_seconds": 542.3900632858276,
+      "actual_call_wall_exact": "1355975158214569/2500000000000",
+      "receipt_sha256": "fc32652d66f56d6f70e441305474872a35ad36eda23407b90abd85ada21a9f61",
+      "candidate_ids": [
+        "block_0_relations:0",
+        "block_0_relations:1",
+        "block_0_relations:2",
+        "block_0_relations:3",
+        "block_0_relations:4",
+        "block_0_relations:5",
+        "block_0_relations:6",
+        "block_0_relations:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "relations",
+      "block": 1,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 4,
+      "actual_call_wall_seconds": 549.9651789665222,
+      "actual_call_wall_exact": "2749825894832611/5000000000000",
+      "receipt_sha256": "92f58b27263d33b5d11ce2a1acd8e463ac780a27ce5d1126c9b733e5545b9db5",
+      "candidate_ids": [
+        "block_1_relations:0",
+        "block_1_relations:1",
+        "block_1_relations:2",
+        "block_1_relations:3",
+        "block_1_relations:4",
+        "block_1_relations:5",
+        "block_1_relations:6",
+        "block_1_relations:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "relations",
+      "block": 2,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 3,
+      "actual_call_wall_seconds": 878.8849830627441,
+      "actual_call_wall_exact": "8788849830627441/10000000000000",
+      "receipt_sha256": "f2319efa38831f412aaedf544eea3fe7692fb2859f4e5b9b5a42c5a1d833c57b",
+      "candidate_ids": [
+        "block_2_relations:0",
+        "block_2_relations:1",
+        "block_2_relations:2",
+        "block_2_relations:3",
+        "block_2_relations:4",
+        "block_2_relations:5",
+        "block_2_relations:6",
+        "block_2_relations:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "relations",
+      "block": 3,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 8,
+      "actual_call_wall_seconds": 829.6886672973633,
+      "actual_call_wall_exact": "8296886672973633/10000000000000",
+      "receipt_sha256": "17bbbaa57950931761b49f3ce31a33f88ac0a882470207347f30cefa0c73eb29",
+      "candidate_ids": [
+        "block_3_relations:0",
+        "block_3_relations:1",
+        "block_3_relations:2",
+        "block_3_relations:3",
+        "block_3_relations:4",
+        "block_3_relations:5",
+        "block_3_relations:6",
+        "block_3_relations:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "relations",
+      "block": 4,
+      "matched4": false,
+      "original_positions": 8,
+      "eligible": 5,
+      "actual_call_wall_seconds": 431.41123151779175,
+      "actual_call_wall_exact": "1725644926071167/4000000000000",
+      "receipt_sha256": "b06b4227a43cb82c18d111b95c80ab8aefca275a9df3d6265a96c7975c01557c",
+      "candidate_ids": [
+        "block_4_relations:0",
+        "block_4_relations:1",
+        "block_4_relations:2",
+        "block_4_relations:3",
+        "block_4_relations:4",
+        "block_4_relations:5",
+        "block_4_relations:6",
+        "block_4_relations:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "objective",
+      "block": 0,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 0,
+      "actual_call_wall_seconds": 351.4090859889984,
+      "actual_call_wall_exact": "54907669685781/156250000000",
+      "receipt_sha256": "ac13834858941c6adad0fe7aa9b8d82d5ac7817406be4cfd16586f413edff5cd",
+      "candidate_ids": [
+        "block_0_objective:0",
+        "block_0_objective:1",
+        "block_0_objective:2",
+        "block_0_objective:3",
+        "block_0_objective:4",
+        "block_0_objective:5",
+        "block_0_objective:6",
+        "block_0_objective:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "objective",
+      "block": 1,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 0,
+      "actual_call_wall_seconds": 370.63443899154663,
+      "actual_call_wall_exact": "37063443899154663/100000000000000",
+      "receipt_sha256": "4fc9151e83856e9b9d1657ad0e2ccac891bdad715150e90e91685a43459e5e88",
+      "candidate_ids": [
+        "block_1_objective:0",
+        "block_1_objective:1",
+        "block_1_objective:2",
+        "block_1_objective:3",
+        "block_1_objective:4",
+        "block_1_objective:5",
+        "block_1_objective:6",
+        "block_1_objective:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "objective",
+      "block": 2,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 0,
+      "actual_call_wall_seconds": 436.1669805049896,
+      "actual_call_wall_exact": "545208725631237/1250000000000",
+      "receipt_sha256": "83bb2912b6e23c6c7c2d28e5be1a2caacc40d6a895f3fda5d21cd0e4b238fb15",
+      "candidate_ids": [
+        "block_2_objective:0",
+        "block_2_objective:1",
+        "block_2_objective:2",
+        "block_2_objective:3",
+        "block_2_objective:4",
+        "block_2_objective:5",
+        "block_2_objective:6",
+        "block_2_objective:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "objective",
+      "block": 3,
+      "matched4": true,
+      "original_positions": 8,
+      "eligible": 0,
+      "actual_call_wall_seconds": 528.0328106880188,
+      "actual_call_wall_exact": "1320082026720047/2500000000000",
+      "receipt_sha256": "df7c0c1151ee97a7b7097f060d31931c6b267c95e7c0d802288f85a49fb1e06d",
+      "candidate_ids": [
+        "block_3_objective:0",
+        "block_3_objective:1",
+        "block_3_objective:2",
+        "block_3_objective:3",
+        "block_3_objective:4",
+        "block_3_objective:5",
+        "block_3_objective:6",
+        "block_3_objective:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    },
+    {
+      "arm": "objective",
+      "block": 4,
+      "matched4": false,
+      "original_positions": 8,
+      "eligible": 0,
+      "actual_call_wall_seconds": 533.9711647033691,
+      "actual_call_wall_exact": "5339711647033691/10000000000000",
+      "receipt_sha256": "aeb37dc1717077d4671588fd6f99a1478a3dccf408254b0992fd41221f36dc5c",
+      "candidate_ids": [
+        "block_4_objective:0",
+        "block_4_objective:1",
+        "block_4_objective:2",
+        "block_4_objective:3",
+        "block_4_objective:4",
+        "block_4_objective:5",
+        "block_4_objective:6",
+        "block_4_objective:7"
+      ],
+      "requested_configuration": {
+        "model": "gpt-6.1-sol",
+        "model_provider": "openai",
+        "model_reasoning_effort": "ultra",
+        "model_reasoning_summary": null,
+        "profile": null
+      },
+      "observed_model": null
+    }
+  ],
+  "cohorts": [
+    {
+      "scope": "matched4",
+      "arm": "witness",
+      "banks": 4,
+      "original_positions": 32,
+      "eligible": 26,
+      "cumulative_call_wall_seconds_exact": "1276772717833519/500000000000",
+      "mean_bank_wall_seconds_exact": "1276772717833519/2000000000000",
+      "mean_bank_eligible_exact": "13/2",
+      "eligible_per_1000_cumulative_call_wall_exact": "13000000000000000/1276772717833519"
+    },
+    {
+      "scope": "matched4",
+      "arm": "relations",
+      "banks": 4,
+      "original_positions": 32,
+      "eligible": 19,
+      "cumulative_call_wall_seconds_exact": "7002322231531143/2500000000000",
+      "mean_bank_wall_seconds_exact": "7002322231531143/10000000000000",
+      "mean_bank_eligible_exact": "19/4",
+      "eligible_per_1000_cumulative_call_wall_exact": "47500000000000000/7002322231531143"
+    },
+    {
+      "scope": "matched4",
+      "arm": "objective",
+      "banks": 4,
+      "original_positions": 32,
+      "eligible": 0,
+      "cumulative_call_wall_seconds_exact": "168624331617355343/100000000000000",
+      "mean_bank_wall_seconds_exact": "168624331617355343/400000000000000",
+      "mean_bank_eligible_exact": "0",
+      "eligible_per_1000_cumulative_call_wall_exact": "0"
+    },
+    {
+      "scope": "all5",
+      "arm": "witness",
+      "banks": 5,
+      "original_positions": 40,
+      "eligible": 28,
+      "cumulative_call_wall_seconds_exact": "146207483649253847/50000000000000",
+      "mean_bank_wall_seconds_exact": "146207483649253847/250000000000000",
+      "mean_bank_eligible_exact": "28/5",
+      "eligible_per_1000_cumulative_call_wall_exact": "1400000000000000000/146207483649253847"
+    },
+    {
+      "scope": "all5",
+      "arm": "relations",
+      "banks": 5,
+      "original_positions": 40,
+      "eligible": 24,
+      "cumulative_call_wall_seconds_exact": "64646802482604979/20000000000000",
+      "mean_bank_wall_seconds_exact": "64646802482604979/100000000000000",
+      "mean_bank_eligible_exact": "24/5",
+      "eligible_per_1000_cumulative_call_wall_exact": "480000000000000000/64646802482604979"
+    },
+    {
+      "scope": "all5",
+      "arm": "objective",
+      "banks": 5,
+      "original_positions": 40,
+      "eligible": 0,
+      "cumulative_call_wall_seconds_exact": "222021448087692253/100000000000000",
+      "mean_bank_wall_seconds_exact": "222021448087692253/500000000000000",
+      "mean_bank_eligible_exact": "0",
+      "eligible_per_1000_cumulative_call_wall_exact": "0"
+    }
+  ],
+  "input_sha256": {
+    "experiments/analysis/v06/refinement_train_audit_v06_002.json": "a3f8e33667c43e83a9f3199ea2f95fb8be0a7e29c968c017bfde8749aa1b5b34",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_0_witness.receipt.json": "229673e0e8d4bc48ca3c8466c5f33f4169d4e0c3f2736bc406393bc27c5a20c5",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_1_witness.receipt.json": "e42814b638a59e05a798886b703f87285c2833dde5e7b6b00d39cca15c86c869",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_2_witness.receipt.json": "1edda5716d4a0118d12e0964e14874e27a20357f48d0eb887470c532a3a7454f",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_3_witness.receipt.json": "02d321d63b568fd84f136f7cbef92adb1ad615b362c8b9fa362e2094c2a88b71",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_4_witness.receipt.json": "8454d77bdb0dd0400e55034cd9cdd80abd4f41110707891247bee56382820cd4",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_0_relations.receipt.json": "fc32652d66f56d6f70e441305474872a35ad36eda23407b90abd85ada21a9f61",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_1_relations.receipt.json": "92f58b27263d33b5d11ce2a1acd8e463ac780a27ce5d1126c9b733e5545b9db5",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_2_relations.receipt.json": "f2319efa38831f412aaedf544eea3fe7692fb2859f4e5b9b5a42c5a1d833c57b",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_3_relations.receipt.json": "17bbbaa57950931761b49f3ce31a33f88ac0a882470207347f30cefa0c73eb29",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_4_relations.receipt.json": "b06b4227a43cb82c18d111b95c80ab8aefca275a9df3d6265a96c7975c01557c",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_0_objective.receipt.json": "ac13834858941c6adad0fe7aa9b8d82d5ac7817406be4cfd16586f413edff5cd",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_1_objective.receipt.json": "4fc9151e83856e9b9d1657ad0e2ccac891bdad715150e90e91685a43459e5e88",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_2_objective.receipt.json": "83bb2912b6e23c6c7c2d28e5be1a2caacc40d6a895f3fda5d21cd0e4b238fb15",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_3_objective.receipt.json": "df7c0c1151ee97a7b7097f060d31931c6b267c95e7c0d802288f85a49fb1e06d",
+    "experiments/discovery/v06_refinement_draft_003/receipts/block_4_objective.receipt.json": "aeb37dc1717077d4671588fd6f99a1478a3dccf408254b0992fd41221f36dc5c"
+  },
+  "outputs_sha256": {
+    "refinement_authoring_efficiency_v06.pdf": "67a39f49e3fa4472ac2506140679913a583c7a7a9fd8d7e5c765d7afa75b7237",
+    "refinement_authoring_efficiency_v06.png": "154f61a5b4a87f001d4818ddcf5ac190b4bca8d878040e6c28e2dd886ef6e75b"
+  },
+  "renderer_sha256": "fa5c05d4b4198fc0e05e2021fcd5a76700b57e36fce3636ab09068c47eba29f4",
+  "geometry_inches": [
+    3.35,
+    1.9
+  ],
+  "font": "Arial9",
+  "TRAIN_only": true,
+  "TEST_accessed": false,
+  "presentation_change": "Removed the bottom marker-encoding legend; caption retains marker meanings. Arm legend and all plotted data are unchanged.",
+  "prior_renderer_archive": {
+    "path": "experiments/source_snapshots/v06/refinement_authoring_efficiency_presentation_001.py",
+    "sha256": "3b45cd5d9c58f025b076fcd63d3ccaddb945beef1a50354fdb9c89764bdec5a8"
+  },
+  "new_audit_or_experiment_or_model_or_oracle_calls": 0,
+  "scope": "Descriptive fixed warm-seed authoring banks. Matched4 was preregistered; fifth retained. Cumulative call-wall is the sum of observed bank session wall, not concurrent elapsed time, candidate completion time, matched compute or model-population efficacy."
+}

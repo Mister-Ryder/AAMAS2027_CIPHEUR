@@ -1,5 +1,0 @@
-{
-  "name": "assistant_seed_opportunity_cost",
-  "expression": "weight - 1.2 * conflict_weight",
-  "rationale": "Authored by the current assistant as a transparent integration fixture. Penalizes the weight of currently blocked competing contacts; its paired behavior must be independently verified. This file is not the output of a live API synthesis experiment and carries no empirical quality claim."
-}

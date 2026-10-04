@@ -1,0 +1,25 @@
+{
+  "assigned": 52548,
+  "returned": 52548,
+  "contexts": 302,
+  "status_counts": {
+    "native:checked_feasible_incumbent": 9441,
+    "native:encoding_not_supported": 525,
+    "common_initializer:checked_feasible_incumbent": 906,
+    "cold_Degree:time_budget": 13379,
+    "cold_Degree:programme_or_repair_error": 47,
+    "warm_CHILS:time_budget": 14478,
+    "warm_CHILS:programme_or_repair_error": 35,
+    "cold_Degree:patch_limit": 4737,
+    "warm_CHILS:patch_limit": 1634,
+    "warm_CHILS:no_improvement_in_attempted_patches": 4691,
+    "cold_Degree:no_improvement_in_attempted_patches": 2675
+  },
+  "wall_seconds": 6823.825936645269,
+  "results_sha256": "1488e55df8a0999498bc7b507f01f801605762bba93b707ea41dd208dcc2e529",
+  "deployment_sha256": "4873ed683327f2e271c36dacac625df52bb8dd0a678dc293035946b27ba126fb",
+  "protocol_sha256": "59395b0b7f4c8460da8e58bcdccaa292b189a627716e1e050c52b7a659ba4cfa",
+  "online_model_calls": 0,
+  "conditional_oracle_calls": 0,
+  "all_rows_retained": true
+}

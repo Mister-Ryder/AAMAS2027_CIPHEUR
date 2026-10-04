@@ -1,0 +1,152 @@
+{
+  "name": "bounded_counterfactual_completion",
+  "features": [
+    {
+      "name": "residual_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                ]
+              },
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "residual_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                ]
+              },
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "skip_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "boundary_edges",
+      "expression": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_edges",
+      "expression": {
+        "op": "count",
+        "args": [
+          {
+            "op": "induced_edges",
+            "args": [
+              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "mean_active_weight",
+      "expression": {
+        "op": "div",
+        "args": [
+          {"op": "sum_weights", "args": [{"op": "available", "args": []}]},
+          {"op": "count", "args": [{"op": "available", "args": []}]}
+        ]
+      }
+    }
+  ],
+  "rule": "weight + residual_pack + 0.3*mean_active_weight*(weight+residual_pack-skip_pack)/max(1e-9,mean_active_weight+abs(weight+residual_pack-skip_pack)) + 0.1*mean_active_weight*max(0,residual_cover-residual_pack)/max(1e-9,mean_active_weight+abs(residual_cover-residual_pack)) + 0.08*mean_active_weight*boundary_edges/max(1,degree*max(1,remaining_count-1-degree)) + 0.04*mean_active_weight*neighbor_edges/max(1,degree*(degree-1)/2) - 0.01*mean_active_weight*degree/max(1,remaining_count)",
+  "rationale": "Rank each vertex by its feasible completion weight after inclusion, then use bounded inclusion-versus-exclusion regret, bounded residual-cover optimism, and normalized neighborhood structure to resolve close decisions at the active graph's weight scale."
+}

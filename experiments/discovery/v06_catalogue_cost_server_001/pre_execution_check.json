@@ -1,0 +1,26 @@
+{
+  "source_capsule_sha256": "2c19af4c639926e457b9bcdbf5c2eb5dd9b23c23055af748da5217003c7a64f6",
+  "protocol_sha256": "b0e9949454d0b4f6bc0516e5b9fdce27b660cc7e4417e766549e48b33c9851ca",
+  "members_sha256": {
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "cipheur/graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "cipheur/refinement.py": "90a7e6c6981a73d13b715dc0b2b773cd2052724c2e044af617b7795eb074bd99",
+    "cipheur/representation.py": "5f844dd5ab6d5f79e92a0a7ea6ba0af6073d2e7d3f39a69a091b3fcf875d9dc0",
+    "scripts/run_catalogue_refinement_v06.py": "84a84ee8fa4e501510f4ab8e3b7df647b7f095567d4457d07c1e37e4878af131",
+    "study/catalogue.json": "93d6cbe4f0346b1b0e3f5aec00131cf2d6e8ab60e77a10b3fa39d50d8fa9011e",
+    "study/freeze_receipt.json": "9e47774d9d85a42200fa04ef8db4467f998ce4507b155869c6b1e9d3af07254a",
+    "study/occurrence_bindings.json": "ebe7b6a70c10826bf8d02e0bebadec25d3281ac405531e134ef8951e40f87104",
+    "study/protocol.json": "b0e9949454d0b4f6bc0516e5b9fdce27b660cc7e4417e766549e48b33c9851ca",
+    "study/training_evidence.json": "762fc25046eeb13f49044b96c5d74b7136dedcc363e1fec81809bcc83aa62913"
+  },
+  "before_execution": true,
+  "TRAIN_records": 120,
+  "feature_assignments": 54,
+  "catalogue_assignments": 4,
+  "workers": 8,
+  "whole_batch_guard_seconds": 7200,
+  "no_TEST_no_R2_candidate_read": true,
+  "no_model_or_oracle_or_policy_calls": true
+}

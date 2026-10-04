@@ -1,0 +1,24 @@
+{
+  "version": "v06_R2_packet_audit_preparation_mechanical_review_001",
+  "checked_utc": "2026-10-04T01:39:56.585893+00:00",
+  "checks": 18,
+  "errors": 0,
+  "error_records": [],
+  "syntax_normalization": {
+    "name": 1,
+    "packet_identity": 1,
+    "source_snapshot_path": 1
+  },
+  "original_preparer_sha256": "1e8bd6a2577eabe8e33a73edc1303358f09cdbfc1c5c53604eaf91db3380ef1a",
+  "compatibility_preparer_sha256": "26b709807cb22a22f8ef5f1b7ca51a69da182e9fb81c8027f6e3ed3f3dd5a1c6",
+  "reviewer_sha256": "fa1afb3c5a470986a4e7f29df5958ee80b4da832f229677b8d7e31422e193060",
+  "main_root_release_sha256": "8e69f14051ce731332b11aaefa2f60c2ace38780e4f20dfb9429974555ca83d1",
+  "original_packet_audit_sha256": "7cabb43f86f1346dfd7b0156c096fc05bfd70c6f24850ee663394137f803837c",
+  "scalar_packet_receipt_sha256": "b0ecae2f92522b42ff6b884cd8b1a0896984c3012904c041c0b5c3575ad14951",
+  "science_runtime_unchanged": true,
+  "original_prepare_function_other_syntax_identical": true,
+  "TEST_labels_or_scores_read": false,
+  "new_scientific_checks": 0,
+  "programme_runs": 0,
+  "scope": "Root-executed independent mechanical comparison, not a new subagent scientific audit; separate preparer resolves original-report versus scalar-copy byte provenance only."
+}

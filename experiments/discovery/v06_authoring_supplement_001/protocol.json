@@ -1,0 +1,57 @@
+{
+  "version": "v06_transport_supplement_registration_001",
+  "created_utc": "2026-10-03T15:55:29.219729+00:00",
+  "parent_protocol_sha256": "cb2e597e056d3734329afa37aa1da3b46c47634610b2270de32e744ef462ada8",
+  "parent_protocol_unchanged": true,
+  "parent_registered_cells": 12,
+  "parent_original_slots": 96,
+  "reason": "One parent cell returned provider-capacity error and zero candidate bytes; all original attempts are retained.",
+  "failed_receipt_sha256": "4eca36747e45d87e2de45cc4fd2c7e954cbf247f1ad812bd7ce8382c8fd171e4",
+  "failed_event_sha256": "82e15dce5fd8202a4f7443b09e86ba337a3e2bc04f65ea28ff8fdf97b909b4d0",
+  "verified_error_events": [
+    {
+      "type": "error",
+      "message": "Selected model is at capacity. Please try a different model."
+    },
+    {
+      "type": "turn.failed",
+      "error": {
+        "message": "Selected model is at capacity. Please try a different model."
+      }
+    }
+  ],
+  "decided_before_any_candidate_assessment": true,
+  "candidate_scores_read": 0,
+  "TEST_queries": 0,
+  "supplement_blocks": [
+    4
+  ],
+  "supplement_cells": 3,
+  "supplement_slots": 24,
+  "total_original_slots": 120,
+  "same_examples_graphs_labels_joins_library_selector_kernel": true,
+  "packet_changes": "Only cell block ID and output-schema block metadata; original common scientific inputs unchanged.",
+  "packet_sha256": {
+    "packets/block_4_witness.json": "0f0f86f9c89d5828dc0cf4e5e95d957b9611ea001499638b37c4aa3265ab48b8",
+    "packets/block_4_witness.prompt.md": "fecf002f50fec60ea8ab137df933b60b19c60614a2eaad2fef3964a72c910b2e",
+    "packets/block_4_relations.json": "fad74a1bd0d542eb660279e3f525a31eb7f9c1e8d488d89047b331c0df93114b",
+    "packets/block_4_relations.prompt.md": "5fedf9a4dcf686c5ed43c0a88025ff4fe5895b1ba827ba111401330e592fb9da",
+    "packets/block_4_objective.json": "e9bff2c213c283614c9fdfb472f60c215ae969d4cf2c4fd6ebc5d6978b556e83",
+    "packets/block_4_objective.prompt.md": "ea78b88cdabd76116c3f121d49bf77128eb90e2d8a07e00e7fa21e05e75ebea1"
+  },
+  "parent_requested_configuration": {
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "model_reasoning_effort": "ultra",
+    "model_reasoning_summary": null,
+    "profile": null
+  },
+  "matched_analysis": "First four whole transport-complete blocks by original block index among0..4. A whole block is complete iff all three requests exit0, not timed out, and return nonempty raw bytes. JSON/DSL validity, feature repair, scalar fit and kernel outcomes never determine transport eligibility.",
+  "failure_accounting": "Assess/report all120 original raw positions, including failed cells and incomplete blocks. Primary matched contrasts use four whole blocks; other blocks remain disclosed supplementary observations. Invalid DSL within a transport-complete block is retained and never replaced.",
+  "TEST_freeze": "Exactly twelve genuine TRAIN-selected programs from the four whole matched blocks are required. A cell with no eligible candidate produces no winner and no fallback. Fewer than four transport-complete blocks stops this TEST study; no extra blocks, different models or retries in this registration.",
+  "execution_order": "All parent sessions must finish/freeze before supplemental authoring begins; all15 sessions finish/freeze before any assessment.",
+  "no_failed_cell_retry": true,
+  "no_raw_response_overwrite": true,
+  "no_outcome_based_reauthoring": true,
+  "builder_sha256": "e4670fa6148036963a5961ad848f3a8c9b3a746be38250d6312aedb2ad4c40da"
+}

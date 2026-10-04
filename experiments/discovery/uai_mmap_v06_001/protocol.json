@@ -1,0 +1,672 @@
+{
+  "version": "uai_mmap_input_inventory_v06_001",
+  "before_any_optimization": true,
+  "repository": "jamestrimble/max-weight-clique-instances",
+  "commit": "a0fd6b631136255807a98727b496a09a65b3301d",
+  "metadata_sha256": "7ce0455066e5b542f0865913602472b6dc3c9b355cf1b66fe95fd844a1ebc522",
+  "sources": [
+    {
+      "path": "UAI/MMAP/Grids_18.mwvc",
+      "git_blob_sha1": "330fde02b2be36d118b686802659100fd20dbe19",
+      "declared_bytes": 187674,
+      "source_cluster": "Grids_18",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_19.mwvc",
+      "git_blob_sha1": "25bc5632ed7dbd34e3fe3eb9a49536e223ace7e1",
+      "declared_bytes": 188436,
+      "source_cluster": "Grids_19",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_20.mwvc",
+      "git_blob_sha1": "dbf986941ef65cac6425b0d4fca1a47197aca1aa",
+      "declared_bytes": 807710,
+      "source_cluster": "Grids_20",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_21.mwvc",
+      "git_blob_sha1": "81ef5bdc5c841225489bbc4218c07ff48ea29846",
+      "declared_bytes": 187644,
+      "source_cluster": "Grids_21",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_22.mwvc",
+      "git_blob_sha1": "79b270e34f373c046b3b3e476fd18b9fac3f9ba9",
+      "declared_bytes": 188125,
+      "source_cluster": "Grids_22",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_23.mwvc",
+      "git_blob_sha1": "c3937a8219b6033383edffa56531bae1846caa9b",
+      "declared_bytes": 182743,
+      "source_cluster": "Grids_23",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_24.mwvc",
+      "git_blob_sha1": "67ea8c95652045da01313c50540f4d91183fe6d8",
+      "declared_bytes": 182624,
+      "source_cluster": "Grids_24",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_25.mwvc",
+      "git_blob_sha1": "96e6187c162dd87c0b66a152adcad457c9735b9d",
+      "declared_bytes": 182997,
+      "source_cluster": "Grids_25",
+      "family": "Grids",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Grids_26.mwvc",
+      "git_blob_sha1": "567e92b4a535000efe1076284da3b4e154f5f581",
+      "declared_bytes": 44052,
+      "source_cluster": "Grids_26",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_27.mwvc",
+      "git_blob_sha1": "fd81cd00e7e1a62d944c6607046c9a4c231fb141",
+      "declared_bytes": 182604,
+      "source_cluster": "Grids_27",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Grids_28.mwvc",
+      "git_blob_sha1": "f77d9f70f36ad76582cd0b98dc24328c3e5b19f4",
+      "declared_bytes": 44028,
+      "source_cluster": "Grids_28",
+      "family": "Grids",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Grids_29.mwvc",
+      "git_blob_sha1": "9c2a2ff7010b9966a4718f90883e740ca0f8e8fd",
+      "declared_bytes": 44087,
+      "source_cluster": "Grids_29",
+      "family": "Grids",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Grids_30.mwvc",
+      "git_blob_sha1": "a1e7d84ea21778a81e03c60541edfd74104efaca",
+      "declared_bytes": 42226,
+      "source_cluster": "Grids_30",
+      "family": "Grids",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_11.mwvc",
+      "git_blob_sha1": "99bd7dd9f3ce993b70dfbc84e67aeaa9123cb838",
+      "declared_bytes": 289980,
+      "source_cluster": "Promedas_11",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_12.mwvc",
+      "git_blob_sha1": "f46cfaaa4a7a91016164cdbc073f4d3b3beb212d",
+      "declared_bytes": 229465,
+      "source_cluster": "Promedas_12",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_13.mwvc",
+      "git_blob_sha1": "2b9a8ce22cf440fa0c33343971cba9e85fbaf8d4",
+      "declared_bytes": 265734,
+      "source_cluster": "Promedas_13",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_14.mwvc",
+      "git_blob_sha1": "2e145b901dded4ea0c76ce85ac4fd4b2ab37b8a3",
+      "declared_bytes": 248363,
+      "source_cluster": "Promedas_14",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_15.mwvc",
+      "git_blob_sha1": "e8f61bfd70b6005f4d5bc6699a319a533737a483",
+      "declared_bytes": 276921,
+      "source_cluster": "Promedas_15",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_16.mwvc",
+      "git_blob_sha1": "97eeef9dea42a334e714ea7352028d692e3c16c2",
+      "declared_bytes": 215569,
+      "source_cluster": "Promedas_16",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_17.mwvc",
+      "git_blob_sha1": "8576cf2affcf32833bad094b0f8b33ccb18408c9",
+      "declared_bytes": 191463,
+      "source_cluster": "Promedas_17",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_18.mwvc",
+      "git_blob_sha1": "652aac7b4c3f080f9d6bd52505e341e2a1e3902c",
+      "declared_bytes": 224930,
+      "source_cluster": "Promedas_18",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_19.mwvc",
+      "git_blob_sha1": "b6b8cdd754f48a55a6fdefefdc85f12a034a7a24",
+      "declared_bytes": 236223,
+      "source_cluster": "Promedas_19",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_20.mwvc",
+      "git_blob_sha1": "39fe42f316fba4fb047864f95d577fbdd18e86a7",
+      "declared_bytes": 255499,
+      "source_cluster": "Promedas_20",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_21.mwvc",
+      "git_blob_sha1": "6646516a0b528d35384e311525c49525760978b9",
+      "declared_bytes": 212079,
+      "source_cluster": "Promedas_21",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_22.mwvc",
+      "git_blob_sha1": "900e9778bd05dec1492485351e499f06a15ac303",
+      "declared_bytes": 216604,
+      "source_cluster": "Promedas_22",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_23.mwvc",
+      "git_blob_sha1": "9df7a45e81cd28d4157b6779ce1a674322ce50bc",
+      "declared_bytes": 223849,
+      "source_cluster": "Promedas_23",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_24.mwvc",
+      "git_blob_sha1": "7a21fd00928b325df235aafc635824a4f9d5127e",
+      "declared_bytes": 171982,
+      "source_cluster": "Promedas_24",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_25.mwvc",
+      "git_blob_sha1": "f5d279c8f1019ca0a943de942d68084d50a94788",
+      "declared_bytes": 180133,
+      "source_cluster": "Promedas_25",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_26.mwvc",
+      "git_blob_sha1": "c1626cc031efa6c9e71e917483b13d24e1462509",
+      "declared_bytes": 192566,
+      "source_cluster": "Promedas_26",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_27.mwvc",
+      "git_blob_sha1": "ac4f3f4fb9f3714214dbb35272ad39a687f0077d",
+      "declared_bytes": 161342,
+      "source_cluster": "Promedas_27",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_28.mwvc",
+      "git_blob_sha1": "feb5da6e446ffadce9a4e45aa956568483aece5c",
+      "declared_bytes": 151375,
+      "source_cluster": "Promedas_28",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_29.mwvc",
+      "git_blob_sha1": "29f916b672d06da512461194b4402094400c1a6f",
+      "declared_bytes": 154096,
+      "source_cluster": "Promedas_29",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_30.mwvc",
+      "git_blob_sha1": "e5aaacc60f0b6ac0a2bf04a30332e6a95eae66a2",
+      "declared_bytes": 147000,
+      "source_cluster": "Promedas_30",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_31.mwvc",
+      "git_blob_sha1": "789675cac42d61ada0c713563b2546fa2bfcda71",
+      "declared_bytes": 167546,
+      "source_cluster": "Promedas_31",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_32.mwvc",
+      "git_blob_sha1": "33a4d902f39e11d9e51267a8cd552a70598ed7c5",
+      "declared_bytes": 160911,
+      "source_cluster": "Promedas_32",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_33.mwvc",
+      "git_blob_sha1": "3e43919c418938bc46cd9920d7674e2917f13ab9",
+      "declared_bytes": 142958,
+      "source_cluster": "Promedas_33",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_34.mwvc",
+      "git_blob_sha1": "59d01d133087605deecace7e9e4a08630042e9fe",
+      "declared_bytes": 134779,
+      "source_cluster": "Promedas_34",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_35.mwvc",
+      "git_blob_sha1": "aa7c67398737f28498f4de498192de6976dfb4e5",
+      "declared_bytes": 123712,
+      "source_cluster": "Promedas_35",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_36.mwvc",
+      "git_blob_sha1": "79e0bb356d9fc205b99d18951bf50a4a0688bb67",
+      "declared_bytes": 129775,
+      "source_cluster": "Promedas_36",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_37.mwvc",
+      "git_blob_sha1": "c3ec3262a210dd3cfc5e67d31bd4fde942aedac3",
+      "declared_bytes": 142830,
+      "source_cluster": "Promedas_37",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_38.mwvc",
+      "git_blob_sha1": "2e23b4c142ea818bf691ae3548645d533484685e",
+      "declared_bytes": 132386,
+      "source_cluster": "Promedas_38",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_39.mwvc",
+      "git_blob_sha1": "30bc3c6bdab81397dd3aec8f1a48064d02cb5681",
+      "declared_bytes": 163630,
+      "source_cluster": "Promedas_39",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_40.mwvc",
+      "git_blob_sha1": "152a2c80dffdabf9783c2210d9a081432311dbef",
+      "declared_bytes": 139470,
+      "source_cluster": "Promedas_40",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_41.mwvc",
+      "git_blob_sha1": "19b1bc1e455de4db8a820feac22f90d8fcfbe430",
+      "declared_bytes": 111904,
+      "source_cluster": "Promedas_41",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_42.mwvc",
+      "git_blob_sha1": "2e00c8cce015aed163e6f260298b89620be058b7",
+      "declared_bytes": 113558,
+      "source_cluster": "Promedas_42",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_43.mwvc",
+      "git_blob_sha1": "41f31d417dc11a30fa69577fe4be42dc97c55f56",
+      "declared_bytes": 101507,
+      "source_cluster": "Promedas_43",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_44.mwvc",
+      "git_blob_sha1": "eccca9b8c5b9ee16130cab8356e9cfbd5c262586",
+      "declared_bytes": 118002,
+      "source_cluster": "Promedas_44",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_45.mwvc",
+      "git_blob_sha1": "219cb1aec4e3df28236a96f40fad455b72597b41",
+      "declared_bytes": 90261,
+      "source_cluster": "Promedas_45",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_46.mwvc",
+      "git_blob_sha1": "3e4cab3d34f4071f86555605692bfdb78fbc6fda",
+      "declared_bytes": 106006,
+      "source_cluster": "Promedas_46",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_47.mwvc",
+      "git_blob_sha1": "8f7b677dd9c3ec2a751a7fd3ba702928d19c67fb",
+      "declared_bytes": 95936,
+      "source_cluster": "Promedas_47",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_48.mwvc",
+      "git_blob_sha1": "1930ae4a37b793e3473d945a4c1dcb6bcda5f2b0",
+      "declared_bytes": 107842,
+      "source_cluster": "Promedas_48",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_49.mwvc",
+      "git_blob_sha1": "9dea67e604476b270395c4152a8a9698a4c60717",
+      "declared_bytes": 92071,
+      "source_cluster": "Promedas_49",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_50.mwvc",
+      "git_blob_sha1": "dfdab5b2754641592da47efa1782deb2fb75fa49",
+      "declared_bytes": 112775,
+      "source_cluster": "Promedas_50",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_51.mwvc",
+      "git_blob_sha1": "b91ab0fcb4558e93ecf47ba8d989256fb53f477f",
+      "declared_bytes": 94945,
+      "source_cluster": "Promedas_51",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_52.mwvc",
+      "git_blob_sha1": "64df3cc75ea5bd4b885976a8cf5e28bac90482c1",
+      "declared_bytes": 87057,
+      "source_cluster": "Promedas_52",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_53.mwvc",
+      "git_blob_sha1": "060baab2944d812cba56af12a953190975abda29",
+      "declared_bytes": 91961,
+      "source_cluster": "Promedas_53",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_54.mwvc",
+      "git_blob_sha1": "e1e650b4fd31a9cfea9ab119717f8a61852163db",
+      "declared_bytes": 132778,
+      "source_cluster": "Promedas_54",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_55.mwvc",
+      "git_blob_sha1": "5cf69cecef34dfb313dc9fece2109f6ea6e4c7fe",
+      "declared_bytes": 88495,
+      "source_cluster": "Promedas_55",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_56.mwvc",
+      "git_blob_sha1": "1529f36cae1b975a3cd7dc153bab91c1f4c48696",
+      "declared_bytes": 87899,
+      "source_cluster": "Promedas_56",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_57.mwvc",
+      "git_blob_sha1": "dc2f74fad7136f405e35f8acd067cedbf1ace78b",
+      "declared_bytes": 87225,
+      "source_cluster": "Promedas_57",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_58.mwvc",
+      "git_blob_sha1": "3d1a4162d5f32d955a1ebaf099de10aab5988d12",
+      "declared_bytes": 118046,
+      "source_cluster": "Promedas_58",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_59.mwvc",
+      "git_blob_sha1": "74431ccb2f901331ee9e89458953c2b236f9f2f8",
+      "declared_bytes": 90813,
+      "source_cluster": "Promedas_59",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_60.mwvc",
+      "git_blob_sha1": "b273897a87a57bc7ba1626787cdc3bd529b7b1cc",
+      "declared_bytes": 115436,
+      "source_cluster": "Promedas_60",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_61.mwvc",
+      "git_blob_sha1": "a96164b4c421ed0222e943ced8d1da37a9e4dacb",
+      "declared_bytes": 79047,
+      "source_cluster": "Promedas_61",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_62.mwvc",
+      "git_blob_sha1": "32915d0d73418ba1a9f329f1a4f7baffe703d5d4",
+      "declared_bytes": 74872,
+      "source_cluster": "Promedas_62",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_63.mwvc",
+      "git_blob_sha1": "452f5b7c440246545efbcff672347426843204a0",
+      "declared_bytes": 83302,
+      "source_cluster": "Promedas_63",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_64.mwvc",
+      "git_blob_sha1": "555f5dbb0d215d6c48c7d6661636886139d77b7f",
+      "declared_bytes": 72327,
+      "source_cluster": "Promedas_64",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_65.mwvc",
+      "git_blob_sha1": "b40a25eca6d1e1962874caf2b9bcc71b21862f21",
+      "declared_bytes": 90829,
+      "source_cluster": "Promedas_65",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_66.mwvc",
+      "git_blob_sha1": "3a5616c2043bf1f21a6fef6c77507f7233d091ca",
+      "declared_bytes": 82775,
+      "source_cluster": "Promedas_66",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_67.mwvc",
+      "git_blob_sha1": "7a3bd1f471cd1875311094e007a42b0dbcf35066",
+      "declared_bytes": 96317,
+      "source_cluster": "Promedas_67",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_68.mwvc",
+      "git_blob_sha1": "d809e222e6220182f3788978351a82993020b28f",
+      "declared_bytes": 111057,
+      "source_cluster": "Promedas_68",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_69.mwvc",
+      "git_blob_sha1": "937ee210bba72c3ade71db891ea2ee836d1e1937",
+      "declared_bytes": 69015,
+      "source_cluster": "Promedas_69",
+      "family": "Promedas",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_70.mwvc",
+      "git_blob_sha1": "2d874f3427fdf5ad18809b36772dbc7092ddfe0f",
+      "declared_bytes": 54865,
+      "source_cluster": "Promedas_70",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Promedas_71.mwvc",
+      "git_blob_sha1": "36ed3f9cfd0374de178c8d6ca078cdabdfa9cea1",
+      "declared_bytes": 73714,
+      "source_cluster": "Promedas_71",
+      "family": "Promedas",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/ProteinFolding_11.mwvc",
+      "git_blob_sha1": "d7159254cc611db82b10d3594e93e7a39acd6214",
+      "declared_bytes": 42205,
+      "source_cluster": "ProteinFolding_11",
+      "family": "ProteinFolding",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Segmentation_12.mwvc",
+      "git_blob_sha1": "7e333ba19ee4091c14569cdf4c563cec90c9349b",
+      "declared_bytes": 23900,
+      "source_cluster": "Segmentation_12",
+      "family": "Segmentation",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Segmentation_13.mwvc",
+      "git_blob_sha1": "ec9d549b38771c35948524fbc68ecbeb620e781c",
+      "declared_bytes": 23258,
+      "source_cluster": "Segmentation_13",
+      "family": "Segmentation",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Segmentation_14.mwvc",
+      "git_blob_sha1": "99652f0c3307326a02117bc8d9586f8806ca209b",
+      "declared_bytes": 24147,
+      "source_cluster": "Segmentation_14",
+      "family": "Segmentation",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Segmentation_16.mwvc",
+      "git_blob_sha1": "8828f85d7fe7d16595e06ce4a847a538e72e3558",
+      "declared_bytes": 23398,
+      "source_cluster": "Segmentation_16",
+      "family": "Segmentation",
+      "split": "train"
+    },
+    {
+      "path": "UAI/MMAP/Segmentation_18.mwvc",
+      "git_blob_sha1": "522d48e7090b30667b9f270ed9f92de91b4303d9",
+      "declared_bytes": 24724,
+      "source_cluster": "Segmentation_18",
+      "family": "Segmentation",
+      "split": "test"
+    },
+    {
+      "path": "UAI/MMAP/Segmentation_19.mwvc",
+      "git_blob_sha1": "39c561e111c91234a741c817ae3f01f6158345f9",
+      "declared_bytes": 23798,
+      "source_cluster": "Segmentation_19",
+      "family": "Segmentation",
+      "split": "test"
+    }
+  ],
+  "all_declared_81_mmap_files_retained": true,
+  "split_salt": "v06_uai_mmap_source_cluster_split_001",
+  "split_scope": "SHA-ordered original source instance cluster; all future derived views stay in that cluster",
+  "train_clusters": 40,
+  "test_clusters": 41,
+  "family_disjoint": false,
+  "performance_selection_permitted": false,
+  "source_order_is_not_performance_order": true,
+  "graph_orientation": "native supplied edges are MWIS conflicts; no complement",
+  "exact_weight_parser": "fractions.Fraction on raw weight strings, no binary float conversion or rounding",
+  "native_encoding_inventory": "direct exact denominator LCM and conservative signed32 sum; separate exact common-GCD reduction feasibility",
+  "zero_negative_and_format_failures_retained": true,
+  "download_failures_retained": true,
+  "graph_queries": 0,
+  "script_sha256": "bff4c4fe601c364115514dba334acfbd23ea7f87ba0c5220b4d851c472b9d330"
+}

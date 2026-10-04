@@ -1,0 +1,81 @@
+{
+  "version": "v06_sequential_postperformance_cloud_assays_001",
+  "created_utc": "2026-10-04T01:54:58.860830+00:00",
+  "wrapper_sha256": "ee64df0d731d0cf7987ed4e7457d5829ed3eb0880338c17dd2dce7ee31dd7f4a",
+  "before_any_assay_execution": true,
+  "original_scientific_runtimes_unchanged": true,
+  "waiting_performance_launcher_pid": 66238,
+  "waiting_performance_worker_pid": 66240,
+  "no_workload_overlap": true,
+  "retries": 0,
+  "additional_outer_assay_guard": null,
+  "assays": [
+    {
+      "name": "v06_R2_heldout_results_server_002",
+      "root": "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002",
+      "registration": "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002/experiments/discovery/v06_R2_heldout_server_002",
+      "freeze_sha256": "8f9b4d6df9771b67299bd62b532111e057fa779f07a5a05dc872ade89024feae",
+      "root_release_sha256": "8e69f14051ce731332b11aaefa2f60c2ace38780e4f20dfb9429974555ca83d1",
+      "command": [
+        "/root/autodl-tmp/aamas2027_v03/py311/bin/python",
+        "-B",
+        "-m",
+        "cipheur.heldout_refinement_v06",
+        "run",
+        "--registration",
+        "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002/experiments/discovery/v06_R2_heldout_server_002",
+        "--out",
+        "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002/output/v06_R2_heldout_results_server_002",
+        "--root-release-sha256",
+        "8e69f14051ce731332b11aaefa2f60c2ace38780e4f20dfb9429974555ca83d1"
+      ]
+    },
+    {
+      "name": "v06_EoH_heldout_results_server_001",
+      "root": "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002",
+      "registration": "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002/experiments/discovery/v06_published_EoH_heldout_prepared_server_001",
+      "freeze_sha256": "2322d5c6ca390452f07114566f2abac341f645fe1c864a8bb4d43921811c75d0",
+      "root_release_sha256": "6d13879f9126971dc9d0510739f20ae68339a81f8baf1e249c3517ea343d8dde",
+      "command": [
+        "/root/autodl-tmp/aamas2027_v03/py311/bin/python",
+        "-B",
+        "-m",
+        "cipheur.heldout_published_eoh_v06",
+        "run",
+        "--registration",
+        "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002/experiments/discovery/v06_published_EoH_heldout_prepared_server_001",
+        "--registration-sha256",
+        "2322d5c6ca390452f07114566f2abac341f645fe1c864a8bb4d43921811c75d0",
+        "--out",
+        "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002/output/v06_EoH_heldout_results_server_001",
+        "--root-release-sha256",
+        "6d13879f9126971dc9d0510739f20ae68339a81f8baf1e249c3517ea343d8dde"
+      ]
+    },
+    {
+      "name": "v06_TRAIN_patch_bridge_results_server_001",
+      "root": "/root/autodl-tmp/aamas2027_v06_patch_bridge_001",
+      "registration": "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/experiments/discovery/v06_patch_bridge_001",
+      "freeze_sha256": "52fba1417af9be535e2a22ff030f99c33ff715349974a7150a79cc0bab3aa347",
+      "root_release_sha256": "975846ae34e90d2d8efb7bdbacb6c189693ddf14544b1c5baac0c506275d8311",
+      "command": [
+        "/root/autodl-tmp/aamas2027_v03/py311/bin/python",
+        "-B",
+        "scripts/patch_ranking_bridge_v06.py",
+        "run",
+        "--registration",
+        "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/experiments/discovery/v06_patch_bridge_001",
+        "--programmes",
+        "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/experiments/discovery/v06_patch_bridge_programs_frozen_001/program_inventory.json",
+        "--release",
+        "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/experiments/discovery/v06_test_release_002/TRAIN_patch_bridge_root_release_001.json",
+        "--release-sha256",
+        "975846ae34e90d2d8efb7bdbacb6c189693ddf14544b1c5baac0c506275d8311",
+        "--out",
+        "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/output/v06_TRAIN_patch_bridge_results_server_001"
+      ]
+    }
+  ],
+  "online_model_calls": 0,
+  "extra_original_full_TEST_certificate_calls": 0
+}

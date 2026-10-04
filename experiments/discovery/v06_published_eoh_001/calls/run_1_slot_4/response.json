@@ -1,0 +1,156 @@
+{
+  "name": "certified_exchange_rollout_v06m1",
+  "features": [
+    {
+      "name": "residual_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {"op": "available", "args": []},
+              {
+                "op": "union",
+                "args": [
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "residual_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {"op": "available", "args": []},
+              {
+                "op": "union",
+                "args": [
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                  {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "boundary_edges",
+      "expression": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "edge_min_weight_sum",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "edge_min_weight_sum",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "intersection",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "union",
+                        "args": [
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]},
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "active_weight",
+      "expression": {
+        "op": "sum_weights",
+        "args": [{"op": "available", "args": []}]
+      }
+    }
+  ],
+  "rule": "weight + residual_pack + 0.1*min(weight,max(0,residual_cover-residual_pack)) - 0.12*max(0,neighbor_pack-weight) + 0.12*boundary_edges/max(1,1+degree) - 0.005*weight*degree/max(1,remaining_count) + (2*active_weight if weight >= neighbor_cover else 0)",
+  "rationale": "Prioritize certified exchanges: when root weight reaches the clique-cover upper bound on available neighbors, including root can replace any conflicting independent subset without reducing reward. Otherwise emphasize the feasible root-plus-residual greedy completion, cap residual-cover optimism, and discount independent neighbor alternatives. Weighted boundary relief supplies a secondary preference for removing conflicts that constrain the surviving graph. Replace residual-edge and neighbor-edge features with neighbor-cover certification and an inexpensive active-weight scale."
+}

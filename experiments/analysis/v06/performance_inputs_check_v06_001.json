@@ -1,0 +1,27 @@
+{
+  "source_archive_sha256": "1f853ec90153ecd65418119352c13d9e17242e6dddd407ed8eaa45f7bf3aa20b",
+  "input_data_sha256": "23caf12cca124aa1ed97f7848454b8a6ac2bb283462c4719510bd6fc30357548",
+  "input_identity_sha256": "40057a9b68e09f261c04979f4ebe1989123851a0ee06ff6636fdfc650a1ac001",
+  "protocol_sha256": "d1184a1eb47c451847d34cb5ebc8e5a83dda4ef56382c820112750e9a9ec9b92",
+  "check_script_sha256": "d61af5a5d9563c74ca21f46513ce5ddbd305dcce7a34027681ee933139bcf1b3",
+  "pairs": 108,
+  "endpoints": 216,
+  "unique_contact_ids": 129024,
+  "checks": {
+    "paired_contact_identity_and_monotone_intervention": 108,
+    "every_original_contact_fields": 258048,
+    "independent_exact_physical_edge_set": 216,
+    "graph_identity_metadata": 216
+  },
+  "family_counts": {
+    "standard_balanced": 36,
+    "standard_ground_scarce": 36,
+    "standard_satellite_scarce": 36,
+    "dense_long_balanced": 36,
+    "dense_long_ground_scarce": 36,
+    "dense_long_satellite_scarce": 36
+  },
+  "errors": 0,
+  "optimization_calls": 0,
+  "verification_scope": "independent interval sweep exact edge equality, graph hashes, full pair/endpoint/contact coverage; no optimization outcome or solver evaluated"
+}

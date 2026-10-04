@@ -1,0 +1,191 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 0,
+  "arm": "witness",
+  "candidates": [
+    {
+      "name": "triangle_effective_degree",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1,degree-2*neighbor_edges/max(1,degree))",
+      "rationale": "The supplied equal-base witness hides mutual conflicts among neighbors. Discount degree by neighborhood edge density so mutually exclusive competitors impose less effective blocking pressure."
+    },
+    {
+      "name": "weighted_triangle_credit",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight*weight/max(0.001,weight,conflict_weight-2*neighbor_edge_min/max(1,degree))",
+      "rationale": "Use weighted neighbor overlap to correct double-counted conflict mass. The neighborhood edge statistic can distinguish the witness without node identities, while the root-weight floor limits excessive overlap credit."
+    },
+    {
+      "name": "neighbor_cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight*weight/max(0.001,weight,neighbor_cover)",
+      "rationale": "Replace raw neighbor weight with a clique-partition construction that accounts for mutually incompatible alternatives. Rank root reward relative to this structural estimate of sacrificed opportunity."
+    },
+    {
+      "name": "neighbor_packing_ratio",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight*weight/max(0.001,weight,neighbor_pack)",
+      "rationale": "A deterministic feasible packing of neighbors is an alternative opportunity estimate that retains their internal graph structure. Its optimism relative to a clique construction is an uncertain but distinct hypothesis."
+    },
+    {
+      "name": "bracketed_local_loss",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight*weight/max(0.001,weight,0.5*neighbor_pack+0.5*neighbor_cover)",
+      "rationale": "Blend local feasible packing and clique-cover estimates to reduce dependence on either greedy construction. Both features expose hidden neighborhood structure implicated by the equal-base witness."
+    },
+    {
+      "name": "cohesion_degree_bonus",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edge_product",
+          "expression": {"op": "edge_weight_product_sum", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight/max(1,degree)*(1+2*neighbor_edges/max(1,degree*(degree-1)))+weight*neighbor_edge_product/max(1,conflict_weight*conflict_weight)",
+      "rationale": "Preserve a degree-based priority and add bounded relative cohesion terms. Edge count measures structural overlap, while weight products emphasize overlap among valuable competitors."
+    },
+    {
+      "name": "forced_residual_pack",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "neighbor_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight+residual_pack-0.1*neighbor_pack",
+      "rationale": "Estimate the reward of committing to the root and then packing its compatible residual set. A small local opportunity debit may stabilize differences caused by the residual greedy ordering."
+    },
+    {
+      "name": "forced_residual_cover",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "weight+residual_cover-0.25*neighbor_cover",
+      "rationale": "Explore preserved residual opportunity using clique structure rather than a single feasible packing. Penalize local competing capacity; the looseness of the residual construction remains an explicit uncertainty."
+    },
+    {
+      "name": "normalized_pack_advantage",
+      "features": [
+        {
+          "name": "available_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "available", "args": []}]}
+        },
+        {
+          "name": "residual_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "(weight+residual_pack-available_pack)/max(1,weight+neighbor_cover)+0.1*weight/max(1,degree)",
+      "rationale": "Measure the relative change from a shared residual packing baseline after forcing a root. Normalize by local stakes and retain a degree-based reward term to resolve near-equal packing advantages."
+    },
+    {
+      "name": "uncertainty_discounted_pack",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "residual_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        }
+      ],
+      "rule": "(weight+residual_pack)/(1+max(0,residual_cover-residual_pack)/max(1,residual_cover))+0.1*weight*weight/max(0.001,weight,neighbor_cover)",
+      "rationale": "Discount forced-packing value when compatible residual packing and clique estimates disagree. Add a local opportunity ratio that retains the neighborhood distinction revealed by the witness."
+    },
+    {
+      "name": "closed_neighborhood_share",
+      "features": [
+        {
+          "name": "closed_pack",
+          "expression": {"op": "greedy_independent_weight", "args": [{"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "closed_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight/max(0.001,weight,closed_pack)+0.2*weight/max(0.001,weight,closed_cover)+0.05*neighbor_edges/max(1,degree*(degree-1))",
+      "rationale": "Rank the root's share of its closed neighborhood's packing and clique values. A small cohesion term preserves sensitivity to mutual neighbor conflicts when the two constructions coincide."
+    },
+    {
+      "name": "residual_edge_surrogate",
+      "features": [
+        {
+          "name": "residual_total",
+          "expression": {"op": "sum_weights", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}
+        },
+        {
+          "name": "residual_edge_min",
+          "expression": {"op": "edge_min_weight_sum", "args": [{"op": "induced_edges", "args": [{"op": "difference", "args": [{"op": "available", "args": []}, {"op": "union", "args": [{"op": "singleton", "args": [{"op": "root", "args": []}]}, {"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}]}]}
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {"op": "clique_cover_weight", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}
+        },
+        {
+          "name": "neighbor_edges",
+          "expression": {"op": "count", "args": [{"op": "induced_edges", "args": [{"op": "neighbors", "args": [{"op": "root", "args": []}]}]}]}
+        }
+      ],
+      "rule": "weight+max(0,residual_total-residual_edge_min)+0.1*weight*weight/max(0.001,weight,neighbor_cover)+0.02*weight*neighbor_edges/max(1,degree*(degree-1))",
+      "rationale": "Use residual total weight minus an edge-minimum deletion surrogate as a conservative structural opportunity estimate. Its possible collapse in dense sets is retained as a hypothesis, with local clique and cohesion terms supplying additional distinctions."
+    }
+  ]
+}

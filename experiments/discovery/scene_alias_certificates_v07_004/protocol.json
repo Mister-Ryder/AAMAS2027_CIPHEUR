@@ -1,0 +1,85 @@
+{
+  "operation": "bounded_train_scene_alias_certificates",
+  "status": "prepared_not_released",
+  "before_any_conditional_query": true,
+  "sources": [
+    {
+      "name": "C6",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\C6.csv",
+      "sha256": "2e6b398fe2a6cee1497ab3eccf45d0108bdb30b4f2fa6c12f276e2028c9446cb"
+    },
+    {
+      "name": "W6",
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\W6.csv",
+      "sha256": "c0fe378c68400d985c05617d89e41b320df03e6565b91ac7ad6821a6659e01ca"
+    }
+  ],
+  "input_bindings": {
+    "screen_protocol": "bd490e0045d73720db1beefcc57adaa710cd90db1bd0c1206276f00caff0a39c",
+    "screen_summary": "f01d60e86231cef5f726e22353400e7ad39159c85ecf86859d1f637d220dd6dc",
+    "screen_freeze": "d28a592a5236ef2fa021706547ab298277f90849c776754fb7bf1811aca8efdd",
+    "classification_summary": "4b71e538fbdaa1a8c4fb8e32035403c30bba4f7f14a7c0e635e846114c4104d7"
+  },
+  "assigned_unique_pairs": 531,
+  "assigned_positions": 1062,
+  "eligible_competing_pairs": 46,
+  "eligible_positions": 92,
+  "noncompeting_pairs": 485,
+  "noncompeting_positions": 970,
+  "original_alias_occurrences": 556,
+  "adjacent_alias_occurrences": 47,
+  "adjacent_nontwin_alias_occurrences": 43,
+  "adjacent_twin_alias_occurrences": 4,
+  "eligibility": "adjacent on BOTH predeclared configurations; prelabel scene predicate, not oracle/quality selection",
+  "superseded_unexecuted_draft": "all1062 queried; replaced before any freeze or oracle call",
+  "graph_count": 48,
+  "train_days": [
+    0
+  ],
+  "boundary": {
+    "fixed": [],
+    "excluded": []
+  },
+  "ground_gaps": [
+    340,
+    680
+  ],
+  "satellite_change_time": 150,
+  "satellite_trans_time": 300,
+  "nodes_per_component": 2000,
+  "max_nodes_per_comparison": 2000,
+  "max_search_component": 10000,
+  "max_component_calls_per_comparison": 64,
+  "component_wall_seconds": 1,
+  "comparison_wall_seconds": 5,
+  "whole_batch_wall_seconds": 600,
+  "recommended_external_guard_seconds": 900,
+  "workers": 8,
+  "node_timeout_debit": "entire allocated allowance charged when interrupted prefix node count is unavailable",
+  "comparison_guard_excludes": "input reads, graph construction, verified trivial fallback preparation; includes partitions, component construction and original bound calls",
+  "whole_guard_includes": "input materialization, graph setup, comparisons and worker output; final ledger aggregation separately timed",
+  "comparison_timeout": "unknown with independently prepared singleton lower/conditional residual sum upper; discard incomplete difference",
+  "cache": "same graph only, exact vertex-set components; only completed verified or explicitly sound trivial entries; no retry/refinement after timeout",
+  "query_order": "fixed source/window/config/pair_id order; asynchronous windows, deterministic within graph",
+  "scope": "initial full-residual conditional MWIS; no actual greedy-path or repair-boundary claim",
+  "test_allowed": false,
+  "learner_allowed": false,
+  "model_calls": 0,
+  "source_sha256": {
+    "scripts/probe_scene_alias_certificates_v07.py": "1064b2f405c091c7fe59bba09715929602a2cdb247f90d4634711616d717e052",
+    "scripts/screen_contact_scene_v07.py": "9a2782bf5ef002d7c50a1ff6587affac23ea6b1d1cbb0d89fd4730afc4fb9365",
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "cipheur/graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "cipheur/compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+    "cipheur/oracle.py": "d018a4711289b83ae425e3edbd3d41b0e89360d17d7bf0a40f3f345ec3753f06",
+    "cipheur/representation.py": "5f844dd5ab6d5f79e92a0a7ea6ba0af6073d2e7d3f39a69a091b3fcf875d9dc0",
+    "cipheur/refinement.py": "90a7e6c6981a73d13b715dc0b2b773cd2052724c2e044af617b7795eb074bd99",
+    "cipheur/relevance_synthesis_v04.py": "3560b612286b92894bbbc48073212cb0b8f64390b4c1572e29c053a65eb2c10d",
+    "cipheur/v51_adapter.py": "68699aa08e21a6dea1108ba64878916efaf56e05f076e93aa6cda9b7c6dad28d",
+    "legacy_project/SNSD_V51_FINAL/src/snsd_core/data.py": "e18ebe861c8c578bc82e7386977cacf71904239a4332c03680314ec8d9b480ef",
+    "legacy_project/SNSD_V51_FINAL/src/snsd_core/graph.py": "030d6d0e26776c5817083ee95edb9c536da92ec30eb9afb727ce783e8232c5c4",
+    "legacy_project/SNSD_V51_FINAL/src/snsd_core/verifier.py": "7b9cdf331e5e427d412a2369e8c439153755e0d4dd2ef02042dd970c1890567b"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": "public_alias_v05_001",
+  "input_archive": "experiments/runs/v04/public_data_v04_002.tar.gz",
+  "input_archive_sha256": "e13f8d925fc59c900f772f0c7a9dace376cfd2c188f836b82bf20b49419970d3",
+  "frozen_program": "examples/frozen_program_v04.json",
+  "frozen_program_bytes_sha256": "a8db4544e33eccfe35818ddf423a4df5c8ec5ac5fda517a5c2ceab135fecb1c9",
+  "frozen_program_canonical_sha256": "90079f0c7342f290c5858ff49b711f9b4cef96d028b260b8d1a2fdea13d463b6",
+  "full_max_vertices": 256,
+  "induced_vertices": 32,
+  "subset_salt": "public_alias_v05_20261003_registered",
+  "max_alias_pairs_per_state": 8,
+  "states": "initial empty fixed/excluded boundary only",
+  "pair_order": "lexically sorted existing competing edges with exact equality of all nine base features",
+  "epsilon": 1e-8,
+  "oracle": {
+    "nodes_per_component": 2048,
+    "max_search_component": 256,
+    "max_nodes": 16384,
+    "max_calls": 32
+  },
+  "state_wall_seconds": 120,
+  "enforce_wall_cap": true,
+  "workers": 4,
+  "registered_graph_states": 61,
+  "maximum_planned_queries": 488,
+  "maximum_completed_search_node_receipt_total": 999424,
+  "no_new_model_calls": true,
+  "no_programme_selection_or_tuning": true,
+  "induced_track_is_not_full_benchmark_or_natural_physical_scheduling": true,
+  "all_unknowns_and_query_shortfalls_retained": true,
+  "proof_scope": "Exact cancellation and feasible lower witnesses are auditable. Large-component search-frontier proofs are not exported by the unchanged oracle; independent small-component checks are a separate verification step."
+}

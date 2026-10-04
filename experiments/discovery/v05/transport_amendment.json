@@ -1,0 +1,103 @@
+{
+  "version": "matched_transport_amendment_v05_001",
+  "original_protocol_sha256": "4b7422b6e65c9ab670f47c4de3dd922d544d8344fc6559c4c0c79bebb82c4d02",
+  "reason": "Collaboration agent-thread limit prevented completing the registered 12 cold authoring cells.",
+  "decided_before_any_v05_candidate_assessment": true,
+  "original_protocol_and_packets_preserved": true,
+  "amended_transport": "12 fresh ephemeral noninteractive Codex CLI sessions using the same user-configured model and reasoning settings; no inherited conversation; isolated working directory per cell; identical tool and filesystem constraints.",
+  "cells": [
+    {
+      "block": 0,
+      "arm": "witness",
+      "response_file": "block_0_witness.json",
+      "packet_sha256": "26b6742b6a622e912852f53c4736af03c293929f2a8266762e41ef38ed112080"
+    },
+    {
+      "block": 0,
+      "arm": "relations",
+      "response_file": "block_0_relations.json",
+      "packet_sha256": "96495cfcd6b2306027f6a6e07a3e6e6245dfd770141d1afc4d4a1df2df856ed0"
+    },
+    {
+      "block": 0,
+      "arm": "objective",
+      "response_file": "block_0_objective.json",
+      "packet_sha256": "da4bee44ead35790a24d9213fca590cedd075d6ca4874523a5c7ff2a534feb03"
+    },
+    {
+      "block": 1,
+      "arm": "witness",
+      "response_file": "block_1_witness.json",
+      "packet_sha256": "168359c8fa256c0b2ad3ceff24a682f847aa2a7aded10e30792753f555f603e2"
+    },
+    {
+      "block": 1,
+      "arm": "relations",
+      "response_file": "block_1_relations.json",
+      "packet_sha256": "9fc4d067261a88759a74fdd4ee1e65a4d300f6945dbe3bb765e9cd03bf1e4cb4"
+    },
+    {
+      "block": 1,
+      "arm": "objective",
+      "response_file": "block_1_objective.json",
+      "packet_sha256": "282674a8f3afcb1af677fea6cac432297f743c3b29cc72ac6ce1221512a7c851"
+    },
+    {
+      "block": 2,
+      "arm": "witness",
+      "response_file": "block_2_witness.json",
+      "packet_sha256": "73e883c1ab0a6d5f9c7b6ded00ad5a8c7d2d9081dd30814e351988fe7664da86"
+    },
+    {
+      "block": 2,
+      "arm": "relations",
+      "response_file": "block_2_relations.json",
+      "packet_sha256": "28d3c7126f5cbec629f060144d43a8764acd4615dfe504c2adbfcc7808a2a55a"
+    },
+    {
+      "block": 2,
+      "arm": "objective",
+      "response_file": "block_2_objective.json",
+      "packet_sha256": "bfa522fcc9ab0621f75ced3c1b0f779615ff0d0c6f479d51b83cdbfaa65d0680"
+    },
+    {
+      "block": 3,
+      "arm": "witness",
+      "response_file": "block_3_witness.json",
+      "packet_sha256": "d7b8dc26947512d46430d370b097c673925afca08e0d5eb492d3c5648ca75861"
+    },
+    {
+      "block": 3,
+      "arm": "relations",
+      "response_file": "block_3_relations.json",
+      "packet_sha256": "0859e725a126fd9fe9574eb0f6132d1e50118db36ad975a5dd3662103c927c49"
+    },
+    {
+      "block": 3,
+      "arm": "objective",
+      "response_file": "block_3_objective.json",
+      "packet_sha256": "8dba05878032e34685a7d021f2d617fafc9346cab41a7507c789372847c384ce"
+    }
+  ],
+  "pilot_excluded": {
+    "cell": "block_0_witness",
+    "transport": "collaboration cold agent",
+    "reason": "Transport availability only; no candidate reward/gate or comparison outcome was inspected for this decision. Preserve raw response separately and do not merge it into the 12 CLI cells."
+  },
+  "model_metadata_amendment": "The original inherited-assistant model name describes the initially planned transport. The actual shared CLI-served model/settings must be recorded from trusted configuration or execution metadata; unavailable values remain unknown. No model override or credential lookup is required.",
+  "raw_receipts": "Retain each exact final assistant response and raw CLI event log. JSON event decoding to recover the final assistant text is allowed; remove no prose/fences and repair no candidate code.",
+  "generation_compute": "Match requested model/settings and session/slot counts. Preserve available CLI token usage and wall time; no token or compute matching claim. 12 CLI invocations are not asserted to be 12 backend API calls.",
+  "authoring_completion_contract": {
+    "version": "matched_cli_authoring_completion_v05",
+    "transport_amendment_sha256": "SHA256 of this amendment",
+    "all_authoring_completed_before_assessment": true,
+    "same_requested_model_and_settings_all_cells": true,
+    "response_sha256": "map of all 12 exact response filenames to SHA256",
+    "receipt_paths": "controller-owned raw CLI event receipt inventory",
+    "actual_model_and_usage": "trusted metadata when available; otherwise null"
+  },
+  "no_scientific_selection_change": true,
+  "no_old_test_reselection": true,
+  "pilot_scope_unchanged": true,
+  "source_of_authorization": "Root authorized the same-service transport fallback after observed collaboration capacity error."
+}

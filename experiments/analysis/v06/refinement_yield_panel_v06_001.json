@@ -1,0 +1,248 @@
+{
+  "version": "v06_R2_full5_information_yield_panel_001",
+  "audit_sha256": "a3f8e33667c43e83a9f3199ea2f95fb8be0a7e29c968c017bfde8749aa1b5b34",
+  "script_sha256": "a91de82f6d7977cd2c9d154369f259130175ac3b2f1d43e01ab5fc2213d0864f",
+  "output_sha256": {
+    "paper/figures/refinement_yield_v06.pdf": "07dbf59c2dafe29864b66fc9734a29aa070d5b55ee4f250827b2d501c29bfb92",
+    "paper/figures/refinement_yield_v06.png": "a6095f2d83252241e5d707426d03cab863cea60e28c234e730a54ec7b1fa4624"
+  },
+  "curves": {
+    "witness": {
+      "all5_original_banks": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          5,
+          6,
+          7
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          2,
+          2
+        ]
+      ],
+      "all5_mean": [
+        0.0,
+        0.8,
+        1.6,
+        2.2,
+        3.0,
+        3.6,
+        4.0,
+        4.8,
+        5.6
+      ],
+      "matched4_final_counts": [
+        7,
+        8,
+        3,
+        8
+      ],
+      "retained5th_final_count": 2
+    },
+    "relations": {
+      "all5_original_banks": [
+        [
+          0,
+          1,
+          1,
+          1,
+          2,
+          3,
+          4,
+          4,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          2,
+          3,
+          3,
+          4
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3,
+          4,
+          5
+        ]
+      ],
+      "all5_mean": [
+        0.0,
+        0.8,
+        1.0,
+        1.8,
+        2.2,
+        3.0,
+        3.6,
+        4.0,
+        4.8
+      ],
+      "matched4_final_counts": [
+        4,
+        4,
+        3,
+        8
+      ],
+      "retained5th_final_count": 5
+    },
+    "objective": {
+      "all5_original_banks": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "all5_mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "matched4_final_counts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "retained5th_final_count": 0
+    }
+  },
+  "scope": "All5 fixed warm-refinement blocks; all40 positions per arm, no favorable block deletion",
+  "semantics": "Thick=all5mean;thin=originalbanks;dashedthin=retainedfifth. Original slots are not learning iterations.",
+  "font": "Arial9pt at native3.35in",
+  "TRAIN_only": true,
+  "TEST_accessed": false,
+  "selection_or_evaluation_or_inference": false
+}

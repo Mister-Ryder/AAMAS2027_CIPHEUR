@@ -1,0 +1,79 @@
+{
+  "archive_sha256": "3f6986a6b803761c503876d4b3d1419c7f1fe3adab3acc5929dcb4c6db2c7a48",
+  "source_zip_sha256": "74c1854536206fe098cbad86cd3a5c400dda279ecbff49c76cf3d80b2e075380",
+  "original_protocol_sha256": "32e008c2d348df53813696f8bfc413829704a9e76c07e4d03ac036387cb11854",
+  "budget_scope_sha256": "16834240d6136cf54cf208e3f03b24f7d0505f72b9cc898df8bf1ac31f4b19d2",
+  "results_sha256": "45bb07139da8321ccca54f841fb040119f0c1bbf6b2eec8739277b564561b755",
+  "host_receipt_sha256": "41189725161bc357dbb51d43c9338dd3d26d6e236f5cd9061e0b80da9946bc3f",
+  "analysis_script_sha256": "10024e33be788f56c35887331c20e56b0d20c9415172ff6cfaae3a4df8ddcb34",
+  "states": 120,
+  "queries": 1503,
+  "query_status": {
+    "exact_tie": 909,
+    "strict": 594
+  },
+  "by_family": {
+    "DIMACS": {
+      "exact_tie": 53,
+      "strict": 68
+    },
+    "SATLIB": {
+      "exact_tie": 67,
+      "strict": 55
+    },
+    "temporal_unit_balanced_short": {
+      "strict": 91,
+      "exact_tie": 139
+    },
+    "temporal_unit_balanced_long": {
+      "strict": 55,
+      "exact_tie": 87
+    },
+    "temporal_unit_ground_scarce_short": {
+      "exact_tie": 151,
+      "strict": 103
+    },
+    "temporal_unit_ground_scarce_long": {
+      "exact_tie": 126,
+      "strict": 56
+    },
+    "temporal_unit_satellite_scarce_short": {
+      "strict": 86,
+      "exact_tie": 170
+    },
+    "temporal_unit_satellite_scarce_long": {
+      "exact_tie": 116,
+      "strict": 80
+    }
+  },
+  "by_actual_side_base_alias": {
+    "true": {
+      "exact_tie": 570,
+      "strict": 90
+    },
+    "false": {
+      "strict": 504,
+      "exact_tie": 339
+    }
+  },
+  "paired_query_pairs": 630,
+  "paired_labels": {
+    "strict_one_side_tie_other": 201,
+    "tie_both_sides": 294,
+    "strict_preservation": 123,
+    "strict_reversal": 12
+  },
+  "query_shortfalls": 417,
+  "oracle_calls_total": 1496,
+  "oracle_calls_max_state": 33,
+  "expanded_nodes_total": 15200,
+  "expanded_nodes_max_state": 2199,
+  "cpu_seconds_state_sum": 1.314291136,
+  "wall_seconds": 0.4159391187131405,
+  "test_queries": 0,
+  "query_retries": 0,
+  "guard_triggered": false,
+  "label_scope": "TRAIN conditional-value certificates, not scheduling improvements or LLM benefits",
+  "alias_scope": "preselected kind is any-side alias; counts above use actual per-side boolean",
+  "public_scope": "new induced32 source-disjoint TRAIN/TEST states within previously exposed corpus"
+}

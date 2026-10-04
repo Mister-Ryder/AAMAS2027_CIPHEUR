@@ -1,0 +1,27 @@
+{
+  "name": "certified_exchange_boundary_discount",
+  "features": [
+    {
+      "name": "residual_pack",
+      "expression": {"op":"greedy_independent_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"intersection","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+    },
+    {
+      "name": "residual_cover",
+      "expression": {"op":"clique_cover_weight","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"intersection","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}
+    },
+    {
+      "name": "neighbor_pack",
+      "expression": {"op":"greedy_independent_weight","args":[{"op":"intersection","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+    },
+    {
+      "name": "neighbor_cover",
+      "expression": {"op":"clique_cover_weight","args":[{"op":"intersection","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}
+    },
+    {
+      "name": "boundary_edges",
+      "expression": {"op":"sub","args":[{"op":"sub","args":[{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"intersection","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]}]}]},{"op":"count","args":[{"op":"induced_edges","args":[{"op":"difference","args":[{"op":"difference","args":[{"op":"available","args":[]},{"op":"intersection","args":[{"op":"available","args":[]},{"op":"neighbors","args":[{"op":"root","args":[]}]}]}]},{"op":"singleton","args":[{"op":"root","args":[]}]}]}]}]}]}
+    }
+  ],
+  "rule": "(2 if weight >= neighbor_cover else 0) + (weight + residual_pack - 0.2*max(0,residual_cover-residual_pack) - neighbor_pack/(1+boundary_edges/(1+degree)))/max(1e-9,weight+conflict_weight+compatible_weight) + 0.001*weight/max(1e-9,weight+conflict_weight)",
+  "rationale": "The identical parents share residual packing and covering estimates, neighbor opportunity cost, and boundary structure. This variant prioritizes certified exchanges: a root whose weight reaches the clique-cover bound on its active neighbors can replace any selected independent subset of those neighbors without losing weight. Remaining ranking favors attainable residual reward, penalizes cover-pack uncertainty, and uses boundary edges to discount neighbor cost with diminishing returns instead of adding an unrestricted bonus. Every structural set is restricted to available vertices."
+}

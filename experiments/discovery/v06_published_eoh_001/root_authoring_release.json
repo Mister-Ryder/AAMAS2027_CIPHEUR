@@ -1,0 +1,17 @@
+{
+  "version": "v06_published_EoH_root_authoring_release_001",
+  "issued_by": "root",
+  "allow_authoring": true,
+  "protocol_sha256": "7885a103ffd550ae8e50b95367220d3967e62d73eb17e5a6dfd31493d0a9e283",
+  "freeze_receipt_sha256": "2a39ca3712ded168e176d971623db6439bc6d7ceee1502cf089239f686863c13",
+  "shared_R1_warm_seed_sha256": "83dc9ce30a4d7ff8c529c36d33b3aa4d47276480a88da3ca4bc6a48b391c156c",
+  "R1_seed_selection_sha256": "7067d4237f2e5df54216727fba33059724ad71cb28c226c1af011e9fea43065b",
+  "requested_positions": 32,
+  "TEST_allowed": false,
+  "review_scope": "Authentic sequential EoH-DSL adaptation with fixed four runs and eight positions each; no native EoH reproduction or matching-token claim. Original R2 roles, selectors, runtime and failed R1 release are unchanged.",
+  "shared_seed_metadata_note": "Exact R2 author-visible seed; original R1 features and rule identical, name/rationale normalization separately recorded.",
+  "execution_plan_sha256": "be8262cac7e7effcbf2aaf6289ec470331175095bb31586fae1c38fe698e3533",
+  "approved_execution": "Fixed waves (0,1), then (2,3), at most two independent author calls; Linux fitness transactions serialized in fixed slot/run order with eight workers. A dependent call requires previous hash-bound feedback ingestion.",
+  "fitness_scope": "Original120 TRAIN-only problem states; complete-schedule quality/work only. No conditional labels, aliases, gate/cycle checks or TEST during evolution; all original failed positions retained, no retries.",
+  "later_release_required": "Independent authoring/fitness audit and separately frozen four nonguarded baseline identities before any held-out evaluation. No model identity inferred from requested settings."
+}

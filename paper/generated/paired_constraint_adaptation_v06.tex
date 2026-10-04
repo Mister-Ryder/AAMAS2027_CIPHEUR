@@ -1,0 +1,22 @@
+\begin{table}[!t]
+  \centering
+  \caption{Ranking adaptation to gap $0.25\!\to\!2$ with identical contacts:
+  all 13 reversal and 83 preservation requirements, original mapping.
+  LLM rows average four dependent frozen outputs; Degree has one.
+  EoH~\cite{liu2024eoh} retains a shared seed AST. Counts are output--requirement
+  positions, not independent sources or scheduling gains.}
+  \label{tab:v06-paired-adaptation}
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lrr}
+  \toprule
+  Frozen cohort & Reversal (\%) & Preservation (\%) \\
+  \midrule
+  W joint & 82.69 (43/52) & 95.48 (317/332) \\
+  W quality & 82.69 (43/52) & 89.76 (298/332) \\
+  R quality & \textbf{86.54} (45/52) & 97.89 (325/332) \\
+  O quality & 69.23 (36/52) & 92.17 (306/332) \\
+  EoH-DSL & 84.62 (44/52) & \textbf{100.00} (332/332) \\
+  Degree & 46.15 (6/13) & 85.54 (71/83) \\
+  \bottomrule
+  \end{tabular}
+\end{table}

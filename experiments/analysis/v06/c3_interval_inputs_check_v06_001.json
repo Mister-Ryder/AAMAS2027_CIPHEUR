@@ -1,0 +1,103 @@
+{
+  "errors": 0,
+  "checks": 147379,
+  "audit_source_sha256": "20f49295c4668af2a0022ebc0e035bfeda5ec6ad2eb4da73091b192e53d3a91a",
+  "archive_sha256": "af7c0295a8db99e3eacb8d5d6e1a0183a87808312ca04bb280f01e10b69323a9",
+  "data_sha256": "8e2c41a86083cf62a6cff4abf36780201e5d75b44509a7c0b68db4e3681b838c",
+  "source_csv_sha256": "ec95f50c11d800f051e218aa1e414df873ddd12e1f71ce911da3ba28adff647e",
+  "all_source_contact_fields_checked": true,
+  "all_24_interval_graphs_independently_sweep_checked": true,
+  "all_24_legacy_graphs_unchanged": true,
+  "source_contacts": 2880,
+  "source_pairs": 12,
+  "pairs": [
+    {
+      "id": "v06_c3_interval_exploratory_128_0000",
+      "n": 128,
+      "left_edges": 930,
+      "right_edges": 930,
+      "added_edges": 0
+    },
+    {
+      "id": "v06_c3_interval_exploratory_128_0001",
+      "n": 128,
+      "left_edges": 1295,
+      "right_edges": 1295,
+      "added_edges": 0
+    },
+    {
+      "id": "v06_c3_interval_exploratory_128_0002",
+      "n": 128,
+      "left_edges": 1500,
+      "right_edges": 1500,
+      "added_edges": 0
+    },
+    {
+      "id": "v06_c3_interval_exploratory_256_0000",
+      "n": 256,
+      "left_edges": 3823,
+      "right_edges": 3824,
+      "added_edges": 1
+    },
+    {
+      "id": "v06_c3_interval_exploratory_256_0001",
+      "n": 256,
+      "left_edges": 3830,
+      "right_edges": 3832,
+      "added_edges": 2
+    },
+    {
+      "id": "v06_c3_interval_exploratory_256_0002",
+      "n": 256,
+      "left_edges": 3849,
+      "right_edges": 3850,
+      "added_edges": 1
+    },
+    {
+      "id": "v06_c3_interval_exploratory_512_0000",
+      "n": 512,
+      "left_edges": 9894,
+      "right_edges": 9896,
+      "added_edges": 2
+    },
+    {
+      "id": "v06_c3_interval_exploratory_512_0001",
+      "n": 512,
+      "left_edges": 9284,
+      "right_edges": 9291,
+      "added_edges": 7
+    },
+    {
+      "id": "v06_c3_interval_exploratory_512_0002",
+      "n": 512,
+      "left_edges": 9424,
+      "right_edges": 9428,
+      "added_edges": 4
+    },
+    {
+      "id": "v06_c3_interval_exploratory_64_0000",
+      "n": 64,
+      "left_edges": 253,
+      "right_edges": 253,
+      "added_edges": 0
+    },
+    {
+      "id": "v06_c3_interval_exploratory_64_0001",
+      "n": 64,
+      "left_edges": 333,
+      "right_edges": 333,
+      "added_edges": 0
+    },
+    {
+      "id": "v06_c3_interval_exploratory_64_0002",
+      "n": 64,
+      "left_edges": 408,
+      "right_edges": 408,
+      "added_edges": 0
+    }
+  ],
+  "optimization_calls": 0,
+  "candidate_reads": 0,
+  "exposure_scope": "Previously exposed C3 source blocks, model-transformed exploratory population, not independent new natural TEST data",
+  "audit_scope": "Independent implementation by execution agent; no project runtime/solver imported"
+}

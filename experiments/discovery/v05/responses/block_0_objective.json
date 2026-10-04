@@ -1,0 +1,465 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 0,
+  "arm": "objective",
+  "candidates": [
+    {
+      "name": "closed_weight_mass",
+      "features": [],
+      "rule": "weight*weight/max(0.000000001,weight+conflict_weight)",
+      "rationale": "Balances immediate reward against the total weight removed from the closed neighborhood."
+    },
+    {
+      "name": "heaviest_alternative",
+      "features": [],
+      "rule": "weight*weight/max(0.000000001,weight+max_conflict_weight)",
+      "rationale": "Treats the heaviest conflicting contact as the principal alternative; may underestimate several compatible alternatives."
+    },
+    {
+      "name": "local_packing_ratio",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000000001,weight+neighbor_pack)",
+      "rationale": "Uses a feasible packing of conflicting contacts to estimate the reward sacrificed by selecting the root."
+    },
+    {
+      "name": "local_cover_ratio",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000000001,weight+neighbor_cover)",
+      "rationale": "Uses a clique partition upper construction as a conservative estimate of conflicting opportunity."
+    },
+    {
+      "name": "local_envelope_margin",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight-0.5*(neighbor_pack+neighbor_cover)",
+      "rationale": "Ranks the immediate reward minus the midpoint of feasible and upper estimates of the blocked alternatives."
+    },
+    {
+      "name": "edge_discounted_mass",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000000001,weight+max(max_conflict_weight,conflict_weight-neighbor_edge_min))",
+      "rationale": "Discounts conflicting mass using internal edge minima while retaining the heaviest alternative as a floor."
+    },
+    {
+      "name": "neighborhood_density",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight*weight/max(0.000000001,weight+conflict_weight/max(1,1+2*neighbor_edges/max(1,degree)))",
+      "rationale": "Shrinks the estimated blocked reward when conflicts among neighbors make their combined weight difficult to realize."
+    },
+    {
+      "name": "residual_packing_total",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+residual_pack",
+      "rationale": "Ranks the total reward of selecting the root and then constructing a feasible packing of the remaining contacts."
+    },
+    {
+      "name": "residual_cover_total",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+residual_cover",
+      "rationale": "Ranks an optimistic total reward after committing to the root; loose residual covers may mislead this hypothesis."
+    },
+    {
+      "name": "cover_loss_efficiency",
+      "features": [
+        {
+          "name": "total_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "available",
+                "args": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000000001,max(weight,total_cover-residual_cover))",
+      "rationale": "Measures reward captured per decrease in the global cover estimate, guarding against changes caused by repartitioning."
+    },
+    {
+      "name": "packing_loss_efficiency",
+      "features": [
+        {
+          "name": "total_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "available",
+                "args": []
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight/max(0.000000001,max(weight,total_pack-residual_pack))",
+      "rationale": "Measures reward captured relative to the loss of a global feasible packing; the floor handles nonmonotone repacking."
+    },
+    {
+      "name": "residual_envelope_total",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight+residual_pack+0.25*(residual_cover-residual_pack)",
+      "rationale": "Adds a quarter of the residual bound gap to the feasible branch objective to retain some optimistic potential."
+    }
+  ]
+}

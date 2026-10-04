@@ -1,0 +1,23 @@
+{
+  "pid": 79796,
+  "command": [
+    "/root/autodl-tmp/aamas2027_v03/py311/bin/python",
+    "-B",
+    "scripts/patch_ranking_bridge_v06.py",
+    "run",
+    "--registration",
+    "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/experiments/discovery/v06_patch_bridge_001",
+    "--programmes",
+    "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/experiments/discovery/v06_patch_bridge_programs_frozen_001/program_inventory.json",
+    "--release",
+    "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/experiments/discovery/v06_test_release_002/TRAIN_patch_bridge_root_release_001.json",
+    "--release-sha256",
+    "975846ae34e90d2d8efb7bdbacb6c189693ddf14544b1c5baac0c506275d8311",
+    "--out",
+    "/root/autodl-tmp/aamas2027_v06_patch_bridge_001/output/v06_TRAIN_patch_bridge_results_server_001"
+  ],
+  "timestamp_unix": 1791085610.4448395,
+  "source_prepared_freeze_sha256": "52fba1417af9be535e2a22ff030f99c33ff715349974a7150a79cc0bab3aa347",
+  "root_release_sha256": "975846ae34e90d2d8efb7bdbacb6c189693ddf14544b1c5baac0c506275d8311",
+  "attempt": 1
+}

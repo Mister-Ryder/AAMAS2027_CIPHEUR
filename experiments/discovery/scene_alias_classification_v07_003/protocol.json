@@ -1,0 +1,45 @@
+{
+  "version": "scene_alias_classification_v07_003",
+  "before_graph_rebuild": true,
+  "screen_namespace": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\discovery\\contact_scene_screen_v07_002",
+  "screen_bindings": {
+    "protocol.json": "bd490e0045d73720db1beefcc57adaa710cd90db1bd0c1206276f00caff0a39c",
+    "freeze_receipt.json": "d28a592a5236ef2fa021706547ab298277f90849c776754fb7bf1811aca8efdd",
+    "train_identity_inventory.json": "8dff7eea5e1c5ee48813c029b3907bba3cdaa70c0679225a9385f120bbf54a6a",
+    "source_snapshot.zip": "82676c71f7afc1313a716421485694dd1a593ccd0fca3ec931c8c3f4c401edf2",
+    "screen_summary.json": "f01d60e86231cef5f726e22353400e7ad39159c85ecf86859d1f637d220dd6dc",
+    "completion_receipt.json": "f8d0224d1307ec50e491eaf27ca2624b9e0d3355cb4f4a37622a251d7383d997"
+  },
+  "source_closure": {
+    "scripts/screen_contact_scene_v07.py": "9a2782bf5ef002d7c50a1ff6587affac23ea6b1d1cbb0d89fd4730afc4fb9365",
+    "cipheur/v51_adapter.py": "68699aa08e21a6dea1108ba64878916efaf56e05f076e93aa6cda9b7c6dad28d",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "legacy/data.py": "e18ebe861c8c578bc82e7386977cacf71904239a4332c03680314ec8d9b480ef",
+    "legacy/graph.py": "030d6d0e26776c5817083ee95edb9c536da92ec30eb9afb727ce783e8232c5c4",
+    "legacy/verifier.py": "7b9cdf331e5e427d412a2369e8c439153755e0d4dd2ef02042dd970c1890567b"
+  },
+  "classifier_sha256": "56a0d567c167ec2a3610487ad76407942dfaeb2cb92d2b983a05a37b125c0148",
+  "assigned_graphs": 48,
+  "assigned_alias_pairs": 556,
+  "workers": 8,
+  "train_days": [
+    0
+  ],
+  "nontrain_graphs": 0,
+  "ground_gaps": [
+    340,
+    680
+  ],
+  "boundary": {
+    "fixed": [],
+    "excluded": []
+  },
+  "proof": "equal weights and equal neighbor sets outside pair imply unmarked weighted transposition automorphism and forced-value tie",
+  "WL": "two exact tuple-interned refinements; initial colors(weight,duration); unmarked and reason-mask-marked separately",
+  "WL_scope": "different color proves representation distinction, not a strict preferred action; same color is not isomorphism",
+  "optimizer_calls": 0,
+  "oracle_calls": 0,
+  "model_calls": 0,
+  "no_pair_filters": true
+}

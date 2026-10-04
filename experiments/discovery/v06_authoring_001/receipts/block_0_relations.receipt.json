@@ -1,0 +1,39 @@
+{
+  "cell": "block_0_relations",
+  "block": 0,
+  "arm": "relations",
+  "exit_code": 1,
+  "timed_out": false,
+  "wall_seconds": 212.0106201171875,
+  "requested_configuration": {
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "model_reasoning_effort": "ultra",
+    "model_reasoning_summary": null,
+    "profile": null
+  },
+  "observed_model": null,
+  "usage_events": null,
+  "packet_sha256": "951acc6965dd451ddd70bf6ba581e965596db69558136220ae3ba97861fe2be5",
+  "frozen_prompt_sha256": "01212b017d174421a8ddf61f8fb2bf11f60acbded9aa0410b9b50cd5da1132a6",
+  "wrapper_prompt_sha256": "7b30400b98095fb5f93c51494fdf6700ef2deda82c02a7ec53d0960c2c34ffd6",
+  "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "cli_executable_sha256": "34549ded6e2aee87c911c62d025e52e26c488683d0f489cd68f756baef1a6df6",
+  "command_flags": [
+    "exec",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "--json",
+    "--cd",
+    "ISOLATED_PACKET_DIRECTORY",
+    "--output-last-message",
+    "CONTROLLER_RECEIPT",
+    "-"
+  ],
+  "raw_event_sha256": "82e15dce5fd8202a4f7443b09e86ba337a3e2bc04f65ea28ff8fdf97b909b4d0",
+  "raw_stderr_sha256": "da7fa4694a92a586938b9bbd4722fb3470aac6f4362f075c6851a9eaba111305",
+  "no_retry": true,
+  "no_candidate_assessment": true
+}

@@ -1,0 +1,22 @@
+\begin{table*}[!t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Published methods and frozen deployment at nominal $T=5$: within-family mean objective $w(I)$ and measured standalone CPU seconds. Families were fixed before outcomes. Superscripts mark defined/assigned contexts for incomplete quality or cost. Reward is never pooled across families or normalized to an optimum. Bold marks lowest observed CPU among fully covered methods; costs include charged initialization and repair, with shared graph loading separate. All 13 families and targets remain in the report.}
+\label{tab:v06-published}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Method & \multicolumn{2}{c}{Standard/balanced} & \multicolumn{2}{c}{Dense/ground} & \multicolumn{2}{c}{WDP 4xx} & \multicolumn{2}{c}{Grids}\\
+ & $w(I)$ & CPU & $w(I)$ & CPU & $w(I)$ & CPU & $w(I)$ & CPU\\
+\midrule
+CHILS~\cite{grossmann2025chils} & 7,277.9 & 5.01 & 978.2 & 5.08 & 75,573,465.2 & 5.17 & 59,093.5 & 5.05\\
+ILS~\cite{grossmann2025chils} & 7,277.9 & 5.02 & 978.2 & 5.09 & 75,573,465.2 & 5.23 & 59,039.6 & 5.06\\
+M$^2$WIS~\cite{grossmann2024mmwis} & 7,277.9 & 0.19 & 978.2 & 1.01 & ---$^{0/6}$ & 0.00 & ---$^{0/10}$ & 0.02\\
+Struction~\cite{gellner2021struction} & 7,277.9 & 0.03 & 978.2 & \textbf{0.21} & ---$^{0/6}$ & 0.00 & ---$^{0/10}$ & 0.02\\
+WeightedBR~\cite{lamm2019weighted} & 7,277.9 & \textbf{0.02} & 977.5 & 3.59 & ---$^{0/6}$ & 0.00 & ---$^{0/10}$ & 0.02\\
+Degree / CHILS & 7,277.9 & 3.30 & 978.2 & 3.56 & 75,573,465.2 & \textbf{2.81} & 59,077.4 & \textbf{4.75}\\
+EoH / CHILS~\cite{liu2024eoh} & 7,277.9 & 3.88 & 978.2 & 4.88 & 75,573,465.2 & 3.12 & 59,077.4 & 4.96\\
+Joint W / CHILS & 7,277.9 & 4.25 & 978.2 & 5.03 & 75,719,366.6$^{5/6}$ & 3.29 & ---$^{0/10}$ & 4.45\\
+\bottomrule
+\end{tabular}
+\end{table*}

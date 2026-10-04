@@ -1,0 +1,164 @@
+{
+  "name": "counterfactual_bound_contrast",
+  "features": [
+    {
+      "name": "residual_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                ]
+              },
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "residual_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {"op": "available", "args": []},
+                  {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                ]
+              },
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "exclusion_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "exclusion_cover",
+      "expression": {
+        "op": "clique_cover_weight",
+        "args": [
+          {
+            "op": "difference",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "singleton", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "neighbor_pack",
+      "expression": {
+        "op": "greedy_independent_weight",
+        "args": [
+          {
+            "op": "intersection",
+            "args": [
+              {"op": "available", "args": []},
+              {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "boundary_edges",
+      "expression": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "sub",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "intersection",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {"op": "available", "args": []},
+                          {"op": "neighbors", "args": [{"op": "root", "args": []}]}
+                        ]
+                      },
+                      {"op": "singleton", "args": [{"op": "root", "args": []}]}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "rule": "weight + 0.75*residual_pack + 0.25*residual_cover - 0.75*exclusion_pack - 0.25*exclusion_cover + 0.1*weight/max(1e-9,abs(weight)+abs(neighbor_pack)) + 0.03*boundary_edges/max(1,degree*max(0,remaining_count-degree-1)) - 0.001*degree",
+  "rationale": "Contrast forcing a vertex in against excluding it using a three-to-one blend of greedy packing and clique-cover estimates, with small bonuses for low neighbor opportunity cost and dense boundary relief."
+}

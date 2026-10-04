@@ -1,0 +1,20 @@
+{
+  "version": "v06_sequential_cloud_assay_queue_detached_launch_001",
+  "pid": 68239,
+  "command": [
+    "/root/autodl-tmp/aamas2027_v03/py311/bin/python",
+    "-B",
+    "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002/scripts/run_postperformance_assays_v06.py",
+    "--heldout-root",
+    "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002",
+    "--bridge-root",
+    "/root/autodl-tmp/aamas2027_v06_patch_bridge_001",
+    "--performance-root",
+    "/root/autodl-tmp/aamas2027_v06_performance_r2_eoh_test_003",
+    "--out",
+    "/root/autodl-tmp/aamas2027_v06_heldout_r2_eoh_002/output/postperformance_assay_queue_v06_001"
+  ],
+  "timestamp_unix": 1791078898.8056147,
+  "wrapper_sha256": "ee64df0d731d0cf7987ed4e7457d5829ed3eb0880338c17dd2dce7ee31dd7f4a",
+  "no_assay_retry": true
+}

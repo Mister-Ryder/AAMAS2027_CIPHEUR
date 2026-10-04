@@ -1,0 +1,329 @@
+{
+  "version": "v06_fixed_controls_TRAIN_selection_001",
+  "selection_split": "train",
+  "test_accessed": false,
+  "all64_original_slots_assessed": true,
+  "unique_ASTs": 16,
+  "independent_authoring_draws": false,
+  "selections": [
+    {
+      "block": 0,
+      "bank": "enumerated_structural",
+      "joint_eligible_winner": null,
+      "quality_only_baseline": {
+        "id": "control_0_enumerated_structural:1",
+        "block": 0,
+        "arm": "enumerated_structural",
+        "slot": 1,
+        "program": {
+          "name": "enum_struct_2_0_75",
+          "features": [
+            {
+              "name": "ng",
+              "expression": {
+                "op": "greedy_independent_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "nu",
+              "expression": {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "rule": "weight - 0.75*ng - 0.25*nu",
+          "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+        },
+        "program_sha256": "7bd78771bfdb8a54a21f5253489688aac6c4b6699578f0cbcadaf28ffdbab4f1",
+        "eligible": false
+      },
+      "joint_eligible_slots": 0,
+      "quality_completed_slots": 8,
+      "used_for_performance": true
+    },
+    {
+      "block": 0,
+      "bank": "fixed_base9",
+      "joint_eligible_winner": null,
+      "quality_only_baseline": {
+        "id": "control_0_fixed_base9:0",
+        "block": 0,
+        "arm": "fixed_base9",
+        "slot": 0,
+        "program": {
+          "name": "fixed_base9_00",
+          "features": [],
+          "rule": "weight",
+          "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+        },
+        "program_sha256": "4956717e011da46628405f5faa8ef434e63eb8eb2d0851c3c95acee406ed401e",
+        "eligible": false
+      },
+      "joint_eligible_slots": 0,
+      "quality_completed_slots": 8,
+      "used_for_performance": true
+    },
+    {
+      "block": 1,
+      "bank": "enumerated_structural",
+      "joint_eligible_winner": null,
+      "quality_only_baseline": {
+        "id": "control_1_enumerated_structural:1",
+        "block": 1,
+        "arm": "enumerated_structural",
+        "slot": 1,
+        "program": {
+          "name": "enum_struct_2_0_75",
+          "features": [
+            {
+              "name": "ng",
+              "expression": {
+                "op": "greedy_independent_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "nu",
+              "expression": {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "rule": "weight - 0.75*ng - 0.25*nu",
+          "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+        },
+        "program_sha256": "7bd78771bfdb8a54a21f5253489688aac6c4b6699578f0cbcadaf28ffdbab4f1",
+        "eligible": false
+      },
+      "joint_eligible_slots": 0,
+      "quality_completed_slots": 8,
+      "used_for_performance": false
+    },
+    {
+      "block": 1,
+      "bank": "fixed_base9",
+      "joint_eligible_winner": null,
+      "quality_only_baseline": {
+        "id": "control_1_fixed_base9:0",
+        "block": 1,
+        "arm": "fixed_base9",
+        "slot": 0,
+        "program": {
+          "name": "fixed_base9_00",
+          "features": [],
+          "rule": "weight",
+          "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+        },
+        "program_sha256": "4956717e011da46628405f5faa8ef434e63eb8eb2d0851c3c95acee406ed401e",
+        "eligible": false
+      },
+      "joint_eligible_slots": 0,
+      "quality_completed_slots": 8,
+      "used_for_performance": false
+    },
+    {
+      "block": 2,
+      "bank": "enumerated_structural",
+      "joint_eligible_winner": null,
+      "quality_only_baseline": {
+        "id": "control_2_enumerated_structural:1",
+        "block": 2,
+        "arm": "enumerated_structural",
+        "slot": 1,
+        "program": {
+          "name": "enum_struct_2_0_75",
+          "features": [
+            {
+              "name": "ng",
+              "expression": {
+                "op": "greedy_independent_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "nu",
+              "expression": {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "rule": "weight - 0.75*ng - 0.25*nu",
+          "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+        },
+        "program_sha256": "7bd78771bfdb8a54a21f5253489688aac6c4b6699578f0cbcadaf28ffdbab4f1",
+        "eligible": false
+      },
+      "joint_eligible_slots": 0,
+      "quality_completed_slots": 8,
+      "used_for_performance": false
+    },
+    {
+      "block": 2,
+      "bank": "fixed_base9",
+      "joint_eligible_winner": null,
+      "quality_only_baseline": {
+        "id": "control_2_fixed_base9:0",
+        "block": 2,
+        "arm": "fixed_base9",
+        "slot": 0,
+        "program": {
+          "name": "fixed_base9_00",
+          "features": [],
+          "rule": "weight",
+          "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+        },
+        "program_sha256": "4956717e011da46628405f5faa8ef434e63eb8eb2d0851c3c95acee406ed401e",
+        "eligible": false
+      },
+      "joint_eligible_slots": 0,
+      "quality_completed_slots": 8,
+      "used_for_performance": false
+    },
+    {
+      "block": 3,
+      "bank": "enumerated_structural",
+      "joint_eligible_winner": null,
+      "quality_only_baseline": {
+        "id": "control_3_enumerated_structural:1",
+        "block": 3,
+        "arm": "enumerated_structural",
+        "slot": 1,
+        "program": {
+          "name": "enum_struct_2_0_75",
+          "features": [
+            {
+              "name": "ng",
+              "expression": {
+                "op": "greedy_independent_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "nu",
+              "expression": {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "rule": "weight - 0.75*ng - 0.25*nu",
+          "rationale": "Fixed catalogue-prefix/coefficient template, not empirical fitting or an experimental LLM authoring draw."
+        },
+        "program_sha256": "7bd78771bfdb8a54a21f5253489688aac6c4b6699578f0cbcadaf28ffdbab4f1",
+        "eligible": false
+      },
+      "joint_eligible_slots": 0,
+      "quality_completed_slots": 8,
+      "used_for_performance": false
+    },
+    {
+      "block": 3,
+      "bank": "fixed_base9",
+      "joint_eligible_winner": null,
+      "quality_only_baseline": {
+        "id": "control_3_fixed_base9:0",
+        "block": 3,
+        "arm": "fixed_base9",
+        "slot": 0,
+        "program": {
+          "name": "fixed_base9_00",
+          "features": [],
+          "rule": "weight",
+          "rationale": "Frozen classical/base-nine expression; a fixed-information-interface control, not a new authoring draw."
+        },
+        "program_sha256": "4956717e011da46628405f5faa8ef434e63eb8eb2d0851c3c95acee406ed401e",
+        "eligible": false
+      },
+      "joint_eligible_slots": 0,
+      "quality_completed_slots": 8,
+      "used_for_performance": false
+    }
+  ],
+  "registration_sha256": "c9c1246fdd32c474d1e45f09d120e7e2bbc35e23e1f22c25f116ffff7a68e569",
+  "candidate_results_sha256": "69ffb25fc2aaef22c6a08f713897e7fac927c46e5c48002d9f452a7803dd7151",
+  "no_fallback": true
+}

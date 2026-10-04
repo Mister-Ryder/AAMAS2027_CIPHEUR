@@ -1,0 +1,486 @@
+{
+  "version": "wdp_inputs_v06_001",
+  "before_any_optimization": true,
+  "repository": "jamestrimble/max-weight-clique-instances",
+  "commit": "a0fd6b631136255807a98727b496a09a65b3301d",
+  "metadata_sha256": "7ce0455066e5b542f0865913602472b6dc3c9b355cf1b66fe95fd844a1ebc522",
+  "sources": [
+    {
+      "path": "WDP/README.md",
+      "git_blob_sha1": "b7ba4f035251f74d7514ff5569d5933034255c7b",
+      "declared_bytes": 958,
+      "is_graph": false,
+      "source_cluster": null,
+      "family": null,
+      "split": "metadata"
+    },
+    {
+      "path": "WDP/wdp-instances/in101.grf",
+      "git_blob_sha1": "0d23b50209dcaee7c0b5f8d7f1f9c2794992c9e6",
+      "declared_bytes": 1538926,
+      "is_graph": true,
+      "source_cluster": "in101",
+      "family": "WDP_1xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in102.grf",
+      "git_blob_sha1": "13b2d0ad2531a510b77483c8e585473ed68cc3c8",
+      "declared_bytes": 1459085,
+      "is_graph": true,
+      "source_cluster": "in102",
+      "family": "WDP_1xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in103.grf",
+      "git_blob_sha1": "be0bd576d48f2a8fb44fb77008d4d9334be2cac2",
+      "declared_bytes": 1497550,
+      "is_graph": true,
+      "source_cluster": "in103",
+      "family": "WDP_1xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in104.grf",
+      "git_blob_sha1": "5b509623fa12d20ce26229fffc2190e049c69b0c",
+      "declared_bytes": 1485785,
+      "is_graph": true,
+      "source_cluster": "in104",
+      "family": "WDP_1xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in105.grf",
+      "git_blob_sha1": "09278fcd37a4c91b19b0e2c34f0dc67d6ae585f5",
+      "declared_bytes": 1479578,
+      "is_graph": true,
+      "source_cluster": "in105",
+      "family": "WDP_1xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in106.grf",
+      "git_blob_sha1": "13147757638fad9bfacfa6c64a2928d1acd94317",
+      "declared_bytes": 1445592,
+      "is_graph": true,
+      "source_cluster": "in106",
+      "family": "WDP_1xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in107.grf",
+      "git_blob_sha1": "1c5cc42398fee2706a89d90c5a05482096ca569c",
+      "declared_bytes": 1487222,
+      "is_graph": true,
+      "source_cluster": "in107",
+      "family": "WDP_1xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in108.grf",
+      "git_blob_sha1": "a7df28a559c8fe4f6d54017daf0b11f8f4e45ccb",
+      "declared_bytes": 1535885,
+      "is_graph": true,
+      "source_cluster": "in108",
+      "family": "WDP_1xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in109.grf",
+      "git_blob_sha1": "363cca1febe0f878be878862096688ae6433b7db",
+      "declared_bytes": 1445291,
+      "is_graph": true,
+      "source_cluster": "in109",
+      "family": "WDP_1xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in110.grf",
+      "git_blob_sha1": "7bea933695c61b897ad96bc91860be38148485d0",
+      "declared_bytes": 1447859,
+      "is_graph": true,
+      "source_cluster": "in110",
+      "family": "WDP_1xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in201.grf",
+      "git_blob_sha1": "e4b56499ff2ca7e202e2d7158e2a5cf964a7cf7c",
+      "declared_bytes": 750308,
+      "is_graph": true,
+      "source_cluster": "in201",
+      "family": "WDP_2xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in202.grf",
+      "git_blob_sha1": "dd4027b110998a2e595591045032114a62825d9e",
+      "declared_bytes": 787596,
+      "is_graph": true,
+      "source_cluster": "in202",
+      "family": "WDP_2xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in203.grf",
+      "git_blob_sha1": "f80aa6b6a89f60c250465b3d3764b5b01d4981af",
+      "declared_bytes": 805010,
+      "is_graph": true,
+      "source_cluster": "in203",
+      "family": "WDP_2xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in204.grf",
+      "git_blob_sha1": "7614f7190121f797fb5bbdb37c23f76bc83a5a68",
+      "declared_bytes": 818602,
+      "is_graph": true,
+      "source_cluster": "in204",
+      "family": "WDP_2xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in205.grf",
+      "git_blob_sha1": "11fe9950be660f255565811ad17cc1fa4a1464c8",
+      "declared_bytes": 768346,
+      "is_graph": true,
+      "source_cluster": "in205",
+      "family": "WDP_2xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in206.grf",
+      "git_blob_sha1": "c3a9bb4cd592ee3b745d1a103eb971b210be25e3",
+      "declared_bytes": 766414,
+      "is_graph": true,
+      "source_cluster": "in206",
+      "family": "WDP_2xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in207.grf",
+      "git_blob_sha1": "bbd181ba127be7e775e6e4e91f35e9ad91db4f71",
+      "declared_bytes": 822448,
+      "is_graph": true,
+      "source_cluster": "in207",
+      "family": "WDP_2xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in208.grf",
+      "git_blob_sha1": "8918bff802189656e2d2f28a1af4ca6f9a56ea91",
+      "declared_bytes": 796407,
+      "is_graph": true,
+      "source_cluster": "in208",
+      "family": "WDP_2xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in209.grf",
+      "git_blob_sha1": "6157b4ec3d8f1805deb4d0f9157bf11f46610d51",
+      "declared_bytes": 765535,
+      "is_graph": true,
+      "source_cluster": "in209",
+      "family": "WDP_2xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in210.grf",
+      "git_blob_sha1": "8285eb7e4839ae35a0e00a4972e92449dd24714c",
+      "declared_bytes": 776763,
+      "is_graph": true,
+      "source_cluster": "in210",
+      "family": "WDP_2xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in401.grf",
+      "git_blob_sha1": "cbc86ffad0442eff1d19b73b8f8db426b29e2522",
+      "declared_bytes": 179648,
+      "is_graph": true,
+      "source_cluster": "in401",
+      "family": "WDP_4xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in402.grf",
+      "git_blob_sha1": "d38ba3731c93fbc252c6cf67503714f7120931c0",
+      "declared_bytes": 185239,
+      "is_graph": true,
+      "source_cluster": "in402",
+      "family": "WDP_4xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in403.grf",
+      "git_blob_sha1": "f9bf18ba97735ebebc7f63c9e853412cc5a1f310",
+      "declared_bytes": 194225,
+      "is_graph": true,
+      "source_cluster": "in403",
+      "family": "WDP_4xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in404.grf",
+      "git_blob_sha1": "60f4b8677b97a8d37ead5ba669ff6a94a4be3da2",
+      "declared_bytes": 208726,
+      "is_graph": true,
+      "source_cluster": "in404",
+      "family": "WDP_4xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in405.grf",
+      "git_blob_sha1": "be5e05f5c2be95959a265973f605716182dc7cd5",
+      "declared_bytes": 203036,
+      "is_graph": true,
+      "source_cluster": "in405",
+      "family": "WDP_4xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in406.grf",
+      "git_blob_sha1": "f55d2ec886e2421db9bbc3013939b2f6e6847f66",
+      "declared_bytes": 179033,
+      "is_graph": true,
+      "source_cluster": "in406",
+      "family": "WDP_4xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in407.grf",
+      "git_blob_sha1": "fdab68f8bfe2dc92763562121ba4fff9457a6f16",
+      "declared_bytes": 214274,
+      "is_graph": true,
+      "source_cluster": "in407",
+      "family": "WDP_4xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in408.grf",
+      "git_blob_sha1": "261eb6d2a2d5afb910585feacdb3635d4c26f7b9",
+      "declared_bytes": 192594,
+      "is_graph": true,
+      "source_cluster": "in408",
+      "family": "WDP_4xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in409.grf",
+      "git_blob_sha1": "87a41155b8d93c4ba8ae6539312432a996d1f436",
+      "declared_bytes": 171758,
+      "is_graph": true,
+      "source_cluster": "in409",
+      "family": "WDP_4xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in410.grf",
+      "git_blob_sha1": "e630213d3e7e2944248e41059e01234e1935fca0",
+      "declared_bytes": 206914,
+      "is_graph": true,
+      "source_cluster": "in410",
+      "family": "WDP_4xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in501.grf",
+      "git_blob_sha1": "c4187d408841cf7aa78877011279205d1bec5a0a",
+      "declared_bytes": 982420,
+      "is_graph": true,
+      "source_cluster": "in501",
+      "family": "WDP_5xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in502.grf",
+      "git_blob_sha1": "a2bbc0923161c3adc76ce28119c56b9ac9b9de83",
+      "declared_bytes": 922153,
+      "is_graph": true,
+      "source_cluster": "in502",
+      "family": "WDP_5xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in503.grf",
+      "git_blob_sha1": "5d1c8fd6a7de64bf0a834d09089506d308875d51",
+      "declared_bytes": 894061,
+      "is_graph": true,
+      "source_cluster": "in503",
+      "family": "WDP_5xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in504.grf",
+      "git_blob_sha1": "a58093611d0bb00227d1ec18b15165b8d1cffabb",
+      "declared_bytes": 901738,
+      "is_graph": true,
+      "source_cluster": "in504",
+      "family": "WDP_5xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in505.grf",
+      "git_blob_sha1": "4570b0d4169d802ed01e9fa71a0bd49a9d20b495",
+      "declared_bytes": 877390,
+      "is_graph": true,
+      "source_cluster": "in505",
+      "family": "WDP_5xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in506.grf",
+      "git_blob_sha1": "ae0a53063df80be385b971fbcf321ab433128f3d",
+      "declared_bytes": 869133,
+      "is_graph": true,
+      "source_cluster": "in506",
+      "family": "WDP_5xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in507.grf",
+      "git_blob_sha1": "0e00e5ca64b7c72bf358f659caa6e00ccd1272fd",
+      "declared_bytes": 922629,
+      "is_graph": true,
+      "source_cluster": "in507",
+      "family": "WDP_5xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in508.grf",
+      "git_blob_sha1": "b707f78fdb3eabbd9d96fedc559e0d93c520818c",
+      "declared_bytes": 856082,
+      "is_graph": true,
+      "source_cluster": "in508",
+      "family": "WDP_5xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in509.grf",
+      "git_blob_sha1": "4b7cf79ec91454bf607e782cc21d67177eaa6c9e",
+      "declared_bytes": 928214,
+      "is_graph": true,
+      "source_cluster": "in509",
+      "family": "WDP_5xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in510.grf",
+      "git_blob_sha1": "0fe3b34381c67f07b7f2689a6e53b7423fc64f21",
+      "declared_bytes": 873529,
+      "is_graph": true,
+      "source_cluster": "in510",
+      "family": "WDP_5xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in601.grf",
+      "git_blob_sha1": "615734933827877ddd603009c7673e2e9be7c427",
+      "declared_bytes": 1105559,
+      "is_graph": true,
+      "source_cluster": "in601",
+      "family": "WDP_6xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in602.grf",
+      "git_blob_sha1": "8d49646f9173020565ab3a7c7fbc0dd6baaaff23",
+      "declared_bytes": 1082719,
+      "is_graph": true,
+      "source_cluster": "in602",
+      "family": "WDP_6xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in603.grf",
+      "git_blob_sha1": "d5a286e1d6a67cd25b814336eff31abd5797a9f9",
+      "declared_bytes": 1038248,
+      "is_graph": true,
+      "source_cluster": "in603",
+      "family": "WDP_6xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in604.grf",
+      "git_blob_sha1": "d6cd2ca790fd3bb74abbb7868120c8e184b8e6d6",
+      "declared_bytes": 1142543,
+      "is_graph": true,
+      "source_cluster": "in604",
+      "family": "WDP_6xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in605.grf",
+      "git_blob_sha1": "4c66db70c63dd02d8d90b6e7fe221d2450f91f48",
+      "declared_bytes": 1130405,
+      "is_graph": true,
+      "source_cluster": "in605",
+      "family": "WDP_6xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in606.grf",
+      "git_blob_sha1": "9bae605ec5c631e197b984b887be4f551e2204ed",
+      "declared_bytes": 1161947,
+      "is_graph": true,
+      "source_cluster": "in606",
+      "family": "WDP_6xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in607.grf",
+      "git_blob_sha1": "5c219ff52ddb34c4714d949019d1d1a2630e3934",
+      "declared_bytes": 1195274,
+      "is_graph": true,
+      "source_cluster": "in607",
+      "family": "WDP_6xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in608.grf",
+      "git_blob_sha1": "4bdb5a40f02a77fb497869fb47750cf093765830",
+      "declared_bytes": 1124945,
+      "is_graph": true,
+      "source_cluster": "in608",
+      "family": "WDP_6xx",
+      "split": "test"
+    },
+    {
+      "path": "WDP/wdp-instances/in609.grf",
+      "git_blob_sha1": "73a835c3209db740a0108f680a4d6929c455df90",
+      "declared_bytes": 1137393,
+      "is_graph": true,
+      "source_cluster": "in609",
+      "family": "WDP_6xx",
+      "split": "train"
+    },
+    {
+      "path": "WDP/wdp-instances/in610.grf",
+      "git_blob_sha1": "39045db51a03d071730998604f55ca9569132bdf",
+      "declared_bytes": 1254988,
+      "is_graph": true,
+      "source_cluster": "in610",
+      "family": "WDP_6xx",
+      "split": "train"
+    }
+  ],
+  "all_raw_graphs_retained": 50,
+  "metadata_files": 1,
+  "split_salt": "v06_wdp_source_cluster_split_001",
+  "train_clusters": 25,
+  "test_clusters": 25,
+  "split_scope": "SHA-ordered original .grf source cluster; all derived views/weights/seeds remain in source cluster",
+  "family_disjoint": false,
+  "performance_filtering_permitted": false,
+  "graph_orientation": "source is maximum-weight clique; future MWIS conflict edges are the exact simple undirected complement, preserving weights and vertices",
+  "raw_input_not_mutated": true,
+  "exact_weight_parser": "Fraction(raw string); no float conversion or rounding",
+  "encoding_inventory": "exact rational denominator LCM; conservative signed32 total; common-GCD-reduced compatibility separately reported",
+  "format_zero_negative_download_and_encoding_failures_retained": true,
+  "optimization_calls": 0,
+  "source_sha256": {
+    "scripts/fetch_wdp_v06.py": "48e154a3f7068f2a9c358dbe85a7fd7b139ea4d5b33eba909038a9430fa55c32",
+    "scripts/fetch_uai_mmap_v06.py": "bff4c4fe601c364115514dba334acfbd23ea7f87ba0c5220b4d851c472b9d330"
+  }
+}

@@ -1,0 +1,553 @@
+{
+  "version": "v06_performance_storage_metadata_001",
+  "scope": "Storage-only statistics of a completed immutable TRAIN calibration archive; no quality, candidate selection, or TEST optimizer calls.",
+  "source_archive": "experiments/runs/v06/classic_components_train_v06_001.tar.gz",
+  "source_archive_sha256": "d5f49828494d55ffd0f725e493ad9dee61f335ef8e49feeada091635c66abd2c",
+  "metadata_script_sha256": "b2e999001cc9acf79bb95df1ea5265b34caa0aef7caa9a3f7d6fd331d3d01e4a",
+  "compressed_archive_bytes": 52792894,
+  "uncompressed_member_bytes": 829446268,
+  "tar_members": 145,
+  "bytes_by_category": {
+    "capsule_receipt.json": 1930,
+    "completion.json": 866,
+    "context_execution": 5214,
+    "context_loading": 5183,
+    "context_results": 53852424,
+    "freeze_receipt.json": 3582,
+    "graphs": 721298064,
+    "host_receipt.json": 485,
+    "launch_receipt.json": 339,
+    "progress.json": 503,
+    "protocol.json": 242633,
+    "registered_config.json": 180876,
+    "registration.json": 1328,
+    "results.jsonl": 53852424,
+    "server_execution_receipt.json": 417,
+    "worker.log": 0
+  },
+  "unique_assigned_result_rows": 960,
+  "overall": {
+    "row_bytes": {
+      "count": 960,
+      "min": 1985,
+      "median": 2415.0,
+      "mean": 56096.275,
+      "p95_nearest_rank": 298853,
+      "max": 791695,
+      "sum": 53852424
+    },
+    "patch_trace_count": {
+      "count": 960,
+      "min": 0,
+      "median": 0.0,
+      "mean": 45.97083333333333,
+      "p95_nearest_rank": 271,
+      "max": 512,
+      "sum": 44132
+    },
+    "patch_trace_json_bytes": {
+      "count": 960,
+      "min": 2,
+      "median": 2.0,
+      "mean": 44842.44583333333,
+      "p95_nearest_rank": 253012,
+      "max": 491488,
+      "sum": 43048748
+    },
+    "initializer_trace_count": {
+      "count": 960,
+      "min": 0,
+      "median": 0.0,
+      "mean": 16.896875,
+      "p95_nearest_rank": 7,
+      "max": 3073,
+      "sum": 16221
+    }
+  },
+  "groups": [
+    {
+      "track": "CHILSfull",
+      "nominal_wall_target_seconds": 0.1,
+      "row_bytes": {
+        "count": 96,
+        "min": 1985,
+        "median": 2052.0,
+        "mean": 4798.197916666667,
+        "p95_nearest_rank": 13005,
+        "max": 46510,
+        "sum": 460627
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 2,
+        "median": 2.0,
+        "mean": 2,
+        "p95_nearest_rank": 2,
+        "max": 2,
+        "sum": 192
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      }
+    },
+    {
+      "track": "CHILSfull",
+      "nominal_wall_target_seconds": 1,
+      "row_bytes": {
+        "count": 96,
+        "min": 1987,
+        "median": 2059.0,
+        "mean": 4823.760416666667,
+        "p95_nearest_rank": 13236,
+        "max": 46846,
+        "sum": 463081
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 2,
+        "median": 2.0,
+        "mean": 2,
+        "p95_nearest_rank": 2,
+        "max": 2,
+        "sum": 192
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      }
+    },
+    {
+      "track": "CHILSfull",
+      "nominal_wall_target_seconds": 5,
+      "row_bytes": {
+        "count": 96,
+        "min": 1987,
+        "median": 2068.0,
+        "mean": 4818.885416666667,
+        "p95_nearest_rank": 13200,
+        "max": 46709,
+        "sum": 462613
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 2,
+        "median": 2.0,
+        "mean": 2,
+        "p95_nearest_rank": 2,
+        "max": 2,
+        "sum": 192
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      }
+    },
+    {
+      "track": "CHILShalf",
+      "nominal_wall_target_seconds": 0.1,
+      "row_bytes": {
+        "count": 96,
+        "min": 2020,
+        "median": 2091.0,
+        "mean": 4839.322916666667,
+        "p95_nearest_rank": 13113,
+        "max": 46723,
+        "sum": 464575
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 2,
+        "median": 2.0,
+        "mean": 2,
+        "p95_nearest_rank": 2,
+        "max": 2,
+        "sum": 192
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      }
+    },
+    {
+      "track": "CHILShalf",
+      "nominal_wall_target_seconds": 1,
+      "row_bytes": {
+        "count": 96,
+        "min": 2030,
+        "median": 2099.5,
+        "mean": 4876.229166666667,
+        "p95_nearest_rank": 13317,
+        "max": 47181,
+        "sum": 468118
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 2,
+        "median": 2.0,
+        "mean": 2,
+        "p95_nearest_rank": 2,
+        "max": 2,
+        "sum": 192
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      }
+    },
+    {
+      "track": "CHILShalf",
+      "nominal_wall_target_seconds": 5,
+      "row_bytes": {
+        "count": 96,
+        "min": 2029,
+        "median": 2105.5,
+        "mean": 4863.96875,
+        "p95_nearest_rank": 13249,
+        "max": 47061,
+        "sum": 466941
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 2,
+        "median": 2.0,
+        "mean": 2,
+        "p95_nearest_rank": 2,
+        "max": 2,
+        "sum": 192
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      }
+    },
+    {
+      "track": "Degreecold",
+      "nominal_wall_target_seconds": 0.1,
+      "row_bytes": {
+        "count": 32,
+        "min": 2207,
+        "median": 2412.5,
+        "mean": 20686.9375,
+        "p95_nearest_rank": 109030,
+        "max": 110929,
+        "sum": 661982
+      },
+      "patch_trace_count": {
+        "count": 32,
+        "min": 0,
+        "median": 0.0,
+        "mean": 9.75,
+        "p95_nearest_rank": 107,
+        "max": 110,
+        "sum": 312
+      },
+      "patch_trace_json_bytes": {
+        "count": 32,
+        "min": 2,
+        "median": 2.0,
+        "mean": 7256.3125,
+        "p95_nearest_rank": 79180,
+        "max": 81405,
+        "sum": 232202
+      },
+      "initializer_trace_count": {
+        "count": 32,
+        "min": 0,
+        "median": 1.0,
+        "mean": 116.4375,
+        "p95_nearest_rank": 774,
+        "max": 785,
+        "sum": 3726
+      }
+    },
+    {
+      "track": "Degreecold",
+      "nominal_wall_target_seconds": 1,
+      "row_bytes": {
+        "count": 32,
+        "min": 2408,
+        "median": 2592.0,
+        "mean": 118405.8125,
+        "p95_nearest_rank": 495358,
+        "max": 518736,
+        "sum": 3788986
+      },
+      "patch_trace_count": {
+        "count": 32,
+        "min": 0,
+        "median": 0.0,
+        "mean": 104.0625,
+        "p95_nearest_rank": 512,
+        "max": 512,
+        "sum": 3330
+      },
+      "patch_trace_json_bytes": {
+        "count": 32,
+        "min": 2,
+        "median": 2.0,
+        "mean": 90633.96875,
+        "p95_nearest_rank": 389483,
+        "max": 412556,
+        "sum": 2900287
+      },
+      "initializer_trace_count": {
+        "count": 32,
+        "min": 1,
+        "median": 3.0,
+        "mean": 193.1875,
+        "p95_nearest_rank": 785,
+        "max": 3073,
+        "sum": 6182
+      }
+    },
+    {
+      "track": "Degreecold",
+      "nominal_wall_target_seconds": 5,
+      "row_bytes": {
+        "count": 32,
+        "min": 52401,
+        "median": 217920.0,
+        "mean": 273376.65625,
+        "p95_nearest_rank": 589733,
+        "max": 791695,
+        "sum": 8748053
+      },
+      "patch_trace_count": {
+        "count": 32,
+        "min": 32,
+        "median": 159.0,
+        "mean": 225.125,
+        "p95_nearest_rank": 512,
+        "max": 512,
+        "sum": 7204
+      },
+      "patch_trace_json_bytes": {
+        "count": 32,
+        "min": 44898,
+        "median": 196503.0,
+        "mean": 232151.71875,
+        "p95_nearest_rank": 477972,
+        "max": 491488,
+        "sum": 7428855
+      },
+      "initializer_trace_count": {
+        "count": 32,
+        "min": 5,
+        "median": 9.5,
+        "mean": 197.21875,
+        "p95_nearest_rank": 785,
+        "max": 3073,
+        "sum": 6311
+      }
+    },
+    {
+      "track": "Degreewarm",
+      "nominal_wall_target_seconds": 0.1,
+      "row_bytes": {
+        "count": 96,
+        "min": 2978,
+        "median": 3164.0,
+        "mean": 16772.09375,
+        "p95_nearest_rank": 67919,
+        "max": 87700,
+        "sum": 1610121
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 9.0625,
+        "p95_nearest_rank": 57,
+        "max": 73,
+        "sum": 870
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 2,
+        "median": 2.0,
+        "mean": 7580.010416666667,
+        "p95_nearest_rank": 42680,
+        "max": 54233,
+        "sum": 727681
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      }
+    },
+    {
+      "track": "Degreewarm",
+      "nominal_wall_target_seconds": 1,
+      "row_bytes": {
+        "count": 96,
+        "min": 43012,
+        "median": 109706.5,
+        "mean": 160022.9375,
+        "p95_nearest_rank": 421057,
+        "max": 473730,
+        "sum": 15362202
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 30,
+        "median": 83.0,
+        "mean": 142.97916666666666,
+        "p95_nearest_rank": 512,
+        "max": 512,
+        "sum": 13726
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 36269,
+        "median": 87376.5,
+        "mean": 138902.17708333334,
+        "p95_nearest_rank": 378469,
+        "max": 424185,
+        "sum": 13334609
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0.020833333333333332,
+        "p95_nearest_rank": 0,
+        "max": 2,
+        "sum": 2
+      }
+    },
+    {
+      "track": "Degreewarm",
+      "nominal_wall_target_seconds": 5,
+      "row_bytes": {
+        "count": 96,
+        "min": 43018,
+        "median": 149685.5,
+        "mean": 217657.55208333334,
+        "p95_nearest_rank": 538006,
+        "max": 540330,
+        "sum": 20895125
+      },
+      "patch_trace_count": {
+        "count": 96,
+        "min": 42,
+        "median": 113.5,
+        "mean": 194.6875,
+        "p95_nearest_rank": 512,
+        "max": 512,
+        "sum": 18690
+      },
+      "patch_trace_json_bytes": {
+        "count": 96,
+        "min": 36269,
+        "median": 134068.0,
+        "mean": 191916.27083333334,
+        "p95_nearest_rank": 473326,
+        "max": 475206,
+        "sum": 18423962
+      },
+      "initializer_trace_count": {
+        "count": 96,
+        "min": 0,
+        "median": 0.0,
+        "mean": 0,
+        "p95_nearest_rank": 0,
+        "max": 0,
+        "sum": 0
+      }
+    }
+  ],
+  "extrapolation_is_not_a_guarantee": true,
+  "performance_matrix_rows_not_executed": 52548,
+  "frozen_runner_modified": false,
+  "optimizer_calls": 0
+}

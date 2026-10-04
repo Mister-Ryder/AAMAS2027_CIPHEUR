@@ -1,0 +1,1426 @@
+{
+  "version": "v07_SatNet_read_only_input_feasibility_profile_001",
+  "commit": "3e78e56eca1fcd4001c55e7491e6e3eb542e350a",
+  "source_repository": "https://github.com/edwinytgoh/satnet",
+  "raw_redistributed": false,
+  "private_cache_directory": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\.research\\v07_satnet_input_audit_001",
+  "actual_access": "3.57MB public main JSON + 2 sub-kB fixtures + 69.9kB maintenance and short primary sources; no clone/full suite/optimization",
+  "source_receipts": [
+    {
+      "relative_path": "data/README.md",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/data/README.md",
+      "bytes": 2172,
+      "sha256": "cb2d090c61ced2e8068a45a5913a8bb2f54367d42e01e794c76a79473382e6bc"
+    },
+    {
+      "relative_path": "data/problems.json",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/data/problems.json",
+      "bytes": 3569038,
+      "sha256": "8ea0ef080729cd51867744b095f59f856b2cb6acb7e564b9b8fb9c5721833f98"
+    },
+    {
+      "relative_path": "data/small_longVP_prob.json",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/data/small_longVP_prob.json",
+      "bytes": 666,
+      "sha256": "632ba3e03de407226e699cb3beab08d9464dc5910e22b44f343bfe9aee981a85"
+    },
+    {
+      "relative_path": "data/smallest_array_prob.json",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/data/smallest_array_prob.json",
+      "bytes": 646,
+      "sha256": "84ff846a5aa52b559a04ae37ba5c532a9d225f4d13054c5962ae1fb03b016faa"
+    },
+    {
+      "relative_path": "data/maintenance.csv",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/data/maintenance.csv",
+      "bytes": 69872,
+      "sha256": "c4facfae8ece7c25c794d255a5a0bb358061ed193461410a3d3e569fa06dff6c"
+    },
+    {
+      "relative_path": "satnet/simulator/prob_handler.py",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/satnet/simulator/prob_handler.py",
+      "bytes": 3478,
+      "sha256": "2850a6814b191bd8bdcfb0c9c0a4247c93eec832851120631184f1e9c9e3e2f6"
+    },
+    {
+      "relative_path": "satnet/simulator/antenna.py",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/satnet/simulator/antenna.py",
+      "bytes": 18893,
+      "sha256": "eadd0645e1b0a6e26494b4c9d605fd7ec32937e32d35b1854bebf134ef3b44cc"
+    },
+    {
+      "relative_path": "satnet/simulator/antenna_manager.py",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/satnet/simulator/antenna_manager.py",
+      "bytes": 2641,
+      "sha256": "2750e88dcf6b9dbc8f2cbf02c99ab7e060217c3320ee752a1734c02d4d4fe0ff"
+    },
+    {
+      "relative_path": "satnet/simulator/scheduling_simulator.py",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/satnet/simulator/scheduling_simulator.py",
+      "bytes": 78863,
+      "sha256": "c180a90d69b2c3fb6d5d4d9b652b2cf50895c6618e2a8681157ae9cb26eda781"
+    },
+    {
+      "relative_path": "satnet/simulator/view_periods.py",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/satnet/simulator/view_periods.py",
+      "bytes": 2171,
+      "sha256": "b7c27cd7e92ae90c526e92800494101c296b8cbf6f0ed6fef3f7c1f47ec30e2a"
+    },
+    {
+      "relative_path": "satnet/utils.py",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/satnet/utils.py",
+      "bytes": 7519,
+      "sha256": "af3f4ae7a7d9932ef29bed08138c8556a82caa44fd1569589f048430b0481260"
+    },
+    {
+      "relative_path": "setup.py",
+      "url": "https://raw.githubusercontent.com/edwinytgoh/satnet/3e78e56eca1fcd4001c55e7491e6e3eb542e350a/setup.py",
+      "bytes": 5437,
+      "sha256": "3d4421aa2c9701da4ccfc18b7a741f9e16a8a96b61da20147fc607f4384619f8"
+    }
+  ],
+  "units": {
+    "duration_duration_min": "hours",
+    "setup_teardown": "minutes",
+    "main_request_times_and_view_periods": "epoch seconds",
+    "maintenance_times": "epoch seconds",
+    "fixtures_times": "relative seconds"
+  },
+  "weekly": {
+    "W10_2018": {
+      "requests": 257,
+      "mission_count": 30,
+      "track_id_count": 257,
+      "duplicate_track_id_count": 0,
+      "schema_field_counts": {
+        "subject": 257,
+        "user": 257,
+        "week": 257,
+        "year": 257,
+        "duration": 257,
+        "duration_min": 257,
+        "resources": 257,
+        "track_id": 257,
+        "setup_time": 257,
+        "teardown_time": 257,
+        "time_window_start": 257,
+        "time_window_end": 257,
+        "resource_vp_dict": 257
+      },
+      "schema_field_types": {
+        "subject": {
+          "int": 257
+        },
+        "user": {
+          "str": 257
+        },
+        "week": {
+          "int": 257
+        },
+        "year": {
+          "int": 257
+        },
+        "duration": {
+          "float": 257
+        },
+        "duration_min": {
+          "float": 257
+        },
+        "resources": {
+          "list": 257
+        },
+        "track_id": {
+          "str": 257
+        },
+        "setup_time": {
+          "int": 257
+        },
+        "teardown_time": {
+          "int": 257
+        },
+        "time_window_start": {
+          "int": 257
+        },
+        "time_window_end": {
+          "int": 257
+        },
+        "resource_vp_dict": {
+          "dict": 257
+        }
+      },
+      "week_values": {
+        "10": 257
+      },
+      "year_values": {
+        "2018": 257
+      },
+      "physical_antenna_count": 14,
+      "resource_combination_keys_count": 39,
+      "resources_group_arity_counts": {
+        "1": 1544,
+        "2": 328
+      },
+      "alternative_resource_groups_per_request": {
+        "count": 257,
+        "min": 1,
+        "max": 28,
+        "mean": 7.284046692607004,
+        "median": 6,
+        "distinct": 13
+      },
+      "view_period_records": 2513,
+      "unique_resource_view_intervals": 1438,
+      "view_period_schema_field_counts": {
+        "RISE": 2513,
+        "SET": 2513,
+        "TRX ON": 2513,
+        "TRX OFF": 2513
+      },
+      "view_period_field_types": {
+        "RISE": {
+          "int": 2513
+        },
+        "SET": {
+          "int": 2513
+        },
+        "TRX ON": {
+          "int": 2513
+        },
+        "TRX OFF": {
+          "int": 2513
+        }
+      },
+      "request_duration_hours": {
+        "count": 257,
+        "min": 1.0,
+        "max": 10.0,
+        "mean": 4.636186770428016,
+        "median": 4.0,
+        "distinct": 14
+      },
+      "request_minimum_duration_hours": {
+        "count": 257,
+        "min": 1.0,
+        "max": 8.0,
+        "mean": 4.1241245136186775,
+        "median": 4.0,
+        "distinct": 12
+      },
+      "setup_minutes": {
+        "count": 257,
+        "min": 30,
+        "max": 60,
+        "mean": 54.280155642023345,
+        "median": 60,
+        "distinct": 3
+      },
+      "teardown_minutes": {
+        "count": 257,
+        "min": 15,
+        "max": 40,
+        "mean": 16.264591439688715,
+        "median": 15,
+        "distinct": 2
+      },
+      "setup_value_counts_minutes": {
+        "60": 196,
+        "30": 37,
+        "45": 24
+      },
+      "teardown_value_counts_minutes": {
+        "15": 244,
+        "40": 13
+      },
+      "requested_hours_total": 1191.5,
+      "requested_seconds_total": 4289400.0,
+      "window_start_epoch_seconds": {
+        "count": 257,
+        "min": 1520208000,
+        "max": 1520770854,
+        "mean": 1520456859.470817,
+        "median": 1520469212,
+        "distinct": 99
+      },
+      "window_end_epoch_seconds": {
+        "count": 257,
+        "min": 1520284695,
+        "max": 1520856000,
+        "mean": 1520607589.607004,
+        "median": 1520598141,
+        "distinct": 102
+      },
+      "window_extent_UTC": [
+        "2018-03-05T00:00:00+00:00",
+        "2018-03-12T12:00:00+00:00"
+      ],
+      "view_interval_seconds": {
+        "count": 2513,
+        "min": 3728,
+        "max": 92571,
+        "mean": 30056.24552327895,
+        "median": 28776,
+        "distinct": 1302
+      },
+      "view_extent_epoch_seconds": [
+        1520211191,
+        1520855945
+      ],
+      "input_flags": {
+        "minimum_duration_exceeds_requested": 0,
+        "requested_at_least_8_hours_paper_split_threshold": 77,
+        "requested_greater_than_8_hours": 13,
+        "timewindow_nonpositive": 0,
+        "view_period_nonpositive": 0,
+        "view_period_outside_request_window": 0,
+        "view_shorter_than_min_requested_seconds": 115,
+        "view_longer_than_requested_seconds": 2007,
+        "request_with_multiphysical_resource_alternative": 21,
+        "request_without_resources_field": 0
+      },
+      "physical_antenna_count_definition": "all declared resources/list keys, including empty view lists; not usable antenna count",
+      "nonempty_view_physical_antenna_count": 12,
+      "nonempty_resource_combination_keys_count": 39,
+      "missions_with_at_least_one_nonempty_view": 30,
+      "resource_vp_key_arity_counts": {
+        "1": 1294,
+        "2": 158
+      },
+      "nonempty_view_records_using_unconfigured_antennas": 0,
+      "exact_decimal_unit_conversion_noninteger_counts": {
+        "duration": 0,
+        "duration_min": 0,
+        "setup_time": 0,
+        "teardown_time": 0
+      },
+      "legacy_float_multiply_int32_truncation_differs_from_exact_decimal_seconds_counts": {
+        "duration": 0,
+        "duration_min": 0,
+        "setup_time": 0,
+        "teardown_time": 0
+      }
+    },
+    "W20_2018": {
+      "requests": 294,
+      "mission_count": 33,
+      "track_id_count": 294,
+      "duplicate_track_id_count": 0,
+      "schema_field_counts": {
+        "subject": 294,
+        "user": 294,
+        "week": 294,
+        "year": 294,
+        "duration": 294,
+        "duration_min": 294,
+        "resources": 294,
+        "track_id": 294,
+        "setup_time": 294,
+        "teardown_time": 294,
+        "time_window_start": 294,
+        "time_window_end": 294,
+        "resource_vp_dict": 294
+      },
+      "schema_field_types": {
+        "subject": {
+          "int": 294
+        },
+        "user": {
+          "str": 294
+        },
+        "week": {
+          "int": 294
+        },
+        "year": {
+          "int": 294
+        },
+        "duration": {
+          "float": 294
+        },
+        "duration_min": {
+          "float": 294
+        },
+        "resources": {
+          "list": 294
+        },
+        "track_id": {
+          "str": 294
+        },
+        "setup_time": {
+          "int": 294
+        },
+        "teardown_time": {
+          "int": 294
+        },
+        "time_window_start": {
+          "int": 294
+        },
+        "time_window_end": {
+          "int": 294
+        },
+        "resource_vp_dict": {
+          "dict": 294
+        }
+      },
+      "week_values": {
+        "20": 294
+      },
+      "year_values": {
+        "2018": 294
+      },
+      "physical_antenna_count": 14,
+      "resource_combination_keys_count": 27,
+      "resources_group_arity_counts": {
+        "1": 2092,
+        "2": 236
+      },
+      "alternative_resource_groups_per_request": {
+        "count": 294,
+        "min": 1,
+        "max": 18,
+        "mean": 7.918367346938775,
+        "median": 6.0,
+        "distinct": 11
+      },
+      "view_period_records": 2949,
+      "unique_resource_view_intervals": 1604,
+      "view_period_schema_field_counts": {
+        "RISE": 2949,
+        "SET": 2949,
+        "TRX ON": 2949,
+        "TRX OFF": 2949
+      },
+      "view_period_field_types": {
+        "RISE": {
+          "int": 2949
+        },
+        "SET": {
+          "int": 2949
+        },
+        "TRX ON": {
+          "int": 2949
+        },
+        "TRX OFF": {
+          "int": 2949
+        }
+      },
+      "request_duration_hours": {
+        "count": 294,
+        "min": 1.0,
+        "max": 10.0,
+        "mean": 4.784013605442177,
+        "median": 4.0,
+        "distinct": 17
+      },
+      "request_minimum_duration_hours": {
+        "count": 294,
+        "min": 1.0,
+        "max": 8.0,
+        "mean": 4.18265306122449,
+        "median": 4.0,
+        "distinct": 15
+      },
+      "setup_minutes": {
+        "count": 294,
+        "min": 30,
+        "max": 60,
+        "mean": 55.0,
+        "median": 60.0,
+        "distinct": 3
+      },
+      "teardown_minutes": {
+        "count": 294,
+        "min": 15,
+        "max": 40,
+        "mean": 16.10544217687075,
+        "median": 15.0,
+        "distinct": 2
+      },
+      "setup_value_counts_minutes": {
+        "60": 231,
+        "30": 35,
+        "45": 28
+      },
+      "teardown_value_counts_minutes": {
+        "15": 281,
+        "40": 13
+      },
+      "requested_hours_total": 1406.5,
+      "requested_seconds_total": 5063400.0,
+      "window_start_epoch_seconds": {
+        "count": 294,
+        "min": 1526256000,
+        "max": 1526812143,
+        "mean": 1526494728.1122448,
+        "median": 1526494415.5,
+        "distinct": 135
+      },
+      "window_end_epoch_seconds": {
+        "count": 294,
+        "min": 1526340455,
+        "max": 1526904000,
+        "mean": 1526659240.7176871,
+        "median": 1526666866.0,
+        "distinct": 135
+      },
+      "window_extent_UTC": [
+        "2018-05-14T00:00:00+00:00",
+        "2018-05-21T12:00:00+00:00"
+      ],
+      "view_interval_seconds": {
+        "count": 2949,
+        "min": 4015,
+        "max": 84456,
+        "mean": 32128.645981688707,
+        "median": 30360,
+        "distinct": 1473
+      },
+      "view_extent_epoch_seconds": [
+        1526257248,
+        1526903935
+      ],
+      "input_flags": {
+        "minimum_duration_exceeds_requested": 0,
+        "requested_at_least_8_hours_paper_split_threshold": 105,
+        "requested_greater_than_8_hours": 14,
+        "timewindow_nonpositive": 0,
+        "view_period_nonpositive": 0,
+        "view_period_outside_request_window": 0,
+        "view_shorter_than_min_requested_seconds": 199,
+        "view_longer_than_requested_seconds": 2410,
+        "request_with_multiphysical_resource_alternative": 19,
+        "request_without_resources_field": 0
+      },
+      "physical_antenna_count_definition": "all declared resources/list keys, including empty view lists; not usable antenna count",
+      "nonempty_view_physical_antenna_count": 12,
+      "nonempty_resource_combination_keys_count": 27,
+      "missions_with_at_least_one_nonempty_view": 33,
+      "resource_vp_key_arity_counts": {
+        "1": 1583,
+        "2": 106
+      },
+      "nonempty_view_records_using_unconfigured_antennas": 0,
+      "exact_decimal_unit_conversion_noninteger_counts": {
+        "duration": 0,
+        "duration_min": 0,
+        "setup_time": 0,
+        "teardown_time": 0
+      },
+      "legacy_float_multiply_int32_truncation_differs_from_exact_decimal_seconds_counts": {
+        "duration": 0,
+        "duration_min": 0,
+        "setup_time": 0,
+        "teardown_time": 0
+      }
+    },
+    "W30_2018": {
+      "requests": 293,
+      "mission_count": 32,
+      "track_id_count": 293,
+      "duplicate_track_id_count": 0,
+      "schema_field_counts": {
+        "subject": 293,
+        "user": 293,
+        "week": 293,
+        "year": 293,
+        "duration": 293,
+        "duration_min": 293,
+        "resources": 293,
+        "track_id": 293,
+        "setup_time": 293,
+        "teardown_time": 293,
+        "time_window_start": 293,
+        "time_window_end": 293,
+        "resource_vp_dict": 293
+      },
+      "schema_field_types": {
+        "subject": {
+          "int": 293
+        },
+        "user": {
+          "str": 293
+        },
+        "week": {
+          "int": 293
+        },
+        "year": {
+          "int": 293
+        },
+        "duration": {
+          "float": 293
+        },
+        "duration_min": {
+          "float": 293
+        },
+        "resources": {
+          "list": 293
+        },
+        "track_id": {
+          "str": 293
+        },
+        "setup_time": {
+          "int": 293
+        },
+        "teardown_time": {
+          "int": 293
+        },
+        "time_window_start": {
+          "int": 293
+        },
+        "time_window_end": {
+          "int": 293
+        },
+        "resource_vp_dict": {
+          "dict": 293
+        }
+      },
+      "week_values": {
+        "30": 293
+      },
+      "year_values": {
+        "2018": 293
+      },
+      "physical_antenna_count": 14,
+      "resource_combination_keys_count": 49,
+      "resources_group_arity_counts": {
+        "1": 1955,
+        "2": 333,
+        "3": 1
+      },
+      "alternative_resource_groups_per_request": {
+        "count": 293,
+        "min": 1,
+        "max": 18,
+        "mean": 7.812286689419795,
+        "median": 6,
+        "distinct": 12
+      },
+      "view_period_records": 3108,
+      "unique_resource_view_intervals": 1939,
+      "view_period_schema_field_counts": {
+        "RISE": 3108,
+        "SET": 3108,
+        "TRX ON": 3108,
+        "TRX OFF": 3108
+      },
+      "view_period_field_types": {
+        "RISE": {
+          "int": 3108
+        },
+        "SET": {
+          "int": 3108
+        },
+        "TRX ON": {
+          "int": 3108
+        },
+        "TRX OFF": {
+          "int": 3108
+        }
+      },
+      "request_duration_hours": {
+        "count": 293,
+        "min": 1.0,
+        "max": 10.0,
+        "mean": 4.996587030716723,
+        "median": 4.0,
+        "distinct": 16
+      },
+      "request_minimum_duration_hours": {
+        "count": 293,
+        "min": 1.0,
+        "max": 8.0,
+        "mean": 4.300341296928328,
+        "median": 4.0,
+        "distinct": 14
+      },
+      "setup_minutes": {
+        "count": 293,
+        "min": 30,
+        "max": 120,
+        "mean": 55.2901023890785,
+        "median": 60,
+        "distinct": 4
+      },
+      "teardown_minutes": {
+        "count": 293,
+        "min": 15,
+        "max": 60,
+        "mean": 16.262798634812288,
+        "median": 15,
+        "distinct": 3
+      },
+      "setup_value_counts_minutes": {
+        "60": 232,
+        "30": 36,
+        "45": 24,
+        "120": 1
+      },
+      "teardown_value_counts_minutes": {
+        "15": 279,
+        "60": 1,
+        "40": 13
+      },
+      "requested_hours_total": 1464.0,
+      "requested_seconds_total": 5270400.0,
+      "window_start_epoch_seconds": {
+        "count": 293,
+        "min": 1532304000,
+        "max": 1532862876,
+        "mean": 1532548044.8532424,
+        "median": 1532531232,
+        "distinct": 162
+      },
+      "window_end_epoch_seconds": {
+        "count": 293,
+        "min": 1532396240,
+        "max": 1532952000,
+        "mean": 1532711046.5290103,
+        "median": 1532722594,
+        "distinct": 156
+      },
+      "window_extent_UTC": [
+        "2018-07-23T00:00:00+00:00",
+        "2018-07-30T12:00:00+00:00"
+      ],
+      "view_interval_seconds": {
+        "count": 3108,
+        "min": 3650,
+        "max": 78135,
+        "mean": 29790.75,
+        "median": 28620.5,
+        "distinct": 1685
+      },
+      "view_extent_epoch_seconds": [
+        1532304020,
+        1532949680
+      ],
+      "input_flags": {
+        "minimum_duration_exceeds_requested": 0,
+        "requested_at_least_8_hours_paper_split_threshold": 122,
+        "requested_greater_than_8_hours": 14,
+        "timewindow_nonpositive": 0,
+        "view_period_nonpositive": 0,
+        "view_period_outside_request_window": 0,
+        "view_shorter_than_min_requested_seconds": 402,
+        "view_longer_than_requested_seconds": 2410,
+        "request_with_multiphysical_resource_alternative": 25,
+        "request_without_resources_field": 0
+      },
+      "physical_antenna_count_definition": "all declared resources/list keys, including empty view lists; not usable antenna count",
+      "nonempty_view_physical_antenna_count": 12,
+      "nonempty_resource_combination_keys_count": 49,
+      "missions_with_at_least_one_nonempty_view": 32,
+      "resource_vp_key_arity_counts": {
+        "1": 1577,
+        "2": 161,
+        "3": 1
+      },
+      "nonempty_view_records_using_unconfigured_antennas": 0,
+      "exact_decimal_unit_conversion_noninteger_counts": {
+        "duration": 0,
+        "duration_min": 0,
+        "setup_time": 0,
+        "teardown_time": 0
+      },
+      "legacy_float_multiply_int32_truncation_differs_from_exact_decimal_seconds_counts": {
+        "duration": 0,
+        "duration_min": 0,
+        "setup_time": 0,
+        "teardown_time": 0
+      }
+    },
+    "W40_2018": {
+      "requests": 333,
+      "mission_count": 34,
+      "track_id_count": 333,
+      "duplicate_track_id_count": 0,
+      "schema_field_counts": {
+        "subject": 333,
+        "user": 333,
+        "week": 333,
+        "year": 333,
+        "duration": 333,
+        "duration_min": 333,
+        "resources": 333,
+        "track_id": 333,
+        "setup_time": 333,
+        "teardown_time": 333,
+        "time_window_start": 333,
+        "time_window_end": 333,
+        "resource_vp_dict": 333
+      },
+      "schema_field_types": {
+        "subject": {
+          "int": 333
+        },
+        "user": {
+          "str": 333
+        },
+        "week": {
+          "int": 333
+        },
+        "year": {
+          "int": 333
+        },
+        "duration": {
+          "float": 333
+        },
+        "duration_min": {
+          "float": 333
+        },
+        "resources": {
+          "list": 333
+        },
+        "track_id": {
+          "str": 333
+        },
+        "setup_time": {
+          "int": 333
+        },
+        "teardown_time": {
+          "int": 333
+        },
+        "time_window_start": {
+          "int": 333
+        },
+        "time_window_end": {
+          "int": 333
+        },
+        "resource_vp_dict": {
+          "dict": 333
+        }
+      },
+      "week_values": {
+        "40": 333
+      },
+      "year_values": {
+        "2018": 333
+      },
+      "physical_antenna_count": 14,
+      "resource_combination_keys_count": 39,
+      "resources_group_arity_counts": {
+        "1": 2243,
+        "2": 364
+      },
+      "alternative_resource_groups_per_request": {
+        "count": 333,
+        "min": 1,
+        "max": 18,
+        "mean": 7.828828828828829,
+        "median": 6,
+        "distinct": 13
+      },
+      "view_period_records": 3370,
+      "unique_resource_view_intervals": 2092,
+      "view_period_schema_field_counts": {
+        "RISE": 3370,
+        "SET": 3370,
+        "TRX ON": 3370,
+        "TRX OFF": 3370
+      },
+      "view_period_field_types": {
+        "RISE": {
+          "int": 3370
+        },
+        "SET": {
+          "int": 3370
+        },
+        "TRX ON": {
+          "int": 3370
+        },
+        "TRX OFF": {
+          "int": 3370
+        }
+      },
+      "request_duration_hours": {
+        "count": 333,
+        "min": 1.0,
+        "max": 10.0,
+        "mean": 5.215315315315316,
+        "median": 4.0,
+        "distinct": 17
+      },
+      "request_minimum_duration_hours": {
+        "count": 333,
+        "min": 1.0,
+        "max": 8.0,
+        "mean": 4.445945945945946,
+        "median": 4.0,
+        "distinct": 14
+      },
+      "setup_minutes": {
+        "count": 333,
+        "min": 30,
+        "max": 90,
+        "mean": 55.4954954954955,
+        "median": 60,
+        "distinct": 4
+      },
+      "teardown_minutes": {
+        "count": 333,
+        "min": 15,
+        "max": 40,
+        "mean": 15.9009009009009,
+        "median": 15,
+        "distinct": 2
+      },
+      "setup_value_counts_minutes": {
+        "60": 269,
+        "30": 39,
+        "45": 24,
+        "90": 1
+      },
+      "teardown_value_counts_minutes": {
+        "15": 321,
+        "40": 12
+      },
+      "requested_hours_total": 1736.7,
+      "requested_seconds_total": 6252120.0,
+      "window_start_epoch_seconds": {
+        "count": 333,
+        "min": 1538352000,
+        "max": 1538923723,
+        "mean": 1538605723.831832,
+        "median": 1538618616,
+        "distinct": 178
+      },
+      "window_end_epoch_seconds": {
+        "count": 333,
+        "min": 1538433000,
+        "max": 1539000000,
+        "mean": 1538754093.4534535,
+        "median": 1538737278,
+        "distinct": 177
+      },
+      "window_extent_UTC": [
+        "2018-10-01T00:00:00+00:00",
+        "2018-10-08T12:00:00+00:00"
+      ],
+      "view_interval_seconds": {
+        "count": 3370,
+        "min": 4043,
+        "max": 94184,
+        "mean": 28730.73115727003,
+        "median": 27973.0,
+        "distinct": 1875
+      },
+      "view_extent_epoch_seconds": [
+        1538352411,
+        1538999770
+      ],
+      "input_flags": {
+        "minimum_duration_exceeds_requested": 0,
+        "requested_at_least_8_hours_paper_split_threshold": 154,
+        "requested_greater_than_8_hours": 14,
+        "timewindow_nonpositive": 0,
+        "view_period_nonpositive": 0,
+        "view_period_outside_request_window": 0,
+        "view_shorter_than_min_requested_seconds": 268,
+        "view_longer_than_requested_seconds": 2579,
+        "request_with_multiphysical_resource_alternative": 25,
+        "request_without_resources_field": 0
+      },
+      "physical_antenna_count_definition": "all declared resources/list keys, including empty view lists; not usable antenna count",
+      "nonempty_view_physical_antenna_count": 12,
+      "nonempty_resource_combination_keys_count": 39,
+      "missions_with_at_least_one_nonempty_view": 34,
+      "resource_vp_key_arity_counts": {
+        "1": 1889,
+        "2": 176
+      },
+      "nonempty_view_records_using_unconfigured_antennas": 0,
+      "exact_decimal_unit_conversion_noninteger_counts": {
+        "duration": 0,
+        "duration_min": 0,
+        "setup_time": 0,
+        "teardown_time": 0
+      },
+      "legacy_float_multiply_int32_truncation_differs_from_exact_decimal_seconds_counts": {
+        "duration": 0,
+        "duration_min": 0,
+        "setup_time": 0,
+        "teardown_time": 0
+      }
+    },
+    "W50_2018": {
+      "requests": 275,
+      "mission_count": 29,
+      "track_id_count": 275,
+      "duplicate_track_id_count": 0,
+      "schema_field_counts": {
+        "subject": 275,
+        "user": 275,
+        "week": 275,
+        "year": 275,
+        "duration": 275,
+        "duration_min": 275,
+        "resources": 275,
+        "track_id": 275,
+        "setup_time": 275,
+        "teardown_time": 275,
+        "time_window_start": 275,
+        "time_window_end": 275,
+        "resource_vp_dict": 275
+      },
+      "schema_field_types": {
+        "subject": {
+          "int": 275
+        },
+        "user": {
+          "str": 275
+        },
+        "week": {
+          "int": 275
+        },
+        "year": {
+          "int": 275
+        },
+        "duration": {
+          "float": 275
+        },
+        "duration_min": {
+          "float": 275
+        },
+        "resources": {
+          "list": 275
+        },
+        "track_id": {
+          "str": 275
+        },
+        "setup_time": {
+          "int": 275
+        },
+        "teardown_time": {
+          "int": 275
+        },
+        "time_window_start": {
+          "int": 275
+        },
+        "time_window_end": {
+          "int": 275
+        },
+        "resource_vp_dict": {
+          "dict": 275
+        }
+      },
+      "week_values": {
+        "50": 275
+      },
+      "year_values": {
+        "2018": 275
+      },
+      "physical_antenna_count": 14,
+      "resource_combination_keys_count": 42,
+      "resources_group_arity_counts": {
+        "1": 1691,
+        "2": 320
+      },
+      "alternative_resource_groups_per_request": {
+        "count": 275,
+        "min": 1,
+        "max": 18,
+        "mean": 7.3127272727272725,
+        "median": 6,
+        "distinct": 12
+      },
+      "view_period_records": 2759,
+      "unique_resource_view_intervals": 1499,
+      "view_period_schema_field_counts": {
+        "RISE": 2759,
+        "SET": 2759,
+        "TRX ON": 2759,
+        "TRX OFF": 2759
+      },
+      "view_period_field_types": {
+        "RISE": {
+          "int": 2759
+        },
+        "SET": {
+          "int": 2759
+        },
+        "TRX ON": {
+          "int": 2759
+        },
+        "TRX OFF": {
+          "int": 2759
+        }
+      },
+      "request_duration_hours": {
+        "count": 275,
+        "min": 1.0,
+        "max": 10.0,
+        "mean": 4.698909090909091,
+        "median": 4.0,
+        "distinct": 17
+      },
+      "request_minimum_duration_hours": {
+        "count": 275,
+        "min": 1.0,
+        "max": 8.0,
+        "mean": 4.098545454545455,
+        "median": 4.0,
+        "distinct": 15
+      },
+      "setup_minutes": {
+        "count": 275,
+        "min": 30,
+        "max": 90,
+        "mean": 54.163636363636364,
+        "median": 60,
+        "distinct": 4
+      },
+      "teardown_minutes": {
+        "count": 275,
+        "min": 15,
+        "max": 40,
+        "mean": 16.09090909090909,
+        "median": 15,
+        "distinct": 2
+      },
+      "setup_value_counts_minutes": {
+        "60": 202,
+        "30": 40,
+        "45": 31,
+        "90": 2
+      },
+      "teardown_value_counts_minutes": {
+        "15": 263,
+        "40": 12
+      },
+      "requested_hours_total": 1292.2,
+      "requested_seconds_total": 4651920.0,
+      "window_start_epoch_seconds": {
+        "count": 275,
+        "min": 1544400000,
+        "max": 1544959628,
+        "mean": 1544642077.6254547,
+        "median": 1544639908,
+        "distinct": 105
+      },
+      "window_end_epoch_seconds": {
+        "count": 275,
+        "min": 1544485785,
+        "max": 1545048000,
+        "mean": 1544803778.96,
+        "median": 1544785645,
+        "distinct": 107
+      },
+      "window_extent_UTC": [
+        "2018-12-10T00:00:00+00:00",
+        "2018-12-17T12:00:00+00:00"
+      ],
+      "view_interval_seconds": {
+        "count": 2759,
+        "min": 3847,
+        "max": 93124,
+        "mean": 29835.410656034794,
+        "median": 30798,
+        "distinct": 1310
+      },
+      "view_extent_epoch_seconds": [
+        1544400884,
+        1545047049
+      ],
+      "input_flags": {
+        "minimum_duration_exceeds_requested": 0,
+        "requested_at_least_8_hours_paper_split_threshold": 98,
+        "requested_greater_than_8_hours": 15,
+        "timewindow_nonpositive": 0,
+        "view_period_nonpositive": 0,
+        "view_period_outside_request_window": 0,
+        "view_shorter_than_min_requested_seconds": 164,
+        "view_longer_than_requested_seconds": 2395,
+        "request_with_multiphysical_resource_alternative": 23,
+        "request_without_resources_field": 0
+      },
+      "physical_antenna_count_definition": "all declared resources/list keys, including empty view lists; not usable antenna count",
+      "nonempty_view_physical_antenna_count": 12,
+      "nonempty_resource_combination_keys_count": 42,
+      "missions_with_at_least_one_nonempty_view": 29,
+      "resource_vp_key_arity_counts": {
+        "1": 1432,
+        "2": 142
+      },
+      "nonempty_view_records_using_unconfigured_antennas": 0,
+      "exact_decimal_unit_conversion_noninteger_counts": {
+        "duration": 0,
+        "duration_min": 3,
+        "setup_time": 0,
+        "teardown_time": 0
+      },
+      "legacy_float_multiply_int32_truncation_differs_from_exact_decimal_seconds_counts": {
+        "duration": 0,
+        "duration_min": 3,
+        "setup_time": 0,
+        "teardown_time": 0
+      }
+    }
+  },
+  "pairwise_week_relations": [
+    {
+      "earlier": "W10_2018",
+      "later": "W20_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 28,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 5400000
+    },
+    {
+      "earlier": "W10_2018",
+      "later": "W30_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 28,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 11448000
+    },
+    {
+      "earlier": "W10_2018",
+      "later": "W40_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 28,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 17496000
+    },
+    {
+      "earlier": "W10_2018",
+      "later": "W50_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 26,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 23544000
+    },
+    {
+      "earlier": "W20_2018",
+      "later": "W30_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 32,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 5400000
+    },
+    {
+      "earlier": "W20_2018",
+      "later": "W40_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 32,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 11448000
+    },
+    {
+      "earlier": "W20_2018",
+      "later": "W50_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 28,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 17496000
+    },
+    {
+      "earlier": "W30_2018",
+      "later": "W40_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 32,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 5400000
+    },
+    {
+      "earlier": "W30_2018",
+      "later": "W50_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 28,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 11448000
+    },
+    {
+      "earlier": "W40_2018",
+      "later": "W50_2018",
+      "exact_request_track_id_intersection": 0,
+      "recurring_mission_count": 29,
+      "physical_antenna_intersection_count": 14,
+      "time_extents_disjoint": true,
+      "gap_seconds_between_request_extents": 5400000
+    }
+  ],
+  "maintenance": {
+    "schema": [
+      "week",
+      "year",
+      "starttime",
+      "endtime",
+      "antenna"
+    ],
+    "records": 1798,
+    "physical_antenna_count": 12,
+    "year_counts": {
+      "2018": 1798
+    },
+    "week_counts": {
+      "1.0": 22,
+      "2.0": 33,
+      "3.0": 33,
+      "4.0": 30,
+      "5.0": 29,
+      "6.0": 42,
+      "7.0": 31,
+      "8.0": 38,
+      "9.0": 28,
+      "10.0": 37,
+      "11.0": 45,
+      "12.0": 31,
+      "13.0": 33,
+      "14.0": 30,
+      "15.0": 34,
+      "16.0": 29,
+      "17.0": 36,
+      "18.0": 41,
+      "19.0": 32,
+      "20.0": 31,
+      "21.0": 38,
+      "22.0": 27,
+      "23.0": 32,
+      "24.0": 37,
+      "25.0": 26,
+      "26.0": 28,
+      "27.0": 27,
+      "28.0": 27,
+      "29.0": 31,
+      "30.0": 35,
+      "31.0": 34,
+      "32.0": 41,
+      "33.0": 32,
+      "34.0": 43,
+      "35.0": 30,
+      "36.0": 38,
+      "37.0": 34,
+      "38.0": 38,
+      "39.0": 38,
+      "40.0": 38,
+      "41.0": 41,
+      "42.0": 40,
+      "43.0": 37,
+      "44.0": 30,
+      "45.0": 35,
+      "46.0": 33,
+      "47.0": 30,
+      "48.0": 48,
+      "49.0": 50,
+      "50.0": 41,
+      "51.0": 46,
+      "52.0": 28
+    },
+    "duration_seconds": {
+      "count": 1798,
+      "min": 900,
+      "max": 873600,
+      "mean": 25326.607341490544,
+      "median": 21600.0,
+      "distinct": 196
+    },
+    "start_epoch_seconds": {
+      "count": 1798,
+      "min": 1514765400,
+      "max": 1546174200,
+      "mean": 1531026203.5261402,
+      "median": 1531458900.0,
+      "distinct": 1538
+    },
+    "end_epoch_seconds": {
+      "count": 1798,
+      "min": 1514801700,
+      "max": 1546192800,
+      "mean": 1531051530.1334817,
+      "median": 1531477650.0,
+      "distinct": 1526
+    },
+    "selected_benchmark_week_rows": {
+      "10": 37,
+      "20": 31,
+      "30": 35,
+      "40": 38,
+      "50": 41
+    }
+  },
+  "fixtures": {
+    "small_longVP_prob.json": {
+      "bytes": 666,
+      "fields": [
+        "subject",
+        "user",
+        "week",
+        "year",
+        "duration",
+        "duration_min",
+        "track_id",
+        "setup_time",
+        "teardown_time",
+        "time_window_start",
+        "time_window_end",
+        "resource_vp_dict"
+      ],
+      "duration_hours": 1.0,
+      "minimum_duration_hours": 1.0,
+      "setup_minutes": 60,
+      "teardown_minutes": 15,
+      "epoch_versus_relative_seconds": "small relative-time fixture; not main historical corpus",
+      "view_period_keys": [
+        "DURATION_HRS",
+        "TRX OFF",
+        "TRX ON"
+      ],
+      "resource_combo_arity_counts": {
+        "1": 3
+      },
+      "not_an_independent_large_benchmark": true
+    },
+    "smallest_array_prob.json": {
+      "bytes": 646,
+      "fields": [
+        "subject",
+        "user",
+        "week",
+        "year",
+        "duration",
+        "duration_min",
+        "track_id",
+        "setup_time",
+        "teardown_time",
+        "time_window_start",
+        "time_window_end",
+        "resource_vp_dict"
+      ],
+      "duration_hours": 10.0,
+      "minimum_duration_hours": 8.0,
+      "setup_minutes": 30,
+      "teardown_minutes": 15,
+      "epoch_versus_relative_seconds": "small relative-time fixture; not main historical corpus",
+      "view_period_keys": [
+        "TRX OFF",
+        "TRX ON"
+      ],
+      "resource_combo_arity_counts": {
+        "2": 3,
+        "1": 1
+      },
+      "not_an_independent_large_benchmark": true
+    }
+  },
+  "optimizer_calls": 0,
+  "oracle_calls": 0,
+  "TEST_results_accessed": false,
+  "private_resource_and_mission_identifiers_exported": false,
+  "fixed_track_mwis_lossless_status": "not ready; native flexible start/duration, alternatives and split totals require explicit restricted task or richer representation",
+  "week_split_status": "chronological disjoint times and zero exact track-id overlap; recurring missions/antennas, finite five source weeks not independent random seeds",
+  "source_semantics_trace": {
+    "prob_handler.py": "duration/min*3600;setup/teardown*60;epoch offsets to ISO Monday;time_cols.astype(np.int32);resources field ignored",
+    "utils.py": "UTC ISO week Monday start, plus one week and 12 hours pad",
+    "view_periods.py": "TRX ON/OFF to np.int32 relative seconds, clipped to padded week bounds",
+    "antenna_manager.py": "allocate every underscore-separated physical antenna in arrayed resource",
+    "scheduling_simulator.py": "12 configured antennas;per-request setup/teardown;allow_splitting True default;request_duration>=28800 split eligibility;dynamic remaining durations;remove_mission_overlaps;left/center/right/random shortening;permission and tolerance parameters must be pinned before reuse"
+  },
+  "license_status": "No LICENSE in inspected root/tree; setup.py classifiers do not establish raw-data redistribution permission; cache-only read, no raw published copy"
+}

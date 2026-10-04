@@ -1,0 +1,19 @@
+{
+  "version": "v06_R2_packet_audit_identity_preparation_compatibility_001",
+  "issued_by": "root",
+  "issued_utc": "2026-10-04T01:42:05.312446+00:00",
+  "before_any_R2_TEST_programme_evaluation": true,
+  "scientific_runtime_and_selection_unchanged": true,
+  "metadata_comparison_changes": 1,
+  "original_preparer_sha256": "1e8bd6a2577eabe8e33a73edc1303358f09cdbfc1c5c53604eaf91db3380ef1a",
+  "compatibility_preparer_sha256": "26b709807cb22a22f8ef5f1b7ca51a69da182e9fb81c8027f6e3ed3f3dd5a1c6",
+  "mechanical_review_sha256": "8705416ca8e98990844151933c0ab0128fc6290b6401d88ffa3fd736f280848c",
+  "mechanical_review_checks": 18,
+  "main_root_release_sha256": "8e69f14051ce731332b11aaefa2f60c2ace38780e4f20dfb9429974555ca83d1",
+  "original_packet_audit_sha256": "7cabb43f86f1346dfd7b0156c096fc05bfd70c6f24850ee663394137f803837c",
+  "scalar_packet_receipt_sha256": "b0ecae2f92522b42ff6b884cd8b1a0896984c3012904c041c0b5c3575ad14951",
+  "TEST_certificates_already_generated_and_independently_audited": true,
+  "TEST_certificate_audit_sha256": "2de6ddacfb1f0394b84051ac9e1838055d0a356f8dd658c93f845e123f1c2378",
+  "separate_full_performance_TEST_already_started": true,
+  "scope": "Original pre-generation packet-report identity is compared with its original immutable bytes; scalar copy retains its separate root binding. All other preparation AST, gates, certificates, selections, programs and runtime sources unchanged."
+}

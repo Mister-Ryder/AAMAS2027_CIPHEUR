@@ -1,0 +1,92 @@
+% Independent V06 replacement fragment; root owns manuscript integration.
+\section{Introduction}
+\label{sec:introduction}
+
+A satellite--ground contact occupies shared resources and excludes competing
+opportunities. The reward forgone by accepting it depends on which alternatives
+can coexist. Changing a switching threshold can therefore change a useful
+ranking while preserving every contact's reward and time window. Operational
+scheduling couples collection, storage and communication resources~\cite{augenstein2016optimal,levinson2025optimal}.
+We study the pairwise-conflict setting, formulated as maximum-weight independent
+set (MWIS), and ask how a reusable heuristic can adapt to different static
+resource configurations.
+
+LLM-based algorithm synthesis already generates executable heuristics through
+evaluation and selection. FunSearch searches programs, EoH evolves descriptions
+and code, and ReEvo adds reflective feedback~\cite{romeraparedes2024funsearch,liu2024eoh,ye2024reevo}.
+DRAGON instead invokes decomposition and reconstruction agents while solving
+an instance, carrying local boundary constraints~\cite{chen2026dragon}.
+These approaches can introduce structural computations; our question concerns
+the evidence directing that choice. Aggregate reward does not identify whether
+a failed decision requires a different formula or information absent from its
+inputs. Repeated rule revision cannot satisfy incompatible strict preferences
+over identical observations.
+
+Figure~\ref{fig:motivation} makes this limitation concrete. Competing actions
+$a,b$ have equal rewards and identical nine-input base vectors within each
+configuration. Their forced-completion increments are $20,26$ before a
+ground-gap intervention and $20,14$ afterward. Both actions remain individually
+feasible, but the preferred action changes from $b$ to $a$. Every deterministic
+pointwise scalar using the base vectors ties them on each side. Neighborhood
+compatibility supplies a distinction that their marginal summaries omit.
+The increments exclude the same fixed boundary reward; they are conditional
+completion values, not unrestricted rollout returns or evidence of successful
+LLM synthesis.
+
+We propose certified representation--rule refinement. Controlled offline
+interventions hold contacts, rewards and explicit fixed/excluded commitments
+constant while changing an admissible resource parameter. Sound bounds on
+full-residual conditional completion differences produce strict reversal or
+preservation requirements; unresolved comparisons abstain. Identical residual
+components cancel within each configuration, avoiding unnecessary optimization
+without ignoring external opportunity costs. The resulting inequalities specify
+which rankings should change and which should remain stable.
+
+The diagnosis identifies occurrences with exactly equal represented features
+and projects every strict requirement onto the complete feature quotient.
+An unrestricted deterministic pointwise scalar satisfies the finite requirements
+if and only if this directed quotient is acyclic. A cycle retains its concrete
+ranking arcs and equality joins, exposing occurrences that must become
+distinguishable. Following representation and abstraction refinement
+precedents~\cite{clarke2000cegar,frances2021policies}, these joins guide offline
+LLM composition of typed structural features together with a ranking rule.
+Every proposed interface rebuilds the full quotient: splitting one witness
+need not remove another cycle. Acyclicity establishes finite representability,
+not bounded-grammar fit or unseen-instance correctness. An optional exact
+finite-catalogue repair minimizes additive feature cost under its declared
+scope; practical synthesis separately measures shared feature-computation work.
+
+Selection distinguishes the demanded interface, actual scalar fit and complete
+schedule quality. Unused feature declarations cannot repair the demanded
+quotient. TRAIN-only selection ranks eligible feature--rule pairs by strict
+fit, scheduling reward and charged work before freezing them. All authoring
+arms share a Degree initializer and bounded multi-vertex repair using classical
+clique bounds and branch-and-bound~\cite{lamm2019weighted,grossmann2025chils}.
+The program orders local feasible greedy additions and pivot vertices; it
+does not change feasibility or pruning. This mature solver component is
+shared infrastructure. Deployment retains a feasible incumbent without online
+LLM or full-residual certification calls, while still performing bounded
+classical optimization.
+
+Our contributions are:
+\begin{enumerate}
+\item \textbf{Information diagnosis:} an exact finite representability
+characterization with concrete cycle witnesses, separating insufficient
+inputs from a poorly fitted rule.
+\item \textbf{Targeted, cost-aware composition:} certified full-residual
+requirements and explicit equality joins direct joint typed feature--rule
+repair, with complete quotient checking and a scoped additive-cost theorem.
+\item \textbf{Frozen-program evaluation:} joint specification, reward and
+work assessment isolates authoring information under a common repair kernel
+and tests adaptation after TRAIN-only selection.
+\end{enumerate}
+
+Independent TRAIN evidence contains strict equal-vector conflicts in
+source-derived public graphs and controlled contact states. Our empirical
+study compares witness-guided, relations-only and objective-only cold
+authoring and a separately registered refinement of a common rejected seed.
+Frozen-program studies assess withheld constraints and larger weighted
+problems under common classical initialization. \textit{[ROOT: after verified TEST, insert the primary
+witness-minus-relations contrast in repair yield and scalar fit; paired
+held-out reversal/preservation fit; shared-kernel reward/work contrasts with
+source-cluster uncertainty; and the complete named published-solver comparison.]}

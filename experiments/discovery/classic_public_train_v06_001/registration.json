@@ -1,0 +1,37 @@
+{
+  "before_any_calibration_outcomes": true,
+  "registered_utc": "2026-10-03T16:36:43Z",
+  "config_sha256": "e60f38761da24cac6be8858e08227ab3640be4cab05a1334dea4c2a74978895d",
+  "input_bindings": {
+    "WDP": {
+      "inventory": "experiments/analysis/v06/wdp_inventory_v06_001.json",
+      "inventory_sha256": "d7899055c070ea5fe9a066acb7d70b540fa6aadef162dfdbf0b080ae07d6521b",
+      "archive": "experiments/runs/v06/wdp_inputs_v06_001.tar.gz",
+      "archive_sha256": "b47996fd674af7d4a1c2543c628b0d51f204d6c66f8bbd74687d3148a9f67c06",
+      "member_root": "wdp_inputs_v06_001",
+      "weight_scale": 1,
+      "orientation": "exact complement of original maximum-weight-clique graph"
+    },
+    "UAI": {
+      "inventory": "experiments/analysis/v06/uai_mmap_inventory_v06_001.json",
+      "inventory_sha256": "d1ba42377fb00e25e8ad5e91815406172f150f6481b7c9203c60b30eb113bd7f",
+      "archive": "experiments/runs/v06/uai_mmap_inputs_v06_001.tar.gz",
+      "archive_sha256": "4c9d8decb20d771f581dbbbee825408a42baa36eab353fb80f3991af47bb0940",
+      "member_root": "uai_mmap_v06_001",
+      "weight_scale": 100000,
+      "orientation": "original native MWIS conflict edges"
+    }
+  },
+  "source_sha256": {
+    "cipheur/__init__.py": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4",
+    "cipheur/model.py": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8",
+    "cipheur/programs.py": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59",
+    "cipheur/graph_features.py": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+    "cipheur/compiled.py": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788",
+    "cipheur/repair_v06.py": "c4cbdb9878c041321f4cfcc0637a7a3113add38732ca04d05c8687d9a8e7e8f3",
+    "cipheur/advanced_baselines.py": "d0d7533a35f2afd6ce3046fde2e102f4e8074aae25bf29bbdb7af587d155e08f",
+    "cipheur/advanced_baselines_v06.py": "713364f084ef9c3538be275b2437e681e6a9d0457dbc028d621ba0bc71ee4477",
+    "scripts/fetch_uai_mmap_v06.py": "bff4c4fe601c364115514dba334acfbd23ea7f87ba0c5220b4d851c472b9d330",
+    "scripts/run_classic_public_train_v06.py": "e2048a61c073fad2e692d179511c30b92fc30f4bc196cf43f3c681d329376230"
+  }
+}

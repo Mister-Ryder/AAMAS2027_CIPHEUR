@@ -1,0 +1,427 @@
+{
+  "version": "matched_cold_bank_v05",
+  "block": 2,
+  "arm": "objective",
+  "candidates": [
+    {
+      "name": "mass_exposure",
+      "features": [],
+      "rule": "weight * weight / max(1e-9, weight + conflict_weight)",
+      "rationale": "Balance immediate weight against total conflicting weight using an inexpensive, weight-homogeneous score."
+    },
+    {
+      "name": "heaviest_exposure",
+      "features": [],
+      "rule": "weight * weight / max(1e-9, weight + degree * max_conflict_weight)",
+      "rationale": "Test a pessimistic exposure estimate that charges every conflict at the strongest opponent's weight."
+    },
+    {
+      "name": "neighbor_pack_margin",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_pack",
+      "rationale": "Use a feasible neighborhood packing as a hypothesis for potentially displaced objective weight."
+    },
+    {
+      "name": "neighbor_cover_margin",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - neighbor_cover",
+      "rationale": "Subtract an upper estimate of simultaneously selectable neighborhood weight, accounting for conflicts among opponents."
+    },
+    {
+      "name": "neighbor_cover_share",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight * weight / max(1e-9, weight + neighbor_cover)",
+      "rationale": "Combine absolute reward with its share of a clique-adjusted local competition estimate."
+    },
+    {
+      "name": "certified_cover",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(2 + weight / max(1e-9, weight + conflict_weight)) if weight >= neighbor_cover else weight / max(1e-9, neighbor_cover)",
+      "rationale": "Prioritize candidates whose weight covers the neighborhood upper bound; otherwise rank by local objective coverage."
+    },
+    {
+      "name": "edge_min_margin",
+      "features": [
+        {
+          "name": "neighbor_edge_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - neighbor_edge_min)",
+      "rationale": "Estimate competing feasible weight by subtracting edge deletion costs, with the strongest opponent as a floor."
+    },
+    {
+      "name": "edge_product_margin",
+      "features": [
+        {
+          "name": "neighbor_edge_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight - max(max_conflict_weight, conflict_weight - 2 * neighbor_edge_product / max(1e-9, conflict_weight))",
+      "rationale": "Test a smooth discount for mutually conflicting opponent weight while retaining the largest opponent as a floor."
+    },
+    {
+      "name": "forced_pack",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_pack",
+      "rationale": "Rank by the feasible objective value obtained by forcing the candidate and greedily packing its compatible residual."
+    },
+    {
+      "name": "forced_cover",
+      "features": [
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_cover",
+      "rationale": "Test optimistic ranking by an upper bound on objective value conditional on selecting the candidate."
+    },
+    {
+      "name": "forced_midpoint",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + 0.5 * (residual_pack + residual_cover)",
+      "rationale": "Use the midpoint of feasible and optimistic residual estimates as an unvalidated completion-value hypothesis."
+    },
+    {
+      "name": "conservative_advantage",
+      "features": [
+        {
+          "name": "residual_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "skip_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight + residual_pack - skip_cover",
+      "rationale": "Compare a feasible forced completion against an upper bound when skipping the candidate, favoring conservative objective advantage."
+    }
+  ]
+}

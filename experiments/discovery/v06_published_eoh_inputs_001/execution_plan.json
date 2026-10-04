@@ -1,0 +1,27 @@
+{
+  "version": "v06_published_EoH_fixed_wave_execution_amendment_001",
+  "approved_by": "root",
+  "approved_before_any_published_call_or_fitness": true,
+  "waves": [
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "max_concurrent_local_author_calls": 2,
+  "fitness_transactions_serialized": true,
+  "workers_per_fitness_transaction": 8,
+  "maximum_total_fitness_workers": 8,
+  "seed_fitness_order_within_wave": "run ascending",
+  "candidate_fitness_order_within_wave": "slot ascending, then run ascending",
+  "next_slot_requires_previous_hash_bound_feedback_ingested": true,
+  "new_wave_requires_previous_wave_positions_disposed": true,
+  "adaptation_scope": "Execution occupancy only; all32fixed original positions/operators/RNG streams and quality-only population semantics unchanged",
+  "supersedes": "Prototype documentation's serial fixed run order, disclosed before any actual authoring/fitness",
+  "server_project_root": "/root/autodl-tmp/aamas2027_v06_published_eoh_001",
+  "server_python": "/root/autodl-tmp/aamas2027_v03/py311/bin/python"
+}

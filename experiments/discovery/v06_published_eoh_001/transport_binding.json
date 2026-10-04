@@ -1,0 +1,58 @@
+{
+  "version": "v06_published_EoH_native_transport_binding_001",
+  "requested_configuration": {
+    "model": "gpt-6.1-sol",
+    "model_provider": "openai",
+    "model_reasoning_effort": "ultra",
+    "model_reasoning_summary": null,
+    "profile": null
+  },
+  "cli_executable_sha256": "34549ded6e2aee87c911c62d025e52e26c488683d0f489cd68f756baef1a6df6",
+  "authoring_transport_sha256": "c44497c9032124082d2414be0c4e92189ea6a331e156ef8fe1c9ecadffd899cf",
+  "transport_helper_sha256": "b25daef0767105f08fc600f8a1e0ba3697aa54bb42f6adc7eb77be8d12c0a994",
+  "source_binding": {
+    "source_TRAIN_evidence_sha256": "762fc25046eeb13f49044b96c5d74b7136dedcc363e1fec81809bcc83aa62913",
+    "source_R1_seed_selection_sha256": "7067d4237f2e5df54216727fba33059724ad71cb28c226c1af011e9fea43065b",
+    "source_R2_preparation_receipt_sha256": "a90a17bd2cd632fae963de090a34eca82cdb03ef04af705e1c2deff0c976ecbb",
+    "source_R2_draft_protocol_sha256": "c221899818df0a72f088b022bc502a818a26c6037217036b2794e9814efc6907",
+    "source_R2_transport_binding_sha256": "829b79c7e6b34d652dd2334b565027e291dd5ec7f4cd0bc3c0b8151433104d78",
+    "source_R2_seed_packet_sha256": "40b9032f54b2df1c388d5778a09005f339d792a7b793b3b942534a220ee30c5c",
+    "original_R1_seed_program_sha256": "a278615e138562aef69ca7e09512db01e725779e7b3186829682038518b1913b",
+    "author_visible_R2_seed_program_sha256": "83dc9ce30a4d7ff8c529c36d33b3aa4d47276480a88da3ca4bc6a48b391c156c",
+    "R1_to_R2_seed_difference": "Only name/rationale metadata: R2 uses shared_seed_v06r2 with blank rationale; executable features/rule identical",
+    "prototype_source_freeze_sha256": "974eecd21ccfa765f0159de9c0fd54b9255203a8fc51f45d35cfb93dabd6bafd",
+    "input_preparation_source_sha256": "33704375b83c213e14f43c0efcccc9f27385ed14780fd30e0eea1fa6bc319fed",
+    "original_metadata_example_builder_sha256": "1b2b1ecaccf59cc629d04c62841c25a8587fdf5bf8c53512425f3865a4ea9d67",
+    "original_metadata_example_packet_sha256": "d5cf45ab463b4566a99d246c96cb650b1990a9b17aa53942699688b61325f44a",
+    "original_kernel_configuration_sha256": "3587db7ba52fe9f21f0171600fee120e5598b551ed06bbe674e7d0cb38e3cb4b"
+  },
+  "execution_plan": {
+    "version": "v06_published_EoH_fixed_wave_execution_amendment_001",
+    "approved_by": "root",
+    "approved_before_any_published_call_or_fitness": true,
+    "waves": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "max_concurrent_local_author_calls": 2,
+    "fitness_transactions_serialized": true,
+    "workers_per_fitness_transaction": 8,
+    "maximum_total_fitness_workers": 8,
+    "seed_fitness_order_within_wave": "run ascending",
+    "candidate_fitness_order_within_wave": "slot ascending, then run ascending",
+    "next_slot_requires_previous_hash_bound_feedback_ingested": true,
+    "new_wave_requires_previous_wave_positions_disposed": true,
+    "adaptation_scope": "Execution occupancy only; all32fixed original positions/operators/RNG streams and quality-only population semantics unchanged",
+    "supersedes": "Prototype documentation's serial fixed run order, disclosed before any actual authoring/fitness",
+    "server_project_root": "/root/autodl-tmp/aamas2027_v06_published_eoh_001",
+    "server_python": "/root/autodl-tmp/aamas2027_v03/py311/bin/python"
+  },
+  "execution_plan_sha256": "be8262cac7e7effcbf2aaf6289ec470331175095bb31586fae1c38fe698e3533",
+  "served_model_not_inferred_from_requested_settings": true
+}

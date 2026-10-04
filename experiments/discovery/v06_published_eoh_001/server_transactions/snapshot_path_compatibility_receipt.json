@@ -1,0 +1,89 @@
+{
+  "version": "v06_EoH_deployment_snapshot_path_compatibility_001",
+  "root_approval": "Exact-byte path aliases only; original request/source/protocol/freeze unchanged; one preassessment packaging repair",
+  "aliases": [
+    {
+      "frozen_key": "source_snapshot\\cipheur\\__init__.py",
+      "canonical_relative_path": "source_snapshot/cipheur/__init__.py",
+      "sha256": "eca4d41e2efdcc0d7b85e171ba872d0d228a323d0921ff2f622defd129d426f4"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\compiled.py",
+      "canonical_relative_path": "source_snapshot/cipheur/compiled.py",
+      "sha256": "f0f85d0104fbdcdca54fd5adf743e42946812132612cfe590d02315fb8631788"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\graph_features.py",
+      "canonical_relative_path": "source_snapshot/cipheur/graph_features.py",
+      "sha256": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\heldout_mechanism_v06.py",
+      "canonical_relative_path": "source_snapshot/cipheur/heldout_mechanism_v06.py",
+      "sha256": "2df16b56c4910567c4112c4063e22cfe7eca603c0b22a6f3a8dffb1074c93b2f"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\heldout_refinement_v06.py",
+      "canonical_relative_path": "source_snapshot/cipheur/heldout_refinement_v06.py",
+      "sha256": "1e8bd6a2577eabe8e33a73edc1303358f09cdbfc1c5c53604eaf91db3380ef1a"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\model.py",
+      "canonical_relative_path": "source_snapshot/cipheur/model.py",
+      "sha256": "d5968cffb1676a2f4bd73d5ba2715618142059b0c81ec8263f76a79100a8a1d8"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\programs.py",
+      "canonical_relative_path": "source_snapshot/cipheur/programs.py",
+      "sha256": "cca9739aff75dba79d3ad4b5742f1db10e88ffb398f21dbda09fc23bd20b0f59"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\published_eoh_v06.py",
+      "canonical_relative_path": "source_snapshot/cipheur/published_eoh_v06.py",
+      "sha256": "96c115fa3d8ad8bbd8fad4995561acbeed5dfd220fe155e1769b7541a588f7b0"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\refinement.py",
+      "canonical_relative_path": "source_snapshot/cipheur/refinement.py",
+      "sha256": "90a7e6c6981a73d13b715dc0b2b773cd2052724c2e044af617b7795eb074bd99"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\refinement_study_v06.py",
+      "canonical_relative_path": "source_snapshot/cipheur/refinement_study_v06.py",
+      "sha256": "8a200a923cb50c0f691a2fe378300d89ce74c4565ade71437a1d07a282b087e6"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\repair_v06.py",
+      "canonical_relative_path": "source_snapshot/cipheur/repair_v06.py",
+      "sha256": "c4cbdb9878c041321f4cfcc0637a7a3113add38732ca04d05c8687d9a8e7e8f3"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\representation.py",
+      "canonical_relative_path": "source_snapshot/cipheur/representation.py",
+      "sha256": "5f844dd5ab6d5f79e92a0a7ea6ba0af6073d2e7d3f39a69a091b3fcf875d9dc0"
+    },
+    {
+      "frozen_key": "source_snapshot\\cipheur\\synthesis_study_v06.py",
+      "canonical_relative_path": "source_snapshot/cipheur/synthesis_study_v06.py",
+      "sha256": "f640af65645426cdf172d1cbc7326bae221acf43ece81225ef8bf06cf2c8b0bb"
+    },
+    {
+      "frozen_key": "source_snapshot\\scripts\\author_matched_cli_v06.py",
+      "canonical_relative_path": "source_snapshot/scripts/author_matched_cli_v06.py",
+      "sha256": "b25daef0767105f08fc600f8a1e0ba3697aa54bb42f6adc7eb77be8d12c0a994"
+    },
+    {
+      "frozen_key": "source_snapshot\\scripts\\author_published_eoh_cli_v06.py",
+      "canonical_relative_path": "source_snapshot/scripts/author_published_eoh_cli_v06.py",
+      "sha256": "c44497c9032124082d2414be0c4e92189ea6a331e156ef8fe1c9ecadffd899cf"
+    }
+  ],
+  "alias_count": 15,
+  "before_any_quality_kernel_call": true,
+  "old_failure_archive_sha256": "a857776f005c919b18615b40ce3a2b5fd18ab335474f92728d52b1c22e0dea3f2",
+  "freeze_sha256": "2a39ca3712ded168e176d971623db6439bc6d7ceee1502cf089239f686863c13",
+  "root_release_sha256": "6f3a7059c92bebbf2905cdf51a9eda681a73d8990f3f254fc567c3b461ad9c35",
+  "utc": "2026-10-03T19:58:22Z",
+  "cross_platform_archive_rule": "Literal alias files excluded; canonical sources and this mapping retained",
+  "TEST_accessed": false
+}
