@@ -1,0 +1,12 @@
+{
+  "mode": "classic",
+  "goal": "Complete bounded LLM-guided synthesis and held-out whole-schedule comparison under parameter changes",
+  "scope": "experiments/stk_full_llm_v1/* and new perf_dataset_v1/* only",
+  "metric": "TRAIN complete-schedule reward/spec consistency/cost; final VALIDATION frozen selection; TEST never optimization metric",
+  "direction": "higher_is_better",
+  "iterations": 2,
+  "candidates_per_condition_per_iteration": 16,
+  "guard": "typed grammar, full feasibility, exact weights, source separation, immutable test freeze",
+  "verify": "full_schedule_benchmark.py evaluated exclusively on registered TRAIN graphs; final offline model/engine frozen before TEST",
+  "user_authorized_execution": true
+}
