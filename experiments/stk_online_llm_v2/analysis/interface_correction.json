@@ -1,0 +1,29 @@
+{
+  "version": "numeric_rule_interface_correction_before_r2_performance_v1",
+  "reason": "Feature AST48/depth8 was accidentally reused for a full numeric ranking expression; the actual synthesis prompt specified that feature limit, but did not specify the reused rule limit. Complete block composition needs its independent bounded rule space.",
+  "old_feature_and_rule_limit": {
+    "semantic_nodes": 48,
+    "depth": 8
+  },
+  "new_feature_limit": {
+    "semantic_nodes": 48,
+    "depth": 8
+  },
+  "new_rule_limit": {
+    "semantic_nodes": 256,
+    "depth": 16,
+    "characters": 2000
+  },
+  "safe_AST_unchanged": true,
+  "original_LLM_responses_modified": false,
+  "extra_model_calls": 0,
+  "before_any_r2_performance_measurement": true,
+  "initial_audit": "audit_round2.json",
+  "corrected_audit": "audit_round2_interface_corrected.json",
+  "same_actual_calls_revalidated": 2,
+  "changed_source_sha256": {
+    "cipheur/online_v2/typed.py": "47fc56d7601180ff977bc490f6af110d8db27bcc2a23603fa3f03cfa6a3dd26d",
+    "tests/test_online_v2_typed.py": "4f7123e758852a4e38859a38e0c0dd19eb2224b432055f974b9e71d7b25ff3c4"
+  },
+  "related_tests_total_passed": 43
+}

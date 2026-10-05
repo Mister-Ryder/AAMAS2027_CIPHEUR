@@ -1,0 +1,753 @@
+{
+  "version": "stk_online_llm_v2_actual_call_audit",
+  "calls": [
+    {
+      "actual_attempt_id": "feedback_operators.r1.b0",
+      "call_id": "feedback_operators.r1.b0",
+      "arm": "feedback_operators",
+      "folder": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\feedback_operators.r1.b0",
+      "actual_invocation_recorded": true,
+      "files_sha256": {
+        "prompt": "5dda303f2bae2525dde58207cc54613fe2303e62a757988354317427e3f71c86",
+        "schema": "c324bbca5085902b0cbf62eae76e02f113a22f98ab33954c11d45a1f7d1f6079",
+        "receipt": "fa2723aca188359f5fbfa80bc6a0abf5b96e2d468591f39cd5f150e926e96dfa",
+        "events": "a80a6782c63bd510c8d123c51131e9409327df7f55e797b6dc46d8f7f29eb0fc",
+        "response": null,
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "call_plan_sha256": "1b16773f589244523da0e634099db15cbe94f7a86f0c356531824a12bc1b92a2",
+      "gate_errors": [
+        "actual invocation has nonzero or unavailable exit code",
+        "requires exactly one completed turn and no failed/error event",
+        "original response validation failed: [Errno 2] No such file or directory: 'E:\\\\01-Joycecyq\\\\2026-AAMAS\\\\第二篇\\\\experiments\\\\stk_online_llm_v2\\\\llm_calls\\\\feedback_operators.r1.b0\\\\response.json'"
+      ],
+      "recipes_requested": 6,
+      "recipes_valid": 0,
+      "invalid_recipes": [],
+      "model_requested": "gpt-6.1-sol",
+      "model_observed": "unknown",
+      "silent_replacement": false,
+      "execution_receipt": {
+        "call_id": "feedback_operators.r1.b0",
+        "started_utc": "2026-10-05T17:17:01.720907+00:00",
+        "timeout_seconds": 1200,
+        "argv": [
+          "C:\\Users\\JIA\\AppData\\Local\\OpenAI\\Codex\\bin\\f544b3844e0f14e9\\codex.EXE",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--model",
+          "gpt-6.1-sol",
+          "--sandbox",
+          "read-only",
+          "--skip-git-repo-check",
+          "--ephemeral",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "C:\\Users\\JIA\\AppData\\Local\\Temp\\cipheur-v2-llm-isolated-j5ea0cqg",
+          "--output-schema",
+          "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\feedback_operators.r1.b0\\response_schema.json",
+          "-o",
+          "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\feedback_operators.r1.b0\\response.json",
+          "-c",
+          "model_reasoning_effort=\"ultra\"",
+          "-c",
+          "web_search=\"disabled\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "developer_instructions=\"Only stdin evidence. Pure JSON completion. No tools or filesystem access.\"",
+          "-c",
+          "features.shell_tool=false",
+          "-c",
+          "features.unified_exec=false",
+          "-c",
+          "features.shell_snapshot=false",
+          "-c",
+          "features.apps=false",
+          "-c",
+          "features.plugins=false",
+          "-c",
+          "features.browser_use=false",
+          "-c",
+          "features.browser_use_external=false",
+          "-c",
+          "features.computer_use=false",
+          "-c",
+          "features.in_app_browser=false",
+          "-c",
+          "features.multi_agent=false",
+          "-c",
+          "features.memories=false",
+          "-c",
+          "features.hooks=false",
+          "-c",
+          "features.code_mode_host=false",
+          "-c",
+          "features.view_image=false",
+          "-c",
+          "features.image_generation=false",
+          "-c",
+          "features.workspace_dependencies=false",
+          "-c",
+          "features.skill_search=false",
+          "-c",
+          "features.skill_mcp_dependency_install=false",
+          "-c",
+          "features.sleep_tool=false",
+          "-c",
+          "features.goals=false",
+          "-c",
+          "features.skip_host_skill_discovery=true",
+          "-"
+        ],
+        "model_requested": "gpt-6.1-sol",
+        "model_observed": "unknown",
+        "prompt_sha256": "5dda303f2bae2525dde58207cc54613fe2303e62a757988354317427e3f71c86",
+        "pid": 28976,
+        "exit_code": 1,
+        "wall_seconds": 5.7961319999958505,
+        "ended_utc": "2026-10-05T17:17:07.517051+00:00",
+        "response_exists": false
+      },
+      "status": "rejected",
+      "wall_seconds": 5.7961319999958505,
+      "event_audit": {
+        "turns_completed": 0,
+        "tool_events": [],
+        "tool_call_count": 0,
+        "diagnostics": [
+          {
+            "line": 2,
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in C:\\Users\\JIA\\.codex\\config.toml."
+            }
+          },
+          {
+            "line": 3,
+            "item": {
+              "id": "item_1",
+              "type": "error",
+              "message": "Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."
+            }
+          }
+        ],
+        "usage_records": [],
+        "usage_sum": {},
+        "errors": [
+          {
+            "line": 5,
+            "event": {
+              "type": "error",
+              "message": "{\n  \"type\": \"error\",\n  \"error\": {\n    \"type\": \"invalid_request_error\",\n    \"code\": \"invalid_json_schema\",\n    \"message\": \"Invalid schema for response_format 'codex_output_schema': In context=(), 'oneOf' is not permitted.\",\n    \"param\": \"text.format.schema\"\n  },\n  \"status\": 400\n}"
+            }
+          },
+          {
+            "line": 6,
+            "event": {
+              "type": "turn.failed",
+              "error": {
+                "message": "{\n  \"type\": \"error\",\n  \"error\": {\n    \"type\": \"invalid_request_error\",\n    \"code\": \"invalid_json_schema\",\n    \"message\": \"Invalid schema for response_format 'codex_output_schema': In context=(), 'oneOf' is not permitted.\",\n    \"param\": \"text.format.schema\"\n  },\n  \"status\": 400\n}"
+              }
+            }
+          }
+        ],
+        "model_observed": "unknown",
+        "model_observed_policy": "Only emitted CLI metadata; never infer from requested label"
+      },
+      "usage": {},
+      "api_schema_oneof_error": true
+    },
+    {
+      "actual_attempt_id": "feedback_operators.r1.b1",
+      "call_id": "feedback_operators.r1.b1",
+      "arm": "feedback_operators",
+      "folder": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\feedback_operators.r1.b1",
+      "actual_invocation_recorded": true,
+      "files_sha256": {
+        "prompt": "5dda303f2bae2525dde58207cc54613fe2303e62a757988354317427e3f71c86",
+        "schema": "e9a5e7f7260fa02b7fc89c29c76d46021f2ed9ee21f9e04933b9d7ed73b5f001",
+        "receipt": "0face9707fc453a12d49d93794dff68ca913cffb62e3364555bc8789855e5b21",
+        "events": "7235058dea1575c2d5acd24a2aa5f7e948d20b64c0cc14ea698eae5b81799496",
+        "response": "62ff7e35ef179215ca6312d7a154e321862eed23c1427791a647e1b1fd6fe1e5",
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "call_plan_sha256": "7c29310541a524ef6728a13162b9a07bb8d0759eba7856d54884d432b2099cc3",
+      "gate_errors": [],
+      "recipes_requested": 6,
+      "recipes_valid": 6,
+      "invalid_recipes": [],
+      "model_requested": "gpt-6.1-sol",
+      "model_observed": "unknown",
+      "silent_replacement": false,
+      "execution_receipt": {
+        "call_id": "feedback_operators.r1.b1",
+        "started_utc": "2026-10-05T17:17:49.122454+00:00",
+        "timeout_seconds": 1200,
+        "argv": [
+          "C:\\Users\\JIA\\AppData\\Local\\OpenAI\\Codex\\bin\\f544b3844e0f14e9\\codex.EXE",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--model",
+          "gpt-6.1-sol",
+          "--sandbox",
+          "read-only",
+          "--skip-git-repo-check",
+          "--ephemeral",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "C:\\Users\\JIA\\AppData\\Local\\Temp\\cipheur-v2-llm-isolated-28h95xnp",
+          "--output-schema",
+          "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\feedback_operators.r1.b1\\response_schema.json",
+          "-o",
+          "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\feedback_operators.r1.b1\\response.json",
+          "-c",
+          "model_reasoning_effort=\"ultra\"",
+          "-c",
+          "web_search=\"disabled\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "developer_instructions=\"Only stdin evidence. Pure JSON completion. No tools or filesystem access.\"",
+          "-c",
+          "features.shell_tool=false",
+          "-c",
+          "features.unified_exec=false",
+          "-c",
+          "features.shell_snapshot=false",
+          "-c",
+          "features.apps=false",
+          "-c",
+          "features.plugins=false",
+          "-c",
+          "features.browser_use=false",
+          "-c",
+          "features.browser_use_external=false",
+          "-c",
+          "features.computer_use=false",
+          "-c",
+          "features.in_app_browser=false",
+          "-c",
+          "features.multi_agent=false",
+          "-c",
+          "features.memories=false",
+          "-c",
+          "features.hooks=false",
+          "-c",
+          "features.code_mode_host=false",
+          "-c",
+          "features.view_image=false",
+          "-c",
+          "features.image_generation=false",
+          "-c",
+          "features.workspace_dependencies=false",
+          "-c",
+          "features.skill_search=false",
+          "-c",
+          "features.skill_mcp_dependency_install=false",
+          "-c",
+          "features.sleep_tool=false",
+          "-c",
+          "features.goals=false",
+          "-c",
+          "features.skip_host_skill_discovery=true",
+          "-"
+        ],
+        "model_requested": "gpt-6.1-sol",
+        "model_observed": "unknown",
+        "prompt_sha256": "5dda303f2bae2525dde58207cc54613fe2303e62a757988354317427e3f71c86",
+        "pid": 10688,
+        "exit_code": 0,
+        "wall_seconds": 573.4211419999992,
+        "ended_utc": "2026-10-05T17:27:22.543616+00:00",
+        "response_exists": true,
+        "response_sha256": "62ff7e35ef179215ca6312d7a154e321862eed23c1427791a647e1b1fd6fe1e5"
+      },
+      "status": "accepted",
+      "wall_seconds": 573.4211419999992,
+      "event_audit": {
+        "turns_completed": 1,
+        "tool_events": [],
+        "tool_call_count": 0,
+        "diagnostics": [
+          {
+            "line": 2,
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in C:\\Users\\JIA\\.codex\\config.toml."
+            }
+          },
+          {
+            "line": 3,
+            "item": {
+              "id": "item_1",
+              "type": "error",
+              "message": "Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."
+            }
+          }
+        ],
+        "usage_records": [
+          {
+            "input_tokens": 33243,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 15675,
+            "reasoning_output_tokens": 11912
+          }
+        ],
+        "usage_sum": {
+          "input_tokens": 33243,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 15675,
+          "reasoning_output_tokens": 11912
+        },
+        "errors": [],
+        "model_observed": "unknown",
+        "model_observed_policy": "Only emitted CLI metadata; never infer from requested label"
+      },
+      "usage": {
+        "input_tokens": 33243,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15675,
+        "reasoning_output_tokens": 11912
+      },
+      "api_schema_oneof_error": false,
+      "recipe_slots": [
+        {
+          "slot": 0,
+          "name": "cheap_second_ring",
+          "recipe_sha256": "761abedb4c55c3c3437344ad4c3544ef47011e23069aa5c915d9610b04720b42"
+        },
+        {
+          "slot": 1,
+          "name": "blocked_clique_crowding",
+          "recipe_sha256": "8c034ded107050fa5aeec51ce0dd8baa758333ab0825691af4321b0b3fff8699"
+        },
+        {
+          "slot": 2,
+          "name": "rejected_neighbor_packing",
+          "recipe_sha256": "3fae1dabef941cb93a222a3872f70e135b2f054b84d3434b98d9ab13b4e5c1af"
+        },
+        {
+          "slot": 3,
+          "name": "resource_weighted_edge_density",
+          "recipe_sha256": "172bc847ea2b43f03245d850ccd67d1f5dc778655587ee9f3f78696ca905c909"
+        },
+        {
+          "slot": 4,
+          "name": "lazy_compatible_survival",
+          "recipe_sha256": "dc8bc8a702f324f7612563b4ca21df61ab8955b5e446b92d318efefe0d65e7cf"
+        },
+        {
+          "slot": 5,
+          "name": "wide_frontier_progress",
+          "recipe_sha256": "19c82ba458a387ee0a71c489b3b2ef6f4958ccf2198c9bf7e887f2b60be6ed25"
+        }
+      ]
+    },
+    {
+      "actual_attempt_id": "witness_operators.r1.b0",
+      "call_id": "witness_operators.r1.b0",
+      "arm": "witness_operators",
+      "folder": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\witness_operators.r1.b0",
+      "actual_invocation_recorded": true,
+      "files_sha256": {
+        "prompt": "f83e861bb8103141014adab2c5b42f0bdc0fd81bd781ba61f91516e09e9e0f56",
+        "schema": "c324bbca5085902b0cbf62eae76e02f113a22f98ab33954c11d45a1f7d1f6079",
+        "receipt": "6b47ca7973e7abb443322e76c14dc4136156b2e8d960835f73b55bf62a504f29",
+        "events": "1238e177be19b8a7568a9e99e7700ea825035e062daaf535d7760fb6ad89c954",
+        "response": null,
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "call_plan_sha256": "e8d8400a66887fa0dce13b4ef2883194f8574b78e7312dca9331bb900ed7476b",
+      "gate_errors": [
+        "actual invocation has nonzero or unavailable exit code",
+        "requires exactly one completed turn and no failed/error event",
+        "original response validation failed: [Errno 2] No such file or directory: 'E:\\\\01-Joycecyq\\\\2026-AAMAS\\\\第二篇\\\\experiments\\\\stk_online_llm_v2\\\\llm_calls\\\\witness_operators.r1.b0\\\\response.json'"
+      ],
+      "recipes_requested": 6,
+      "recipes_valid": 0,
+      "invalid_recipes": [],
+      "model_requested": "gpt-6.1-sol",
+      "model_observed": "unknown",
+      "silent_replacement": false,
+      "execution_receipt": {
+        "call_id": "witness_operators.r1.b0",
+        "started_utc": "2026-10-05T17:17:01.719825+00:00",
+        "timeout_seconds": 1200,
+        "argv": [
+          "C:\\Users\\JIA\\AppData\\Local\\OpenAI\\Codex\\bin\\f544b3844e0f14e9\\codex.EXE",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--model",
+          "gpt-6.1-sol",
+          "--sandbox",
+          "read-only",
+          "--skip-git-repo-check",
+          "--ephemeral",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "C:\\Users\\JIA\\AppData\\Local\\Temp\\cipheur-v2-llm-isolated-ulc2lrhm",
+          "--output-schema",
+          "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\witness_operators.r1.b0\\response_schema.json",
+          "-o",
+          "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\witness_operators.r1.b0\\response.json",
+          "-c",
+          "model_reasoning_effort=\"ultra\"",
+          "-c",
+          "web_search=\"disabled\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "developer_instructions=\"Only stdin evidence. Pure JSON completion. No tools or filesystem access.\"",
+          "-c",
+          "features.shell_tool=false",
+          "-c",
+          "features.unified_exec=false",
+          "-c",
+          "features.shell_snapshot=false",
+          "-c",
+          "features.apps=false",
+          "-c",
+          "features.plugins=false",
+          "-c",
+          "features.browser_use=false",
+          "-c",
+          "features.browser_use_external=false",
+          "-c",
+          "features.computer_use=false",
+          "-c",
+          "features.in_app_browser=false",
+          "-c",
+          "features.multi_agent=false",
+          "-c",
+          "features.memories=false",
+          "-c",
+          "features.hooks=false",
+          "-c",
+          "features.code_mode_host=false",
+          "-c",
+          "features.view_image=false",
+          "-c",
+          "features.image_generation=false",
+          "-c",
+          "features.workspace_dependencies=false",
+          "-c",
+          "features.skill_search=false",
+          "-c",
+          "features.skill_mcp_dependency_install=false",
+          "-c",
+          "features.sleep_tool=false",
+          "-c",
+          "features.goals=false",
+          "-c",
+          "features.skip_host_skill_discovery=true",
+          "-"
+        ],
+        "model_requested": "gpt-6.1-sol",
+        "model_observed": "unknown",
+        "prompt_sha256": "f83e861bb8103141014adab2c5b42f0bdc0fd81bd781ba61f91516e09e9e0f56",
+        "pid": 40112,
+        "exit_code": 1,
+        "wall_seconds": 5.630297199997585,
+        "ended_utc": "2026-10-05T17:17:07.350138+00:00",
+        "response_exists": false
+      },
+      "status": "rejected",
+      "wall_seconds": 5.630297199997585,
+      "event_audit": {
+        "turns_completed": 0,
+        "tool_events": [],
+        "tool_call_count": 0,
+        "diagnostics": [
+          {
+            "line": 2,
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in C:\\Users\\JIA\\.codex\\config.toml."
+            }
+          },
+          {
+            "line": 3,
+            "item": {
+              "id": "item_1",
+              "type": "error",
+              "message": "Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."
+            }
+          }
+        ],
+        "usage_records": [],
+        "usage_sum": {},
+        "errors": [
+          {
+            "line": 5,
+            "event": {
+              "type": "error",
+              "message": "{\n  \"type\": \"error\",\n  \"error\": {\n    \"type\": \"invalid_request_error\",\n    \"code\": \"invalid_json_schema\",\n    \"message\": \"Invalid schema for response_format 'codex_output_schema': In context=(), 'oneOf' is not permitted.\",\n    \"param\": \"text.format.schema\"\n  },\n  \"status\": 400\n}"
+            }
+          },
+          {
+            "line": 6,
+            "event": {
+              "type": "turn.failed",
+              "error": {
+                "message": "{\n  \"type\": \"error\",\n  \"error\": {\n    \"type\": \"invalid_request_error\",\n    \"code\": \"invalid_json_schema\",\n    \"message\": \"Invalid schema for response_format 'codex_output_schema': In context=(), 'oneOf' is not permitted.\",\n    \"param\": \"text.format.schema\"\n  },\n  \"status\": 400\n}"
+              }
+            }
+          }
+        ],
+        "model_observed": "unknown",
+        "model_observed_policy": "Only emitted CLI metadata; never infer from requested label"
+      },
+      "usage": {},
+      "api_schema_oneof_error": true
+    },
+    {
+      "actual_attempt_id": "witness_operators.r1.b1",
+      "call_id": "witness_operators.r1.b1",
+      "arm": "witness_operators",
+      "folder": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\witness_operators.r1.b1",
+      "actual_invocation_recorded": true,
+      "files_sha256": {
+        "prompt": "f83e861bb8103141014adab2c5b42f0bdc0fd81bd781ba61f91516e09e9e0f56",
+        "schema": "e9a5e7f7260fa02b7fc89c29c76d46021f2ed9ee21f9e04933b9d7ed73b5f001",
+        "receipt": "a996e150aaf6dbe640273330d338c0a2549ecd5b68d98e213e642990bf621886",
+        "events": "26f85aec91ccf827ead2bd1c841b8d50d0483c7e5dcdb3f66c8956438f5c4dfd",
+        "response": "6b58683d2c1c48ca6af39c42df09caff63eaaa9f458f63d6d8353b898989d54c",
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "call_plan_sha256": "adf239fe4c616ebe62d3624774a283b5ffdff6f7c6395354aba9b0a9c30e7261",
+      "gate_errors": [],
+      "recipes_requested": 6,
+      "recipes_valid": 6,
+      "invalid_recipes": [],
+      "model_requested": "gpt-6.1-sol",
+      "model_observed": "unknown",
+      "silent_replacement": false,
+      "execution_receipt": {
+        "call_id": "witness_operators.r1.b1",
+        "started_utc": "2026-10-05T17:17:49.123764+00:00",
+        "timeout_seconds": 1200,
+        "argv": [
+          "C:\\Users\\JIA\\AppData\\Local\\OpenAI\\Codex\\bin\\f544b3844e0f14e9\\codex.EXE",
+          "exec",
+          "--ignore-user-config",
+          "--ignore-rules",
+          "--model",
+          "gpt-6.1-sol",
+          "--sandbox",
+          "read-only",
+          "--skip-git-repo-check",
+          "--ephemeral",
+          "--json",
+          "--color",
+          "never",
+          "--cd",
+          "C:\\Users\\JIA\\AppData\\Local\\Temp\\cipheur-v2-llm-isolated-bdhqyhy0",
+          "--output-schema",
+          "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\witness_operators.r1.b1\\response_schema.json",
+          "-o",
+          "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\llm_calls\\witness_operators.r1.b1\\response.json",
+          "-c",
+          "model_reasoning_effort=\"ultra\"",
+          "-c",
+          "web_search=\"disabled\"",
+          "-c",
+          "project_doc_max_bytes=0",
+          "-c",
+          "developer_instructions=\"Only stdin evidence. Pure JSON completion. No tools or filesystem access.\"",
+          "-c",
+          "features.shell_tool=false",
+          "-c",
+          "features.unified_exec=false",
+          "-c",
+          "features.shell_snapshot=false",
+          "-c",
+          "features.apps=false",
+          "-c",
+          "features.plugins=false",
+          "-c",
+          "features.browser_use=false",
+          "-c",
+          "features.browser_use_external=false",
+          "-c",
+          "features.computer_use=false",
+          "-c",
+          "features.in_app_browser=false",
+          "-c",
+          "features.multi_agent=false",
+          "-c",
+          "features.memories=false",
+          "-c",
+          "features.hooks=false",
+          "-c",
+          "features.code_mode_host=false",
+          "-c",
+          "features.view_image=false",
+          "-c",
+          "features.image_generation=false",
+          "-c",
+          "features.workspace_dependencies=false",
+          "-c",
+          "features.skill_search=false",
+          "-c",
+          "features.skill_mcp_dependency_install=false",
+          "-c",
+          "features.sleep_tool=false",
+          "-c",
+          "features.goals=false",
+          "-c",
+          "features.skip_host_skill_discovery=true",
+          "-"
+        ],
+        "model_requested": "gpt-6.1-sol",
+        "model_observed": "unknown",
+        "prompt_sha256": "f83e861bb8103141014adab2c5b42f0bdc0fd81bd781ba61f91516e09e9e0f56",
+        "pid": 3356,
+        "exit_code": 0,
+        "wall_seconds": 573.5608343999993,
+        "ended_utc": "2026-10-05T17:27:22.684610+00:00",
+        "response_exists": true,
+        "response_sha256": "6b58683d2c1c48ca6af39c42df09caff63eaaa9f458f63d6d8353b898989d54c"
+      },
+      "status": "accepted",
+      "wall_seconds": 573.5608343999993,
+      "event_audit": {
+        "turns_completed": 1,
+        "tool_events": [],
+        "tool_call_count": 0,
+        "diagnostics": [
+          {
+            "line": 2,
+            "item": {
+              "id": "item_0",
+              "type": "error",
+              "message": "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in C:\\Users\\JIA\\.codex\\config.toml."
+            }
+          },
+          {
+            "line": 3,
+            "item": {
+              "id": "item_1",
+              "type": "error",
+              "message": "Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."
+            }
+          }
+        ],
+        "usage_records": [
+          {
+            "input_tokens": 42968,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 15490,
+            "reasoning_output_tokens": 10876
+          }
+        ],
+        "usage_sum": {
+          "input_tokens": 42968,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 15490,
+          "reasoning_output_tokens": 10876
+        },
+        "errors": [],
+        "model_observed": "unknown",
+        "model_observed_policy": "Only emitted CLI metadata; never infer from requested label"
+      },
+      "usage": {
+        "input_tokens": 42968,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15490,
+        "reasoning_output_tokens": 10876
+      },
+      "api_schema_oneof_error": false,
+      "recipe_slots": [
+        {
+          "slot": 0,
+          "name": "cheap_frontier_degree",
+          "recipe_sha256": "f62cfa4ebb649ed163c4dfae0d89b55dc1525e3ed0170e08633d28e91a1985a6"
+        },
+        {
+          "slot": 1,
+          "name": "blocked_frontier_exposure",
+          "recipe_sha256": "c25aac6141c953b68949529738ed157be6a5371445e73bf21a563999d4f53a5e"
+        },
+        {
+          "slot": 2,
+          "name": "resource_compatible_completion",
+          "recipe_sha256": "d4635d6e752e74aa954900088b2ccddedba71aaff5ad387d0688a01f4a8d8192"
+        },
+        {
+          "slot": 3,
+          "name": "witness_frontier_cut",
+          "recipe_sha256": "7249c501c8b592d467e9eb83518c101adba19715ee78f2ef3afe0742b3e112e6"
+        },
+        {
+          "slot": 4,
+          "name": "blocked_include_skip_completion",
+          "recipe_sha256": "d8a6277d0cc45f3f43b78d130e9f5b1829a04ea662c01886b34b834505d4e0e6"
+        },
+        {
+          "slot": 5,
+          "name": "phase_aware_pair_pressure",
+          "recipe_sha256": "9a0b9700fc47ef53c20d0941af1b56ed6b7007d4d5c2271fb735ba7b815ee9c4"
+        }
+      ]
+    }
+  ],
+  "actual_calls_recorded": 4,
+  "accepted_calls": 2,
+  "api_schema_oneof_failed_calls": 2,
+  "pending_calls": [],
+  "usage_sum_known": {
+    "input_tokens": 76211,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 31165,
+    "reasoning_output_tokens": 22788
+  },
+  "usage_missing_actual_calls": [
+    "feedback_operators.r1.b0",
+    "witness_operators.r1.b0"
+  ],
+  "wall_seconds_known_sum": 1158.408405599992,
+  "served_model_policy": "Only actual event metadata; requested labels and model-authored claims do not identify the served version",
+  "event_audit_source_sha256": "2e83d894f953944e17725029aabe89beea74e6a7c66cb1d844175682e6b82eb4",
+  "ingestion_source_sha256": "7e00259a20f16b4da5a1aa49fc2c6caf208ea63393a61ccd736d14d5610b2948",
+  "selection_by_quality_fit_or_structural_challenge": false,
+  "failed_calls_preserved": true,
+  "silent_recipe_replacement": false,
+  "USD_cost": null,
+  "USD_cost_reason": "No invoice or known served-model billing metadata supplied",
+  "banks": {
+    "witness_operators": {
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\banks\\witness_operators.json",
+      "recipes": 6,
+      "duplicate_names_retained": [],
+      "written": true,
+      "sha256": "5f02aeff896b937b60b0682de1c4fc20552a9918d7c7c5837aee993b21a77b8e"
+    },
+    "feedback_operators": {
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\banks\\feedback_operators.json",
+      "recipes": 6,
+      "duplicate_names_retained": [],
+      "written": true,
+      "sha256": "7b1b95a69b3173221f79eb3dec2bb82e902204da6561c01748211b0349176005"
+    }
+  }
+}

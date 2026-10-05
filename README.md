@@ -4,6 +4,14 @@
 
 Public repository: [Mister-Ryder/AAMAS2027_CIPHEUR](https://github.com/Mister-Ryder/AAMAS2027_CIPHEUR).
 
+## Current research: online adaptation and expanded LLM responsibilities (2026-10-06)
+
+The new [online v2 implementation and evidence](experiments/stk_online_llm_v2/README.md) replaces the fixed ranking-head research direction with current-instance heuristic evolution. Real LLM calls generate structural features, ranking rules, neighborhood policies, mutation templates and control configurations from complete TRAIN failure/cost feedback. Runtime states reset for each instance; current-instance evaluation and evidence computation are charged solver work.
+
+Two cloud development rounds each completed all 144 assignments with feasible outputs and no execution errors; 43 implementation tests passed. The expanded second-round system lowered Witness mean complete reward from 735,924.746 to 733,079.886 seconds and increased feature cost. This is an inspectable research candidate, **not a verified improvement**. The 576-job held-out study remains pending. See [the complete paired comparison](experiments/stk_online_llm_v2/reports/development_round2/两轮比较.md), [LLM roles and boundaries](experiments/stk_online_llm_v2/reports/LLM参与扩展与方法边界.md), and [complete raw review archives](experiments/stk_online_llm_v2/review_archives/README.md).
+
+The V06/V07 material below is retained as historical evidence; its frozen-program description is not the new online optimizer's definition.
+
 The framework uses sound offline conditional-completion evidence to diagnose whether a graph-feature interface can express required action rankings. Concrete quotient cycles and equality joins guide typed feature–rule refinement. A frozen priority program then operates within a common feasibility-enforcing classical repair kernel; deployment requires no LLM or full-residual certification oracle.
 
 V06 delivers the runnable framework, frozen authoring studies, public-graph and scheduling evaluations, manuscript, and reproducible evidence. The paper artifact is [CIPHEUR_AAMAS2027_V06.pdf](paper/CIPHEUR_AAMAS2027_V06.pdf); the public release target is [v0.6.0](https://github.com/Mister-Ryder/AAMAS2027_CIPHEUR/releases/tag/v0.6.0). The [research report](docs/V06_FINAL_RESEARCH_REPORT.md) separates supported scientific findings from engineering history. Mature classical components and the common CHILS initialization are shared infrastructure; their gains are not attributed to LLM guidance.

@@ -1,0 +1,893 @@
+{
+  "schema_version": "stk_online_llm_v2",
+  "recipes": [
+    {
+      "name": "cheap_frontier_degree",
+      "features": [
+        {
+          "name": "frontier_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree + c1 * frontier_count) - c2 * neighbor_max_weight + c3 * weight / max(1, active_count)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 1,
+        "patch_cap": 16,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.1,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.05,
+          0.2,
+          0.6,
+          1.0
+        ],
+        "stagnation_trials": 12,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.08,
+        0.04,
+        0.15
+      ],
+      "rationale": "Certified preference cycles expose a base9 representation conflict, and the exact witness locates relevant changes beyond unchanged immediate-neighborhood statistics. This inexpensive frontier-count recipe uses no edge aggregates or completion computations; it does not claim to resolve that witness. Small uniform greedy repairs target throughput. The mutation template participates in current-solve evolution of coefficients, structural compositions and patch choices, judged by feasible integer reward improvement and charged CPU. Population, credit and caches reset for every independent instance. Structural consistency, schedule quality and cost require joint evaluation."
+    },
+    {
+      "name": "blocked_frontier_exposure",
+      "features": [
+        {
+          "name": "frontier_weight",
+          "expression": {
+            "op": "sum_weights",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "frontier_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "frontier_incident_cost",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "incident_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) + (c1 * frontier_weight - c2 * frontier_incident_cost) / max(1, frontier_count) - c3 * neighbor_max_weight",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 3,
+        "patch_cap": 32,
+        "expand_hops": 2,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.16,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.1,
+          0.3,
+          0.8,
+          1.2
+        ],
+        "stagnation_trials": 16,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.08,
+        0.025,
+        0.06
+      ],
+      "rationale": "The witness's distance-two changed endpoints motivate incident-edge pressure on the exact frontier. This can inspect structural changes missed by unchanged neighbor edge counts and degree sums when those endpoints lie in the legal patch. Frontier weight and size normalize that pressure. Blocked-gain anchoring and three-contact destruction test blocker releases; dynamic ranking precedes the shared improving swaps. Lazy evaluation is confined to 32 nodes, with its scans and invalidations charged. Mutation follows observed feasible gain and CPU, not archived preference fit."
+    },
+    {
+      "name": "resource_compatible_completion",
+      "features": [
+        {
+          "name": "compatible_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight + c1 * compatible_greedy - c2 * max(0, compatible_cover - compatible_greedy) - c3 * neighbor_max_weight",
+      "patch_policy": {
+        "anchor": "resource_boundary",
+        "destroy_count": 6,
+        "patch_cap": 40,
+        "expand_hops": 2,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.22,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.1,
+          0.35,
+          0.9,
+          1.3
+        ],
+        "stagnation_trials": 10,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.6,
+        0.08,
+        0.05
+      ],
+      "rationale": "Recomputing greedy completion and cover weight on the compatible residual exposes arrangements beyond the root's immediate neighborhood. Their gap is a ranking heuristic, not a certificate of conditional preference or final quality. Resource-boundary anchoring concentrates six-contact destruction on competing resource commitments, while top-three reconstruction explores alternatives. Cover queries remain within the exact 40-node patch. The zero-heavy repair traces motivate diversification after ten stagnant trials; complete feasible reward and charged CPU determine whether this operator earns credit."
+    },
+    {
+      "name": "witness_frontier_cut",
+      "features": [
+        {
+          "name": "frontier_cut_cost",
+          "expression": {
+            "op": "sub",
+            "args": [
+              {
+                "op": "edge_min_weight_sum",
+                "args": [
+                  {
+                    "op": "incident_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "neighbors_of_set",
+                            "args": [
+                              {
+                                "op": "neighbors",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "op": "union",
+                            "args": [
+                              {
+                                "op": "singleton",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              },
+                              {
+                                "op": "neighbors",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "edge_min_weight_sum",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "difference",
+                        "args": [
+                          {
+                            "op": "neighbors_of_set",
+                            "args": [
+                              {
+                                "op": "neighbors",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "op": "union",
+                            "args": [
+                              {
+                                "op": "singleton",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              },
+                              {
+                                "op": "neighbors",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "frontier_internal_cost",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "frontier_weight",
+          "expression": {
+            "op": "sum_weights",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) - weight * (c1 * frontier_cut_cost + c2 * frontier_internal_cost) / max(1, frontier_weight) - c3 * neighbor_max_weight",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 8,
+        "patch_cap": 64,
+        "expand_hops": 2,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.2,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.08,
+          0.3,
+          0.75,
+          1.1
+        ],
+        "stagnation_trials": 8,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.12,
+        0.03,
+        0.03
+      ],
+      "rationale": "Incident weight minus induced weight gives the frontier's crossing-edge pressure, separated from its internal conflicts. The supplied witness contains changed edges incident to distinct distance-two frontiers despite unchanged base9, Q and T; these features directly inspect that structural distinction without embedding node IDs or configuration labels. The 64-node cap can accommodate the witness's domain. Rejection-frontier anchoring, eight-contact destruction and RCL reconstruction revisit interacting failures. Lazy computation and the feature cap charge their cost; stagnation triggers diversification. No cycle resolution or performance improvement is certified."
+    },
+    {
+      "name": "blocked_include_skip_completion",
+      "features": [
+        {
+          "name": "include_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "skip_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "include_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight + c1 * include_greedy - c2 * skip_greedy - c3 * max(0, include_cover - include_greedy)",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 10,
+        "patch_cap": 48,
+        "expand_hops": 2,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.25,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.05,
+          0.25,
+          0.65,
+          1.0
+        ],
+        "stagnation_trials": 67,
+        "action": "switch_recipe"
+      },
+      "coefficients": [
+        1.0,
+        1.0,
+        1.0,
+        0.05
+      ],
+      "rationale": "The certified inclusion reversal motivates recomputed include-root and skip-root completion features. Their difference is sensitive to compatible residual topology; the cover gap moderates reliance on a particular greedy completion. These are heuristic scores, not exact conditional optima. Ten-contact destruction targets larger blocked-gain opportunities, followed by ranking-driven construction and shared improving swaps. Three bounded completion queries justify a higher feature allowance but rapid switching after six stagnant trials. Timed-out partial proposals receive no evaluated reward, and all consumed CPU remains charged."
+    },
+    {
+      "name": "phase_aware_pair_pressure",
+      "features": [
+        {
+          "name": "two_step_incident_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "incident_edges",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "two_step_weight",
+          "expression": {
+            "op": "sum_weights",
+            "args": [
+              {
+                "op": "neighbors_of_set",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "removed_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "patch_init",
+                    "args": []
+                  },
+                  {
+                    "op": "available",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) - c1 * two_step_incident_product / max(1, two_step_weight) + c2 * weight * removed_count / max(1, active_count + removed_count) - c3 * neighbor_max_weight",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 12,
+        "patch_cap": 32,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.18,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.15,
+          0.45,
+          1.0,
+          1.4
+        ],
+        "stagnation_trials": 18,
+        "action": "switch_recipe"
+      },
+      "coefficients": [
+        1.0,
+        0.08,
+        0.25,
+        0.02
+      ],
+      "rationale": "Weighted edge products distinguish conflicts between substantial rewards from equal-count conflicts involving small rewards. Normalization converts the product sum to a seconds-scale pressure. Two-step reachability extends inspection beyond immediate neighbors, while original-domain depletion changes the ranking during reconstruction. Uniform twelve-contact destruction supplies a larger perturbation with a modest 32-node domain and greedy rebuilding. Exact residual queries remain lazy and charged. Switching after prolonged stagnation gives this operator a different search role; its reward and cost must be measured in the complete solve."
+    }
+  ]
+}

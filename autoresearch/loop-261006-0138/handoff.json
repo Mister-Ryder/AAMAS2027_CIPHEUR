@@ -1,0 +1,35 @@
+{
+  "mode": "classic",
+  "status": "bounded_two_rounds_complete; algorithm_performance_goal_not_achieved",
+  "completed_iterations": 2,
+  "results": "loop-results.tsv",
+  "candidate_disposition": "r2 retained as an inspectable research option, not promoted as an improvement; no destructive revert of records",
+  "current_incumbent_evidence": "r1 frozen executable snapshot cloud/runtime_profile.zip",
+  "tests_passed": 43,
+  "complete_cloud_jobs": 288,
+  "TEST_jobs_started_in_v2": 0,
+  "no_TEST_tuning": true,
+  "winner_claim": false,
+  "next_evidence_needed": "Distinguish time cost, full accepted-gain attribution and evidence-targeted representation value before launching broad heldout studies",
+  "publish_authorization": "User previously explicitly authorized public GitHub version management",
+  "profiles": [
+    {
+      "iteration": 1,
+      "mean_reward_seconds": 735924.7461453126,
+      "mean_gain_seconds_per_actual_cpu": 1699.2118554470387,
+      "mean_feature_cpu_seconds": 3.021137846187487,
+      "status": "baseline_research_only",
+      "description": "12 actual LLM recipes + online kernel",
+      "metrics_sha256": "67a1964f94b38698f56c36e92dfb548a9a7c29a9b8f0f3d54f86e533f2086fb8"
+    },
+    {
+      "iteration": 2,
+      "mean_reward_seconds": 733079.886429875,
+      "mean_gain_seconds_per_actual_cpu": 1417.9938987631645,
+      "mean_feature_cpu_seconds": 6.0740326556250785,
+      "status": "discard_from_performance_promotion",
+      "description": "12 revised actual LLM recipes + LLM control configuration + disclosed common engineering corrections",
+      "metrics_sha256": "0e4092711b27f14f227a91753ba0130153aff27ac951349094b3e382588e0cd1"
+    }
+  ]
+}

@@ -37,6 +37,9 @@ paper/*.synctex.gz
 /experiments/analysis/v06/heldout_mechanism_analysis_v06_001_compact.json
 # Preserve the old open-viewer file locally; current delivery has a versioned PDF.
 /paper/main.pdf
+# Complete v2 raw traces are retained locally; public Git stores their exact
+# 48 MiB parts plus hash-bound manifests to stay below per-file limits.
+/experiments/stk_online_llm_v2/review_archives/*_full_trajectory.zip
 # Full performance analysis is retained in exact 48 MiB binary parts.
 /experiments/analysis/v06/performance_TEST_analysis_v06_003/analysis.json
 /experiments/analysis/v06/performance_TEST_analysis_v06_003/identity_context_estimates.jsonl

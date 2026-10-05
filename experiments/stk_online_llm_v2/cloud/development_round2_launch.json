@@ -1,0 +1,23 @@
+{
+  "pid": 23163,
+  "argv": [
+    "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python",
+    "/root/autodl-tmp/cipheur_stk_online_llm_20261006_002/scripts/run_queue.py",
+    "--jobs",
+    "/root/autodl-tmp/cipheur_stk_online_llm_20261006_002/registrations/development_round2/jobs.jsonl",
+    "--output-root",
+    "/root/autodl-tmp/cipheur_stk_online_llm_20261006_002/development_round2",
+    "--workers",
+    "8",
+    "--hard-wall-seconds",
+    "180",
+    "--protocol",
+    "/root/autodl-tmp/cipheur_stk_online_llm_20261006_002/registrations/development_round2/registration.json"
+  ],
+  "stage": "development_round2",
+  "started_utc": "2026-10-05T18:08:21.034569+00:00",
+  "jobs_sha256": "6cc17dc3f075f9d5a856449b63a5a503f921adba67fcc1e82b1dd80031a32523",
+  "source_sha256": "3685b82aa73491006f49670103c94561bf4398b5f0e2b4478c8464132908aa83",
+  "owned_root": "/root/autodl-tmp/cipheur_stk_online_llm_20261006_002",
+  "other_projects_touched": false
+}

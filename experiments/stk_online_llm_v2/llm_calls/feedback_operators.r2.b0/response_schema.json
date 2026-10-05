@@ -1,0 +1,366 @@
+{
+  "title": "LLM proposed current-instance controller and six typed recipes",
+  "description": "Declarations only; executable validation is separate from model provenance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "controller_config",
+    "recipes",
+    "rationale"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": [
+        "stk_online_controller_v2"
+      ]
+    },
+    "controller_config": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "credit_metric",
+        "evolve_every",
+        "parameter_mode",
+        "structural_mode",
+        "paired_race"
+      ],
+      "properties": {
+        "credit_metric": {
+          "type": "string",
+          "enum": [
+            "absolute_signed_gain_per_cpu",
+            "relative_gain_per_cpu"
+          ]
+        },
+        "evolve_every": {
+          "type": "integer",
+          "enum": [
+            8,
+            32,
+            64
+          ]
+        },
+        "parameter_mode": {
+          "type": "string",
+          "enum": [
+            "additive",
+            "bounded_relative"
+          ]
+        },
+        "structural_mode": {
+          "type": "string",
+          "enum": [
+            "legacy_mixed",
+            "atomic_template",
+            "same_operator_rewrite"
+          ]
+        },
+        "paired_race": {
+          "type": "boolean"
+        }
+      }
+    },
+    "recipes": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/$defs/recipe"
+      }
+    },
+    "rationale": {
+      "type": "string",
+      "maxLength": 20000
+    }
+  },
+  "$defs": {
+    "expression": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "value"
+          ],
+          "properties": {
+            "op": {
+              "enum": [
+                "const"
+              ]
+            },
+            "value": {
+              "type": "number",
+              "minimum": -1000000000,
+              "maximum": 1000000000
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "args"
+          ],
+          "properties": {
+            "op": {
+              "type": "string",
+              "enum": [
+                "root",
+                "available",
+                "patch_init"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 0,
+              "items": {
+                "$ref": "#/$defs/expression"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "args"
+          ],
+          "properties": {
+            "op": {
+              "type": "string",
+              "enum": [
+                "neighbors",
+                "neighbors_of_set",
+                "singleton",
+                "induced_edges",
+                "incident_edges",
+                "count",
+                "sum_weights",
+                "max_weight",
+                "clique_cover_weight",
+                "greedy_independent_weight",
+                "edge_min_weight_sum",
+                "edge_weight_product_sum",
+                "weight",
+                "duration",
+                "abs"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "$ref": "#/$defs/expression"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "op",
+            "args"
+          ],
+          "properties": {
+            "op": {
+              "type": "string",
+              "enum": [
+                "union",
+                "intersection",
+                "difference",
+                "add",
+                "sub",
+                "mul",
+                "div",
+                "min",
+                "max"
+              ]
+            },
+            "args": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "$ref": "#/$defs/expression"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "expression"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_]*$",
+          "maxLength": 80
+        },
+        "expression": {
+          "$ref": "#/$defs/expression"
+        }
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "features",
+        "rule",
+        "patch_policy",
+        "evaluation_plan",
+        "adaptation_template",
+        "coefficients",
+        "rationale"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "features": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/feature"
+          }
+        },
+        "rule": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "patch_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "anchor",
+            "destroy_count",
+            "patch_cap",
+            "expand_hops",
+            "reconstruction"
+          ],
+          "properties": {
+            "anchor": {
+              "enum": [
+                "uniform",
+                "blocked_gain",
+                "rejection_frontier",
+                "resource_boundary"
+              ]
+            },
+            "destroy_count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "patch_cap": {
+              "type": "integer",
+              "minimum": 16,
+              "maximum": 64
+            },
+            "expand_hops": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2
+            },
+            "reconstruction": {
+              "enum": [
+                "greedy",
+                "rcl",
+                "exchange"
+              ]
+            }
+          }
+        },
+        "evaluation_plan": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "feature_scope",
+            "max_feature_cpu_fraction",
+            "lazy"
+          ],
+          "properties": {
+            "feature_scope": {
+              "enum": [
+                "patch"
+              ]
+            },
+            "max_feature_cpu_fraction": {
+              "type": "number",
+              "minimum": 0.05,
+              "maximum": 0.3
+            },
+            "lazy": {
+              "enum": [
+                true
+              ]
+            }
+          }
+        },
+        "adaptation_template": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mutation_scales",
+            "stagnation_trials",
+            "action"
+          ],
+          "properties": {
+            "mutation_scales": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "stagnation_trials": {
+              "type": "integer",
+              "minimum": 8,
+              "maximum": 128
+            },
+            "action": {
+              "enum": [
+                "mutate",
+                "diversify",
+                "switch_recipe"
+              ]
+            }
+          }
+        },
+        "coefficients": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": -16,
+            "maximum": 16
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "maxLength": 20000
+        }
+      }
+    }
+  }
+}

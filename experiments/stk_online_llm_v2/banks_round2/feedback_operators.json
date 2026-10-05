@@ -1,0 +1,880 @@
+{
+  "schema_version": "stk_online_llm_v2",
+  "recipes": [
+    {
+      "name": "bounded_second_ring",
+      "features": [
+        {
+          "name": "second_ring_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "sub",
+                    "args": [
+                      {
+                        "op": "count",
+                        "args": [
+                          {
+                            "op": "available",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "const",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) + c1 * weight * second_ring_fraction - c2 * max_conflict_weight - c3 * conflict_weight / max(1, degree)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 1,
+        "patch_cap": 16,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.06,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.03,
+          0.06,
+          0.06,
+          0.08
+        ],
+        "stagnation_trials": 32,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.06,
+        0.025,
+        0.02
+      ],
+      "rationale": "A small uniform repair provides an inexpensive observation channel. The dimensionless second-ring fraction supplies topology beyond first-order neighbor totals and gives a modest bonus to compatible contacts reached through competing neighbors. Every score term has units of seconds. Its direction is a scheduling hypothesis, evaluated through complete signed gains and charged CPU; neither second-ring reach nor certificate agreement proves an improvement."
+    },
+    {
+      "name": "clique_crowding",
+      "features": [
+        {
+          "name": "neighbor_cover_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1e-06
+                  },
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_density",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "mul",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 2
+                  },
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "op": "count",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "sub",
+                        "args": [
+                          {
+                            "op": "count",
+                            "args": [
+                              {
+                                "op": "neighbors",
+                                "args": [
+                                  {
+                                    "op": "root",
+                                    "args": []
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "op": "const",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight - c1 * conflict_weight * neighbor_cover_fraction + c2 * weight * neighbor_edge_density - c3 * max_conflict_weight",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 3,
+        "patch_cap": 24,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.12,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.03,
+          0.04,
+          0.06,
+          0.08
+        ],
+        "stagnation_trials": 48,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.45,
+        0.12,
+        0.025
+      ],
+      "rationale": "Neighbor cover and exact undirected edge density distinguish mutually conflicting alternatives from alternatives that can coexist. Both features are dimensionless; multiplication by neighbor mass or root weight makes the score consistently seconds. Blocked-gain anchoring tests this composition around sampled incumbent blockers. The cover summarizes an opportunity-cost bound, while density supplies a separate crowding correction; their usefulness must survive actual complete reconstruction and cost accounting."
+    },
+    {
+      "name": "rejection_pack_gap",
+      "features": [
+        {
+          "name": "neighbor_pack_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "greedy_independent_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1e-06
+                  },
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1e-06
+                  },
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight - c1 * conflict_weight * neighbor_pack_fraction - c2 * conflict_weight * max(0, neighbor_cover_fraction - neighbor_pack_fraction) - c3 * max_conflict_weight",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 4,
+        "patch_cap": 24,
+        "expand_hops": 1,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.14,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.03,
+          0.05,
+          0.06,
+          0.08
+        ],
+        "stagnation_trials": 64,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.65,
+        0.1,
+        0.025
+      ],
+      "rationale": "A feasible greedy neighbor packing measures concrete coexisting alternatives. With a valid clique cover, the nonnegative cover-minus-pack gap measures unresolved neighborhood opportunity cost, not exact regret. Fractions share the same neighbor-mass denominator, and all score terms are seconds. Rejection-frontier anchoring and top-three reconstruction revisit unsuccessful regions without treating rejection counts as reward. Diversification follows a longer stagnation window than the round-one eight-trial setting."
+    },
+    {
+      "name": "resource_pair_density",
+      "features": [
+        {
+          "name": "weighted_neighbor_density",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "mul",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 2
+                  },
+                  {
+                    "op": "edge_weight_product_sum",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1e-12
+                  },
+                  {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "op": "sum_weights",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "sum_weights",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "unit_neighbor_cost",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "sum_weights",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1e-06
+                  },
+                  {
+                    "op": "weight",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(0.000001, duration + station_gap + satellite_gap) - c1 * unit_neighbor_cost + c2 * weighted_neighbor_density - c3 * degree / max(1, remaining_count - 1)",
+      "patch_policy": {
+        "anchor": "resource_boundary",
+        "destroy_count": 6,
+        "patch_cap": 32,
+        "expand_hops": 1,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.1,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.03,
+          0.05,
+          0.06,
+          0.08
+        ],
+        "stagnation_trials": 48,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.04,
+        0.12,
+        0.04
+      ],
+      "rationale": "Weight products identify conflicts between substantial alternatives rather than counting every neighbor edge equally. Dividing twice the deduplicated edge-product sum by squared neighbor mass removes squared-second units. Neighbor/root mass and degree/residual-size ratios are also dimensionless, so this entire score is dimensionless. Duration plus generic gaps is a ranking proxy for resource occupancy, not an exact resource constraint. Reconstruction and subsequent local exchange receive separate gain attribution."
+    },
+    {
+      "name": "lazy_survivor_bounds",
+      "features": [
+        {
+          "name": "compatible_pack_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "greedy_independent_weight",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1e-06
+                  },
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1e-06
+                  },
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight + c1 * (weight + conflict_weight + compatible_weight) * compatible_pack_fraction - c2 * (weight + conflict_weight + compatible_weight) * max(0, compatible_cover_fraction - compatible_pack_fraction) - c3 * max_conflict_weight if remaining_count <= 16 else c0 * weight / max(1, 1 + degree) - c3 * max_conflict_weight",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 8,
+        "patch_cap": 48,
+        "expand_hops": 2,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.16,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.03,
+          0.04,
+          0.06,
+          0.08
+        ],
+        "stagnation_trials": 64,
+        "action": "switch_recipe"
+      },
+      "coefficients": [
+        1.0,
+        0.85,
+        0.08,
+        0.025
+      ],
+      "rationale": "Inclusion is evaluated together with the topology of its surviving compatible residual. Packing and cover are normalized by current residual weight; multiplying by weight plus conflict_weight plus compatible_weight restores seconds. Their gap is uncertainty in the survivor summary. Lazy conditional evaluation must test residual size before computing either feature, limiting these computations to at most 16 active nodes inside the 48-node patch. Larger boundary construction and exchange costs still count. Stagnation switches the live recipe."
+    },
+    {
+      "name": "wide_frontier_contraction",
+      "features": [
+        {
+          "name": "second_ring_mass_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "sum_weights",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1e-06
+                  },
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_contraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "patch_init",
+                        "args": []
+                      },
+                      {
+                        "op": "available",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "patch_init",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) + c1 * weight * second_ring_mass_fraction * (1 - residual_contraction) - c2 * max_conflict_weight - c3 * conflict_weight / max(1, degree) if remaining_count <= 32 else c0 * weight / max(1, 1 + degree) - c2 * max_conflict_weight - c3 * conflict_weight / max(1, degree)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 12,
+        "patch_cap": 64,
+        "expand_hops": 2,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.08,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.03,
+          0.05,
+          0.06,
+          0.08
+        ],
+        "stagnation_trials": 96,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.12,
+        0.025,
+        0.025
+      ],
+      "rationale": "This exploratory composition combines wider destruction with weighted escape structure and top-three reconstruction. The second-ring mass bonus decreases as the residual contracts; contraction includes selected and conflict-removed nodes and does not measure objective progress. Both features are dimensionless and the score is seconds. The structural branch runs only at residual size at most 32. The TRAIN ILS reference motivates testing broader perturbations but provides no evidence that this particular policy will improve performance. Two-hop construction is charged even before the patch cap applies."
+    }
+  ]
+}

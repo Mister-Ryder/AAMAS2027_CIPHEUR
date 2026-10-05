@@ -1,0 +1,449 @@
+{
+  "schema_version": "stk_online_llm_v2",
+  "recipes": [
+    {
+      "name": "grammar.neighbor_edges",
+      "features": [
+        {
+          "name": "neighbor_edges",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + degree) + c0 * neighbor_edges / (1 + degree)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 3,
+        "patch_cap": 16,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.15,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ],
+        "stagnation_trials": 16,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.5,
+        0.25,
+        -0.25
+      ],
+      "rationale": "Manually predefined non-LLM grammar heuristic. Bounded patch-only structure; no cover/oracle/full-graph scoring. This is not random-search or historically selected evidence of superiority."
+    },
+    {
+      "name": "grammar.neighbor_mean",
+      "features": [
+        {
+          "name": "neighbor_mean",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "sum_weights",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + degree) - c0 * neighbor_mean / (1 + degree)",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 4,
+        "patch_cap": 24,
+        "expand_hops": 1,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.15,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ],
+        "stagnation_trials": 16,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.5,
+        0.25,
+        -0.25
+      ],
+      "rationale": "Manually predefined non-LLM grammar heuristic. Bounded patch-only structure; no cover/oracle/full-graph scoring. This is not random-search or historically selected evidence of superiority."
+    },
+    {
+      "name": "grammar.neighbor_edge_weight",
+      "features": [
+        {
+          "name": "neighbor_edge_weight",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + degree) + c0 * neighbor_edge_weight / (1 + conflict_weight)",
+      "patch_policy": {
+        "anchor": "resource_boundary",
+        "destroy_count": 6,
+        "patch_cap": 32,
+        "expand_hops": 1,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.15,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ],
+        "stagnation_trials": 16,
+        "action": "switch_recipe"
+      },
+      "coefficients": [
+        1.0,
+        0.5,
+        0.25,
+        -0.25
+      ],
+      "rationale": "Manually predefined non-LLM grammar heuristic. Bounded patch-only structure; no cover/oracle/full-graph scoring. This is not random-search or historically selected evidence of superiority."
+    },
+    {
+      "name": "grammar.compatible_max",
+      "features": [
+        {
+          "name": "compatible_max",
+          "expression": {
+            "op": "max_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + degree) + c0 * compatible_max / (1 + conflict_weight)",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 8,
+        "patch_cap": 48,
+        "expand_hops": 2,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.15,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ],
+        "stagnation_trials": 16,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.5,
+        0.25,
+        -0.25
+      ],
+      "rationale": "Manually predefined non-LLM grammar heuristic. Bounded patch-only structure; no cover/oracle/full-graph scoring. This is not random-search or historically selected evidence of superiority."
+    },
+    {
+      "name": "grammar.twohop_count",
+      "features": [
+        {
+          "name": "twohop_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + degree) - c0 * twohop_count / (1 + remaining_count)",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 10,
+        "patch_cap": 64,
+        "expand_hops": 2,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.15,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ],
+        "stagnation_trials": 16,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.5,
+        0.25,
+        -0.25
+      ],
+      "rationale": "Manually predefined non-LLM grammar heuristic. Bounded patch-only structure; no cover/oracle/full-graph scoring. This is not random-search or historically selected evidence of superiority."
+    },
+    {
+      "name": "grammar.twohop_incident",
+      "features": [
+        {
+          "name": "twohop_incident",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "incident_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / (1 + degree) - c0 * twohop_incident / (1 + remaining_count)",
+      "patch_policy": {
+        "anchor": "resource_boundary",
+        "destroy_count": 12,
+        "patch_cap": 64,
+        "expand_hops": 2,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.15,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ],
+        "stagnation_trials": 16,
+        "action": "switch_recipe"
+      },
+      "coefficients": [
+        1.0,
+        0.5,
+        0.25,
+        -0.25
+      ],
+      "rationale": "Manually predefined non-LLM grammar heuristic. Bounded patch-only structure; no cover/oracle/full-graph scoring. This is not random-search or historically selected evidence of superiority."
+    }
+  ]
+}

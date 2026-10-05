@@ -1,0 +1,626 @@
+{
+  "schema_version": "stk_online_controller_v2",
+  "controller_config": {
+    "credit_metric": "absolute_signed_gain_per_cpu",
+    "evolve_every": 32,
+    "parameter_mode": "bounded_relative",
+    "structural_mode": "atomic_template",
+    "paired_race": true
+  },
+  "recipes": [
+    {
+      "name": "bounded_second_ring",
+      "features": [
+        {
+          "name": "second_ring_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [{"op": "root", "args": []}]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 1},
+                  {
+                    "op": "sub",
+                    "args": [
+                      {
+                        "op": "count",
+                        "args": [{"op": "available", "args": []}]
+                      },
+                      {"op": "const", "value": 1}
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) + c1 * weight * second_ring_fraction - c2 * max_conflict_weight - c3 * conflict_weight / max(1, degree)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 1,
+        "patch_cap": 16,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.06,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [0.03, 0.06, 0.06, 0.08],
+        "stagnation_trials": 32,
+        "action": "mutate"
+      },
+      "coefficients": [1.0, 0.06, 0.025, 0.02],
+      "rationale": "A small uniform repair provides an inexpensive observation channel. The dimensionless second-ring fraction supplies topology beyond first-order neighbor totals and gives a modest bonus to compatible contacts reached through competing neighbors. Every score term has units of seconds. Its direction is a scheduling hypothesis, evaluated through complete signed gains and charged CPU; neither second-ring reach nor certificate agreement proves an improvement."
+    },
+    {
+      "name": "clique_crowding",
+      "features": [
+        {
+          "name": "neighbor_cover_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 0.000001},
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_edge_density",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "mul",
+                "args": [
+                  {"op": "const", "value": 2},
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 1},
+                  {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "op": "count",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "sub",
+                        "args": [
+                          {
+                            "op": "count",
+                            "args": [
+                              {
+                                "op": "neighbors",
+                                "args": [{"op": "root", "args": []}]
+                              }
+                            ]
+                          },
+                          {"op": "const", "value": 1}
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight - c1 * conflict_weight * neighbor_cover_fraction + c2 * weight * neighbor_edge_density - c3 * max_conflict_weight",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 3,
+        "patch_cap": 24,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.12,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [0.03, 0.04, 0.06, 0.08],
+        "stagnation_trials": 48,
+        "action": "mutate"
+      },
+      "coefficients": [1.0, 0.45, 0.12, 0.025],
+      "rationale": "Neighbor cover and exact undirected edge density distinguish mutually conflicting alternatives from alternatives that can coexist. Both features are dimensionless; multiplication by neighbor mass or root weight makes the score consistently seconds. Blocked-gain anchoring tests this composition around sampled incumbent blockers. The cover summarizes an opportunity-cost bound, while density supplies a separate crowding correction; their usefulness must survive actual complete reconstruction and cost accounting."
+    },
+    {
+      "name": "rejection_pack_gap",
+      "features": [
+        {
+          "name": "neighbor_pack_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "greedy_independent_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 0.000001},
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 0.000001},
+                  {
+                    "op": "sum_weights",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [{"op": "root", "args": []}]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight - c1 * conflict_weight * neighbor_pack_fraction - c2 * conflict_weight * max(0, neighbor_cover_fraction - neighbor_pack_fraction) - c3 * max_conflict_weight",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 4,
+        "patch_cap": 24,
+        "expand_hops": 1,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.14,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [0.03, 0.05, 0.06, 0.08],
+        "stagnation_trials": 64,
+        "action": "diversify"
+      },
+      "coefficients": [1.0, 0.65, 0.1, 0.025],
+      "rationale": "A feasible greedy neighbor packing measures concrete coexisting alternatives. With a valid clique cover, the nonnegative cover-minus-pack gap measures unresolved neighborhood opportunity cost, not exact regret. Fractions share the same neighbor-mass denominator, and all score terms are seconds. Rejection-frontier anchoring and top-three reconstruction revisit unsuccessful regions without treating rejection counts as reward. Diversification follows a longer stagnation window than the round-one eight-trial setting."
+    },
+    {
+      "name": "resource_pair_density",
+      "features": [
+        {
+          "name": "weighted_neighbor_density",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "mul",
+                "args": [
+                  {"op": "const", "value": 2},
+                  {
+                    "op": "edge_weight_product_sum",
+                    "args": [
+                      {
+                        "op": "induced_edges",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 0.000000000001},
+                  {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "op": "sum_weights",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "sum_weights",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "unit_neighbor_cost",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "sum_weights",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 0.000001},
+                  {
+                    "op": "weight",
+                    "args": [{"op": "root", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(0.000001, duration + station_gap + satellite_gap) - c1 * unit_neighbor_cost + c2 * weighted_neighbor_density - c3 * degree / max(1, remaining_count - 1)",
+      "patch_policy": {
+        "anchor": "resource_boundary",
+        "destroy_count": 6,
+        "patch_cap": 32,
+        "expand_hops": 1,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.1,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [0.03, 0.05, 0.06, 0.08],
+        "stagnation_trials": 48,
+        "action": "mutate"
+      },
+      "coefficients": [1.0, 0.04, 0.12, 0.04],
+      "rationale": "Weight products identify conflicts between substantial alternatives rather than counting every neighbor edge equally. Dividing twice the deduplicated edge-product sum by squared neighbor mass removes squared-second units. Neighbor/root mass and degree/residual-size ratios are also dimensionless, so this entire score is dimensionless. Duration plus generic gaps is a ranking proxy for resource occupancy, not an exact resource constraint. Reconstruction and subsequent local exchange receive separate gain attribution."
+    },
+    {
+      "name": "lazy_survivor_bounds",
+      "features": [
+        {
+          "name": "compatible_pack_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "greedy_independent_weight",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [{"op": "root", "args": []}]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 0.000001},
+                  {
+                    "op": "sum_weights",
+                    "args": [{"op": "available", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "clique_cover_weight",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "available", "args": []},
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [{"op": "root", "args": []}]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 0.000001},
+                  {
+                    "op": "sum_weights",
+                    "args": [{"op": "available", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight + c1 * (weight + conflict_weight + compatible_weight) * compatible_pack_fraction - c2 * (weight + conflict_weight + compatible_weight) * max(0, compatible_cover_fraction - compatible_pack_fraction) - c3 * max_conflict_weight if remaining_count <= 16 else c0 * weight / max(1, 1 + degree) - c3 * max_conflict_weight",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 8,
+        "patch_cap": 48,
+        "expand_hops": 2,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.16,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [0.03, 0.04, 0.06, 0.08],
+        "stagnation_trials": 64,
+        "action": "switch_recipe"
+      },
+      "coefficients": [1.0, 0.85, 0.08, 0.025],
+      "rationale": "Inclusion is evaluated together with the topology of its surviving compatible residual. Packing and cover are normalized by current residual weight; multiplying by weight plus conflict_weight plus compatible_weight restores seconds. Their gap is uncertainty in the survivor summary. Lazy conditional evaluation must test residual size before computing either feature, limiting these computations to at most 16 active nodes inside the 48-node patch. Larger boundary construction and exchange costs still count. Stagnation switches the live recipe."
+    },
+    {
+      "name": "wide_frontier_contraction",
+      "features": [
+        {
+          "name": "second_ring_mass_fraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "sum_weights",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [{"op": "root", "args": []}]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [{"op": "root", "args": []}]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 0.000001},
+                  {
+                    "op": "sum_weights",
+                    "args": [{"op": "available", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "residual_contraction",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {"op": "patch_init", "args": []},
+                      {"op": "available", "args": []}
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {"op": "const", "value": 1},
+                  {
+                    "op": "count",
+                    "args": [{"op": "patch_init", "args": []}]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) + c1 * weight * second_ring_mass_fraction * (1 - residual_contraction) - c2 * max_conflict_weight - c3 * conflict_weight / max(1, degree) if remaining_count <= 32 else c0 * weight / max(1, 1 + degree) - c2 * max_conflict_weight - c3 * conflict_weight / max(1, degree)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 12,
+        "patch_cap": 64,
+        "expand_hops": 2,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.08,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [0.03, 0.05, 0.06, 0.08],
+        "stagnation_trials": 96,
+        "action": "diversify"
+      },
+      "coefficients": [1.0, 0.12, 0.025, 0.025],
+      "rationale": "This exploratory composition combines wider destruction with weighted escape structure and top-three reconstruction. The second-ring mass bonus decreases as the residual contracts; contraction includes selected and conflict-removed nodes and does not measure objective progress. Both features are dimensionless and the score is seconds. The structural branch runs only at residual size at most 32. The TRAIN ILS reference motivates testing broader perturbations but provides no evidence that this particular policy will improve performance. Two-hop construction is charged even before the patch cap applies."
+    }
+  ],
+  "rationale": "Evidence and scope: the proposal uses the supplied complete 144-run TRAIN summaries and source coverage: nine methods, 16 runs each, four source cells, and two independent source groups. There are no VAL, TEST, or future outcomes. In the following tuples, entries are mean reward seconds, paired difference from degree seconds, actual CPU seconds, reconstruction feature CPU seconds; logged negative raw proposals, controller updates, mutations; accepted operators, timeout/error trials. Degree: (740969.630641, 0, 10.014971, 2.091930; 31534, 67928, 0; 5705, 30). LLM witness: (735924.746145, -5044.884495, 10.029243, 3.021138; 7519, 57463, 7170; 3405, 1549). LLM feedback: (735948.235723, -5021.394918, 10.039568, 2.380785; 7220, 61702, 7699; 3729, 940). Grammar online: (737427.769460, -3541.861181, 10.015852, 3.357265; 8881, 49836, 6219; 4411, 1255). Witness fixed: (732513.106313, -8456.524328, 10.006988, 7.990292; 7780, 17332, 0; 2085, 5925). Witness base9: (736110.194632, -4859.436008, 10.032070, 1.370620; 7383, 68688, 8574; 3808, 42). CHILS ILS: (750236.537205, +9266.906565, 10.016260, 0). CHILS: (738920.858123, -2048.772518, 10.015786, 0). CP-SAT: (724064.179698, -16905.450943, 10.024738, 0). Native methods have no corresponding in-project operator/controller telemetry; their zero counters do not establish absence of worsening internal moves. Witness-minus-degree means are negative in every source cell: -4573.235926, -5332.122420, -3525.989760, and -6748.189875 seconds. This evidence does not establish an information-repair or LLM scheduling advantage.\n\nActual curves constrain interpretation. In the supplied large-gap example, witness finishes at 680910.241916 seconds versus degree at 680127.998667, a single-example difference of +782.243249 seconds. At the actual approximately two-second events, witness is at 666188.236515 and degree at 670452.200997; the final ordering therefore does not describe the early ordering. Witness uses 2975 updates, 371 mutations, 288 accepted operators and 64 incomplete trials, with 2.469726 seconds of feature CPU. Feedback makes 4864 updates and 607 mutations but reaches its last improvement at CPU 5.014067, finishing at 665568.938819 despite about ten seconds total CPU. In the other supplied example, witness finishes at 743041.670413, below feedback's 747233.705742 and degree's 750843.251362. Its accepted-operator decomposition is -25400.329721 seconds from ranking plus 34864.464634 from local exchange, yielding 9464.134913 seconds net operator gain. Thus rank commits, feature reads and mutation counts cannot substitute for net schedule improvement. The representative controllers report zero cycle notifications and zero witness mutations, so these curves do not demonstrate gains caused by online witness-triggered repair. CHILS ILS final observations are 700603.232459 and 758444.909837 seconds, but its internal curves are unavailable; no intermediate native trajectory is inferred or interpolated.\n\nCredit and adaptation: for incumbent S=D union F and a complete feasible reconstructed Q, define delta_ticks=J(F union Q)-J(S)=W(Q)-W(D), using exact integer microseconds. The chosen observation metric is delta_ticks/max(charged_CPU_seconds, 0.000001), without clipping and without division by destroyed weight. Retain signed complete negative proposals even though the kernel rejects their commits. At equal CPU, +100 seconds replacing 10000 seconds must outrank +50 replacing 1000; relative credit would reverse that ordering through 0.01 versus 0.05. Absolute credit can favor larger repairs with larger absolute opportunities, so retain patch size, destroyed weight and policy in diagnostics rather than asserting size neutrality. Costs include selection and mutation, boundary construction, feature/ranking work, reconstruction exchange, feasibility checks, diagnostics, archive recomputation and cache maintenance. Shared-exchange gains remain separately attributed, and final validation remains charged. Incomplete proposals retain their status, raw diagnostics and full cost; their partial gains cannot be treated as successful complete observations. Failure costs must remain in allocation accounting. Stagnation resets on an actual positive committed improvement, not certificate fit or an uncommitted race candidate.\n\nThe actual r1 observe implementation clips gain/destroyed_weight to [-1,1], then rate divides EMA reward by EMA CPU. That is not the proposed unclipped absolute signed metric. Selection uses certificate fit only as a tie-break, and fit must remain separate from scheduling reward. R1's approximately eight-observation mutation cadence produces thousands of mutations: 7170 for witness and 7699 for feedback. At a fixed observation count, a 32-observation cadence gives roughly one quarter as many scheduled evolution opportunities, allowing more evaluation between changes; actual future counts may differ because races consume CPU and observations. Eight risks frequent changes before useful comparison, while 64 can delay adaptation after stagnation. No count alone proves an effective frequency. New children race their parents on one saved actual F/P boundary, using complete feasible signed gains and measured costs. Both reconstructions are charged; common boundary/diagnostic overhead is charged once under a consistent allocation. Only one positive feasible proposal can be committed, and paired candidate evaluations are not two committed gains. A timeout makes the comparison incomplete. This comparison isolates ranking/reconstruction on that boundary; mutated anchor or destruction policies need subsequent ordinary trials on their own boundaries.\n\nSemantic protection follows the supplied source, not a claimed causal diagnosis. R1 additive mutation uses, for example, scale 0.6 around an original coefficient 0.02 in the cheap recipe. Its feature import/fusion and rule mutation append c_i times arbitrary Numeric-compatible operands, and feature removal rewrites dependent rules. Such operations can disrupt intended magnitude or combine dimensionless operands with second-valued scores. These are code-supported risks, not proven explanations of measured deficits. Bounded-relative mutation should remain centered near each original LLM coefficient scale, including across successive generations, and enforce finite global limits [-16,16]. The declared small scales do not infer physical units. Atomic-template mode preserves an entire declared feature/rule composition, including normalization and conditional guards; policies and nearby coefficients can evolve. Witness adaptation should select or switch an intact block rather than use the old isolated-feature graft. Same-outer-operator rewriting would only be a bounded search heuristic, not proof of dimensional or semantic equivalence.\n\nCertified evidence remains the core: certified conditional decision evidence -> exact representation conflict -> structural witness -> LLM typed structural-feature/ranking composition -> joint consistency, actual complete schedule quality and charged cost. The supplied strict requirements total 743, comprising 400 p0, 118 expanded and 225 heterogeneous requirements, with 32 displayed. Opposite strict preferences on v840/v841 and v960/v961 demonstrate common-base9 pointwise conflicts because those vector identities preserve exact full-nine coordinate equality. Unknown intervals are not ties, and repeated or nested queries are not independent examples. These conditional requirements do not certify a globally best reconstruction or pivot. Witness receives the structural witness; feedback-only receives the same relations and outcomes without it. The six structural blocks supply neighbor topology, packing/cover information, compatible survival and residual-context coordinates that might separate conflicting contexts. Separation and joint strict-relation consistency must be checked; an unresolved cycle must remain unresolved rather than being counted as repair.\n\nThe archive correction is explicitly supplied by engineers: r1 constructs one shared archive from base9 only, so its notifications can persist after a genome expands its representation. Such a notification is not a certified contradiction of that expanded representation. R2 must isolate archives by exact representation_hash semantics, include base9 plus all actual current added-feature coordinates, and recompute retained contexts under one common representation. Saved outside boundary, initial patch and current residual are necessary for context-dependent coordinates. Diagnostic evaluation must compute every current coordinate even when a lazy scoring branch would skip it; unavailable or timed-out coordinates cannot be replaced by zero or entered as a complete certificate. Recomputed vectors and all maintenance are charged. A cycle constrains one common pointwise score under that exact representation, not every expanded genome or every time-varying controller. The engineering correction itself establishes no new performance advantage.\n\nDimensions and execution: all declared added features are dimensionless ratios. Count guards of 1 are dimensionless; epsilon=0.000001 seconds and epsilon squared=0.000000000001 squared seconds match their denominators and are generic microsecond guards. Neighbor edge density is 2m/max(1,k(k-1)); weighted density is twice the undirected edge-product mass divided by squared neighbor mass. Packing and cover fractions divide second-valued summaries by a common second-valued mass. Every score except resource_pair_density is second-valued; its weight/occupancy and other ratios make it dimensionless. Scores are compared only within reconstruction, while all recipes receive common exact objective credit. Nonzero coefficients make every added feature affect its corresponding active rule branch. These expression trees contain at most 27 nodes in aggregate per recipe and depth at most 7. Structural evaluation is confined to the exact residual within P<=64, with no hidden truncation or full-graph feature rescoring. Lazy guards reduce packing/cover work, but feature fractions are per-trial allowances, not guarantees of aggregate feature share: r1 checks its fraction after a ranking pass, and repeated aborted work still costs CPU. Wider two-hop boundary construction also remains separately charged. The frozen program runs online with evolving controller, policy and nearby parameters; populations, credits and caches reset for each independent instance, with no online LLM or external answer oracle. These declarations require fresh executable validation and do not claim future performance."
+}

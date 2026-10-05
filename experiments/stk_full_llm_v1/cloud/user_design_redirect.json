@@ -1,0 +1,161 @@
+{
+  "utc": "2026-10-05T16:52:38.472606+00:00",
+  "reason": "User requested instance-local adaptive heuristic/evolution; old frozen-selection study stopped, all artifacts retained.",
+  "verified_queue_roots": [
+    13551,
+    16446
+  ],
+  "stopped_processes": [
+    {
+      "pid": 13551,
+      "state": "S",
+      "ppid": 1,
+      "start_ticks": 2475671503,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/run_formal_queue.py "
+    },
+    {
+      "pid": 16446,
+      "state": "S",
+      "ppid": 1,
+      "start_ticks": 2475763847,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/run_feature_diagnostic_queue.py --root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001 "
+    },
+    {
+      "pid": 17133,
+      "state": "S",
+      "ppid": 13551,
+      "start_ticks": 2475791320,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/stage_schedule_runner.py --stage test --manifest /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/manifest.json --data-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --native-executable /root/autodl-tmp/aamas2027_v03/baselines/CHILS/CHILS --execute --output-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results "
+    },
+    {
+      "pid": 17135,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791328,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.resource_tracker import main;main(5) "
+    },
+    {
+      "pid": 17136,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791329,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=8) --multiprocessing-fork "
+    },
+    {
+      "pid": 17138,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791335,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=10) --multiprocessing-fork "
+    },
+    {
+      "pid": 17140,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791340,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=12) --multiprocessing-fork "
+    },
+    {
+      "pid": 17142,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791346,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=14) --multiprocessing-fork "
+    },
+    {
+      "pid": 17144,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791353,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=16) --multiprocessing-fork "
+    },
+    {
+      "pid": 17146,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791359,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=18) --multiprocessing-fork "
+    },
+    {
+      "pid": 17148,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791365,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=20) --multiprocessing-fork "
+    },
+    {
+      "pid": 17150,
+      "state": "S",
+      "ppid": 17133,
+      "start_ticks": 2475791372,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=6, pipe_handle=22) --multiprocessing-fork "
+    },
+    {
+      "pid": 20972,
+      "state": "S",
+      "ppid": 17144,
+      "start_ticks": 2475914477,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/full_schedule_benchmark.py --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --graph /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AP-r009/gW0340_gE1200_s0150.npz --metadata /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AP-r009/gW0340_gE1200_s0150.json --source CP-AP-r009 --config gW0340_gE1200_s0150 --split test --method chils_ils --seconds 10.0 --seed 5 --protocol /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/protocol.json --output /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/8c0d08e235d29afe78bf.json --native-executable /root/autodl-tmp/aamas2027_v03/baselines/CHILS/CHILS --native-output-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/8c0d08e235d29afe78bf_native "
+    },
+    {
+      "pid": 20975,
+      "state": "R",
+      "ppid": 20972,
+      "start_ticks": 2475914546,
+      "cmd": "/root/autodl-tmp/aamas2027_v03/baselines/CHILS/CHILS -g /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/8c0d08e235d29afe78bf_native/chils-6nt33yp3/graph metis -i /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/8c0d08e235d29afe78bf_native/chils-6nt33yp3/initial.ids -o /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/8c0d08e235d29afe78bf_native/chils-6nt33yp3/selected.ids -p 1 -c 1 -t 9.400561156553907 -s 0 -r 5 "
+    },
+    {
+      "pid": 20979,
+      "state": "R",
+      "ppid": 17148,
+      "start_ticks": 2475914616,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/full_schedule_benchmark.py --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --graph /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r009/g1200.npz --metadata /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r009/g1200.json --source CP-AU-r009 --config g1200 --split test --method weight --seconds 10.0 --seed 2 --protocol /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/protocol.json --output /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/8e21b2cdbf593cb37650.json "
+    },
+    {
+      "pid": 20982,
+      "state": "R",
+      "ppid": 17140,
+      "start_ticks": 2475914669,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/full_schedule_benchmark.py --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --graph /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AP-r009/gW1200_gE0340_s0150.npz --metadata /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AP-r009/gW1200_gE0340_s0150.json --source CP-AP-r009 --config gW1200_gE0340_s0150 --split test --method program --seconds 10.0 --seed 3 --protocol /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/protocol.json --output /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/66270415d28ea49b9255.json --program-bank /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/programme_bank.json --program-id witness_joint.r2.b0.s2 "
+    },
+    {
+      "pid": 20983,
+      "state": "R",
+      "ppid": 17142,
+      "start_ticks": 2475914672,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/full_schedule_benchmark.py --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --graph /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r008/g1200.npz --metadata /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r008/g1200.json --source CP-AU-r008 --config g1200 --split test --method program --seconds 10.0 --seed 5 --protocol /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/protocol.json --output /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/4a8a149bd2904a8228bc.json --program-bank /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/programme_bank.json --program-id relations_joint.r2.b0.s0 "
+    },
+    {
+      "pid": 20985,
+      "state": "R",
+      "ppid": 17138,
+      "start_ticks": 2475914707,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/full_schedule_benchmark.py --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --graph /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AP-r009/gW0680_gE1200_s0150.npz --metadata /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AP-r009/gW0680_gE1200_s0150.json --source CP-AP-r009 --config gW0680_gE1200_s0150 --split test --method grasp --seconds 10.0 --seed 5 --protocol /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/protocol.json --output /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/36946ecfe3cfdcd58832.json "
+    },
+    {
+      "pid": 20989,
+      "state": "R",
+      "ppid": 17150,
+      "start_ticks": 2475915062,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/full_schedule_benchmark.py --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --graph /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r008/gW0680_gE1200_s0150.npz --metadata /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r008/gW0680_gE1200_s0150.json --source CP-AU-r008 --config gW0680_gE1200_s0150 --split test --method degree --seconds 2.0 --seed 3 --protocol /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/protocol.json --output /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/c05b32659136979e9555.json "
+    },
+    {
+      "pid": 20994,
+      "state": "R",
+      "ppid": 17146,
+      "start_ticks": 2475915113,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/full_schedule_benchmark.py --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --graph /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r009/g0340.npz --metadata /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r009/g0340.json --source CP-AU-r009 --config g0340 --split test --method cp_sat --seconds 10.0 --seed 3 --protocol /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/protocol.json --output /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/92fc70a398702cbd4d1d.json "
+    },
+    {
+      "pid": 20995,
+      "state": "R",
+      "ppid": 17136,
+      "start_ticks": 2475915115,
+      "cmd": "/root/autodl-tmp/cipheur_stk_full_llm_20261005_001/venv/bin/python /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/scripts/full_schedule_benchmark.py --cipheur-root /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/code --graph /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r008/g1800.npz --metadata /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/data/graphs/CP-AU-r008/g1800.json --source CP-AU-r008 --config g1800 --split test --method program --seconds 10.0 --seed 2 --protocol /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/protocol.json --output /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/results/results/ae2adb7bba0714133485.json --program-bank /root/autodl-tmp/cipheur_stk_full_llm_20261005_001/test/registration/programme_bank.json --program-id relations_joint.r2.b0.s0 "
+    }
+  ],
+  "still_running_owned_pids": [],
+  "test_result_files_preserved": 1561,
+  "new_protocol_required": true,
+  "other_projects_touched": false
+}

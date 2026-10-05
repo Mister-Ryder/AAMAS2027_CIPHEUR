@@ -1,0 +1,26 @@
+{
+  "version": "exact_review_archive_parts_v1",
+  "archive_name": "development_full_trajectory.zip",
+  "archive_bytes": 103450184,
+  "archive_sha256": "935d73bb2b38f89d055474e0fba635d60fb220e5c6186ad5115b2d7fbc885896",
+  "raw_result_count": 144,
+  "stage": "development",
+  "parts": [
+    {
+      "name": "development_full_trajectory.zip.part01",
+      "bytes": 50331648,
+      "sha256": "77f3794fe012dbf441d29ad9b8a5180e1439216ea0eb0294d6531c665a7ba3f3"
+    },
+    {
+      "name": "development_full_trajectory.zip.part02",
+      "bytes": 50331648,
+      "sha256": "5b6c44d219e3ee2f117c7930f05820793a3f0f8cb61266bcb29712e13c8f241a"
+    },
+    {
+      "name": "development_full_trajectory.zip.part03",
+      "bytes": 2786888,
+      "sha256": "3eadfc4b84db4c6801da514cacd9271686700d3b7da899577368fe95c4487318"
+    }
+  ],
+  "reconstruction": "Use scripts/reassemble_review_archives.py; no solver or model calls"
+}

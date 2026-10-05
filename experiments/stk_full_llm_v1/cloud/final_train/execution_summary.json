@@ -1,0 +1,1470 @@
+{
+  "stage": "final_train",
+  "manifest_sha256": "96d970c6d920fec4e2673081c23048e3a752c454a125513d77f701a570d298fa",
+  "finished_utc": "2026-10-05T16:31:27.869929+00:00",
+  "registered_jobs": 1440,
+  "recorded_jobs": 1440,
+  "missing_job_ids": [],
+  "worker_failures": [],
+  "worker_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "status_counts": {
+    "complete": 1440
+  },
+  "by_method_budget_seed": [
+    {
+      "method": "program",
+      "program_id": "witness_joint.r2.b0.s2",
+      "arm": "witness_joint",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729604369219.3125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s1",
+      "arm": "relations_rule_only",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730887386953.5625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r2.b1.s0",
+      "arm": "relations_rule_only",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730663808972.4375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "cp_sat",
+      "program_id": null,
+      "arm": "cp_sat",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 718887172750.9375,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r2.b0.s0",
+      "arm": "relations_joint",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729374525001.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s0",
+      "arm": "witness_joint",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729918600692.9375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r2.b1.s0",
+      "arm": "relations_rule_only",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730888240778.375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "cp_sat",
+      "program_id": null,
+      "arm": "cp_sat",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 720827912798.4375,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "local2swap",
+      "program_id": null,
+      "arm": "local2swap",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 736010959100.9375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s1",
+      "arm": "relations_rule_only",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735922341226.5,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "cp_sat",
+      "program_id": null,
+      "arm": "cp_sat",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 720819810588.4375,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils_ils",
+      "program_id": null,
+      "arm": "chils_ils",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 749597058943.5,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s0",
+      "arm": "relations_joint",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730915512545.5,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r2.b1.s0",
+      "arm": "relations_rule_only",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 736112789269.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "joint|block_0_witness:2",
+      "arm": "old_frozen",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 719941062381.125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils",
+      "program_id": null,
+      "arm": "chils",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 738603968665.875,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r2.b0.s2",
+      "arm": "witness_joint",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 733858317234.25,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r2.b1.s0",
+      "arm": "relations_rule_only",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 736401231544.375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils_ils",
+      "program_id": null,
+      "arm": "chils_ils",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 749436354097.625,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "joint|block_0_witness:2",
+      "arm": "old_frozen",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 719906777351.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r2.b0.s0",
+      "arm": "relations_joint",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729831190648.375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "grasp",
+      "program_id": null,
+      "arm": "grasp",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 723799557464.0625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "degree",
+      "program_id": null,
+      "arm": "degree",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 736462660398.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r2.b0.s2",
+      "arm": "witness_joint",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729701652087.875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s0",
+      "arm": "witness_joint",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729750765900.25,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils_ils",
+      "program_id": null,
+      "arm": "chils_ils",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 749577163306.0625,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s0",
+      "arm": "nonllm_grammar",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735814922944.5625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "cp_sat",
+      "program_id": null,
+      "arm": "cp_sat",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 718887172750.9375,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s0",
+      "arm": "nonllm_grammar",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730922877328.8125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "degree",
+      "program_id": null,
+      "arm": "degree",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730738937226.5,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s0",
+      "arm": "nonllm_grammar",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735762147787.625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r2.b0.s2",
+      "arm": "witness_joint",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 734398741482.3125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils",
+      "program_id": null,
+      "arm": "chils",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 738845605155.5625,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r2.b0.s0",
+      "arm": "relations_joint",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729849597503.3125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r2.b0.s2",
+      "arm": "witness_joint",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729510530553.5625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "weight",
+      "program_id": null,
+      "arm": "weight",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 726468256528.9375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r2.b0.s0",
+      "arm": "relations_joint",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 734389434907.75,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s0",
+      "arm": "relations_joint",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730789355075.125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "local2swap",
+      "program_id": null,
+      "arm": "local2swap",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 724856223904.0625,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r2.b1.s0",
+      "arm": "relations_rule_only",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730989987986.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "weight",
+      "program_id": null,
+      "arm": "weight",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 728683134834.875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s0",
+      "arm": "witness_joint",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 733133122300.3125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "joint|block_0_witness:2",
+      "arm": "old_frozen",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 720198899171.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s0",
+      "arm": "nonllm_grammar",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730900422051.875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s1",
+      "arm": "relations_rule_only",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730709948121.875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "local2swap",
+      "program_id": null,
+      "arm": "local2swap",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 724941971359.6875,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils",
+      "program_id": null,
+      "arm": "chils",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 738939522152.0,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils_ils",
+      "program_id": null,
+      "arm": "chils_ils",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 750236226552.8125,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils",
+      "program_id": null,
+      "arm": "chils",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 738897563886.9375,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils_ils",
+      "program_id": null,
+      "arm": "chils_ils",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 750138522168.5,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s1",
+      "arm": "relations_rule_only",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735761840159.9375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "grasp",
+      "program_id": null,
+      "arm": "grasp",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729166709788.875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s1",
+      "arm": "relations_rule_only",
+      "seconds": 2.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730929890421.1875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "grasp",
+      "program_id": null,
+      "arm": "grasp",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 723574567200.125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s0",
+      "arm": "witness_joint",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 733272544744.875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "local2swap",
+      "program_id": null,
+      "arm": "local2swap",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735934661333.5,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "joint|block_0_witness:2",
+      "arm": "old_frozen",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 720036860305.4375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "degree",
+      "program_id": null,
+      "arm": "degree",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730732744534.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "degree",
+      "program_id": null,
+      "arm": "degree",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 736480101814.625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s0",
+      "arm": "witness_joint",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 733119778892.5625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "local2swap",
+      "program_id": null,
+      "arm": "local2swap",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 724893509489.5625,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils",
+      "program_id": null,
+      "arm": "chils",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 738788361654.3125,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "grasp",
+      "program_id": null,
+      "arm": "grasp",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729373375511.3125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r2.b0.s0",
+      "arm": "relations_joint",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 734701586154.25,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "cp_sat",
+      "program_id": null,
+      "arm": "cp_sat",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 718887172750.9375,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s0",
+      "arm": "relations_joint",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735983336784.8125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s1",
+      "arm": "relations_rule_only",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 736108731192.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "weight",
+      "program_id": null,
+      "arm": "weight",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 728407428391.5625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "weight",
+      "program_id": null,
+      "arm": "weight",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 728499443787.5,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "local2swap",
+      "program_id": null,
+      "arm": "local2swap",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735929736958.0,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s0",
+      "arm": "relations_joint",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730929230322.75,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils",
+      "program_id": null,
+      "arm": "chils",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 738603968665.875,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "grasp",
+      "program_id": null,
+      "arm": "grasp",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729584144053.625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "chils_ils",
+      "program_id": null,
+      "arm": "chils_ils",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 750263619257.25,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "weight",
+      "program_id": null,
+      "arm": "weight",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 726540858492.3125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s0",
+      "arm": "nonllm_grammar",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730746012850.6875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "joint|block_0_witness:2",
+      "arm": "old_frozen",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 720049919975.125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r2.b0.s2",
+      "arm": "witness_joint",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 734080728796.1875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "degree",
+      "program_id": null,
+      "arm": "degree",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 730571381353.75,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "joint|block_0_witness:2",
+      "arm": "old_frozen",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 720014563178.125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s0",
+      "arm": "witness_joint",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 729811262017.125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r2.b1.s0",
+      "arm": "relations_rule_only",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 736460745454.1875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "grasp",
+      "program_id": null,
+      "arm": "grasp",
+      "seconds": 2.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 723549302426.5,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s0",
+      "arm": "relations_joint",
+      "seconds": 10.0,
+      "seed": 5,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735631338094.3125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "degree",
+      "program_id": null,
+      "arm": "degree",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 736365250674.6875,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r2.b0.s0",
+      "arm": "relations_joint",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 734765107363.4375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s0",
+      "arm": "relations_joint",
+      "seconds": 10.0,
+      "seed": 3,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735846965188.625,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s0",
+      "arm": "nonllm_grammar",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 735993330936.8125,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "cp_sat",
+      "program_id": null,
+      "arm": "cp_sat",
+      "seconds": 10.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 721246005967.9375,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    },
+    {
+      "method": "weight",
+      "program_id": null,
+      "arm": "weight",
+      "seconds": 2.0,
+      "seed": 2,
+      "records": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_denominator": 16,
+      "mean_value_ticks_on_feasible_records": 726694661532.4375,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "interpretation": "descriptive only; this script makes no programme-selection decision"
+    }
+  ],
+  "execution_wall_seconds": 1168.103288013488,
+  "load_average_at_end": [
+    20.14,
+    23.97,
+    24.25
+  ]
+}

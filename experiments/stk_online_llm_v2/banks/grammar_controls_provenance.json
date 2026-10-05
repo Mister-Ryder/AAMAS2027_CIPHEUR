@@ -1,0 +1,14 @@
+{
+  "version": "stk_online_llm_v2_predefined_grammar_controls",
+  "generator": "manually predefined six grammar heuristics",
+  "random_search": false,
+  "actual_LLM_calls": 0,
+  "historical_fit_used_for_selection": false,
+  "historical_schedule_quality_used_for_selection": false,
+  "structural_challenge_used_for_selection": false,
+  "recipes": 6,
+  "bank_sha256": "0a12c79acc209e3ccc33fa5f51f99a64ff0d0b6157c7e15e814f30dcb5594ef7",
+  "source_sha256": "8eee357fd9bdfae2df33d1b63bed3e84220b40f896984c922858fa08db4685e2",
+  "scope": "All feature computation on exact bounded patches; same schema and executable validator as model recipes",
+  "cost_note": "No full-graph cover/greedy feature; actual bounded feature computation still incurs charged CPU"
+}

@@ -1,0 +1,3219 @@
+{
+  "version": "stk_online_llm_v2_registered_structural_challenge",
+  "split": "TRAIN",
+  "namespace": "exact_fraction_seconds_patch_station_local_v2",
+  "context_sha256": "314bd28a58c10bcf1ec7f60820f40e5368e55a7b5ae1d3384204c869ce59f6d2",
+  "context_path": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_full_llm_v1\\context\\train_context.json",
+  "source": "CP-AU-r000",
+  "query_id": "CP-AU-r000:q008:d16",
+  "roots_local": [
+    23,
+    24
+  ],
+  "boundary": {
+    "active_P_count": 64,
+    "boundary_hash": "643a05a5e3ccace26b929f01db5b04fe4ffa10bab10505f23ea0beeb5ee3d886",
+    "commitment": "Same frozen feasible F, variable P, excluded X in every configuration",
+    "excluded_X_count": 10990,
+    "fixed_F_count": 1413
+  },
+  "graph_scope": "Complete restricted P64 graph under common F/P/X; not the complete12k graph or full72h optimum",
+  "duration_metadata": "This frozen contact-duration objective equals the exact duration; input Fraction seconds converted losslessly to microticks. Station gap is the stored per-root map; satellite gap150seconds.",
+  "old_numeric_namespace_reused": false,
+  "strict_certificate_directions": {
+    "E": "a",
+    "J": "b"
+  },
+  "banks": [
+    {
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\banks\\witness_operators.json",
+      "sha256": "5f02aeff896b937b60b0682de1c4fc20552a9918d7c7c5837aee993b21a77b8e",
+      "recipes": 6
+    },
+    {
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\banks\\feedback_operators.json",
+      "sha256": "7b1b95a69b3173221f79eb3dec2bb82e902204da6561c01748211b0349176005",
+      "recipes": 6
+    },
+    {
+      "path": "E:\\01-Joycecyq\\2026-AAMAS\\第二篇\\experiments\\stk_online_llm_v2\\banks\\grammar_operators.json",
+      "sha256": "0a12c79acc209e3ccc33fa5f51f99a64ff0d0b6157c7e15e814f30dcb5594ef7",
+      "recipes": 6
+    }
+  ],
+  "summary": [
+    {
+      "bank": "feedback_operators",
+      "recipes": 6,
+      "evaluated": 6,
+      "evaluation_errors": 0,
+      "added_representation_distinguishes": 1,
+      "initial_rule_matches_both_strict_requirements": 0,
+      "remaining_challenge_cycles": 5
+    },
+    {
+      "bank": "grammar_operators",
+      "recipes": 6,
+      "evaluated": 6,
+      "evaluation_errors": 0,
+      "added_representation_distinguishes": 1,
+      "initial_rule_matches_both_strict_requirements": 0,
+      "remaining_challenge_cycles": 5
+    },
+    {
+      "bank": "witness_operators",
+      "recipes": 6,
+      "evaluated": 6,
+      "evaluation_errors": 0,
+      "added_representation_distinguishes": 5,
+      "initial_rule_matches_both_strict_requirements": 1,
+      "remaining_challenge_cycles": 1
+    }
+  ],
+  "rows": [
+    {
+      "bank": "witness_operators",
+      "slot": 0,
+      "name": "cheap_frontier_degree",
+      "recipe_sha256": "f62cfa4ebb649ed163c4dfae0d89b55dc1525e3ed0170e08633d28e91a1985a6",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_count": "31"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_count": "20"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_count": "31"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_count": "20"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 21.01004684632612,
+          "24": 31.426126259392685
+        },
+        "J": {
+          "23": 21.01004684632612,
+          "24": 31.426126259392685
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 497,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 222,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "count": 2
+          },
+          "cache_hits": 20,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "frontier_count": 2
+          },
+          "diagnostic_feature_reads": {
+            "frontier_count": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 497,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 222,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "count": 2
+          },
+          "cache_hits": 20,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "frontier_count": 2
+          },
+          "diagnostic_feature_reads": {
+            "frontier_count": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "witness_operators",
+      "slot": 1,
+      "name": "blocked_frontier_exposure",
+      "recipe_sha256": "c25aac6141c953b68949529738ed157be6a5371445e73bf21a563999d4f53a5e",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [
+          "frontier_incident_cost"
+        ],
+        "24": [
+          "frontier_incident_cost"
+        ]
+      },
+      "added_representation_distinguishes_at_least_one_root": true,
+      "both_roots_still_full_representation_alias": false,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_weight": "13859824087/1000000",
+            "frontier_count": "31",
+            "frontier_incident_cost": "14272553937/200000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_weight": "8452036039/1000000",
+            "frontier_count": "20",
+            "frontier_incident_cost": "49565274227/1000000"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_weight": "13859824087/1000000",
+            "frontier_count": "31",
+            "frontier_incident_cost": "20973591517/250000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_weight": "8452036039/1000000",
+            "frontier_count": "20",
+            "frontier_incident_cost": "53566777663/1000000"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": -2.7337308272580714,
+          "24": 0.12151755891665772
+        },
+        "J": {
+          "23": -12.839856942580642,
+          "24": -4.880361736083337
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 4,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q3",
+            "q2"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": false,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 24,
+          "ops": 1851,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 766,
+            "metadata_read": 6,
+            "adjacency_scan": 664,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "sum_weights": 2,
+            "count": 2,
+            "incident_edges": 2,
+            "edge_min_weight_sum": 2,
+            "arithmetic": 285
+          },
+          "cache_hits": 26,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "frontier_weight": 2,
+            "frontier_count": 2,
+            "frontier_incident_cost": 2
+          },
+          "diagnostic_feature_reads": {
+            "frontier_weight": 2,
+            "frontier_count": 2,
+            "frontier_incident_cost": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 24,
+          "ops": 1995,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 836,
+            "metadata_read": 6,
+            "adjacency_scan": 703,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "sum_weights": 2,
+            "count": 2,
+            "incident_edges": 2,
+            "edge_min_weight_sum": 2,
+            "arithmetic": 320
+          },
+          "cache_hits": 26,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "frontier_weight": 2,
+            "frontier_count": 2,
+            "frontier_incident_cost": 2
+          },
+          "diagnostic_feature_reads": {
+            "frontier_weight": 2,
+            "frontier_count": 2,
+            "frontier_incident_cost": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "witness_operators",
+      "slot": 2,
+      "name": "resource_compatible_completion",
+      "recipe_sha256": "d4635d6e752e74aa954900088b2ccddedba71aaff5ad387d0688a01f4a8d8192",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [
+          "compatible_greedy",
+          "compatible_cover"
+        ],
+        "24": [
+          "compatible_greedy",
+          "compatible_cover"
+        ]
+      },
+      "added_representation_distinguishes_at_least_one_root": true,
+      "both_roots_still_full_representation_alias": false,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_greedy": "1333615477/200000",
+            "compatible_cover": "4457977839/500000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_greedy": "3055430327/500000",
+            "compatible_cover": "1169254599/125000"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_greedy": "151651077/25000",
+            "compatible_cover": "3945011057/500000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_greedy": "3015147967/500000",
+            "compatible_cover": "1634896041/200000"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 4318.86787991,
+          "24": 3935.488779959999
+        },
+        "J": {
+          "23": 3991.55923763,
+          "24": 3975.06929732
+        }
+      },
+      "initial_rule_directions": {
+        "E": "a",
+        "J": "a"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 4,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q3",
+            "q2"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": false,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.015625,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 2938,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 363,
+            "metadata_read": 6,
+            "adjacency_scan": 234,
+            "active_count": 2,
+            "available": 1,
+            "root": 2,
+            "singleton": 2,
+            "neighbors": 2,
+            "union": 2,
+            "set_scan": 166,
+            "difference": 2,
+            "greedy_independent_weight": 2,
+            "clique_cover_weight": 2,
+            "edge_membership": 2152
+          },
+          "cache_hits": 19,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "compatible_greedy": 2,
+            "compatible_cover": 2
+          },
+          "diagnostic_feature_reads": {
+            "compatible_greedy": 2,
+            "compatible_cover": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.015625,
+          "evaluations": 22,
+          "ops": 2995,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 363,
+            "metadata_read": 6,
+            "adjacency_scan": 255,
+            "active_count": 2,
+            "available": 1,
+            "root": 2,
+            "singleton": 2,
+            "neighbors": 2,
+            "union": 2,
+            "set_scan": 166,
+            "difference": 2,
+            "greedy_independent_weight": 2,
+            "clique_cover_weight": 2,
+            "edge_membership": 2188
+          },
+          "cache_hits": 19,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "compatible_greedy": 2,
+            "compatible_cover": 2
+          },
+          "diagnostic_feature_reads": {
+            "compatible_greedy": 2,
+            "compatible_cover": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "witness_operators",
+      "slot": 3,
+      "name": "witness_frontier_cut",
+      "recipe_sha256": "7249c501c8b592d467e9eb83518c101adba19715ee78f2ef3afe0742b3e112e6",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [
+          "frontier_cut_cost",
+          "frontier_internal_cost"
+        ],
+        "24": [
+          "frontier_cut_cost"
+        ]
+      },
+      "added_representation_distinguishes_at_least_one_root": true,
+      "both_roots_still_full_representation_alias": false,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_cut_cost": "28621402111/1000000",
+            "frontier_internal_cost": "21370683787/500000",
+            "frontier_weight": "13859824087/1000000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_cut_cost": "5542127741/200000",
+            "frontier_internal_cost": "10927317761/500000",
+            "frontier_weight": "8452036039/1000000"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_cut_cost": "39102188329/1000000",
+            "frontier_internal_cost": "44792177739/1000000",
+            "frontier_weight": "13859824087/1000000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_cut_cost": "31712142141/1000000",
+            "frontier_internal_cost": "10927317761/500000",
+            "frontier_weight": "8452036039/1000000"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": -143.12475099422176,
+          "24": -217.01265630131618
+        },
+        "J": {
+          "23": -193.17128197761838,
+          "24": -248.62223982132807
+        }
+      },
+      "initial_rule_directions": {
+        "E": "a",
+        "J": "a"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 4,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q3",
+            "q2"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": false,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 24,
+          "ops": 2981,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 1080,
+            "metadata_read": 6,
+            "adjacency_scan": 664,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "incident_edges": 2,
+            "edge_min_weight_sum": 4,
+            "arithmetic": 442,
+            "induced_edges": 2,
+            "edge_membership": 655,
+            "sub": 2,
+            "sum_weights": 2
+          },
+          "cache_hits": 28,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "frontier_cut_cost": 2,
+            "frontier_internal_cost": 2,
+            "frontier_weight": 2
+          },
+          "diagnostic_feature_reads": {
+            "frontier_cut_cost": 2,
+            "frontier_internal_cost": 2,
+            "frontier_weight": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 24,
+          "ops": 3137,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 1158,
+            "metadata_read": 6,
+            "adjacency_scan": 703,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "incident_edges": 2,
+            "edge_min_weight_sum": 4,
+            "arithmetic": 481,
+            "induced_edges": 2,
+            "edge_membership": 655,
+            "sub": 2,
+            "sum_weights": 2
+          },
+          "cache_hits": 28,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "frontier_cut_cost": 2,
+            "frontier_internal_cost": 2,
+            "frontier_weight": 2
+          },
+          "diagnostic_feature_reads": {
+            "frontier_cut_cost": 2,
+            "frontier_internal_cost": 2,
+            "frontier_weight": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "witness_operators",
+      "slot": 4,
+      "name": "blocked_include_skip_completion",
+      "recipe_sha256": "d8a6277d0cc45f3f43b78d130e9f5b1829a04ea662c01886b34b834505d4e0e6",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [
+          "include_greedy",
+          "skip_greedy",
+          "include_cover"
+        ],
+        "24": [
+          "include_greedy",
+          "skip_greedy",
+          "include_cover"
+        ]
+      },
+      "added_representation_distinguishes_at_least_one_root": true,
+      "both_roots_still_full_representation_alias": false,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "include_greedy": "1333615477/200000",
+            "skip_greedy": "1335009873/200000",
+            "include_cover": "4457977839/500000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "include_greedy": "3055430327/500000",
+            "skip_greedy": "1335009873/200000",
+            "include_cover": "1169254599/125000"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "include_greedy": "151651077/25000",
+            "skip_greedy": "1318896929/200000",
+            "include_cover": "3945011057/500000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "include_greedy": "3015147967/500000",
+            "skip_greedy": "1318896929/200000",
+            "include_cover": "1634896041/200000"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 406.42724435,
+          "24": -169.96218390000024
+        },
+        "J": {
+          "23": -93.84737769999884,
+          "24": -115.0125905500002
+        }
+      },
+      "initial_rule_directions": {
+        "E": "a",
+        "J": "a"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 4,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q3",
+            "q2"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": false,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 24,
+          "ops": 3356,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 489,
+            "metadata_read": 6,
+            "adjacency_scan": 392,
+            "active_count": 2,
+            "available": 1,
+            "root": 2,
+            "singleton": 2,
+            "neighbors": 2,
+            "union": 2,
+            "set_scan": 296,
+            "difference": 4,
+            "greedy_independent_weight": 4,
+            "clique_cover_weight": 2,
+            "edge_membership": 2152
+          },
+          "cache_hits": 23,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "include_greedy": 2,
+            "skip_greedy": 2,
+            "include_cover": 2
+          },
+          "diagnostic_feature_reads": {
+            "include_greedy": 2,
+            "skip_greedy": 2,
+            "include_cover": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 24,
+          "ops": 3441,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 489,
+            "metadata_read": 6,
+            "adjacency_scan": 441,
+            "active_count": 2,
+            "available": 1,
+            "root": 2,
+            "singleton": 2,
+            "neighbors": 2,
+            "union": 2,
+            "set_scan": 296,
+            "difference": 4,
+            "greedy_independent_weight": 4,
+            "clique_cover_weight": 2,
+            "edge_membership": 2188
+          },
+          "cache_hits": 23,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "include_greedy": 2,
+            "skip_greedy": 2,
+            "include_cover": 2
+          },
+          "diagnostic_feature_reads": {
+            "include_greedy": 2,
+            "skip_greedy": 2,
+            "include_cover": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "witness_operators",
+      "slot": 5,
+      "name": "phase_aware_pair_pressure",
+      "recipe_sha256": "9a0b9700fc47ef53c20d0941af1b56ed6b7007d4d5c2271fb735ba7b815ee9c4",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [
+          "two_step_incident_product"
+        ],
+        "24": [
+          "two_step_incident_product"
+        ]
+      },
+      "added_representation_distinguishes_at_least_one_root": true,
+      "both_roots_still_full_representation_alias": false,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "two_step_incident_product": "11254667285873306263/250000000000",
+            "two_step_weight": "19027896277/1000000",
+            "removed_count": "0"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "two_step_incident_product": "15753340918319794307/500000000000",
+            "two_step_weight": "1579571697/125000",
+            "removed_count": "0"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "two_step_incident_product": "5178974229423622661/100000000000",
+            "two_step_weight": "19027896277/1000000",
+            "removed_count": "0"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "two_step_incident_product": "6728893549501917111/200000000000",
+            "two_step_weight": "1579571697/125000",
+            "removed_count": "0"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": -147.87165047386364,
+          "24": -148.82639832872727
+        },
+        "J": {
+          "23": -176.33963475198922,
+          "24": -162.36035766042573
+        }
+      },
+      "initial_rule_directions": {
+        "E": "a",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": true,
+      "challenge_complete_quotient": {
+        "classes": 4,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q3",
+            "q2"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": false,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 24,
+          "ops": 2178,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 877,
+            "metadata_read": 6,
+            "adjacency_scan": 818,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "incident_edges": 2,
+            "edge_weight_product_sum": 2,
+            "arithmetic": 331,
+            "sum_weights": 2,
+            "patch_init": 1,
+            "available": 1,
+            "difference": 1,
+            "set_scan": 128,
+            "count": 1
+          },
+          "cache_hits": 23,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "two_step_incident_product": 2,
+            "two_step_weight": 2,
+            "removed_count": 2
+          },
+          "diagnostic_feature_reads": {
+            "two_step_incident_product": 2,
+            "two_step_weight": 2,
+            "removed_count": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 24,
+          "ops": 2322,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 947,
+            "metadata_read": 6,
+            "adjacency_scan": 857,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "incident_edges": 2,
+            "edge_weight_product_sum": 2,
+            "arithmetic": 366,
+            "sum_weights": 2,
+            "patch_init": 1,
+            "available": 1,
+            "difference": 1,
+            "set_scan": 128,
+            "count": 1
+          },
+          "cache_hits": 23,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "two_step_incident_product": 2,
+            "two_step_weight": 2,
+            "removed_count": 2
+          },
+          "diagnostic_feature_reads": {
+            "two_step_incident_product": 2,
+            "two_step_weight": 2,
+            "removed_count": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "feedback_operators",
+      "slot": 0,
+      "name": "cheap_second_ring",
+      "recipe_sha256": "761abedb4c55c3c3437344ad4c3544ef47011e23069aa5c915d9610b04720b42",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "second_ring_count": "31"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "second_ring_count": "20"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "second_ring_count": "31"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "second_ring_count": "20"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": -99.22874857253645,
+          "24": -68.49148164736845
+        },
+        "J": {
+          "23": -99.22874857253645,
+          "24": -68.49148164736845
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 497,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 222,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "count": 2
+          },
+          "cache_hits": 20,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "second_ring_count": 2
+          },
+          "diagnostic_feature_reads": {
+            "second_ring_count": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 497,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 222,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "count": 2
+          },
+          "cache_hits": 20,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "second_ring_count": 2
+          },
+          "diagnostic_feature_reads": {
+            "second_ring_count": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "feedback_operators",
+      "slot": 1,
+      "name": "blocked_clique_crowding",
+      "recipe_sha256": "8c034ded107050fa5aeec51ce0dd8baa758333ab0825691af4321b0b3fff8699",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_cover": "1116038949/1000000",
+            "neighbor_density": "16/81"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_cover": "1118005641/1000000",
+            "neighbor_density": "13/64"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_cover": "1116038949/1000000",
+            "neighbor_density": "16/81"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_cover": "1118005641/1000000",
+            "neighbor_density": "13/64"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": -238.24672668425927,
+          "24": -206.293311109375
+        },
+        "J": {
+          "23": -238.24672668425927,
+          "24": -206.293311109375
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 384,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 162,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "clique_cover_weight": 2,
+            "edge_membership": 110,
+            "induced_edges": 2,
+            "count": 4,
+            "const": 1,
+            "mul": 2,
+            "max": 2,
+            "div": 2
+          },
+          "cache_hits": 21,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_cover": 2,
+            "neighbor_density": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_cover": 2,
+            "neighbor_density": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 384,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 162,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "clique_cover_weight": 2,
+            "edge_membership": 110,
+            "induced_edges": 2,
+            "count": 4,
+            "const": 1,
+            "mul": 2,
+            "max": 2,
+            "div": 2
+          },
+          "cache_hits": 21,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_cover": 2,
+            "neighbor_density": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_cover": 2,
+            "neighbor_density": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "feedback_operators",
+      "slot": 2,
+      "name": "rejected_neighbor_packing",
+      "recipe_sha256": "3fae1dabef941cb93a222a3872f70e135b2f054b84d3434b98d9ab13b4e5c1af",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_pack": "1116038949/1000000",
+            "neighbor_cover": "1116038949/1000000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_pack": "1118005641/1000000",
+            "neighbor_cover": "1118005641/1000000"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_pack": "1116038949/1000000",
+            "neighbor_cover": "1116038949/1000000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_pack": "1118005641/1000000",
+            "neighbor_cover": "1118005641/1000000"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": -155.00680106000002,
+          "24": -125.60159276000002
+        },
+        "J": {
+          "23": -155.00680106000002,
+          "24": -125.60159276000002
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 363,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 179,
+            "metadata_read": 6,
+            "adjacency_scan": 122,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "greedy_independent_weight": 2,
+            "clique_cover_weight": 2,
+            "edge_membership": 46
+          },
+          "cache_hits": 16,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_pack": 2,
+            "neighbor_cover": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_pack": 2,
+            "neighbor_cover": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 363,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 179,
+            "metadata_read": 6,
+            "adjacency_scan": 122,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "greedy_independent_weight": 2,
+            "clique_cover_weight": 2,
+            "edge_membership": 46
+          },
+          "cache_hits": 16,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_pack": 2,
+            "neighbor_cover": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_pack": 2,
+            "neighbor_cover": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "feedback_operators",
+      "slot": 3,
+      "name": "resource_weighted_edge_density",
+      "recipe_sha256": "172bc847ea2b43f03245d850ccd67d1f5dc778655587ee9f3f78696ca905c909",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "weighted_neighbor_density": "4283436273846048227/21550754787353460601",
+            "unit_neighbor_cost": "4642279051/525793139"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "weighted_neighbor_density": "3058062708200655942/13163488408133753209",
+            "unit_neighbor_cost": "3628152203/556385334"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "weighted_neighbor_density": "4283436273846048227/21550754787353460601",
+            "unit_neighbor_cost": "4642279051/525793139"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "weighted_neighbor_density": "3058062708200655942/13163488408133753209",
+            "unit_neighbor_cost": "3628152203/556385334"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 0.16991612980437376,
+          "24": 0.2817206177129223
+        },
+        "J": {
+          "23": 0.16991612980437376,
+          "24": 0.2817206177129223
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 431,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 222,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "induced_edges": 2,
+            "edge_membership": 64,
+            "edge_weight_product_sum": 2,
+            "arithmetic": 29,
+            "const": 1,
+            "sum_weights": 2,
+            "mul": 2,
+            "max": 4,
+            "div": 4,
+            "weight": 2
+          },
+          "cache_hits": 31,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "weighted_neighbor_density": 2,
+            "unit_neighbor_cost": 2
+          },
+          "diagnostic_feature_reads": {
+            "weighted_neighbor_density": 2,
+            "unit_neighbor_cost": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 431,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 222,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "induced_edges": 2,
+            "edge_membership": 64,
+            "edge_weight_product_sum": 2,
+            "arithmetic": 29,
+            "const": 1,
+            "sum_weights": 2,
+            "mul": 2,
+            "max": 4,
+            "div": 4,
+            "weight": 2
+          },
+          "cache_hits": 31,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "weighted_neighbor_density": 2,
+            "unit_neighbor_cost": 2
+          },
+          "diagnostic_feature_reads": {
+            "weighted_neighbor_density": 2,
+            "unit_neighbor_cost": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "feedback_operators",
+      "slot": 4,
+      "name": "lazy_compatible_survival",
+      "recipe_sha256": "dc8bc8a702f324f7612563b4ca21df61ab8955b5e446b92d318efefe0d65e7cf",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [
+          "compatible_pack",
+          "compatible_cover"
+        ],
+        "24": [
+          "compatible_pack",
+          "compatible_cover"
+        ]
+      },
+      "added_representation_distinguishes_at_least_one_root": true,
+      "both_roots_still_full_representation_alias": false,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_pack": "1333615477/200000",
+            "compatible_cover": "4457977839/500000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_pack": "3055430327/500000",
+            "compatible_cover": "1169254599/125000"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_pack": "151651077/25000",
+            "compatible_cover": "3945011057/500000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_pack": "3015147967/500000",
+            "compatible_cover": "1634896041/200000"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 58.42145988888889,
+          "24": 69.54816675
+        },
+        "J": {
+          "23": 58.42145988888889,
+          "24": 69.54816675
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 4,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q3",
+            "q2"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": false,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.015625,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.015625,
+          "evaluations": 22,
+          "ops": 2938,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 363,
+            "metadata_read": 6,
+            "adjacency_scan": 234,
+            "active_count": 2,
+            "available": 1,
+            "root": 2,
+            "singleton": 2,
+            "neighbors": 2,
+            "union": 2,
+            "set_scan": 166,
+            "difference": 2,
+            "greedy_independent_weight": 2,
+            "clique_cover_weight": 2,
+            "edge_membership": 2152
+          },
+          "cache_hits": 17,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "compatible_pack": 0,
+            "compatible_cover": 0
+          },
+          "diagnostic_feature_reads": {
+            "compatible_pack": 2,
+            "compatible_cover": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 2995,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 363,
+            "metadata_read": 6,
+            "adjacency_scan": 255,
+            "active_count": 2,
+            "available": 1,
+            "root": 2,
+            "singleton": 2,
+            "neighbors": 2,
+            "union": 2,
+            "set_scan": 166,
+            "difference": 2,
+            "greedy_independent_weight": 2,
+            "clique_cover_weight": 2,
+            "edge_membership": 2188
+          },
+          "cache_hits": 17,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "compatible_pack": 0,
+            "compatible_cover": 0
+          },
+          "diagnostic_feature_reads": {
+            "compatible_pack": 2,
+            "compatible_cover": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "feedback_operators",
+      "slot": 5,
+      "name": "wide_frontier_progress",
+      "recipe_sha256": "19c82ba458a387ee0a71c489b3b2ef6f4958ccf2198c9bf7e887f2b60be6ed25",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_mean": "13859824087/36000000",
+            "repair_progress": "0"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_mean": "8452036039/26000000",
+            "repair_progress": "0"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_mean": "13859824087/36000000",
+            "repair_progress": "0"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "frontier_mean": "8452036039/26000000",
+            "repair_progress": "0"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 61.02578166222222,
+          "24": 65.45977308205127
+        },
+        "J": {
+          "23": 61.02578166222222,
+          "24": 65.45977308205127
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 903,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 196,
+            "metadata_read": 6,
+            "adjacency_scan": 359,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 236,
+            "difference": 3,
+            "sum_weights": 2,
+            "const": 1,
+            "incident_edges": 2,
+            "count": 8,
+            "induced_edges": 2,
+            "edge_membership": 64,
+            "sub": 4,
+            "max": 3,
+            "div": 3,
+            "patch_init": 1,
+            "available": 1
+          },
+          "cache_hits": 30,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "frontier_mean": 2,
+            "repair_progress": 2
+          },
+          "diagnostic_feature_reads": {
+            "frontier_mean": 2,
+            "repair_progress": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 22,
+          "ops": 903,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 196,
+            "metadata_read": 6,
+            "adjacency_scan": 359,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 236,
+            "difference": 3,
+            "sum_weights": 2,
+            "const": 1,
+            "incident_edges": 2,
+            "count": 8,
+            "induced_edges": 2,
+            "edge_membership": 64,
+            "sub": 4,
+            "max": 3,
+            "div": 3,
+            "patch_init": 1,
+            "available": 1
+          },
+          "cache_hits": 30,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "frontier_mean": 2,
+            "repair_progress": 2
+          },
+          "diagnostic_feature_reads": {
+            "frontier_mean": 2,
+            "repair_progress": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "grammar_operators",
+      "slot": 0,
+      "name": "grammar.neighbor_edges",
+      "recipe_sha256": "46ba640eca22212d4c40ecd87e49670d722c302107327efcb64526e504833727",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_edges": "16"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_edges": "13"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_edges": "16"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_edges": "13"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 54.179313900000004,
+          "24": 63.265037111111106
+        },
+        "J": {
+          "23": 54.179313900000004,
+          "24": 63.265037111111106
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 310,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "induced_edges": 2,
+            "edge_membership": 64,
+            "count": 2
+          },
+          "cache_hits": 12,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_edges": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_edges": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 310,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "induced_edges": 2,
+            "edge_membership": 64,
+            "count": 2
+          },
+          "cache_hits": 12,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_edges": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_edges": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "grammar_operators",
+      "slot": 1,
+      "name": "grammar.neighbor_mean",
+      "recipe_sha256": "ce97b477d7cbb57cd23135e053174f66029ed821539e90d706ed7462c450749d",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_mean": "4642279051/9000000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_mean": "3628152203/8000000"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_mean": "4642279051/9000000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_mean": "3628152203/8000000"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 0.9984355555555595,
+          "24": 11.429589847222218
+        },
+        "J": {
+          "23": 0.9984355555555595,
+          "24": 11.429589847222218
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 268,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 162,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "sum_weights": 2,
+            "const": 1,
+            "count": 2,
+            "max": 2,
+            "div": 2
+          },
+          "cache_hits": 15,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_mean": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_mean": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 268,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 162,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "sum_weights": 2,
+            "const": 1,
+            "count": 2,
+            "max": 2,
+            "div": 2
+          },
+          "cache_hits": 15,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_mean": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_mean": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "grammar_operators",
+      "slot": 2,
+      "name": "grammar.neighbor_edge_weight",
+      "recipe_sha256": "688fd284e805ae8e0cecca03dc2e6d99c5caa8209e5f093d03828ffc763287ac",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_edge_weight": "7730385151/1000000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_edge_weight": "5674486339/1000000"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_edge_weight": "7730385151/1000000"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "neighbor_edge_weight": "5674486339/1000000"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 54.24416864297203,
+          "24": 63.38417722349766
+        },
+        "J": {
+          "23": 54.24416864297203,
+          "24": 63.38417722349766
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 397,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 203,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "induced_edges": 2,
+            "edge_membership": 64,
+            "edge_min_weight_sum": 2,
+            "arithmetic": 29
+          },
+          "cache_hits": 14,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_edge_weight": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_edge_weight": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 397,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 203,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "induced_edges": 2,
+            "edge_membership": 64,
+            "edge_min_weight_sum": 2,
+            "arithmetic": 29
+          },
+          "cache_hits": 14,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "neighbor_edge_weight": 2
+          },
+          "diagnostic_feature_reads": {
+            "neighbor_edge_weight": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "grammar_operators",
+      "slot": 3,
+      "name": "grammar.compatible_max",
+      "recipe_sha256": "fdef7b0c8f0e4974055491430927662b7b67420669740da1c9895d8897541c1f",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_max": "34999901/62500"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_max": "34999901/62500"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_max": "34999901/62500"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "compatible_max": "34999901/62500"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 52.69991798384876,
+          "24": 61.9748982412681
+        },
+        "J": {
+          "23": 52.69991798384876,
+          "24": 61.9748982412681
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 526,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 254,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "available": 1,
+            "root": 2,
+            "neighbors": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 166,
+            "difference": 2,
+            "max_weight": 2
+          },
+          "cache_hits": 17,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "compatible_max": 2
+          },
+          "diagnostic_feature_reads": {
+            "compatible_max": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 526,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 254,
+            "metadata_read": 6,
+            "adjacency_scan": 85,
+            "active_count": 2,
+            "available": 1,
+            "root": 2,
+            "neighbors": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 166,
+            "difference": 2,
+            "max_weight": 2
+          },
+          "cache_hits": 17,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "compatible_max": 2
+          },
+          "diagnostic_feature_reads": {
+            "compatible_max": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "grammar_operators",
+      "slot": 4,
+      "name": "grammar.twohop_count",
+      "recipe_sha256": "db2ae0f769b4942ab2d61a6b5a591a30847454ba66f8b3f5ba5e18a047355266",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [],
+        "24": []
+      },
+      "added_representation_distinguishes_at_least_one_root": false,
+      "both_roots_still_full_representation_alias": true,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "twohop_count": "31"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "twohop_count": "20"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "twohop_count": "31"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "twohop_count": "20"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 52.102390823076924,
+          "24": 61.512900358974356
+        },
+        "J": {
+          "23": 52.102390823076924,
+          "24": 61.512900358974356
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 2,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q1",
+            "q0"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": true,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 497,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 222,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "count": 2
+          },
+          "cache_hits": 18,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "twohop_count": 2
+          },
+          "diagnostic_feature_reads": {
+            "twohop_count": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 497,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 222,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "count": 2
+          },
+          "cache_hits": 18,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "twohop_count": 2
+          },
+          "diagnostic_feature_reads": {
+            "twohop_count": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    },
+    {
+      "bank": "grammar_operators",
+      "slot": 5,
+      "name": "grammar.twohop_incident",
+      "recipe_sha256": "c1083c6cefea188d7c6da0e64c492439f7f88dc2e1b4f97f0c7d470fc55e23c3",
+      "status": "evaluated",
+      "base9_same_E_J_per_root": {
+        "23": true,
+        "24": true
+      },
+      "added_features_changed_E_J_per_root": {
+        "23": [
+          "twohop_incident"
+        ],
+        "24": [
+          "twohop_incident"
+        ]
+      },
+      "added_representation_distinguishes_at_least_one_root": true,
+      "both_roots_still_full_representation_alias": false,
+      "feature_values": {
+        "E": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "twohop_incident": "165"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "twohop_incident": "120"
+          }
+        },
+        "J": {
+          "23": {
+            "weight": "525793139/1000000",
+            "duration": "525793139/1000000",
+            "degree": "9",
+            "conflict_weight": "4642279051/1000000",
+            "max_conflict_weight": "558828533/1000000",
+            "compatible_weight": "25558302341/1000000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "twohop_incident": "191"
+          },
+          "24": {
+            "weight": "278192667/500000",
+            "duration": "278192667/500000",
+            "degree": "8",
+            "conflict_weight": "3628152203/1000000",
+            "max_conflict_weight": "139794277/250000",
+            "compatible_weight": "13270918497/500000",
+            "station_gap": "1200",
+            "satellite_gap": "150",
+            "remaining_count": "64",
+            "twohop_incident": "129"
+          }
+        }
+      },
+      "initial_coefficient_scores": {
+        "E": {
+          "23": 50.04085236153846,
+          "24": 59.974438820512816
+        },
+        "J": {
+          "23": 49.640852361538464,
+          "24": 59.835977282051275
+        }
+      },
+      "initial_rule_directions": {
+        "E": "b",
+        "J": "b"
+      },
+      "initial_rule_matches_both_existing_strict_requirements": false,
+      "challenge_complete_quotient": {
+        "classes": 4,
+        "strict_edges": [
+          [
+            "q0",
+            "q1"
+          ],
+          [
+            "q3",
+            "q2"
+          ]
+        ],
+        "self_loop": false,
+        "has_cycle": false,
+        "scope": "Only this registered two-requirement challenge; not the complete archive"
+      },
+      "diagnostic_cpu_seconds": 0.0,
+      "diagnostic_evaluator_stats": {
+        "E": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 941,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 664,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "incident_edges": 2,
+            "count": 2
+          },
+          "cache_hits": 18,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "twohop_incident": 2
+          },
+          "diagnostic_feature_reads": {
+            "twohop_incident": 2
+          }
+        },
+        "J": {
+          "feature_cpu": 0.0,
+          "evaluations": 20,
+          "ops": 980,
+          "scorecalls": 2,
+          "op_counts": {
+            "weight_read": 145,
+            "metadata_read": 6,
+            "adjacency_scan": 703,
+            "active_count": 2,
+            "root": 2,
+            "neighbors": 2,
+            "neighbors_of_set": 2,
+            "singleton": 2,
+            "union": 2,
+            "set_scan": 108,
+            "difference": 2,
+            "incident_edges": 2,
+            "count": 2
+          },
+          "cache_hits": 18,
+          "scoring_cpu": 0.0,
+          "feature_reads": {
+            "twohop_incident": 2
+          },
+          "diagnostic_feature_reads": {
+            "twohop_incident": 2
+          }
+        }
+      },
+      "schedule_advantage_measured": false,
+      "cache_note": "feature_values is a full offline diagnostic; subsequent scores use warm caches. Diagnostic work is not deployment throughput."
+    }
+  ],
+  "bank_selection_or_mutation_from_this_result": false,
+  "schedule_advantage_claim": false,
+  "limitation": "Distinguishing one known TRAIN witness is an information-capacity check, not full-archive consistency, ranking correctness after evolution, TEST generalization or schedule quality.",
+  "source_sha256": "cd873af4ccc84237b260a40b8d9ec2fe955b7ad79c3b7f18292d25d6f9d68e74",
+  "typed_source_sha256": "2b04b8e81b5de02465177a3cbaac7f27a5920d82d67022a2acc3b1d40096c4c1"
+}

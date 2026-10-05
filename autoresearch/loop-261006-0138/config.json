@@ -1,0 +1,23 @@
+{
+  "mode": "classic",
+  "iterations": 2,
+  "scope": "cipheur/online_v2 and experiments/stk_online_llm_v2",
+  "metric": "Current-instance feasible complete reward per charged CPU, with actual structure/rule/policy updates and LLM feature reads recorded separately",
+  "verify": "python -m unittest discover -s tests -p test_online_v2*.py plus one registered full TRAIN comparison",
+  "keep_guard": [
+    "No feasibility errors",
+    "No historical candidate-fit training",
+    "Actual LLM calls provenance retained",
+    "Current-instance controller/representation updates",
+    "No TEST quality used to select redesign"
+  ],
+  "round1": "Real LLM failure-and-witness-guided recipes; incremental local kernel",
+  "round2": "Only a specific new failure or cost bottleneck may justify another code/design change before TEST; otherwise keep round1 and freeze",
+  "model_calls_successful": 4,
+  "model_calls_failed_API_schema": 2,
+  "current_state": "Two bounded rounds finished:288 complete cloud TRAIN jobs; r2 failed performance promotion; formal TEST remains pending",
+  "publish_authorization": "User authorized corresponding public GitHub version management earlier in this conversation",
+  "total_input_tokens_known": 158148,
+  "total_output_tokens_known": 71064,
+  "actual_served_model": "unknown"
+}

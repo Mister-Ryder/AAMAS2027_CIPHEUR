@@ -1,0 +1,26 @@
+{
+  "version": "exact_review_archive_parts_v1",
+  "archive_name": "development_round2_full_trajectory.zip",
+  "archive_bytes": 118646151,
+  "archive_sha256": "7ec31d984103e5e63d21ee27592b2b7875965e9198d94608db31b5d2de161a49",
+  "raw_result_count": 144,
+  "stage": "development_round2",
+  "parts": [
+    {
+      "name": "development_round2_full_trajectory.zip.part01",
+      "bytes": 50331648,
+      "sha256": "4fa4298da15ffa6008b7a56c614348c6e48ef4e84bf7dade01f00d638e0585a1"
+    },
+    {
+      "name": "development_round2_full_trajectory.zip.part02",
+      "bytes": 50331648,
+      "sha256": "2a3999c527a914733d9e36d6693bd944d8485126fa9f62f27b0b38a3f71b3503"
+    },
+    {
+      "name": "development_round2_full_trajectory.zip.part03",
+      "bytes": 17982855,
+      "sha256": "86e8cf4d62f66f915e9f8e71e2f449a6277262de21f8ef265e462e78fa233aa6"
+    }
+  ],
+  "reconstruction": "Use scripts/reassemble_review_archives.py; no solver or model calls"
+}

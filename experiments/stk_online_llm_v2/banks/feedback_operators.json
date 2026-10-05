@@ -1,0 +1,744 @@
+{
+  "schema_version": "stk_online_llm_v2",
+  "recipes": [
+    {
+      "name": "cheap_second_ring",
+      "features": [
+        {
+          "name": "second_ring_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree + c1 * second_ring_count) - (c2 * neighbor_max_weight + c3 * neighbor_weight_sum)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 1,
+        "patch_cap": 16,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.08,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.05,
+          0.12,
+          0.3,
+          0.6
+        ],
+        "stagnation_trials": 12,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.12,
+        0.08,
+        0.02
+      ],
+      "rationale": "The certified TRAIN preference cycles expose a conflict in a common base9 pointwise representation; they do not establish that this feature resolves it. Exact second-ring cardinality supplies a cheap structural operand on at most 16 nodes, responding to the reference's roughly 9.2 seconds of feature CPU in a 10-second solve. Live mutations are judged by feasible integer reward improvement and charged CPU within each reset instance."
+    },
+    {
+      "name": "blocked_clique_crowding",
+      "features": [
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_density",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "op": "count",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "count",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(c0 * weight - c1 * neighbor_cover) + (c2 * weight * neighbor_density - c3 * neighbor_max_weight)",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 3,
+        "patch_cap": 24,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.16,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.04,
+          0.12,
+          0.3,
+          0.6
+        ],
+        "stagnation_trials": 15,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.7,
+        0.3,
+        0.025
+      ],
+      "rationale": "Neighbor adjacency distinguishes mutually conflicting alternatives from independent alternatives that base degree and total weight merge. Cover cost and normalized edge density enter ranking directly, while blocked-gain anchoring targets incumbent blockers. The witness condition uses exact bounded adjacency; the feedback-only control receives no structural witness. Neither these summaries nor archive consistency certify schedule improvement."
+    },
+    {
+      "name": "rejected_neighbor_packing",
+      "features": [
+        {
+          "name": "neighbor_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "neighbor_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "neighbors",
+                "args": [
+                  {
+                    "op": "root",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(c0 * weight - c1 * neighbor_pack) - (c2 * max(0, neighbor_cover - neighbor_pack) + c3 * neighbor_max_weight)",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 4,
+        "patch_cap": 24,
+        "expand_hops": 1,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.22,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.08,
+          0.25,
+          0.5,
+          0.8
+        ],
+        "stagnation_trials": 8,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.6,
+        0.15,
+        0.02
+      ],
+      "rationale": "Greedy packing measures coexisting neighbor alternatives, and the cover-minus-pack term makes disagreement between structural summaries affect ranking. Rejection-frontier anchoring and top-three reconstruction revisit regions associated with the observed negative and zero proposals. Diversification changes live search behavior after stagnation; all summary computation is local and charged, and actual feasible reward determines credit."
+    },
+    {
+      "name": "resource_weighted_edge_density",
+      "features": [
+        {
+          "name": "weighted_neighbor_density",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "edge_weight_product_sum",
+                "args": [
+                  {
+                    "op": "induced_edges",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "mul",
+                    "args": [
+                      {
+                        "op": "sum_weights",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "sum_weights",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "unit_neighbor_cost",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "sum_weights",
+                "args": [
+                  {
+                    "op": "neighbors",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "weight",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(c0 * weight / max(1, duration, station_gap, satellite_gap) - c1 * unit_neighbor_cost) + (c2 * weighted_neighbor_density - c3 * degree)",
+      "patch_policy": {
+        "anchor": "resource_boundary",
+        "destroy_count": 6,
+        "patch_cap": 32,
+        "expand_hops": 1,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.14,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.05,
+          0.15,
+          0.35,
+          0.7
+        ],
+        "stagnation_trials": 12,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.03,
+        0.3,
+        0.007
+      ],
+      "rationale": "Weighted neighbor-edge density captures which substantial alternatives conflict with each other, using exact edge products normalized by squared neighbor mass. Resource-boundary destruction pairs this witness with generic gap-normalized reward; no contact IDs or particular gap values enter coefficients. Dynamic ranking constructs the patch before the shared improving swaps, with modest feature allowance and online mutation."
+    },
+    {
+      "name": "lazy_compatible_survival",
+      "features": [
+        {
+          "name": "compatible_pack",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_cover",
+          "expression": {
+            "op": "clique_cover_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight + c1 * compatible_pack - c2 * compatible_cover - c3 * neighbor_max_weight if active_count <= 24 else weight / max(1, degree)",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 8,
+        "patch_cap": 48,
+        "expand_hops": 2,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.24,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.05,
+          0.2,
+          0.45,
+          0.75
+        ],
+        "stagnation_trials": 8,
+        "action": "switch_recipe"
+      },
+      "coefficients": [
+        1.0,
+        0.9,
+        0.15,
+        0.05
+      ],
+      "rationale": "This composition ranks inclusion together with the structure of surviving compatible contacts. Lazy conditional evaluation uses the degree branch above 24 residual nodes, so packing and cover are evaluated only on a small residual inside the 48-node patch. Larger rejection-frontier repairs and subsequent improving swaps test schedule-level consequences; stagnation switches the active operator rather than spending indefinitely on feature fit."
+    },
+    {
+      "name": "wide_frontier_progress",
+      "features": [
+        {
+          "name": "frontier_mean",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "sum_weights",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "sub",
+                    "args": [
+                      {
+                        "op": "sub",
+                        "args": [
+                          {
+                            "op": "count",
+                            "args": [
+                              {
+                                "op": "incident_edges",
+                                "args": [
+                                  {
+                                    "op": "neighbors",
+                                    "args": [
+                                      {
+                                        "op": "root",
+                                        "args": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "op": "count",
+                            "args": [
+                              {
+                                "op": "induced_edges",
+                                "args": [
+                                  {
+                                    "op": "neighbors",
+                                    "args": [
+                                      {
+                                        "op": "root",
+                                        "args": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "count",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "repair_progress",
+          "expression": {
+            "op": "div",
+            "args": [
+              {
+                "op": "count",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "patch_init",
+                        "args": []
+                      },
+                      {
+                        "op": "available",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "max",
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "op": "count",
+                    "args": [
+                      {
+                        "op": "patch_init",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "(c0 * weight / max(1, 1 + degree) + c1 * frontier_mean) - (c2 * neighbor_max_weight + c3 * weight * repair_progress)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 12,
+        "patch_cap": 64,
+        "expand_hops": 2,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.16,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.12,
+          0.3,
+          0.6,
+          0.9
+        ],
+        "stagnation_trials": 68,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.08,
+        0.04,
+        0.025
+      ],
+      "rationale": "Second-ring mass divided by exact neighbor-to-second-ring edge count represents escape structure; repair progress changes its balance against immediate reward as the residual contracts. The TRAIN ILS comparison motivates testing wider perturbations without validating this particular design. Twelve-contact destruction, two-hop expansion and top-three reconstruction provide a distinct search mechanism, while diversification and the per-trial CPU cap limit repeated stagnation."
+    }
+  ]
+}

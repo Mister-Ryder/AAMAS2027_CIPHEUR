@@ -1,0 +1,807 @@
+{
+  "schema_version": "stk_online_llm_v2",
+  "recipes": [
+    {
+      "name": "small_frontier_release",
+      "features": [
+        {
+          "name": "frontier_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) + c1 * weight * frontier_count / max(1, remaining_count) / max(1, 1 + degree) - c2 * max_conflict_weight / max(1, 1 + degree) + c3 * weight / max(1, remaining_count)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 1,
+        "patch_cap": 16,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.08,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.04,
+          0.04,
+          0.03,
+          0.03
+        ],
+        "stagnation_trials": 32,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.12,
+        0.04,
+        0.04
+      ],
+      "rationale": "This small uniform repair provides an inexpensive evolving reference with an actually used distance-two feature. Frontier count divided by residual count is dimensionless; multiplying by the seconds-valued degree score preserves score units. It measures possible release beyond immediate neighbors, without asserting that a count repairs the supplied witness. The modest feature adjustment and 16-node domain emphasize completed repairs rather than elaborate scoring. Nearby parameter and policy mutations remain subject to signed complete-proposal gain and charged CPU."
+    },
+    {
+      "name": "blocked_frontier_incident_pressure",
+      "features": [
+        {
+          "name": "frontier_weight",
+          "expression": {
+            "op": "sum_weights",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "frontier_incident_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "incident_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1, 1 + degree) * (c0 + c1 * frontier_weight / max(0.000001, weight + conflict_weight + compatible_weight) - c2 * frontier_incident_min / max(0.000001, frontier_weight + frontier_incident_min)) - c3 * max_conflict_weight / max(1, 1 + degree)",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 3,
+        "patch_cap": 24,
+        "expand_hops": 2,
+        "reconstruction": "exchange"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.1,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.04,
+          0.04,
+          0.04,
+          0.03
+        ],
+        "stagnation_trials": 48,
+        "action": "mutate"
+      },
+      "coefficients": [
+        1.0,
+        0.12,
+        0.2,
+        0.04
+      ],
+      "rationale": "The witness places changed edges at distance two and beyond, motivating incident pressure on the exact frontier. Frontier reward share and incident-pressure share are dimensionless and bounded for nonnegative weights. This replaces the old uncompressed incident-weight adjustment with a modest perturbation of a seconds-valued score. Three-contact blocked repairs and a smaller 24-node cap limit work. Exchange gains count in the complete proposal objective, while ranking and exchange contributions remain separately observable."
+    },
+    {
+      "name": "resource_compatible_structure",
+      "features": [
+        {
+          "name": "compatible_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "compatible_internal_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "available",
+                        "args": []
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1, 1 + degree) * (c0 + c1 * compatible_greedy / max(0.000001, compatible_weight) - c2 * compatible_internal_min / max(0.000001, compatible_weight + compatible_internal_min)) - c3 * max_conflict_weight / max(1, 1 + degree)",
+      "patch_policy": {
+        "anchor": "resource_boundary",
+        "destroy_count": 4,
+        "patch_cap": 24,
+        "expand_hops": 2,
+        "reconstruction": "rcl"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.12,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.04,
+          0.05,
+          0.04,
+          0.03
+        ],
+        "stagnation_trials": 64,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.25,
+        0.1,
+        0.04
+      ],
+      "rationale": "Compatible residual topology can change while root statistics remain unchanged. One greedy completion measures retained feasible reward, and one induced-edge aggregate measures its surrounding conflict pressure. Both seconds-valued features become dimensionless shares before modifying the score. Compared with the own round-one resource recipe, this removes the cover query, reduces destruction and caps the domain at 24. Resource-boundary anchoring and RCL provide a distinct search role; neither feature is an exact conditional optimum or a performance certificate."
+    },
+    {
+      "name": "witness_frontier_cut_block",
+      "features": [
+        {
+          "name": "frontier_incident_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "incident_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "frontier_internal_min",
+          "expression": {
+            "op": "edge_min_weight_sum",
+            "args": [
+              {
+                "op": "induced_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "frontier_weight",
+          "expression": {
+            "op": "sum_weights",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "weight / max(1, 1 + degree) * (c0 - c1 * max(0, frontier_incident_min - frontier_internal_min) / max(0.000001, frontier_weight + max(0, frontier_incident_min - frontier_internal_min)) - c2 * frontier_internal_min / max(0.000001, frontier_weight + frontier_internal_min)) - c3 * max_conflict_weight / max(1, 1 + degree)",
+      "patch_policy": {
+        "anchor": "rejection_frontier",
+        "destroy_count": 5,
+        "patch_cap": 64,
+        "expand_hops": 2,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.14,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.04,
+          0.04,
+          0.04,
+          0.03
+        ],
+        "stagnation_trials": 64,
+        "action": "switch_recipe"
+      },
+      "coefficients": [
+        1.0,
+        0.2,
+        0.1,
+        0.04
+      ],
+      "rationale": "With undirected deduplicated edges, incident minimum-weight sum minus internal minimum-weight sum measures crossing pressure. The nonnegative score expression accommodates numerical roundoff; it never clips scheduling gains. Separate crossing and internal shares inspect structure beyond the unchanged root-neighbor Q/T statistics. This is the only 64-node recipe, allowing the witness-sized domain without completion queries. Greedy rebuilding and reduced destruction limit additional work. Whether its coordinates actually separate retained certified contexts must be checked under the corrected archive representation."
+    },
+    {
+      "name": "narrow_include_skip_completion",
+      "features": [
+        {
+          "name": "include_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "skip_greedy",
+          "expression": {
+            "op": "greedy_independent_weight",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "available",
+                    "args": []
+                  },
+                  {
+                    "op": "singleton",
+                    "args": [
+                      {
+                        "op": "root",
+                        "args": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) + c1 * weight * (weight + include_greedy - skip_greedy) / max(0.000001, weight + include_greedy + skip_greedy) - c2 * max_conflict_weight / max(1, 1 + degree) + c3 * weight / max(1, remaining_count)",
+      "patch_policy": {
+        "anchor": "blocked_gain",
+        "destroy_count": 6,
+        "patch_cap": 24,
+        "expand_hops": 2,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.16,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.03,
+          0.04,
+          0.03,
+          0.03
+        ],
+        "stagnation_trials": 96,
+        "action": "switch_recipe"
+      },
+      "coefficients": [
+        1.0,
+        0.6,
+        0.04,
+        0.08
+      ],
+      "rationale": "The certified inclusion reversal motivates comparing root inclusion with root exclusion on the actual residual. The normalized greedy marginal lies between -1 and 1 for nonnegative weights and contributes seconds after multiplication by root weight. Differences between feasible greedy completions are heuristic preferences, not exact conditional bounds. Relative to the own round-one include/skip recipe, this removes the cover query, halves the patch cap and avoids exchange rescue, making ranking quality more directly visible. Both completion costs remain charged."
+    },
+    {
+      "name": "normalized_pair_pressure_phase",
+      "features": [
+        {
+          "name": "frontier_pair_product",
+          "expression": {
+            "op": "edge_weight_product_sum",
+            "args": [
+              {
+                "op": "incident_edges",
+                "args": [
+                  {
+                    "op": "difference",
+                    "args": [
+                      {
+                        "op": "neighbors_of_set",
+                        "args": [
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "op": "union",
+                        "args": [
+                          {
+                            "op": "singleton",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          },
+                          {
+                            "op": "neighbors",
+                            "args": [
+                              {
+                                "op": "root",
+                                "args": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "frontier_weight",
+          "expression": {
+            "op": "sum_weights",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "neighbors_of_set",
+                    "args": [
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "union",
+                    "args": [
+                      {
+                        "op": "singleton",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      },
+                      {
+                        "op": "neighbors",
+                        "args": [
+                          {
+                            "op": "root",
+                            "args": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "depleted_count",
+          "expression": {
+            "op": "count",
+            "args": [
+              {
+                "op": "difference",
+                "args": [
+                  {
+                    "op": "patch_init",
+                    "args": []
+                  },
+                  {
+                    "op": "available",
+                    "args": []
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "rule": "c0 * weight / max(1, 1 + degree) - c1 * weight * frontier_pair_product / max(0.000000000001, frontier_weight * (weight + conflict_weight + compatible_weight)) + c2 * weight * depleted_count / max(1, remaining_count + depleted_count) - c3 * max_conflict_weight / max(1, 1 + degree)",
+      "patch_policy": {
+        "anchor": "uniform",
+        "destroy_count": 8,
+        "patch_cap": 32,
+        "expand_hops": 1,
+        "reconstruction": "greedy"
+      },
+      "evaluation_plan": {
+        "feature_scope": "patch",
+        "max_feature_cpu_fraction": 0.12,
+        "lazy": true
+      },
+      "adaptation_template": {
+        "mutation_scales": [
+          0.04,
+          0.04,
+          0.04,
+          0.03
+        ],
+        "stagnation_trials": 48,
+        "action": "diversify"
+      },
+      "coefficients": [
+        1.0,
+        0.06,
+        0.08,
+        0.03
+      ],
+      "rationale": "Edge products measure conflicts involving substantial rewards. Dividing their squared-second sum by frontier weight times total residual weight produces a dimensionless pressure bounded by 1 for nonnegative weights and deduplicated incident edges. The depletion fraction is also dimensionless and changes reconstruction emphasis as the residual shrinks. Uniform eight-contact destruction supplies a broader perturbation than the small repair, with a 32-node cap and no completion queries. Residual and patch-initial context must accompany representation-aware cache keys."
+    }
+  ]
+}
