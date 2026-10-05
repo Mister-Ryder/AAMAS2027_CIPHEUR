@@ -280,10 +280,13 @@ def train(args):
 
 
 def val_key(row):
-    require(row["split"] == "val" and row["source"] in POLICY["VALIDATION_sources"] and row["config"] in POLICY["VALIDATION_configs"], "Non-VALIDATION result supplied")
+    aliases = {"g0340": "A", "g1200": "J", "gW0340_gE0340_s0150": "A",
+               "gW1200_gE0340_s0150": "W", "gW0340_gE1200_s0150": "E", "gW1200_gE1200_s0150": "J"}
+    config = aliases.get(row["config"], row["config"])
+    require(row["split"] == "val" and row["source"] in POLICY["VALIDATION_sources"] and config in POLICY["VALIDATION_configs"], "Non-VALIDATION result supplied")
     budget = Fraction(str(row["declared_cpu_seconds"]))
     require(budget in (2, 10) and row["seed"] in POLICY["VALIDATION_seeds"], "VALIDATION budget/seed not fixed")
-    return row["source"], row["config"], int(budget), row["seed"]
+    return row["source"], config, int(budget), row["seed"]
 
 
 def validate(args):

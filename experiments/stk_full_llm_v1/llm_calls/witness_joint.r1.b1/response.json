@@ -1,0 +1,465 @@
+{
+  "batch": 1,
+  "condition": "witness_joint",
+  "programs": [
+    {
+      "features": [],
+      "name": "cheap_density_blend",
+      "rationale": "Blends reward per conflict with a small heaviest-conflict margin. Uses only base9 inputs with no added graph computation; its pointwise information cannot resolve the witnessed reversal.",
+      "rule": "weight / (1 + 0.25 * max(0, degree)) + 0.1 * (weight - max_conflict_weight) / (1 + max(0, degree))"
+    },
+    {
+      "features": [],
+      "name": "cheap_pressure_gate",
+      "rationale": "A generic comparison with the heaviest conflict switches between net reward and penalized density. This inexpensive conditional candidate uses immediate aggregates and retains the nonlocal representation limitation.",
+      "rule": "(weight - 0.35 * max_conflict_weight - 0.1 * conflict_weight / (1 + max(0, degree))) if weight >= max_conflict_weight else (weight / (1 + 0.15 * max(0, degree)) - 0.45 * (max_conflict_weight - weight))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "op": "const",
+                "value": 0
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "intersection"
+                      }
+                    ],
+                    "op": "sum_weights"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "induced_edges"
+                      }
+                    ],
+                    "op": "edge_min_weight_sum"
+                  }
+                ],
+                "op": "sub"
+              }
+            ],
+            "op": "max"
+          },
+          "name": "neighbor_pair_floor"
+        }
+      ],
+      "name": "local_pair_opportunity",
+      "rationale": "Penalizes jointly collectible conflicts using a weighted edge-deletion lower bound and the heaviest neighbor. Reach is limited to active one-hop neighbors, so the distant cycle remains unresolved; neighbor edge construction can be quadratic in degree.",
+      "rule": "weight - 0.5 * max(max_conflict_weight, neighbor_pair_floor) + 0.08 * weight / (1 + max(0, degree))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          },
+          "name": "neighbor_greedy_weight"
+        },
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "clique_cover_weight"
+          },
+          "name": "neighbor_cover_weight"
+        }
+      ],
+      "name": "local_collectible_ratio",
+      "rationale": "Normalizes reward by a blend of feasible greedy and cover estimates of collectible neighboring weight, with a small duration-efficiency term. Both estimates remain one-hop and cannot distinguish the saved nonlocal witness; dense neighborhoods may make these local algorithms costly.",
+      "rule": "weight / (1 + 0.75 * max(0, neighbor_greedy_weight) + 0.25 * max(0, neighbor_cover_weight)) + 0.05 * weight / (1 + max(0, duration))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "singleton"
+                              }
+                            ],
+                            "op": "union"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_min_weight_sum"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "singleton"
+                              }
+                            ],
+                            "op": "union"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "sum_weights"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "residual_pair_pressure"
+        }
+      ],
+      "name": "residual_moment_continuation",
+      "rationale": "Compresses compatible weight by normalized weighted conflict load in the root-conditioned residual to approximate continuation value. It observes edges beyond one hop, although this aggregate need not resolve the witness; inducing the full residual can be quadratic.",
+      "rule": "weight + compatible_weight / (1 + 2 * max(0, residual_pair_pressure)) - 0.05 * conflict_weight / (1 + max(0, degree))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "clique_cover_weight"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "clique_cover_weight"
+              }
+            ],
+            "op": "sub"
+          },
+          "name": "cover_displacement"
+        }
+      ],
+      "name": "global_cover_displacement",
+      "rationale": "Estimates displaced opportunity by comparing covers after excluding only the root and after removing its closed neighborhood. Full active-graph partitions can respond to distant changes, but their difference is heuristic and two global cover computations may dominate runtime.",
+      "rule": "weight - max(0, cover_displacement) + 0.1 * weight / (1 + max(0, degree))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "union"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          },
+          "name": "compatible_greedy_weight"
+        }
+      ],
+      "name": "global_greedy_continuation",
+      "rationale": "Ranks immediate reward plus a deterministic feasible greedy continuation over surviving compatible contacts. Root conditioning supplies nonlocal structure, but repeated global greedy passes can dominate the complete solve and witness repair is unverified.",
+      "rule": "weight + compatible_greedy_weight + 0.02 * weight / (1 + max(0, degree))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "union"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          },
+          "name": "residual_greedy_weight"
+        },
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "union"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "clique_cover_weight"
+          },
+          "name": "residual_cover_weight"
+        }
+      ],
+      "name": "global_continuation_uncertainty",
+      "rationale": "Adds greedy continuation value and penalizes the cover-versus-greedy gap per surviving vertex, favoring more tightly estimated continuations. Both algorithms reach the full root-conditioned residual; their CPU cost can be substantial and the gap supplies only a ranking cue.",
+      "rule": "weight + residual_greedy_weight - 0.4 * max(0, residual_cover_weight - residual_greedy_weight) / (1 + max(0, remaining_count - degree - 1))"
+    }
+  ],
+  "round": 1
+}

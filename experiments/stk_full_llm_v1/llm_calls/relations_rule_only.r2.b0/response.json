@@ -1,0 +1,55 @@
+{
+  "batch": 0,
+  "condition": "relations_rule_only",
+  "programs": [
+    {
+      "features": [],
+      "name": "saturating_count_relief",
+      "rationale": "Ranks reward per closed-neighborhood count with bounded relief for larger degrees. Reach is local count only; arithmetic is constant size and degree updates remain charged. Relief may overvalue heavily connected contacts.",
+      "rule": "weight * (1 + 0.2 * degree / (1 + degree)) / (1 + degree)"
+    },
+    {
+      "features": [],
+      "name": "blended_blocker_load",
+      "rationale": "Blends blocker count with conflict weight normalized by root reward, preserving separate count and weight scales. Reach is the immediate neighborhood; constant-size arithmetic adds no features, but aggregate updates remain charged and blocker mass can overstate feasible displacement.",
+      "rule": "weight / (1 + 0.8 * degree + 0.2 * conflict_weight / (1 + weight))"
+    },
+    {
+      "features": [],
+      "name": "bounded_rival_correction",
+      "rationale": "Uses count efficiency as the anchor and applies a small bounded correction for the strongest rival. Reach is local count and maximum weight; arithmetic is constant size, while maximum updates remain charged. Several feasible rivals can defeat the single-rival proxy.",
+      "rule": "weight / (1 + degree) * (1 + 0.15 * (weight - max_conflict_weight) / (1 + weight + max_conflict_weight))"
+    },
+    {
+      "features": [],
+      "name": "residual_context_anchor",
+      "rationale": "Perturbs count efficiency with bounded compatible-mass credit and blocked-count fraction. Reach includes coarse active-set summaries without new features; their updates remain charged. Compatible mass does not establish a mutually feasible residual schedule.",
+      "rule": "weight / (1 + degree) * (1 + 0.12 * compatible_weight / (1 + weight + conflict_weight + compatible_weight) - 0.08 * degree / (1 + remaining_count))"
+    },
+    {
+      "features": [],
+      "name": "tapered_resource_bonus",
+      "rationale": "Adds a small saturated duration bonus relative to the larger actual resource gap while retaining count efficiency. Reach combines root resource attributes and local degree; arithmetic is constant size and degree updates remain charged. Gap occupancy is only approximate.",
+      "rule": "weight / (1 + degree) * (1 + 0.1 * duration / (1 + duration + max(station_gap, satellite_gap)))"
+    },
+    {
+      "features": [],
+      "name": "dominance_gated_pressure",
+      "rationale": "Scores isolates directly, relaxes count pressure when reward covers total blocker weight, and adds normalized excess-mass pressure otherwise. Reach is one weighted neighborhood; constant-size conditionals retain summary-update costs. The dominance threshold can change rankings abruptly.",
+      "rule": "weight if degree == 0 else (weight / (1 + 0.5 * degree) if weight >= conflict_weight else weight / (1 + degree + 0.2 * max(0, conflict_weight - weight) / (1 + weight + max_conflict_weight)))"
+    },
+    {
+      "features": [],
+      "name": "conservative_load_envelope",
+      "rationale": "Discounts reward by the larger of actual blocker count and reward-normalized blocker mass. Reach is local count and aggregate weight; constant-size arithmetic adds no traversal, while active summaries remain charged. The conservative envelope may penalize mutually conflicting alternatives excessively.",
+      "rule": "weight / (1 + max(degree, conflict_weight / (1 + weight)))"
+    },
+    {
+      "features": [],
+      "name": "reward_with_gap_taper",
+      "rationale": "Preserves absolute reward scale while applying a bounded discount for gap overhead relative to duration. Reach is root-only; arithmetic adds no graph traversal, though common kernel costs remain. It ignores displacement and treats overlapping resource gaps approximately.",
+      "rule": "weight * (1 - 0.15 * (station_gap + satellite_gap) / (1 + duration + station_gap + satellite_gap))"
+    }
+  ],
+  "round": 2
+}

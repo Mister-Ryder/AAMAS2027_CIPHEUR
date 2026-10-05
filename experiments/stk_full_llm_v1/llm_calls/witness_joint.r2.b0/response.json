@@ -1,0 +1,590 @@
+{
+  "batch": 0,
+  "condition": "witness_joint",
+  "programs": [
+    {
+      "features": [],
+      "name": "sparsity_with_bounded_rival_margin",
+      "rationale": "Combines reward per blocked contact with a bounded strongest-rival correction. Immediate aggregates require no added graph work and cannot distinguish the remote witness.",
+      "rule": "weight / (1 + degree) * (1 + 0.12 * (weight - max_conflict_weight) / (1 + weight + max_conflict_weight))"
+    },
+    {
+      "features": [],
+      "name": "small_residual_margin_and_mild_gap_cost",
+      "rationale": "Uses relative rival regret in residuals containing at most two contacts, then weighted sparsity with a mild normalized gap discount. Base9 computation is inexpensive but remains pointwise.",
+      "rule": "(weight - max_conflict_weight) / (1 + weight + max_conflict_weight) if remaining_count <= 2 else weight / (1 + degree) * (1 - 0.08 * (station_gap + satellite_gap) / (1 + duration + station_gap + satellite_gap))"
+    },
+    {
+      "features": [],
+      "name": "count_priority_with_mean_conflict_regret",
+      "rationale": "Prioritizes fewer blocked contacts and resolves equal counts using bounded reward versus mean-conflict regret. Count and reward scales remain separate; there is no added graph computation or remote structural information.",
+      "rule": "-degree + 0.5 * (weight - conflict_weight / (1 + degree)) / (1 + weight + conflict_weight / (1 + degree))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "intersection"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "intersection"
+                      }
+                    ],
+                    "op": "max_weight"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "neighbor_pack_units"
+        }
+      ],
+      "name": "neighbor_packing_adjusted_sparsity",
+      "rationale": "Blends conflict count with independently packable neighbor reward expressed in strongest-neighbor units. Reach is active one-hop structure; repeated greedy work can grow with degree and cannot repair the saved remote distinction.",
+      "rule": "weight / (1 + 0.8 * degree + 0.2 * neighbor_pack_units)"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 2
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "induced_edges"
+                      }
+                    ],
+                    "op": "count"
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "count"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "count"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "neighbor_edge_density"
+        }
+      ],
+      "name": "bounded_neighbor_redundancy_discount",
+      "rationale": "Gives a limited count discount when active competitors conflict with each other, plus a small relative-reward adjustment. One-hop density cannot resolve the witness; neighbor-edge enumeration may be quadratic in degree.",
+      "rule": "weight / (1 + degree * (1 - 0.15 * neighbor_edge_density)) * (1 + 0.05 * weight / (1 + weight + conflict_weight))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "singleton"
+                              }
+                            ],
+                            "op": "union"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "sum_weights"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "residual_pack_fraction"
+        }
+      ],
+      "name": "bounded_global_packability_bonus",
+      "rationale": "Applies a bounded bonus for the fraction of surviving compatible reward collected by greedy packing. Root-conditioned global reach can expose remote arrangement changes, but every candidate still incurs a full residual greedy pass.",
+      "rule": "weight / (1 + degree) * (1 + 0.2 * residual_pack_fraction)"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "singleton"
+                              }
+                            ],
+                            "op": "union"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "induced_edges"
+                  }
+                ],
+                "op": "edge_weight_product_sum"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [],
+                                        "op": "root"
+                                      }
+                                    ],
+                                    "op": "neighbors"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [],
+                                        "op": "root"
+                                      }
+                                    ],
+                                    "op": "singleton"
+                                  }
+                                ],
+                                "op": "union"
+                              }
+                            ],
+                            "op": "difference"
+                          }
+                        ],
+                        "op": "sum_weights"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [],
+                                        "op": "root"
+                                      }
+                                    ],
+                                    "op": "neighbors"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [],
+                                        "op": "root"
+                                      }
+                                    ],
+                                    "op": "singleton"
+                                  }
+                                ],
+                                "op": "union"
+                              }
+                            ],
+                            "op": "difference"
+                          }
+                        ],
+                        "op": "max_weight"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "residual_pair_pressure"
+        }
+      ],
+      "name": "bounded_residual_pressure_bonus",
+      "rationale": "Normalizes surviving pair-weight pressure by total reward times strongest reward and mildly favors less congested continuations. It reaches beyond the neighborhood, but aggregates lose arrangement detail and full residual edge enumeration may be quadratic.",
+      "rule": "weight / (1 + 0.7 * degree + 0.3 * conflict_weight / (1 + weight)) * (1 + 0.15 / (1 + residual_pair_pressure))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "weight"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [],
+                                        "op": "root"
+                                      }
+                                    ],
+                                    "op": "neighbors"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [],
+                                        "op": "root"
+                                      }
+                                    ],
+                                    "op": "singleton"
+                                  }
+                                ],
+                                "op": "union"
+                              }
+                            ],
+                            "op": "difference"
+                          }
+                        ],
+                        "op": "greedy_independent_weight"
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "greedy_independent_weight"
+                  }
+                ],
+                "op": "sub"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "weight"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "max_weight"
+                      }
+                    ],
+                    "op": "add"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "greedy_exchange"
+        }
+      ],
+      "name": "repair_focused_global_exchange",
+      "rationale": "Uses a root-scale greedy inclusion margin when the closed neighborhood occupies a substantial active-set fraction, and a bounded sparsity correction otherwise. Global structure supplies missing distinctions; the score gate does not save computation, and two residual greedy passes remain costly.",
+      "rule": "weight / (1 + degree) * (1 + 0.1 * greedy_exchange / (1 + abs(greedy_exchange))) if remaining_count > 8 * (1 + degree) else greedy_exchange + 0.05 * weight / (1 + weight + conflict_weight)"
+    }
+  ],
+  "round": 2
+}

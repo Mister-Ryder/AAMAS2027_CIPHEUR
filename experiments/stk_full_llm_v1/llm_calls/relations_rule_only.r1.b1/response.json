@@ -1,0 +1,55 @@
+{
+  "batch": 1,
+  "condition": "relations_rule_only",
+  "programs": [
+    {
+      "features": [],
+      "name": "closed_neighborhood_reward",
+      "rationale": "Divides reward by closed-neighborhood size to favor contacts that preserve choices. Reach is the immediate unweighted neighborhood; arithmetic is constant cost, while supplied degree updates remain charged.",
+      "rule": "weight / (1 + degree)"
+    },
+    {
+      "features": [],
+      "name": "weighted_conflict_share",
+      "rationale": "Multiplies reward by its share of the weighted closed neighborhood, accounting for heterogeneous blockers. Reach is local conflict mass; arithmetic is constant cost, while maintaining that aggregate still requires active-set work.",
+      "rule": "weight * (weight / (1 + weight + conflict_weight))"
+    },
+    {
+      "features": [],
+      "name": "strongest_rival_margin",
+      "rationale": "Ranks a strongest-rival exchange margin with a discounted average of additional blocker mass. Reach is the immediate weighted neighborhood; constant arithmetic adds no graph traversal, but blocker compatibility remains unknown.",
+      "rule": "weight - max_conflict_weight - 0.25 * max(0, conflict_weight - max_conflict_weight) / (1 + degree)"
+    },
+    {
+      "features": [],
+      "name": "residual_fraction_balance",
+      "rationale": "Balances reward against the fraction of active contacts blocked and adds a bounded compatible-weight bonus. Reach includes residual aggregate totals; arithmetic is constant cost, although those totals must track active-set changes.",
+      "rule": "weight * (1 + compatible_weight / (1 + weight + conflict_weight + compatible_weight)) / (1 + 2 * degree / max(1, remaining_count - 1))"
+    },
+    {
+      "features": [],
+      "name": "resource_reward_rate",
+      "rationale": "Approximates reward per occupied resource time using duration and both actual root gaps. Reach is root-only, with constant arithmetic and no added graph work; the symmetric gap contribution is an occupancy proxy.",
+      "rule": "weight / (1 + duration + 0.5 * (station_gap + satellite_gap))"
+    },
+    {
+      "features": [],
+      "name": "bottleneck_gap_pressure",
+      "rationale": "Combines a saturated duration benefit based on the larger resource gap with count and weighted conflict pressure. Reach covers root attributes and its neighborhood; arithmetic is constant cost, with ordinary conflict-summary update costs retained.",
+      "rule": "weight * (1 + duration / (1 + duration + max(station_gap, satellite_gap))) / (1 + degree + 0.5 * conflict_weight / (1 + max_conflict_weight))"
+    },
+    {
+      "features": [],
+      "name": "exchange_regime_switch",
+      "rationale": "Handles isolated contacts directly, credits roots whose reward covers total blocker weight, and discounts contested roots otherwise. Reach is one neighborhood; bounded conditionals add constant arithmetic, with base updates still charged.",
+      "rule": "weight if degree == 0 else (weight + 0.5 * (weight - conflict_weight) if weight >= conflict_weight else weight / (1 + degree + conflict_weight / (1 + weight)))"
+    },
+    {
+      "features": [],
+      "name": "bounded_conflict_pivot",
+      "rationale": "Adds bounded conflict-density and conflict-mass bonuses to reward, then penalizes the strongest rival. Reach includes residual summaries; arithmetic is constant cost, but aggregate updates remain charged and centrality can trade against greedy inclusion quality.",
+      "rule": "weight * (1 + 0.5 * degree / max(1, remaining_count - 1) + 0.5 * conflict_weight / (1 + weight + conflict_weight + compatible_weight)) - 0.25 * max_conflict_weight"
+    }
+  ],
+  "round": 1
+}

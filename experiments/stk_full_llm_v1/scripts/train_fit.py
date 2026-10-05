@@ -25,9 +25,10 @@ def read(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
-def evaluate(bank_path, data_root, output_root, context_root, program_id=None, margin="0.00000001"):
+def evaluate(bank_path, data_root, output_root, context_root, program_id=None, margin="0.00000001", round_number=None):
     bank = read(bank_path)
-    candidates = [p for p in bank["programs"] if program_id is None or p["id"] == program_id]
+    candidates = [p for p in bank["programs"] if (program_id is None or p["id"] == program_id)
+                  and (round_number is None or p.get("round") == round_number)]
     require(candidates and (program_id is None or len(candidates) == 1), "Candidate id must resolve")
     context = read(context_root / "context" / "train_context.json")
     profile = read(context_root / "context" / "train_context_profile.json")
@@ -147,13 +148,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--program-bank", type=Path, required=True)
     parser.add_argument("--program-id")
+    parser.add_argument("--round", type=int, choices=(1, 2), help="Score only this actual generation round; do not repeat first-round fits")
     parser.add_argument("--data-root", type=Path, default=DEFAULT_DATA)
     parser.add_argument("--context-root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--score-margin", default="0.00000001")
     args = parser.parse_args()
     evaluate(args.program_bank, args.data_root.resolve(), args.output_root.resolve(), args.context_root.resolve(),
-             args.program_id, args.score_margin)
+             args.program_id, args.score_margin, args.round)
 
 
 if __name__ == "__main__":

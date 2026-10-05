@@ -1,0 +1,435 @@
+{
+  "batch": 0,
+  "condition": "relations_joint",
+  "programs": [
+    {
+      "features": [],
+      "name": "bounded_weighted_degree",
+      "rationale": "Keeps conflict count dominant while adjusting for rival reward relative to the root. Uses native active-neighborhood aggregates with no added graph operations; mutual conflicts among rivals remain unmodeled.",
+      "rule": "weight / (1 + 0.85 * degree + 0.15 * conflict_weight / (1 + weight))"
+    },
+    {
+      "features": [],
+      "name": "continuous_turnaround_density",
+      "rationale": "Scores reward per duration plus continuous turnaround overhead, subtracting a bounded conflict-count penalty. Uses only native inputs; occupancy efficiency can differ from displaced schedule reward and ignores rival overlap.",
+      "rule": "weight / (1 + duration + 0.1 * (station_gap + satellite_gap)) - 0.12 * degree / (1 + degree)"
+    },
+    {
+      "features": [],
+      "name": "peak_gated_pressure_blend",
+      "rationale": "Uses count efficiency when the root matches or exceeds its strongest rival; otherwise blends in weighted competition. This root-local conditional adds no feature scans, but strongest-rival dominance does not establish an inclusion certificate.",
+      "rule": "weight / (1 + degree) if weight >= max_conflict_weight else 0.9 * weight / (1 + degree) + 0.1 * weight * (1 + weight) / (1 + weight + conflict_weight)"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 2
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "induced_edges"
+                      }
+                    ],
+                    "op": "count"
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "intersection"
+                      }
+                    ],
+                    "op": "count"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "rival_mean_internal_degree"
+        }
+      ],
+      "name": "capped_neighborhood_clustering",
+      "rationale": "Discounts effective conflict count by at most fifteen percent when active rivals conflict among themselves. Reach stays within the root neighborhood; induced-edge enumeration can be quadratic, and clustering need not represent recoverable reward.",
+      "rule": "weight / (1 + degree * (1 - 0.15 * min(1, rival_mean_internal_degree / max(1, degree - 1))))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 2
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "induced_edges"
+                      }
+                    ],
+                    "op": "edge_weight_product_sum"
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "op": "const",
+                        "value": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "sum_weights"
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "args": [
+                      {
+                        "op": "const",
+                        "value": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "sum_weights"
+                      }
+                    ],
+                    "op": "add"
+                  }
+                ],
+                "op": "mul"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "rival_pair_weight_fraction"
+        }
+      ],
+      "name": "bounded_weighted_collision_priority",
+      "rationale": "Scores root reward against weighted competition, applying a bounded discount for heavy mutually conflicting rivals while retaining the strongest-rival floor. Uses local weighted pair structure; quadratic edge work and imperfect overlap estimates may outweigh its usefulness.",
+      "rule": "weight * (1 + weight) / (1 + weight + max(max_conflict_weight, conflict_weight / (1 + 0.25 * rival_pair_weight_fraction)))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "intersection"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "intersection"
+                      }
+                    ],
+                    "op": "sum_weights"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "rival_packing_fraction"
+        }
+      ],
+      "name": "cautious_packing_discount",
+      "rationale": "Uses the fraction of local rival reward retained by a feasible packing to make a capped count discount, preserving ordinary count efficiency for sparse neighborhoods. Neighborhood greedy computation remains charged and can dominate CPU; the packing can underestimate alternatives.",
+      "rule": "weight / (1 + degree) if degree <= 1 else weight / (1 + degree * (0.85 + 0.15 * min(1, max(0, rival_packing_fraction))))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  }
+                ],
+                "op": "sum_weights"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "op": "const",
+                        "value": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          }
+                        ],
+                        "op": "count"
+                      }
+                    ],
+                    "op": "max"
+                  },
+                  {
+                    "args": [
+                      {
+                        "op": "const",
+                        "value": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          }
+                        ],
+                        "op": "max_weight"
+                      }
+                    ],
+                    "op": "add"
+                  }
+                ],
+                "op": "mul"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "active_weight_flatness"
+        }
+      ],
+      "name": "active_dispersion_interpolation",
+      "rationale": "Uses active mean reward relative to the active maximum to adjust the blend of count and weight-normalized pressure, retaining at least seventy-five percent count influence. Reaches the whole active set through aggregates; repeated linear scans may consume construction time.",
+      "rule": "weight / (1 + 0.75 * degree + 0.25 * (active_weight_flatness * degree + (1 - active_weight_flatness) * conflict_weight / (1 + weight)))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "max_weight"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      }
+                    ],
+                    "op": "max_weight"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "compatible_peak_fraction"
+        }
+      ],
+      "name": "bounded_compatible_peak_horizon",
+      "rationale": "Adds a small bounded bonus for preserving a heavy compatible contact, moderated by the root's reward relative to its strongest rival. This reaches the global compatible residual through maximum scans; per-root filtering costs linear work and omits longer completion interactions.",
+      "rule": "weight / (1 + degree) * (1 + 0.08 * compatible_peak_fraction * weight / (1 + weight + max_conflict_weight))"
+    }
+  ],
+  "round": 2
+}

@@ -1,0 +1,398 @@
+{
+  "batch": 1,
+  "condition": "witness_joint",
+  "programs": [
+    {
+      "features": [],
+      "name": "degree_first_bounded_reward",
+      "rationale": "Keeps degree ordering primary, using bounded reward and conflict terms within each degree class. Requires no added graph computation, but cannot represent the certified nonlocal reversal.",
+      "rule": "-degree + 0.4 * weight / (1 + weight + max_conflict_weight) - 0.1 * conflict_weight / ((1 + degree) * (1 + weight + conflict_weight))"
+    },
+    {
+      "features": [],
+      "name": "mean_conflict_density",
+      "rationale": "Adjusts reward per blocked contact by a bounded comparison with mean conflicting reward, keeping count and weight scales separate. Uses only base inputs and remains blind to remote edge rearrangements.",
+      "rule": "weight / (1 + degree) * (1 + 0.15 * (weight - conflict_weight / max(1, degree)) / (1 + weight + conflict_weight / max(1, degree)))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "op": "const",
+            "value": 0
+          },
+          "name": "unused_placeholder"
+        }
+      ],
+      "name": "tempered_neighbor_clustering",
+      "rationale": "Uses only base density as a cost-aware candidate; no added feature is evaluated because the declared constant is unused. Its pointwise information cannot repair the witnessed reversal.",
+      "rule": "weight / (1 + degree) * (1 + 0.08 * (weight - max_conflict_weight) / (1 + weight + max_conflict_weight))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "op": "const",
+            "value": 0
+          },
+          "name": "unused_placeholder"
+        }
+      ],
+      "name": "retained_peak_continuation",
+      "rationale": "Uses compatible reward concentration through base aggregates as a cheap continuation approximation. The unused constant incurs no score-slice work, but this approximation cannot distinguish the remote witness.",
+      "rule": "weight / (1 + degree) + 0.06 * weight * compatible_weight / ((1 + compatible_weight) * (1 + remaining_count))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "singleton"
+                              }
+                            ],
+                            "op": "union"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "sum_weights"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "retained_pack_fraction"
+        }
+      ],
+      "name": "bounded_residual_packability",
+      "rationale": "Modulates degree density by a bounded feasible packing fraction of the full root-compatible residual. It observes remote structure, but a global greedy pass and weight scan remain charged and may dominate runtime; witness repair is unverified.",
+      "rule": "weight / (1 + degree) * (1 + 0.2 * min(1, max(0, retained_pack_fraction)))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "clique_cover_weight"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "clique_cover_weight"
+              }
+            ],
+            "op": "sub"
+          },
+          "name": "cover_displacement"
+        }
+      ],
+      "name": "damped_cover_displacement",
+      "rationale": "Uses root-conditioned cover displacement as a bounded correction to degree density. Global partitions can respond to remote arrangement changes, but heuristic cover differences can be unstable and two global cover computations may dominate the budget.",
+      "rule": "weight / (1 + degree) * (1 + 0.12 * (weight - cover_displacement) / (1 + weight + abs(cover_displacement)))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "weight"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "singleton"
+                              }
+                            ],
+                            "op": "union"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "greedy_independent_weight"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              }
+            ],
+            "op": "sub"
+          },
+          "name": "greedy_exchange"
+        }
+      ],
+      "name": "crowding_scaled_greedy_exchange",
+      "rationale": "Adds a normalized take-versus-skip greedy margin, with decision strength scaled by the fraction of active contacts blocked by the root. Reach is global; this scaling limits influence on large sparse sets but does not avoid either charged greedy computation.",
+      "rule": "weight / (1 + degree) + 0.5 * weight * (1 + degree) / (1 + remaining_count) * greedy_exchange / (1 + weight + abs(greedy_exchange))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "weight"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "singleton"
+                              }
+                            ],
+                            "op": "union"
+                          }
+                        ],
+                        "op": "difference"
+                      }
+                    ],
+                    "op": "greedy_independent_weight"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "clique_cover_weight"
+              }
+            ],
+            "op": "sub"
+          },
+          "name": "completion_margin"
+        }
+      ],
+      "name": "conservative_completion_gate",
+      "rationale": "Compares a greedy root-included completion with a cover bound for excluding the root. A nonnegative margin relaxes crowding; otherwise a capped penalty retains density ranking. Both global operations remain charged regardless of the rule branch, and schedule benefit is unverified.",
+      "rule": "weight / (1 + 0.5 * degree) if completion_margin >= 0 else weight / (1 + degree) * (1 + 0.1 * completion_margin / (1 + weight + abs(completion_margin)))"
+    }
+  ],
+  "round": 2
+}

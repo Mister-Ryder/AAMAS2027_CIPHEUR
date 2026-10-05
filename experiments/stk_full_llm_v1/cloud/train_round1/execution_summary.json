@@ -1,0 +1,1349 @@
+{
+  "manifest_sha256": "2edb3f9932f24e1c6df36fe969b92bb892e8e7ad16b5b2e49ad4217789ed8de4",
+  "finished_utc": "2026-10-05T15:30:19.430982+00:00",
+  "registered_jobs": 1408,
+  "recorded_jobs": 1408,
+  "missing_job_ids": [],
+  "worker_failures": [],
+  "worker_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "status_counts": {
+    "complete": 1408
+  },
+  "by_method": [
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b1.s7",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721109997413.8125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b0.s2",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721474666271.5,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b1.s6",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729988031924.125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b1.s5",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 727373394657.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b0.s7",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720266085638.625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b0.s2",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721283783636.625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.mixed.s0",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720052572011.25,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s0",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729700360080.625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s4",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 722038172063.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s3",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730727512716.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.residual.s5",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720337953590.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s4",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721896344605.8125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "chils_ils",
+      "program_id": null,
+      "arm": "chils_ils",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 749435179888.3125,
+      "quality_denominator": 16,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b0.s3",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721830223705.1875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.local.s4",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729648942313.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s1",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 723959520986.125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s5",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 719936490933.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b0.s5",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720045968620.5,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b0.s0",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729705827007.875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.local.s1",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 728417781719.6875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.mixed.s1",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720053200302.0625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b1.s0",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730826389344.6875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s3",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721290104559.9375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s4",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720568003141.4375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s1",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730197749055.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b1.s2",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 725892791491.9375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.residual.s4",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720361143788.5,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s2",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 726107707246.125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s7",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 724867192546.375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s2",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720932432715.8125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.local.s2",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 727721199089.9375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b1.s4",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 722427978808.3125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b1.s3",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 722309045251.8125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s1",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 727388573829.375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.residual.s6",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720638188030.625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.mixed.s4",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720262678061.5,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s0",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 726694732216.1875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b0.s4",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721482549362.5,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b0.s7",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720648784934.4375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s6",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 722783129327.75,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b1.s1",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729159630281.9375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.mixed.s6",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721916102966.625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s2",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729157391329.0,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.mixed.s5",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 723068462358.875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s2",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721332811338.5,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s7",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720053384620.375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.local.s0",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730002192560.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b0.s6",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720656362957.1875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "cp_sat",
+      "program_id": null,
+      "arm": "cp_sat",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 718887172750.9375,
+      "quality_denominator": 16,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s5",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730737567026.125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s1",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730801153995.0625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.mixed.s3",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720388447672.375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s7",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729863122380.4375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "joint|block_0_witness:2",
+      "arm": "witness",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 719901859048.0,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s5",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720965213388.0625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "local2swap",
+      "program_id": null,
+      "arm": "local2swap",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 724802189267.5,
+      "quality_denominator": 16,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b0.s1",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 724128118835.875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b0.s1",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 726629057870.625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "grasp",
+      "program_id": null,
+      "arm": "grasp",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 723569076675.0625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s5",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721295618638.6875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s0",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730786455057.4375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "degree",
+      "program_id": null,
+      "arm": "degree",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730514393408.0625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s4",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 726861457051.3125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.residual.s7",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720318463507.5,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b0.s5",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721493005020.3125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_rule_only.r1.b0.s3",
+      "arm": "relations_rule_only",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 725694960265.75,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b0.s4",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721549299848.4375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.residual.s0",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720466718634.375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s3",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721440887437.6875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b1.s6",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720391557391.125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.local.s3",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729857966406.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s7",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720466718634.375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "weight",
+      "program_id": null,
+      "arm": "weight",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 726742561302.375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.mixed.s2",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720323089618.5,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.residual.s3",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720037358503.875,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.residual.s1",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720037537789.25,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.local.s5",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730027802492.0625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.local.s6",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 729110367052.5625,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b1.s6",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721074892961.9375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b0.s3",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 721911969489.9375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.mixed.s7",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 719996888623.25,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "witness_joint.r1.b0.s6",
+      "arm": "witness_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720012098053.8125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "chils",
+      "program_id": null,
+      "arm": "chils",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 738897563886.9375,
+      "quality_denominator": 16,
+      "head_committed_count": 0,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "relations_joint.r1.b0.s0",
+      "arm": "relations_joint",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 724879069060.8125,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s0",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730797699570.375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.residual.s2",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 720023322069.75,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.base.s6",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 730630851635.75,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    },
+    {
+      "method": "program",
+      "program_id": "nonllm_grammar.local.s7",
+      "arm": "nonllm_grammar",
+      "record_count": 16,
+      "status_counts": {
+        "complete": 16
+      },
+      "feasible_record_count": 16,
+      "mean_value_ticks_on_feasible_records": 728717495867.4375,
+      "quality_denominator": 16,
+      "head_committed_count": 16,
+      "programme_error_count": 0,
+      "inference": "descriptive TRAIN evaluation only; no candidate selected by this runner"
+    }
+  ],
+  "execution_wall_seconds": 386.5464792624116,
+  "load_average_at_end": [
+    21.64,
+    23.09,
+    19.59
+  ]
+}

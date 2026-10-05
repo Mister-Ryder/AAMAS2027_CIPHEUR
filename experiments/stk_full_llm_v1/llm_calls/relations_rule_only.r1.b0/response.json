@@ -1,0 +1,55 @@
+{
+  "batch": 0,
+  "condition": "relations_rule_only",
+  "programs": [
+    {
+      "features": [],
+      "name": "reward_first",
+      "rationale": "Ranks direct reward as a transparent reference when conditional TRAIN preferences reverse. Structural reach is root-only; arithmetic is constant-size, but displacement is ignored.",
+      "rule": "weight"
+    },
+    {
+      "features": [],
+      "name": "reward_per_conflict",
+      "rationale": "Balances reward against the number of blocked alternatives. Uses local degree with constant-size arithmetic; degree maintenance remains a kernel cost, and unequal neighbor weights are ignored.",
+      "rule": "weight / (1 + degree)"
+    },
+    {
+      "features": [],
+      "name": "weighted_capture",
+      "rationale": "Discounts reward by competing neighborhood weight while retaining reward scale. Uses local aggregate mass without additional traversal; aggregate maintenance costs remain, and mutually conflicting neighbors can exaggerate displacement.",
+      "rule": "weight * (weight / (1 + weight + conflict_weight))"
+    },
+    {
+      "features": [],
+      "name": "strongest_exchange",
+      "rationale": "Combines normalized margin over the strongest rival with a small neighborhood capture term. Reach is local and arithmetic is constant-size; several jointly feasible rivals can invalidate the single-rival proxy.",
+      "rule": "(weight - max_conflict_weight) / (1 + weight + max_conflict_weight) + 0.1 * weight / (1 + weight + conflict_weight)"
+    },
+    {
+      "features": [],
+      "name": "preserved_residual",
+      "rationale": "Combines local reward capture, preserved compatible mass, and blocked count fraction using separate weight and count normalizations. Includes coarse global residual context without added scans; compatible mass does not establish mutual feasibility, and aggregate refresh retains its kernel cost.",
+      "rule": "weight / (1 + weight + conflict_weight) + 0.25 * compatible_weight / (1 + weight + conflict_weight + compatible_weight) - 0.1 * degree / (1 + remaining_count)"
+    },
+    {
+      "features": [],
+      "name": "occupancy_efficiency",
+      "rationale": "Ranks reward per approximate duration-plus-gap occupancy, discounted by the blocked residual fraction. Uses root resource values and degree context with constant-size arithmetic; overlapping gap effects make occupancy only a proxy.",
+      "rule": "weight / (1 + duration + station_gap + satellite_gap) * (1 - degree / (1 + remaining_count))"
+    },
+    {
+      "features": [],
+      "name": "density_adaptive",
+      "rationale": "Continuously shifts from count efficiency toward weighted capture as the root blocks more of the active set. Uses local aggregates and residual size; arithmetic is constant-size, but neither component knows neighborhood topology and base refresh costs remain.",
+      "rule": "(1 - degree / (1 + remaining_count)) * weight / (1 + degree) + degree / (1 + remaining_count) * weight * (weight / (1 + weight + conflict_weight))"
+    },
+    {
+      "features": [],
+      "name": "piecewise_exchange",
+      "rationale": "Uses direct reward for isolates, exchange margin for single conflicts, and maximum-plus-average penalties for larger neighborhoods. Local count branches provide distinct repair behavior with constant-size arithmetic; missing neighbor compatibility limits the displacement estimate.",
+      "rule": "weight if degree == 0 else (weight - max_conflict_weight if degree <= 1 else weight - 0.5 * max_conflict_weight - 0.5 * conflict_weight / (1 + degree))"
+    }
+  ],
+  "round": 1
+}

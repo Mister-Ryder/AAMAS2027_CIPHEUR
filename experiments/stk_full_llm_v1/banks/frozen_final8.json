@@ -1,0 +1,604 @@
+{
+  "version": "frozen_full_stk_final8_v1",
+  "selection_split": "VALIDATION",
+  "TEST_used_for_selection": false,
+  "selected_utc": "2026-10-05T16:11:18.242236+00:00",
+  "selection_sha256": "567e9156a52f22531a4374e93640c905cda24337e7013e05d1b42f1d242ff691",
+  "original_bank_sha256": "a6a73b15bf2af7795fd9e75da6938747437ef05193fc09151b4bda16040212b5",
+  "programs": [
+    {
+      "arm": "nonllm_grammar",
+      "family": "base",
+      "id": "nonllm_grammar.base.s0",
+      "program": {
+        "features": [],
+        "name": "grammar_base_0",
+        "rationale": "Universal deterministic MWIS grammar template; exact same public typed operations and scorer. Local or base cost and normalization alternative; no label-specific tuning.",
+        "rule": "weight/(1+degree)"
+      },
+      "program_content_sha256": "db5b8331f844d2a11acc4cf91438b1887dbab020d4d8fb39da638ace9943f350",
+      "provenance": {
+        "TEST_read": false,
+        "TRAIN_results_read": false,
+        "VAL_read": false,
+        "family_budget": "8base+8local+8residual+8mixed",
+        "generator": "deterministic stratified typed-grammar enumeration",
+        "generator_sha256": "e994aba5f79b61737cf2df96b062c79cc78babac3812b1a5637a2c98e3adb5ca",
+        "labels_read": false,
+        "language": "unchanged FeatureRuleProgram/graph_operation_library",
+        "model_calls": 0,
+        "selection": "Candidate selection is performed later under the same TRAIN/VAL protocol; no solver run by generator",
+        "size_guard": "128 active vertices for broader residual templates; all scopes/costs use real currentavailable()",
+        "structural_witness_read": false,
+        "total_candidate_budget": 32
+      },
+      "slot": 0
+    },
+    {
+      "arm": "relations_joint",
+      "batch": 1,
+      "id": "relations_joint.r1.b1.s0",
+      "program": {
+        "features": [],
+        "name": "degree_reward",
+        "rationale": "Trades root reward against active conflict count. Uses native local information with no added feature computation; unequal rival weights and mutual conflicts remain unmodeled.",
+        "rule": "weight / (1 + degree)"
+      },
+      "program_content_sha256": "427f47065fc868dd343e6a3ac3244bba0e4c3b6eaa9ee3bb49e883c9bc1778d2",
+      "provenance": {
+        "call_id": "relations_joint.r1.b1",
+        "context_sha256": "314bd28a58c10bcf1ec7f60820f40e5368e55a7b5ae1d3384204c869ce59f6d2",
+        "eventlog_sha256": "9baeedca281873350657d3766b08c15c5c174352cf8a15f993a8f258a4b82c4a",
+        "model_observed": "unknown",
+        "model_requested": "gpt-6.1-sol",
+        "prompt_sha256": "1b8e33d965dee4a9931fb6bf18df055a8884a6ac33507fcbeb7b1f9379d31631",
+        "reasoning_effort_requested": "ultra",
+        "receipt_sha256": "b0ceff6c92045a4922b44ae97534859d11a87ff61fbbe86b5d97b148b04eec7b",
+        "response_sha256": "9ad6a52b958e4f9d810fe0d13a2200a14fa84b0bf32b58d677d006a0d672551f",
+        "source_ids": [
+          "CP-AU-r000",
+          "CP-AP-r000",
+          "CP-AU-r001",
+          "CP-AP-r001"
+        ],
+        "split": "TRAIN",
+        "tool_call_count": 0,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 15553,
+          "output_tokens": 8915,
+          "reasoning_output_tokens": 7250
+        }
+      },
+      "round": 1,
+      "slot": 0
+    },
+    {
+      "arm": "relations_joint",
+      "batch": 0,
+      "id": "relations_joint.r2.b0.s0",
+      "program": {
+        "features": [],
+        "name": "bounded_weighted_degree",
+        "rationale": "Keeps conflict count dominant while adjusting for rival reward relative to the root. Uses native active-neighborhood aggregates with no added graph operations; mutual conflicts among rivals remain unmodeled.",
+        "rule": "weight / (1 + 0.85 * degree + 0.15 * conflict_weight / (1 + weight))"
+      },
+      "program_content_sha256": "535546c0e7a9a57ffba7c56f6fb5f876a05c659d098f33f85be2add53bc078f4",
+      "provenance": {
+        "call_id": "relations_joint.r2.b0",
+        "context_sha256": "314bd28a58c10bcf1ec7f60820f40e5368e55a7b5ae1d3384204c869ce59f6d2",
+        "eventlog_sha256": "baebdf51aa875ca8c10eaa190fcadb66ebd86370b10bbb7a9c58dfaf383ae0b9",
+        "model_observed": "unknown",
+        "model_requested": "gpt-6.1-sol",
+        "prompt_sha256": "cf175ec994811615c5ae102af89046611bdf808879940d328638bbde189d4b85",
+        "reasoning_effort_requested": "ultra",
+        "receipt_sha256": "cdb813c678043b418590068544e4efdb6d06cdf5b00c372ead6e251673ec9132",
+        "response_sha256": "8669a9aca18547c1f4295c9f227440f9708e4eb606869ac8bf6c09db5bb61ef6",
+        "source_ids": [
+          "CP-AU-r000",
+          "CP-AP-r000",
+          "CP-AU-r001",
+          "CP-AP-r001"
+        ],
+        "split": "TRAIN",
+        "tool_call_count": 0,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 44129,
+          "output_tokens": 16382,
+          "reasoning_output_tokens": 13984
+        }
+      },
+      "round": 2,
+      "slot": 0
+    },
+    {
+      "arm": "relations_rule_only",
+      "batch": 0,
+      "id": "relations_rule_only.r1.b0.s1",
+      "program": {
+        "features": [],
+        "name": "reward_per_conflict",
+        "rationale": "Balances reward against the number of blocked alternatives. Uses local degree with constant-size arithmetic; degree maintenance remains a kernel cost, and unequal neighbor weights are ignored.",
+        "rule": "weight / (1 + degree)"
+      },
+      "program_content_sha256": "427f47065fc868dd343e6a3ac3244bba0e4c3b6eaa9ee3bb49e883c9bc1778d2",
+      "provenance": {
+        "call_id": "relations_rule_only.r1.b0",
+        "context_sha256": "314bd28a58c10bcf1ec7f60820f40e5368e55a7b5ae1d3384204c869ce59f6d2",
+        "eventlog_sha256": "3bba5e12779e79b0524e08db9e52fb93b8c56588f613c338b16ad769ed9c3949",
+        "model_observed": "unknown",
+        "model_requested": "gpt-6.1-sol",
+        "prompt_sha256": "823ace04ae069b5679d5ea14ba4999402489f47d566d147e4c03c232bc7eaa59",
+        "reasoning_effort_requested": "ultra",
+        "receipt_sha256": "e8be9f66417c6eeb362076ea4ad916fad524e1a6025cc61f8f6bdb70aa340d33",
+        "response_sha256": "422e5bef231edb3f3b3401f483e8c47c30e310fd7c9b650ca69ad11c64bb12b3",
+        "source_ids": [
+          "CP-AU-r000",
+          "CP-AP-r000",
+          "CP-AU-r001",
+          "CP-AP-r001"
+        ],
+        "split": "TRAIN",
+        "tool_call_count": 0,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 15185,
+          "output_tokens": 4362,
+          "reasoning_output_tokens": 3571
+        }
+      },
+      "round": 1,
+      "slot": 1
+    },
+    {
+      "arm": "relations_rule_only",
+      "batch": 1,
+      "id": "relations_rule_only.r2.b1.s0",
+      "program": {
+        "features": [],
+        "name": "soft_closed_neighborhood",
+        "rationale": "Uses a smooth count penalty that returns direct reward for isolates and approaches reward per conflict for large neighborhoods. Reach is local degree; scalar arithmetic is cheap, while active degree maintenance remains charged and blocker weights are ignored.",
+        "rule": "weight / (1 + degree * (degree / (1 + degree)))"
+      },
+      "program_content_sha256": "d146eb1cf1b5dfe113d8f33ee433614b166b58b01462f9c583be7e3e16d45f51",
+      "provenance": {
+        "call_id": "relations_rule_only.r2.b1",
+        "context_sha256": "314bd28a58c10bcf1ec7f60820f40e5368e55a7b5ae1d3384204c869ce59f6d2",
+        "eventlog_sha256": "4b61ea9bc4379f47d8a585c7ad111be7db6b785233894d0f006432509a098bba",
+        "model_observed": "unknown",
+        "model_requested": "gpt-6.1-sol",
+        "prompt_sha256": "597f03e47d76b19b1ee397f920dbe57f3097c29ecb2234774462d5120c0562d7",
+        "reasoning_effort_requested": "ultra",
+        "receipt_sha256": "49ba73dc0aa190a64746279ba566e1c922c59bb50d0d999a05897bf8fd68febd",
+        "response_sha256": "233881a696dcd79ed13231ed08a443eb28c9d8ad55cbab7aff7729c441f69be0",
+        "source_ids": [
+          "CP-AU-r000",
+          "CP-AP-r000",
+          "CP-AU-r001",
+          "CP-AP-r001"
+        ],
+        "split": "TRAIN",
+        "tool_call_count": 0,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 42838,
+          "output_tokens": 7380,
+          "reasoning_output_tokens": 6430
+        }
+      },
+      "round": 2,
+      "slot": 0
+    },
+    {
+      "arm": "witness_joint",
+      "batch": 1,
+      "id": "witness_joint.r1.b1.s0",
+      "program": {
+        "features": [],
+        "name": "cheap_density_blend",
+        "rationale": "Blends reward per conflict with a small heaviest-conflict margin. Uses only base9 inputs with no added graph computation; its pointwise information cannot resolve the witnessed reversal.",
+        "rule": "weight / (1 + 0.25 * max(0, degree)) + 0.1 * (weight - max_conflict_weight) / (1 + max(0, degree))"
+      },
+      "program_content_sha256": "6b54aa1d9e638900de680117544872276ab41c87b9fa2ad39f8814db7f2756ba",
+      "provenance": {
+        "call_id": "witness_joint.r1.b1",
+        "context_sha256": "314bd28a58c10bcf1ec7f60820f40e5368e55a7b5ae1d3384204c869ce59f6d2",
+        "eventlog_sha256": "1f106d95e765ddb9bf0ec548827fb1a88e7884da8c00b2755ca5b31e364fb398",
+        "model_observed": "unknown",
+        "model_requested": "gpt-6.1-sol",
+        "prompt_sha256": "7953bca2102b88169d2fc00fb6445a4090ad288e3a2db68e9ca572b4f09cb84b",
+        "reasoning_effort_requested": "ultra",
+        "receipt_sha256": "5d313612ca13233467977fdbd56d5d35790acca96ad3a83e7a6c448251204a9d",
+        "response_sha256": "ff2d355be1314ba6d6fde5b5265f8517661d482d9082f3642d070271227cf76f",
+        "source_ids": [
+          "CP-AU-r000",
+          "CP-AP-r000",
+          "CP-AU-r001",
+          "CP-AP-r001"
+        ],
+        "split": "TRAIN",
+        "tool_call_count": 0,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 25357,
+          "output_tokens": 9816,
+          "reasoning_output_tokens": 7250
+        }
+      },
+      "round": 1,
+      "slot": 0
+    },
+    {
+      "arm": "witness_joint",
+      "batch": 0,
+      "id": "witness_joint.r2.b0.s2",
+      "program": {
+        "features": [],
+        "name": "count_priority_with_mean_conflict_regret",
+        "rationale": "Prioritizes fewer blocked contacts and resolves equal counts using bounded reward versus mean-conflict regret. Count and reward scales remain separate; there is no added graph computation or remote structural information.",
+        "rule": "-degree + 0.5 * (weight - conflict_weight / (1 + degree)) / (1 + weight + conflict_weight / (1 + degree))"
+      },
+      "program_content_sha256": "7f1dc95972fa31461342335a16c871936889f6b186c1720c9d718f4e69c8183f",
+      "provenance": {
+        "call_id": "witness_joint.r2.b0",
+        "context_sha256": "314bd28a58c10bcf1ec7f60820f40e5368e55a7b5ae1d3384204c869ce59f6d2",
+        "eventlog_sha256": "d9f9af14ee31ef3a19ba6e03f77adac803eeda75b8c45508367dcc0386d3ad7c",
+        "model_observed": "unknown",
+        "model_requested": "gpt-6.1-sol",
+        "prompt_sha256": "2b583a35513497663ba511b83ee97f910ca1fbd3a7e26d17a507b3b1f40e805f",
+        "reasoning_effort_requested": "ultra",
+        "receipt_sha256": "f2542d5f00e9c7b7e303c0482e974521e618373f5b6b218a747b62c30225f39d",
+        "response_sha256": "0b665bf6c93546d4815e9b5c1f932b502450f2ad5250a5a99c64426326a77202",
+        "source_ids": [
+          "CP-AU-r000",
+          "CP-AP-r000",
+          "CP-AU-r001",
+          "CP-AP-r001"
+        ],
+        "split": "TRAIN",
+        "tool_call_count": 0,
+        "usage": {
+          "cache_write_input_tokens": 0,
+          "cached_input_tokens": 0,
+          "input_tokens": 54853,
+          "output_tokens": 11260,
+          "reasoning_output_tokens": 8286
+        }
+      },
+      "round": 2,
+      "slot": 2
+    },
+    {
+      "id": "joint|block_0_witness:2",
+      "block": 0,
+      "arm": "old_frozen",
+      "slot": 2,
+      "program": {
+        "name": "mixed_deletion_signature",
+        "features": [
+          {
+            "name": "residual_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "residual_cover",
+            "expression": {
+              "op": "clique_cover_weight",
+              "args": [
+                {
+                  "op": "difference",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "neighbors",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "singleton",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "neighbor_pack",
+            "expression": {
+              "op": "greedy_independent_weight",
+              "args": [
+                {
+                  "op": "neighbors",
+                  "args": [
+                    {
+                      "op": "root",
+                      "args": []
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "neighbor_edges",
+            "expression": {
+              "op": "count",
+              "args": [
+                {
+                  "op": "induced_edges",
+                  "args": [
+                    {
+                      "op": "neighbors",
+                      "args": [
+                        {
+                          "op": "root",
+                          "args": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "boundary_edges",
+            "expression": {
+              "op": "sub",
+              "args": [
+                {
+                  "op": "sub",
+                  "args": [
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "singleton",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "count",
+                      "args": [
+                        {
+                          "op": "induced_edges",
+                          "args": [
+                            {
+                              "op": "neighbors",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "count",
+                  "args": [
+                    {
+                      "op": "induced_edges",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "difference",
+                              "args": [
+                                {
+                                  "op": "available",
+                                  "args": []
+                                },
+                                {
+                                  "op": "neighbors",
+                                  "args": [
+                                    {
+                                      "op": "root",
+                                      "args": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "deletion_signature",
+            "expression": {
+              "op": "add",
+              "args": [
+                {
+                  "op": "mul",
+                  "args": [
+                    {
+                      "op": "greedy_independent_weight",
+                      "args": [
+                        {
+                          "op": "difference",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            },
+                            {
+                              "op": "singleton",
+                              "args": [
+                                {
+                                  "op": "root",
+                                  "args": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "op": "add",
+                      "args": [
+                        {
+                          "op": "sum_weights",
+                          "args": [
+                            {
+                              "op": "available",
+                              "args": []
+                            }
+                          ]
+                        },
+                        {
+                          "op": "weight",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "clique_cover_weight",
+                  "args": [
+                    {
+                      "op": "difference",
+                      "args": [
+                        {
+                          "op": "available",
+                          "args": []
+                        },
+                        {
+                          "op": "singleton",
+                          "args": [
+                            {
+                              "op": "root",
+                              "args": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "rule": "weight + 0.6*residual_pack + 0.4*residual_cover - 0.15*neighbor_pack - 0.2*boundary_edges/max(1e-9,abs(1+degree)) + 0.1*neighbor_edges/max(1e-9,abs(1+degree)) + 0.3*degree - 0.8*deletion_signature/max(1e-9,abs(remaining_count+weight))",
+        "rationale": "Preserve five seed features and replace residual edge count with a demanded mixed deletion signature. The signature combines packing and cover within one feature slot; it does not certify the complete quotient."
+      },
+      "program_sha256": "c210ae1446dfdc7248241131abd4624e70ea3051dc25077da04ca76f1693f8ad",
+      "eligible": true,
+      "source_candidate_id": "block_0_witness:2",
+      "role": "proposed_witness_joint",
+      "joint_gate_required": true,
+      "provenance": {
+        "source": "existing frozen v06 first preregistered head",
+        "selected_by_TEST": false,
+        "new_synthesis_calls": 0
+      }
+    }
+  ]
+}

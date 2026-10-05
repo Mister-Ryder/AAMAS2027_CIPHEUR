@@ -1,0 +1,133 @@
+{
+  "version": "full_stk_llm_parameter_adaptation_v1",
+  "status": "pre_generation_protocol; execution budgets require TRAIN engineering profile before freeze",
+  "created_utc": "2026-10-05T14:59:01.140224+00:00",
+  "data_root": "E:\\01-Joycecyq\\2026-AAMAS\\data\\两篇论文数据定制化构建\\CIPHEUR_STK_20261005",
+  "source_splits": {
+    "TRAIN": [
+      "r000",
+      "r001"
+    ],
+    "VALIDATION": [
+      "r006"
+    ],
+    "TEST": [
+      "r008",
+      "r009"
+    ]
+  },
+  "geometries": [
+    "AU",
+    "AP"
+  ],
+  "TRAIN_and_VALIDATION_configs": {
+    "A": [
+      340,
+      340
+    ],
+    "W": [
+      1200,
+      340
+    ],
+    "E": [
+      340,
+      1200
+    ],
+    "J": [
+      1200,
+      1200
+    ]
+  },
+  "TEST_configs": {
+    "A": [
+      340,
+      340
+    ],
+    "M": [
+      680,
+      680
+    ],
+    "J": [
+      1200,
+      1200
+    ],
+    "stress": [
+      1800,
+      1800
+    ],
+    "W": [
+      1200,
+      340
+    ],
+    "E": [
+      340,
+      1200
+    ],
+    "MW": [
+      680,
+      1200
+    ],
+    "ME": [
+      1200,
+      680
+    ]
+  },
+  "satellite_gap_seconds": 150,
+  "LLM_conditions": [
+    "witness_joint",
+    "relations_joint",
+    "relations_rule_only"
+  ],
+  "independent_batches_per_condition": 2,
+  "candidates_per_batch_per_round": 8,
+  "maximum_feedback_rounds": 2,
+  "maximum_candidates_per_LLM_condition": 32,
+  "requested_model": "gpt-6.1-sol",
+  "requested_reasoning_effort": "ultra",
+  "actual_model_requirement": "observed model only; never infer served_model from requested label",
+  "synthesis_transport": "native Codex CLI, fresh empty read-only workspace; verbatim TRAIN-only stdin prompt; structured final JSON; event logs; reject all tool events",
+  "no_deepseek_harness": true,
+  "no_online_LLM_or_oracle": true,
+  "kernel": "shared feasibility seed; head-owned greedy commitments; shared local search/ruin-recreate; all costs charged",
+  "execution_cpu_seconds": [
+    2,
+    10
+  ],
+  "construction_fraction": 0.2,
+  "destroy_counts": [
+    16,
+    32
+  ],
+  "repair_activity_cap": 128,
+  "formal_seeds": [
+    2,
+    3,
+    5
+  ],
+  "candidate_training_seed": 2,
+  "candidate_training_cpu_seconds": 2,
+  "selection": "TRAIN multiobjective spec consistency/complete-schedule quality/cost; VAL pick final within fixed arm/batch; TEST one frozen execution, no tuning",
+  "comparison_methods": [
+    "Degree shared-kernel",
+    "weight greedy shared-kernel",
+    "GRASP shared-kernel",
+    "CP-SAT single worker",
+    "published weighted-MIS solver if exact original weights supported",
+    "old_frozen_shared_kernel",
+    "LLM_witness_joint",
+    "LLM_relations_joint",
+    "LLM_rule_only",
+    "nonLLM_grammar_search"
+  ],
+  "primary_metrics": [
+    "feasible complete 72h reward_seconds",
+    "paired performance under parameter interventions",
+    "relative reward vs strongest reference under same total budget",
+    "total_cpu_and_wall_seconds",
+    "feature_computation_cost",
+    "best_so_far_reward_curve"
+  ],
+  "statistics_unit": "physical source group, not patches or multiple parameter configs",
+  "all_failures_and_negative_deltas_preserved": true,
+  "TEST_do_not_read_before_program_and_protocol_freeze": true
+}

@@ -1,0 +1,260 @@
+{
+  "batch": 1,
+  "condition": "relations_joint",
+  "programs": [
+    {
+      "features": [],
+      "name": "relative_rival_degree",
+      "rationale": "Retains reward per active conflict as the main signal and adds modest pressure from rivals weighted relative to the root. Native local aggregates add no feature computation; mutual exclusion among rivals remains unmodeled.",
+      "rule": "weight / (1 + 0.85 * degree + 0.15 * conflict_weight / (1 + weight))"
+    },
+    {
+      "features": [],
+      "name": "population_scaled_pressure",
+      "rationale": "Blends active conflict count with rival reward measured in units of the current population's average reward. Native aggregates provide global scale without another residual scan; the average can obscure concentrated heavy rivals.",
+      "rule": "weight / (1 + 0.65 * degree + 0.35 * conflict_weight * remaining_count / (1 + weight + conflict_weight + compatible_weight))"
+    },
+    {
+      "features": [],
+      "name": "sufficient_exchange_priority",
+      "rationale": "Prioritizes roots whose reward covers the sum of active rival rewards, then ranks other roots by reward share per conflict. This uses a conservative local exchange condition with no added graph work; its priority jump can affect search order.",
+      "rule": "1 + weight / (1 + weight + conflict_weight) if weight >= conflict_weight else weight / ((1 + degree) * (1 + weight + max_conflict_weight))"
+    },
+    {
+      "features": [],
+      "name": "bounded_turnaround_efficiency",
+      "rationale": "Applies a bounded, continuous turnaround penalty to reward per active conflict. It uses only native root and neighborhood inputs; summed gaps approximate occupancy but cannot identify the resources shared with individual rivals.",
+      "rule": "weight / (1 + degree) * (1 - 0.15 * degree / (1 + degree) * (station_gap + satellite_gap) / (1 + duration + station_gap + satellite_gap))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "op": "const",
+            "value": 0
+          },
+          "name": "placeholder"
+        }
+      ],
+      "name": "active_triangle_discount",
+      "rationale": "Placeholder.",
+      "rule": "weight"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 2
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "available"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [],
+                                    "op": "root"
+                                  }
+                                ],
+                                "op": "neighbors"
+                              }
+                            ],
+                            "op": "intersection"
+                          }
+                        ],
+                        "op": "induced_edges"
+                      }
+                    ],
+                    "op": "edge_min_weight_sum"
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "available"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          }
+                        ],
+                        "op": "intersection"
+                      }
+                    ],
+                    "op": "sum_weights"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "weighted_redundancy"
+        }
+      ],
+      "name": "bounded_weighted_overlap_margin",
+      "rationale": "Uses minimum-weight overlap among active rivals to discount displaced reward, with the strongest rival retained as a floor. The signed margin only moderately adjusts reward per conflict; local weighted edge enumeration can be quadratic in degree.",
+      "rule": "weight / (1 + degree) * (1 + 0.2 * (weight - max(max_conflict_weight, conflict_weight / (1 + max(0, weighted_redundancy)))) / (1 + weight + conflict_weight))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "intersection"
+                  }
+                ],
+                "op": "greedy_independent_weight"
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "intersection"
+                  }
+                ],
+                "op": "max_weight"
+              }
+            ],
+            "op": "sub"
+          },
+          "name": "independent_excess"
+        }
+      ],
+      "name": "bounded_neighbor_packing_pressure",
+      "rationale": "Penalizes feasible rival packing beyond the strongest individual rival while preserving reward per conflict as the main signal. Reach is restricted to active neighbors; greedy packing and the maximum scan are paid per scored root and may dominate CPU.",
+      "rule": "weight / (1 + degree) * (1 - 0.2 * max(0, independent_excess) / (1 + conflict_weight))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "neighbors"
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [],
+                                "op": "root"
+                              }
+                            ],
+                            "op": "singleton"
+                          }
+                        ],
+                        "op": "union"
+                      }
+                    ],
+                    "op": "difference"
+                  }
+                ],
+                "op": "max_weight"
+              },
+              {
+                "args": [
+                  {
+                    "op": "const",
+                    "value": 1
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "weight"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "div"
+          },
+          "name": "compatible_peak_ratio"
+        }
+      ],
+      "name": "bounded_compatible_extrema",
+      "rationale": "Modestly favors roots preserving a stronger compatible peak relative to their strongest conflicting rival. It reaches the full active complement through a maximum scan; repeated residual filtering costs CPU and the two extrema omit longer interactions.",
+      "rule": "weight / (1 + degree) * (1 + 0.12 * (compatible_peak_ratio - max_conflict_weight / (1 + weight)) / (1 + compatible_peak_ratio + max_conflict_weight / (1 + weight)))"
+    }
+  ],
+  "round": 2
+}

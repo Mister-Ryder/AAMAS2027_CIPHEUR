@@ -1,0 +1,49 @@
+{
+  "version": "stk_full_llm_execution_freeze_v1",
+  "frozen": true,
+  "date_utc": "2026-10-05",
+  "scope": "Execution kernel and resource budget only; this file does not declare a programme bank or TEST selection frozen.",
+  "authoritative_first_round_registration": "cloud/train_round1/registration/manifest.json",
+  "authoritative_first_round_job_count": 1408,
+  "script_sha256": {
+    "full_schedule_execution.py": "e151df993418149b2429e2bfee7ab7f75c53ba291ea9afd89785a4cda9b489e7",
+    "full_schedule_benchmark.py": "5214f2e4c92343411f2304da76b9289029336882436614dd8a664a521bc1128a",
+    "published_weighted_baselines.py": "eb11e08e1b2468fd77cf87ef930eb9aa9a55e7b2d86e7cadd85d75d7282edf3f"
+  },
+  "native_CHILS_executable_sha256": "19610c03f334c6267f94543ad3053d792cba56e9ae211fceb6c36f21750c88a0",
+  "dependency_versions_observed_cloud": {
+    "python": "3.11.17",
+    "numpy": "2.4.6",
+    "ortools": "9.15.6755"
+  },
+  "budgets_seconds": [2, 10],
+  "budget_clock": "CPU; parent process plus measured native child CPU",
+  "formal_seeds": [2, 3, 5],
+  "candidate_training_cpu_seconds": 2,
+  "candidate_training_seed": 2,
+  "common_seed": "Complete feasible static weighted-degree schedule, with loading and seed construction charged",
+  "construction_fraction": 0.2,
+  "swap_fraction": 0.1,
+  "swap_rounds": 2,
+  "destroy_counts": [16, 32],
+  "destroy_cycle": "alternating, same preregistered random stream seed across heads",
+  "repair_activity_cap": 128,
+  "max_repairs": 10000,
+  "objective_transport": "Original integer microsecond ticks, no rounding or scaling",
+  "scorer_namespace": "heterogeneous_station_local_base9_full_schedule_v1",
+  "station_gap": "Actual root contact antenna constraint, not a minimum or average",
+  "online_LLM_calls": 0,
+  "conditional_oracle_calls": 0,
+  "parallel_execution": {
+    "workers": 8,
+    "single_CPU_affinity": [24, 25, 26, 27, 28, 29, 30, 31],
+    "CP_SAT_workers": 1,
+    "CHILS_threads": 1,
+    "CHILS_population": 4,
+    "CHILS_ILS_population": 1
+  },
+  "deadline_scope": "Nominal optimization CPU deadline is soft. Legal fallback completion and final feasibility validation finish after interruption; actual CPU, wall time, native child CPU and encoding cost are recorded.",
+  "encoding_scope": "One measured complete JSON encoding pass reported separately; output file transport and controller process startup are outside optimizer deadline.",
+  "acceptance_guard": "Positive gain over incumbent only, while retaining raw proposals, negative deltas, failures and score/commit counters.",
+  "TEST_requirement": "Separate frozen protocol, exact final programme-bank SHA and final_program_ids; no online calls or programme changes on TEST."
+}

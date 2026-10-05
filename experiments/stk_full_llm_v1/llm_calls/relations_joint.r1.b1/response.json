@@ -1,0 +1,281 @@
+{
+  "batch": 1,
+  "condition": "relations_joint",
+  "programs": [
+    {
+      "features": [],
+      "name": "degree_reward",
+      "rationale": "Trades root reward against active conflict count. Uses native local information with no added feature computation; unequal rival weights and mutual conflicts remain unmodeled.",
+      "rule": "weight / (1 + degree)"
+    },
+    {
+      "features": [],
+      "name": "turnaround_weight_pressure",
+      "rationale": "Balances reward against aggregate active rival weight and continuous turnaround occupancy. Uses native root and neighborhood inputs without added features; summed rival weight can overstate competing opportunity.",
+      "rule": "weight / (1 + conflict_weight / (1 + weight)) * (1 + duration) / (1 + duration + 0.25 * (station_gap + satellite_gap))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "intersection"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "count"
+          },
+          "name": "neighbor_edges"
+        }
+      ],
+      "name": "local_density_discount",
+      "rationale": "Discounts aggregate rival pressure when active neighbors conflict among themselves, while retaining the strongest rival as a floor. Local induced-edge computation can be quadratic in active degree.",
+      "rule": "weight / (1 + max(max_conflict_weight, conflict_weight / (1 + 2 * neighbor_edges / max(1, degree))) / (1 + weight))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "available"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      }
+                    ],
+                    "op": "intersection"
+                  }
+                ],
+                "op": "induced_edges"
+              }
+            ],
+            "op": "edge_min_weight_sum"
+          },
+          "name": "overlap_mass"
+        }
+      ],
+      "name": "weighted_overlap_margin",
+      "rationale": "Uses weighted mutual exclusion among active rivals to estimate displaced reward, then scores a signed root margin with a small sparsity bonus. The approximation is local; weighted induced-edge work can be quadratic.",
+      "rule": "weight - max(max_conflict_weight, conflict_weight / (1 + 2 * overlap_mass / (1 + conflict_weight))) + 0.05 * weight / (1 + degree)"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          },
+          "name": "neighbor_pack"
+        }
+      ],
+      "name": "local_greedy_switch",
+      "rationale": "Separates favorable comparisons with a feasible packing of active rivals from normalized shortfalls. This local threshold is heuristic; constructing the greedy packing can be costly at high degree.",
+      "rule": "weight / (1 + neighbor_pack) if weight >= neighbor_pack else (weight - neighbor_pack) / (1 + weight + neighbor_pack)"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "clique_cover_weight"
+          },
+          "name": "neighbor_cover"
+        },
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "root"
+                      }
+                    ],
+                    "op": "neighbors"
+                  }
+                ],
+                "op": "intersection"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          },
+          "name": "neighbor_pack"
+        }
+      ],
+      "name": "local_bound_caution",
+      "rationale": "Scores a normalized margin against a neighborhood cover estimate and penalizes disagreement with feasible greedy packing. Its reach stays local, but computing both estimates may consume substantial time.",
+      "rule": "(weight - neighbor_cover) / (1 + weight + neighbor_cover) - 0.1 * max(0, neighbor_cover - neighbor_pack) / (1 + neighbor_cover) + 0.05 * weight / ((1 + weight) * (1 + degree))"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "union"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "max_weight"
+          },
+          "name": "compatible_peak"
+        }
+      ],
+      "name": "compatible_pair_lookahead",
+      "rationale": "Combines root reward with its heaviest active compatible contact and subtracts average local rival pressure. This global two-contact horizon omits longer interactions and requires residual filtering and scanning per candidate.",
+      "rule": "weight + compatible_peak - 0.25 * conflict_weight / (1 + degree)"
+    },
+    {
+      "features": [
+        {
+          "expression": {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "available"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "neighbors"
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [],
+                            "op": "root"
+                          }
+                        ],
+                        "op": "singleton"
+                      }
+                    ],
+                    "op": "union"
+                  }
+                ],
+                "op": "difference"
+              }
+            ],
+            "op": "greedy_independent_weight"
+          },
+          "name": "residual_pack"
+        }
+      ],
+      "name": "residual_greedy_completion",
+      "rationale": "Estimates completion reward by fixing the root and greedily packing the entire compatible active residual. This gives global structural reach, but repeated root-conditioned packing may dominate the full solve budget.",
+      "rule": "weight + residual_pack"
+    }
+  ],
+  "round": 1
+}
