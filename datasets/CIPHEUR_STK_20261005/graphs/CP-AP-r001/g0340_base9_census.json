@@ -1,0 +1,51 @@
+{
+  "feature_semantics_namespace": "exact_microtick_base9_v1",
+  "feature_names": [
+    "weight",
+    "duration",
+    "degree",
+    "conflict_weight",
+    "max_conflict_weight",
+    "compatible_weight",
+    "station_gap",
+    "satellite_gap",
+    "remaining_count"
+  ],
+  "feature_units": [
+    "microsecond",
+    "microsecond",
+    "count",
+    "microsecond",
+    "microsecond",
+    "microsecond",
+    "microsecond",
+    "microsecond",
+    "count"
+  ],
+  "semantic_scope": "all retained full contacts active; F=X=empty; exact endpoint-difference integer weights",
+  "alias_classes": 0,
+  "aliased_action_occurrences": 0,
+  "competing_alias_pairs": 0,
+  "classes": [],
+  "requires_oracle_for_strict_obstruction": false,
+  "strict_obstruction_established": false,
+  "interpretation": "No full-graph base9 collisions; this does not prove absence of multi-state quotient cycles.",
+  "old_code_semantics": {
+    "names": [
+      "weight",
+      "duration",
+      "degree",
+      "conflict_weight",
+      "max_conflict_weight",
+      "compatible_weight",
+      "station_gap",
+      "satellite_gap",
+      "remaining_count"
+    ],
+    "reference": "cipheur/graph_features.py:_BASE_EXPRESSIONS and _FeatureState.feature_values; cipheur/compiled.py:_float_term",
+    "difference": "Earlier reference converts weight terms to binary float for math.fsum; duration subtracts binary float endpoints. This dataset freezes rational seconds as microticks; no new scientific evidence is inherited from older float equality classes.",
+    "note": "No endpoint precision coarsening is performed by this builder. Six-decimal serialization is fixed upstream before labels; its physical numerical tolerance remains STK Access's stated 0.001 seconds."
+  },
+  "actual_head_namespace": "fraction_seconds_binary_fsum_base9_v1; distinct from this exact-integer census",
+  "cross_configuration_note": "station_gap is an explicit base9 coordinate; different ground-gap configurations cannot alias as complete vectors."
+}

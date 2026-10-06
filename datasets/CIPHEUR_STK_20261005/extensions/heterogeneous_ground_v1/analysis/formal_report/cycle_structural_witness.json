@@ -1,0 +1,295 @@
+{
+  "scope": "one preregistered deterministic cycle case; two pre-fixed input statistics only; no fittedranking, certificate or model calls",
+  "source": "CP-AU-r000",
+  "query_id": "CP-AU-r000:q008:d16",
+  "patch_count": 64,
+  "rows": [
+    {
+      "config": "E",
+      "action": "a",
+      "contact_id": "CP-AU-r000:S-P01-S05:GS04:p0001",
+      "degree": 9,
+      "T_sum_neighbor_degrees": 77,
+      "Q_neighbor_induced_edges": 16
+    },
+    {
+      "config": "E",
+      "action": "b",
+      "contact_id": "CP-AU-r000:S-P01-S05:GS05:p0001",
+      "degree": 8,
+      "T_sum_neighbor_degrees": 60,
+      "Q_neighbor_induced_edges": 13
+    },
+    {
+      "config": "J",
+      "action": "a",
+      "contact_id": "CP-AU-r000:S-P01-S05:GS04:p0001",
+      "degree": 9,
+      "T_sum_neighbor_degrees": 77,
+      "Q_neighbor_induced_edges": 16
+    },
+    {
+      "config": "J",
+      "action": "b",
+      "contact_id": "CP-AU-r000:S-P01-S05:GS05:p0001",
+      "degree": 8,
+      "T_sum_neighbor_degrees": 60,
+      "Q_neighbor_induced_edges": 13
+    }
+  ],
+  "full_base9_root_vectors_equal_E_J": true,
+  "T_definition": "sum(degree_P(u) foru inN_P(v))",
+  "T_existing_typed_library_expressible": true,
+  "T_note": "no direct neighbour-degree reducer, but exact edge-count identityT=|E(P)|-|E(P minusN)|+|E(N)| uses existing typedoperators; no candidate fitting performed",
+  "Q_definition": "count(induced_edges(neighbors(root))) within sameP",
+  "Q_existing_typed_library_expressible": true,
+  "Q_expression": {
+    "op": "count",
+    "args": [
+      {
+        "op": "induced_edges",
+        "args": [
+          {
+            "op": "neighbors",
+            "args": [
+              {
+                "op": "root",
+                "args": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "library_source": "cipheur/graph_features.py::NEIGHBOR_EDGE_COUNT and GRAPH_OPERATION_TYPES",
+  "library_sha256": "b6f807e9a1a13e8443532247e24fc802815053d375f69ed2c2718a222282a03d",
+  "new_patch_edges_E_to_J": 41,
+  "new_patch_edge_indices": [
+    [
+      87,
+      396
+    ],
+    [
+      87,
+      550
+    ],
+    [
+      87,
+      3678
+    ],
+    [
+      87,
+      5344
+    ],
+    [
+      102,
+      409
+    ],
+    [
+      102,
+      563
+    ],
+    [
+      102,
+      3692
+    ],
+    [
+      102,
+      5358
+    ],
+    [
+      242,
+      550
+    ],
+    [
+      242,
+      1759
+    ],
+    [
+      242,
+      3678
+    ],
+    [
+      242,
+      4879
+    ],
+    [
+      256,
+      563
+    ],
+    [
+      256,
+      3692
+    ],
+    [
+      256,
+      4894
+    ],
+    [
+      396,
+      1759
+    ],
+    [
+      396,
+      4879
+    ],
+    [
+      409,
+      4894
+    ],
+    [
+      463,
+      5104
+    ],
+    [
+      475,
+      5115
+    ],
+    [
+      537,
+      5176
+    ],
+    [
+      550,
+      5189
+    ],
+    [
+      563,
+      5204
+    ],
+    [
+      1589,
+      5176
+    ],
+    [
+      1672,
+      5104
+    ],
+    [
+      1759,
+      5189
+    ],
+    [
+      1759,
+      5344
+    ],
+    [
+      3592,
+      5104
+    ],
+    [
+      3604,
+      5115
+    ],
+    [
+      3665,
+      5176
+    ],
+    [
+      3678,
+      5189
+    ],
+    [
+      3692,
+      5204
+    ],
+    [
+      4708,
+      5176
+    ],
+    [
+      4791,
+      5104
+    ],
+    [
+      4791,
+      5258
+    ],
+    [
+      4865,
+      5176
+    ],
+    [
+      4865,
+      5331
+    ],
+    [
+      4879,
+      5189
+    ],
+    [
+      4879,
+      5344
+    ],
+    [
+      4894,
+      5204
+    ],
+    [
+      4894,
+      5358
+    ]
+  ],
+  "structural_location": {
+    "graph": "E configuration graph induced by same recordedP, before addingJ edges",
+    "definition": "min unweighted shortest-path distance fromroot to eitherendpoint ofanyE-to-J newedge; ties use ascendingoriginalnodeindex",
+    "changed_endpoint_count": 33,
+    "roots": [
+      {
+        "action": "a",
+        "minimum_endpoint_distance": 2,
+        "nearest_endpoint_index": 242,
+        "shortest_path_indices": [
+          653,
+          193,
+          242
+        ],
+        "shortest_path_contact_ids": [
+          "CP-AU-r000:S-P01-S05:GS04:p0001",
+          "CP-AU-r000:S-P01-S02:GS04:p0001",
+          "CP-AU-r000:S-P01-S02:GS08:p0001"
+        ],
+        "reachable_changed_endpoints": 33,
+        "unreachable_changed_endpoints": 0,
+        "endpoint_distance_histogram": {
+          "2": 14,
+          "3": 8,
+          "4": 6,
+          "5": 3,
+          "6": 2
+        },
+        "root_component_nodes_in_E_P": 64
+      },
+      {
+        "action": "b",
+        "minimum_endpoint_distance": 2,
+        "nearest_endpoint_index": 463,
+        "shortest_path_indices": [
+          666,
+          513,
+          463
+        ],
+        "shortest_path_contact_ids": [
+          "CP-AU-r000:S-P01-S05:GS05:p0001",
+          "CP-AU-r000:S-P01-S04:GS05:p0001",
+          "CP-AU-r000:S-P01-S04:GS01:p0001"
+        ],
+        "reachable_changed_endpoints": 33,
+        "unreachable_changed_endpoints": 0,
+        "endpoint_distance_histogram": {
+          "2": 5,
+          "3": 13,
+          "4": 7,
+          "5": 3,
+          "6": 3,
+          "7": 2
+        },
+        "root_component_nodes_in_E_P": 64
+      }
+    ],
+    "scope": "location witness only, no repairedfeature or rankingclaim"
+  },
+  "script_sha256": "8c2e6f62c6c9e2c8662c3f0adc51cbe883ba31fc5517f4191d97a2f2caa96d8b",
+  "manifest_sha256": "389b41920e81a4b78631e33048acf4e2f8e4f3f573029503b98539c3cf76dcff"
+}

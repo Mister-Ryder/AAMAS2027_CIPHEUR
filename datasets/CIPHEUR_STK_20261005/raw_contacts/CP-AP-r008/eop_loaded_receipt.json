@@ -1,0 +1,46 @@
+{
+  "source_file": "E:\\01-Joycecyq\\2026-AAMAS\\data\\两篇论文数据定制化构建\\CIPHEUR_STK_20261005\\source_dependencies\\EOP-v1.1.txt",
+  "source_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+  "loaded_filename": "C:\\Users\\JIA\\AppData\\Local\\Temp\\CP_AP_r008_rvd_d7cz_CIPHEUR_STK\\CIPHEUR_EOP_20261004.txt",
+  "ascii_staged_eop_file": "C:\\Users\\JIA\\AppData\\Local\\Temp\\CP_AP_r008_rvd_d7cz_CIPHEUR_STK\\CIPHEUR_EOP_20261004.txt",
+  "loaded_eop_start_utcg": "1 Jan 2021 00:00:00.000",
+  "loaded_eop_stop_utcg": "3 Apr 2027 00:00:00.000",
+  "covers_entire_padded_propagation": true,
+  "planning_start_source_values": {
+    "pole_wander_x_arcsec": 0.073457,
+    "pole_wander_y_arcsec": 0.347406,
+    "ut1_minus_utc_seconds": -0.1122224,
+    "source_line": "2026 12 27 61401  0.073457  0.347406 -0.1122224  0.0013080 -0.116250 -0.008209  0.000260 -0.000151  37"
+  },
+  "actual_stk_eop_table_at_planning_start": {
+    "Time": [
+      "27 Dec 2026 00:00:00.000014201"
+    ],
+    "Pole Wander X": [
+      2.040472222222222e-05
+    ],
+    "Pole Wander Y": [
+      9.650166666666666e-05
+    ],
+    "UT1-UTC": [
+      -0.1122224
+    ]
+  },
+  "difference_actual_minus_expected": {
+    "Pole Wander X": 0.0,
+    "Pole Wander Y": -1.3552527156068805e-20,
+    "UT1-UTC": 0.0
+  },
+  "table_matches_source": true,
+  "future_values_are_forecasts": true,
+  "publisher_download_receipt": {
+    "url": "https://data.agi.com/pub/DynamicEarthData/EOP-v1.1.txt",
+    "downloaded_utc": "2026-10-05T12:08:43.291742+00:00",
+    "sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+    "publisher_sha256_verified": true,
+    "source": "Ansys AGI DynamicEarthData",
+    "source_directory_last_modified_reported": "2026-10-03",
+    "purpose": "scenario-local Earth orientation input; never replace installation-global data",
+    "caution": "Future planning dates must be within forecast table coverage; forecast is not observed EOP."
+  }
+}

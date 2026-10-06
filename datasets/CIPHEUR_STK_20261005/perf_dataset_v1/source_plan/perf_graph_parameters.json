@@ -1,0 +1,223 @@
+{
+  "version": "cipheur-heldout-perf-input-graphs-v1",
+  "source_ids": [
+    "CP-AU-r006",
+    "CP-AP-r006",
+    "CP-AU-r008",
+    "CP-AP-r008",
+    "CP-AU-r009",
+    "CP-AP-r009"
+  ],
+  "parent_parameters_sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+  "satellite_gap_seconds": 150,
+  "station_gap_mode": "per_antenna",
+  "antenna_group": {
+    "GS01-A1": "west",
+    "GS02-A1": "west",
+    "GS03-A1": "west",
+    "GS04-A1": "east",
+    "GS05-A1": "east",
+    "GS06-A1": "east",
+    "GS07-A1": "west",
+    "GS08-A1": "west",
+    "GS09-A1": "west",
+    "GS10-A1": "east",
+    "GS11-A1": "east",
+    "GS12-A1": "east"
+  },
+  "group_definition": {
+    "west_longitudes_deg": [
+      88,
+      94,
+      100
+    ],
+    "east_longitudes_deg": [
+      106,
+      112,
+      118
+    ]
+  },
+  "configurations": [
+    {
+      "config_id": "g0340",
+      "west_gap_seconds": 340,
+      "east_gap_seconds": 340,
+      "family": "uniform",
+      "factorial_aliases": [
+        "A"
+      ],
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 340,
+        "GS02-A1": 340,
+        "GS03-A1": 340,
+        "GS04-A1": 340,
+        "GS05-A1": 340,
+        "GS06-A1": 340,
+        "GS07-A1": 340,
+        "GS08-A1": 340,
+        "GS09-A1": 340,
+        "GS10-A1": 340,
+        "GS11-A1": 340,
+        "GS12-A1": 340
+      }
+    },
+    {
+      "config_id": "g0680",
+      "west_gap_seconds": 680,
+      "east_gap_seconds": 680,
+      "family": "uniform",
+      "factorial_aliases": [],
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 680,
+        "GS02-A1": 680,
+        "GS03-A1": 680,
+        "GS04-A1": 680,
+        "GS05-A1": 680,
+        "GS06-A1": 680,
+        "GS07-A1": 680,
+        "GS08-A1": 680,
+        "GS09-A1": 680,
+        "GS10-A1": 680,
+        "GS11-A1": 680,
+        "GS12-A1": 680
+      }
+    },
+    {
+      "config_id": "g1200",
+      "west_gap_seconds": 1200,
+      "east_gap_seconds": 1200,
+      "family": "uniform",
+      "factorial_aliases": [
+        "J"
+      ],
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1200,
+        "GS02-A1": 1200,
+        "GS03-A1": 1200,
+        "GS04-A1": 1200,
+        "GS05-A1": 1200,
+        "GS06-A1": 1200,
+        "GS07-A1": 1200,
+        "GS08-A1": 1200,
+        "GS09-A1": 1200,
+        "GS10-A1": 1200,
+        "GS11-A1": 1200,
+        "GS12-A1": 1200
+      }
+    },
+    {
+      "config_id": "g1800",
+      "west_gap_seconds": 1800,
+      "east_gap_seconds": 1800,
+      "family": "uniform_stress",
+      "factorial_aliases": [],
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1800,
+        "GS02-A1": 1800,
+        "GS03-A1": 1800,
+        "GS04-A1": 1800,
+        "GS05-A1": 1800,
+        "GS06-A1": 1800,
+        "GS07-A1": 1800,
+        "GS08-A1": 1800,
+        "GS09-A1": 1800,
+        "GS10-A1": 1800,
+        "GS11-A1": 1800,
+        "GS12-A1": 1800
+      }
+    },
+    {
+      "config_id": "gW1200_gE0340_s0150",
+      "west_gap_seconds": 1200,
+      "east_gap_seconds": 340,
+      "family": "heterogeneous",
+      "factorial_aliases": [
+        "W"
+      ],
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1200,
+        "GS02-A1": 1200,
+        "GS03-A1": 1200,
+        "GS04-A1": 340,
+        "GS05-A1": 340,
+        "GS06-A1": 340,
+        "GS07-A1": 1200,
+        "GS08-A1": 1200,
+        "GS09-A1": 1200,
+        "GS10-A1": 340,
+        "GS11-A1": 340,
+        "GS12-A1": 340
+      }
+    },
+    {
+      "config_id": "gW0340_gE1200_s0150",
+      "west_gap_seconds": 340,
+      "east_gap_seconds": 1200,
+      "family": "heterogeneous",
+      "factorial_aliases": [
+        "E"
+      ],
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 340,
+        "GS02-A1": 340,
+        "GS03-A1": 340,
+        "GS04-A1": 1200,
+        "GS05-A1": 1200,
+        "GS06-A1": 1200,
+        "GS07-A1": 340,
+        "GS08-A1": 340,
+        "GS09-A1": 340,
+        "GS10-A1": 1200,
+        "GS11-A1": 1200,
+        "GS12-A1": 1200
+      }
+    },
+    {
+      "config_id": "gW0680_gE1200_s0150",
+      "west_gap_seconds": 680,
+      "east_gap_seconds": 1200,
+      "family": "unseen_mixed",
+      "factorial_aliases": [],
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 680,
+        "GS02-A1": 680,
+        "GS03-A1": 680,
+        "GS04-A1": 1200,
+        "GS05-A1": 1200,
+        "GS06-A1": 1200,
+        "GS07-A1": 680,
+        "GS08-A1": 680,
+        "GS09-A1": 680,
+        "GS10-A1": 1200,
+        "GS11-A1": 1200,
+        "GS12-A1": 1200
+      }
+    },
+    {
+      "config_id": "gW1200_gE0680_s0150",
+      "west_gap_seconds": 1200,
+      "east_gap_seconds": 680,
+      "family": "unseen_mixed",
+      "factorial_aliases": [],
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1200,
+        "GS02-A1": 1200,
+        "GS03-A1": 1200,
+        "GS04-A1": 680,
+        "GS05-A1": 680,
+        "GS06-A1": 680,
+        "GS07-A1": 1200,
+        "GS08-A1": 1200,
+        "GS09-A1": 1200,
+        "GS10-A1": 680,
+        "GS11-A1": 680,
+        "GS12-A1": 680
+      }
+    }
+  ],
+  "unique_configurations_per_physical_source": 8,
+  "A_J_deduplication": "A references g0340; J references g1200. Do not count duplicate A/J graph copies.",
+  "physical_contract": "Original full windows, exact frozen microticks, capacity one, duration=end-start; no new truncation, quantization, weights or visibility geometry.",
+  "test_policy": "Input construction/QC only; TEST evidence, tuning, heuristic scores and evaluation remain barred until every scoring program is frozen by the root workflow.",
+  "no_labels_no_optimizer_no_LLM": true
+}

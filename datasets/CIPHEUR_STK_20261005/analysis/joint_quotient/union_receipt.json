@@ -1,0 +1,106 @@
+{
+  "inventory": [
+    {
+      "stage": "p0",
+      "source": "CP-AU-r000",
+      "queries": 50,
+      "planned": 50,
+      "status": "completed",
+      "strict_requirements": 100,
+      "file_sha256": "898bf6206929ffcff651fd218a99f23ce4ee34d41e2c66c605da3b14a350ced5"
+    },
+    {
+      "stage": "p0",
+      "source": "CP-AP-r000",
+      "queries": 50,
+      "planned": 50,
+      "status": "completed",
+      "strict_requirements": 100,
+      "file_sha256": "96e3357c1bb8cba1688425704d185e404dc658e2bb1eaf49e3975376683c38ed"
+    },
+    {
+      "stage": "p0",
+      "source": "CP-AU-r001",
+      "queries": 50,
+      "planned": 50,
+      "status": "completed",
+      "strict_requirements": 100,
+      "file_sha256": "9e3e60cf378acab9f291008531a1aa0938e3cf3df1187af776c5787c184b9b78"
+    },
+    {
+      "stage": "p0",
+      "source": "CP-AP-r001",
+      "queries": 50,
+      "planned": 50,
+      "status": "completed",
+      "strict_requirements": 100,
+      "file_sha256": "d28ee47edd4a6a5ea9a3fd74e6e2c7ac4a90b0ca48b361c21066f4eba24e3345"
+    },
+    {
+      "stage": "patch_interface_probe",
+      "source": "CP-AU-r000",
+      "queries": 30,
+      "planned": 30,
+      "status": "completed",
+      "strict_requirements": 30,
+      "file_sha256": "034d756381fb8e220df112e19d426f5c99dae7c351920ee70cd693c0736044d2"
+    },
+    {
+      "stage": "patch_interface_probe",
+      "source": "CP-AP-r000",
+      "queries": 30,
+      "planned": 30,
+      "status": "completed",
+      "strict_requirements": 29,
+      "file_sha256": "a4a77db6bdbac87c84b72006d5b8882c10ff5949878ce9d971349f569261d07a"
+    },
+    {
+      "stage": "patch_interface_probe",
+      "source": "CP-AU-r001",
+      "queries": 30,
+      "planned": 30,
+      "status": "completed",
+      "strict_requirements": 30,
+      "file_sha256": "aca0acb27fe0e37eb0b1fd110efbdeb984d40fcdb69edc581a8fcf8bacfcf1bb"
+    },
+    {
+      "stage": "patch_interface_probe",
+      "source": "CP-AP-r001",
+      "queries": 30,
+      "planned": 30,
+      "status": "completed",
+      "strict_requirements": 29,
+      "file_sha256": "f0e649b085aa1f3376e9a82e64a55e812d88741e765d68d58a9824cb62cd5e2b"
+    }
+  ],
+  "all_four_sources_both_stages_complete": true,
+  "strict_requirements": 518,
+  "quotient_classes": 962,
+  "self_loops": 0,
+  "cycle_observed": false,
+  "G2": "not_observed_on_preregistered_requirements",
+  "numeric_namespace": "fraction_seconds_binary_fsum_base9_v1",
+  "features": [
+    "weight",
+    "duration",
+    "degree",
+    "conflict_weight",
+    "max_conflict_weight",
+    "compatible_weight",
+    "station_gap",
+    "satellite_gap",
+    "remaining_count"
+  ],
+  "semantic_compatibility": "both stages use actual compiled fullbase9 and conditional forced-inclusion preference under recordedF/P/X; interface search roles do not change label meaning",
+  "source_groups": [
+    "r000",
+    "r001"
+  ],
+  "test_sources_read": 0,
+  "scientific_execution_calls": 0,
+  "solver_calls": 0,
+  "model_calls": 0,
+  "script_sha256": "aeab28990cd714f7711b7f6677899044cbaed0ea764b36208767d6cc87b8774c",
+  "frozen_quotient_source_sha256": "7da4fbf9d9d6cd7d9000eb24484e952f2797722afd9f625beb1fa8ee7f661c3f",
+  "generated_utc": "2026-10-05T13:07:23Z"
+}

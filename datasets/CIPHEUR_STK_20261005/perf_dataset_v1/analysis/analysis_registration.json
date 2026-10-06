@@ -1,0 +1,139 @@
+{
+  "version": "complete_schedule_analysis_v1_pre_results",
+  "registered_before_formal_results": true,
+  "data_access": "Paid result JSON only; no input graph, scoring, STK, optimizer or model call.",
+  "primary_metric": "Final complete feasible schedule value_ticks / 1000000 seconds; exact rational arithmetic until display.",
+  "main_budget_interpretation": "Declared 2/10 CPU-second budget; retain complete final output and report actual total CPU and overshoot jointly. Not a strict hard-deadline winner claim.",
+  "paired_key": [
+    "split",
+    "source",
+    "canonical_config",
+    "seed",
+    "declared_cpu_seconds",
+    "input_graph_sha256"
+  ],
+  "comparison_baselines": [
+    "degree",
+    "chils",
+    "chils_ils",
+    "cp_sat",
+    "weight",
+    "grasp",
+    "local2swap"
+  ],
+  "statistical_unit": "Physical source group r008 or r009. Configurations, AU/AP geometries and seeds are repeated measurements, not independent n.",
+  "aggregation": "Equal seed mean within config/source; equal config mean within source; equal AU/AP source mean within physical group; equal r008/r009 group mean. Expose each group. No significance test or CI with n=2.",
+  "llm_batches": "Every frozen selected programme in both generation batches is reported individually. No analyst selection, best-batch pooling or TEST-based programme removal.",
+  "costs": [
+    "cpu_seconds",
+    "wall_seconds",
+    "native_child_cpu_seconds",
+    "cpu_seconds_including_record_encoding",
+    "feature_seconds",
+    "scoring_seconds",
+    "feature_work",
+    "query_work",
+    "head_score_evaluations",
+    "head_commits"
+  ],
+  "failure_policy": "Missing/nonfeasible output is NA, never zero. Valid common-kernel fallback retains quality plus explicit native/programme failure, guard and zero-commit status.",
+  "anytime_policy": "Only actual committed best-so-far event steps. No synthetic interpolation. Native CHILS internal trace missing is observation-limited/NA, not no internal progress. Native seed/end markers do not support hard-deadline superiority.",
+  "saturation_policy": "All-zero or saturated effects get exact tables and an unavailable/no-visible-signal figure receipt; no fabricated curve or exaggerated effect.",
+  "families": {
+    "known": [
+      "g0340",
+      "g1200",
+      "gW0340_gE1200_s0150",
+      "gW1200_gE0340_s0150"
+    ],
+    "uniform": [
+      "g0340",
+      "g0680",
+      "g1200",
+      "g1800"
+    ],
+    "heterogeneous": [
+      "gW1200_gE0340_s0150",
+      "gW0340_gE1200_s0150",
+      "gW0680_gE1200_s0150",
+      "gW1200_gE0680_s0150"
+    ],
+    "unseen": [
+      "g0680",
+      "g1800",
+      "gW0680_gE1200_s0150",
+      "gW1200_gE0680_s0150"
+    ],
+    "stress": [
+      "g1800"
+    ]
+  },
+  "figures": {
+    "configuration_response": "Paired delta seconds vs Degree and CHILS population4 at 2/10s; equal physical-group heatmaps with symmetric shared scale and exact-value table.",
+    "quality_cost": "Actual total CPU vs paired complete-quality delta, same programme colour and batch marker; feature CPU shown separately. No causal/Pareto claim.",
+    "anytime": {
+      "source": "CP-AU-r008",
+      "seed": 2,
+      "configs": [
+        "gW1200_gE0340_s0150",
+        "gW0680_gE1200_s0150"
+      ],
+      "budgets": [
+        2,
+        10
+      ],
+      "selection": "Fixed before results, never choose the most favourable TEST example."
+    },
+    "chain": "Selected-programme strict TRAIN fit, TRAIN complete-quality gain and TEST complete-quality gain at 2s, matching known configurations. Descriptive chain only, not proof of causation. Missing/saturated input is explicitly NA/table."
+  },
+  "style": {
+    "type": "static scientific",
+    "size_inches": [
+      7.1,
+      4.3
+    ],
+    "font_points": 8,
+    "output": [
+      "PDF",
+      "PNG300dpi",
+      "individual_panel_PDF"
+    ],
+    "batch0": "filled/solid",
+    "batch1": "open/dashed",
+    "group_range": "observed physical-group range, not confidence interval",
+    "palette": {
+      "witness_joint": "#0072B2",
+      "relations_joint": "#009E73",
+      "relations_rule_only": "#D55E00",
+      "nonllm_grammar": "#777777",
+      "old_frozen": "#8C6BB1",
+      "degree": "#30343B",
+      "weight": "#6A7F8A",
+      "grasp": "#CC79A7",
+      "local2swap": "#56B4E9",
+      "cp_sat": "#666666",
+      "chils": "#B8860B",
+      "chils_ils": "#A39B69"
+    }
+  },
+  "baseline_sources": {
+    "chils": {
+      "paper": "Concurrent Iterated Local Search for the Maximum Weight Independent Set Problem, SEA 2025",
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.SEA.2025.22",
+      "implementation": "https://github.com/KarlsruheMIS/CHILS",
+      "git": "515952724cd3dcc6c4365a340ecf0f1da782119a",
+      "threads": 1,
+      "populations": [
+        1,
+        4
+      ]
+    },
+    "cp_sat": {
+      "paper": "The CP-SAT-LP Solver (Invited Talk), CP 2023",
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2023.3",
+      "ortools": "9.15.6755",
+      "workers": 1
+    },
+    "classical_heads": "Degree/weight/GRASP in the same project kernel; local2swap is project LS. Do not claim full published-method reproduction."
+  }
+}

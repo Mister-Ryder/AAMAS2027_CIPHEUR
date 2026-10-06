@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "started_at": "2026-10-05T12:58:07.084826+00:00",
+  "scene_id": "CP-AP-r001",
+  "ground_gap_seconds": 1200,
+  "source_manifest_sha256": "4d739ce725208bb9814c568d70307d3530f42b962e234067a94d4f78e7cf231c",
+  "frozen_contacts_sha256": "d0f15277cedb633ceeab5c0cef5cbeb1fd7768f949617f9999dd066e009a56be",
+  "source_graph_metadata_sha256": "a0c7860452cc027fcdb37576d7f20d7f17065558014864fe387dd07a7825ce67",
+  "eop_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+  "scope": "Two actual object pairs only; no library or graph edits",
+  "selected_boundary_example": {
+    "earlier_contact": "CP-AP-r001:S-P01-S06:GS10:p0013",
+    "later_contact": "CP-AP-r001:S-P03-S11:GS10:p0015",
+    "resource_id": "GS10-A1",
+    "signed_margin_ticks": -102,
+    "resource_conflict": true
+  },
+  "generator_sha256": "76f337f8850d87e7ff5486dab314816d9c4ad4577c287645460f839e8edcad87",
+  "owned_stk_process_id": 31356,
+  "finished_at": "2026-10-05T12:58:31.663606+00:00",
+  "edge_classification_stable": true,
+  "files": [
+    {
+      "path": "refined_provider_reports.json",
+      "sha256": "939c7d1e4a09451e2372db6db6ba40f4ff998ee259225e9463120651ae85519d",
+      "size_bytes": 47135
+    },
+    {
+      "path": "result.json",
+      "sha256": "5ce85e76f2e9d1841a5999f651986377707433a29b567f5a3f4b30e34f67d63e",
+      "size_bytes": 3497
+    }
+  ],
+  "owned_stk_instance_closed": true
+}

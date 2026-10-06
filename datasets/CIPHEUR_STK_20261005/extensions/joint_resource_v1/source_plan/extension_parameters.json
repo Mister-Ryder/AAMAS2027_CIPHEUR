@@ -1,0 +1,48 @@
+{
+  "version": "cipheur-joint-resource-factorial-v1",
+  "development_only": true,
+  "physical_source_reuse": [
+    "CP-AU-r000",
+    "CP-AP-r000",
+    "CP-AU-r001",
+    "CP-AP-r001"
+  ],
+  "new_STK_propagation": false,
+  "parent_parameters_sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+  "parent_graph_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+  "configurations": [
+    {
+      "factorial_id": "A",
+      "config_id": "g0340_s0150",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 150
+    },
+    {
+      "factorial_id": "G",
+      "config_id": "g1200_s0150",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 150
+    },
+    {
+      "factorial_id": "S",
+      "config_id": "g0340_s0600",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 600
+    },
+    {
+      "factorial_id": "J",
+      "config_id": "g1200_s0600",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 600
+    }
+  ],
+  "satellite_600_note": "Preregistered development stress value, not a measured hardware switching time.",
+  "model": "Unchanged complete visibility intervals; satellite/antenna capacity one; symmetric resource gap conflicts.",
+  "contact_and_weight_contract": "Same P0 vertices, resources, complete endpoints, and weight=end-start; no new rounding, slicing, reward reassignment, or tasks.",
+  "integer_tick_seconds": "0.000001",
+  "source_group_contract": "Both geometry companions and all configurations remain in their original TRAIN development source group; two source groups are not 16 independent replications.",
+  "edge_lattice_identity": "E_A subset E_G and E_S; E_J = E_G union E_S.",
+  "factor_overlap_definition": "(E_G minus E_A) intersection (E_S minus E_A), distinct from physical overlap intervals.",
+  "new_numerical_diagnostics_only": "List every same-satellite pair within +/-0.002 seconds of the new satellite600 threshold, including nonedges. Root decides targeted STK calculations; no new STK calls here.",
+  "no_label_access": true
+}

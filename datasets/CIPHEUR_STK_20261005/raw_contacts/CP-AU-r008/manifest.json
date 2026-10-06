@@ -1,0 +1,1146 @@
+{
+  "status": "success",
+  "started_at": "2026-10-05T15:03:11.938441+00:00",
+  "scene_id": "CP-AU-r008",
+  "source_group": "CP-SOURCE-r008",
+  "geometry_id": "A-U",
+  "replicate_id": "r008",
+  "split": "test",
+  "parameters_file": "E:\\01-Joycecyq\\2026-AAMAS\\data\\两篇论文数据定制化构建\\CIPHEUR_STK_20261005\\source_plan\\CIPHEUR_parameters.json",
+  "parameters_sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+  "generator_sha256": "29efe1827a9badff52eb4a88492e29c0b64ccaa998fc05f6c28b7cd468d5c106",
+  "planning_epoch_utc": "2026-12-27T00:00:00Z",
+  "planning_horizon_seconds": 259200,
+  "simulation_range_seconds": [
+    -3600,
+    262800
+  ],
+  "pairs_completed": 1008,
+  "pairs_total": 1008,
+  "contact_count": 12472,
+  "owned_stk_process_id": 31624,
+  "stk_version": [
+    "STK v11.2.0 Apr  9 2017 02:12:03"
+  ],
+  "owned_ascii_scene_staging_directory": "C:\\Users\\JIA\\AppData\\Local\\Temp\\CP_AU_r008_n57m3g03_CIPHEUR_STK",
+  "formal_dataset": true,
+  "eop_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+  "eop_loaded_covers_padded_propagation": true,
+  "eop_actual_table_matches_source": true,
+  "eop_receipt_file": "eop_loaded_receipt.json",
+  "updated_at": "2026-10-05T15:13:59.039267+00:00",
+  "elapsed_seconds": 652.0322898999984,
+  "finished_at": "2026-10-05T15:14:03.975844+00:00",
+  "boundary_records": 399,
+  "raw_interval_count": 12871,
+  "crossing_horizon_count": 46,
+  "files": [
+    {
+      "path": "access_actual_settings.json",
+      "size_bytes": 361,
+      "sha256": "67d3d25a08cd54c9ea094d70b161937194e6177e5ddbfa3c549a393ee9495145"
+    },
+    {
+      "path": "access_raw.csv",
+      "size_bytes": 4745446,
+      "sha256": "37a63ce36a0c7eda95218cd9452f136d74d76e4a4d035abc0fe4250e2f0ebd62"
+    },
+    {
+      "path": "actual_geometry.json",
+      "size_bytes": 125423,
+      "sha256": "f5a73a1fde595df1e217c464760a7d52d4deedd02bff1844e26367e4d4c82227"
+    },
+    {
+      "path": "connect_commands.json",
+      "size_bytes": 30512,
+      "sha256": "774648e8ea629f1322e30605be8a20f42a8116c36f225961502f79c542bee1ab"
+    },
+    {
+      "path": "contacts.csv",
+      "size_bytes": 4368648,
+      "sha256": "758d6a26ae9bd7307ee11b2f3eb295b571f3406f672fb986eb56fb76c608de9d"
+    },
+    {
+      "path": "contacts_boundary.csv",
+      "size_bytes": 141949,
+      "sha256": "9a71ce7f70a9f56682027b323762abe866ed06ea725b22cfcd9df0b8fbe84ca9"
+    },
+    {
+      "path": "environment_dependencies\\Earth.cb",
+      "size_bytes": 4340,
+      "sha256": "426b58cb27a8aca68e74d5957fad2cc666bce27f6b5a0820b6dd942667687d25"
+    },
+    {
+      "path": "environment_dependencies\\EarthAttitude2000.rot",
+      "size_bytes": 904,
+      "sha256": "c13ce562565914b286befdb1ef6f11647979a1a302a625360e09a0dc8caa096c"
+    },
+    {
+      "path": "environment_dependencies\\EGM2008.grv",
+      "size_bytes": 374426,
+      "sha256": "4000eec11d44abe4e60746fc60903e1fd4b341f40f37971aac66e79c0e882a0e"
+    },
+    {
+      "path": "environment_receipt.json",
+      "size_bytes": 2103,
+      "sha256": "c9132a4bb21ce622e95ff74bbd551a6c14b40c60f1c27f68a594efdd0912306a"
+    },
+    {
+      "path": "eop_loaded_receipt.json",
+      "size_bytes": 2033,
+      "sha256": "c717789e88dc1cad7264b82ee07e03697c5d712fcf12d3b1a4b1303e76a86cfc"
+    },
+    {
+      "path": "generator_snapshot.py",
+      "size_bytes": 34356,
+      "sha256": "29efe1827a9badff52eb4a88492e29c0b64ccaa998fc05f6c28b7cd468d5c106"
+    },
+    {
+      "path": "native_save_original.sc",
+      "size_bytes": 70700,
+      "sha256": "741910d8a99ba3aae390cc4821526fa763becea1238ce816bf9658a7f2e9b1a8"
+    },
+    {
+      "path": "pair_counts.json",
+      "size_bytes": 134069,
+      "sha256": "13cd447de78758ca09660d333451a6b9ac69986cb54a9e272c5ef10178539712"
+    },
+    {
+      "path": "precision_receipt.json",
+      "size_bytes": 674,
+      "sha256": "4325b6f9a57a6d85ff555494cbadafa9f72cdac12d9635b0eaeef0088232a997"
+    },
+    {
+      "path": "provider_reports.jsonl",
+      "size_bytes": 12735599,
+      "sha256": "46c2d82543c240fa8656659d0c271248712d0064f0058b0d7025a12d604734af"
+    },
+    {
+      "path": "recipe.json",
+      "size_bytes": 38109,
+      "sha256": "81e0d4df28e7600afd458df34096dbee0ecbeebe9002f1f44225a01cca4837c4"
+    },
+    {
+      "path": "sampling_spot_check.json",
+      "size_bytes": 181572,
+      "sha256": "78814c77aee7d2441e67482259d4021e11dce66f662b8d5abc1902e0fbc1c247"
+    },
+    {
+      "path": "scene\\CIPHEUR_EOP_20261004.txt",
+      "size_bytes": 237195,
+      "sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b"
+    },
+    {
+      "path": "scene\\CP_AU_r008.atmosphere.flight",
+      "size_bytes": 540,
+      "sha256": "142d9fbc62fa2472fc1ee01525144265498e349c7e3085ff076c70a187209be4"
+    },
+    {
+      "path": "scene\\CP_AU_r008.atmosphere.guid",
+      "size_bytes": 217,
+      "sha256": "0d42edb8aa3b115944852004420fe308160f41a1ef7910b3ce545449c73a5c02"
+    },
+    {
+      "path": "scene\\CP_AU_r008.sc",
+      "size_bytes": 70700,
+      "sha256": "741910d8a99ba3aae390cc4821526fa763becea1238ce816bf9658a7f2e9b1a8"
+    },
+    {
+      "path": "scene\\CP_AU_r008.sc3",
+      "size_bytes": 28597,
+      "sha256": "ab4672cbc615a1f92b3e54989f3e2cbd03b5fef12631b66ed473a96392a15e08"
+    },
+    {
+      "path": "scene\\CP_AU_r008.sca",
+      "size_bytes": 956628,
+      "sha256": "24f05a3f78ce6cff59e6683df265d6426d86dc29af6ea70ed055c0234bbe02df"
+    },
+    {
+      "path": "scene\\CP_AU_r008.wind.flight",
+      "size_bytes": 713,
+      "sha256": "202c6e719e9cc7d9a2d164604507cfc54f160d3c4c965b9edf9c02c3cb03ada2"
+    },
+    {
+      "path": "scene\\CP_AU_r008.wind.guid",
+      "size_bytes": 318,
+      "sha256": "bd0d9317d7b846b60c5cbeb6216946ce47b34c2678a9401693c5274cb95ca862"
+    },
+    {
+      "path": "scene\\CP_AU_r008TimelinePrefs.xml",
+      "size_bytes": 89,
+      "sha256": "72d3e62bed910cfa8ba1943afe66c5d28f4ad326bb8abe09bbbee892b523f1f9"
+    },
+    {
+      "path": "scene\\GS01.f",
+      "size_bytes": 10005,
+      "sha256": "a2a59f3191d517761cb1a80ebc873846b1e30ed04338f1275c821a883694f910"
+    },
+    {
+      "path": "scene\\GS01.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS02.f",
+      "size_bytes": 10005,
+      "sha256": "7de11a458fec1e5fef0c14414970f9632877771d319ac89e97c38af45883f596"
+    },
+    {
+      "path": "scene\\GS02.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS03.f",
+      "size_bytes": 10005,
+      "sha256": "7cd64e02f5de6af1dae81cd3389e5d444552f5cac07b97ca25df339209c0e1ff"
+    },
+    {
+      "path": "scene\\GS03.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS04.f",
+      "size_bytes": 10005,
+      "sha256": "388a112468f2a6908ed51cd8d6bc1667f911ec9fa2de8826ffdf9b17890e7ae6"
+    },
+    {
+      "path": "scene\\GS04.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS05.f",
+      "size_bytes": 10005,
+      "sha256": "b1ba39c7e3e13d985cf970d1019c596697b9d1b64a78eb3d920d92fc5d8ccf4d"
+    },
+    {
+      "path": "scene\\GS05.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS06.f",
+      "size_bytes": 10005,
+      "sha256": "fa96d40aeaa12d2f7bd95e64d5e6d312a6b51c2d0e8ab05a6c3e592454f092f4"
+    },
+    {
+      "path": "scene\\GS06.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS07.f",
+      "size_bytes": 10005,
+      "sha256": "0b90f20e0cc66eac3ba2500edb8f595a61025734190f474aa0aa14c246dabf4e"
+    },
+    {
+      "path": "scene\\GS07.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS08.f",
+      "size_bytes": 10005,
+      "sha256": "6ebef20928795c0538a30901b6f6aa7949f9e670916d10d77927dc1e4ec2846d"
+    },
+    {
+      "path": "scene\\GS08.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS09.f",
+      "size_bytes": 10005,
+      "sha256": "9389e0e7eb71ae51ae45a215b4edcbe94a0dc207c24f42e48eba53664a6a6e21"
+    },
+    {
+      "path": "scene\\GS09.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS10.f",
+      "size_bytes": 10005,
+      "sha256": "b620000db09fca7e7ba3b774c116973b8dbc14862f86f3eb0abf3bb23c911645"
+    },
+    {
+      "path": "scene\\GS10.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS11.f",
+      "size_bytes": 10005,
+      "sha256": "513e87d29586bf8d716a1d45803556521e2fac5a4ee4b7a73e2d2133fd37607e"
+    },
+    {
+      "path": "scene\\GS11.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\GS12.f",
+      "size_bytes": 10005,
+      "sha256": "74ad6d5e34a87f8d6a77b95c3fa26e7643d0ff0a8af0a82bf1a42112b79f1c2e"
+    },
+    {
+      "path": "scene\\GS12.f3",
+      "size_bytes": 12835,
+      "sha256": "e98de80f86b844341e377c0f7b965b0b6da8782f4e2fd0a8779fcfa9a552948b"
+    },
+    {
+      "path": "scene\\S_P01_S01.sa",
+      "size_bytes": 1370005,
+      "sha256": "6ddf4d99021fc30639b4d3e90a3d8a8279fcf0fb3aa2ebdbf1b5f187d574aa97"
+    },
+    {
+      "path": "scene\\S_P01_S01.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S02.sa",
+      "size_bytes": 1370008,
+      "sha256": "43ca6a9dbd6e7c75183f01dd0a8a5940edd54e3d0ed08bdce8e10272cae9b648"
+    },
+    {
+      "path": "scene\\S_P01_S02.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S03.sa",
+      "size_bytes": 1370000,
+      "sha256": "cfca0e59c218975ac90922a5b13eb072bb2510371bc53379d58ae90baefc543e"
+    },
+    {
+      "path": "scene\\S_P01_S03.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S04.sa",
+      "size_bytes": 1370002,
+      "sha256": "cdd870b64868297bf956b15570723968eed6d2c4de3a4fbd1b64b37644637d7a"
+    },
+    {
+      "path": "scene\\S_P01_S04.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S05.sa",
+      "size_bytes": 1370005,
+      "sha256": "c26706eb116c625c132e3edb9aab4bfc65a71232975a9b329c6d2944e425436b"
+    },
+    {
+      "path": "scene\\S_P01_S05.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S06.sa",
+      "size_bytes": 1370013,
+      "sha256": "1b51563e4b8133fcf1b0eb95ae15302e3643e42a2fec1119b2e12163dc3b04f8"
+    },
+    {
+      "path": "scene\\S_P01_S06.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S07.sa",
+      "size_bytes": 1370017,
+      "sha256": "7d6d3953dfa03f66a291c1177213f0e01cf6ab104147b33b6ce204262b2f697e"
+    },
+    {
+      "path": "scene\\S_P01_S07.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S08.sa",
+      "size_bytes": 1370014,
+      "sha256": "637723958f276a36e02fcaa625f3a95fef44b71e7f5c9bc0af298cb2bcd87cf3"
+    },
+    {
+      "path": "scene\\S_P01_S08.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S09.sa",
+      "size_bytes": 1370022,
+      "sha256": "39d7c9e14910d1743fc62b43ed4e23ae7892cd2bf9732ef9f7c27d6f82a58b8b"
+    },
+    {
+      "path": "scene\\S_P01_S09.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S10.sa",
+      "size_bytes": 1370020,
+      "sha256": "377410324341e0c2f47bd9c8d8abcbe615198be33a242046dcd253bc09cacefa"
+    },
+    {
+      "path": "scene\\S_P01_S10.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S11.sa",
+      "size_bytes": 1370017,
+      "sha256": "3472643f4f4d3fd466d3c6351600477c96dabbfaa822c5b7f7572ab60dd2d982"
+    },
+    {
+      "path": "scene\\S_P01_S11.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P01_S12.sa",
+      "size_bytes": 1370009,
+      "sha256": "7793734ea6330cdcd920011db75545bbfcc99f5f15a45415de0b33f97a07342d"
+    },
+    {
+      "path": "scene\\S_P01_S12.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S01.sa",
+      "size_bytes": 1370005,
+      "sha256": "1f3b63097662522dd459e42900ddb0505e937371bdce5cc63a0e5a470e6fc4f1"
+    },
+    {
+      "path": "scene\\S_P02_S01.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S02.sa",
+      "size_bytes": 1370003,
+      "sha256": "6b476748959edf7226b551678e28a2a5c5d5b6f4d4196b8dd97d8eed20c8c2d3"
+    },
+    {
+      "path": "scene\\S_P02_S02.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S03.sa",
+      "size_bytes": 1370001,
+      "sha256": "8a45cc2f271f9134858aa7d9dc3f8fca34f25ca252f7344cade2aee19c992b5e"
+    },
+    {
+      "path": "scene\\S_P02_S03.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S04.sa",
+      "size_bytes": 1369998,
+      "sha256": "19c81bbbcb193bd12171a6c04987faf5dbd26b222a3dc1db00ad7195b2eb8ab0"
+    },
+    {
+      "path": "scene\\S_P02_S04.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S05.sa",
+      "size_bytes": 1370006,
+      "sha256": "5289eedd344c56f2025aa6f0438f1517e00a0f164635dac37e7249986793ba36"
+    },
+    {
+      "path": "scene\\S_P02_S05.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S06.sa",
+      "size_bytes": 1370020,
+      "sha256": "7fe8f941e0c0b23bf1c2526d4c845f0d1353466a67cfa330ca6ccc6a90c21cad"
+    },
+    {
+      "path": "scene\\S_P02_S06.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S07.sa",
+      "size_bytes": 1370017,
+      "sha256": "15908cd42df36dde1655231532a3e5ca99f8e4999d16a390c1b21db43a137701"
+    },
+    {
+      "path": "scene\\S_P02_S07.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S08.sa",
+      "size_bytes": 1370019,
+      "sha256": "3860e6f7d39bfb4c9d015086edbfc7b20538135e033e0616fb387379c036a675"
+    },
+    {
+      "path": "scene\\S_P02_S08.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S09.sa",
+      "size_bytes": 1370021,
+      "sha256": "12e8db6188e52040067ce288237e0d301c8ef565af7500cb8cd99bfc1a4f789a"
+    },
+    {
+      "path": "scene\\S_P02_S09.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S10.sa",
+      "size_bytes": 1370024,
+      "sha256": "cad24e6ce5bc8170760736f23fc054c315eb900960d4acf6d6e4b30a43eef774"
+    },
+    {
+      "path": "scene\\S_P02_S10.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S11.sa",
+      "size_bytes": 1370016,
+      "sha256": "dfa670872ea27bab0ba159b8eb394ee78a57ff3564f691c87e59e57e8a0247fb"
+    },
+    {
+      "path": "scene\\S_P02_S11.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P02_S12.sa",
+      "size_bytes": 1370002,
+      "sha256": "d3c4aae5eeb56fa76ca09ad0ae71863eea50060c53da87988f0192806edbeb5d"
+    },
+    {
+      "path": "scene\\S_P02_S12.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S01.sa",
+      "size_bytes": 1370010,
+      "sha256": "42d61ea07e25d72872453e248153a94fd76dc22e937577e527018dad4cfb91da"
+    },
+    {
+      "path": "scene\\S_P03_S01.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S02.sa",
+      "size_bytes": 1370150,
+      "sha256": "8cacda6399dc0c1dc6ed8f7b6a5933af56a72611e65a36e06a60605e379d4df6"
+    },
+    {
+      "path": "scene\\S_P03_S02.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S03.sa",
+      "size_bytes": 1370006,
+      "sha256": "0c759bd8a0385d50ae6266dcdda386f495597a402dc6641908e5ce347599fe88"
+    },
+    {
+      "path": "scene\\S_P03_S03.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S04.sa",
+      "size_bytes": 1370003,
+      "sha256": "62f01321e7bd72d5db954abaee60e6a531a74bb1e1552e229e3bda29c8996ee2"
+    },
+    {
+      "path": "scene\\S_P03_S04.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S05.sa",
+      "size_bytes": 1370006,
+      "sha256": "dc98c3ebcbab665ed91215b0c9003776d9c01ac623fdcf5024d5205317882bee"
+    },
+    {
+      "path": "scene\\S_P03_S05.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S06.sa",
+      "size_bytes": 1370011,
+      "sha256": "cf48ea36c84f228682df3839f2f2233d6c29394d48fbd08a04eb90ff44a37539"
+    },
+    {
+      "path": "scene\\S_P03_S06.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S07.sa",
+      "size_bytes": 1370012,
+      "sha256": "6a3a571276ddf5399bf1da2bdc56664089f51426560bbda3e38fb74de64f6caa"
+    },
+    {
+      "path": "scene\\S_P03_S07.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S08.sa",
+      "size_bytes": 1370011,
+      "sha256": "5bc905d29dd45727453f13e7e96010efedfc4795aca3214a5d441547edea8281"
+    },
+    {
+      "path": "scene\\S_P03_S08.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S09.sa",
+      "size_bytes": 1370016,
+      "sha256": "edee10be63008dad466dcd5c2a87c4c51a278564701f81072f77eb1fec67f96d"
+    },
+    {
+      "path": "scene\\S_P03_S09.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S10.sa",
+      "size_bytes": 1370019,
+      "sha256": "474f1f9a3e57e7fbca020719875fb3e40af0266536928e5f948ccd15e4558d5a"
+    },
+    {
+      "path": "scene\\S_P03_S10.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S11.sa",
+      "size_bytes": 1370016,
+      "sha256": "c299567803809b7f2cb628c2bcf295c19e060bd226e52a4eedbb064364aa8e78"
+    },
+    {
+      "path": "scene\\S_P03_S11.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P03_S12.sa",
+      "size_bytes": 1370011,
+      "sha256": "78a8fdec8f8912ce20936750fe6533f89a07fba653b86e72201eb5173eca15be"
+    },
+    {
+      "path": "scene\\S_P03_S12.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S01.sa",
+      "size_bytes": 1370021,
+      "sha256": "1fc59e8d2ea04068d3dce20f336510275ccae3d487672a92747e8a7c92b3eb73"
+    },
+    {
+      "path": "scene\\S_P04_S01.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S02.sa",
+      "size_bytes": 1370149,
+      "sha256": "d727114b9aa7da9cd7294a63e0a862857cb2550e07ce86650e3900977df5b165"
+    },
+    {
+      "path": "scene\\S_P04_S02.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S03.sa",
+      "size_bytes": 1370001,
+      "sha256": "31af636a8a6e554dd88926c163f50fb4d8d5fb10ca113cb5988e23ba126dab7a"
+    },
+    {
+      "path": "scene\\S_P04_S03.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S04.sa",
+      "size_bytes": 1370004,
+      "sha256": "473be5866b56002fc2b9f925fc262189d0771ced42cdd07dcb34dc986ea09688"
+    },
+    {
+      "path": "scene\\S_P04_S04.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S05.sa",
+      "size_bytes": 1370003,
+      "sha256": "5fb22c2a5c142769bc64ebaa764f588260cdea70417a5b283fed9ad5de595a01"
+    },
+    {
+      "path": "scene\\S_P04_S05.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S06.sa",
+      "size_bytes": 1370006,
+      "sha256": "7260be09e382cd235a0148b12daf1f3e883e45e8ebc81c31bcc1ebea9de15944"
+    },
+    {
+      "path": "scene\\S_P04_S06.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S07.sa",
+      "size_bytes": 1370001,
+      "sha256": "a0efde4003e0336ba6e20aa725b1e1efc28e3cdfd80958bc82d9f124ac56e501"
+    },
+    {
+      "path": "scene\\S_P04_S07.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S08.sa",
+      "size_bytes": 1370012,
+      "sha256": "c39e61eff750726cd1e961791832ec92b848a3544155095dae08218458b01917"
+    },
+    {
+      "path": "scene\\S_P04_S08.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S09.sa",
+      "size_bytes": 1370021,
+      "sha256": "f77f1ab301989913a2e65436577495a95f7261262261561956de6bbed8b97cfd"
+    },
+    {
+      "path": "scene\\S_P04_S09.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S10.sa",
+      "size_bytes": 1370018,
+      "sha256": "6280d195f41175bc435c47e906e1f67d1ceef4a6e58440c147822fb0443b50f4"
+    },
+    {
+      "path": "scene\\S_P04_S10.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S11.sa",
+      "size_bytes": 1370019,
+      "sha256": "0b85be8d197fba1d337155ec16e4f5d5afdbfeab74b860e23948184c4fa7e544"
+    },
+    {
+      "path": "scene\\S_P04_S11.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P04_S12.sa",
+      "size_bytes": 1370016,
+      "sha256": "e874bf7d5e2c128424b8fa609e9e95cbe5518adc2c11a138c1f7eeeb74c21a1c"
+    },
+    {
+      "path": "scene\\S_P04_S12.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S01.sa",
+      "size_bytes": 1370016,
+      "sha256": "a985415efeab8d1fc816ffa01862fbcc74885ec68e1a41e6fca701a6beb00a99"
+    },
+    {
+      "path": "scene\\S_P05_S01.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S02.sa",
+      "size_bytes": 1370148,
+      "sha256": "91bea4ddee57f143fdabdda74d10888ab7e192cd09fd403d35a32780b5359da0"
+    },
+    {
+      "path": "scene\\S_P05_S02.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S03.sa",
+      "size_bytes": 1370001,
+      "sha256": "b95b2284e182b1f5192ba1450ebf9064ddb1c525bd1db3de8611d416c34eb531"
+    },
+    {
+      "path": "scene\\S_P05_S03.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S04.sa",
+      "size_bytes": 1370001,
+      "sha256": "901f1b2a594aaa0ea4f679818cd3d2ad9f6d15bcd72a7abb26cff26c28a2057d"
+    },
+    {
+      "path": "scene\\S_P05_S04.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S05.sa",
+      "size_bytes": 1370010,
+      "sha256": "ebdde03f1758f79905c504a4f1f4eb52dfdee260742dc36f6999e7487eba0562"
+    },
+    {
+      "path": "scene\\S_P05_S05.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S06.sa",
+      "size_bytes": 1370008,
+      "sha256": "8033b9c88fe5ebeca69a5c4eae64404e33e7402e94ea885f410d4be351b21585"
+    },
+    {
+      "path": "scene\\S_P05_S06.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S07.sa",
+      "size_bytes": 1370006,
+      "sha256": "fad483470ccb86b4a07717bdf422dd913c38cbdc2e139f49aafea98e26d736db"
+    },
+    {
+      "path": "scene\\S_P05_S07.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S08.sa",
+      "size_bytes": 1370013,
+      "sha256": "e856597ae3d96239bbc8e0c168544cc4cd2b8ebcaa9a405847b3d199f41930a8"
+    },
+    {
+      "path": "scene\\S_P05_S08.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S09.sa",
+      "size_bytes": 1370021,
+      "sha256": "a9e4eaa7923026367a7586d3594aee73da3a96613d797bfd5dc9288f365faaeb"
+    },
+    {
+      "path": "scene\\S_P05_S09.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S10.sa",
+      "size_bytes": 1370021,
+      "sha256": "08c686ef7749f6902b810ec943e49107f8ee01c4b046368442f722f16b5197e9"
+    },
+    {
+      "path": "scene\\S_P05_S10.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S11.sa",
+      "size_bytes": 1370012,
+      "sha256": "89a706b05d8b38d385415cc8d45dccbaec2bf62591eb3ea50ccf61c4a4633b7d"
+    },
+    {
+      "path": "scene\\S_P05_S11.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P05_S12.sa",
+      "size_bytes": 1370014,
+      "sha256": "67e947a56190b48ab4b7f0532685de226c98e79f1f538c4ba658d108602ebded"
+    },
+    {
+      "path": "scene\\S_P05_S12.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S01.sa",
+      "size_bytes": 1370010,
+      "sha256": "294556e86ab4f036ad48139786fee3dc7b5728baf6201eb5da74875933302a48"
+    },
+    {
+      "path": "scene\\S_P06_S01.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S02.sa",
+      "size_bytes": 1369989,
+      "sha256": "4cbdd388ccf1a512dd264e7553a73176343e20f161db3badf61a1494fb6c9d02"
+    },
+    {
+      "path": "scene\\S_P06_S02.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S03.sa",
+      "size_bytes": 1370000,
+      "sha256": "e87fc2d55cd7c7ca2b654fd4d42461492301ee1d2447fee33b19843ca3187d9b"
+    },
+    {
+      "path": "scene\\S_P06_S03.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S04.sa",
+      "size_bytes": 1370005,
+      "sha256": "ef29a62056ea0fa08832f4e368ba129b975db090d7967b1f4e403e54770db24b"
+    },
+    {
+      "path": "scene\\S_P06_S04.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S05.sa",
+      "size_bytes": 1370002,
+      "sha256": "1743e87958ca7696d1c398cccfe999e47819ace21bf441fa4358061837f5c5b2"
+    },
+    {
+      "path": "scene\\S_P06_S05.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S06.sa",
+      "size_bytes": 1369997,
+      "sha256": "2682c5ff04822fb95eef1df1b5d8e6d89a95d9d25742a271bdde95098990ffac"
+    },
+    {
+      "path": "scene\\S_P06_S06.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S07.sa",
+      "size_bytes": 1370012,
+      "sha256": "bba29a802d7803ee8d55757ea6586bac61bd1a3eafd590ca845965e2e104ce12"
+    },
+    {
+      "path": "scene\\S_P06_S07.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S08.sa",
+      "size_bytes": 1370033,
+      "sha256": "2ce67d577a7386b6ca20b70bbc245797d19cd5851a146b4068857e1888a06033"
+    },
+    {
+      "path": "scene\\S_P06_S08.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S09.sa",
+      "size_bytes": 1370022,
+      "sha256": "fa29ed6af99b6975c39125468c36c69b1e7d928f3799aead2be25cbdc1cddc13"
+    },
+    {
+      "path": "scene\\S_P06_S09.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S10.sa",
+      "size_bytes": 1370017,
+      "sha256": "3ee66de9b7170590cc5b58c0ad13080c8feb05009e1f1c5d6f047bf8e6033976"
+    },
+    {
+      "path": "scene\\S_P06_S10.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S11.sa",
+      "size_bytes": 1370020,
+      "sha256": "7bc91b5c3b4393b628e37edcdd5de02edc0ac966c387eb37e8f3de60331b1b3f"
+    },
+    {
+      "path": "scene\\S_P06_S11.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P06_S12.sa",
+      "size_bytes": 1370025,
+      "sha256": "d5b1dc283c61a693e1d84a20c2364266c8079fccd69278c947bf81b6a8549799"
+    },
+    {
+      "path": "scene\\S_P06_S12.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S01.sa",
+      "size_bytes": 1370006,
+      "sha256": "eb970e75b599fa5d5455544de5b7617a1402bbb191f2de64a1fc86df71227c11"
+    },
+    {
+      "path": "scene\\S_P07_S01.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S02.sa",
+      "size_bytes": 1370001,
+      "sha256": "71187d23fc694b1d8afb86f6ddbb6d57f93d12eb214f86ecd6963fd614eb2fe9"
+    },
+    {
+      "path": "scene\\S_P07_S02.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S03.sa",
+      "size_bytes": 1370006,
+      "sha256": "de238a76d06c350ecc97ebd86e87a7b5a0b72a743a711342186e42fb6c6141f8"
+    },
+    {
+      "path": "scene\\S_P07_S03.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S04.sa",
+      "size_bytes": 1369999,
+      "sha256": "1dcce380fa99ace6e94c6904215404ae19b961be907ee842feaef4f45cf0be9e"
+    },
+    {
+      "path": "scene\\S_P07_S04.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S05.sa",
+      "size_bytes": 1370018,
+      "sha256": "a3a809f93c84fdc768cbc5ffde10378ae170f71b353366cb7445422a56f37aac"
+    },
+    {
+      "path": "scene\\S_P07_S05.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S06.sa",
+      "size_bytes": 1370015,
+      "sha256": "91a42597d05c6a833394329177f6954c792d35782f72919f06588f376068251e"
+    },
+    {
+      "path": "scene\\S_P07_S06.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S07.sa",
+      "size_bytes": 1370016,
+      "sha256": "8fd8ac9facbbc65b6d97cebe7c00382abcba5f485184c8a72cf751769b86770b"
+    },
+    {
+      "path": "scene\\S_P07_S07.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S08.sa",
+      "size_bytes": 1370021,
+      "sha256": "2a37cfe46cf966d8d4bf70b2746693494b8dc3685bf40b3fb7ff6805d45e2b07"
+    },
+    {
+      "path": "scene\\S_P07_S08.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S09.sa",
+      "size_bytes": 1370016,
+      "sha256": "012ffdcf98dd69ec41896a4872dbc5e44a46b40e86e5db5de79c78bc2d39ffa3"
+    },
+    {
+      "path": "scene\\S_P07_S09.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S10.sa",
+      "size_bytes": 1370023,
+      "sha256": "b4f15fda82549b39cbd65f493735988143a916db35cea99ec3e8237a6f5a5ce8"
+    },
+    {
+      "path": "scene\\S_P07_S10.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S11.sa",
+      "size_bytes": 1370004,
+      "sha256": "718a944cbe4cf2e345286fddc3c5afe94a29333c8a9e97cbdcda5bf3aafd4d6b"
+    },
+    {
+      "path": "scene\\S_P07_S11.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene\\S_P07_S12.sa",
+      "size_bytes": 1370007,
+      "sha256": "3289c266cd426208fe001c5995c746e9a8ef99efc92094e97ec494e11d776e2f"
+    },
+    {
+      "path": "scene\\S_P07_S12.sa3",
+      "size_bytes": 21531,
+      "sha256": "994c7064fbd942e7e7f3c452e2fa82a747ba02c5a49b795f1911b4bf4d6caa70"
+    },
+    {
+      "path": "scene_portability_receipt.json",
+      "size_bytes": 548,
+      "sha256": "50432877d93145fa17045cc93de7c604bc29df5ef0603a4ae50ccb636b12c594"
+    }
+  ],
+  "contacts_sha256": "758d6a26ae9bd7307ee11b2f3eb295b571f3406f672fb986eb56fb76c608de9d",
+  "scene_file": "E:\\01-Joycecyq\\2026-AAMAS\\data\\两篇论文数据定制化构建\\CIPHEUR_STK_20261005\\raw\\CP-AU-r008\\scene\\CP_AU_r008.sc",
+  "no_minimum_duration_filter": true,
+  "full_visibility_intervals": true,
+  "no_legacy_input_used": true,
+  "owned_stk_instance_closed": true,
+  "owned_ascii_scene_staging_removed_after_complete_copy": true
+}

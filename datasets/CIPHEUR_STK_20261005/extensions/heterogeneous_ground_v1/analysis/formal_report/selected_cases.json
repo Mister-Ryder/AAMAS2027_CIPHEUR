@@ -1,0 +1,521 @@
+{
+  "selection": "lexicographically first query satisfying prereclared criterion; no selection by head winner",
+  "joint_only_strict": null,
+  "strict_interaction_with_reversal": null,
+  "marginal_reversal": {
+    "source": "CP-AP-r000",
+    "query_id": "CP-AP-r000:q005:d08",
+    "patch_cap": 16,
+    "patch_nodes": 16,
+    "destroy_target": 8,
+    "certificate_path": "CP-AP-r000\\certificates\\q005_d08.json",
+    "certificate_sha256": "5b228309d5fe71be5c28de24f062241adcffb57e8ef2f8808c7ec0b3dad7fa23",
+    "a_contact_id": "CP-AP-r000:S-P03-S06:GS07:p0015",
+    "b_contact_id": "CP-AP-r000:S-P03-S06:GS08:p0014",
+    "boundary": {
+      "fixed_hash": "01627c25fda030d84e628b2a3c4dbb3d91b69208bb7575d7f768110e23f64815",
+      "excluded_hash": "42cdec4a53bfba912b129ad7e8f355255c93d2624b04b099c465397e24a24259",
+      "patch_hash": "d77fba4c02aeb467b953ea2184b81e51f7a546383c4b54fc0253c3a4e9f51cba"
+    },
+    "action_group": "west-west",
+    "same_group": true,
+    "labels": {
+      "A": "a",
+      "W": "b",
+      "E": "a",
+      "J": "b"
+    },
+    "all_four_strict": true,
+    "joint_only_reversal": false,
+    "pattern": "+-+-",
+    "interaction": {
+      "lower_ticks": 0,
+      "upper_ticks": 0,
+      "sign": "tie",
+      "epsilon_ticks": 1,
+      "formula": "DeltaJ-DeltaW-DeltaE+DeltaA; [LJ-UW-UE+LA,UJ-LW-LE+UA]"
+    },
+    "pair_relations": {
+      "A->J": "reversal",
+      "A->W": "reversal",
+      "A->E": "preservation",
+      "W->J": "preservation",
+      "E->J": "reversal",
+      "W->E": "reversal"
+    },
+    "wall_seconds": 0.00188407301902771,
+    "phis": {
+      "A": {
+        "a": [
+          "529295779/1000000",
+          "529295779/1000000",
+          "4",
+          "8223180609431689/4398046511104",
+          "526329351/1000000",
+          "6356041386201805/1099511627776",
+          "340",
+          "150",
+          "16"
+        ],
+        "b": [
+          "118677553/250000",
+          "118677553/250000",
+          "4",
+          "4107205714028041/2199023255552",
+          "529295779/1000000",
+          "802281393396369/137438953472",
+          "340",
+          "150",
+          "16"
+        ]
+      },
+      "W": {
+        "a": [
+          "529295779/1000000",
+          "529295779/1000000",
+          "6",
+          "6533731722038801/2199023255552",
+          "551538733/1000000",
+          "5144970677540327/1099511627776",
+          "1200",
+          "150",
+          "16"
+        ],
+        "b": [
+          "118677553/250000",
+          "118677553/250000",
+          "4",
+          "4107205714028041/2199023255552",
+          "529295779/1000000",
+          "802281393396369/137438953472",
+          "1200",
+          "150",
+          "16"
+        ]
+      },
+      "E": {
+        "a": [
+          "529295779/1000000",
+          "529295779/1000000",
+          "4",
+          "8223180609431689/4398046511104",
+          "526329351/1000000",
+          "6356041386201805/1099511627776",
+          "340",
+          "150",
+          "16"
+        ],
+        "b": [
+          "118677553/250000",
+          "118677553/250000",
+          "4",
+          "4107205714028041/2199023255552",
+          "529295779/1000000",
+          "802281393396369/137438953472",
+          "340",
+          "150",
+          "16"
+        ]
+      },
+      "J": {
+        "a": [
+          "529295779/1000000",
+          "529295779/1000000",
+          "6",
+          "6533731722038801/2199023255552",
+          "551538733/1000000",
+          "5144970677540327/1099511627776",
+          "1200",
+          "150",
+          "16"
+        ],
+        "b": [
+          "118677553/250000",
+          "118677553/250000",
+          "4",
+          "4107205714028041/2199023255552",
+          "529295779/1000000",
+          "802281393396369/137438953472",
+          "1200",
+          "150",
+          "16"
+        ]
+      }
+    },
+    "pair_aliases": {
+      "A->J": {
+        "a": false,
+        "b": false
+      },
+      "A->W": {
+        "a": false,
+        "b": false
+      },
+      "A->E": {
+        "a": true,
+        "b": true
+      },
+      "W->J": {
+        "a": true,
+        "b": true
+      },
+      "E->J": {
+        "a": false,
+        "b": false
+      },
+      "W->E": {
+        "a": false,
+        "b": false
+      }
+    }
+  },
+  "both_root_alias_strict_reversal": {
+    "source": "CP-AP-r001",
+    "query_id": "CP-AP-r001:q009:d16",
+    "patch_cap": 64,
+    "patch_nodes": 64,
+    "destroy_target": 16,
+    "certificate_path": "CP-AP-r001\\certificates\\q009_d16.json",
+    "certificate_sha256": "f7078e201b42cba8dc656f1d3eb387e276bcedf9581ba6f365a790bc66dcbbd7",
+    "a_contact_id": "CP-AP-r001:S-P02-S09:GS01:p0006",
+    "b_contact_id": "CP-AP-r001:S-P02-S10:GS01:p0007",
+    "boundary": {
+      "fixed_hash": "bf30220f88bbd8ccd984aa6ae793c90b4d5423ef75b1f000186c076fdc2d4ae8",
+      "excluded_hash": "02496d823da3b9ccbbe488a349eca0861cc0dacb00e1d716f633ec07498b8047",
+      "patch_hash": "dd5b0f3bdabffe5bd59f2bb15cab5f58212d412f7cce15aa5dd143759861c12c"
+    },
+    "action_group": "west-west",
+    "same_group": true,
+    "labels": {
+      "A": "unknown",
+      "W": "a",
+      "E": "unknown",
+      "J": "b"
+    },
+    "all_four_strict": false,
+    "joint_only_reversal": false,
+    "pattern": null,
+    "interaction": {
+      "lower_ticks": -3077016395,
+      "upper_ticks": 2169752429,
+      "sign": "unknown",
+      "epsilon_ticks": 1,
+      "formula": "DeltaJ-DeltaW-DeltaE+DeltaA; [LJ-UW-UE+LA,UJ-LW-LE+UA]"
+    },
+    "pair_relations": {
+      "A->J": "unknown",
+      "A->W": "unknown",
+      "A->E": "unknown",
+      "W->J": "reversal",
+      "E->J": "unknown",
+      "W->E": "unknown"
+    },
+    "wall_seconds": 1.5387447029352188,
+    "phis": {
+      "A": {
+        "a": [
+          "34747279/62500",
+          "34747279/62500",
+          "6",
+          "1614196768423329/549755813888",
+          "556967549/1000000",
+          "7448506620812999/274877906944",
+          "340",
+          "150",
+          "64"
+        ],
+        "b": [
+          "556967549/1000000",
+          "556967549/1000000",
+          "5",
+          "1336534564336021/549755813888",
+          "34747279/62500",
+          "3793529898964055/137438953472",
+          "340",
+          "150",
+          "64"
+        ]
+      },
+      "W": {
+        "a": [
+          "34747279/62500",
+          "34747279/62500",
+          "11",
+          "3046377020227817/549755813888",
+          "558018763/1000000",
+          "6732416494910755/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "b": [
+          "556967549/1000000",
+          "556967549/1000000",
+          "12",
+          "782921716159463/137438953472",
+          "558018763/1000000",
+          "6689483647777195/274877906944",
+          "1200",
+          "150",
+          "64"
+        ]
+      },
+      "E": {
+        "a": [
+          "34747279/62500",
+          "34747279/62500",
+          "6",
+          "1614196768423329/549755813888",
+          "556967549/1000000",
+          "7448506620812999/274877906944",
+          "340",
+          "150",
+          "64"
+        ],
+        "b": [
+          "556967549/1000000",
+          "556967549/1000000",
+          "5",
+          "1336534564336021/549755813888",
+          "34747279/62500",
+          "3793529898964055/137438953472",
+          "340",
+          "150",
+          "64"
+        ]
+      },
+      "J": {
+        "a": [
+          "34747279/62500",
+          "34747279/62500",
+          "11",
+          "3046377020227817/549755813888",
+          "558018763/1000000",
+          "6732416494910755/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "b": [
+          "556967549/1000000",
+          "556967549/1000000",
+          "12",
+          "782921716159463/137438953472",
+          "558018763/1000000",
+          "6689483647777195/274877906944",
+          "1200",
+          "150",
+          "64"
+        ]
+      }
+    },
+    "pair_aliases": {
+      "A->J": {
+        "a": false,
+        "b": false
+      },
+      "A->W": {
+        "a": false,
+        "b": false
+      },
+      "A->E": {
+        "a": true,
+        "b": true
+      },
+      "W->J": {
+        "a": true,
+        "b": true
+      },
+      "E->J": {
+        "a": false,
+        "b": false
+      },
+      "W->E": {
+        "a": false,
+        "b": false
+      }
+    }
+  },
+  "new_cycle_trace": [
+    {
+      "from": "phi42",
+      "to": "phi43",
+      "requirement": {
+        "query_id": "CP-AU-r000:q008:d16",
+        "source": "CP-AU-r000",
+        "side": "E",
+        "boundary_hash": "643a05a5e3ccace26b929f01db5b04fe4ffa10bab10505f23ea0beeb5ee3d886",
+        "certificate_file": "CP-AU-r000/certificates/q008_d16.json",
+        "certificate_sha256": "75d7f685bbde2add3f8d061d0ef490d329abd13e952e9a46b85c189510ee0bf1",
+        "delta_interval": {
+          "lower_ticks": 97768692,
+          "upper_ticks": 97768692,
+          "preference": "a",
+          "epsilon_ticks": 1,
+          "formula": "[La-Ub,Ua-Lb]"
+        },
+        "preferred_contact_id": "CP-AU-r000:S-P01-S05:GS04:p0001",
+        "other_contact_id": "CP-AU-r000:S-P01-S05:GS05:p0001",
+        "preferred_phi": [
+          "525793139/1000000",
+          "525793139/1000000",
+          "9",
+          "2552119897977717/549755813888",
+          "558828533/1000000",
+          "7025412652536015/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "other_phi": [
+          "278192667/500000",
+          "278192667/500000",
+          "8",
+          "7978391069079221/2199023255552",
+          "139794277/250000",
+          "7295764599359549/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "numeric_namespace": "heterogeneous_station_local_base9_v1"
+      }
+    },
+    {
+      "from": "phi43",
+      "to": "phi42",
+      "requirement": {
+        "query_id": "CP-AU-r000:q008:d16",
+        "source": "CP-AU-r000",
+        "side": "J",
+        "boundary_hash": "643a05a5e3ccace26b929f01db5b04fe4ffa10bab10505f23ea0beeb5ee3d886",
+        "certificate_file": "CP-AU-r000/certificates/q008_d16.json",
+        "certificate_sha256": "75d7f685bbde2add3f8d061d0ef490d329abd13e952e9a46b85c189510ee0bf1",
+        "delta_interval": {
+          "lower_ticks": -423700893,
+          "upper_ticks": -423700893,
+          "preference": "b",
+          "epsilon_ticks": 1,
+          "formula": "[La-Ub,Ua-Lb]"
+        },
+        "preferred_contact_id": "CP-AU-r000:S-P01-S05:GS05:p0001",
+        "other_contact_id": "CP-AU-r000:S-P01-S05:GS04:p0001",
+        "preferred_phi": [
+          "278192667/500000",
+          "278192667/500000",
+          "8",
+          "7978391069079221/2199023255552",
+          "139794277/250000",
+          "7295764599359549/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "other_phi": [
+          "525793139/1000000",
+          "525793139/1000000",
+          "9",
+          "2552119897977717/549755813888",
+          "558828533/1000000",
+          "7025412652536015/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "numeric_namespace": "heterogeneous_station_local_base9_v1"
+      }
+    }
+  ],
+  "union_cycle_trace": [
+    {
+      "from": "phi840",
+      "to": "phi841",
+      "requirement": {
+        "query_id": "CP-AU-r000:q008:d16",
+        "source": "CP-AU-r000",
+        "side": "right",
+        "boundary_hash": "643a05a5e3ccace26b929f01db5b04fe4ffa10bab10505f23ea0beeb5ee3d886",
+        "certificate_file": "CP-AU-r000/certificates/q008_d16.json",
+        "certificate_sha256": "e69b6f8659de741f76fd8aa4b6924c3fe4d9effb431868e4b2a4b46e326e2803",
+        "delta_interval": {
+          "lower_ticks": -423700893,
+          "upper_ticks": -423700893,
+          "preference": "b",
+          "epsilon_ticks": 1,
+          "formula": "[La-Ub,Ua-Lb]"
+        },
+        "preferred_contact_id": "CP-AU-r000:S-P01-S05:GS05:p0001",
+        "other_contact_id": "CP-AU-r000:S-P01-S05:GS04:p0001",
+        "preferred_phi": [
+          "278192667/500000",
+          "278192667/500000",
+          "8",
+          "7978391069079221/2199023255552",
+          "139794277/250000",
+          "7295764599359549/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "other_phi": [
+          "525793139/1000000",
+          "525793139/1000000",
+          "9",
+          "2552119897977717/549755813888",
+          "558828533/1000000",
+          "7025412652536015/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "evidence_stage": "old_patch_probe",
+        "original_requirement_file_sha256": "034d756381fb8e220df112e19d426f5c99dae7c351920ee70cd693c0736044d2"
+      }
+    },
+    {
+      "from": "phi841",
+      "to": "phi840",
+      "requirement": {
+        "query_id": "CP-AU-r000:q008:d16",
+        "source": "CP-AU-r000",
+        "side": "E",
+        "boundary_hash": "643a05a5e3ccace26b929f01db5b04fe4ffa10bab10505f23ea0beeb5ee3d886",
+        "certificate_file": "CP-AU-r000/certificates/q008_d16.json",
+        "certificate_sha256": "75d7f685bbde2add3f8d061d0ef490d329abd13e952e9a46b85c189510ee0bf1",
+        "delta_interval": {
+          "lower_ticks": 97768692,
+          "upper_ticks": 97768692,
+          "preference": "a",
+          "epsilon_ticks": 1,
+          "formula": "[La-Ub,Ua-Lb]"
+        },
+        "preferred_contact_id": "CP-AU-r000:S-P01-S05:GS04:p0001",
+        "other_contact_id": "CP-AU-r000:S-P01-S05:GS05:p0001",
+        "preferred_phi": [
+          "525793139/1000000",
+          "525793139/1000000",
+          "9",
+          "2552119897977717/549755813888",
+          "558828533/1000000",
+          "7025412652536015/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "other_phi": [
+          "278192667/500000",
+          "278192667/500000",
+          "8",
+          "7978391069079221/2199023255552",
+          "139794277/250000",
+          "7295764599359549/274877906944",
+          "1200",
+          "150",
+          "64"
+        ],
+        "numeric_namespace": "heterogeneous_station_local_base9_v1",
+        "evidence_stage": "heterogeneous_ground_quad"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1047 @@
+{
+  "schema_version": "cipheur-input-satellite-axis-thresholds-v1",
+  "created_at": "2026-10-05T13:48:09.370677+00:00",
+  "analysis_scope": "Frozen full opportunity windows only; no new STK, graphs, labels or schedule experiments.",
+  "script_relative_path": "extensions/joint_resource_v1/scripts/analyze_satellite_axis_thresholds.py",
+  "script_sha256": "d9144e39c45aa6b7d1584930ae27ac218fd9236bcedffbf1973a076a0f41f1e3",
+  "time_contract": {
+    "tick_unit": "microsecond",
+    "all_pair_arithmetic": "signed exact integers",
+    "threshold_comparison": "strict gap_tick < turnaround_tick",
+    "report_seconds": "exact six fractional digits; no coarse rounding"
+  },
+  "calculation_rules": {
+    "baseline_satellite_seconds": 150,
+    "ground_policies_seconds": [
+      340,
+      1200
+    ],
+    "pair_order": "(start_tick, contact_id), earlier index < later index",
+    "visibility_episode": "Maximal overlap-connected component of half-open windows for one satellite; no independently validated orbit/pass identification.",
+    "independent_new_edge": "shared satellite AND gap>=150s AND (different site OR gap>=ground policy); new edge only if gap<new satellite policy",
+    "quantile": "Sorted observed order statistic at floor((n-1)*p), without interpolation"
+  },
+  "scientific_status": "The satellite150-to600 axis is inactive; threshold counts are input structural facts, not evidence-label or scheduling quality results.",
+  "final_heterogeneous_grouping": {
+    "extension": "heterogeneous_ground_v1",
+    "adopted": true,
+    "west_longitudes_degrees": [
+      88,
+      94,
+      100
+    ],
+    "west_sites": [
+      "GS01",
+      "GS02",
+      "GS03",
+      "GS07",
+      "GS08",
+      "GS09"
+    ],
+    "east_longitudes_degrees": [
+      106,
+      112,
+      118
+    ],
+    "east_sites": [
+      "GS04",
+      "GS05",
+      "GS06",
+      "GS10",
+      "GS11",
+      "GS12"
+    ],
+    "latitude_group_candidate_adopted": false
+  },
+  "sources": [
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "epoch_utc": "2026-11-01T00:00:00Z",
+      "input_files": {
+        "contacts.csv": {
+          "relative_path": "raw/CP-AU-r000/contacts.csv",
+          "sha256": "2c129bc59efa9cd67e5826c72a15e7c97e3c539b6c0a50b8edcadae978622f68"
+        },
+        "manifest.json": {
+          "relative_path": "raw/CP-AU-r000/manifest.json",
+          "sha256": "03522600203a34596cba5813411f8748f3a52100a9ae95151d3c7b22011fd19a"
+        },
+        "actual_geometry.json": {
+          "relative_path": "raw/CP-AU-r000/actual_geometry.json",
+          "sha256": "43a344fecfc77a1035db186feb65dd3fd07ca80e26f7539e72b5db32ed2a8378"
+        }
+      },
+      "eop_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+      "contact_count": 12467,
+      "satellite_count": 84,
+      "site_count": 12,
+      "episode_count": 1747,
+      "multi_site_episode_count": 1576,
+      "actual_overlap_nonclique_episode_count": 199,
+      "same_episode_nonoverlapping_pair_count": 383,
+      "same_episode_pairs_compatible_at_sat150": 0,
+      "same_episode_nonoverlap_gap_quantiles_seconds": {
+        "0": "0.006060",
+        "0.25": "11.222279",
+        "0.5": "26.052368",
+        "0.75": "47.642871",
+        "0.9": "69.144628",
+        "0.99": "115.577532",
+        "1": "131.160644"
+      },
+      "max_same_episode_nonoverlap_pair": {
+        "satellite_id": "S-P07-S05",
+        "earlier_contact_id": "CP-AU-r000:S-P07-S05:GS07:p0012",
+        "later_contact_id": "CP-AU-r000:S-P07-S05:GS06:p0010",
+        "earlier_site_id": "GS07",
+        "later_site_id": "GS06",
+        "earlier_end_tick": 241471128975,
+        "later_start_tick": 241602289619,
+        "gap_tick": 131160644,
+        "gap_seconds": "131.160644"
+      },
+      "multi_site_episode_span_quantiles_seconds": {
+        "0": "276.088487",
+        "0.25": "529.858899",
+        "0.5": "687.662511",
+        "0.75": "798.834811",
+        "0.9": "844.209497",
+        "0.99": "854.230299",
+        "1": "855.152988"
+      },
+      "max_multi_site_episode": {
+        "satellite_id": "S-P03-S05",
+        "start_tick": 82793717233,
+        "end_tick": 83648870221,
+        "span_tick": 855152988,
+        "span_seconds": "855.152988",
+        "contact_count": 12,
+        "site_count": 12,
+        "actual_overlap_clique": true,
+        "contact_ids": [
+          "CP-AU-r000:S-P03-S05:GS01:p0004",
+          "CP-AU-r000:S-P03-S05:GS02:p0005",
+          "CP-AU-r000:S-P03-S05:GS07:p0005",
+          "CP-AU-r000:S-P03-S05:GS08:p0005",
+          "CP-AU-r000:S-P03-S05:GS03:p0005",
+          "CP-AU-r000:S-P03-S05:GS09:p0005",
+          "CP-AU-r000:S-P03-S05:GS04:p0005",
+          "CP-AU-r000:S-P03-S05:GS10:p0006",
+          "CP-AU-r000:S-P03-S05:GS05:p0005",
+          "CP-AU-r000:S-P03-S05:GS11:p0005",
+          "CP-AU-r000:S-P03-S05:GS12:p0005",
+          "CP-AU-r000:S-P03-S05:GS06:p0005"
+        ]
+      },
+      "inter_episode_gap_quantiles_seconds": {
+        "0": "5391.927597",
+        "0.25": "5444.621933",
+        "0.5": "5610.118425",
+        "0.75": "12821.941695",
+        "0.9": "39833.550060",
+        "0.99": "45879.555854",
+        "1": "45881.731786"
+      },
+      "minimum_cross_site_gap_above_sat150": {
+        "satellite_id": "S-P03-S05",
+        "earlier_contact_id": "CP-AU-r000:S-P03-S05:GS06:p0007",
+        "later_contact_id": "CP-AU-r000:S-P03-S05:GS07:p0008",
+        "earlier_site_id": "GS06",
+        "later_site_id": "GS07",
+        "earlier_end_tick": 109417904288,
+        "later_start_tick": 114809831885,
+        "gap_tick": 5391927597,
+        "gap_seconds": "5391.927597"
+      },
+      "minimum_same_site_gap_above_sat150": {
+        "satellite_id": "S-P06-S06",
+        "earlier_contact_id": "CP-AU-r000:S-P06-S06:GS07:p0001",
+        "later_contact_id": "CP-AU-r000:S-P06-S06:GS07:p0002",
+        "earlier_site_id": "GS07",
+        "later_site_id": "GS07",
+        "earlier_end_tick": 34223722313,
+        "later_start_tick": 40043738583,
+        "gap_tick": 5820016270,
+        "gap_seconds": "5820.016270"
+      },
+      "independent_satellite_edge_threshold_by_ground_gap": {
+        "340": {
+          "minimum_pair": {
+            "satellite_id": "S-P03-S05",
+            "earlier_contact_id": "CP-AU-r000:S-P03-S05:GS06:p0007",
+            "later_contact_id": "CP-AU-r000:S-P03-S05:GS07:p0008",
+            "earlier_site_id": "GS06",
+            "later_site_id": "GS07",
+            "earlier_end_tick": 109417904288,
+            "later_start_tick": 114809831885,
+            "gap_tick": 5391927597,
+            "gap_seconds": "5391.927597"
+          },
+          "candidate_pair_count": 868786,
+          "new_edge_counts_by_satellite_seconds": {
+            "600": 0,
+            "900": 0,
+            "1200": 0,
+            "1800": 0,
+            "2400": 0,
+            "3600": 0,
+            "5400": 163,
+            "6000": 62633,
+            "7200": 73618
+          },
+          "strict_first_new_threshold_tick": 5391927598,
+          "strict_first_new_threshold_seconds": "5391.927598"
+        },
+        "1200": {
+          "minimum_pair": {
+            "satellite_id": "S-P03-S05",
+            "earlier_contact_id": "CP-AU-r000:S-P03-S05:GS06:p0007",
+            "later_contact_id": "CP-AU-r000:S-P03-S05:GS07:p0008",
+            "earlier_site_id": "GS06",
+            "later_site_id": "GS07",
+            "earlier_end_tick": 109417904288,
+            "later_start_tick": 114809831885,
+            "gap_tick": 5391927597,
+            "gap_seconds": "5391.927597"
+          },
+          "candidate_pair_count": 868786,
+          "new_edge_counts_by_satellite_seconds": {
+            "600": 0,
+            "900": 0,
+            "1200": 0,
+            "1800": 0,
+            "2400": 0,
+            "3600": 0,
+            "5400": 163,
+            "6000": 62633,
+            "7200": 73618
+          },
+          "strict_first_new_threshold_tick": 5391927598,
+          "strict_first_new_threshold_seconds": "5391.927598"
+        }
+      },
+      "unadopted_latitude_group_candidate_appendix": {
+        "adopted": false,
+        "groups": {
+          "latitude28": {
+            "site_ids": [
+              "GS01",
+              "GS02",
+              "GS03",
+              "GS04",
+              "GS05",
+              "GS06"
+            ],
+            "vertices": 5899,
+            "new_ground_union_edges_340_to_1200": 18366
+          },
+          "latitude32": {
+            "site_ids": [
+              "GS07",
+              "GS08",
+              "GS09",
+              "GS10",
+              "GS11",
+              "GS12"
+            ],
+            "vertices": 6568,
+            "new_ground_union_edges_340_to_1200": 26292
+          }
+        },
+        "per_site": {
+          "GS01": {
+            "vertices": 982,
+            "new_ground_union_edges_340_to_1200": 3049
+          },
+          "GS02": {
+            "vertices": 983,
+            "new_ground_union_edges_340_to_1200": 3062
+          },
+          "GS03": {
+            "vertices": 983,
+            "new_ground_union_edges_340_to_1200": 3066
+          },
+          "GS04": {
+            "vertices": 984,
+            "new_ground_union_edges_340_to_1200": 3068
+          },
+          "GS05": {
+            "vertices": 986,
+            "new_ground_union_edges_340_to_1200": 3083
+          },
+          "GS06": {
+            "vertices": 981,
+            "new_ground_union_edges_340_to_1200": 3038
+          },
+          "GS07": {
+            "vertices": 1093,
+            "new_ground_union_edges_340_to_1200": 4375
+          },
+          "GS08": {
+            "vertices": 1092,
+            "new_ground_union_edges_340_to_1200": 4368
+          },
+          "GS09": {
+            "vertices": 1093,
+            "new_ground_union_edges_340_to_1200": 4381
+          },
+          "GS10": {
+            "vertices": 1095,
+            "new_ground_union_edges_340_to_1200": 4382
+          },
+          "GS11": {
+            "vertices": 1099,
+            "new_ground_union_edges_340_to_1200": 4407
+          },
+          "GS12": {
+            "vertices": 1096,
+            "new_ground_union_edges_340_to_1200": 4379
+          }
+        }
+      }
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "epoch_utc": "2026-11-01T00:00:00Z",
+      "input_files": {
+        "contacts.csv": {
+          "relative_path": "raw/CP-AP-r000/contacts.csv",
+          "sha256": "a7b094c396d36aec53f2870431607a31a302cc350ba2b918524a30f25b0e3556"
+        },
+        "manifest.json": {
+          "relative_path": "raw/CP-AP-r000/manifest.json",
+          "sha256": "8e22edeaedbc00a13e94ce40d7a709fa9ebef5c2681b19820a73503b96f99ab9"
+        },
+        "actual_geometry.json": {
+          "relative_path": "raw/CP-AP-r000/actual_geometry.json",
+          "sha256": "0c695b49ac3e61f92db30c45775b58f044040ef6317a96fed1bc13e9834ffe90"
+        }
+      },
+      "eop_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+      "contact_count": 12479,
+      "satellite_count": 84,
+      "site_count": 12,
+      "episode_count": 1748,
+      "multi_site_episode_count": 1576,
+      "actual_overlap_nonclique_episode_count": 206,
+      "same_episode_nonoverlapping_pair_count": 396,
+      "same_episode_pairs_compatible_at_sat150": 0,
+      "same_episode_nonoverlap_gap_quantiles_seconds": {
+        "0": "0.007911",
+        "0.25": "11.750248",
+        "0.5": "26.899143",
+        "0.75": "48.028609",
+        "0.9": "72.087968",
+        "0.99": "122.218323",
+        "1": "136.874508"
+      },
+      "max_same_episode_nonoverlap_pair": {
+        "satellite_id": "S-P07-S09",
+        "earlier_contact_id": "CP-AP-r000:S-P07-S09:GS01:p0011",
+        "later_contact_id": "CP-AP-r000:S-P07-S09:GS12:p0012",
+        "earlier_site_id": "GS01",
+        "later_site_id": "GS12",
+        "earlier_end_tick": 220324765519,
+        "later_start_tick": 220461640027,
+        "gap_tick": 136874508,
+        "gap_seconds": "136.874508"
+      },
+      "multi_site_episode_span_quantiles_seconds": {
+        "0": "276.379098",
+        "0.25": "527.946639",
+        "0.5": "688.249176",
+        "0.75": "798.953171",
+        "0.9": "843.919614",
+        "0.99": "854.289849",
+        "1": "855.205080"
+      },
+      "max_multi_site_episode": {
+        "satellite_id": "S-P03-S05",
+        "start_tick": 82845216630,
+        "end_tick": 83700421710,
+        "span_tick": 855205080,
+        "span_seconds": "855.205080",
+        "contact_count": 12,
+        "site_count": 12,
+        "actual_overlap_clique": true,
+        "contact_ids": [
+          "CP-AP-r000:S-P03-S05:GS01:p0004",
+          "CP-AP-r000:S-P03-S05:GS02:p0005",
+          "CP-AP-r000:S-P03-S05:GS07:p0005",
+          "CP-AP-r000:S-P03-S05:GS08:p0005",
+          "CP-AP-r000:S-P03-S05:GS03:p0005",
+          "CP-AP-r000:S-P03-S05:GS09:p0005",
+          "CP-AP-r000:S-P03-S05:GS04:p0005",
+          "CP-AP-r000:S-P03-S05:GS10:p0006",
+          "CP-AP-r000:S-P03-S05:GS05:p0005",
+          "CP-AP-r000:S-P03-S05:GS11:p0005",
+          "CP-AP-r000:S-P03-S05:GS12:p0005",
+          "CP-AP-r000:S-P03-S05:GS06:p0005"
+        ]
+      },
+      "inter_episode_gap_quantiles_seconds": {
+        "0": "5391.943663",
+        "0.25": "5444.359682",
+        "0.5": "5609.988928",
+        "0.75": "12822.790905",
+        "0.9": "39832.838844",
+        "0.99": "45879.815047",
+        "1": "45881.662204"
+      },
+      "minimum_cross_site_gap_above_sat150": {
+        "satellite_id": "S-P03-S06",
+        "earlier_contact_id": "CP-AP-r000:S-P03-S06:GS06:p0007",
+        "later_contact_id": "CP-AP-r000:S-P03-S06:GS07:p0008",
+        "earlier_site_id": "GS06",
+        "later_site_id": "GS07",
+        "earlier_end_tick": 109365339277,
+        "later_start_tick": 114757282940,
+        "gap_tick": 5391943663,
+        "gap_seconds": "5391.943663"
+      },
+      "minimum_same_site_gap_above_sat150": {
+        "satellite_id": "S-P06-S09",
+        "earlier_contact_id": "CP-AP-r000:S-P06-S09:GS08:p0001",
+        "later_contact_id": "CP-AP-r000:S-P06-S09:GS08:p0002",
+        "earlier_site_id": "GS08",
+        "later_site_id": "GS08",
+        "earlier_end_tick": 32759035157,
+        "later_start_tick": 38579047053,
+        "gap_tick": 5820011896,
+        "gap_seconds": "5820.011896"
+      },
+      "independent_satellite_edge_threshold_by_ground_gap": {
+        "340": {
+          "minimum_pair": {
+            "satellite_id": "S-P03-S06",
+            "earlier_contact_id": "CP-AP-r000:S-P03-S06:GS06:p0007",
+            "later_contact_id": "CP-AP-r000:S-P03-S06:GS07:p0008",
+            "earlier_site_id": "GS06",
+            "later_site_id": "GS07",
+            "earlier_end_tick": 109365339277,
+            "later_start_tick": 114757282940,
+            "gap_tick": 5391943663,
+            "gap_seconds": "5391.943663"
+          },
+          "candidate_pair_count": 870437,
+          "new_edge_counts_by_satellite_seconds": {
+            "600": 0,
+            "900": 0,
+            "1200": 0,
+            "1800": 0,
+            "2400": 0,
+            "3600": 0,
+            "5400": 164,
+            "6000": 62690,
+            "7200": 73725
+          },
+          "strict_first_new_threshold_tick": 5391943664,
+          "strict_first_new_threshold_seconds": "5391.943664"
+        },
+        "1200": {
+          "minimum_pair": {
+            "satellite_id": "S-P03-S06",
+            "earlier_contact_id": "CP-AP-r000:S-P03-S06:GS06:p0007",
+            "later_contact_id": "CP-AP-r000:S-P03-S06:GS07:p0008",
+            "earlier_site_id": "GS06",
+            "later_site_id": "GS07",
+            "earlier_end_tick": 109365339277,
+            "later_start_tick": 114757282940,
+            "gap_tick": 5391943663,
+            "gap_seconds": "5391.943663"
+          },
+          "candidate_pair_count": 870437,
+          "new_edge_counts_by_satellite_seconds": {
+            "600": 0,
+            "900": 0,
+            "1200": 0,
+            "1800": 0,
+            "2400": 0,
+            "3600": 0,
+            "5400": 164,
+            "6000": 62690,
+            "7200": 73725
+          },
+          "strict_first_new_threshold_tick": 5391943664,
+          "strict_first_new_threshold_seconds": "5391.943664"
+        }
+      },
+      "unadopted_latitude_group_candidate_appendix": {
+        "adopted": false,
+        "groups": {
+          "latitude28": {
+            "site_ids": [
+              "GS01",
+              "GS02",
+              "GS03",
+              "GS04",
+              "GS05",
+              "GS06"
+            ],
+            "vertices": 5903,
+            "new_ground_union_edges_340_to_1200": 19549
+          },
+          "latitude32": {
+            "site_ids": [
+              "GS07",
+              "GS08",
+              "GS09",
+              "GS10",
+              "GS11",
+              "GS12"
+            ],
+            "vertices": 6576,
+            "new_ground_union_edges_340_to_1200": 26605
+          }
+        },
+        "per_site": {
+          "GS01": {
+            "vertices": 979,
+            "new_ground_union_edges_340_to_1200": 3236
+          },
+          "GS02": {
+            "vertices": 984,
+            "new_ground_union_edges_340_to_1200": 3253
+          },
+          "GS03": {
+            "vertices": 986,
+            "new_ground_union_edges_340_to_1200": 3271
+          },
+          "GS04": {
+            "vertices": 980,
+            "new_ground_union_edges_340_to_1200": 3231
+          },
+          "GS05": {
+            "vertices": 988,
+            "new_ground_union_edges_340_to_1200": 3278
+          },
+          "GS06": {
+            "vertices": 986,
+            "new_ground_union_edges_340_to_1200": 3280
+          },
+          "GS07": {
+            "vertices": 1092,
+            "new_ground_union_edges_340_to_1200": 4419
+          },
+          "GS08": {
+            "vertices": 1097,
+            "new_ground_union_edges_340_to_1200": 4447
+          },
+          "GS09": {
+            "vertices": 1092,
+            "new_ground_union_edges_340_to_1200": 4410
+          },
+          "GS10": {
+            "vertices": 1097,
+            "new_ground_union_edges_340_to_1200": 4437
+          },
+          "GS11": {
+            "vertices": 1100,
+            "new_ground_union_edges_340_to_1200": 4455
+          },
+          "GS12": {
+            "vertices": 1098,
+            "new_ground_union_edges_340_to_1200": 4437
+          }
+        }
+      }
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "epoch_utc": "2026-11-08T00:00:00Z",
+      "input_files": {
+        "contacts.csv": {
+          "relative_path": "raw/CP-AU-r001/contacts.csv",
+          "sha256": "05c82e1e3056ff377d4494440d9ba0395e4f047a850183c5d00afa9ba650cd40"
+        },
+        "manifest.json": {
+          "relative_path": "raw/CP-AU-r001/manifest.json",
+          "sha256": "455383dc76d3d0ec5ddb5d7f0bd29a329b56ce184985694733b282a51a236970"
+        },
+        "actual_geometry.json": {
+          "relative_path": "raw/CP-AU-r001/actual_geometry.json",
+          "sha256": "7d7b39c50c44ad96c1edf40915eb83c70fa88a0d1e2d8336c2df4e6e636ddf86"
+        }
+      },
+      "eop_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+      "contact_count": 12471,
+      "satellite_count": 84,
+      "site_count": 12,
+      "episode_count": 1751,
+      "multi_site_episode_count": 1573,
+      "actual_overlap_nonclique_episode_count": 200,
+      "same_episode_nonoverlapping_pair_count": 389,
+      "same_episode_pairs_compatible_at_sat150": 0,
+      "same_episode_nonoverlap_gap_quantiles_seconds": {
+        "0": "0.017163",
+        "0.25": "12.128148",
+        "0.5": "26.807260",
+        "0.75": "48.304697",
+        "0.9": "70.091278",
+        "0.99": "121.352291",
+        "1": "136.976230"
+      },
+      "max_same_episode_nonoverlap_pair": {
+        "satellite_id": "S-P04-S02",
+        "earlier_contact_id": "CP-AU-r001:S-P04-S02:GS07:p0008",
+        "later_contact_id": "CP-AU-r001:S-P04-S02:GS06:p0006",
+        "earlier_site_id": "GS07",
+        "later_site_id": "GS06",
+        "earlier_end_tick": 122030186178,
+        "later_start_tick": 122167162408,
+        "gap_tick": 136976230,
+        "gap_seconds": "136.976230"
+      },
+      "multi_site_episode_span_quantiles_seconds": {
+        "0": "279.171521",
+        "0.25": "529.051504",
+        "0.5": "688.072897",
+        "0.75": "799.383312",
+        "0.9": "844.212719",
+        "0.99": "854.041827",
+        "1": "855.028894"
+      },
+      "max_multi_site_episode": {
+        "satellite_id": "S-P02-S12",
+        "start_tick": 73103937305,
+        "end_tick": 73958966199,
+        "span_tick": 855028894,
+        "span_seconds": "855.028894",
+        "contact_count": 12,
+        "site_count": 12,
+        "actual_overlap_clique": true,
+        "contact_ids": [
+          "CP-AU-r001:S-P02-S12:GS01:p0002",
+          "CP-AU-r001:S-P02-S12:GS02:p0003",
+          "CP-AU-r001:S-P02-S12:GS07:p0003",
+          "CP-AU-r001:S-P02-S12:GS08:p0003",
+          "CP-AU-r001:S-P02-S12:GS03:p0004",
+          "CP-AU-r001:S-P02-S12:GS09:p0003",
+          "CP-AU-r001:S-P02-S12:GS04:p0004",
+          "CP-AU-r001:S-P02-S12:GS10:p0005",
+          "CP-AU-r001:S-P02-S12:GS05:p0004",
+          "CP-AU-r001:S-P02-S12:GS11:p0004",
+          "CP-AU-r001:S-P02-S12:GS12:p0004",
+          "CP-AU-r001:S-P02-S12:GS06:p0004"
+        ]
+      },
+      "inter_episode_gap_quantiles_seconds": {
+        "0": "5391.945931",
+        "0.25": "5444.610031",
+        "0.5": "5611.856683",
+        "0.75": "12821.285600",
+        "0.9": "39833.154701",
+        "0.99": "45879.509570",
+        "1": "45881.666135"
+      },
+      "minimum_cross_site_gap_above_sat150": {
+        "satellite_id": "S-P03-S01",
+        "earlier_contact_id": "CP-AU-r001:S-P03-S01:GS06:p0003",
+        "later_contact_id": "CP-AU-r001:S-P03-S01:GS07:p0004",
+        "earlier_site_id": "GS06",
+        "later_site_id": "GS07",
+        "earlier_end_tick": 26564339965,
+        "later_start_tick": 31956285896,
+        "gap_tick": 5391945931,
+        "gap_seconds": "5391.945931"
+      },
+      "minimum_same_site_gap_above_sat150": {
+        "satellite_id": "S-P06-S02",
+        "earlier_contact_id": "CP-AU-r001:S-P06-S02:GS12:p0005",
+        "later_contact_id": "CP-AU-r001:S-P06-S02:GS12:p0006",
+        "earlier_site_id": "GS12",
+        "later_site_id": "GS12",
+        "earlier_end_tick": 114687624663,
+        "later_start_tick": 120507622693,
+        "gap_tick": 5819998030,
+        "gap_seconds": "5819.998030"
+      },
+      "independent_satellite_edge_threshold_by_ground_gap": {
+        "340": {
+          "minimum_pair": {
+            "satellite_id": "S-P03-S01",
+            "earlier_contact_id": "CP-AU-r001:S-P03-S01:GS06:p0003",
+            "later_contact_id": "CP-AU-r001:S-P03-S01:GS07:p0004",
+            "earlier_site_id": "GS06",
+            "later_site_id": "GS07",
+            "earlier_end_tick": 26564339965,
+            "later_start_tick": 31956285896,
+            "gap_tick": 5391945931,
+            "gap_seconds": "5391.945931"
+          },
+          "candidate_pair_count": 869082,
+          "new_edge_counts_by_satellite_seconds": {
+            "600": 0,
+            "900": 0,
+            "1200": 0,
+            "1800": 0,
+            "2400": 0,
+            "3600": 0,
+            "5400": 167,
+            "6000": 62575,
+            "7200": 73568
+          },
+          "strict_first_new_threshold_tick": 5391945932,
+          "strict_first_new_threshold_seconds": "5391.945932"
+        },
+        "1200": {
+          "minimum_pair": {
+            "satellite_id": "S-P03-S01",
+            "earlier_contact_id": "CP-AU-r001:S-P03-S01:GS06:p0003",
+            "later_contact_id": "CP-AU-r001:S-P03-S01:GS07:p0004",
+            "earlier_site_id": "GS06",
+            "later_site_id": "GS07",
+            "earlier_end_tick": 26564339965,
+            "later_start_tick": 31956285896,
+            "gap_tick": 5391945931,
+            "gap_seconds": "5391.945931"
+          },
+          "candidate_pair_count": 869082,
+          "new_edge_counts_by_satellite_seconds": {
+            "600": 0,
+            "900": 0,
+            "1200": 0,
+            "1800": 0,
+            "2400": 0,
+            "3600": 0,
+            "5400": 167,
+            "6000": 62575,
+            "7200": 73568
+          },
+          "strict_first_new_threshold_tick": 5391945932,
+          "strict_first_new_threshold_seconds": "5391.945932"
+        }
+      },
+      "unadopted_latitude_group_candidate_appendix": {
+        "adopted": false,
+        "groups": {
+          "latitude28": {
+            "site_ids": [
+              "GS01",
+              "GS02",
+              "GS03",
+              "GS04",
+              "GS05",
+              "GS06"
+            ],
+            "vertices": 5901,
+            "new_ground_union_edges_340_to_1200": 18389
+          },
+          "latitude32": {
+            "site_ids": [
+              "GS07",
+              "GS08",
+              "GS09",
+              "GS10",
+              "GS11",
+              "GS12"
+            ],
+            "vertices": 6570,
+            "new_ground_union_edges_340_to_1200": 26324
+          }
+        },
+        "per_site": {
+          "GS01": {
+            "vertices": 986,
+            "new_ground_union_edges_340_to_1200": 3080
+          },
+          "GS02": {
+            "vertices": 979,
+            "new_ground_union_edges_340_to_1200": 3040
+          },
+          "GS03": {
+            "vertices": 986,
+            "new_ground_union_edges_340_to_1200": 3080
+          },
+          "GS04": {
+            "vertices": 983,
+            "new_ground_union_edges_340_to_1200": 3063
+          },
+          "GS05": {
+            "vertices": 984,
+            "new_ground_union_edges_340_to_1200": 3068
+          },
+          "GS06": {
+            "vertices": 983,
+            "new_ground_union_edges_340_to_1200": 3058
+          },
+          "GS07": {
+            "vertices": 1098,
+            "new_ground_union_edges_340_to_1200": 4403
+          },
+          "GS08": {
+            "vertices": 1091,
+            "new_ground_union_edges_340_to_1200": 4360
+          },
+          "GS09": {
+            "vertices": 1095,
+            "new_ground_union_edges_340_to_1200": 4393
+          },
+          "GS10": {
+            "vertices": 1094,
+            "new_ground_union_edges_340_to_1200": 4382
+          },
+          "GS11": {
+            "vertices": 1095,
+            "new_ground_union_edges_340_to_1200": 4388
+          },
+          "GS12": {
+            "vertices": 1097,
+            "new_ground_union_edges_340_to_1200": 4398
+          }
+        }
+      }
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "epoch_utc": "2026-11-08T00:00:00Z",
+      "input_files": {
+        "contacts.csv": {
+          "relative_path": "raw/CP-AP-r001/contacts.csv",
+          "sha256": "d0f15277cedb633ceeab5c0cef5cbeb1fd7768f949617f9999dd066e009a56be"
+        },
+        "manifest.json": {
+          "relative_path": "raw/CP-AP-r001/manifest.json",
+          "sha256": "4d739ce725208bb9814c568d70307d3530f42b962e234067a94d4f78e7cf231c"
+        },
+        "actual_geometry.json": {
+          "relative_path": "raw/CP-AP-r001/actual_geometry.json",
+          "sha256": "5c9b5efbbeb81d33b24c3eac9b9aa3c7595f54d4306d1b9bffb8aea8daa5c110"
+        }
+      },
+      "eop_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+      "contact_count": 12465,
+      "satellite_count": 84,
+      "site_count": 12,
+      "episode_count": 1749,
+      "multi_site_episode_count": 1573,
+      "actual_overlap_nonclique_episode_count": 198,
+      "same_episode_nonoverlapping_pair_count": 382,
+      "same_episode_pairs_compatible_at_sat150": 0,
+      "same_episode_nonoverlap_gap_quantiles_seconds": {
+        "0": "0.301772",
+        "0.25": "11.489563",
+        "0.5": "26.581445",
+        "0.75": "47.155988",
+        "0.9": "66.129696",
+        "0.99": "113.314865",
+        "1": "127.155525"
+      },
+      "max_same_episode_nonoverlap_pair": {
+        "satellite_id": "S-P04-S01",
+        "earlier_contact_id": "CP-AP-r001:S-P04-S01:GS07:p0012",
+        "later_contact_id": "CP-AP-r001:S-P04-S01:GS06:p0010",
+        "earlier_site_id": "GS07",
+        "later_site_id": "GS06",
+        "earlier_end_tick": 207279879245,
+        "later_start_tick": 207407034770,
+        "gap_tick": 127155525,
+        "gap_seconds": "127.155525"
+      },
+      "multi_site_episode_span_quantiles_seconds": {
+        "0": "276.718803",
+        "0.25": "530.183243",
+        "0.5": "687.473387",
+        "0.75": "799.071307",
+        "0.9": "844.620997",
+        "0.99": "853.888435",
+        "1": "854.970929"
+      },
+      "max_multi_site_episode": {
+        "satellite_id": "S-P03-S08",
+        "start_tick": 198114100308,
+        "end_tick": 198969071237,
+        "span_tick": 854970929,
+        "span_seconds": "854.970929",
+        "contact_count": 12,
+        "site_count": 12,
+        "actual_overlap_clique": true,
+        "contact_ids": [
+          "CP-AP-r001:S-P03-S08:GS07:p0011",
+          "CP-AP-r001:S-P03-S08:GS08:p0013",
+          "CP-AP-r001:S-P03-S08:GS09:p0012",
+          "CP-AP-r001:S-P03-S08:GS01:p0010",
+          "CP-AP-r001:S-P03-S08:GS02:p0011",
+          "CP-AP-r001:S-P03-S08:GS10:p0012",
+          "CP-AP-r001:S-P03-S08:GS03:p0011",
+          "CP-AP-r001:S-P03-S08:GS04:p0010",
+          "CP-AP-r001:S-P03-S08:GS11:p0012",
+          "CP-AP-r001:S-P03-S08:GS05:p0011",
+          "CP-AP-r001:S-P03-S08:GS12:p0013",
+          "CP-AP-r001:S-P03-S08:GS06:p0011"
+        ]
+      },
+      "inter_episode_gap_quantiles_seconds": {
+        "0": "5391.946907",
+        "0.25": "5444.758933",
+        "0.5": "5610.882342",
+        "0.75": "12821.037803",
+        "0.9": "39833.705613",
+        "0.99": "45879.498271",
+        "1": "45881.607977"
+      },
+      "minimum_cross_site_gap_above_sat150": {
+        "satellite_id": "S-P03-S01",
+        "earlier_contact_id": "CP-AP-r001:S-P03-S01:GS06:p0003",
+        "later_contact_id": "CP-AP-r001:S-P03-S01:GS07:p0004",
+        "earlier_site_id": "GS06",
+        "later_site_id": "GS07",
+        "earlier_end_tick": 26616892404,
+        "later_start_tick": 32008839311,
+        "gap_tick": 5391946907,
+        "gap_seconds": "5391.946907"
+      },
+      "minimum_same_site_gap_above_sat150": {
+        "satellite_id": "S-P06-S01",
+        "earlier_contact_id": "CP-AP-r001:S-P06-S01:GS10:p0009",
+        "later_contact_id": "CP-AP-r001:S-P06-S01:GS10:p0010",
+        "earlier_site_id": "GS10",
+        "later_site_id": "GS10",
+        "earlier_end_tick": 147124956414,
+        "later_start_tick": 152944952475,
+        "gap_tick": 5819996061,
+        "gap_seconds": "5819.996061"
+      },
+      "independent_satellite_edge_threshold_by_ground_gap": {
+        "340": {
+          "minimum_pair": {
+            "satellite_id": "S-P03-S01",
+            "earlier_contact_id": "CP-AP-r001:S-P03-S01:GS06:p0003",
+            "later_contact_id": "CP-AP-r001:S-P03-S01:GS07:p0004",
+            "earlier_site_id": "GS06",
+            "later_site_id": "GS07",
+            "earlier_end_tick": 26616892404,
+            "later_start_tick": 32008839311,
+            "gap_tick": 5391946907,
+            "gap_seconds": "5391.946907"
+          },
+          "candidate_pair_count": 868247,
+          "new_edge_counts_by_satellite_seconds": {
+            "600": 0,
+            "900": 0,
+            "1200": 0,
+            "1800": 0,
+            "2400": 0,
+            "3600": 0,
+            "5400": 167,
+            "6000": 62554,
+            "7200": 73541
+          },
+          "strict_first_new_threshold_tick": 5391946908,
+          "strict_first_new_threshold_seconds": "5391.946908"
+        },
+        "1200": {
+          "minimum_pair": {
+            "satellite_id": "S-P03-S01",
+            "earlier_contact_id": "CP-AP-r001:S-P03-S01:GS06:p0003",
+            "later_contact_id": "CP-AP-r001:S-P03-S01:GS07:p0004",
+            "earlier_site_id": "GS06",
+            "later_site_id": "GS07",
+            "earlier_end_tick": 26616892404,
+            "later_start_tick": 32008839311,
+            "gap_tick": 5391946907,
+            "gap_seconds": "5391.946907"
+          },
+          "candidate_pair_count": 868247,
+          "new_edge_counts_by_satellite_seconds": {
+            "600": 0,
+            "900": 0,
+            "1200": 0,
+            "1800": 0,
+            "2400": 0,
+            "3600": 0,
+            "5400": 167,
+            "6000": 62554,
+            "7200": 73541
+          },
+          "strict_first_new_threshold_tick": 5391946908,
+          "strict_first_new_threshold_seconds": "5391.946908"
+        }
+      },
+      "unadopted_latitude_group_candidate_appendix": {
+        "adopted": false,
+        "groups": {
+          "latitude28": {
+            "site_ids": [
+              "GS01",
+              "GS02",
+              "GS03",
+              "GS04",
+              "GS05",
+              "GS06"
+            ],
+            "vertices": 5893,
+            "new_ground_union_edges_340_to_1200": 19496
+          },
+          "latitude32": {
+            "site_ids": [
+              "GS07",
+              "GS08",
+              "GS09",
+              "GS10",
+              "GS11",
+              "GS12"
+            ],
+            "vertices": 6572,
+            "new_ground_union_edges_340_to_1200": 26575
+          }
+        },
+        "per_site": {
+          "GS01": {
+            "vertices": 981,
+            "new_ground_union_edges_340_to_1200": 3245
+          },
+          "GS02": {
+            "vertices": 983,
+            "new_ground_union_edges_340_to_1200": 3264
+          },
+          "GS03": {
+            "vertices": 978,
+            "new_ground_union_edges_340_to_1200": 3221
+          },
+          "GS04": {
+            "vertices": 988,
+            "new_ground_union_edges_340_to_1200": 3281
+          },
+          "GS05": {
+            "vertices": 980,
+            "new_ground_union_edges_340_to_1200": 3232
+          },
+          "GS06": {
+            "vertices": 983,
+            "new_ground_union_edges_340_to_1200": 3253
+          },
+          "GS07": {
+            "vertices": 1099,
+            "new_ground_union_edges_340_to_1200": 4445
+          },
+          "GS08": {
+            "vertices": 1089,
+            "new_ground_union_edges_340_to_1200": 4400
+          },
+          "GS09": {
+            "vertices": 1095,
+            "new_ground_union_edges_340_to_1200": 4427
+          },
+          "GS10": {
+            "vertices": 1095,
+            "new_ground_union_edges_340_to_1200": 4423
+          },
+          "GS11": {
+            "vertices": 1095,
+            "new_ground_union_edges_340_to_1200": 4438
+          },
+          "GS12": {
+            "vertices": 1099,
+            "new_ground_union_edges_340_to_1200": 4442
+          }
+        }
+      }
+    }
+  ],
+  "interpretation": "A roughly90-minute wait is required before independent satellite edges appear. Without a separately grounded thermal/energy/exclusive-service constraint, this is not justified as ordinary handover turnaround. Timing sensitivity evidence is not a rigorous physical error bound."
+}

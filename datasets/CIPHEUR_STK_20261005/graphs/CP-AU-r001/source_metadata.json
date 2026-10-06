@@ -1,0 +1,41 @@
+{
+  "source_id": "CP-AU-r001",
+  "source_group": "CP-SOURCE-r001",
+  "geometry_id": "A-U",
+  "replicate_id": "r001",
+  "split": "train",
+  "epoch_utc": "2026-11-08T00:00:00Z",
+  "horizon_stop_utc": "2026-11-11T00:00:00Z",
+  "raw_contacts_path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\两篇论文数据定制化构建\\CIPHEUR_STK_20261005\\raw\\CP-AU-r001\\contacts.csv",
+  "raw_contacts_sha256": "05c82e1e3056ff377d4494440d9ba0395e4f047a850183c5d00afa9ba650cd40",
+  "stk_manifest_sha256": "455383dc76d3d0ec5ddb5d7f0bd29a329b56ce184985694733b282a51a236970",
+  "eop_loaded_receipt_sha256": "d97b5573ea0e53000a6ae14a351d457cb33437149c51738b9333d23a2c45e860",
+  "eop_source_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+  "formal_fresh_eop_dataset": true,
+  "future_eop_values_are_forecasts": true,
+  "access_settings_hash": "f15eacfea5f4fdf5ab36674c369deeac90ef1324f43cba80f9c6dc879aa792d5",
+  "node_mapping_sha256": "928183d1d4480cbc6f47e7a937d199daea7c15d8134e4ec05fb6bdbed97f7cfc",
+  "weight_ticks_sha256": "ee291dda5aa921a021d4d0ceedb7191db8e887ee8d736da5d0f9526d19c1fb0b",
+  "reported_duration_difference_count": 0,
+  "reported_duration_differences": [],
+  "weight_semantics": "end_ticks - start_ticks; no rounding after reading frozen endpoints",
+  "contact_count": 12471,
+  "unique_satellites": 84,
+  "unique_antennas": 12,
+  "total_weight_ticks": 5419624541474,
+  "duration_uniqueness": {
+    "duration_classes": 12470,
+    "contacts": 12471,
+    "duplicate_duration_classes": 1,
+    "duplicate_duration_contact_occurrences": 2,
+    "duplicate_duration_node_groups": [
+      [
+        1535,
+        3173
+      ]
+    ],
+    "all_durations_unique": false,
+    "necessary_condition_result": "Repeated duration is only a necessary condition; complete base9 equality and strict decision labels still need separate checks.",
+    "scope_note": "No claim about equality for the same contact in different residual states, or about rule-grammar fit; no oracle labels were used."
+  }
+}

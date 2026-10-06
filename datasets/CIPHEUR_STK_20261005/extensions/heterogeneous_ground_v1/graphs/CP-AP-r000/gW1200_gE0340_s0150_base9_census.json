@@ -1,0 +1,20 @@
+{
+  "namespace": "exact_microtick_local_antenna_gap_base9_v1",
+  "feature_names": [
+    "weight",
+    "duration",
+    "degree",
+    "conflict_weight",
+    "max_conflict_weight",
+    "compatible_weight",
+    "station_gap",
+    "satellite_gap",
+    "remaining_count"
+  ],
+  "station_gap_semantics": "Actual root antenna gap, not a mean or hidden global scalar.",
+  "scope": "All contacts active, F=X=empty; exact mathematical microtick sums.",
+  "alias_classes": 0,
+  "aliased_occurrences": 0,
+  "classes": [],
+  "no_strict_labels_or_demanded_quotient": true
+}

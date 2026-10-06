@@ -1,0 +1,194 @@
+{
+  "status": "input_parameter_contract_passed_not_simulation_verification",
+  "plan_version": "2.0",
+  "declared_scenes": 24,
+  "declared_sources": 12,
+  "P0_scene_ids": [
+    "CP-AU-r000",
+    "CP-AP-r000",
+    "CP-AU-r001",
+    "CP-AP-r001"
+  ],
+  "station_count": 12,
+  "source_split_counts": {
+    "train": 6,
+    "validation": 2,
+    "test": 4
+  },
+  "orbit_formula_checks": [
+    {
+      "scene_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r002",
+      "source_group": "CP-SOURCE-r002",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r002",
+      "source_group": "CP-SOURCE-r002",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r003",
+      "source_group": "CP-SOURCE-r003",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r003",
+      "source_group": "CP-SOURCE-r003",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r004",
+      "source_group": "CP-SOURCE-r004",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r004",
+      "source_group": "CP-SOURCE-r004",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r005",
+      "source_group": "CP-SOURCE-r005",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r005",
+      "source_group": "CP-SOURCE-r005",
+      "split": "train",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r006",
+      "source_group": "CP-SOURCE-r006",
+      "split": "validation",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r006",
+      "source_group": "CP-SOURCE-r006",
+      "split": "validation",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r007",
+      "source_group": "CP-SOURCE-r007",
+      "split": "validation",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r007",
+      "source_group": "CP-SOURCE-r007",
+      "split": "validation",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r008",
+      "source_group": "CP-SOURCE-r008",
+      "split": "test",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r008",
+      "source_group": "CP-SOURCE-r008",
+      "split": "test",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r010",
+      "source_group": "CP-SOURCE-r010",
+      "split": "test",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r010",
+      "source_group": "CP-SOURCE-r010",
+      "split": "test",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AU-r011",
+      "source_group": "CP-SOURCE-r011",
+      "split": "test",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    },
+    {
+      "scene_id": "CP-AP-r011",
+      "source_group": "CP-SOURCE-r011",
+      "split": "test",
+      "satellites": 84,
+      "orbit_formula_pass": true
+    }
+  ],
+  "package_sha256": {
+    "CIPHEUR_STK_Priority_Plan.docx": "8743fb23aea19d539745a43d9c154aa70b24c7e45710d405bedd472dd326d3a6",
+    "CIPHEUR_parameters.json": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+    "README_zh.md": "95ce71d78412511d344c563f0eaa774f16a6588e560d790de2b5765a155ff36f"
+  },
+  "caution": "A-U/A-P companions and every gap share replicate split. These checks do not establish statistical independence or mechanism advantage."
+}

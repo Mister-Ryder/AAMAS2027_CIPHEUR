@@ -1,0 +1,33 @@
+{
+  "version": "fixed_graph_input_reproduction_v1",
+  "status": "failed",
+  "script_sha256": "fcaf2a111731616de7bc881490df88431e3d19d78330f936a718b05f926b4646",
+  "review_manifest_sha256": "9050cd991dfeed522bff66a34c2f1ac2e006cc6ad65ed2596bdd5c40418a2554",
+  "source_index_sha256": "84ef19024cb0f7af67ee226642ddcc3f8d9db1a4319b180766cd928be55bc9e7",
+  "source_splits": {
+    "CP-AP-r006": "validation",
+    "CP-AP-r008": "test",
+    "CP-AP-r009": "test",
+    "CP-AU-r006": "validation",
+    "CP-AU-r008": "test",
+    "CP-AU-r009": "test"
+  },
+  "parts": [
+    {
+      "path": "complete_graph_inputs.zip.part01",
+      "bytes": 50331648,
+      "sha256": "9e056b8707203dca1b607fe9013e7df9448deb7b09be9adb5e96ab04690336d8"
+    },
+    {
+      "path": "complete_graph_inputs.zip.part02",
+      "bytes": 8616825,
+      "sha256": "605f2509010faa1277eccc6d0ce63b91d439f51e4a6eeb31dbcf89964759a4f1"
+    }
+  ],
+  "reconstructed_archive": {
+    "bytes": 58948473,
+    "sha256": "d755572f53bc917d410e9fce9f67812ebe40c6344206eb545bc9406d52b1ac45",
+    "persistent_copy_created": false
+  },
+  "error": "ValueError: Review archive inventory differs"
+}

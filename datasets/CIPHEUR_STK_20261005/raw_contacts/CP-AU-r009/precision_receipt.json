@@ -1,0 +1,13 @@
+{
+  "raw_format": "STK Access Data double -> .17g round-trip strings; provider arrays preserved in JSONL",
+  "frozen_endpoints": "Decimal nearest microsecond, ROUND_HALF_EVEN, exactly six decimal places",
+  "reward": "end_tick - start_tick, neither provider-duration roundoff nor reassignment",
+  "tick_seconds": "0.000001",
+  "maximum_absolute_endpoint_serialization_error_seconds": "5E-7",
+  "physical_time_convergence_seconds": "0.001",
+  "accuracy_warning": "Microsecond serialization is numerical semantics, not orbital accuracy",
+  "overflow_check": {
+    "maximum_capacity_one_reward_tick_upper_bound": 3110400000000,
+    "signed_int64_safe": true
+  }
+}

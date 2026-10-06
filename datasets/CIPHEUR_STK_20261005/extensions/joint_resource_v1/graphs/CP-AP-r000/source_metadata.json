@@ -1,0 +1,46 @@
+{
+  "source_id": "CP-AP-r000",
+  "source_group": "CP-SOURCE-r000",
+  "geometry_id": "A-P",
+  "replicate_id": "r000",
+  "split": "train",
+  "epoch_utc": "2026-11-01T00:00:00Z",
+  "horizon_stop_utc": "2026-11-04T00:00:00Z",
+  "raw_contacts_path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\两篇论文数据定制化构建\\CIPHEUR_STK_20261005\\raw\\CP-AP-r000\\contacts.csv",
+  "raw_contacts_sha256": "a7b094c396d36aec53f2870431607a31a302cc350ba2b918524a30f25b0e3556",
+  "stk_manifest_sha256": "8e22edeaedbc00a13e94ce40d7a709fa9ebef5c2681b19820a73503b96f99ab9",
+  "eop_loaded_receipt_sha256": "c447b0686fccd6ccdb842d024fe1a2a896c0072bb95036dde4da04bacc7371d4",
+  "eop_source_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+  "formal_fresh_eop_dataset": true,
+  "future_eop_values_are_forecasts": true,
+  "access_settings_hash": "f15eacfea5f4fdf5ab36674c369deeac90ef1324f43cba80f9c6dc879aa792d5",
+  "node_mapping_sha256": "f4380cc08b18fd5aa3fdc66940809d526307f7d9c554c13e3b2b0169ce9b5c5a",
+  "weight_ticks_sha256": "245ff38c093a614796f3199233b3cdda75895189c4f6493d97ce2a876ab83818",
+  "reported_duration_difference_count": 0,
+  "reported_duration_differences": [],
+  "weight_semantics": "end_ticks - start_ticks; no rounding after reading frozen endpoints",
+  "contact_count": 12479,
+  "unique_satellites": 84,
+  "unique_antennas": 12,
+  "total_weight_ticks": 5423525864223,
+  "duration_uniqueness": {
+    "duration_classes": 12477,
+    "contacts": 12479,
+    "duplicate_duration_classes": 2,
+    "duplicate_duration_contact_occurrences": 4,
+    "duplicate_duration_node_groups": [
+      [
+        4206,
+        9306
+      ],
+      [
+        2656,
+        6251
+      ]
+    ],
+    "all_durations_unique": false,
+    "necessary_condition_result": "Repeated duration is only a necessary condition; complete base9 equality and strict decision labels still need separate checks.",
+    "scope_note": "No claim about equality for the same contact in different residual states, or about rule-grammar fit; no oracle labels were used."
+  },
+  "extension_version": "cipheur-joint-resource-factorial-v1"
+}

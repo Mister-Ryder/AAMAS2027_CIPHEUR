@@ -1,0 +1,526 @@
+{
+  "version": "cipheur-joint-resource-factorial-v1",
+  "opportunity_libraries": 4,
+  "graphs": [
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "A",
+      "config_id": "g0340_s0150",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 150,
+      "n": 12479,
+      "m": 80313,
+      "mean_degree": 12.871704463498677,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "G",
+      "config_id": "g1200_s0150",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 150,
+      "n": 12479,
+      "m": 126467,
+      "mean_degree": 20.268771536180783,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "S",
+      "config_id": "g0340_s0600",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 600,
+      "n": 12479,
+      "m": 80313,
+      "mean_degree": 12.871704463498677,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "J",
+      "config_id": "g1200_s0600",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 600,
+      "n": 12479,
+      "m": 126467,
+      "mean_degree": 20.268771536180783,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "A",
+      "config_id": "g0340_s0150",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 150,
+      "n": 12465,
+      "m": 80289,
+      "mean_degree": 12.88231046931408,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "G",
+      "config_id": "g1200_s0150",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 150,
+      "n": 12465,
+      "m": 126360,
+      "mean_degree": 20.27436823104693,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "S",
+      "config_id": "g0340_s0600",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 600,
+      "n": 12465,
+      "m": 80289,
+      "mean_degree": 12.88231046931408,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "J",
+      "config_id": "g1200_s0600",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 600,
+      "n": 12465,
+      "m": 126360,
+      "mean_degree": 20.27436823104693,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "A",
+      "config_id": "g0340_s0150",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 150,
+      "n": 12467,
+      "m": 84132,
+      "mean_degree": 13.496751423758724,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "G",
+      "config_id": "g1200_s0150",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 150,
+      "n": 12467,
+      "m": 128790,
+      "mean_degree": 20.66094489452154,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "S",
+      "config_id": "g0340_s0600",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 600,
+      "n": 12467,
+      "m": 84132,
+      "mean_degree": 13.496751423758724,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "J",
+      "config_id": "g1200_s0600",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 600,
+      "n": 12467,
+      "m": 128790,
+      "mean_degree": 20.66094489452154,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "A",
+      "config_id": "g0340_s0150",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 150,
+      "n": 12471,
+      "m": 84287,
+      "mean_degree": 13.517280089808356,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "G",
+      "config_id": "g1200_s0150",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 150,
+      "n": 12471,
+      "m": 129000,
+      "mean_degree": 20.687996151070482,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "S",
+      "config_id": "g0340_s0600",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 600,
+      "n": 12471,
+      "m": 84287,
+      "mean_degree": 13.517280089808356,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "J",
+      "config_id": "g1200_s0600",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 600,
+      "n": 12471,
+      "m": 129000,
+      "mean_degree": 20.687996151070482,
+      "components": 1,
+      "full_base9_alias_classes": 0,
+      "new_satellite600_near_pair_count": 0
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "n": 12479,
+      "axis_overlap": {
+        "new_ground_axis_edges": 46154,
+        "new_satellite_axis_edges": 0,
+        "axis_added_edge_intersection": 0,
+        "ground_only_new_edges": 46154,
+        "satellite_only_new_edges": 0,
+        "both_axis_new_edge_node_pairs": [],
+        "joint_new_edges": 46154,
+        "exact_union_identity": true,
+        "exact_count_inclusion_exclusion": true,
+        "edge_count_interaction_mJ_minus_mG_minus_mS_plus_mA": 0,
+        "nodes_with_both_new_ground_and_new_satellite_degree_positive": 0,
+        "sum_dG_times_dS_mixed_new_edge_wedges": 0,
+        "mixed_distinct_edge_factor_slots": 0,
+        "mixed_wedge_note": "sum(dG*dS) counts common-center G/S-typed incidence slots, not independent samples or proven optimization interactions. If an edge lies in both added sets, the same-edge slots are removed in mixed_distinct_edge_factor_slots.",
+        "node_axis_degree_csv": "node_axis_degrees.csv",
+        "interpretation": "Overlap counts a shared graph edge newly introduced by either factor; zero does not prove additive scheduling objectives or absence of joint preference effects."
+      },
+      "transitions": {
+        "A_to_G_ground": {
+          "added_edges": 46154,
+          "deleted_edges": 0,
+          "r_E": 0.5746765778890093,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 46154
+          }
+        },
+        "A_to_S_satellite": {
+          "added_edges": 0,
+          "deleted_edges": 0,
+          "r_E": 0.0,
+          "monotone": true,
+          "expected_added_resource": "satellite",
+          "added_edge_mask_histogram": {}
+        },
+        "G_to_J_satellite": {
+          "added_edges": 0,
+          "deleted_edges": 0,
+          "r_E": 0.0,
+          "monotone": true,
+          "expected_added_resource": "satellite",
+          "added_edge_mask_histogram": {}
+        },
+        "S_to_J_ground": {
+          "added_edges": 46154,
+          "deleted_edges": 0,
+          "r_E": 0.5746765778890093,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 46154
+          }
+        },
+        "A_to_J_joint": {
+          "added_edges": 46154,
+          "deleted_edges": 0,
+          "r_E": 0.5746765778890093,
+          "monotone": true,
+          "expected_added_resource": null,
+          "added_edge_mask_histogram": {
+            "9": 46154
+          }
+        }
+      }
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "n": 12465,
+      "axis_overlap": {
+        "new_ground_axis_edges": 46071,
+        "new_satellite_axis_edges": 0,
+        "axis_added_edge_intersection": 0,
+        "ground_only_new_edges": 46071,
+        "satellite_only_new_edges": 0,
+        "both_axis_new_edge_node_pairs": [],
+        "joint_new_edges": 46071,
+        "exact_union_identity": true,
+        "exact_count_inclusion_exclusion": true,
+        "edge_count_interaction_mJ_minus_mG_minus_mS_plus_mA": 0,
+        "nodes_with_both_new_ground_and_new_satellite_degree_positive": 0,
+        "sum_dG_times_dS_mixed_new_edge_wedges": 0,
+        "mixed_distinct_edge_factor_slots": 0,
+        "mixed_wedge_note": "sum(dG*dS) counts common-center G/S-typed incidence slots, not independent samples or proven optimization interactions. If an edge lies in both added sets, the same-edge slots are removed in mixed_distinct_edge_factor_slots.",
+        "node_axis_degree_csv": "node_axis_degrees.csv",
+        "interpretation": "Overlap counts a shared graph edge newly introduced by either factor; zero does not prove additive scheduling objectives or absence of joint preference effects."
+      },
+      "transitions": {
+        "A_to_G_ground": {
+          "added_edges": 46071,
+          "deleted_edges": 0,
+          "r_E": 0.5738145947763703,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 46071
+          }
+        },
+        "A_to_S_satellite": {
+          "added_edges": 0,
+          "deleted_edges": 0,
+          "r_E": 0.0,
+          "monotone": true,
+          "expected_added_resource": "satellite",
+          "added_edge_mask_histogram": {}
+        },
+        "G_to_J_satellite": {
+          "added_edges": 0,
+          "deleted_edges": 0,
+          "r_E": 0.0,
+          "monotone": true,
+          "expected_added_resource": "satellite",
+          "added_edge_mask_histogram": {}
+        },
+        "S_to_J_ground": {
+          "added_edges": 46071,
+          "deleted_edges": 0,
+          "r_E": 0.5738145947763703,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 46071
+          }
+        },
+        "A_to_J_joint": {
+          "added_edges": 46071,
+          "deleted_edges": 0,
+          "r_E": 0.5738145947763703,
+          "monotone": true,
+          "expected_added_resource": null,
+          "added_edge_mask_histogram": {
+            "9": 46071
+          }
+        }
+      }
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "n": 12467,
+      "axis_overlap": {
+        "new_ground_axis_edges": 44658,
+        "new_satellite_axis_edges": 0,
+        "axis_added_edge_intersection": 0,
+        "ground_only_new_edges": 44658,
+        "satellite_only_new_edges": 0,
+        "both_axis_new_edge_node_pairs": [],
+        "joint_new_edges": 44658,
+        "exact_union_identity": true,
+        "exact_count_inclusion_exclusion": true,
+        "edge_count_interaction_mJ_minus_mG_minus_mS_plus_mA": 0,
+        "nodes_with_both_new_ground_and_new_satellite_degree_positive": 0,
+        "sum_dG_times_dS_mixed_new_edge_wedges": 0,
+        "mixed_distinct_edge_factor_slots": 0,
+        "mixed_wedge_note": "sum(dG*dS) counts common-center G/S-typed incidence slots, not independent samples or proven optimization interactions. If an edge lies in both added sets, the same-edge slots are removed in mixed_distinct_edge_factor_slots.",
+        "node_axis_degree_csv": "node_axis_degrees.csv",
+        "interpretation": "Overlap counts a shared graph edge newly introduced by either factor; zero does not prove additive scheduling objectives or absence of joint preference effects."
+      },
+      "transitions": {
+        "A_to_G_ground": {
+          "added_edges": 44658,
+          "deleted_edges": 0,
+          "r_E": 0.5308087291399229,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 44658
+          }
+        },
+        "A_to_S_satellite": {
+          "added_edges": 0,
+          "deleted_edges": 0,
+          "r_E": 0.0,
+          "monotone": true,
+          "expected_added_resource": "satellite",
+          "added_edge_mask_histogram": {}
+        },
+        "G_to_J_satellite": {
+          "added_edges": 0,
+          "deleted_edges": 0,
+          "r_E": 0.0,
+          "monotone": true,
+          "expected_added_resource": "satellite",
+          "added_edge_mask_histogram": {}
+        },
+        "S_to_J_ground": {
+          "added_edges": 44658,
+          "deleted_edges": 0,
+          "r_E": 0.5308087291399229,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 44658
+          }
+        },
+        "A_to_J_joint": {
+          "added_edges": 44658,
+          "deleted_edges": 0,
+          "r_E": 0.5308087291399229,
+          "monotone": true,
+          "expected_added_resource": null,
+          "added_edge_mask_histogram": {
+            "9": 44658
+          }
+        }
+      }
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "n": 12471,
+      "axis_overlap": {
+        "new_ground_axis_edges": 44713,
+        "new_satellite_axis_edges": 0,
+        "axis_added_edge_intersection": 0,
+        "ground_only_new_edges": 44713,
+        "satellite_only_new_edges": 0,
+        "both_axis_new_edge_node_pairs": [],
+        "joint_new_edges": 44713,
+        "exact_union_identity": true,
+        "exact_count_inclusion_exclusion": true,
+        "edge_count_interaction_mJ_minus_mG_minus_mS_plus_mA": 0,
+        "nodes_with_both_new_ground_and_new_satellite_degree_positive": 0,
+        "sum_dG_times_dS_mixed_new_edge_wedges": 0,
+        "mixed_distinct_edge_factor_slots": 0,
+        "mixed_wedge_note": "sum(dG*dS) counts common-center G/S-typed incidence slots, not independent samples or proven optimization interactions. If an edge lies in both added sets, the same-edge slots are removed in mixed_distinct_edge_factor_slots.",
+        "node_axis_degree_csv": "node_axis_degrees.csv",
+        "interpretation": "Overlap counts a shared graph edge newly introduced by either factor; zero does not prove additive scheduling objectives or absence of joint preference effects."
+      },
+      "transitions": {
+        "A_to_G_ground": {
+          "added_edges": 44713,
+          "deleted_edges": 0,
+          "r_E": 0.5304851281929598,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 44713
+          }
+        },
+        "A_to_S_satellite": {
+          "added_edges": 0,
+          "deleted_edges": 0,
+          "r_E": 0.0,
+          "monotone": true,
+          "expected_added_resource": "satellite",
+          "added_edge_mask_histogram": {}
+        },
+        "G_to_J_satellite": {
+          "added_edges": 0,
+          "deleted_edges": 0,
+          "r_E": 0.0,
+          "monotone": true,
+          "expected_added_resource": "satellite",
+          "added_edge_mask_histogram": {}
+        },
+        "S_to_J_ground": {
+          "added_edges": 44713,
+          "deleted_edges": 0,
+          "r_E": 0.5304851281929598,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 44713
+          }
+        },
+        "A_to_J_joint": {
+          "added_edges": 44713,
+          "deleted_edges": 0,
+          "r_E": 0.5304851281929598,
+          "monotone": true,
+          "expected_added_resource": null,
+          "added_edge_mask_histogram": {
+            "9": 44713
+          }
+        }
+      }
+    }
+  ],
+  "new_satellite600_near_pair_count": 0,
+  "full_graph_integer_base9_census": {
+    "namespace": "exact_microtick_base9_v1",
+    "occurrences": 199528,
+    "unique_vectors": 199528,
+    "alias_classes": 0,
+    "scope": "All contacts active and empty boundary only; no actual restricted-state demanded quotient or G2 conclusion."
+  },
+  "new_STK_propagation": false,
+  "parent_P0_unchanged": true
+}

@@ -1,0 +1,86 @@
+{
+  "contacts": {
+    "CP-AP-r000:S-P01-S08:GS08:p0005": {
+      "original_frozen": {
+        "source_group": "CP-SOURCE-r000",
+        "geometry_id": "A-P",
+        "replicate_id": "r000",
+        "epoch_utc": "2026-11-01T00:00:00Z",
+        "contact_id": "CP-AP-r000:S-P01-S08:GS08:p0005",
+        "pass_id": "CP-AP-r000:S-P01-S08:GS08:p0005",
+        "satellite_id": "S-P01-S08",
+        "site_id": "GS08",
+        "antenna_id": "GS08-A1",
+        "start_utc": "2026-11-01T23:11:30.084056Z",
+        "end_utc": "2026-11-01T23:17:15.639505Z",
+        "start_seconds": "83490.084056",
+        "end_seconds": "83835.639505",
+        "duration_seconds": "345.555449",
+        "start_tick": "83490084056",
+        "end_tick": "83835639505",
+        "duration_tick": "345555449",
+        "crosses_horizon": "False",
+        "scope": "complete_horizon",
+        "access_settings_hash": "f15eacfea5f4fdf5ab36674c369deeac90ef1324f43cba80f9c6dc879aa792d5"
+      },
+      "raw_refined_start_seconds": "83490.083998603994",
+      "raw_refined_end_seconds": "83835.639712007003",
+      "refined_start_tick": 83490083999,
+      "refined_end_tick": 83835639712,
+      "start_difference_from_frozen_seconds": "-0.000057396006",
+      "end_difference_from_frozen_seconds": "0.000207007003",
+      "actual_settings": {
+        "MaxTimeStep": 15.0,
+        "TimeConvergence": 0.0001,
+        "UsePreciseEventTimes": true,
+        "UseFixedTimeStep": false,
+        "EnableLightTimeDelay": false
+      }
+    },
+    "CP-AP-r000:S-P01-S06:GS08:p0005": {
+      "original_frozen": {
+        "source_group": "CP-SOURCE-r000",
+        "geometry_id": "A-P",
+        "replicate_id": "r000",
+        "epoch_utc": "2026-11-01T00:00:00Z",
+        "contact_id": "CP-AP-r000:S-P01-S06:GS08:p0005",
+        "pass_id": "CP-AP-r000:S-P01-S06:GS08:p0005",
+        "satellite_id": "S-P01-S06",
+        "site_id": "GS08",
+        "antenna_id": "GS08-A1",
+        "start_utc": "2026-11-01T23:28:35.641502Z",
+        "end_utc": "2026-11-01T23:35:36.812761Z",
+        "start_seconds": "84515.641502",
+        "end_seconds": "84936.812761",
+        "duration_seconds": "421.171259",
+        "start_tick": "84515641502",
+        "end_tick": "84936812761",
+        "duration_tick": "421171259",
+        "crosses_horizon": "False",
+        "scope": "complete_horizon",
+        "access_settings_hash": "f15eacfea5f4fdf5ab36674c369deeac90ef1324f43cba80f9c6dc879aa792d5"
+      },
+      "raw_refined_start_seconds": "84515.641501578997",
+      "raw_refined_end_seconds": "84936.812697410001",
+      "refined_start_tick": 84515641502,
+      "refined_end_tick": 84936812697,
+      "start_difference_from_frozen_seconds": "-4.21003E-7",
+      "end_difference_from_frozen_seconds": "-0.000063589999",
+      "actual_settings": {
+        "MaxTimeStep": 15.0,
+        "TimeConvergence": 0.0001,
+        "UsePreciseEventTimes": true,
+        "UseFixedTimeStep": false,
+        "EnableLightTimeDelay": false
+      }
+    }
+  },
+  "original_frozen_margin_seconds": "0.001997",
+  "refined_raw_margin_seconds": "0.001789571994",
+  "refined_tick_margin": 1790,
+  "original_ground_conflict": false,
+  "refined_raw_ground_conflict": false,
+  "refined_tick_ground_conflict": false,
+  "edge_classification_stable": true,
+  "precision_note": "The tighter run is a numerical sensitivity check, not a rigorous physical timing error bound; original data/graph remain frozen."
+}

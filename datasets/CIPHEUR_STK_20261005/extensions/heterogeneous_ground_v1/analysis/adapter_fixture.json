@@ -1,0 +1,57 @@
+{
+  "scope": "one fixed original first-anchor 16-node patch; no solver/labels/model calls",
+  "source": "CP-AU-r000",
+  "query_id": "CP-AU-r000:q000:d08",
+  "patch_nodes": 16,
+  "original_manifest_sha256": "db42d8ce0577ee430cc6293d85ce187d39e5d4bfbaaa2a54d1a4c5a2a1ad1142",
+  "numeric_namespace": "heterogeneous_station_local_base9_v1",
+  "all_passed": true,
+  "checks": [
+    {
+      "config": "A",
+      "complete_base9_matches_recorded_phi": true,
+      "nodes": 16
+    },
+    {
+      "config": "W",
+      "complete_base9_matches_recorded_phi": true,
+      "nodes": 16
+    },
+    {
+      "config": "E",
+      "complete_base9_matches_recorded_phi": true,
+      "nodes": 16
+    },
+    {
+      "config": "J",
+      "complete_base9_matches_recorded_phi": true,
+      "nodes": 16
+    },
+    {
+      "config": "A",
+      "uniform_old_base9_and_frozen_scores_exactly_equal": true
+    },
+    {
+      "config": "J",
+      "uniform_old_base9_and_frozen_scores_exactly_equal": true
+    },
+    {
+      "rule": "weight",
+      "station_local_extra_reads": 0,
+      "lazy_cost_scope_correct": true
+    },
+    {
+      "rule": "station_gap",
+      "station_local_extra_reads": 2,
+      "lazy_cost_scope_correct": true
+    }
+  ],
+  "production_script_sha256": "8563b0bce0345332f4b028714a3dab2d697eaa03bf80a6591254942da141be57",
+  "fixture_script_sha256": "93810f529d8eb94d0b3a7f4f40be7a3bc06bb895fc66834bacef37f350ebb5d2",
+  "graph_npz_sha256": {
+    "A": "5ae4eba4aa84d82660523a854d277ffb9e2f9870dba85254d2978023468b3396",
+    "W": "a8e8ca205a57b96db614172801e99291b16a073ac97f719f1bfa9c2b16970b2e",
+    "E": "b90888b90287f612b324dd536a318d01f356dea2120a6fc71f9b9f44c2790f90",
+    "J": "c1273c84ccfa5ab9535d370856b5797e74d144a12ed7c051e3d67267d2325ec2"
+  }
+}

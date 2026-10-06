@@ -1,0 +1,42 @@
+{
+  "dependencies": [
+    {
+      "original_path": "C:\\Program Files\\AGI\\STK 11\\STKData\\CentralBodies\\Earth\\Earth.cb",
+      "saved_path": "environment_dependencies\\Earth.cb",
+      "size_bytes": 4340,
+      "sha256": "426b58cb27a8aca68e74d5957fad2cc666bce27f6b5a0820b6dd942667687d25"
+    },
+    {
+      "original_path": "C:\\Program Files\\AGI\\STK 11\\STKData\\CentralBodies\\Earth\\EarthAttitude2000.rot",
+      "saved_path": "environment_dependencies\\EarthAttitude2000.rot",
+      "size_bytes": 904,
+      "sha256": "c13ce562565914b286befdb1ef6f11647979a1a302a625360e09a0dc8caa096c"
+    },
+    {
+      "original_path": "C:\\Program Files\\AGI\\STK 11\\STKData\\CentralBodies\\Earth\\EGM2008.grv",
+      "saved_path": "environment_dependencies\\EGM2008.grv",
+      "size_bytes": 374426,
+      "sha256": "4000eec11d44abe4e60746fc60903e1fd4b341f40f37971aac66e79c0e882a0e"
+    }
+  ],
+  "official_local_help": [
+    {
+      "official_local_help": "C:\\Program Files\\AGI\\STK 11\\Help\\Subsystems\\connectCmds\\Content\\cmd_Access.htm",
+      "sha256": "4a6d38e8326acd956a146517b24596c80e5917f59fe9a80e77c1995c44771e19"
+    },
+    {
+      "official_local_help": "C:\\Program Files\\AGI\\STK 11\\Help\\Subsystems\\connectCmds\\Content\\cmd_AccessConfig.htm",
+      "sha256": "85de3350c9f080c8096b126f62d3024bd7808afd8e244773df56fe2255a910a4"
+    },
+    {
+      "official_local_help": "C:\\Program Files\\AGI\\STK 11\\Help\\Subsystems\\connectCmds\\Content\\cmd_SetStateClassical.htm",
+      "sha256": "a21fa2c86b1247be1ab95dbfa582e4b285f631edd6409bc88736c9b85cfbc6f0"
+    },
+    {
+      "official_local_help": "C:\\Program Files\\AGI\\STK 11\\Help\\Subsystems\\connectCmds\\Content\\cmd_PositionFacilityPlaceTargetAreaTarget.htm",
+      "sha256": "20d8935d8d37985ee2339a3d510e143d4761e3a855a8b9eed8e573233048ec51"
+    }
+  ],
+  "earth_shape_note": "Earth.cb defines WGS84 ellipsoid, while its gravity model is EGM2008; these are different settings.",
+  "scope": "Ideal geometric access, no terrain mask, no RF/weather/illumination/request constraints."
+}

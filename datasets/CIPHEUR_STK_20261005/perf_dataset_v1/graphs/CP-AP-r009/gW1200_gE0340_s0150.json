@@ -1,0 +1,105 @@
+{
+  "version": "cipheur-heldout-perf-input-graphs-v1",
+  "source_id": "CP-AP-r009",
+  "source_group": "CP-SOURCE-r009",
+  "split": "test",
+  "config_id": "gW1200_gE0340_s0150",
+  "family": "heterogeneous",
+  "factorial_aliases": [
+    "W"
+  ],
+  "station_gap_mode": "per_antenna",
+  "station_gap_by_antenna_seconds": {
+    "GS01-A1": 1200,
+    "GS02-A1": 1200,
+    "GS03-A1": 1200,
+    "GS04-A1": 340,
+    "GS05-A1": 340,
+    "GS06-A1": 340,
+    "GS07-A1": 1200,
+    "GS08-A1": 1200,
+    "GS09-A1": 1200,
+    "GS10-A1": 340,
+    "GS11-A1": 340,
+    "GS12-A1": 340
+  },
+  "antenna_group": {
+    "GS01-A1": "west",
+    "GS02-A1": "west",
+    "GS03-A1": "west",
+    "GS04-A1": "east",
+    "GS05-A1": "east",
+    "GS06-A1": "east",
+    "GS07-A1": "west",
+    "GS08-A1": "west",
+    "GS09-A1": "west",
+    "GS10-A1": "east",
+    "GS11-A1": "east",
+    "GS12-A1": "east"
+  },
+  "west_gap_seconds": 1200,
+  "east_gap_seconds": 340,
+  "satellite_gap_seconds": 150,
+  "node_mapping_sha256": "7ce4ff2c48d8a2a0d0e2f0ada1e4aa3a54d410fc17d468e5d7137b7901ee9609",
+  "weight_ticks_sha256": "86bb57cd92c2653e2587375078cc22f11bb61230421de7c601f006c39b78a8f4",
+  "raw_contacts_sha256": "d35fae3e35d8a410ef980884a9b86d73175a4939b18c8f79a6a9f7b62ece6039",
+  "raw_manifest_sha256": "4d228cd9cb64655d6649578c09d8e5d28cc8dffdd884fc088fe9eecac391c828",
+  "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+  "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+  "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+  "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+  "edge_arrays_sha256": "715bd472cd6cfb53fe12a77878456366966b85a10b346fccd432708864b41658",
+  "npz_sha256": "c355c24ac80c30c9ef566dac1cd9c5bb5b3f6f454e1f3c12313d87ea85c78324",
+  "edge_mask": {
+    "ground": 1,
+    "satellite": 2,
+    "overlap": 4,
+    "gap_only": 8
+  },
+  "stats": {
+    "n": 12474,
+    "m": 103412,
+    "near_boundary_diagnostics": {
+      "ground": {
+        "resource_field": "antenna_id",
+        "gap_mode": "per_antenna",
+        "gap_by_antenna_ticks": {
+          "GS01-A1": 1200000000,
+          "GS02-A1": 1200000000,
+          "GS03-A1": 1200000000,
+          "GS04-A1": 340000000,
+          "GS05-A1": 340000000,
+          "GS06-A1": 340000000,
+          "GS07-A1": 1200000000,
+          "GS08-A1": 1200000000,
+          "GS09-A1": 1200000000,
+          "GS10-A1": 340000000,
+          "GS11-A1": 340000000,
+          "GS12-A1": 340000000
+        },
+        "near_boundary_radius_ticks": 2000,
+        "near_boundary_pair_count": 0,
+        "near_conflicting_pairs": 0,
+        "near_compatible_pairs": 0,
+        "closest_pair": {
+          "absolute_margin_ticks": 27399,
+          "signed_margin_ticks": 27399,
+          "earlier_contact": "CP-AP-r009:S-P05-S11:GS08:p0001",
+          "later_contact": "CP-AP-r009:S-P03-S11:GS08:p0003",
+          "resource_id": "GS08-A1",
+          "resource_gap_ticks": 1200000000
+        },
+        "examples": [],
+        "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+      }
+    }
+  },
+  "input_integrity_checks": {
+    "sorted_unique_nonself_edges": true,
+    "csr_degree_sum_equals_2m": true,
+    "all_edges_match_actual_resource_predicate": true,
+    "edge_reason_masks_match_predicate": true,
+    "frozen_duration_equals_endpoint_difference": true
+  },
+  "optimization_labels_or_scores_executed": false
+}

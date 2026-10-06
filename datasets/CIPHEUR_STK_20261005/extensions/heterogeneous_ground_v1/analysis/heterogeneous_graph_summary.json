@@ -1,0 +1,480 @@
+{
+  "version": "cipheur-heterogeneous-ground-factorial-v1",
+  "opportunity_libraries": 4,
+  "graph_count": 16,
+  "graphs": [
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "A",
+      "config_id": "gW0340_gE0340_s0150",
+      "n": 12479,
+      "m": 80313,
+      "mean_degree": 12.871704463498677,
+      "new_west_ground_edges": 23036,
+      "new_east_ground_edges": 23118,
+      "cross_group_same_satellite_edges": 24444,
+      "cross_links_both_endpoints_exposed": 24444
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "W",
+      "config_id": "gW1200_gE0340_s0150",
+      "n": 12479,
+      "m": 103349,
+      "mean_degree": 16.56366696049363,
+      "new_west_ground_edges": 23036,
+      "new_east_ground_edges": 23118,
+      "cross_group_same_satellite_edges": 24444,
+      "cross_links_both_endpoints_exposed": 24444
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "E",
+      "config_id": "gW0340_gE1200_s0150",
+      "n": 12479,
+      "m": 103431,
+      "mean_degree": 16.576809039185832,
+      "new_west_ground_edges": 23036,
+      "new_east_ground_edges": 23118,
+      "cross_group_same_satellite_edges": 24444,
+      "cross_links_both_endpoints_exposed": 24444
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "J",
+      "config_id": "gW1200_gE1200_s0150",
+      "n": 12479,
+      "m": 126467,
+      "mean_degree": 20.268771536180783,
+      "new_west_ground_edges": 23036,
+      "new_east_ground_edges": 23118,
+      "cross_group_same_satellite_edges": 24444,
+      "cross_links_both_endpoints_exposed": 24444
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "A",
+      "config_id": "gW0340_gE0340_s0150",
+      "n": 12465,
+      "m": 80289,
+      "mean_degree": 12.88231046931408,
+      "new_west_ground_edges": 23002,
+      "new_east_ground_edges": 23069,
+      "cross_group_same_satellite_edges": 24473,
+      "cross_links_both_endpoints_exposed": 24473
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "W",
+      "config_id": "gW1200_gE0340_s0150",
+      "n": 12465,
+      "m": 103291,
+      "mean_degree": 16.572964300040113,
+      "new_west_ground_edges": 23002,
+      "new_east_ground_edges": 23069,
+      "cross_group_same_satellite_edges": 24473,
+      "cross_links_both_endpoints_exposed": 24473
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "E",
+      "config_id": "gW0340_gE1200_s0150",
+      "n": 12465,
+      "m": 103358,
+      "mean_degree": 16.583714400320897,
+      "new_west_ground_edges": 23002,
+      "new_east_ground_edges": 23069,
+      "cross_group_same_satellite_edges": 24473,
+      "cross_links_both_endpoints_exposed": 24473
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "J",
+      "config_id": "gW1200_gE1200_s0150",
+      "n": 12465,
+      "m": 126360,
+      "mean_degree": 20.27436823104693,
+      "new_west_ground_edges": 23002,
+      "new_east_ground_edges": 23069,
+      "cross_group_same_satellite_edges": 24473,
+      "cross_links_both_endpoints_exposed": 24473
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "A",
+      "config_id": "gW0340_gE0340_s0150",
+      "n": 12467,
+      "m": 84132,
+      "mean_degree": 13.496751423758724,
+      "new_west_ground_edges": 22301,
+      "new_east_ground_edges": 22357,
+      "cross_group_same_satellite_edges": 24390,
+      "cross_links_both_endpoints_exposed": 24390
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "W",
+      "config_id": "gW1200_gE0340_s0150",
+      "n": 12467,
+      "m": 106433,
+      "mean_degree": 17.074356300633674,
+      "new_west_ground_edges": 22301,
+      "new_east_ground_edges": 22357,
+      "cross_group_same_satellite_edges": 24390,
+      "cross_links_both_endpoints_exposed": 24390
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "E",
+      "config_id": "gW0340_gE1200_s0150",
+      "n": 12467,
+      "m": 106489,
+      "mean_degree": 17.083340017646588,
+      "new_west_ground_edges": 22301,
+      "new_east_ground_edges": 22357,
+      "cross_group_same_satellite_edges": 24390,
+      "cross_links_both_endpoints_exposed": 24390
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "source_group": "CP-SOURCE-r000",
+      "factorial_id": "J",
+      "config_id": "gW1200_gE1200_s0150",
+      "n": 12467,
+      "m": 128790,
+      "mean_degree": 20.66094489452154,
+      "new_west_ground_edges": 22301,
+      "new_east_ground_edges": 22357,
+      "cross_group_same_satellite_edges": 24390,
+      "cross_links_both_endpoints_exposed": 24390
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "A",
+      "config_id": "gW0340_gE0340_s0150",
+      "n": 12471,
+      "m": 84287,
+      "mean_degree": 13.517280089808356,
+      "new_west_ground_edges": 22356,
+      "new_east_ground_edges": 22357,
+      "cross_group_same_satellite_edges": 24494,
+      "cross_links_both_endpoints_exposed": 24494
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "W",
+      "config_id": "gW1200_gE0340_s0150",
+      "n": 12471,
+      "m": 106643,
+      "mean_degree": 17.102557934407827,
+      "new_west_ground_edges": 22356,
+      "new_east_ground_edges": 22357,
+      "cross_group_same_satellite_edges": 24494,
+      "cross_links_both_endpoints_exposed": 24494
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "E",
+      "config_id": "gW0340_gE1200_s0150",
+      "n": 12471,
+      "m": 106644,
+      "mean_degree": 17.10271830647101,
+      "new_west_ground_edges": 22356,
+      "new_east_ground_edges": 22357,
+      "cross_group_same_satellite_edges": 24494,
+      "cross_links_both_endpoints_exposed": 24494
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "source_group": "CP-SOURCE-r001",
+      "factorial_id": "J",
+      "config_id": "gW1200_gE1200_s0150",
+      "n": 12471,
+      "m": 129000,
+      "mean_degree": 20.687996151070482,
+      "new_west_ground_edges": 22356,
+      "new_east_ground_edges": 22357,
+      "cross_group_same_satellite_edges": 24494,
+      "cross_links_both_endpoints_exposed": 24494
+    }
+  ],
+  "sources": [
+    {
+      "version": "cipheur-heterogeneous-ground-factorial-v1",
+      "source_id": "CP-AP-r000",
+      "transitions": {
+        "A_to_W": {
+          "added_edges": 23036,
+          "deleted_edges": 0,
+          "r_E": 0.2868277862861554,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 23036
+          }
+        },
+        "A_to_E": {
+          "added_edges": 23118,
+          "deleted_edges": 0,
+          "r_E": 0.2878487916028538,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 23118
+          }
+        },
+        "W_to_J": {
+          "added_edges": 23118,
+          "deleted_edges": 0,
+          "r_E": 0.22368866655700587,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 23118
+          }
+        },
+        "E_to_J": {
+          "added_edges": 23036,
+          "deleted_edges": 0,
+          "r_E": 0.222718527327397,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 23036
+          }
+        }
+      },
+      "new_west_ground_edges": 23036,
+      "new_east_ground_edges": 23118,
+      "added_axis_edge_intersection": 0,
+      "same_node_mixed_new_edge_wedges": 0,
+      "mixed_wedge_note": "Zero follows from disjoint antenna groups; it is not an optimization interaction test.",
+      "cross_group_same_satellite_edges": 24444,
+      "cross_group_satellite_links_with_both_endpoints_exposed_to_own_new_ground_edges": 24444,
+      "coupling_note": "Input coupling exposure only, not certificates, independent samples, or demonstrated objective interaction.",
+      "full_active_local_base9_remote_factor_equality": {
+        "west_A_equals_E": true,
+        "west_W_equals_J": true,
+        "east_A_equals_W": true,
+        "east_E_equals_J": true
+      },
+      "edge_union_identity": true,
+      "parent_P0_unchanged": true,
+      "new_STK_or_oracle_calls": false
+    },
+    {
+      "version": "cipheur-heterogeneous-ground-factorial-v1",
+      "source_id": "CP-AP-r001",
+      "transitions": {
+        "A_to_W": {
+          "added_edges": 23002,
+          "deleted_edges": 0,
+          "r_E": 0.2864900546774776,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 23002
+          }
+        },
+        "A_to_E": {
+          "added_edges": 23069,
+          "deleted_edges": 0,
+          "r_E": 0.28732454009889274,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 23069
+          }
+        },
+        "W_to_J": {
+          "added_edges": 23069,
+          "deleted_edges": 0,
+          "r_E": 0.22333988440425595,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 23069
+          }
+        },
+        "E_to_J": {
+          "added_edges": 23002,
+          "deleted_edges": 0,
+          "r_E": 0.22254687590704156,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 23002
+          }
+        }
+      },
+      "new_west_ground_edges": 23002,
+      "new_east_ground_edges": 23069,
+      "added_axis_edge_intersection": 0,
+      "same_node_mixed_new_edge_wedges": 0,
+      "mixed_wedge_note": "Zero follows from disjoint antenna groups; it is not an optimization interaction test.",
+      "cross_group_same_satellite_edges": 24473,
+      "cross_group_satellite_links_with_both_endpoints_exposed_to_own_new_ground_edges": 24473,
+      "coupling_note": "Input coupling exposure only, not certificates, independent samples, or demonstrated objective interaction.",
+      "full_active_local_base9_remote_factor_equality": {
+        "west_A_equals_E": true,
+        "west_W_equals_J": true,
+        "east_A_equals_W": true,
+        "east_E_equals_J": true
+      },
+      "edge_union_identity": true,
+      "parent_P0_unchanged": true,
+      "new_STK_or_oracle_calls": false
+    },
+    {
+      "version": "cipheur-heterogeneous-ground-factorial-v1",
+      "source_id": "CP-AU-r000",
+      "transitions": {
+        "A_to_W": {
+          "added_edges": 22301,
+          "deleted_edges": 0,
+          "r_E": 0.26507155422431417,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 22301
+          }
+        },
+        "A_to_E": {
+          "added_edges": 22357,
+          "deleted_edges": 0,
+          "r_E": 0.26573717491560883,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 22357
+          }
+        },
+        "W_to_J": {
+          "added_edges": 22357,
+          "deleted_edges": 0,
+          "r_E": 0.21005703118393731,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 22357
+          }
+        },
+        "E_to_J": {
+          "added_edges": 22301,
+          "deleted_edges": 0,
+          "r_E": 0.20942069133901153,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 22301
+          }
+        }
+      },
+      "new_west_ground_edges": 22301,
+      "new_east_ground_edges": 22357,
+      "added_axis_edge_intersection": 0,
+      "same_node_mixed_new_edge_wedges": 0,
+      "mixed_wedge_note": "Zero follows from disjoint antenna groups; it is not an optimization interaction test.",
+      "cross_group_same_satellite_edges": 24390,
+      "cross_group_satellite_links_with_both_endpoints_exposed_to_own_new_ground_edges": 24390,
+      "coupling_note": "Input coupling exposure only, not certificates, independent samples, or demonstrated objective interaction.",
+      "full_active_local_base9_remote_factor_equality": {
+        "west_A_equals_E": true,
+        "west_W_equals_J": true,
+        "east_A_equals_W": true,
+        "east_E_equals_J": true
+      },
+      "edge_union_identity": true,
+      "parent_P0_unchanged": true,
+      "new_STK_or_oracle_calls": false
+    },
+    {
+      "version": "cipheur-heterogeneous-ground-factorial-v1",
+      "source_id": "CP-AU-r001",
+      "transitions": {
+        "A_to_W": {
+          "added_edges": 22356,
+          "deleted_edges": 0,
+          "r_E": 0.2652366319835799,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 22356
+          }
+        },
+        "A_to_E": {
+          "added_edges": 22357,
+          "deleted_edges": 0,
+          "r_E": 0.26524849620937985,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 22357
+          }
+        },
+        "W_to_J": {
+          "added_edges": 22357,
+          "deleted_edges": 0,
+          "r_E": 0.20964338962707352,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 22357
+          }
+        },
+        "E_to_J": {
+          "added_edges": 22356,
+          "deleted_edges": 0,
+          "r_E": 0.20963204680994713,
+          "monotone": true,
+          "expected_added_resource": "ground",
+          "added_edge_mask_histogram": {
+            "9": 22356
+          }
+        }
+      },
+      "new_west_ground_edges": 22356,
+      "new_east_ground_edges": 22357,
+      "added_axis_edge_intersection": 0,
+      "same_node_mixed_new_edge_wedges": 0,
+      "mixed_wedge_note": "Zero follows from disjoint antenna groups; it is not an optimization interaction test.",
+      "cross_group_same_satellite_edges": 24494,
+      "cross_group_satellite_links_with_both_endpoints_exposed_to_own_new_ground_edges": 24494,
+      "coupling_note": "Input coupling exposure only, not certificates, independent samples, or demonstrated objective interaction.",
+      "full_active_local_base9_remote_factor_equality": {
+        "west_A_equals_E": true,
+        "west_W_equals_J": true,
+        "east_A_equals_W": true,
+        "east_E_equals_J": true
+      },
+      "edge_union_identity": true,
+      "parent_P0_unchanged": true,
+      "new_STK_or_oracle_calls": false
+    }
+  ],
+  "full_active_base9_census": {
+    "namespace": "exact_microtick_local_antenna_gap_base9_v1",
+    "occurrences": 199528,
+    "distinct_vectors": 99764,
+    "alias_classes": 99764,
+    "aliased_occurrences": 199528,
+    "scope": "Full-active empty boundary, input equality only; strict demanded quotient remains the evidence group's responsibility."
+  },
+  "actual_head_requirement": "station_gap(v) reads its own antenna from the explicit mapping; do not call the unchanged global-scalar feature accessor without an extension adapter.",
+  "parent_P0_unchanged": true,
+  "new_STK_or_oracle_calls": false
+}

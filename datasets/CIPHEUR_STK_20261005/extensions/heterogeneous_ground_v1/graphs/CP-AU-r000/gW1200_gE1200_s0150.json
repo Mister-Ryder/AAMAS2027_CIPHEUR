@@ -1,0 +1,241 @@
+{
+  "version": "cipheur-heterogeneous-ground-factorial-v1",
+  "source_id": "CP-AU-r000",
+  "source_group": "CP-SOURCE-r000",
+  "split": "train",
+  "config_id": "gW1200_gE1200_s0150",
+  "factorial_id": "J",
+  "station_gap_mode": "per_antenna",
+  "station_gap_by_antenna_seconds": {
+    "GS01-A1": 1200,
+    "GS02-A1": 1200,
+    "GS03-A1": 1200,
+    "GS04-A1": 1200,
+    "GS05-A1": 1200,
+    "GS06-A1": 1200,
+    "GS07-A1": 1200,
+    "GS08-A1": 1200,
+    "GS09-A1": 1200,
+    "GS10-A1": 1200,
+    "GS11-A1": 1200,
+    "GS12-A1": 1200
+  },
+  "antenna_group": {
+    "GS01-A1": "west",
+    "GS02-A1": "west",
+    "GS03-A1": "west",
+    "GS04-A1": "east",
+    "GS05-A1": "east",
+    "GS06-A1": "east",
+    "GS07-A1": "west",
+    "GS08-A1": "west",
+    "GS09-A1": "west",
+    "GS10-A1": "east",
+    "GS11-A1": "east",
+    "GS12-A1": "east"
+  },
+  "satellite_gap_seconds": 150,
+  "node_mapping_sha256": "3f9dfbc931cfbfdfe067c6d65481324bc5a82e580bb7466e2d74de8eeba8eff5",
+  "weight_ticks_sha256": "5ea7e00f2e2caab4cd835e05e4830677dd0a9fa5b7814ff78caf1d3b94c2ad50",
+  "raw_contacts_sha256": "2c129bc59efa9cd67e5826c72a15e7c97e3c539b6c0a50b8edcadae978622f68",
+  "raw_manifest_sha256": "03522600203a34596cba5813411f8748f3a52100a9ae95151d3c7b22011fd19a",
+  "extension_parameters_sha256": "3984e4db17806e7693461cb2d0260e429060f0c2ec31eac621a2b1a292f2ff49",
+  "builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+  "parent_graph_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+  "reused_P0_uniform_graph": "g1200",
+  "parent_npz_sha256": "b49f9088feb2184acd18ce38bb4b5ea44d2e57b180bed754cee1a8149a0fe3db",
+  "edge_mask": {
+    "ground": 1,
+    "satellite": 2,
+    "overlap": 4,
+    "gap_only": 8
+  },
+  "edge_arrays_sha256": "c45219bb187386b68343932a3b6767f6d73c3fe880602baf505d837a2876876a",
+  "npz_sha256": "c1273c84ccfa5ab9535d370856b5797e74d144a12ed7c051e3d67267d2325ec2",
+  "stats": {
+    "n": 12467,
+    "m": 128790,
+    "average_degree_2m_over_n": 20.66094489452154,
+    "density": 0.001657383675158153,
+    "degree_distribution": {
+      "minimum": 5,
+      "maximum": 28,
+      "mean": 20.66094489452154,
+      "median": 21.0,
+      "quantiles": {
+        "0.05": 14.0,
+        "0.25": 18.0,
+        "0.75": 23.0,
+        "0.95": 25.0,
+        "0.99": 27.0
+      },
+      "histogram": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          47
+        ],
+        [
+          11,
+          32
+        ],
+        [
+          12,
+          209
+        ],
+        [
+          13,
+          208
+        ],
+        [
+          14,
+          335
+        ],
+        [
+          15,
+          415
+        ],
+        [
+          16,
+          524
+        ],
+        [
+          17,
+          634
+        ],
+        [
+          18,
+          718
+        ],
+        [
+          19,
+          872
+        ],
+        [
+          20,
+          981
+        ],
+        [
+          21,
+          1263
+        ],
+        [
+          22,
+          1595
+        ],
+        [
+          23,
+          2169
+        ],
+        [
+          24,
+          1265
+        ],
+        [
+          25,
+          565
+        ],
+        [
+          26,
+          441
+        ],
+        [
+          27,
+          174
+        ],
+        [
+          28,
+          2
+        ]
+      ]
+    },
+    "component_count": 1,
+    "component_sizes_descending": [
+      12467
+    ],
+    "edge_mask_counts": {
+      "ground": 77930,
+      "satellite": 50860,
+      "overlap": 65883,
+      "gap_only": 62907
+    },
+    "edge_mask_exact_histogram": {
+      "5": 15406,
+      "6": 50477,
+      "9": 62524,
+      "10": 383
+    },
+    "near_boundary_diagnostics": {
+      "ground": {
+        "resource_field": "antenna_id",
+        "gap_mode": "per_antenna",
+        "gap_by_antenna_ticks": {
+          "GS01-A1": 1200000000,
+          "GS02-A1": 1200000000,
+          "GS03-A1": 1200000000,
+          "GS04-A1": 1200000000,
+          "GS05-A1": 1200000000,
+          "GS06-A1": 1200000000,
+          "GS07-A1": 1200000000,
+          "GS08-A1": 1200000000,
+          "GS09-A1": 1200000000,
+          "GS10-A1": 1200000000,
+          "GS11-A1": 1200000000,
+          "GS12-A1": 1200000000
+        },
+        "near_boundary_radius_ticks": 2000,
+        "near_boundary_pair_count": 0,
+        "near_conflicting_pairs": 0,
+        "near_compatible_pairs": 0,
+        "closest_pair": {
+          "absolute_margin_ticks": 15390,
+          "signed_margin_ticks": 15390,
+          "earlier_contact": "CP-AU-r000:S-P05-S08:GS06:p0006",
+          "later_contact": "CP-AU-r000:S-P05-S05:GS06:p0006",
+          "resource_id": "GS06-A1",
+          "resource_gap_ticks": 1200000000
+        },
+        "examples": [],
+        "interpretation": "Numerical boundary neighborhood only. These 340/1200 thresholds inherit original P0 targeted sensitivity receipts; no new physical error bound is claimed."
+      },
+      "satellite": {
+        "resource_field": "satellite_id",
+        "gap_ticks": 150000000,
+        "near_boundary_radius_ticks": 2000,
+        "near_boundary_pair_count": 0,
+        "near_conflicting_pairs": 0,
+        "near_compatible_pairs": 0,
+        "exact_gap_equality_pairs": 0,
+        "closest_pair": {
+          "absolute_margin_ticks": 18839356,
+          "signed_margin_ticks": -18839356,
+          "earlier_contact": "CP-AU-r000:S-P07-S05:GS07:p0012",
+          "later_contact": "CP-AU-r000:S-P07-S05:GS06:p0010",
+          "resource_id": "S-P07-S05"
+        },
+        "examples": [],
+        "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+      }
+    }
+  },
+  "base9_census_file": "gW1200_gE1200_s0150_base9_census.json"
+}

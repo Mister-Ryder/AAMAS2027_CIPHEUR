@@ -12,6 +12,8 @@ Two cloud development rounds each completed all 144 assignments with feasible ou
 
 The V06/V07 material below is retained as historical evidence; its frozen-program description is not the new online optimizer's definition.
 
+The corresponding STK data-construction artifact is now included under [`datasets/CIPHEUR_STK_20261005`](datasets/CIPHEUR_STK_20261005/PUBLIC_RELEASE.md): 64 primary TRAIN/validation/TEST graph instances, 32 earlier diagnostic graphs, ten raw contact libraries, generation/build code, source receipts, hashes, and data reports. Large reproducible STK object files and failed intermediates are intentionally excluded from Git.
+
 The framework uses sound offline conditional-completion evidence to diagnose whether a graph-feature interface can express required action rankings. Concrete quotient cycles and equality joins guide typed feature–rule refinement. A frozen priority program then operates within a common feasibility-enforcing classical repair kernel; deployment requires no LLM or full-residual certification oracle.
 
 V06 delivers the runnable framework, frozen authoring studies, public-graph and scheduling evaluations, manuscript, and reproducible evidence. The paper artifact is [CIPHEUR_AAMAS2027_V06.pdf](paper/CIPHEUR_AAMAS2027_V06.pdf); the public release target is [v0.6.0](https://github.com/Mister-Ryder/AAMAS2027_CIPHEUR/releases/tag/v0.6.0). The [research report](docs/V06_FINAL_RESEARCH_REPORT.md) separates supported scientific findings from engineering history. Mature classical components and the common CHILS initialization are shared infrastructure; their gains are not attributed to LLM guidance.

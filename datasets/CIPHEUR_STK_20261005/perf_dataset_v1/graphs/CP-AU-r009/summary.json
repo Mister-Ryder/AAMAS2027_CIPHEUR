@@ -1,0 +1,905 @@
+{
+  "status": "success",
+  "version": "cipheur-heldout-perf-input-graphs-v1",
+  "source_id": "CP-AU-r009",
+  "source_metadata": {
+    "source_id": "CP-AU-r009",
+    "source_group": "CP-SOURCE-r009",
+    "geometry_id": "A-U",
+    "replicate_id": "r009",
+    "split": "test",
+    "epoch_utc": "2027-01-03T00:00:00Z",
+    "horizon_stop_utc": "2027-01-06T00:00:00Z",
+    "raw_contacts_path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\两篇论文数据定制化构建\\CIPHEUR_STK_20261005\\raw\\CP-AU-r009\\contacts.csv",
+    "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+    "stk_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+    "eop_loaded_receipt_sha256": "7ae07022655ce0adc070ebc3ce1c5fc74d98989ddbabc6c423373eb9f316ee7c",
+    "eop_source_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+    "formal_fresh_eop_dataset": true,
+    "future_eop_values_are_forecasts": true,
+    "access_settings_hash": "f15eacfea5f4fdf5ab36674c369deeac90ef1324f43cba80f9c6dc879aa792d5",
+    "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+    "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+    "reported_duration_difference_count": 0,
+    "reported_duration_differences": [],
+    "weight_semantics": "end_ticks - start_ticks; no rounding after reading frozen endpoints",
+    "contact_count": 12475,
+    "unique_satellites": 84,
+    "unique_antennas": 12,
+    "total_weight_ticks": 5420497250493
+  },
+  "graphs": [
+    {
+      "version": "cipheur-heldout-perf-input-graphs-v1",
+      "source_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "config_id": "g0340",
+      "family": "uniform",
+      "factorial_aliases": [
+        "A"
+      ],
+      "station_gap_mode": "per_antenna",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 340,
+        "GS02-A1": 340,
+        "GS03-A1": 340,
+        "GS04-A1": 340,
+        "GS05-A1": 340,
+        "GS06-A1": 340,
+        "GS07-A1": 340,
+        "GS08-A1": 340,
+        "GS09-A1": 340,
+        "GS10-A1": 340,
+        "GS11-A1": 340,
+        "GS12-A1": 340
+      },
+      "antenna_group": {
+        "GS01-A1": "west",
+        "GS02-A1": "west",
+        "GS03-A1": "west",
+        "GS04-A1": "east",
+        "GS05-A1": "east",
+        "GS06-A1": "east",
+        "GS07-A1": "west",
+        "GS08-A1": "west",
+        "GS09-A1": "west",
+        "GS10-A1": "east",
+        "GS11-A1": "east",
+        "GS12-A1": "east"
+      },
+      "west_gap_seconds": 340,
+      "east_gap_seconds": 340,
+      "satellite_gap_seconds": 150,
+      "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+      "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+      "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+      "raw_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+      "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+      "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+      "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+      "edge_arrays_sha256": "95a985e79f6fc9cc4db5f5c92f1834696fa9e0e0d789812a2fd1064fac299479",
+      "npz_sha256": "e5dc11135efc791c78655ffaaeec92501ee7234450309f5d1429957e387e23c1",
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "stats": {
+        "n": 12475,
+        "m": 84264,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_mode": "per_antenna",
+            "gap_by_antenna_ticks": {
+              "GS01-A1": 340000000,
+              "GS02-A1": 340000000,
+              "GS03-A1": 340000000,
+              "GS04-A1": 340000000,
+              "GS05-A1": 340000000,
+              "GS06-A1": 340000000,
+              "GS07-A1": 340000000,
+              "GS08-A1": 340000000,
+              "GS09-A1": 340000000,
+              "GS10-A1": 340000000,
+              "GS11-A1": 340000000,
+              "GS12-A1": 340000000
+            },
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 45860,
+              "signed_margin_ticks": -45860,
+              "earlier_contact": "CP-AU-r009:S-P03-S05:GS06:p0009",
+              "later_contact": "CP-AU-r009:S-P06-S11:GS06:p0009",
+              "resource_id": "GS06-A1",
+              "resource_gap_ticks": 340000000
+            },
+            "examples": [],
+            "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+          }
+        }
+      },
+      "input_integrity_checks": {
+        "sorted_unique_nonself_edges": true,
+        "csr_degree_sum_equals_2m": true,
+        "all_edges_match_actual_resource_predicate": true,
+        "edge_reason_masks_match_predicate": true,
+        "frozen_duration_equals_endpoint_difference": true
+      },
+      "optimization_labels_or_scores_executed": false
+    },
+    {
+      "version": "cipheur-heldout-perf-input-graphs-v1",
+      "source_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "config_id": "g0680",
+      "family": "uniform",
+      "factorial_aliases": [],
+      "station_gap_mode": "per_antenna",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 680,
+        "GS02-A1": 680,
+        "GS03-A1": 680,
+        "GS04-A1": 680,
+        "GS05-A1": 680,
+        "GS06-A1": 680,
+        "GS07-A1": 680,
+        "GS08-A1": 680,
+        "GS09-A1": 680,
+        "GS10-A1": 680,
+        "GS11-A1": 680,
+        "GS12-A1": 680
+      },
+      "antenna_group": {
+        "GS01-A1": "west",
+        "GS02-A1": "west",
+        "GS03-A1": "west",
+        "GS04-A1": "east",
+        "GS05-A1": "east",
+        "GS06-A1": "east",
+        "GS07-A1": "west",
+        "GS08-A1": "west",
+        "GS09-A1": "west",
+        "GS10-A1": "east",
+        "GS11-A1": "east",
+        "GS12-A1": "east"
+      },
+      "west_gap_seconds": 680,
+      "east_gap_seconds": 680,
+      "satellite_gap_seconds": 150,
+      "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+      "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+      "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+      "raw_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+      "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+      "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+      "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+      "edge_arrays_sha256": "335946a4daa75dada662c938cddef9605610a8e6267643af1c656a8b0a4e253e",
+      "npz_sha256": "9b4dadb83f0510a3540bc75128130bc61abacd15f61c44fbc63ffa2d4501b847",
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "stats": {
+        "n": 12475,
+        "m": 102882,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_mode": "per_antenna",
+            "gap_by_antenna_ticks": {
+              "GS01-A1": 680000000,
+              "GS02-A1": 680000000,
+              "GS03-A1": 680000000,
+              "GS04-A1": 680000000,
+              "GS05-A1": 680000000,
+              "GS06-A1": 680000000,
+              "GS07-A1": 680000000,
+              "GS08-A1": 680000000,
+              "GS09-A1": 680000000,
+              "GS10-A1": 680000000,
+              "GS11-A1": 680000000,
+              "GS12-A1": 680000000
+            },
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 14493,
+              "signed_margin_ticks": 14493,
+              "earlier_contact": "CP-AU-r009:S-P02-S08:GS06:p0012",
+              "later_contact": "CP-AU-r009:S-P02-S06:GS06:p0012",
+              "resource_id": "GS06-A1",
+              "resource_gap_ticks": 680000000
+            },
+            "examples": [],
+            "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+          }
+        }
+      },
+      "input_integrity_checks": {
+        "sorted_unique_nonself_edges": true,
+        "csr_degree_sum_equals_2m": true,
+        "all_edges_match_actual_resource_predicate": true,
+        "edge_reason_masks_match_predicate": true,
+        "frozen_duration_equals_endpoint_difference": true
+      },
+      "optimization_labels_or_scores_executed": false
+    },
+    {
+      "version": "cipheur-heldout-perf-input-graphs-v1",
+      "source_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "config_id": "g1200",
+      "family": "uniform",
+      "factorial_aliases": [
+        "J"
+      ],
+      "station_gap_mode": "per_antenna",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1200,
+        "GS02-A1": 1200,
+        "GS03-A1": 1200,
+        "GS04-A1": 1200,
+        "GS05-A1": 1200,
+        "GS06-A1": 1200,
+        "GS07-A1": 1200,
+        "GS08-A1": 1200,
+        "GS09-A1": 1200,
+        "GS10-A1": 1200,
+        "GS11-A1": 1200,
+        "GS12-A1": 1200
+      },
+      "antenna_group": {
+        "GS01-A1": "west",
+        "GS02-A1": "west",
+        "GS03-A1": "west",
+        "GS04-A1": "east",
+        "GS05-A1": "east",
+        "GS06-A1": "east",
+        "GS07-A1": "west",
+        "GS08-A1": "west",
+        "GS09-A1": "west",
+        "GS10-A1": "east",
+        "GS11-A1": "east",
+        "GS12-A1": "east"
+      },
+      "west_gap_seconds": 1200,
+      "east_gap_seconds": 1200,
+      "satellite_gap_seconds": 150,
+      "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+      "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+      "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+      "raw_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+      "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+      "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+      "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+      "edge_arrays_sha256": "14ef7d8c38e887dc8f769b88a45e89c2e24ad033baf081108efda02cc7d089fd",
+      "npz_sha256": "9ab66cd92ad86cb872015af432bb03cf04f89e354f0764c9b979932b6f8f3918",
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "stats": {
+        "n": 12475,
+        "m": 128998,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_mode": "per_antenna",
+            "gap_by_antenna_ticks": {
+              "GS01-A1": 1200000000,
+              "GS02-A1": 1200000000,
+              "GS03-A1": 1200000000,
+              "GS04-A1": 1200000000,
+              "GS05-A1": 1200000000,
+              "GS06-A1": 1200000000,
+              "GS07-A1": 1200000000,
+              "GS08-A1": 1200000000,
+              "GS09-A1": 1200000000,
+              "GS10-A1": 1200000000,
+              "GS11-A1": 1200000000,
+              "GS12-A1": 1200000000
+            },
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 1,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 1,
+            "closest_pair": {
+              "absolute_margin_ticks": 1341,
+              "signed_margin_ticks": 1341,
+              "earlier_contact": "CP-AU-r009:S-P04-S01:GS03:p0010",
+              "later_contact": "CP-AU-r009:S-P04-S10:GS03:p0010",
+              "resource_id": "GS03-A1",
+              "resource_gap_ticks": 1200000000
+            },
+            "examples": [
+              {
+                "earlier_contact": "CP-AU-r009:S-P04-S01:GS03:p0010",
+                "later_contact": "CP-AU-r009:S-P04-S10:GS03:p0010",
+                "resource_id": "GS03-A1",
+                "resource_gap_ticks": 1200000000,
+                "signed_margin_ticks": 1341,
+                "resource_conflict": false
+              }
+            ],
+            "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+          }
+        }
+      },
+      "input_integrity_checks": {
+        "sorted_unique_nonself_edges": true,
+        "csr_degree_sum_equals_2m": true,
+        "all_edges_match_actual_resource_predicate": true,
+        "edge_reason_masks_match_predicate": true,
+        "frozen_duration_equals_endpoint_difference": true
+      },
+      "optimization_labels_or_scores_executed": false
+    },
+    {
+      "version": "cipheur-heldout-perf-input-graphs-v1",
+      "source_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "config_id": "g1800",
+      "family": "uniform_stress",
+      "factorial_aliases": [],
+      "station_gap_mode": "per_antenna",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1800,
+        "GS02-A1": 1800,
+        "GS03-A1": 1800,
+        "GS04-A1": 1800,
+        "GS05-A1": 1800,
+        "GS06-A1": 1800,
+        "GS07-A1": 1800,
+        "GS08-A1": 1800,
+        "GS09-A1": 1800,
+        "GS10-A1": 1800,
+        "GS11-A1": 1800,
+        "GS12-A1": 1800
+      },
+      "antenna_group": {
+        "GS01-A1": "west",
+        "GS02-A1": "west",
+        "GS03-A1": "west",
+        "GS04-A1": "east",
+        "GS05-A1": "east",
+        "GS06-A1": "east",
+        "GS07-A1": "west",
+        "GS08-A1": "west",
+        "GS09-A1": "west",
+        "GS10-A1": "east",
+        "GS11-A1": "east",
+        "GS12-A1": "east"
+      },
+      "west_gap_seconds": 1800,
+      "east_gap_seconds": 1800,
+      "satellite_gap_seconds": 150,
+      "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+      "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+      "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+      "raw_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+      "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+      "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+      "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+      "edge_arrays_sha256": "3e1ddfb0ae9074378dbde906c24708e7a7bb0a57392eacaca77e328c88cdb1f9",
+      "npz_sha256": "67dc438132ef9570331e1cadffea41ca3805aa795964dd7c8b802498dfa9844d",
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "stats": {
+        "n": 12475,
+        "m": 159415,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_mode": "per_antenna",
+            "gap_by_antenna_ticks": {
+              "GS01-A1": 1800000000,
+              "GS02-A1": 1800000000,
+              "GS03-A1": 1800000000,
+              "GS04-A1": 1800000000,
+              "GS05-A1": 1800000000,
+              "GS06-A1": 1800000000,
+              "GS07-A1": 1800000000,
+              "GS08-A1": 1800000000,
+              "GS09-A1": 1800000000,
+              "GS10-A1": 1800000000,
+              "GS11-A1": 1800000000,
+              "GS12-A1": 1800000000
+            },
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 1,
+            "near_conflicting_pairs": 1,
+            "near_compatible_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 254,
+              "signed_margin_ticks": -254,
+              "earlier_contact": "CP-AU-r009:S-P03-S11:GS12:p0002",
+              "later_contact": "CP-AU-r009:S-P03-S07:GS12:p0002",
+              "resource_id": "GS12-A1",
+              "resource_gap_ticks": 1800000000
+            },
+            "examples": [
+              {
+                "earlier_contact": "CP-AU-r009:S-P03-S11:GS12:p0002",
+                "later_contact": "CP-AU-r009:S-P03-S07:GS12:p0002",
+                "resource_id": "GS12-A1",
+                "resource_gap_ticks": 1800000000,
+                "signed_margin_ticks": -254,
+                "resource_conflict": true
+              }
+            ],
+            "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+          }
+        }
+      },
+      "input_integrity_checks": {
+        "sorted_unique_nonself_edges": true,
+        "csr_degree_sum_equals_2m": true,
+        "all_edges_match_actual_resource_predicate": true,
+        "edge_reason_masks_match_predicate": true,
+        "frozen_duration_equals_endpoint_difference": true
+      },
+      "optimization_labels_or_scores_executed": false
+    },
+    {
+      "version": "cipheur-heldout-perf-input-graphs-v1",
+      "source_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "config_id": "gW1200_gE0340_s0150",
+      "family": "heterogeneous",
+      "factorial_aliases": [
+        "W"
+      ],
+      "station_gap_mode": "per_antenna",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1200,
+        "GS02-A1": 1200,
+        "GS03-A1": 1200,
+        "GS04-A1": 340,
+        "GS05-A1": 340,
+        "GS06-A1": 340,
+        "GS07-A1": 1200,
+        "GS08-A1": 1200,
+        "GS09-A1": 1200,
+        "GS10-A1": 340,
+        "GS11-A1": 340,
+        "GS12-A1": 340
+      },
+      "antenna_group": {
+        "GS01-A1": "west",
+        "GS02-A1": "west",
+        "GS03-A1": "west",
+        "GS04-A1": "east",
+        "GS05-A1": "east",
+        "GS06-A1": "east",
+        "GS07-A1": "west",
+        "GS08-A1": "west",
+        "GS09-A1": "west",
+        "GS10-A1": "east",
+        "GS11-A1": "east",
+        "GS12-A1": "east"
+      },
+      "west_gap_seconds": 1200,
+      "east_gap_seconds": 340,
+      "satellite_gap_seconds": 150,
+      "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+      "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+      "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+      "raw_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+      "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+      "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+      "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+      "edge_arrays_sha256": "45a6df198a756e005d8efe7c5d522562a7cd28411c53c43d3da3387d47d3b4cd",
+      "npz_sha256": "04f7868f1d2f7693d2dcb0e434ca0c3a85f9b3ee58abae57366c9d68ec7187d3",
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "stats": {
+        "n": 12475,
+        "m": 106642,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_mode": "per_antenna",
+            "gap_by_antenna_ticks": {
+              "GS01-A1": 1200000000,
+              "GS02-A1": 1200000000,
+              "GS03-A1": 1200000000,
+              "GS04-A1": 340000000,
+              "GS05-A1": 340000000,
+              "GS06-A1": 340000000,
+              "GS07-A1": 1200000000,
+              "GS08-A1": 1200000000,
+              "GS09-A1": 1200000000,
+              "GS10-A1": 340000000,
+              "GS11-A1": 340000000,
+              "GS12-A1": 340000000
+            },
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 1,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 1,
+            "closest_pair": {
+              "absolute_margin_ticks": 1341,
+              "signed_margin_ticks": 1341,
+              "earlier_contact": "CP-AU-r009:S-P04-S01:GS03:p0010",
+              "later_contact": "CP-AU-r009:S-P04-S10:GS03:p0010",
+              "resource_id": "GS03-A1",
+              "resource_gap_ticks": 1200000000
+            },
+            "examples": [
+              {
+                "earlier_contact": "CP-AU-r009:S-P04-S01:GS03:p0010",
+                "later_contact": "CP-AU-r009:S-P04-S10:GS03:p0010",
+                "resource_id": "GS03-A1",
+                "resource_gap_ticks": 1200000000,
+                "signed_margin_ticks": 1341,
+                "resource_conflict": false
+              }
+            ],
+            "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+          }
+        }
+      },
+      "input_integrity_checks": {
+        "sorted_unique_nonself_edges": true,
+        "csr_degree_sum_equals_2m": true,
+        "all_edges_match_actual_resource_predicate": true,
+        "edge_reason_masks_match_predicate": true,
+        "frozen_duration_equals_endpoint_difference": true
+      },
+      "optimization_labels_or_scores_executed": false
+    },
+    {
+      "version": "cipheur-heldout-perf-input-graphs-v1",
+      "source_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "config_id": "gW0340_gE1200_s0150",
+      "family": "heterogeneous",
+      "factorial_aliases": [
+        "E"
+      ],
+      "station_gap_mode": "per_antenna",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 340,
+        "GS02-A1": 340,
+        "GS03-A1": 340,
+        "GS04-A1": 1200,
+        "GS05-A1": 1200,
+        "GS06-A1": 1200,
+        "GS07-A1": 340,
+        "GS08-A1": 340,
+        "GS09-A1": 340,
+        "GS10-A1": 1200,
+        "GS11-A1": 1200,
+        "GS12-A1": 1200
+      },
+      "antenna_group": {
+        "GS01-A1": "west",
+        "GS02-A1": "west",
+        "GS03-A1": "west",
+        "GS04-A1": "east",
+        "GS05-A1": "east",
+        "GS06-A1": "east",
+        "GS07-A1": "west",
+        "GS08-A1": "west",
+        "GS09-A1": "west",
+        "GS10-A1": "east",
+        "GS11-A1": "east",
+        "GS12-A1": "east"
+      },
+      "west_gap_seconds": 340,
+      "east_gap_seconds": 1200,
+      "satellite_gap_seconds": 150,
+      "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+      "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+      "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+      "raw_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+      "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+      "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+      "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+      "edge_arrays_sha256": "a50be873d611b7fb2fcbdd62fa1410c1bdaa922b6a72e02ee1492faa01a1e2a4",
+      "npz_sha256": "79803adcc51907e18b716e2db157949b41ac5a623f7abc8df4d202e2ee40306f",
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "stats": {
+        "n": 12475,
+        "m": 106620,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_mode": "per_antenna",
+            "gap_by_antenna_ticks": {
+              "GS01-A1": 340000000,
+              "GS02-A1": 340000000,
+              "GS03-A1": 340000000,
+              "GS04-A1": 1200000000,
+              "GS05-A1": 1200000000,
+              "GS06-A1": 1200000000,
+              "GS07-A1": 340000000,
+              "GS08-A1": 340000000,
+              "GS09-A1": 340000000,
+              "GS10-A1": 1200000000,
+              "GS11-A1": 1200000000,
+              "GS12-A1": 1200000000
+            },
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 32938,
+              "signed_margin_ticks": 32938,
+              "earlier_contact": "CP-AU-r009:S-P03-S03:GS11:p0006",
+              "later_contact": "CP-AU-r009:S-P04-S11:GS11:p0005",
+              "resource_id": "GS11-A1",
+              "resource_gap_ticks": 1200000000
+            },
+            "examples": [],
+            "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+          }
+        }
+      },
+      "input_integrity_checks": {
+        "sorted_unique_nonself_edges": true,
+        "csr_degree_sum_equals_2m": true,
+        "all_edges_match_actual_resource_predicate": true,
+        "edge_reason_masks_match_predicate": true,
+        "frozen_duration_equals_endpoint_difference": true
+      },
+      "optimization_labels_or_scores_executed": false
+    },
+    {
+      "version": "cipheur-heldout-perf-input-graphs-v1",
+      "source_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "config_id": "gW0680_gE1200_s0150",
+      "family": "unseen_mixed",
+      "factorial_aliases": [],
+      "station_gap_mode": "per_antenna",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 680,
+        "GS02-A1": 680,
+        "GS03-A1": 680,
+        "GS04-A1": 1200,
+        "GS05-A1": 1200,
+        "GS06-A1": 1200,
+        "GS07-A1": 680,
+        "GS08-A1": 680,
+        "GS09-A1": 680,
+        "GS10-A1": 1200,
+        "GS11-A1": 1200,
+        "GS12-A1": 1200
+      },
+      "antenna_group": {
+        "GS01-A1": "west",
+        "GS02-A1": "west",
+        "GS03-A1": "west",
+        "GS04-A1": "east",
+        "GS05-A1": "east",
+        "GS06-A1": "east",
+        "GS07-A1": "west",
+        "GS08-A1": "west",
+        "GS09-A1": "west",
+        "GS10-A1": "east",
+        "GS11-A1": "east",
+        "GS12-A1": "east"
+      },
+      "west_gap_seconds": 680,
+      "east_gap_seconds": 1200,
+      "satellite_gap_seconds": 150,
+      "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+      "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+      "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+      "raw_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+      "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+      "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+      "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+      "edge_arrays_sha256": "5d02784cdb43897734202837a8de08c8f7ce5ff93faf63c6216317644004662a",
+      "npz_sha256": "cd106e5fa5aa44e805d715e1c9e3f7ed8964cdc70a7b8b016c44eb9a58550397",
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "stats": {
+        "n": 12475,
+        "m": 115943,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_mode": "per_antenna",
+            "gap_by_antenna_ticks": {
+              "GS01-A1": 680000000,
+              "GS02-A1": 680000000,
+              "GS03-A1": 680000000,
+              "GS04-A1": 1200000000,
+              "GS05-A1": 1200000000,
+              "GS06-A1": 1200000000,
+              "GS07-A1": 680000000,
+              "GS08-A1": 680000000,
+              "GS09-A1": 680000000,
+              "GS10-A1": 1200000000,
+              "GS11-A1": 1200000000,
+              "GS12-A1": 1200000000
+            },
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 19047,
+              "signed_margin_ticks": -19047,
+              "earlier_contact": "CP-AU-r009:S-P01-S12:GS08:p0005",
+              "later_contact": "CP-AU-r009:S-P03-S07:GS08:p0005",
+              "resource_id": "GS08-A1",
+              "resource_gap_ticks": 680000000
+            },
+            "examples": [],
+            "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+          }
+        }
+      },
+      "input_integrity_checks": {
+        "sorted_unique_nonself_edges": true,
+        "csr_degree_sum_equals_2m": true,
+        "all_edges_match_actual_resource_predicate": true,
+        "edge_reason_masks_match_predicate": true,
+        "frozen_duration_equals_endpoint_difference": true
+      },
+      "optimization_labels_or_scores_executed": false
+    },
+    {
+      "version": "cipheur-heldout-perf-input-graphs-v1",
+      "source_id": "CP-AU-r009",
+      "source_group": "CP-SOURCE-r009",
+      "split": "test",
+      "config_id": "gW1200_gE0680_s0150",
+      "family": "unseen_mixed",
+      "factorial_aliases": [],
+      "station_gap_mode": "per_antenna",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1200,
+        "GS02-A1": 1200,
+        "GS03-A1": 1200,
+        "GS04-A1": 680,
+        "GS05-A1": 680,
+        "GS06-A1": 680,
+        "GS07-A1": 1200,
+        "GS08-A1": 1200,
+        "GS09-A1": 1200,
+        "GS10-A1": 680,
+        "GS11-A1": 680,
+        "GS12-A1": 680
+      },
+      "antenna_group": {
+        "GS01-A1": "west",
+        "GS02-A1": "west",
+        "GS03-A1": "west",
+        "GS04-A1": "east",
+        "GS05-A1": "east",
+        "GS06-A1": "east",
+        "GS07-A1": "west",
+        "GS08-A1": "west",
+        "GS09-A1": "west",
+        "GS10-A1": "east",
+        "GS11-A1": "east",
+        "GS12-A1": "east"
+      },
+      "west_gap_seconds": 1200,
+      "east_gap_seconds": 680,
+      "satellite_gap_seconds": 150,
+      "node_mapping_sha256": "747d3be7fa90199371fc560e2338aaa34efab2b1bf992320a28286caafd1fe5f",
+      "weight_ticks_sha256": "6341933bad2bab9ef10af91a7d987969a5b82abb797e8967636058ac1c6b230d",
+      "raw_contacts_sha256": "991d6a3648737e0cccfd579311ddf4d07e2755265e26ced8933ea925f685336c",
+      "raw_manifest_sha256": "080b89a3a2cc28d1279f200ea81d40150bee628ef10305b409d169c626db89a2",
+      "configuration_declaration_sha256": "8d357618bb16847cab2547f4042f771a3ca88787c1030c4c29a3635ef784d109",
+      "builder_sha256": "f0d5a572222a08ad61c46d8e080de6399031d95cffc6eef7cf629a42c588ef45",
+      "parent_p0_builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "parent_heterogeneous_builder_sha256": "de20a2da82efb0ca927caafc39d9ee92b55fb9c948df1c90ee64b0b44cb29d32",
+      "edge_arrays_sha256": "6e5d32e715bb64cbefab131f0f9183f14fdf88ed03bfdb4074fd5ca95667e501",
+      "npz_sha256": "acee8eb4195a40dc616faef92a9b8591be40d74ab46c9ea280bfefaa67aa0fc0",
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "stats": {
+        "n": 12475,
+        "m": 115937,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_mode": "per_antenna",
+            "gap_by_antenna_ticks": {
+              "GS01-A1": 1200000000,
+              "GS02-A1": 1200000000,
+              "GS03-A1": 1200000000,
+              "GS04-A1": 680000000,
+              "GS05-A1": 680000000,
+              "GS06-A1": 680000000,
+              "GS07-A1": 1200000000,
+              "GS08-A1": 1200000000,
+              "GS09-A1": 1200000000,
+              "GS10-A1": 680000000,
+              "GS11-A1": 680000000,
+              "GS12-A1": 680000000
+            },
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 1,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 1,
+            "closest_pair": {
+              "absolute_margin_ticks": 1341,
+              "signed_margin_ticks": 1341,
+              "earlier_contact": "CP-AU-r009:S-P04-S01:GS03:p0010",
+              "later_contact": "CP-AU-r009:S-P04-S10:GS03:p0010",
+              "resource_id": "GS03-A1",
+              "resource_gap_ticks": 1200000000
+            },
+            "examples": [
+              {
+                "earlier_contact": "CP-AU-r009:S-P04-S01:GS03:p0010",
+                "later_contact": "CP-AU-r009:S-P04-S10:GS03:p0010",
+                "resource_id": "GS03-A1",
+                "resource_gap_ticks": 1200000000,
+                "signed_margin_ticks": 1341,
+                "resource_conflict": false
+              }
+            ],
+            "interpretation": "Input timing-boundary QC only; no prior-source sensitivity receipt is transferred to this new physical source and no rigorous physical timing error bound is claimed."
+          }
+        }
+      },
+      "input_integrity_checks": {
+        "sorted_unique_nonself_edges": true,
+        "csr_degree_sum_equals_2m": true,
+        "all_edges_match_actual_resource_predicate": true,
+        "edge_reason_masks_match_predicate": true,
+        "frozen_duration_equals_endpoint_difference": true
+      },
+      "optimization_labels_or_scores_executed": false
+    }
+  ],
+  "same_vertex_and_weight_for_all_configurations": true,
+  "unique_graph_configurations": 8,
+  "optimization_labels_or_scores_executed": false,
+  "build_seconds": 3.0750970999979472
+}

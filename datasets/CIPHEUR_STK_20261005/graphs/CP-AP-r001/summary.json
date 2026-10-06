@@ -1,0 +1,879 @@
+{
+  "version": "cipheur-full-contact-capacity1-microtick-v1",
+  "source_id": "CP-AP-r001",
+  "source_metadata": {
+    "source_id": "CP-AP-r001",
+    "source_group": "CP-SOURCE-r001",
+    "geometry_id": "A-P",
+    "replicate_id": "r001",
+    "split": "train",
+    "epoch_utc": "2026-11-08T00:00:00Z",
+    "horizon_stop_utc": "2026-11-11T00:00:00Z",
+    "raw_contacts_path": "E:\\01-Joycecyq\\2026-AAMAS\\data\\两篇论文数据定制化构建\\CIPHEUR_STK_20261005\\raw\\CP-AP-r001\\contacts.csv",
+    "raw_contacts_sha256": "d0f15277cedb633ceeab5c0cef5cbeb1fd7768f949617f9999dd066e009a56be",
+    "stk_manifest_sha256": "4d739ce725208bb9814c568d70307d3530f42b962e234067a94d4f78e7cf231c",
+    "eop_loaded_receipt_sha256": "ff53665e7188add410add27155eb94bdb540afec878eb54bf2b5e4370102bab0",
+    "eop_source_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+    "formal_fresh_eop_dataset": true,
+    "future_eop_values_are_forecasts": true,
+    "access_settings_hash": "f15eacfea5f4fdf5ab36674c369deeac90ef1324f43cba80f9c6dc879aa792d5",
+    "node_mapping_sha256": "3b34f661061df62153c2692c0361f7e4e42789f48577bf1a2551cf1a1cbcbbff",
+    "weight_ticks_sha256": "52ecf018b71a004d210918270c151250b4ac6e056f3c609e147ef9f20b7f085a",
+    "reported_duration_difference_count": 0,
+    "reported_duration_differences": [],
+    "weight_semantics": "end_ticks - start_ticks; no rounding after reading frozen endpoints",
+    "contact_count": 12465,
+    "unique_satellites": 84,
+    "unique_antennas": 12,
+    "total_weight_ticks": 5417255559192,
+    "duration_uniqueness": {
+      "duration_classes": 12462,
+      "contacts": 12465,
+      "duplicate_duration_classes": 3,
+      "duplicate_duration_contact_occurrences": 6,
+      "duplicate_duration_node_groups": [
+        [
+          223,
+          2231
+        ],
+        [
+          5280,
+          9488
+        ],
+        [
+          11043,
+          11456
+        ]
+      ],
+      "all_durations_unique": false,
+      "necessary_condition_result": "Repeated duration is only a necessary condition; complete base9 equality and strict decision labels still need separate checks.",
+      "scope_note": "No claim about equality for the same contact in different residual states, or about rule-grammar fit; no oracle labels were used."
+    }
+  },
+  "graphs": [
+    {
+      "version": "cipheur-full-contact-capacity1-microtick-v1",
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "split": "train",
+      "config_id": "g0340",
+      "ground_gap_seconds": 340,
+      "satellite_gap_seconds": 150,
+      "model": "full_visibility_interval_duration_reward_capacity_one_v2",
+      "conflict_rule": "order u,v by (start,id); edge iff (same antenna and start_v < end_u + ground_gap) or (same satellite and start_v < end_u + satellite_gap); all overlaps including containment are conflicts",
+      "interval_semantics": "entire unmodified half-open interval [s,e), capacity one; equality at end+gap is compatible",
+      "tick_resolution_seconds": "0.000001",
+      "floating_point_edge_tests": false,
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "edge_mask_note": "Ground/satellite bits may coexist. Overlap means later start < earlier end; gap_only means no interval overlap but insufficient switching gap. These bits describe shared-resource conflicts, not physical radio links.",
+      "node_mapping_sha256": "3b34f661061df62153c2692c0361f7e4e42789f48577bf1a2551cf1a1cbcbbff",
+      "weight_ticks_sha256": "52ecf018b71a004d210918270c151250b4ac6e056f3c609e147ef9f20b7f085a",
+      "raw_contacts_sha256": "d0f15277cedb633ceeab5c0cef5cbeb1fd7768f949617f9999dd066e009a56be",
+      "parameters_sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+      "builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "edge_arrays_sha256": "aa3dfaad9faa0f183f357450c70a98b9745719d632cd420ce16b41d93af07889",
+      "npz_sha256": "79006cccb310b26a53c899c1a863951b4737686ad5f52c10a78940f33962dcea",
+      "stats": {
+        "n": 12465,
+        "m": 80289,
+        "average_degree_2m_over_n": 12.88231046931408,
+        "density": 0.0010335614946497176,
+        "degree_distribution": {
+          "minimum": 2,
+          "maximum": 19,
+          "mean": 12.88231046931408,
+          "median": 14.0,
+          "quantiles": {
+            "0.05": 7.0,
+            "0.25": 11.0,
+            "0.75": 15.0,
+            "0.95": 16.0,
+            "0.99": 18.0
+          },
+          "histogram": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              4,
+              47
+            ],
+            [
+              5,
+              144
+            ],
+            [
+              6,
+              219
+            ],
+            [
+              7,
+              457
+            ],
+            [
+              8,
+              473
+            ],
+            [
+              9,
+              742
+            ],
+            [
+              10,
+              645
+            ],
+            [
+              11,
+              963
+            ],
+            [
+              12,
+              929
+            ],
+            [
+              13,
+              1429
+            ],
+            [
+              14,
+              1758
+            ],
+            [
+              15,
+              1757
+            ],
+            [
+              16,
+              2378
+            ],
+            [
+              17,
+              278
+            ],
+            [
+              18,
+              215
+            ],
+            [
+              19,
+              14
+            ]
+          ]
+        },
+        "component_count": 1,
+        "component_sizes_descending": [
+          12465
+        ],
+        "edge_mask_counts": {
+          "ground": 29341,
+          "satellite": 50948,
+          "overlap": 66885,
+          "gap_only": 13404
+        },
+        "edge_mask_exact_histogram": {
+          "5": 16319,
+          "6": 50566,
+          "9": 13022,
+          "10": 382
+        },
+        "r_E_from_smallest_gap": 0.0,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_ticks": 340000000,
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "exact_gap_equality_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 31391,
+              "signed_margin_ticks": 31391,
+              "earlier_contact": "CP-AP-r001:S-P05-S04:GS04:p0005",
+              "later_contact": "CP-AP-r001:S-P03-S05:GS04:p0006",
+              "resource_id": "GS04-A1"
+            },
+            "examples": [],
+            "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+          },
+          "satellite": {
+            "resource_field": "satellite_id",
+            "gap_ticks": 150000000,
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "exact_gap_equality_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 22844475,
+              "signed_margin_ticks": -22844475,
+              "earlier_contact": "CP-AP-r001:S-P04-S01:GS07:p0012",
+              "later_contact": "CP-AP-r001:S-P04-S01:GS06:p0010",
+              "resource_id": "S-P04-S01"
+            },
+            "examples": [],
+            "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+          }
+        }
+      },
+      "base9_census_file": "g0340_base9_census.json",
+      "build_seconds": 0.5677303000011307
+    },
+    {
+      "version": "cipheur-full-contact-capacity1-microtick-v1",
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "split": "train",
+      "config_id": "g0680",
+      "ground_gap_seconds": 680,
+      "satellite_gap_seconds": 150,
+      "model": "full_visibility_interval_duration_reward_capacity_one_v2",
+      "conflict_rule": "order u,v by (start,id); edge iff (same antenna and start_v < end_u + ground_gap) or (same satellite and start_v < end_u + satellite_gap); all overlaps including containment are conflicts",
+      "interval_semantics": "entire unmodified half-open interval [s,e), capacity one; equality at end+gap is compatible",
+      "tick_resolution_seconds": "0.000001",
+      "floating_point_edge_tests": false,
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "edge_mask_note": "Ground/satellite bits may coexist. Overlap means later start < earlier end; gap_only means no interval overlap but insufficient switching gap. These bits describe shared-resource conflicts, not physical radio links.",
+      "node_mapping_sha256": "3b34f661061df62153c2692c0361f7e4e42789f48577bf1a2551cf1a1cbcbbff",
+      "weight_ticks_sha256": "52ecf018b71a004d210918270c151250b4ac6e056f3c609e147ef9f20b7f085a",
+      "raw_contacts_sha256": "d0f15277cedb633ceeab5c0cef5cbeb1fd7768f949617f9999dd066e009a56be",
+      "parameters_sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+      "builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "edge_arrays_sha256": "5f009c860869fd9727401d758fd3f1e6382a60572b68c13d7346576bda8cdaac",
+      "npz_sha256": "3485e3081441b7c03aeb499bd4105738e6deaf8435552dbda0b489a1a04566bb",
+      "stats": {
+        "n": 12465,
+        "m": 104866,
+        "average_degree_2m_over_n": 16.82567188126755,
+        "density": 0.0013499415822583079,
+        "degree_distribution": {
+          "minimum": 3,
+          "maximum": 24,
+          "mean": 16.82567188126755,
+          "median": 18.0,
+          "quantiles": {
+            "0.05": 9.0,
+            "0.25": 14.0,
+            "0.75": 20.0,
+            "0.95": 22.0,
+            "0.99": 23.0
+          },
+          "histogram": [
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              27
+            ],
+            [
+              7,
+              106
+            ],
+            [
+              8,
+              185
+            ],
+            [
+              9,
+              324
+            ],
+            [
+              10,
+              294
+            ],
+            [
+              11,
+              482
+            ],
+            [
+              12,
+              443
+            ],
+            [
+              13,
+              652
+            ],
+            [
+              14,
+              613
+            ],
+            [
+              15,
+              853
+            ],
+            [
+              16,
+              822
+            ],
+            [
+              17,
+              1190
+            ],
+            [
+              18,
+              1308
+            ],
+            [
+              19,
+              1588
+            ],
+            [
+              20,
+              2124
+            ],
+            [
+              21,
+              627
+            ],
+            [
+              22,
+              603
+            ],
+            [
+              23,
+              95
+            ],
+            [
+              24,
+              115
+            ]
+          ]
+        },
+        "component_count": 1,
+        "component_sizes_descending": [
+          12465
+        ],
+        "edge_mask_counts": {
+          "ground": 53918,
+          "satellite": 50948,
+          "overlap": 66885,
+          "gap_only": 37981
+        },
+        "edge_mask_exact_histogram": {
+          "5": 16319,
+          "6": 50566,
+          "9": 37599,
+          "10": 382
+        },
+        "r_E_from_smallest_gap": 0.30610668958387827,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_ticks": 680000000,
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "exact_gap_equality_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 3475,
+              "signed_margin_ticks": -3475,
+              "earlier_contact": "CP-AP-r001:S-P01-S02:GS10:p0009",
+              "later_contact": "CP-AP-r001:S-P06-S01:GS10:p0009",
+              "resource_id": "GS10-A1"
+            },
+            "examples": [],
+            "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+          },
+          "satellite": {
+            "resource_field": "satellite_id",
+            "gap_ticks": 150000000,
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "exact_gap_equality_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 22844475,
+              "signed_margin_ticks": -22844475,
+              "earlier_contact": "CP-AP-r001:S-P04-S01:GS07:p0012",
+              "later_contact": "CP-AP-r001:S-P04-S01:GS06:p0010",
+              "resource_id": "S-P04-S01"
+            },
+            "examples": [],
+            "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+          }
+        }
+      },
+      "base9_census_file": "g0680_base9_census.json",
+      "build_seconds": 0.5711386000002676
+    },
+    {
+      "version": "cipheur-full-contact-capacity1-microtick-v1",
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "split": "train",
+      "config_id": "g1200",
+      "ground_gap_seconds": 1200,
+      "satellite_gap_seconds": 150,
+      "model": "full_visibility_interval_duration_reward_capacity_one_v2",
+      "conflict_rule": "order u,v by (start,id); edge iff (same antenna and start_v < end_u + ground_gap) or (same satellite and start_v < end_u + satellite_gap); all overlaps including containment are conflicts",
+      "interval_semantics": "entire unmodified half-open interval [s,e), capacity one; equality at end+gap is compatible",
+      "tick_resolution_seconds": "0.000001",
+      "floating_point_edge_tests": false,
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "edge_mask_note": "Ground/satellite bits may coexist. Overlap means later start < earlier end; gap_only means no interval overlap but insufficient switching gap. These bits describe shared-resource conflicts, not physical radio links.",
+      "node_mapping_sha256": "3b34f661061df62153c2692c0361f7e4e42789f48577bf1a2551cf1a1cbcbbff",
+      "weight_ticks_sha256": "52ecf018b71a004d210918270c151250b4ac6e056f3c609e147ef9f20b7f085a",
+      "raw_contacts_sha256": "d0f15277cedb633ceeab5c0cef5cbeb1fd7768f949617f9999dd066e009a56be",
+      "parameters_sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+      "builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "edge_arrays_sha256": "1b7a94b017f39b354a1efa64a46be5a71922b140da67545e9094298d9de98045",
+      "npz_sha256": "5a24d64ef25b90c62a234b3908798c0a6c593ce59982b6793489e5ea0bb76f7d",
+      "stats": {
+        "n": 12465,
+        "m": 126360,
+        "average_degree_2m_over_n": 20.27436823104693,
+        "density": 0.001626634164878605,
+        "degree_distribution": {
+          "minimum": 5,
+          "maximum": 28,
+          "mean": 20.27436823104693,
+          "median": 21.0,
+          "quantiles": {
+            "0.05": 14.0,
+            "0.25": 18.0,
+            "0.75": 22.0,
+            "0.95": 25.0,
+            "0.99": 26.0
+          },
+          "histogram": [
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              9,
+              6
+            ],
+            [
+              10,
+              28
+            ],
+            [
+              11,
+              66
+            ],
+            [
+              12,
+              112
+            ],
+            [
+              13,
+              210
+            ],
+            [
+              14,
+              291
+            ],
+            [
+              15,
+              521
+            ],
+            [
+              16,
+              590
+            ],
+            [
+              17,
+              727
+            ],
+            [
+              18,
+              829
+            ],
+            [
+              19,
+              983
+            ],
+            [
+              20,
+              1234
+            ],
+            [
+              21,
+              1450
+            ],
+            [
+              22,
+              2304
+            ],
+            [
+              23,
+              1268
+            ],
+            [
+              24,
+              1075
+            ],
+            [
+              25,
+              420
+            ],
+            [
+              26,
+              317
+            ],
+            [
+              27,
+              26
+            ],
+            [
+              28,
+              1
+            ]
+          ]
+        },
+        "component_count": 1,
+        "component_sizes_descending": [
+          12465
+        ],
+        "edge_mask_counts": {
+          "ground": 75412,
+          "satellite": 50948,
+          "overlap": 66885,
+          "gap_only": 59475
+        },
+        "edge_mask_exact_histogram": {
+          "5": 16319,
+          "6": 50566,
+          "9": 59093,
+          "10": 382
+        },
+        "r_E_from_smallest_gap": 0.5738145947763703,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_ticks": 1200000000,
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 1,
+            "near_conflicting_pairs": 1,
+            "near_compatible_pairs": 0,
+            "exact_gap_equality_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 102,
+              "signed_margin_ticks": -102,
+              "earlier_contact": "CP-AP-r001:S-P01-S06:GS10:p0013",
+              "later_contact": "CP-AP-r001:S-P03-S11:GS10:p0015",
+              "resource_id": "GS10-A1"
+            },
+            "examples": [
+              {
+                "earlier_contact": "CP-AP-r001:S-P01-S06:GS10:p0013",
+                "later_contact": "CP-AP-r001:S-P03-S11:GS10:p0015",
+                "resource_id": "GS10-A1",
+                "signed_margin_ticks": -102,
+                "resource_conflict": true
+              }
+            ],
+            "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+          },
+          "satellite": {
+            "resource_field": "satellite_id",
+            "gap_ticks": 150000000,
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "exact_gap_equality_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 22844475,
+              "signed_margin_ticks": -22844475,
+              "earlier_contact": "CP-AP-r001:S-P04-S01:GS07:p0012",
+              "later_contact": "CP-AP-r001:S-P04-S01:GS06:p0010",
+              "resource_id": "S-P04-S01"
+            },
+            "examples": [],
+            "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+          }
+        }
+      },
+      "base9_census_file": "g1200_base9_census.json",
+      "build_seconds": 0.6138195000021369
+    },
+    {
+      "version": "cipheur-full-contact-capacity1-microtick-v1",
+      "source_id": "CP-AP-r001",
+      "source_group": "CP-SOURCE-r001",
+      "split": "train",
+      "config_id": "g1800",
+      "ground_gap_seconds": 1800,
+      "satellite_gap_seconds": 150,
+      "model": "full_visibility_interval_duration_reward_capacity_one_v2",
+      "conflict_rule": "order u,v by (start,id); edge iff (same antenna and start_v < end_u + ground_gap) or (same satellite and start_v < end_u + satellite_gap); all overlaps including containment are conflicts",
+      "interval_semantics": "entire unmodified half-open interval [s,e), capacity one; equality at end+gap is compatible",
+      "tick_resolution_seconds": "0.000001",
+      "floating_point_edge_tests": false,
+      "edge_mask": {
+        "ground": 1,
+        "satellite": 2,
+        "overlap": 4,
+        "gap_only": 8
+      },
+      "edge_mask_note": "Ground/satellite bits may coexist. Overlap means later start < earlier end; gap_only means no interval overlap but insufficient switching gap. These bits describe shared-resource conflicts, not physical radio links.",
+      "node_mapping_sha256": "3b34f661061df62153c2692c0361f7e4e42789f48577bf1a2551cf1a1cbcbbff",
+      "weight_ticks_sha256": "52ecf018b71a004d210918270c151250b4ac6e056f3c609e147ef9f20b7f085a",
+      "raw_contacts_sha256": "d0f15277cedb633ceeab5c0cef5cbeb1fd7768f949617f9999dd066e009a56be",
+      "parameters_sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+      "builder_sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56",
+      "edge_arrays_sha256": "1c281de42fdb919dc81f97e6926b7c091ba55691021d43fa918ac6fc9dc332d3",
+      "npz_sha256": "960ae52e079308b01260c7bf0a74da3880a33fb47fff61cc457f7569dc16dbeb",
+      "stats": {
+        "n": 12465,
+        "m": 161050,
+        "average_degree_2m_over_n": 25.840352988367428,
+        "density": 0.002073199052340134,
+        "degree_distribution": {
+          "minimum": 8,
+          "maximum": 35,
+          "mean": 25.840352988367428,
+          "median": 27.0,
+          "quantiles": {
+            "0.05": 19.0,
+            "0.25": 23.0,
+            "0.75": 28.0,
+            "0.95": 31.0,
+            "0.99": 32.0
+          },
+          "histogram": [
+            [
+              8,
+              2
+            ],
+            [
+              10,
+              7
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              13,
+              2
+            ],
+            [
+              14,
+              13
+            ],
+            [
+              15,
+              33
+            ],
+            [
+              16,
+              75
+            ],
+            [
+              17,
+              148
+            ],
+            [
+              18,
+              237
+            ],
+            [
+              19,
+              367
+            ],
+            [
+              20,
+              411
+            ],
+            [
+              21,
+              555
+            ],
+            [
+              22,
+              551
+            ],
+            [
+              23,
+              732
+            ],
+            [
+              24,
+              806
+            ],
+            [
+              25,
+              990
+            ],
+            [
+              26,
+              1129
+            ],
+            [
+              27,
+              1599
+            ],
+            [
+              28,
+              1985
+            ],
+            [
+              29,
+              922
+            ],
+            [
+              30,
+              1013
+            ],
+            [
+              31,
+              357
+            ],
+            [
+              32,
+              415
+            ],
+            [
+              33,
+              77
+            ],
+            [
+              34,
+              36
+            ],
+            [
+              35,
+              2
+            ]
+          ]
+        },
+        "component_count": 1,
+        "component_sizes_descending": [
+          12465
+        ],
+        "edge_mask_counts": {
+          "ground": 110102,
+          "satellite": 50948,
+          "overlap": 66885,
+          "gap_only": 94165
+        },
+        "edge_mask_exact_histogram": {
+          "5": 16319,
+          "6": 50566,
+          "9": 93783,
+          "10": 382
+        },
+        "r_E_from_smallest_gap": 1.0058787629687753,
+        "near_boundary_diagnostics": {
+          "ground": {
+            "resource_field": "antenna_id",
+            "gap_ticks": 1800000000,
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "exact_gap_equality_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 9550,
+              "signed_margin_ticks": 9550,
+              "earlier_contact": "CP-AP-r001:S-P07-S03:GS06:p0002",
+              "later_contact": "CP-AP-r001:S-P07-S11:GS06:p0002",
+              "resource_id": "GS06-A1"
+            },
+            "examples": [],
+            "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+          },
+          "satellite": {
+            "resource_field": "satellite_id",
+            "gap_ticks": 150000000,
+            "near_boundary_radius_ticks": 2000,
+            "near_boundary_pair_count": 0,
+            "near_conflicting_pairs": 0,
+            "near_compatible_pairs": 0,
+            "exact_gap_equality_pairs": 0,
+            "closest_pair": {
+              "absolute_margin_ticks": 22844475,
+              "signed_margin_ticks": -22844475,
+              "earlier_contact": "CP-AP-r001:S-P04-S01:GS07:p0012",
+              "later_contact": "CP-AP-r001:S-P04-S01:GS06:p0010",
+              "resource_id": "S-P04-S01"
+            },
+            "examples": [],
+            "interpretation": "A diagnostic neighborhood around the numerical switching-gap boundary, including nonedges. STK Time Convergence is not treated as a rigorous physical error bound."
+          }
+        }
+      },
+      "base9_census_file": "g1800_base9_census.json",
+      "build_seconds": 0.6352164000018092
+    }
+  ],
+  "monotonicity": [
+    {
+      "from_ground_gap_seconds": 340,
+      "to_ground_gap_seconds": 680,
+      "deleted_edges": 0,
+      "added_edges": 24577,
+      "r_E": 0.30610668958387827,
+      "monotone": true,
+      "all_added_edges_are_ground_gap_only": true
+    },
+    {
+      "from_ground_gap_seconds": 680,
+      "to_ground_gap_seconds": 1200,
+      "deleted_edges": 0,
+      "added_edges": 21494,
+      "r_E": 0.20496633799324854,
+      "monotone": true,
+      "all_added_edges_are_ground_gap_only": true
+    },
+    {
+      "from_ground_gap_seconds": 1200,
+      "to_ground_gap_seconds": 1800,
+      "deleted_edges": 0,
+      "added_edges": 34690,
+      "r_E": 0.27453308008863564,
+      "monotone": true,
+      "all_added_edges_are_ground_gap_only": true
+    }
+  ],
+  "same_vertex_and_weight_hash_for_every_config": true,
+  "uses_old_legacy_conflict_predicate": false,
+  "optimization_or_oracle_executed": false
+}

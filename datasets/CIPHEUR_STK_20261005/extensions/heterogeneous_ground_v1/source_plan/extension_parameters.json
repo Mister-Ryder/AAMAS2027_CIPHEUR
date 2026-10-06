@@ -1,0 +1,118 @@
+{
+  "version": "cipheur-heterogeneous-ground-factorial-v1",
+  "development_only": true,
+  "source_ids": [
+    "CP-AU-r000",
+    "CP-AP-r000",
+    "CP-AU-r001",
+    "CP-AP-r001"
+  ],
+  "parent_parameters_sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13",
+  "station_gap_mode": "per_antenna",
+  "antenna_group": {
+    "GS01-A1": "west",
+    "GS02-A1": "west",
+    "GS03-A1": "west",
+    "GS04-A1": "east",
+    "GS05-A1": "east",
+    "GS06-A1": "east",
+    "GS07-A1": "west",
+    "GS08-A1": "west",
+    "GS09-A1": "west",
+    "GS10-A1": "east",
+    "GS11-A1": "east",
+    "GS12-A1": "east"
+  },
+  "group_definition": {
+    "west_longitudes_deg": [
+      88,
+      94,
+      100
+    ],
+    "east_longitudes_deg": [
+      106,
+      112,
+      118
+    ]
+  },
+  "satellite_gap_seconds": 150,
+  "configurations": [
+    {
+      "factorial_id": "A",
+      "config_id": "gW0340_gE0340_s0150",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 340,
+        "GS02-A1": 340,
+        "GS03-A1": 340,
+        "GS04-A1": 340,
+        "GS05-A1": 340,
+        "GS06-A1": 340,
+        "GS07-A1": 340,
+        "GS08-A1": 340,
+        "GS09-A1": 340,
+        "GS10-A1": 340,
+        "GS11-A1": 340,
+        "GS12-A1": 340
+      }
+    },
+    {
+      "factorial_id": "W",
+      "config_id": "gW1200_gE0340_s0150",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1200,
+        "GS02-A1": 1200,
+        "GS03-A1": 1200,
+        "GS04-A1": 340,
+        "GS05-A1": 340,
+        "GS06-A1": 340,
+        "GS07-A1": 1200,
+        "GS08-A1": 1200,
+        "GS09-A1": 1200,
+        "GS10-A1": 340,
+        "GS11-A1": 340,
+        "GS12-A1": 340
+      }
+    },
+    {
+      "factorial_id": "E",
+      "config_id": "gW0340_gE1200_s0150",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 340,
+        "GS02-A1": 340,
+        "GS03-A1": 340,
+        "GS04-A1": 1200,
+        "GS05-A1": 1200,
+        "GS06-A1": 1200,
+        "GS07-A1": 340,
+        "GS08-A1": 340,
+        "GS09-A1": 340,
+        "GS10-A1": 1200,
+        "GS11-A1": 1200,
+        "GS12-A1": 1200
+      }
+    },
+    {
+      "factorial_id": "J",
+      "config_id": "gW1200_gE1200_s0150",
+      "station_gap_by_antenna_seconds": {
+        "GS01-A1": 1200,
+        "GS02-A1": 1200,
+        "GS03-A1": 1200,
+        "GS04-A1": 1200,
+        "GS05-A1": 1200,
+        "GS06-A1": 1200,
+        "GS07-A1": 1200,
+        "GS08-A1": 1200,
+        "GS09-A1": 1200,
+        "GS10-A1": 1200,
+        "GS11-A1": 1200,
+        "GS12-A1": 1200
+      }
+    }
+  ],
+  "contact_contract": "Same original P0 complete visibility intervals, vertices, resources, and weight=end-start. No additional time rounding or weight changes.",
+  "base9_station_gap_semantics": "For root contact v, station_gap(v)=gap_by_antenna[v.antenna]; no mean or global surrogate.",
+  "all_gap_entries_are_development_parameters": true,
+  "source_group_contract": "Original TRAIN development groups retained; geometry companions and all four configurations remain together.",
+  "new_STK_or_oracle_calls": false
+}

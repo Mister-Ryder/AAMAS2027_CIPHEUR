@@ -1,0 +1,83 @@
+{
+  "version": "configuration_response_v1_pre_outcomes",
+  "registered_before_TEST_outcomes": true,
+  "fixed_directed_changes": [
+    [
+      "A",
+      "M"
+    ],
+    [
+      "A",
+      "J"
+    ],
+    [
+      "A",
+      "stress"
+    ],
+    [
+      "A",
+      "W"
+    ],
+    [
+      "A",
+      "E"
+    ],
+    [
+      "A",
+      "MW"
+    ],
+    [
+      "A",
+      "ME"
+    ],
+    [
+      "W",
+      "J"
+    ],
+    [
+      "E",
+      "J"
+    ],
+    [
+      "W",
+      "E"
+    ],
+    [
+      "E",
+      "W"
+    ],
+    [
+      "MW",
+      "ME"
+    ],
+    [
+      "ME",
+      "MW"
+    ]
+  ],
+  "pairing": "Same physical source, method/programme, declared CPU budget and seed; only configuration changes.",
+  "invariants": "Identical node indices/contact IDs and exact integer weights across all8 configurations of a source; graph and metadata SHA must match saved result identities.",
+  "metrics": [
+    "new/deleted graph conflict edges",
+    "old selected schedule conflicts in new graph",
+    "unique old-selected conflict-endpoint count and summed reward ticks",
+    "old/new schedule Jaccard",
+    "saved final complete reward delta ticks",
+    "removed/added selected contact count and reward ticks"
+  ],
+  "conflicted_reward_interpretation": "Sum of unique selected vertices touching at least one new-graph violation. Not minimum loss, not a lower bound on required repair loss, not an optimized removal set.",
+  "quality_interpretation": "New and old final qualities are paid saved result values under different constraints. Their difference is not a same-instance algorithm ranking or superiority claim.",
+  "statistical_unit": "r008/r009 physical source groups; seeds/config transitions/AU/AP geometries are repeated observations, not independent samples.",
+  "aggregation": "Equal seeds within transition/source, equal AU/AP geometries within source group, equal2groups. Each transition separate; if aggregated, transition weights equal.",
+  "controls": "All frozen programmes and baselines, both LLM batches. No data-based transition selection.",
+  "figure": "Compact2x2: graph added/deleted edges; stale selected conflict count; new/old Jaccard; changed selected reward. Main axes include all fixed directed transitions, programmes retain same colour and batch markers. Exact per-source table accompanies graphic.",
+  "not_executed": [
+    "repair",
+    "optimizer",
+    "LLM",
+    "oracle",
+    "parameter tuning",
+    "programme scoring",
+    "TEST selection"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "feature_semantics_namespace": "exact_microtick_base9_v1",
+  "feature_names": [
+    "weight",
+    "duration",
+    "degree",
+    "conflict_weight",
+    "max_conflict_weight",
+    "compatible_weight",
+    "station_gap",
+    "satellite_gap",
+    "remaining_count"
+  ],
+  "scope": "Every completed P0 source/configuration, all contacts active, F=X=empty",
+  "graph_count": 16,
+  "full_graph_action_occurrences": 199528,
+  "distinct_vectors": 199528,
+  "alias_classes": 0,
+  "aliased_occurrences": 0,
+  "classes": [],
+  "graphs": [
+    {
+      "source_id": "CP-AP-r000",
+      "config_id": "g0340",
+      "n": 12479,
+      "npz_sha256": "280435ae7113ef870fb11dddcc7d2cdb17b741c07edbbe7635fa893b7360ac3f",
+      "source_group": "CP-SOURCE-r000"
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "config_id": "g0680",
+      "n": 12479,
+      "npz_sha256": "cf50ac8b30e0c830952297e9cd16c72aee99a5dd4d98c7baf49e74bfee0261dc",
+      "source_group": "CP-SOURCE-r000"
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "config_id": "g1200",
+      "n": 12479,
+      "npz_sha256": "88017f3624f15927dde460edefd2f6dc9a6bdb868820e68033e03a96bee37395",
+      "source_group": "CP-SOURCE-r000"
+    },
+    {
+      "source_id": "CP-AP-r000",
+      "config_id": "g1800",
+      "n": 12479,
+      "npz_sha256": "c988cc55d6e6640c603a3cb53a84f2330b5972de6568f4b818554a7f3104c989",
+      "source_group": "CP-SOURCE-r000"
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "config_id": "g0340",
+      "n": 12465,
+      "npz_sha256": "79006cccb310b26a53c899c1a863951b4737686ad5f52c10a78940f33962dcea",
+      "source_group": "CP-SOURCE-r001"
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "config_id": "g0680",
+      "n": 12465,
+      "npz_sha256": "3485e3081441b7c03aeb499bd4105738e6deaf8435552dbda0b489a1a04566bb",
+      "source_group": "CP-SOURCE-r001"
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "config_id": "g1200",
+      "n": 12465,
+      "npz_sha256": "5a24d64ef25b90c62a234b3908798c0a6c593ce59982b6793489e5ea0bb76f7d",
+      "source_group": "CP-SOURCE-r001"
+    },
+    {
+      "source_id": "CP-AP-r001",
+      "config_id": "g1800",
+      "n": 12465,
+      "npz_sha256": "960ae52e079308b01260c7bf0a74da3880a33fb47fff61cc457f7569dc16dbeb",
+      "source_group": "CP-SOURCE-r001"
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "config_id": "g0340",
+      "n": 12467,
+      "npz_sha256": "e44f5028a9aa94975ecf025db8ab4e46c091fabe226e8e6b7b86173500971ff6",
+      "source_group": "CP-SOURCE-r000"
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "config_id": "g0680",
+      "n": 12467,
+      "npz_sha256": "208f993e36fce2e44867acd6bef37b77ffc2851ad71533b94cfd169edbbeeafc",
+      "source_group": "CP-SOURCE-r000"
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "config_id": "g1200",
+      "n": 12467,
+      "npz_sha256": "b49f9088feb2184acd18ce38bb4b5ea44d2e57b180bed754cee1a8149a0fe3db",
+      "source_group": "CP-SOURCE-r000"
+    },
+    {
+      "source_id": "CP-AU-r000",
+      "config_id": "g1800",
+      "n": 12467,
+      "npz_sha256": "f569a9ada89137eb3f85ee174ec50522296054efd2ecc92ae2aeebb5930e700a",
+      "source_group": "CP-SOURCE-r000"
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "config_id": "g0340",
+      "n": 12471,
+      "npz_sha256": "acf94df9f9df6bac64bab65c6b187b809b10b74e99ccc71f9a3e16861e1bff4d",
+      "source_group": "CP-SOURCE-r001"
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "config_id": "g0680",
+      "n": 12471,
+      "npz_sha256": "58e1c965677762d132d8540006a4f7dccf716884b2b8b90444e8637820422e5d",
+      "source_group": "CP-SOURCE-r001"
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "config_id": "g1200",
+      "n": 12471,
+      "npz_sha256": "e0121c85320ca88e1eec4f8b14da513c7b4764e56a9aca1752a8e5a909d40f08",
+      "source_group": "CP-SOURCE-r001"
+    },
+    {
+      "source_id": "CP-AU-r001",
+      "config_id": "g1800",
+      "n": 12471,
+      "npz_sha256": "b262d89c8f7832d3e23595225e3d824ec0fc9471bdd3b11ca82327623b0a239b",
+      "source_group": "CP-SOURCE-r001"
+    }
+  ],
+  "inference_limit": "This complete full-graph equality census does not compute the strict demanded quotient for actual restricted states. A same-contact feature vector may recur in different states; no multi-state G2 decision is made here.",
+  "does_not_establish_G2": true,
+  "does_not_compute_complete_demanded_quotient": true,
+  "no_approximate_matching": true,
+  "no_weight_or_time_changes": true
+}

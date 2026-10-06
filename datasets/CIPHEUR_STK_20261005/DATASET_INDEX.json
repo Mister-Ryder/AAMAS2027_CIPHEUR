@@ -1,0 +1,268 @@
+{
+  "dataset": "CIPHEUR_STK_20261005",
+  "created_utc": "2026-10-05T13:11:35.051879+00:00",
+  "status": "P0_DATA_AND_DIAGNOSTICS_COMPLETE_G2_NOT_ESTABLISHED",
+  "root_relative_paths": true,
+  "source_groups": 2,
+  "raw_libraries": 4,
+  "full_planning_contacts": 49882,
+  "graphs": 16,
+  "split": "TRAIN only",
+  "validation_sources_read": 0,
+  "test_sources_read": 0,
+  "main_queries": 200,
+  "main_relations": {
+    "reversal": 74,
+    "preservation": 126
+  },
+  "interface_queries": 120,
+  "interface_different_value_states": 104,
+  "interface_states": 240,
+  "joint_quotient": {
+    "all_four_sources_both_stages_complete": true,
+    "strict_requirements": 518,
+    "quotient_classes": 962,
+    "self_loops": 0,
+    "cycle_observed": false,
+    "G2": "not_observed_on_preregistered_requirements",
+    "numeric_namespace": "fraction_seconds_binary_fsum_base9_v1",
+    "features": [
+      "weight",
+      "duration",
+      "degree",
+      "conflict_weight",
+      "max_conflict_weight",
+      "compatible_weight",
+      "station_gap",
+      "satellite_gap",
+      "remaining_count"
+    ],
+    "semantic_compatibility": "both stages use actual compiled fullbase9 and conditional forced-inclusion preference under recordedF/P/X; interface search roles do not change label meaning",
+    "source_groups": [
+      "r000",
+      "r001"
+    ],
+    "test_sources_read": 0,
+    "scientific_execution_calls": 0,
+    "solver_calls": 0,
+    "model_calls": 0,
+    "script_sha256": "aeab28990cd714f7711b7f6677899044cbaed0ea764b36208767d6cc87b8774c",
+    "frozen_quotient_source_sha256": "7da4fbf9d9d6cd7d9000eb24484e952f2797722afd9f625beb1fa8ee7f661c3f",
+    "generated_utc": "2026-10-05T13:07:23Z"
+  },
+  "P1_started": false,
+  "P2_started": false,
+  "LLM_calls_in_this_study": 0,
+  "formal_cloud_jobs": [
+    {
+      "file": "analysis/cloud_execution/jobs/CP-AP-r000.json",
+      "state": "completed",
+      "exit_code": 0,
+      "host": "autodl-container-2e27408749-17398df8",
+      "started_utc": "2026-10-05T12:41:50.922680+00:00",
+      "finished_utc": "2026-10-05T12:41:57.674869+00:00"
+    },
+    {
+      "file": "analysis/cloud_execution/jobs/CP-AP-r001.json",
+      "state": "completed",
+      "exit_code": 0,
+      "host": "autodl-container-2e27408749-17398df8",
+      "started_utc": "2026-10-05T12:59:13.904064+00:00",
+      "finished_utc": "2026-10-05T12:59:20.820754+00:00"
+    },
+    {
+      "file": "analysis/cloud_execution/jobs/CP-AU-r000.json",
+      "state": "completed",
+      "exit_code": 0,
+      "host": "autodl-container-2e27408749-17398df8",
+      "started_utc": "2026-10-05T12:31:16.196878+00:00",
+      "finished_utc": "2026-10-05T12:31:23.005188+00:00"
+    },
+    {
+      "file": "analysis/cloud_execution/jobs/CP-AU-r001.json",
+      "state": "completed",
+      "exit_code": 0,
+      "host": "autodl-container-2e27408749-17398df8",
+      "started_utc": "2026-10-05T12:41:57.777355+00:00",
+      "finished_utc": "2026-10-05T12:42:04.604272+00:00"
+    },
+    {
+      "file": "analysis/cloud_execution/jobs/probe_CP-AP-r000.json",
+      "state": "completed",
+      "exit_code": 0,
+      "host": "autodl-container-2e27408749-17398df8",
+      "started_utc": "2026-10-05T12:48:57.731686+00:00",
+      "finished_utc": "2026-10-05T12:51:28.365182+00:00"
+    },
+    {
+      "file": "analysis/cloud_execution/jobs/probe_CP-AP-r001.json",
+      "state": "completed",
+      "exit_code": 0,
+      "host": "autodl-container-2e27408749-17398df8",
+      "started_utc": "2026-10-05T13:00:44.516938+00:00",
+      "finished_utc": "2026-10-05T13:03:15.883484+00:00"
+    },
+    {
+      "file": "analysis/cloud_execution/jobs/probe_CP-AU-r000.json",
+      "state": "completed",
+      "exit_code": 0,
+      "host": "autodl-container-2e27408749-17398df8",
+      "started_utc": "2026-10-05T12:46:13.597801+00:00",
+      "finished_utc": "2026-10-05T12:48:57.731157+00:00"
+    },
+    {
+      "file": "analysis/cloud_execution/jobs/probe_CP-AU-r001.json",
+      "state": "completed",
+      "exit_code": 0,
+      "host": "autodl-container-2e27408749-17398df8",
+      "started_utc": "2026-10-05T12:51:28.365731+00:00",
+      "finished_utc": "2026-10-05T12:54:19.791179+00:00"
+    }
+  ],
+  "references": [
+    {
+      "path": "STK_P0_RUN_MANIFEST.json",
+      "bytes": 6203,
+      "sha256": "177238a3b8e5e93630ca8fbc17bf4781f1c443d80c4a78e3de1d922d7afcb9fa"
+    },
+    {
+      "path": "source_plan/CIPHEUR_parameters.json",
+      "bytes": 860606,
+      "sha256": "998a021567da34653abdfb9f03c53c72e812205d7a3f97e1a477fcc01c776a13"
+    },
+    {
+      "path": "analysis/input_contract.json",
+      "bytes": 5046,
+      "sha256": "cbc54acd6cc35b6a8de6b2fd36ade981e490e7154973a51b652636f644f6a4d0"
+    },
+    {
+      "path": "analysis/dataset_profile.json",
+      "bytes": 10676,
+      "sha256": "3fbcd9f96460e0a3c9748296e35ad2d1fdcf1e63eccb579c9aed6ce2fbb8dcf1"
+    },
+    {
+      "path": "analysis/execution_profile.json",
+      "bytes": 47578,
+      "sha256": "a92549f7fce803d2bca2ac84ddb0d07b30ce57a8ea1b8ab80df6ea58be7f715e"
+    },
+    {
+      "path": "analysis/cloud_code_snapshot.json",
+      "bytes": 8835,
+      "sha256": "e76f549ea101584903a2104d4c45c7144fa33904d7377e718ef64d04d6aec1b0"
+    },
+    {
+      "path": "analysis/cloud_code_bundle.zip",
+      "bytes": 234497,
+      "sha256": "7743bb136f16e6ed67d03b49e850ccf7bdb5de21bd3cd9f27ceb33c678d753a7"
+    },
+    {
+      "path": "analysis/p0/acceptance.json",
+      "bytes": 3966,
+      "sha256": "655dd8e5aff27cc49723b657ae6881c2b9cfccdbbb8d2d57227ff1c9da1161e3"
+    },
+    {
+      "path": "analysis/patch_interface_probe/acceptance.json",
+      "bytes": 5515,
+      "sha256": "93dd6a7849c780e01bf0af16e87878cb064b19beeed58de2cdf2e0b5ada4a497"
+    },
+    {
+      "path": "analysis/joint_quotient/union_receipt.json",
+      "bytes": 3196,
+      "sha256": "543b9424fc9de93dcdf77c9a0ea5fb676cd81220a58eea9e78ea53521c1138f3"
+    },
+    {
+      "path": "analysis/joint_quotient/complete_demanded_quotient_union.json",
+      "bytes": 1386866,
+      "sha256": "0eeafc52ce5680ea142b2aa73e2b76f64966ea893614440b23aacfd502d4776b"
+    },
+    {
+      "path": "raw/CP-AP-r000/manifest.json",
+      "bytes": 38551,
+      "sha256": "8e22edeaedbc00a13e94ce40d7a709fa9ebef5c2681b19820a73503b96f99ab9"
+    },
+    {
+      "path": "raw/CP-AP-r001/manifest.json",
+      "bytes": 38552,
+      "sha256": "4d739ce725208bb9814c568d70307d3530f42b962e234067a94d4f78e7cf231c"
+    },
+    {
+      "path": "raw/CP-AU-r000/manifest.json",
+      "bytes": 39856,
+      "sha256": "03522600203a34596cba5813411f8748f3a52100a9ae95151d3c7b22011fd19a"
+    },
+    {
+      "path": "raw/CP-AU-r001/manifest.json",
+      "bytes": 38552,
+      "sha256": "455383dc76d3d0ec5ddb5d7f0bd29a329b56ce184985694733b282a51a236970"
+    },
+    {
+      "path": "graphs/CP-AP-r000/summary.json",
+      "bytes": 28524,
+      "sha256": "956660c639f3c39fb601026984dd611a52689a1f33d67e292b1f039f33c1e0ed"
+    },
+    {
+      "path": "graphs/CP-AP-r001/summary.json",
+      "bytes": 28773,
+      "sha256": "e01fff5b0a07f8a8ec7533909e9f22fb412ea6d7e7511a20322f42fe969e6171"
+    },
+    {
+      "path": "graphs/CP-AU-r000/summary.json",
+      "bytes": 28274,
+      "sha256": "0a4b4624ede5cd4bda0a542b7ad78ba65f0e7aff9e3cead56c7d4c8bd6ba2546"
+    },
+    {
+      "path": "graphs/CP-AU-r001/summary.json",
+      "bytes": 28347,
+      "sha256": "9ef4919bede6c5433c2e65f4b3512acbffbab31969f07444f0e5f2c89a950d34"
+    },
+    {
+      "path": "scripts/p0_evidence.py",
+      "bytes": 33764,
+      "sha256": "7da4fbf9d9d6cd7d9000eb24484e952f2797722afd9f625beb1fa8ee7f661c3f"
+    },
+    {
+      "path": "scripts/p0_patch_interface_probe.py",
+      "bytes": 25730,
+      "sha256": "dd8db60b8118839da34862c87870c7f62e548d4573c63f02eb1d1d68fb27c872"
+    },
+    {
+      "path": "scripts/aggregate_union.py",
+      "bytes": 4670,
+      "sha256": "aeab28990cd714f7711b7f6677899044cbaed0ea764b36208767d6cc87b8774c"
+    },
+    {
+      "path": "scripts/stk_generate.py",
+      "bytes": 34356,
+      "sha256": "29efe1827a9badff52eb4a88492e29c0b64ccaa998fc05f6c28b7cd468d5c106"
+    },
+    {
+      "path": "scripts/build_graphs.py",
+      "bytes": 37757,
+      "sha256": "c09951e3c615ca5462066d666f834f08a3006a7a86e72b9ccf34000b2856ca56"
+    },
+    {
+      "path": "scripts/profile_dataset.py",
+      "bytes": 5089,
+      "sha256": "856cd8d2c7c9f6f6947e955fc36731dcd725facd48b18769e42d90d3614fc6bd"
+    },
+    {
+      "path": "scripts/profile_execution.py",
+      "bytes": 4850,
+      "sha256": "2bdd331afb121413098e5a55dca47d639a92ff7d7a2d5ffd57f1b3ff16acfa04"
+    }
+  ],
+  "primary_report": "analysis/P0证据分析.md",
+  "authoritative_results": [
+    "analysis/p0",
+    "analysis/patch_interface_probe",
+    "analysis/joint_quotient"
+  ],
+  "limitations": [
+    "Idealized geometry; future EOP values are forecasts",
+    "Microsecond encoding is not a claim of physical event accuracy",
+    "Certificates are restricted F/P/X optima, not full72h optima",
+    "No cycle in finite demands does not prove global absence of an obstruction",
+    "Old frozen head is a control; no new LLM synthesis advantage claimed",
+    "Four libraries and overlapping patches are not independent statistical samples"
+  ]
+}

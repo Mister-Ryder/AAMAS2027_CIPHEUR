@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "started_at": "2026-10-05T12:44:24.415329+00:00",
+  "source_manifest_sha256": "8e22edeaedbc00a13e94ce40d7a709fa9ebef5c2681b19820a73503b96f99ab9",
+  "frozen_contacts_sha256": "a7b094c396d36aec53f2870431607a31a302cc350ba2b918524a30f25b0e3556",
+  "source_graph_metadata_sha256": "ebb1661fff2fcab3ebbc1de0d5b2e70efb21ea9177d33e40aa7caf7652f27431",
+  "eop_sha256": "16330eecc23c5897c147e16d1172f6947b2eab4a61d2235d0a1f016014d3698b",
+  "scope": "Two actual object pairs only; no library or graph edits",
+  "selected_boundary_example": {
+    "earlier_contact": "CP-AP-r000:S-P01-S08:GS08:p0005",
+    "later_contact": "CP-AP-r000:S-P01-S06:GS08:p0005",
+    "resource_id": "GS08-A1",
+    "signed_margin_ticks": 1997,
+    "resource_conflict": false
+  },
+  "generator_sha256": "fb9a452b2a37b6575b5acfcce561f2677d70a3c9816e13fa2bacddcb838d4a33",
+  "owned_stk_process_id": 6768,
+  "finished_at": "2026-10-05T12:44:50.791531+00:00",
+  "edge_classification_stable": true,
+  "files": [
+    {
+      "path": "refined_provider_reports.json",
+      "sha256": "2e18c3af7ac83626da68f9892a559ff80dc5cd78d0cc3419a0c1ccd3faa1b177",
+      "size_bytes": 44311
+    },
+    {
+      "path": "result.json",
+      "sha256": "5d24426bcce6e17f31a1d1140ddd066ceb466d072a888a8b4475c3bcac18aed2",
+      "size_bytes": 3495
+    }
+  ],
+  "owned_stk_instance_closed": true
+}

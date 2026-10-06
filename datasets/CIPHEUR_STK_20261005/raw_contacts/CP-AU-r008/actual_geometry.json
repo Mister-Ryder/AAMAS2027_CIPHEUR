@@ -1,0 +1,3768 @@
+{
+  "satellites": [
+    {
+      "satellite_id": "S-P01-S01",
+      "object_path": "Satellite/S_P01_S01",
+      "requested": {
+        "satellite_id": "S-P01-S01",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 0,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 164.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999993,
+        "eccentricity": 9.634743004246222e-16,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.49505899999998,
+        "mean_anomaly_deg": 164.99566499999992,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S02",
+      "object_path": "Satellite/S_P01_S02",
+      "requested": {
+        "satellite_id": "S-P01-S02",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 1,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 194.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1369999999915,
+        "eccentricity": 8.117865798339044e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.49505899999999,
+        "mean_anomaly_deg": 194.99566499999997,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S03",
+      "object_path": "Satellite/S_P01_S03",
+      "requested": {
+        "satellite_id": "S-P01-S03",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 2,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 224.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999998,
+        "eccentricity": 2.8526291134127007e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495058999999976,
+        "mean_anomaly_deg": 224.99566499999997,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S04",
+      "object_path": "Satellite/S_P01_S04",
+      "requested": {
+        "satellite_id": "S-P01-S04",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 3,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 254.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.13699999999,
+        "eccentricity": 1.07317037708113e-15,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.49505899999997,
+        "mean_anomaly_deg": 254.9956650000001,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S05",
+      "object_path": "Satellite/S_P01_S05",
+      "requested": {
+        "satellite_id": "S-P01-S05",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 4,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 284.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999988,
+        "eccentricity": 6.919264002251891e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.49505899999997,
+        "mean_anomaly_deg": 284.9956650000001,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S06",
+      "object_path": "Satellite/S_P01_S06",
+      "requested": {
+        "satellite_id": "S-P01-S06",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 5,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 314.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 4.63552230929564e-16,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.49505899999997,
+        "mean_anomaly_deg": 314.995665,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S07",
+      "object_path": "Satellite/S_P01_S07",
+      "requested": {
+        "satellite_id": "S-P01-S07",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 6,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 344.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999987,
+        "eccentricity": 5.170390268060524e-16,
+        "inclination_deg": 52.99999999999997,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.49505899999996,
+        "mean_anomaly_deg": 344.9956649999999,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S08",
+      "object_path": "Satellite/S_P01_S08",
+      "requested": {
+        "satellite_id": "S-P01-S08",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 7,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 14.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999987,
+        "eccentricity": 1.7828931958829395e-17,
+        "inclination_deg": 52.99999999999998,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.49505899999999,
+        "mean_anomaly_deg": 14.995665000000008,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S09",
+      "object_path": "Satellite/S_P01_S09",
+      "requested": {
+        "satellite_id": "S-P01-S09",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 8,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 44.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 4.75163718353769e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.49505899999997,
+        "mean_anomaly_deg": 44.99566499999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S10",
+      "object_path": "Satellite/S_P01_S10",
+      "requested": {
+        "satellite_id": "S-P01-S10",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 9,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 74.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999987,
+        "eccentricity": 1.0682923316407246e-15,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495058999999976,
+        "mean_anomaly_deg": 74.9956649999999,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S11",
+      "object_path": "Satellite/S_P01_S11",
+      "requested": {
+        "satellite_id": "S-P01-S11",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 10,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 104.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999992,
+        "eccentricity": 1.3882721081755986e-15,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495058999999976,
+        "mean_anomaly_deg": 104.99566499999986,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P01-S12",
+      "object_path": "Satellite/S_P01_S12",
+      "requested": {
+        "satellite_id": "S-P01-S12",
+        "shell_id": "S",
+        "plane_index_zero": 0,
+        "slot_index_zero": 11,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495059,
+        "mean_anomaly_deg": 134.995665
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999992,
+        "eccentricity": 1.1450301416157033e-15,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 53.495058999999976,
+        "mean_anomaly_deg": 134.99566499999992,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S01",
+      "object_path": "Satellite/S_P02_S01",
+      "requested": {
+        "satellite_id": "S-P02-S01",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 0,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 169.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1369999999915,
+        "eccentricity": 7.618945858481106e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 169.281379286,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S02",
+      "object_path": "Satellite/S_P02_S02",
+      "requested": {
+        "satellite_id": "S-P02-S02",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 1,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 199.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999993,
+        "eccentricity": 9.560222491726067e-16,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 199.28137928599998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S03",
+      "object_path": "Satellite/S_P02_S03",
+      "requested": {
+        "satellite_id": "S-P02-S03",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 2,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 229.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.13699999999,
+        "eccentricity": 9.606658751757766e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 229.28137928600006,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S04",
+      "object_path": "Satellite/S_P02_S04",
+      "requested": {
+        "satellite_id": "S-P02-S04",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 3,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 259.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999989,
+        "eccentricity": 7.939688419482491e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 259.2813792860001,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S05",
+      "object_path": "Satellite/S_P02_S05",
+      "requested": {
+        "satellite_id": "S-P02-S05",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 4,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 289.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999987,
+        "eccentricity": 1.1688888068227508e-15,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 289.281379286,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S06",
+      "object_path": "Satellite/S_P02_S06",
+      "requested": {
+        "satellite_id": "S-P02-S06",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 5,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 319.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1369999999915,
+        "eccentricity": 3.209207752589289e-16,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 319.28137928599995,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S07",
+      "object_path": "Satellite/S_P02_S07",
+      "requested": {
+        "satellite_id": "S-P02-S07",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 6,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 349.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999993,
+        "eccentricity": 1.9738856348926032e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 349.281379286,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S08",
+      "object_path": "Satellite/S_P02_S08",
+      "requested": {
+        "satellite_id": "S-P02-S08",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 7,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 19.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999991,
+        "eccentricity": 3.4274821115524156e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 19.28137928599999,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S09",
+      "object_path": "Satellite/S_P02_S09",
+      "requested": {
+        "satellite_id": "S-P02-S09",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 8,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 49.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999989,
+        "eccentricity": 7.767953959784719e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 49.28137928599995,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S10",
+      "object_path": "Satellite/S_P02_S10",
+      "requested": {
+        "satellite_id": "S-P02-S10",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 9,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 79.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999983,
+        "eccentricity": 1.3399381740710423e-15,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 79.28137928599983,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S11",
+      "object_path": "Satellite/S_P02_S11",
+      "requested": {
+        "satellite_id": "S-P02-S11",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 10,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 109.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999989,
+        "eccentricity": 8.249925251808788e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 109.28137928599989,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P02-S12",
+      "object_path": "Satellite/S_P02_S12",
+      "requested": {
+        "satellite_id": "S-P02-S12",
+        "shell_id": "S",
+        "plane_index_zero": 1,
+        "slot_index_zero": 11,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.923630429,
+        "mean_anomaly_deg": 139.281379286
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999991,
+        "eccentricity": 9.526915159783871e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 104.92363042900001,
+        "mean_anomaly_deg": 139.28137928599992,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S01",
+      "object_path": "Satellite/S_P03_S01",
+      "requested": {
+        "satellite_id": "S-P03-S01",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 0,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 173.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 6.498158246758923e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 173.567093571,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S02",
+      "object_path": "Satellite/S_P03_S02",
+      "requested": {
+        "satellite_id": "S-P03-S02",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 1,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 203.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999992,
+        "eccentricity": 5.875852288100089e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 203.56709357099993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S03",
+      "object_path": "Satellite/S_P03_S03",
+      "requested": {
+        "satellite_id": "S-P03-S03",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 2,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 233.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 8.584132134002562e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 233.56709357099996,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S04",
+      "object_path": "Satellite/S_P03_S04",
+      "requested": {
+        "satellite_id": "S-P03-S04",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 3,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 263.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 5.760214693255857e-16,
+        "inclination_deg": 53.000000000000014,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 263.56709357099993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S05",
+      "object_path": "Satellite/S_P03_S05",
+      "requested": {
+        "satellite_id": "S-P03-S05",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 4,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 293.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999999,
+        "eccentricity": 3.8664138900221713e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 293.567093571,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S06",
+      "object_path": "Satellite/S_P03_S06",
+      "requested": {
+        "satellite_id": "S-P03-S06",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 5,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 323.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1370000000015,
+        "eccentricity": 2.1394718350595259e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 323.567093571,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S07",
+      "object_path": "Satellite/S_P03_S07",
+      "requested": {
+        "satellite_id": "S-P03-S07",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 6,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 353.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 6.05764875364446e-16,
+        "inclination_deg": 53.000000000000014,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 353.567093571,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S08",
+      "object_path": "Satellite/S_P03_S08",
+      "requested": {
+        "satellite_id": "S-P03-S08",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 7,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 23.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999997,
+        "eccentricity": 6.222663004440535e-16,
+        "inclination_deg": 53.000000000000014,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 23.56709357099996,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S09",
+      "object_path": "Satellite/S_P03_S09",
+      "requested": {
+        "satellite_id": "S-P03-S09",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 8,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 53.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.137000000005,
+        "eccentricity": 2.1804760259116163e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 53.56709357099996,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S10",
+      "object_path": "Satellite/S_P03_S10",
+      "requested": {
+        "satellite_id": "S-P03-S10",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 9,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 83.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1370000000015,
+        "eccentricity": 1.9021271084477728e-16,
+        "inclination_deg": 53.00000000000002,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 83.56709357099996,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S11",
+      "object_path": "Satellite/S_P03_S11",
+      "requested": {
+        "satellite_id": "S-P03-S11",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 10,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 113.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999997,
+        "eccentricity": 2.6055419617130984e-16,
+        "inclination_deg": 53.000000000000014,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 113.56709357099996,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P03-S12",
+      "object_path": "Satellite/S_P03_S12",
+      "requested": {
+        "satellite_id": "S-P03-S12",
+        "shell_id": "S",
+        "plane_index_zero": 2,
+        "slot_index_zero": 11,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.352201857,
+        "mean_anomaly_deg": 143.567093571
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999993,
+        "eccentricity": 5.994049561462256e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 156.35220185700004,
+        "mean_anomaly_deg": 143.56709357099993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S01",
+      "object_path": "Satellite/S_P04_S01",
+      "requested": {
+        "satellite_id": "S-P04-S01",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 0,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 177.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999992,
+        "eccentricity": 1.1642408989543207e-15,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 177.852807857,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S02",
+      "object_path": "Satellite/S_P04_S02",
+      "requested": {
+        "satellite_id": "S-P04-S02",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 1,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 207.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999992,
+        "eccentricity": 1.1081673636811846e-15,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 207.85280785700002,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S03",
+      "object_path": "Satellite/S_P04_S03",
+      "requested": {
+        "satellite_id": "S-P04-S03",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 2,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 237.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 3.729497977691001e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 237.85280785699993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S04",
+      "object_path": "Satellite/S_P04_S04",
+      "requested": {
+        "satellite_id": "S-P04-S04",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 3,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 267.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 3.903234569209196e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 267.852807857,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S05",
+      "object_path": "Satellite/S_P04_S05",
+      "requested": {
+        "satellite_id": "S-P04-S05",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 4,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 297.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999997,
+        "eccentricity": 7.131572783531752e-17,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 297.852807857,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S06",
+      "object_path": "Satellite/S_P04_S06",
+      "requested": {
+        "satellite_id": "S-P04-S06",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 5,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 327.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 3.8167671387190087e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 327.852807857,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S07",
+      "object_path": "Satellite/S_P04_S07",
+      "requested": {
+        "satellite_id": "S-P04-S07",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 6,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 357.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999997,
+        "eccentricity": 2.375818591768845e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599997,
+        "mean_anomaly_deg": 357.852807857,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S08",
+      "object_path": "Satellite/S_P04_S08",
+      "requested": {
+        "satellite_id": "S-P04-S08",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 7,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 27.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1369999999915,
+        "eccentricity": 7.131572783531757e-17,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 27.852807856999984,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S09",
+      "object_path": "Satellite/S_P04_S09",
+      "requested": {
+        "satellite_id": "S-P04-S09",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 8,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 57.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1370000000015,
+        "eccentricity": 6.222663004440538e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 57.852807856999945,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S10",
+      "object_path": "Satellite/S_P04_S10",
+      "requested": {
+        "satellite_id": "S-P04-S10",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 9,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 87.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 2.605541961713099e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599997,
+        "mean_anomaly_deg": 87.85280785699999,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S11",
+      "object_path": "Satellite/S_P04_S11",
+      "requested": {
+        "satellite_id": "S-P04-S11",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 10,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 117.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999995,
+        "eccentricity": 7.767953959784717e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 117.85280785699993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P04-S12",
+      "object_path": "Satellite/S_P04_S12",
+      "requested": {
+        "satellite_id": "S-P04-S12",
+        "shell_id": "S",
+        "plane_index_zero": 3,
+        "slot_index_zero": 11,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.780773286,
+        "mean_anomaly_deg": 147.852807857
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1369999999915,
+        "eccentricity": 1.0419351135752344e-15,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 207.78077328599994,
+        "mean_anomaly_deg": 147.85280785699993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S01",
+      "object_path": "Satellite/S_P05_S01",
+      "requested": {
+        "satellite_id": "S-P05-S01",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 0,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 182.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 7.637827336381213e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 182.13852214299996,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S02",
+      "object_path": "Satellite/S_P05_S02",
+      "requested": {
+        "satellite_id": "S-P05-S02",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 1,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 212.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999987,
+        "eccentricity": 1.1450301416157023e-15,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 212.13852214300002,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S03",
+      "object_path": "Satellite/S_P05_S03",
+      "requested": {
+        "satellite_id": "S-P05-S03",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 2,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 242.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999983,
+        "eccentricity": 1.1944869198919546e-15,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.20934471399994,
+        "mean_anomaly_deg": 242.13852214300007,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S04",
+      "object_path": "Satellite/S_P05_S04",
+      "requested": {
+        "satellite_id": "S-P05-S04",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 3,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 272.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 7.518659938152978e-16,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.20934471399994,
+        "mean_anomaly_deg": 272.1385221430001,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S05",
+      "object_path": "Satellite/S_P05_S05",
+      "requested": {
+        "satellite_id": "S-P05-S05",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 4,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 302.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999983,
+        "eccentricity": 1.3075006455850847e-15,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.20934471399994,
+        "mean_anomaly_deg": 302.13852214300005,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S06",
+      "object_path": "Satellite/S_P05_S06",
+      "requested": {
+        "satellite_id": "S-P05-S06",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 5,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 332.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999982,
+        "eccentricity": 6.352637795148007e-16,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 332.13852214299993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S07",
+      "object_path": "Satellite/S_P05_S07",
+      "requested": {
+        "satellite_id": "S-P05-S07",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 6,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 2.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 1.9998831251958099e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 2.138522143000003,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S08",
+      "object_path": "Satellite/S_P05_S08",
+      "requested": {
+        "satellite_id": "S-P05-S08",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 7,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 32.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999984,
+        "eccentricity": 9.363653068834617e-16,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 32.13852214299997,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S09",
+      "object_path": "Satellite/S_P05_S09",
+      "requested": {
+        "satellite_id": "S-P05-S09",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 8,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 62.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.13699999999,
+        "eccentricity": 1.4035766615547597e-15,
+        "inclination_deg": 52.99999999999998,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 62.138522142999875,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S10",
+      "object_path": "Satellite/S_P05_S10",
+      "requested": {
+        "satellite_id": "S-P05-S10",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 9,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 92.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 7.291146455036089e-16,
+        "inclination_deg": 52.99999999999998,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 92.13852214299995,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S11",
+      "object_path": "Satellite/S_P05_S11",
+      "requested": {
+        "satellite_id": "S-P05-S11",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 10,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 122.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999984,
+        "eccentricity": 1.599906500156648e-15,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 122.13852214299985,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P05-S12",
+      "object_path": "Satellite/S_P05_S12",
+      "requested": {
+        "satellite_id": "S-P05-S12",
+        "shell_id": "S",
+        "plane_index_zero": 4,
+        "slot_index_zero": 11,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.209344714,
+        "mean_anomaly_deg": 152.138522143
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999983,
+        "eccentricity": 1.5304499900112309e-15,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 259.20934471399994,
+        "mean_anomaly_deg": 152.13852214299988,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S01",
+      "object_path": "Satellite/S_P06_S01",
+      "requested": {
+        "satellite_id": "S-P06-S01",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 0,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 186.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1369999999915,
+        "eccentricity": 7.945707585303368e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 186.42423642899993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S02",
+      "object_path": "Satellite/S_P06_S02",
+      "requested": {
+        "satellite_id": "S-P06-S02",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 1,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 216.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999989,
+        "eccentricity": 1.3471237407261234e-15,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 216.42423642900002,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S03",
+      "object_path": "Satellite/S_P06_S03",
+      "requested": {
+        "satellite_id": "S-P06-S03",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 2,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 246.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999991,
+        "eccentricity": 1.0181492912004598e-15,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 246.42423642900002,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S04",
+      "object_path": "Satellite/S_P06_S04",
+      "requested": {
+        "satellite_id": "S-P06-S04",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 3,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 276.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 8.557887340238104e-16,
+        "inclination_deg": 52.99999999999999,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 276.4242364290001,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S05",
+      "object_path": "Satellite/S_P06_S05",
+      "requested": {
+        "satellite_id": "S-P06-S05",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 4,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 306.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999988,
+        "eccentricity": 5.676135489719496e-16,
+        "inclination_deg": 52.999999999999986,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 306.424236429,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S06",
+      "object_path": "Satellite/S_P06_S06",
+      "requested": {
+        "satellite_id": "S-P06-S06",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 5,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 336.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999991,
+        "eccentricity": 3.866413890022167e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 336.42423642899996,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S07",
+      "object_path": "Satellite/S_P06_S07",
+      "requested": {
+        "satellite_id": "S-P06-S07",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 6,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 6.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.13699999999,
+        "eccentricity": 5.789711454227414e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.6379161429999,
+        "mean_anomaly_deg": 6.424236429000003,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S08",
+      "object_path": "Satellite/S_P06_S08",
+      "requested": {
+        "satellite_id": "S-P06-S08",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 7,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 36.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999991,
+        "eccentricity": 4.0404174732352574e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 36.424236428999976,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S09",
+      "object_path": "Satellite/S_P06_S09",
+      "requested": {
+        "satellite_id": "S-P06-S09",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 8,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 66.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999991,
+        "eccentricity": 4.75163718353769e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 66.42423642899993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S10",
+      "object_path": "Satellite/S_P06_S10",
+      "requested": {
+        "satellite_id": "S-P06-S10",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 9,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 96.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 4.457232989707345e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.6379161429999,
+        "mean_anomaly_deg": 96.42423642899993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S11",
+      "object_path": "Satellite/S_P06_S11",
+      "requested": {
+        "satellite_id": "S-P06-S11",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 10,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 126.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999988,
+        "eccentricity": 7.806469138418387e-16,
+        "inclination_deg": 53.0,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 126.42423642899993,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P06-S12",
+      "object_path": "Satellite/S_P06_S12",
+      "requested": {
+        "satellite_id": "S-P06-S12",
+        "shell_id": "S",
+        "plane_index_zero": 5,
+        "slot_index_zero": 11,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 156.424236429
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999985,
+        "eccentricity": 7.806469138418383e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 310.637916143,
+        "mean_anomaly_deg": 156.4242364289999,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S01",
+      "object_path": "Satellite/S_P07_S01",
+      "requested": {
+        "satellite_id": "S-P07-S01",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 0,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 190.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1369999999915,
+        "eccentricity": 7.849107536538352e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875709999966,
+        "mean_anomaly_deg": 190.70995071399994,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S02",
+      "object_path": "Satellite/S_P07_S02",
+      "requested": {
+        "satellite_id": "S-P07-S02",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 1,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 220.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999993,
+        "eccentricity": 1.3525703262735159e-15,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487570999995,
+        "mean_anomaly_deg": 220.709950714,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S03",
+      "object_path": "Satellite/S_P07_S03",
+      "requested": {
+        "satellite_id": "S-P07-S03",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 2,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 250.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999993,
+        "eccentricity": 6.919264002251893e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875709999957,
+        "mean_anomaly_deg": 250.70995071400006,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S04",
+      "object_path": "Satellite/S_P07_S04",
+      "requested": {
+        "satellite_id": "S-P07-S04",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 3,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 280.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999997,
+        "eccentricity": 1.7828931958829385e-16,
+        "inclination_deg": 53.000000000000014,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875709999997,
+        "mean_anomaly_deg": 280.709950714,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S05",
+      "object_path": "Satellite/S_P07_S05",
+      "requested": {
+        "satellite_id": "S-P07-S05",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 4,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 310.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 3.4274821115524146e-16,
+        "inclination_deg": 53.00000000000002,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875709999984,
+        "mean_anomaly_deg": 310.709950714,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S06",
+      "object_path": "Satellite/S_P07_S06",
+      "requested": {
+        "satellite_id": "S-P07-S06",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 5,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 340.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999991,
+        "eccentricity": 4.058932899169517e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875709999997,
+        "mean_anomaly_deg": 340.709950714,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S07",
+      "object_path": "Satellite/S_P07_S07",
+      "requested": {
+        "satellite_id": "S-P07-S07",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 6,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 10.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 1.9332069450110854e-16,
+        "inclination_deg": 53.000000000000014,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487570999996,
+        "mean_anomaly_deg": 10.709950713999989,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S08",
+      "object_path": "Satellite/S_P07_S08",
+      "requested": {
+        "satellite_id": "S-P07-S08",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 7,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 40.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.1370000000015,
+        "eccentricity": 9.506874748515868e-16,
+        "inclination_deg": 53.000000000000014,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875710000032,
+        "mean_anomaly_deg": 40.70995071399991,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S09",
+      "object_path": "Satellite/S_P07_S09",
+      "requested": {
+        "satellite_id": "S-P07-S09",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 8,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 70.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999996,
+        "eccentricity": 7.131572783531753e-17,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875709999952,
+        "mean_anomaly_deg": 70.709950714,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S10",
+      "object_path": "Satellite/S_P07_S10",
+      "requested": {
+        "satellite_id": "S-P07-S10",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 9,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 100.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999993,
+        "eccentricity": 3.729497977691e-16,
+        "inclination_deg": 53.000000000000014,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875710000032,
+        "mean_anomaly_deg": 100.70995071399994,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S11",
+      "object_path": "Satellite/S_P07_S11",
+      "requested": {
+        "satellite_id": "S-P07-S11",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 10,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 130.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 7.036383049718714e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875709999992,
+        "mean_anomaly_deg": 130.70995071399997,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    },
+    {
+      "satellite_id": "S-P07-S12",
+      "object_path": "Satellite/S_P07_S12",
+      "requested": {
+        "satellite_id": "S-P07-S12",
+        "shell_id": "S",
+        "plane_index_zero": 6,
+        "slot_index_zero": 11,
+        "semi_major_axis_km": 7178.137,
+        "nominal_altitude_km": 800,
+        "eccentricity": 0.0,
+        "inclination_deg": 53,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.066487571,
+        "mean_anomaly_deg": 160.709950714
+      },
+      "actual": {
+        "propagator_type": 1,
+        "propagator_name": "J2Perturbation",
+        "step_seconds": 30.0,
+        "propagation_start": "26 Dec 2026 23:00:00.000",
+        "propagation_stop": "30 Dec 2026 01:00:00.000",
+        "orbit_epoch": "27 Dec 2026 00:00:00.000",
+        "propagation_frame_enum": 0,
+        "coordinate_system_enum": 3,
+        "coordinate_system_requested": "J2000",
+        "state_epoch": "27 Dec 2026 00:00:00.000",
+        "semi_major_axis_km": 7178.136999999994,
+        "eccentricity": 8.552613617901453e-16,
+        "inclination_deg": 53.00000000000001,
+        "argument_of_perigee_deg": 0.0,
+        "raan_deg": 2.0664875710000006,
+        "mean_anomaly_deg": 160.70995071399994,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          }
+        ]
+      }
+    }
+  ],
+  "stations": [
+    {
+      "site_id": "GS01",
+      "antenna_id": "GS01-A1",
+      "latitude_deg": 28,
+      "longitude_deg_east": 88,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS01",
+      "actual": {
+        "latitude_deg": 28.0,
+        "longitude_deg_east": 88.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS02",
+      "antenna_id": "GS02-A1",
+      "latitude_deg": 28,
+      "longitude_deg_east": 94,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS02",
+      "actual": {
+        "latitude_deg": 28.0,
+        "longitude_deg_east": 94.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS03",
+      "antenna_id": "GS03-A1",
+      "latitude_deg": 28,
+      "longitude_deg_east": 100,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS03",
+      "actual": {
+        "latitude_deg": 28.0,
+        "longitude_deg_east": 100.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS04",
+      "antenna_id": "GS04-A1",
+      "latitude_deg": 28,
+      "longitude_deg_east": 106,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS04",
+      "actual": {
+        "latitude_deg": 28.0,
+        "longitude_deg_east": 106.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS05",
+      "antenna_id": "GS05-A1",
+      "latitude_deg": 28,
+      "longitude_deg_east": 112,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS05",
+      "actual": {
+        "latitude_deg": 28.0,
+        "longitude_deg_east": 112.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS06",
+      "antenna_id": "GS06-A1",
+      "latitude_deg": 28,
+      "longitude_deg_east": 118,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS06",
+      "actual": {
+        "latitude_deg": 28.0,
+        "longitude_deg_east": 118.00000000000001,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS07",
+      "antenna_id": "GS07-A1",
+      "latitude_deg": 32,
+      "longitude_deg_east": 88,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS07",
+      "actual": {
+        "latitude_deg": 32.0,
+        "longitude_deg_east": 88.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS08",
+      "antenna_id": "GS08-A1",
+      "latitude_deg": 32,
+      "longitude_deg_east": 94,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS08",
+      "actual": {
+        "latitude_deg": 32.0,
+        "longitude_deg_east": 94.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS09",
+      "antenna_id": "GS09-A1",
+      "latitude_deg": 32,
+      "longitude_deg_east": 100,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS09",
+      "actual": {
+        "latitude_deg": 32.0,
+        "longitude_deg_east": 100.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS10",
+      "antenna_id": "GS10-A1",
+      "latitude_deg": 32,
+      "longitude_deg_east": 106,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS10",
+      "actual": {
+        "latitude_deg": 32.0,
+        "longitude_deg_east": 106.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS11",
+      "antenna_id": "GS11-A1",
+      "latitude_deg": 32,
+      "longitude_deg_east": 112,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS11",
+      "actual": {
+        "latitude_deg": 32.0,
+        "longitude_deg_east": 112.0,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    },
+    {
+      "site_id": "GS12",
+      "antenna_id": "GS12-A1",
+      "latitude_deg": 32,
+      "longitude_deg_east": 118,
+      "altitude_m_ellipsoid": 0,
+      "object_path": "Facility/GS12",
+      "actual": {
+        "latitude_deg": 32.0,
+        "longitude_deg_east": 118.00000000000001,
+        "altitude_km": 0.0,
+        "alt_reference_enum": 2,
+        "use_terrain": false,
+        "minimum_elevation_deg": 14.999999999999998,
+        "active_constraints": [
+          {
+            "type": 26,
+            "name": "LineOfSight"
+          },
+          {
+            "type": 14,
+            "name": "ElevationAngle"
+          }
+        ]
+      }
+    }
+  ],
+  "scenario": {
+    "name": "CP_AU_r008",
+    "epoch_utcg": "27 Dec 2026 00:00:00.000",
+    "start_utcg": "26 Dec 2026 23:00:00.000",
+    "stop_utcg": "30 Dec 2026 01:00:00.000"
+  }
+}
